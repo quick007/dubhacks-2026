@@ -1,0 +1,21 @@
+# Independent rows with native concurrent decoding
+
+This prepares the next bounded comparison using installed mlx-lm 0.32.2 `BatchGenerator.insert`: one resident target model, per-sequence complete prefix caches, exact row suffixes, maximum tokens, greedy samplers, empty logits processors and native EOS stop sequences. Width one is the sequential independent-row arm; widths two, three and six insert actual concurrent rows into the native runtime. Output token IDs, per-row autoregressive response steps and maximum simultaneously emitting rows are recorded. Batching advances autoregressive steps; it does not generate all tokens in one pass.
+
+The unchanged user-first ranker prefill runs once per measured full arm. It produces the same selected product/image IDs and evidence page plan. Every independent heading/card branch deep-copies the complete native cache state, including ArraysCache recurrence/convolution/padding/lengths and KV tensors/offsets. Only state is copied; model weights are never copied. Every copy is materialized with `mx.eval` and synchronization before the memory check. Prefix/suffix identity is checked by the existing append guard, and each branch is consumed once. There is no state splicing, trimming, rewind, aliasing or reuse of a generated response.
+
+Each heading is a separate row conditioned on every member's evidence and the intersection of tags. Each card row generates its title and optional supported badge with locked product/image selection. Sequential and native-batch arms use identical row messages and per-row budgets. One card allocates 48 tokens to its card and 16 to its heading; three cards allocate 32 per card and 32 to one heading; six cards allocate 32 per card and 16 per heading. Totals stay 64/128/224. These factorized prompts differ from a whole-page prompt, so retain the existing whole-page serial baseline as a separate experimental factor rather than attributing all differences to concurrency.
+
+Root orchestration imports `factorized_arm(backbone, heads, request, catalog, count, width)`. The caller uses its one already loaded verified backbone, corrected heads and existing page-scale cases. The function starts full timing before ranking and includes complete-state copies/materialization, row suffix preparation, native suffix prefill/decoding, raw assembly and unchanged strict `validate_generated` plus exact-order/protocol checks. It retains raw invalid fields without rewriting, injecting defaults, retries or validator relaxation. Width-dependent failures are returned with unchanged budget and actual failure latency; the existing six-GiB process cap must never be raised automatically. Run widths in increasing order and stop after a memory failure.
+
+```sh
+# CPU/stub tests only; no MLX import or model/GPU load.
+.tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_parallel_decode -v
+
+# Only after root explicitly permits the tiny native compatibility test.
+RUN_NATIVE_PARALLEL_DECODE=1 .tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_parallel_decode.ParallelDecodeTests.test_tiny_hybrid_fork_unequal_suffix_batch_and_early_finish_token_parity -v
+```
+
+The tiny optional test checks full hybrid prefix forks, branch A/B independence, unequal suffixes, sequential/batch generated token equality, early budget completion, EOS removal/row compaction, and reuse of the untouched source prefix. It loads a tiny randomly initialized hybrid model, not the 9B checkpoint. It remains skipped until root go; CPU tests do not establish native compatibility. Installed `ArraysCache.merge/extract` rebuild transient padding/length fields through native prompt preparation/finalization, making real unequal-suffix and compaction tests essential before claiming correctness. Do not replace this test with metadata-only checks.
+
+No GPU run, pretrained inference, speed result or quality gain is claimed by preparing these sources. Actual results must include rejected pages, token/step counts, peak memory, row prompt hashes and measured complete latency. No new runtime installation, MTP, speculative model, API, UI or architecture novelty claim is part of this comparison.
