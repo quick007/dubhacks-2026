@@ -184,9 +184,9 @@ def main():
     parser.add_argument('--prior',type=Path,default=Path('data/ranker/pretrained/parallel-decode-v1'))
     parser.add_argument('--out',type=Path,default=Path('data/ranker/pretrained/native-batch-diagnosis-v1'))
     parser.add_argument('--report',type=Path,default=Path('experiments/ranker/pretrained/NATIVE_BATCH_DIAGNOSIS.json'))
-    parser.add_argument('--stage', choices=('v1','v2'), default='v1')
+    parser.add_argument('--stage', choices=('v1','v2','v3','v4'), default='v1')
     args=parser.parse_args()
-    (run_controls if args.stage=='v2' else run)(args)
+    (run_controls if args.stage in ('v2','v3','v4') else run)(args)
 
 
 # Stage two is deliberately separate from the original reproducer. The original
@@ -227,13 +227,15 @@ def run_controls(args):
     from mlx_lm.models.cache import make_prompt_cache
     from mlx_lm.sample_utils import make_sampler
     native_class = native.BatchGenerator  # Validate before any weight load.
-    if args.out.name != 'native-batch-diagnosis-v2':
-        raise ValueError('Stage two requires a new ignored native-batch-diagnosis-v2 directory')
+    stage = 'stage'+args.stage[1:]
+    prefill_step_size = 512 if stage == 'stage2' else 256
+    if args.out.name != 'native-batch-diagnosis-'+args.stage:
+        raise ValueError('Each stage requires its separately named native-batch-diagnosis directory')
     original_bytes = args.report.read_bytes()
     previous = json.loads(original_bytes)
-    if 'stage2' in previous:
-        raise ValueError('Preserve existing stage-two evidence; do not overwrite it')
-    args.out.mkdir(parents=True, exist_ok=True)
+    if stage in previous or args.out.exists():
+        raise ValueError('Preserve existing stage evidence; do not overwrite it')
+    args.out.mkdir(parents=True, exist_ok=False)
     (args.out/'preserved-v1-report.json').write_bytes(original_bytes)
     expected = Path.cwd()/'.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots'/REVISION
     if args.model.resolve() != expected.resolve():
@@ -242,14 +244,17 @@ def run_controls(args):
     case = json.loads((args.prior/'parallel-case-plan.json').read_text())['cases'][2]
     saved = json.loads((args.prior/'parallel-case-2-sequential.json').read_text())
     heads, _, _ = load_corrected(args.heads)
-    result = {'schemaVersion': 2, 'synthetic': True, 'recordedAtUtc': datetime.now(timezone.utc).isoformat(),
+    process_started = time.perf_counter()
+    result = {'schemaVersion': int(args.stage[1:]), 'stage': stage,
+        'nativePrefillStepSize': prefill_step_size, 'synthetic': True, 'recordedAtUtc': datetime.now(timezone.utc).isoformat(),
+        'prefillObservation': 'materialize native cache state only; preserve unused lazy logits' if stage == 'stage4' else 'legacy observation',
         'status': 'running', 'runtime': {name: version(name) for name in ('mlx', 'mlx-lm')},
         'modelRevision': REVISION, 'caseId': case['caseId'], 'memoryLimitBytes': 6*2**30,
         'scope': 'One model process, widths 1/2/3, fork/independent-prefix/fresh-full, each repeated once; seven greedy responses per row; no forcing.',
         'priorReportSha256': hashlib.sha256(original_bytes).hexdigest(),
         'sourceSha256': digest(Path(__file__)), 'arms': {}, 'comparisons': {},
         'limitations': ['Static initial widths: width 2 is title/badge, whereas the original width-2 badge was admitted late.',
-            'Independent prefix prefill uses identical single-988-token backbone segmentation to the pristine source; fresh-full uses native 512-token prefill and therefore changes segmentation.',
+            f'Independent prefix prefill uses identical single-988-token backbone segmentation to the pristine source; fresh-full uses native {prefill_step_size}-token prefill and therefore changes segmentation.',
             'Distribution comparisons require exact earlier sampled context, not merely a shared prompt hash.',
             'Raw-logit observation and extra normalization are measurement-only; no model/sampler/precision or validator changes.',
             'No semantic-quality, usable-page speed or general cache-correctness conclusion follows from one synthetic case.']}
@@ -259,11 +264,17 @@ def run_controls(args):
             np.savez(args.out/'position6-arrays.npz', **arrays)
             result['arraysSha256'] = digest(args.out/'position6-arrays.npz')
         (args.out/'probe.json').write_text(json.dumps(result, indent=2, allow_nan=False)+'\n')
-        previous['stage2'] = result
+        previous[stage] = result
         args.report.write_text(json.dumps(previous, indent=2, allow_nan=False)+'\n')
     backbone = None
     try:
-        backbone = FrozenBackbone(args.model, REVISION, 1536, 6)
+        class PeakCheckedBackbone(FrozenBackbone):
+            def check_memory(self):
+                super().check_memory()
+                peak = self.mx.get_peak_memory()
+                if peak > self.memory_budget:
+                    raise MemoryError(f'Observed peak {peak} exceeds fixed {self.memory_budget}-byte experiment guard')
+        backbone = (FrozenBackbone if stage == 'stage2' else PeakCheckedBackbone)(args.model, REVISION, 1536, 6)
         mx = backbone.mx
         embeddings, actions, timing, base = encode_shared_prefix(backbone, case['request'], case['catalog'], 1536)
         with torch.inference_mode():
@@ -313,6 +324,7 @@ def run_controls(args):
                                 hidden = backbone.model.model(mx.array([base['tokens']]), cache=cache)
                                 mx.eval([entry.state for entry in cache]); mx.synchronize()
                                 del hidden
+                                backbone.check_memory()
                         branch_hashes.append(state_hash(cache))
                         caches.append(cache)
                         backbone.check_memory()
@@ -327,6 +339,14 @@ def run_controls(args):
                             return getattr(backbone.model, name)
                         def __call__(self, tokens, *pargs, **kwargs):
                             logits = backbone.model(tokens, *pargs, **kwargs)
+                            if stage == 'stage3':
+                                mx.eval(logits); mx.synchronize(); backbone.check_memory()
+                            elif stage == 'stage4':
+                                if tokens.shape[1] == 1:
+                                    mx.eval(logits)
+                                else:
+                                    mx.eval([entry.state for entry in kwargs['cache']])
+                                mx.synchronize(); backbone.check_memory()
                             if tokens.shape[1] == 1:
                                 step = self.single_token_calls
                                 self.single_token_calls += 1
@@ -339,7 +359,7 @@ def run_controls(args):
                             return logits
                     observed_model = ObservedModel()
                     gen = native_class(observed_model, completion_batch_size=width, prefill_batch_size=width,
-                                       prefill_step_size=512, sampler=make_sampler(temp=0.0))
+                                       prefill_step_size=prefill_step_size, sampler=make_sampler(temp=0.0))
                     prompts = [((base['tokens'] if mode == 'full' else [])+suffixes[r['rowId']]) for r in members]
                     prior_tokens = [([] if mode == 'full' else list(base['tokens'])) for _ in members]
                     eos = [[int(t)] for t in backbone.tokenizer.eos_token_ids]
@@ -414,7 +434,9 @@ def run_controls(args):
                         'logprobs': vector_comparison(arrays[reference+'-logprobs'], arrays[candidate+'-logprobs'])}
             for mode in ('fork', 'independent', 'full'):
                 left, right = f'w{width}-{mode}-r0', f'w{width}-{mode}-r1'
-                result['comparisons'][right+'-vs-repeat0'] = {'allRawTokensExactlyEqual': result['arms'][left]['rows'] == result['arms'][right]['rows'],
+                result['comparisons'][right+'-vs-repeat0'] = {'allRawTokensExactlyEqual': all(
+                    result['arms'][left]['rows'][key]['rawSampledTokenIds'] == result['arms'][right]['rows'][key]['rawSampledTokenIds']
+                    for key in result['arms'][left]['rows']),
                     'raw': vector_comparison(arrays[left+'-raw'], arrays[right+'-raw']),
                     'logprobs': vector_comparison(arrays[left+'-logprobs'], arrays[right+'-logprobs'])}
         for width in (2, 3):
@@ -430,11 +452,16 @@ def run_controls(args):
     except BaseException as error:
         result['status'] = 'failed-stopped'
         result['failure'] = {'type': type(error).__name__, 'message': str(error)}
+        for arm in result['arms'].values():
+            if arm['status'] == 'running':
+                arm['status'] = 'failed'
+                arm['failure'] = result['failure']
         if backbone is not None:
             result['memory'] = backbone.runtime_memory()
         persist()
         raise
     finally:
+        result['totalWallMs'] = (time.perf_counter()-process_started)*1000
         persist()
 
 

@@ -86,6 +86,8 @@ def benchmark(args):
     start = time.perf_counter()
     control = json.loads(args.controls.read_text())
     validate_controls(control)
+    if args.prefill_step_size != control.get('nativePrefillStepSize',512):
+        raise ValueError('Comparison must use the actually tested native prefill segmentation')
     if control['sourceSha256'] != digest(Path(__file__).with_name('native_batch_diagnosis.py')):
         raise ValueError('Control source changed since execution')
     array_path = args.controls.parent/'position6-arrays.npz'
@@ -105,7 +107,8 @@ def benchmark(args):
     prior_path = Path('data/ranker/pretrained/full-page-reliability-v1/benchmark.json')
     prior = {row['caseId']: row['arms']['manifest'] for row in json.loads(prior_path.read_text())['records']}
     dump(args.out/'case-plan.json', {'cases': [{k:v for k,v in case.items() if k!='saved'} for case in cases],
-        'widths':[1,2,3,6], 'controlSha256':digest(args.controls), 'nativeReceiptSha256':digest(args.compatibility),
+        'widths':[1,2,3,6], 'nativePrefillStepSize':args.prefill_step_size,
+        'controlSha256':digest(args.controls), 'nativeReceiptSha256':digest(args.compatibility),
         'priorSha256':digest(prior_path), 'decoderSourceSha256':sources,
         'policy':'Strict v1 abort preserved. This separate experiment retains raw mismatches and uses unchanged page validation.',
         'order':'Widths 1/2/3/6; manifest first on even indices, last on odd. Order/warmth bias.'})
@@ -142,7 +145,8 @@ def benchmark(args):
                             raise ValueError('Preserved manifest text no longer reproduces')
                     else:
                         width = 1 if name=='sequential' else int(name[-1])
-                        value = factorized_arm(backbone, heads, case['request'], case['catalog'], case['cards'], width)
+                        value = factorized_arm(backbone, heads, case['request'], case['catalog'], case['cards'], width,
+                                               prefill_step_size=args.prefill_step_size)
                         if value['status'] != 'completed-attempt':
                             abort = name+': '+value.get('error','native failure')
                         elif width > 1:
@@ -176,6 +180,7 @@ def benchmark(args):
     report = {'schemaVersion':1, 'synthetic':True, 'training':False, 'validatorChanges':False,
         'modelRevision':REVISION, 'headCheckpoint':receipt['checkpoints']['heads'],
         'residentLoadMs':load_ms, 'totalWallMs':(time.perf_counter()-start)*1000,
+        'nativePrefillStepSize':args.prefill_step_size,
         'controlSha256':digest(args.controls), 'compatibility':gate, 'records':records,
         'summary':summary(records,12), 'abort':abort, 'memory':backbone.runtime_memory(),
         'limitations':['Inspected synthetic cases; one attempt per case/arm; no conversion/generalization evidence.',
@@ -184,7 +189,7 @@ def benchmark(args):
             'Matched fork/rebuild parity plus fresh-full sensitivity exclude prefix reuse as a necessary cause; a shared native merge/kernel issue is not universally ruled out.',
             'Unchanged validator measures lexical factuality, novelty and completion, not full coherence, identity preservation or all prompt constraints.',
             'Invalid attempts are never usable-page speedups; failed/unattempted cases remain in twelve-case denominators.',
-            'No prompt, budget, precision, sampler, runtime or memory-limit changes. Section grouping is deterministic.']}
+            'Native prefill segmentation is explicitly changed and recorded; prompts, output budgets, precision, sampler, runtime and memory guard stay fixed. Section grouping is deterministic.']}
     dump(args.out/'benchmark.json', report)
     report['evidence'] = {str(path):digest(path) for path in (args.out/'benchmark.json',args.out/'case-plan.json',args.controls,array_path)}
     dump(REPORT, report)
@@ -201,6 +206,7 @@ def main():
     parser.add_argument('--compatibility',type=Path,default=Path('data/ranker/pretrained/parallel-decode-v1/native-compatibility.json'))
     parser.add_argument('--controls',type=Path,default=Path('data/ranker/pretrained/native-batch-diagnosis-v2/probe.json'))
     parser.add_argument('--out',type=Path,default=OUT)
+    parser.add_argument('--prefill-step-size',type=int,choices=(256,512),default=512)
     args = parser.parse_args()
     expected = Path('.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots')/REVISION
     if args.model.resolve() != expected.resolve():

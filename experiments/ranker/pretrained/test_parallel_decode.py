@@ -130,8 +130,9 @@ class ParallelDecodeTests(unittest.TestCase):
         rows = [{"key": f"r{i}", "rowId": f"r{i}", "fields": [f"T{i}"], "kind": "title",
                  "messages": [{"role": "user", "content": suffix}], "maxTokens": budget}
                 for i, (suffix, budget) in enumerate(zip(("4", "6 7 8", "9 10", "11 12 13 14"), (1, 4, 2, 3)))]
-        serial_rows, _ = decode_rows(tiny, base, rows, 1)
-        batch_rows, statistics = decode_rows(tiny, base, rows, 2)
+        serial_rows, _ = decode_rows(tiny, base, rows, 1, prefill_step_size=2)
+        batch_rows, statistics = decode_rows(tiny, base, rows, 2, prefill_step_size=2)
+        self.assertEqual(statistics['nativePrefillStepSize'], 2)
         self.assertEqual([r["tokenIds"] for r in serial_rows], [r["tokenIds"] for r in batch_rows])
         self.assertEqual([r["finishReason"] for r in serial_rows], [r["finishReason"] for r in batch_rows])
         for field in ("rawSampledTokenIds", "stopTokenId", "arSteps"):

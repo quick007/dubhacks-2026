@@ -119,17 +119,19 @@ def clone_prefix_state(backbone, state):
     return fork_complete_state(state, materialize)
 
 
-def decode_rows(backbone, state, rows, width):
+def decode_rows(backbone, state, rows, width, prefill_step_size=512):
     from mlx_lm.generate import BatchGenerator, StopSequences
     from mlx_lm.sample_utils import make_sampler
     if width not in (1, 2, 3, 6):
         raise ValueError("Only fixed sequential/2/3/6 batch widths allowed")
+    if not isinstance(prefill_step_size, int) or prefill_step_size < 1:
+        raise ValueError('Positive native prefill step size required')
     mx = backbone.mx
     output, active, pending = {}, {}, list(enumerate(rows))
     fork_ms, suffix_ms, native_ms, rounds, max_live = 0., 0., 0., 0, 0
     admissions, finish_order = [], []
     gen = BatchGenerator(backbone.model, completion_batch_size=width, prefill_batch_size=width,
-                         prefill_step_size=512, sampler=make_sampler(temp=0.0))
+                         prefill_step_size=prefill_step_size, sampler=make_sampler(temp=0.0))
     wall_start = time.perf_counter()
     def admit():
         nonlocal fork_ms, suffix_ms
@@ -192,6 +194,7 @@ def decode_rows(backbone, state, rows, width):
         for record in results:
             record["text"] = backbone.tokenizer.decode(record["tokenIds"])
         return results, {"cacheForkMaterializeMs": fork_ms, "suffixBoundaryPreparationMs": suffix_ms,
+            "nativePrefillStepSize": prefill_step_size,
             "nativeSuffixPrefillAndDecodeMs": native_ms, "continuousDecodeWallMs": (time.perf_counter()-wall_start)*1000,
             "nativeDecodeRounds": rounds, "maximumRowsEmittingTogether": max_live,
             "rowArSteps": sum(r["arSteps"] for r in results), "admissions": admissions, "finishOrder": finish_order,
@@ -221,7 +224,7 @@ def assemble(rows, plan, request, catalog):
     return {"rawText": raw, "pagePlan": completed, "quality": quality, "audit": audit}
 
 
-def factorized_arm(backbone, heads, request, catalog, count, width):
+def factorized_arm(backbone, heads, request, catalog, count, width, prefill_step_size=512):
     """Full request timing begins BEFORE common ranker prefill in every arm."""
     import torch
     from .fusion import encode_shared_prefix, observable_request
@@ -239,7 +242,7 @@ def factorized_arm(backbone, heads, request, catalog, count, width):
         structured_ms = (time.perf_counter()-started)*1000
         rows = field_rows(plan, public, catalog)
         del embeddings
-        outputs, timing = decode_rows(backbone, state, rows, width)
+        outputs, timing = decode_rows(backbone, state, rows, width, prefill_step_size=prefill_step_size)
         assembly_start = time.perf_counter()
         result = assemble(outputs, plan, public, catalog)
         assembly_ms = (time.perf_counter()-assembly_start)*1000
