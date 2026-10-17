@@ -2,6 +2,8 @@
 
 A local DubHacks scaffold for testing a demo storefront with synthetic shopper personas. Baseline and structured variants share a fixed experiment, disjoint development/held-out personas, and a recorded seed. Everything runs without API keys.
 
+See [VISION.md](VISION.md) for the product direction, demo workflow, evaluation methodology, and team workstreams.
+
 **All results are synthetic.** Mock scores are deterministic rule outputs. Browser runs exercise a fake local checkout. Neither demonstrates human behavior or proven conversion lift.
 
 ## Run locally
