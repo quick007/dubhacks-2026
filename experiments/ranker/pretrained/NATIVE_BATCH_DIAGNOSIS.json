@@ -3417,5 +3417,4966 @@
       "mlxCacheBytes": 0,
       "processBudgetBytes": 6442450944
     }
+  },
+  "stage3": {
+    "schemaVersion": 3,
+    "stage": "stage3",
+    "nativePrefillStepSize": 256,
+    "synthetic": true,
+    "recordedAtUtc": "2026-10-17T22:34:36.342521+00:00",
+    "status": "failed-stopped",
+    "runtime": {
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2"
+    },
+    "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "caseId": "evidence-r-e1f73b869dc810bc15",
+    "memoryLimitBytes": 6442450944,
+    "scope": "One model process, widths 1/2/3, fork/independent-prefix/fresh-full, each repeated once; seven greedy responses per row; no forcing.",
+    "priorReportSha256": "a0b33a7c7b513b55d30e401d765c2285bf87426114f80e0b83d1686d0adc36c6",
+    "sourceSha256": "cf5eb2a4e9cb7958d2bc9013098e957b765e840136007e21e4b781e4cfa12548",
+    "arms": {
+      "w1-fork-r0": {
+        "width": 1,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 50.52916693966836,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1267.2783329617232,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 5721206460,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-independent-r0": {
+        "width": 1,
+        "mode": "independent",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 1352.8224169276655,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2339.1098749125376,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-full-r0": {
+        "width": 1,
+        "mode": "full",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false
+        ],
+        "branchPreparationMs": 0.1336249988526106,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.9375,
+                  "logprob": -1.4375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.3125,
+                  "logprob": -3.0625
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2530.39545903448,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-fork-r1": {
+        "width": 1,
+        "mode": "fork",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 51.217125030234456,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 987.7025840105489,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-independent-r1": {
+        "width": 1,
+        "mode": "independent",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 1357.2901249863207,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2343.8034580321983,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-full-r1": {
+        "width": 1,
+        "mode": "full",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false
+        ],
+        "branchPreparationMs": 0.12929190415889025,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.9375,
+                  "logprob": -1.4375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.3125,
+                  "logprob": -3.0625
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2488.1682079285383,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-fork-r0": {
+        "width": 2,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 106.11299995798618,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1453.6466670688242,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6230504192,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-independent-r0": {
+        "width": 2,
+        "mode": "independent",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 2784.7297500120476,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4260.2862500352785,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-full-r0": {
+        "width": 2,
+        "mode": "full",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.21904101595282555,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 15.0,
+                  "logprob": -1.375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 13.0,
+                  "logprob": -3.375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4573.377332999371,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-fork-r1": {
+        "width": 2,
+        "mode": "fork",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 106.85270803514868,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1534.3881250591949,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-independent-r1": {
+        "width": 2,
+        "mode": "independent",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 2740.3082909295335,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4225.312041002326,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-full-r1": {
+        "width": 2,
+        "mode": "full",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.21774997003376484,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 15.0,
+                  "logprob": -1.375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 13.0,
+                  "logprob": -3.375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4584.799292031676,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-fork-r0": {
+        "width": 3,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "running",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true,
+          true
+        ],
+        "branchPreparationMs": 164.4667920190841
+      }
+    },
+    "comparisons": {},
+    "limitations": [
+      "Static initial widths: width 2 is title/badge, whereas the original width-2 badge was admitted late.",
+      "Independent prefix prefill uses identical single-988-token backbone segmentation to the pristine source; fresh-full uses native 256-token prefill and therefore changes segmentation.",
+      "Distribution comparisons require exact earlier sampled context, not merely a shared prompt hash.",
+      "Raw-logit observation and extra normalization are measurement-only; no model/sampler/precision or validator changes.",
+      "No semantic-quality, usable-page speed or general cache-correctness conclusion follows from one synthetic case."
+    ],
+    "prefixSha256": "39d1ba9213dcc8f9289ddf62d68247a62d1dad2409bcd4d9939544204fbd7add",
+    "prefixTokens": 988,
+    "prefixTiming": {
+      "tokenizeMs": 39.634416927583516,
+      "forwardMs": 1384.1757499612868,
+      "batchRows": 1,
+      "candidateReadouts": 8,
+      "prefixTokens": 988,
+      "truncatedRows": 0,
+      "backboneForwardCalls": 1,
+      "representation": "shared-prefix-v1"
+    },
+    "pristineBaseHash": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+    "rowPrompts": [
+      {
+        "rowId": "heading-1",
+        "suffixTokens": 189,
+        "promptSha256": "fb74ef10bab789b561eb492de53e38264362e5ca635de555a961a1fb9a96625a"
+      },
+      {
+        "rowId": "title-1",
+        "suffixTokens": 270,
+        "promptSha256": "56bc90377016d0b88c253028ca5caef024593f65d1ba583001811666b76c56db"
+      },
+      {
+        "rowId": "badge-1",
+        "suffixTokens": 270,
+        "promptSha256": "bf6a8b21a845c4607306004c5aa72c8d0ca87febc89721bdc4a35bb223bf7a80"
+      }
+    ],
+    "arraysSha256": "11c619397e531656ba944d42226cfa1a9743943b35ec0356b5a12c6b4f378535",
+    "failure": {
+      "type": "MemoryError",
+      "message": "Observed peak 6563560644 exceeds fixed 6442450944-byte experiment guard"
+    },
+    "memory": {
+      "mlxActiveBytes": 6083492236,
+      "mlxPeakBytes": 6563560644,
+      "mlxCacheBytes": 0,
+      "processBudgetBytes": 6442450944
+    },
+    "totalWallMs": 38901.099291979335
+  },
+  "stage4": {
+    "schemaVersion": 4,
+    "stage": "stage4",
+    "nativePrefillStepSize": 256,
+    "synthetic": true,
+    "recordedAtUtc": "2026-10-17T22:36:10.490486+00:00",
+    "prefillObservation": "materialize native cache state only; preserve unused lazy logits",
+    "status": "failed-stopped",
+    "runtime": {
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2"
+    },
+    "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "caseId": "evidence-r-e1f73b869dc810bc15",
+    "memoryLimitBytes": 6442450944,
+    "scope": "One model process, widths 1/2/3, fork/independent-prefix/fresh-full, each repeated once; seven greedy responses per row; no forcing.",
+    "priorReportSha256": "e2120af35f03fa5403f252c46d4299d12d4e8e1a60274580fd31794152e42daf",
+    "sourceSha256": "1ce6f9c34998460e8904764aa5cbd8f1565e70c6bd941459d572bb1abb3db4ef",
+    "arms": {
+      "w1-fork-r0": {
+        "width": 1,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 54.15395798627287,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1109.5488329883665,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 5539748040,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-independent-r0": {
+        "width": 1,
+        "mode": "independent",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 1352.9657500330359,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2313.8868750538677,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-full-r0": {
+        "width": 1,
+        "mode": "full",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false
+        ],
+        "branchPreparationMs": 0.12999994214624166,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.9375,
+                  "logprob": -1.4375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.3125,
+                  "logprob": -3.0625
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2175.94583297614,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-fork-r1": {
+        "width": 1,
+        "mode": "fork",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 52.09662497509271,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 902.0326250465587,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-independent-r1": {
+        "width": 1,
+        "mode": "independent",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 1331.8520840257406,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2208.211375051178,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-full-r1": {
+        "width": 1,
+        "mode": "full",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false
+        ],
+        "branchPreparationMs": 0.12800004333257675,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.9375,
+                  "logprob": -1.4375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.3125,
+                  "logprob": -3.0625
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2179.4791250722483,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-fork-r0": {
+        "width": 2,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 105.71270796936005,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1309.2347079655156,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-independent-r0": {
+        "width": 2,
+        "mode": "independent",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 2678.4398331074044,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 3908.1092081032693,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-full-r0": {
+        "width": 2,
+        "mode": "full",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.21733308676630259,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 15.0,
+                  "logprob": -1.375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 13.0,
+                  "logprob": -3.375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 3845.96595808398,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-fork-r1": {
+        "width": 2,
+        "mode": "fork",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 104.69429101794958,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1341.2325830431655,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-independent-r1": {
+        "width": 2,
+        "mode": "independent",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 2683.524874970317,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 3911.3009579014033,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-full-r1": {
+        "width": 2,
+        "mode": "full",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.21316600032150745,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 15.0,
+                  "logprob": -1.375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 13.0,
+                  "logprob": -3.375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 3856.3988329842687,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-fork-r0": {
+        "width": 3,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "failed",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true,
+          true
+        ],
+        "branchPreparationMs": 163.43754203990102,
+        "failure": {
+          "type": "AssertionError",
+          "message": "Observed raw logits do not reconstruct this Response.logprobs exactly"
+        }
+      }
+    },
+    "comparisons": {},
+    "limitations": [
+      "Static initial widths: width 2 is title/badge, whereas the original width-2 badge was admitted late.",
+      "Independent prefix prefill uses identical single-988-token backbone segmentation to the pristine source; fresh-full uses native 256-token prefill and therefore changes segmentation.",
+      "Distribution comparisons require exact earlier sampled context, not merely a shared prompt hash.",
+      "Raw-logit observation and extra normalization are measurement-only; no model/sampler/precision or validator changes.",
+      "No semantic-quality, usable-page speed or general cache-correctness conclusion follows from one synthetic case."
+    ],
+    "prefixSha256": "39d1ba9213dcc8f9289ddf62d68247a62d1dad2409bcd4d9939544204fbd7add",
+    "prefixTokens": 988,
+    "prefixTiming": {
+      "tokenizeMs": 26.580250007100403,
+      "forwardMs": 1375.9662080556154,
+      "batchRows": 1,
+      "candidateReadouts": 8,
+      "prefixTokens": 988,
+      "truncatedRows": 0,
+      "backboneForwardCalls": 1,
+      "representation": "shared-prefix-v1"
+    },
+    "pristineBaseHash": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+    "rowPrompts": [
+      {
+        "rowId": "heading-1",
+        "suffixTokens": 189,
+        "promptSha256": "fb74ef10bab789b561eb492de53e38264362e5ca635de555a961a1fb9a96625a"
+      },
+      {
+        "rowId": "title-1",
+        "suffixTokens": 270,
+        "promptSha256": "56bc90377016d0b88c253028ca5caef024593f65d1ba583001811666b76c56db"
+      },
+      {
+        "rowId": "badge-1",
+        "suffixTokens": 270,
+        "promptSha256": "bf6a8b21a845c4607306004c5aa72c8d0ca87febc89721bdc4a35bb223bf7a80"
+      }
+    ],
+    "arraysSha256": "bd2582e8bbdaa57b59eff88e3eda51046c114332e51bacd50d2cb63719cf9dc5",
+    "failure": {
+      "type": "AssertionError",
+      "message": "Observed raw logits do not reconstruct this Response.logprobs exactly"
+    },
+    "memory": {
+      "mlxActiveBytes": 5326776844,
+      "mlxPeakBytes": 6279572052,
+      "mlxCacheBytes": 0,
+      "processBudgetBytes": 6442450944
+    },
+    "totalWallMs": 35506.193583016284
+  },
+  "stage5": {
+    "schemaVersion": 5,
+    "stage": "stage5",
+    "nativePrefillStepSize": 256,
+    "synthetic": true,
+    "recordedAtUtc": "2026-10-17T22:38:11.299945+00:00",
+    "prefillObservation": "materialize native cache state only; preserve unused lazy logits",
+    "rawObservationIndexing": "per-native-UID autoregressive forward position",
+    "status": "completed",
+    "runtime": {
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2"
+    },
+    "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "caseId": "evidence-r-e1f73b869dc810bc15",
+    "memoryLimitBytes": 6442450944,
+    "scope": "One model process, widths 1/2/3, fork/independent-prefix/fresh-full, each repeated once; seven greedy responses per row; no forcing.",
+    "priorReportSha256": "b5e504b15eb6aacbc764d682523b41cc71af700950524f57da3213d5ce4f2272",
+    "sourceSha256": "0e010754c957d7c8677a3463679fbe1eb098eff65dcb4117ed24fcebe78afca4",
+    "arms": {
+      "w1-fork-r0": {
+        "width": 1,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 49.3129170499742,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1136.019584024325,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 5539748040,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-independent-r0": {
+        "width": 1,
+        "mode": "independent",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 1374.5158750098199,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2295.255459030159,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-full-r0": {
+        "width": 1,
+        "mode": "full",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false
+        ],
+        "branchPreparationMs": 0.12854195665568113,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.9375,
+                  "logprob": -1.4375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.3125,
+                  "logprob": -3.0625
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2230.988207971677,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-fork-r1": {
+        "width": 1,
+        "mode": "fork",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 51.70433304738253,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 931.4491669647396,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-independent-r1": {
+        "width": 1,
+        "mode": "independent",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true
+        ],
+        "branchPreparationMs": 1364.0460830647498,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.6875,
+                  "logprob": -1.6875
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2316.401250078343,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w1-full-r1": {
+        "width": 1,
+        "mode": "full",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false
+        ],
+        "branchPreparationMs": 0.13020902406424284,
+        "rows": {
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 1,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.9375,
+                  "logprob": -1.4375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.4375,
+                  "logprob": -1.9375
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.3125,
+                  "logprob": -3.0625
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2242.006125045009,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-fork-r0": {
+        "width": 2,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 107.26779198739678,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1340.5135419452563,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6194506324,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-independent-r0": {
+        "width": 2,
+        "mode": "independent",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 2751.3660410186276,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4016.206125030294,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-full-r0": {
+        "width": 2,
+        "mode": "full",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.2221670001745224,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 15.0,
+                  "logprob": -1.375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 13.0,
+                  "logprob": -3.375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4032.917125034146,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-fork-r1": {
+        "width": 2,
+        "mode": "fork",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 110.4573750635609,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1354.2554590385407,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-independent-r1": {
+        "width": 2,
+        "mode": "independent",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true
+        ],
+        "branchPreparationMs": 2809.4672500155866,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.875,
+                  "logprob": -1.5
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.1875,
+                  "logprob": -3.1875
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.125,
+              "meadowMinusBRaw": 0.125,
+              "meadowMinusBLogprob": 0.125
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4083.27529206872,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w2-full-r1": {
+        "width": 2,
+        "mode": "full",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.21854194346815348,
+        "rows": {
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 2,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 15.0,
+                  "logprob": -1.375
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 13.0,
+                  "logprob": -3.375
+                }
+              ],
+              "rawTopTwoMargin": 0.1875,
+              "meadowMinusBRaw": 0.1875,
+              "meadowMinusBLogprob": 0.1875
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 4095.916250022128,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-fork-r0": {
+        "width": 3,
+        "mode": "fork",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true,
+          true
+        ],
+        "branchPreparationMs": 163.82762498687953,
+        "rows": {
+          "heading-1": {
+            "rawSampledTokenIds": [
+              50,
+              16,
+              25,
+              264,
+              32036,
+              82,
+              5576
+            ],
+            "finishReason": "length"
+          },
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 3,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.0625,
+              "meadowMinusBRaw": 0.0625,
+              "meadowMinusBLogprob": 0.0625
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 1965.8932919846848,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6279572052,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-independent-r0": {
+        "width": 3,
+        "mode": "independent",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true,
+          true
+        ],
+        "branchPreparationMs": 4318.015625001863,
+        "rows": {
+          "heading-1": {
+            "rawSampledTokenIds": [
+              50,
+              16,
+              25,
+              264,
+              32036,
+              82,
+              5576
+            ],
+            "finishReason": "length"
+          },
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 3,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.0625,
+              "meadowMinusBRaw": 0.0625,
+              "meadowMinusBLogprob": 0.0625
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 6404.394375043921,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6364654164,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-full-r0": {
+        "width": 3,
+        "mode": "full",
+        "repeat": 0,
+        "status": "completed",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.31995901372283697,
+        "rows": {
+          "heading-1": {
+            "rawSampledTokenIds": [
+              50,
+              16,
+              25,
+              264,
+              32036,
+              82,
+              5576
+            ],
+            "finishReason": "length"
+          },
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              417
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 417,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 3,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.0,
+              "meadowMinusBRaw": 0.0,
+              "meadowMinusBLogprob": 0.0
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 5846.698667039163,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6364654164,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-fork-r1": {
+        "width": 3,
+        "mode": "fork",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true,
+          true
+        ],
+        "branchPreparationMs": 189.21166600193828,
+        "rows": {
+          "heading-1": {
+            "rawSampledTokenIds": [
+              50,
+              16,
+              25,
+              264,
+              32036,
+              82,
+              5576
+            ],
+            "finishReason": "length"
+          },
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 3,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.0625,
+              "meadowMinusBRaw": 0.0625,
+              "meadowMinusBLogprob": 0.0625
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 2056.0285829706118,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6364654164,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-independent-r1": {
+        "width": 3,
+        "mode": "independent",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+          "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520"
+        ],
+        "branchMatchesPristine": [
+          true,
+          true,
+          true
+        ],
+        "branchPreparationMs": 4237.543416908011,
+        "rows": {
+          "heading-1": {
+            "rawSampledTokenIds": [
+              50,
+              16,
+              25,
+              264,
+              32036,
+              82,
+              5576
+            ],
+            "finishReason": "length"
+          },
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              85688
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 85688,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 3,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.75,
+                  "logprob": -1.625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.0625,
+              "meadowMinusBRaw": 0.0625,
+              "meadowMinusBLogprob": 0.0625
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 6105.210207984783,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6364654164,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      },
+      "w3-full-r1": {
+        "width": 3,
+        "mode": "full",
+        "repeat": 1,
+        "status": "completed",
+        "rowIds": [
+          "heading-1",
+          "title-1",
+          "badge-1"
+        ],
+        "baseBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "branchHashesBeforeNativeMerge": [
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f",
+          "fbd11e591e6ff2fe02dbb8ae41d681a4b830638a31bda5bf6fd5fc649feaef0f"
+        ],
+        "branchMatchesPristine": [
+          false,
+          false,
+          false
+        ],
+        "branchPreparationMs": 0.31154206953942776,
+        "rows": {
+          "heading-1": {
+            "rawSampledTokenIds": [
+              50,
+              16,
+              25,
+              264,
+              32036,
+              82,
+              5576
+            ],
+            "finishReason": "length"
+          },
+          "title-1": {
+            "rawSampledTokenIds": [
+              51,
+              16,
+              25,
+              85688,
+              220,
+              16,
+              22
+            ],
+            "finishReason": "length"
+          },
+          "badge-1": {
+            "rawSampledTokenIds": [
+              33,
+              16,
+              25,
+              417,
+              16,
+              25,
+              417
+            ],
+            "finishReason": "length",
+            "probe": {
+              "sampledTokenId": 417,
+              "rawDtype": "mlx.core.bfloat16",
+              "forwardStepZeroBased": 6,
+              "responseIndexZeroBased": 6,
+              "actualActiveWidth": 3,
+              "alignment": {
+                "exact": true,
+                "finiteComparedCount": 248320,
+                "maxAbsoluteDifference": 0.0,
+                "meanAbsoluteDifference": 0.0,
+                "leftNonfiniteCount": 0,
+                "rightNonfiniteCount": 0
+              },
+              "topRaw": [
+                {
+                  "tokenId": 85688,
+                  "text": " Meadow",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 417,
+                  "text": " B",
+                  "rawLogit": 14.8125,
+                  "logprob": -1.5625
+                },
+                {
+                  "tokenId": 2919,
+                  "text": " water",
+                  "rawLogit": 14.5,
+                  "logprob": -1.875
+                },
+                {
+                  "tokenId": 2168,
+                  "text": " None",
+                  "rawLogit": 13.125,
+                  "logprob": -3.25
+                },
+                {
+                  "tokenId": 220,
+                  "text": " ",
+                  "rawLogit": 12.9375,
+                  "logprob": -3.4375
+                }
+              ],
+              "rawTopTwoMargin": 0.0,
+              "meadowMinusBRaw": 0.0,
+              "meadowMinusBLogprob": 0.0
+            }
+          }
+        },
+        "baseAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+        "diagnosticWallMs": 5957.264375058003,
+        "memory": {
+          "mlxActiveBytes": 5123123724,
+          "mlxPeakBytes": 6364654164,
+          "mlxCacheBytes": 4292608,
+          "processBudgetBytes": 6442450944
+        }
+      }
+    },
+    "comparisons": {
+      "w1-independent-r0-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w1-full-r0-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.4375,
+          "meanAbsoluteDifference": 0.040820151567459106,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.4375,
+          "meanAbsoluteDifference": 0.040925268083810806,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w1-independent-r1-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w1-full-r1-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.4375,
+          "meanAbsoluteDifference": 0.040820151567459106,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.4375,
+          "meanAbsoluteDifference": 0.040925268083810806,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w1-fork-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w1-independent-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w1-full-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-independent-r0-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-full-r0-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.28125,
+          "meanAbsoluteDifference": 0.03738243877887726,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.3125,
+          "meanAbsoluteDifference": 0.03751208260655403,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-independent-r1-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-full-r1-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.28125,
+          "meanAbsoluteDifference": 0.03738243877887726,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.3125,
+          "meanAbsoluteDifference": 0.03751208260655403,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-fork-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-independent-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-full-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-independent-r0-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-full-r0-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.125,
+          "meanAbsoluteDifference": 0.01860012672841549,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.125,
+          "meanAbsoluteDifference": 0.018540341407060623,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-independent-r1-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-full-r1-vs-fork": {
+        "sameEarlierContextAllRows": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.125,
+          "meanAbsoluteDifference": 0.01860012672841549,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.125,
+          "meanAbsoluteDifference": 0.018540341407060623,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-fork-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-independent-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-full-r1-vs-repeat0": {
+        "allRawTokensExactlyEqual": true,
+        "raw": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": true,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.0,
+          "meanAbsoluteDifference": 0.0,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-fork-r0-vs-width1": {
+        "sameEarlierBadgeContext": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.20703125,
+          "meanAbsoluteDifference": 0.030153337866067886,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.25,
+          "meanAbsoluteDifference": 0.030082404613494873,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-independent-r0-vs-width1": {
+        "sameEarlierBadgeContext": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.20703125,
+          "meanAbsoluteDifference": 0.030153337866067886,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.25,
+          "meanAbsoluteDifference": 0.030082404613494873,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w2-full-r0-vs-width1": {
+        "sameEarlierBadgeContext": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.4375,
+          "meanAbsoluteDifference": 0.04250917583703995,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.4375,
+          "meanAbsoluteDifference": 0.04242207482457161,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-fork-r0-vs-width1": {
+        "sameEarlierBadgeContext": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.1953125,
+          "meanAbsoluteDifference": 0.03309158608317375,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.25,
+          "meanAbsoluteDifference": 0.03309565410017967,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-independent-r0-vs-width1": {
+        "sameEarlierBadgeContext": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.1953125,
+          "meanAbsoluteDifference": 0.03309158608317375,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.25,
+          "meanAbsoluteDifference": 0.03309565410017967,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      },
+      "w3-full-r0-vs-width1": {
+        "sameEarlierBadgeContext": true,
+        "raw": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.28125,
+          "meanAbsoluteDifference": 0.046109944581985474,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        },
+        "logprobs": {
+          "exact": false,
+          "finiteComparedCount": 248320,
+          "maxAbsoluteDifference": 0.3125,
+          "meanAbsoluteDifference": 0.04617102071642876,
+          "leftNonfiniteCount": 0,
+          "rightNonfiniteCount": 0
+        }
+      }
+    },
+    "limitations": [
+      "Static initial widths: width 2 is title/badge, whereas the original width-2 badge was admitted late.",
+      "Independent prefix prefill uses identical single-988-token backbone segmentation to the pristine source; fresh-full uses native 256-token prefill and therefore changes segmentation.",
+      "Distribution comparisons require exact earlier sampled context, not merely a shared prompt hash.",
+      "Raw-logit observation and extra normalization are measurement-only; no model/sampler/precision or validator changes.",
+      "No semantic-quality, usable-page speed or general cache-correctness conclusion follows from one synthetic case."
+    ],
+    "prefixSha256": "39d1ba9213dcc8f9289ddf62d68247a62d1dad2409bcd4d9939544204fbd7add",
+    "prefixTokens": 988,
+    "prefixTiming": {
+      "tokenizeMs": 25.22758289705962,
+      "forwardMs": 1384.4627500511706,
+      "batchRows": 1,
+      "candidateReadouts": 8,
+      "prefixTokens": 988,
+      "truncatedRows": 0,
+      "backboneForwardCalls": 1,
+      "representation": "shared-prefix-v1"
+    },
+    "pristineBaseHash": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+    "rowPrompts": [
+      {
+        "rowId": "heading-1",
+        "suffixTokens": 189,
+        "promptSha256": "fb74ef10bab789b561eb492de53e38264362e5ca635de555a961a1fb9a96625a"
+      },
+      {
+        "rowId": "title-1",
+        "suffixTokens": 270,
+        "promptSha256": "56bc90377016d0b88c253028ca5caef024593f65d1ba583001811666b76c56db"
+      },
+      {
+        "rowId": "badge-1",
+        "suffixTokens": 270,
+        "promptSha256": "bf6a8b21a845c4607306004c5aa72c8d0ca87febc89721bdc4a35bb223bf7a80"
+      }
+    ],
+    "arraysSha256": "fee4dfe4386028b9d9d0943c70583bb07c63228ce812863bb0f847da11799514",
+    "memory": {
+      "mlxActiveBytes": 5123123724,
+      "mlxPeakBytes": 6364654164,
+      "mlxCacheBytes": 0,
+      "processBudgetBytes": 6442450944
+    },
+    "totalWallMs": 64026.095125009306
   }
 }
