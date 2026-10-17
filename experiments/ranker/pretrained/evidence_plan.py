@@ -184,7 +184,7 @@ def validate_generated(raw,finish,plan,request,catalog):
         match=re.fullmatch(r'(S\d+|T\d+|B\d+): (.+)',line.strip())
         if match and match[1] not in parsed:parsed[match[1]]=match[2].strip()
         else:rejections.append('unexpected-or-duplicate-output-line')
-    global_ok=finish=='stop' and not re.search(r'[<>`{}\[\]]|https?://|www\.|\*|__',raw,re.I)
+    global_ok=finish=='stop' and not any(ord(c)<32 and c not in '\n\r\t' or ord(c)==127 for c in raw) and not re.search(r'[<>`{}\[\]]|https?://|www\.|\*|__',raw,re.I)
     if not global_ok:rejections.append('unfinished-or-markup-output')
     cards=[c for s in result['sections'] for c in s['products']]
     def accept(text,product,minimum=5):
@@ -203,7 +203,7 @@ def validate_generated(raw,finish,plan,request,catalog):
         mention=lambda text:any(re.search(r'\b'+re.escape(_normalized(tag))+r'\b',_normalized(text or '')) for tag in support)
         ok=accept(title,product) and _normalized(title) not in approved and (not support or mention(title))
         card['title']={'text':title if ok else None,'source':'generated' if ok else 'rejected'}
-        alignment.append(bool(ok and (not support or mention(title))))
+        if support:alignment.append(bool(ok and mention(title)))
         if not ok:rejections.append(f'T{i}:unsupported-missing-nonnovel-or-unresponsive-title')
         if not support:
             badge_none_checks.append(badge=='NONE' and global_ok)
@@ -224,6 +224,7 @@ def validate_generated(raw,finish,plan,request,catalog):
         'generatedBadgeCount':sum(c['badge']['source']=='generated' for c in cards),
         'generatedHeadingCount':sum(s['heading']['source']=='generated' for s in result['sections']),
         'titleObservedAlignmentRate':sum(alignment)/len(alignment) if alignment else None,
+        'titleObservedAlignmentEvaluatedCards':len(alignment),
         'correctNone':all(badge_none_checks) if badge_none_checks else None}
 
 

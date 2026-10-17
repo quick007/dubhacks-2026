@@ -1,0 +1,565 @@
+{
+  "synthetic": true,
+  "recordedAtUtc": "2026-10-17T21:16:50.661732+00:00",
+  "config": {
+    "seed": 728,
+    "routerSeed": 37,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "productLoss": "per-request best-product cross entropy on mean variant logits",
+    "presentationLoss": "within-product CE on compatible, informative nonzero variant targets",
+    "routingLoss": "all training records; inverse class frequency CE",
+    "headRepresentation": "unchanged shared-prefix-v1 readouts",
+    "decoder": "same frozen backbone, greedy, one single-use cache per arm",
+    "budgets": {
+      "1": 64,
+      "3": 128,
+      "6": 224
+    },
+    "maxPrefixTokens": 1536,
+    "memoryGiB": 6,
+    "tuning": "one fixed attempt, no validation/test hyperparameter selection"
+  },
+  "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "training": {
+    "synthetic": true,
+    "config": {
+      "seed": 728,
+      "routerSeed": 37,
+      "epochs": 80,
+      "learningRate": 0.03,
+      "weightDecay": 0.001,
+      "productLoss": "per-request best-product cross entropy on mean variant logits",
+      "presentationLoss": "within-product CE on compatible, informative nonzero variant targets",
+      "routingLoss": "all training records; inverse class frequency CE",
+      "headRepresentation": "unchanged shared-prefix-v1 readouts",
+      "decoder": "same frozen backbone, greedy, one single-use cache per arm",
+      "budgets": {
+        "1": 64,
+        "3": 128,
+        "6": 224
+      },
+      "maxPrefixTokens": 1536,
+      "memoryGiB": 6,
+      "tuning": "one fixed attempt, no validation/test hyperparameter selection"
+    },
+    "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "records": 24,
+    "rows": 192,
+    "headUpdate": {
+      "lossBefore": 2.079941749572754,
+      "lossAfter": 0.16337299346923828,
+      "firstGradientL2": 0.0820601446488482,
+      "parameterAbsoluteChange": 8317.600655943155,
+      "seconds": 0.23515829199459404,
+      "epochs": 80
+    },
+    "routerUpdate": {
+      "lossBefore": 1.0984172821044922,
+      "lossAfter": 0.2229238897562027,
+      "firstGradientL2": 0.05919066173972308,
+      "parameterAbsoluteChange": 7056.654579401016,
+      "seconds": 0.014245750033296645,
+      "epochs": 80,
+      "classCounts": {
+        "NONE": 96,
+        "SELECT": 72,
+        "GENERATE": 24
+      },
+      "classWeights": {
+        "NONE": 0.6666666865348816,
+        "SELECT": 0.8888888955116272,
+        "GENERATE": 2.6666667461395264
+      },
+      "trainAccuracy": 0.9583333134651184
+    },
+    "checkpoints": {
+      "heads": {
+        "sha256": "0eddd1393e3ad03699820f0dd8d1b5189ac7e0733581725eabb831a0e142ccb2",
+        "exactPredictionReload": true
+      },
+      "router": {
+        "sha256": "97a0877dd68d45fa6271246af97bd348812358aa9054b2319f4e19286544ab2a",
+        "exactPredictionReload": true
+      }
+    },
+    "inputs": {
+      "data/ranker/datasets/v2/manifest.json": "131841119b3037f170b4b88fc666053555ddb5107c578115eb642bd5a8405977",
+      "data/ranker/datasets/v2/public/train.jsonl": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+      "data/ranker/datasets/v2/labels/train.jsonl": "63401d6e306e9f5fa3b14588f758979ff5f5d99be6354826e61432603751a726",
+      "data/ranker/pretrained/shared-prefix/training-embeddings.pt": "d0eeae024dc06c0c7aa7bbb2262d164b5f75a64bd79174d2990bcd90c3ff2a38"
+    },
+    "limitations": [
+      "Joint replay, changed objective and weighting are bundled in this one corrective increment; no causal ablation attribution.",
+      "24 synthetic requests do not establish generalization. Decoder and evidence projection are not trained."
+    ]
+  },
+  "quality": {
+    "baseline": {
+      "ndcgAt3": 0.8742627526791855,
+      "topBestRelevant": 0.6666666666666666,
+      "relevanceRegret": 0.75,
+      "knownConstraintViolation": 0.0,
+      "privateConstraintViolation": 0.08333333333333333,
+      "presentationScore": 1.0833333333333333,
+      "presentationRegretWithinSelectedProduct": 1.0,
+      "presentationBestWithinSelectedProduct": 0.4166666666666667,
+      "presentationIncompatible": 0.0,
+      "abstain": 0.0,
+      "counterfactualPairsBothCorrect": 1,
+      "counterfactualPairCount": 3
+    },
+    "corrected": {
+      "ndcgAt3": 0.7932526510281078,
+      "topBestRelevant": 0.5833333333333334,
+      "relevanceRegret": 1.0833333333333333,
+      "knownConstraintViolation": 0.0,
+      "privateConstraintViolation": 0.25,
+      "presentationScore": 1.0833333333333333,
+      "presentationRegretWithinSelectedProduct": 0.6666666666666666,
+      "presentationBestWithinSelectedProduct": 0.4166666666666667,
+      "presentationIncompatible": 0.0,
+      "abstain": 0.0,
+      "counterfactualPairsBothCorrect": 0,
+      "counterfactualPairCount": 3
+    },
+    "heuristic": {
+      "ndcgAt3": 0.8396792273918452,
+      "topBestRelevant": 0.75,
+      "relevanceRegret": 0.5833333333333334,
+      "knownConstraintViolation": 0.0,
+      "privateConstraintViolation": 0.08333333333333333,
+      "presentationScore": 1.25,
+      "presentationRegretWithinSelectedProduct": 0.8333333333333334,
+      "presentationBestWithinSelectedProduct": 0.5,
+      "presentationIncompatible": 0.0,
+      "abstain": 0.0,
+      "counterfactualPairsBothCorrect": 3,
+      "counterfactualPairCount": 3
+    }
+  },
+  "correctedRouter": {
+    "accuracy": 0.5,
+    "predictions": {
+      "NONE": 11,
+      "GENERATE": 5,
+      "SELECT": 2
+    },
+    "targets": {
+      "NONE": 4,
+      "SELECT": 8,
+      "GENERATE": 6
+    },
+    "n": 18
+  },
+  "comparison": {
+    "noPlan": {
+      "fullLatencyMs": {
+        "n": 12,
+        "p50": 3666.026708553545,
+        "p95": 6067.306740256025
+      },
+      "newTitleCount": 8,
+      "generatedBadgeCount": 1,
+      "generatedHeadingCount": 4,
+      "completePageCount": 0,
+      "pageCount": 12,
+      "scale": [
+        {
+          "cards": 1,
+          "fullMs": 3575.431792065501,
+          "timing": {
+            "prefix": {
+              "tokenizeMs": 9.916333016008139,
+              "forwardMs": 1897.837416967377,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "headsMs": 0.1373749691992998,
+            "planAndPromptMs": 0.14233298134058714,
+            "promptPreparationMs": 1.4337089378386736,
+            "generationMs": 1665.5785840703174,
+            "prefillAndFirstTokenMs": 621.9458340201527,
+            "nativePromptMs": 585.9580000396818,
+            "autoregressiveAfterFirstTokenMs": 1043.6327500501648,
+            "validationMs": 0.2922919811680913,
+            "fullCompletionMs": 3575.431792065501
+          },
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "diversity": {
+            "uniqueProductRate": 1.0,
+            "attributeCoverage": 2,
+            "meanPairwiseTagJaccardRedundancy": 0,
+            "explicitPreferenceCoverage": 0.5,
+            "cardCount": 1,
+            "shortfall": 0
+          }
+        },
+        {
+          "cards": 3,
+          "fullMs": 4675.118959043175,
+          "timing": {
+            "prefix": {
+              "tokenizeMs": 10.08720905520022,
+              "forwardMs": 1970.0945410877466,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "headsMs": 0.1016249880194664,
+            "planAndPromptMs": 0.2537500113248825,
+            "promptPreparationMs": 1.471624942496419,
+            "generationMs": 2690.7498330110684,
+            "prefillAndFirstTokenMs": 690.2695000171661,
+            "nativePromptMs": 651.567209046334,
+            "autoregressiveAfterFirstTokenMs": 2000.4803329939023,
+            "validationMs": 2.1688750712201,
+            "fullCompletionMs": 4675.118959043175
+          },
+          "quality": {
+            "rejections": [
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B2:unsupported-or-unresponsive-badge",
+              "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B3:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "diversity": {
+            "uniqueProductRate": 1.0,
+            "attributeCoverage": 4,
+            "meanPairwiseTagJaccardRedundancy": 0.2222222222222222,
+            "explicitPreferenceCoverage": 1.0,
+            "cardCount": 3,
+            "shortfall": 0
+          }
+        },
+        {
+          "cards": 6,
+          "fullMs": 7768.869583960623,
+          "timing": {
+            "prefix": {
+              "tokenizeMs": 26.960917050018907,
+              "forwardMs": 1931.7604580428451,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "headsMs": 0.11070794425904751,
+            "planAndPromptMs": 0.45541604049503803,
+            "promptPreparationMs": 1.5520829474553466,
+            "generationMs": 5804.910999955609,
+            "prefillAndFirstTokenMs": 1278.7842500256374,
+            "nativePromptMs": 1245.2622500713915,
+            "autoregressiveAfterFirstTokenMs": 4526.126749929972,
+            "validationMs": 2.628750051371753,
+            "fullCompletionMs": 7768.869583960623
+          },
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading",
+              "B1:unsupported-or-unresponsive-badge",
+              "B2:unsupported-or-unresponsive-badge",
+              "B3:unsupported-or-unresponsive-badge",
+              "B4:NONE-required",
+              "B5:NONE-required",
+              "B6:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 6,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": false
+          },
+          "diversity": {
+            "uniqueProductRate": 1.0,
+            "attributeCoverage": 6,
+            "meanPairwiseTagJaccardRedundancy": 0.2222222222222222,
+            "explicitPreferenceCoverage": 1.0,
+            "cardCount": 6,
+            "shortfall": 0
+          }
+        }
+      ],
+      "correctNoneControl": [
+        {
+          "rejections": ["S1:unsupported-or-missing-heading"],
+          "allFieldsFulfilled": false,
+          "newTitleCount": 1,
+          "generatedBadgeCount": 0,
+          "generatedHeadingCount": 0,
+          "titleObservedAlignmentRate": null,
+          "titleObservedAlignmentEvaluatedCards": 0,
+          "correctNone": true
+        }
+      ],
+      "requestedTitleCount": 19,
+      "requestedHeadingCount": 13
+    },
+    "plan": {
+      "fullLatencyMs": {
+        "n": 12,
+        "p50": 3169.0023750416003,
+        "p95": 6184.89420210826
+      },
+      "newTitleCount": 6,
+      "generatedBadgeCount": 0,
+      "generatedHeadingCount": 6,
+      "completePageCount": 1,
+      "pageCount": 12,
+      "scale": [
+        {
+          "cards": 1,
+          "fullMs": 3568.648708984256,
+          "timing": {
+            "prefix": {
+              "tokenizeMs": 11.324292048811913,
+              "forwardMs": 1921.8147080391645,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "headsMs": 0.12879096902906895,
+            "planAndPromptMs": 0.14187500346451998,
+            "promptPreparationMs": 1.382916932925582,
+            "generationMs": 1633.252332918346,
+            "prefillAndFirstTokenMs": 594.9579579755664,
+            "nativePromptMs": 561.1172498902306,
+            "autoregressiveAfterFirstTokenMs": 1038.2943749427795,
+            "validationMs": 0.3563750069588423,
+            "fullCompletionMs": 3568.648708984256
+          },
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "diversity": {
+            "uniqueProductRate": 1.0,
+            "attributeCoverage": 2,
+            "meanPairwiseTagJaccardRedundancy": 0,
+            "explicitPreferenceCoverage": 0.5,
+            "cardCount": 1,
+            "shortfall": 0
+          }
+        },
+        {
+          "cards": 3,
+          "fullMs": 4925.386332906783,
+          "timing": {
+            "prefix": {
+              "tokenizeMs": 10.585916927084327,
+              "forwardMs": 1934.4828330213204,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "headsMs": 0.16891700215637684,
+            "planAndPromptMs": 0.29629096388816833,
+            "promptPreparationMs": 1.8008749466389418,
+            "generationMs": 2977.3038340499625,
+            "prefillAndFirstTokenMs": 769.9889590730891,
+            "nativePromptMs": 739.8717079777272,
+            "autoregressiveAfterFirstTokenMs": 2207.3148749768734,
+            "validationMs": 0.4873329307883978,
+            "fullCompletionMs": 4925.386332906783
+          },
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "B2:unsupported-or-unresponsive-badge",
+              "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B3:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.3333333333333333,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "diversity": {
+            "uniqueProductRate": 1.0,
+            "attributeCoverage": 4,
+            "meanPairwiseTagJaccardRedundancy": 0.2222222222222222,
+            "explicitPreferenceCoverage": 1.0,
+            "cardCount": 3,
+            "shortfall": 0
+          }
+        },
+        {
+          "cards": 6,
+          "fullMs": 7724.29270891007,
+          "timing": {
+            "prefix": {
+              "tokenizeMs": 25.076708057895303,
+              "forwardMs": 2029.6767500694841,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "headsMs": 0.11249992530792952,
+            "planAndPromptMs": 0.4895830061286688,
+            "promptPreparationMs": 2.16283299960196,
+            "generationMs": 5664.171291980892,
+            "prefillAndFirstTokenMs": 1104.5442919712514,
+            "nativePromptMs": 1055.0330829573795,
+            "autoregressiveAfterFirstTokenMs": 4559.627000009641,
+            "validationMs": 2.1674169693142176,
+            "fullCompletionMs": 7724.29270891007
+          },
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B2:unsupported-or-unresponsive-badge",
+              "B3:unsupported-or-unresponsive-badge",
+              "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+              "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B6:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 2,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.25,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": true
+          },
+          "diversity": {
+            "uniqueProductRate": 1.0,
+            "attributeCoverage": 6,
+            "meanPairwiseTagJaccardRedundancy": 0.2222222222222222,
+            "explicitPreferenceCoverage": 1.0,
+            "cardCount": 6,
+            "shortfall": 0
+          }
+        }
+      ],
+      "correctNoneControl": [
+        {
+          "rejections": [
+            "S1:unsupported-or-missing-heading",
+            "T1:unsupported-missing-nonnovel-or-unresponsive-title"
+          ],
+          "allFieldsFulfilled": false,
+          "newTitleCount": 0,
+          "generatedBadgeCount": 0,
+          "generatedHeadingCount": 0,
+          "titleObservedAlignmentRate": null,
+          "titleObservedAlignmentEvaluatedCards": 0,
+          "correctNone": true
+        }
+      ],
+      "requestedTitleCount": 19,
+      "requestedHeadingCount": 13
+    }
+  },
+  "memory": {
+    "mlxActiveBytes": 5038041612,
+    "mlxPeakBytes": 6344673924,
+    "mlxCacheBytes": 135846142,
+    "processBudgetBytes": 6442450944
+  },
+  "limitations": [
+    "Fixed tiny synthetic set; no novelty, human conversion or real-world generalization claim.",
+    "One bundled corrective fit: objective, replay and routing weighting effects are not separately identified.",
+    "Plan is a deterministic validated projection of trained product/image decisions and observed evidence; evidence selection/layout policy is not trained.",
+    "Plan/no-plan arms use the identical frozen model, corrected decision heads, greedy sampler and per-card-count generation budget, with a fresh full prefix each time. No cache splicing or parallel decoding.",
+    "1/3/6 card scaling is a fixed six-candidate held-out synthetic pool with stated budget 200 and no hard requirements. One sample per size, not p95 evidence.",
+    "Completed response timings include generation attempts and rejected fields, but do not imply every requested field passed validation.",
+    "No-history/no-preference NONE is evaluated explicitly; generation is always attempted for titles/headings in both arms, so empty routing is not a speed success.",
+    "The near-traditional-page latency target is not met by the previous roughly 3-second single-card baseline."
+  ],
+  "revalidation": {
+    "originalSha256": "e8c74c5cf739140d8a2ead1bb77aca7df56cd7c0a27401ed9569817dba78413b",
+    "generationRepeated": false,
+    "timing": "Original full completed-attempt timing retained. No timing benefit claimed from post-hoc checks.",
+    "fixes": [
+      "Aware timestamp cutoff and filter-before-bound",
+      "Exact explicit positive tag matching",
+      "Bound fact/reason evidence",
+      "Nonnull generated provenance and exact fallback",
+      "Request identity",
+      "Plaintext control rejection",
+      "Observed-alignment denominator excludes unsupported context"
+    ],
+    "note": "Normal synthetic fixture input prompts unchanged by temporal/exact-tag fixes; all original raw completions retained."
+  },
+  "evidence": {
+    "data/ranker/pretrained/evidence-plan-v1/benchmark.json": "e8c74c5cf739140d8a2ead1bb77aca7df56cd7c0a27401ed9569817dba78413b",
+    "data/ranker/pretrained/evidence-plan-v1/benchmark-revalidated.json": "7db66799ade0562ddec41b4131449ab799860c7f69922b57766f89c347a5a6db",
+    "data/ranker/pretrained/evidence-plan-v1/training.json": "f7d60277708890c3c731841062757b35b67b6a64f3297b7d0bdff743299f2d3b",
+    "data/ranker/pretrained/evidence-plan-v1/case-plan.json": "cd652510bd6d42baf358700ef920cb7bf1ec4f74c0ac941bb58ab98ad6283829"
+  }
+}

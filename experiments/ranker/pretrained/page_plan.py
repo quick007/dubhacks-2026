@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 from .boundary import guard_reasons, visible_history
-from .fusion import supported_preferences, _field_claim_errors
+from .fusion import supported_preferences, _field_claim_errors, _normalized
 
 VERSION = 'page-plan.v1'
 
@@ -79,6 +79,20 @@ def validate_page_plan(plan, request, catalog, require_complete=False):
         raise ValueError('Unsupported page plan version or missing synthetic label')
     if plan.get('requestedCardCount') not in (1,3,6) or plan.get('duplicatePolicy') not in ('forbid','explicit-allow'):
         raise ValueError('Invalid card count or duplicate policy')
+    if plan.get('recordId') != request['recordId']:
+        raise ValueError('Page plan belongs to a different request')
+    def validate_field(value, approved=()):
+        source=value.get('source');text=value.get('text')
+        if source not in ('pending','generated','rejected','none','approved-fallback'):
+            raise ValueError('Unknown generation provenance')
+        if source in ('generated','approved-fallback'):
+            if not isinstance(text,str) or not text.strip():raise ValueError('Generated/fallback field requires nonempty text')
+            if any(ord(c)<32 or ord(c)==127 for c in text) or any(c in text for c in '<>`{}[]') or 'http' in text.lower():raise ValueError('Invalid plain field text')
+        elif text is not None:
+            raise ValueError('Pending/rejected/none fields must have null text')
+        if source=='approved-fallback' and text not in approved:
+            raise ValueError('Fallback must exactly match approved catalog title')
+        if require_complete and source=='pending':raise ValueError('Incomplete generated field')
     sections=plan['sections']; ids=[s['sectionId'] for s in sections]
     if len(set(ids))!=len(ids) or set(plan['sectionOrder'])!=set(ids) or len(plan['sectionOrder'])!=len(ids):
         raise ValueError('Section order must reference every unique section exactly once')
@@ -103,12 +117,23 @@ def validate_page_plan(plan, request, catalog, require_complete=False):
             if len(set(card['observedHistoryReasonIds'])) != len(card['observedHistoryReasonIds']) or not set(card['observedHistoryReasonIds']) <= set(reasons):
                 raise ValueError('Unobserved/duplicate history reason')
             supported=set(supported_preferences(request,product)) | {reasons[r]['factTag'] for r in card['observedHistoryReasonIds']}
+            allowed_facts={fact_id(pid,tag) for tag in supported}
+            if not set(card['approvedFactIds']) <= allowed_facts:
+                raise ValueError('Fact evidence must bind explicit preferences or referenced observed reasons')
+            if not {fact_id(pid,reasons[r]['factTag']) for r in card['observedHistoryReasonIds']} <= set(card['approvedFactIds']):
+                raise ValueError('Observed reason must reference an approved fact')
             if card['badgeDecision'] not in ('NONE','GENERATE') or (card['badgeDecision']=='GENERATE' and not supported):
                 raise ValueError('Badge generation needs observed support')
             if card['badgeDecision']=='NONE' and card['badge']['text'] is not None:
                 raise ValueError('NONE must have empty badge')
             for name in ('title','badge'):
                 value=card[name]
+                approved=[product['title'],*[v['title'] for v in product['presentationVariants']]] if name=='title' else []
+                validate_field(value,approved)
+                if name=='badge' and value['text'] is not None and not any(
+                    (' '+_normalized(tag)+' ') in (' '+_normalized(value['text'])+' ')
+                    for tag in supported if fact_id(pid,tag) in card['approvedFactIds']):
+                    raise ValueError('Badge must demonstrate an approved supported fact')
                 if value['source'] not in ('pending','generated','rejected','none','approved-fallback'):
                     raise ValueError('Unknown generation provenance')
                 if value['text'] is not None and (not isinstance(value['text'],str) or len(value['text'])>90 or _field_claim_errors(value['text'],product,catalog)):
@@ -119,6 +144,7 @@ def validate_page_plan(plan, request, catalog, require_complete=False):
         proxy={'title':'Everyday travel choices','tags':sorted(common),'category':'backpacks'}
         for name in ('heading','copy'):
             value=section[name]
+            validate_field(value)
             if value['source'] not in ('pending','generated','rejected','none'):
                 raise ValueError('Unknown section generation provenance')
             if value['text'] is not None and (len(value['text'])>90 or _field_claim_errors(value['text'],proxy,catalog)):

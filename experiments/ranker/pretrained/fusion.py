@@ -85,10 +85,13 @@ def factual_lexicon(product, catalog):
 def supported_preferences(request, product):
     """Only explicit observable attribute preferences, never private truth/history intent."""
     context = request.get("context", {})
-    stated = _normalized(" ".join(context.get("statedPreferences") or []) + " " +
-                         " ".join(context.get("statedRequirements") or []))
-    return [tag for tag in product.get("tags", [])
-            if re.search(r"\b" + re.escape(_normalized(tag)) + r"\b", stated)]
+    # This contract accepts explicit catalog attribute tags, not arbitrary prose.
+    # Conservative exact matching avoids turning "not compact" into positive
+    # compact evidence. Unknown/paraphrased values stay unknown.
+    stated = {_normalized(value) for key in ("statedPreferences", "statedRequirements")
+              for value in (context.get(key) if isinstance(context.get(key), list) else [])
+              if isinstance(value, str)}
+    return [tag for tag in product.get("tags", []) if _normalized(tag) in stated]
 
 
 def _field_claim_errors(text, product, catalog):

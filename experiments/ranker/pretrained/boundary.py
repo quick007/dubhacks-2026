@@ -1,5 +1,6 @@
 """Observable-only text construction and stable external action mapping."""
 import json
+from datetime import datetime, timezone
 import math
 
 
@@ -18,10 +19,23 @@ def visible_history(request, catalog, limit=4):
     Future/unknown events cannot evict valid observed events. No description is
     interpreted as instruction or as proof of a user's latent preference.
     """
-    events = [event for event in request.get("history", [])
-              if isinstance(event.get("at"), str) and event["at"] <= request["asOf"]
-              and event.get("productId") in catalog]
-    return sorted(events, key=lambda event: event["at"])[-limit:]
+    def timestamp(value):
+        if not isinstance(value, str):
+            raise ValueError("Timestamp must be an ISO string")
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            raise ValueError("Observed timestamps require explicit timezone")
+        return parsed.astimezone(timezone.utc)
+    cutoff = timestamp(request["asOf"])
+    events = []
+    for event in request.get("history", []):
+        try:
+            at = timestamp(event.get("at"))
+        except (ValueError, TypeError):
+            continue
+        if at <= cutoff and event.get("productId") in catalog:
+            events.append((at, event))
+    return [event for _, event in sorted(events, key=lambda pair: pair[0])[-limit:]]
 
 
 def input_rows(request, catalog):
@@ -29,7 +43,7 @@ def input_rows(request, catalog):
     visible = {key: context.get(key) for key in ("task", "statedBudget", "statedRequirements", "statedPreferences", "presentationSurface", "presentationPreferences")}
     history = []
     for event in visible_history(request, catalog):
-        if event.get("at", "~") <= request["asOf"] and event.get("productId") in catalog:
+        if event.get("productId") in catalog:
             history.append({"type": event.get("type"), "confidence": event.get("confidence"),
                             "description": event.get("description"), "presentationStyle": event.get("presentationStyle"),
                             "product": clean_product(catalog[event["productId"]])})

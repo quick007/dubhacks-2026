@@ -13,3 +13,5 @@ History reasons reference only timestamp-filtered observed high-confidence saves
 ```
 
 Scope stays under model experiments. No dashboard, storefront or shopper harness consumes this contract yet. Full page-plan latency and diversity/preference diagnostics belong to the measured experiment, including every heading/card generation and rejection. The prior roughly three-second single-product result remains below the near-traditional-page latency target. No synthetic result establishes human conversion lift or novelty.
+
+Adversarial validation also enforces matching request identity, nonempty generated text, null text for pending/rejected/none, exact approved fallback titles, positive exact attribute support (negated prose is unknown), timezone-aware history cutoffs, and fact references bound to explicit preferences or referenced observed actions. See [PAGE_PLAN_AUDIT.md](PAGE_PLAN_AUDIT.md).
