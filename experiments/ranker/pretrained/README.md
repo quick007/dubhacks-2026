@@ -72,3 +72,5 @@ Uncached structured decision p95 was 1.440 seconds over the held-out set. In eig
 See [RESULTS.json](RESULTS.json) for exact hashes, all raw/guarded metrics and limitations, and [FUSION.md](FUSION.md) for the shared-cache/generation API. Reproduce complete-response measurements with `pnpm pretrained:benchmark:fusion`. Weights, datasets and full reports stay ignored under `data/` and `.cache/`.
 
 The optional [NONE/SELECT/GENERATE label router](ROUTING.md) has also been trained and measured. It generalized poorly: zero generation attempts, seven of eight served NONE, and only 37.5% raw routing accuracy against its toy public policy. Its lower latency does not demonstrate useful selective generation.
+
+The bounded follow-up includes a [page-plan v1 contract and fixtures](PAGE_PLAN.md), [diagnosis and measured evidence-plan comparison](EVIDENCE_PLAN.md), and [exact catalog-input cache probe](CATALOG_CACHE.md). These are model-only interfaces; no storefront or dashboard integration is included. The corrective fit regressed held-out ranking and the evidence plan did not establish an overall generation-quality improvement. Previous checkpoints/results are preserved.

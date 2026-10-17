@@ -37,6 +37,11 @@ def catalog_prefix(tokenizer,request,catalog):
     return tokens,messages,key
 
 
+def request_version_key(catalog_key, profile_key, messages, head_checkpoint_sha, plan):
+    return hashed({'catalogKey':catalog_key,'profileKey':profile_key,'prompt':messages,
+                   'config':CONFIG,'headsSha':head_checkpoint_sha,'pagePlan':plan})
+
+
 class ExactCatalogCache:
     def __init__(self,directory):
         self.directory=Path(directory);self.directory.mkdir(parents=True,exist_ok=True)
@@ -89,7 +94,7 @@ def request_prompt(plan,request,catalog):
     return [{'role':'user','content':observations+'\n'+compact+specs}]
 
 
-def one(backbone,heads,cache,request,catalog,count,force_cold=False):
+def one(backbone,heads,cache,request,catalog,count,head_checkpoint_sha,force_cold=False):
     start=time.perf_counter();public=observable_request(request)
     embeddings,actions,rank_timing,rank_state=encode_shared_prefix(backbone,public,catalog,1536)
     with torch.inference_mode():decision=all_actions(public,catalog,actions,heads(embeddings).tolist())
@@ -100,8 +105,7 @@ def one(backbone,heads,cache,request,catalog,count,force_cold=False):
     state,cache_timing=cache.prepare(backbone,public,catalog,force_cold)
     messages=request_prompt(plan,public,catalog)
     profile_key=hashed(input_rows(public,catalog)[0][0].split('\nProduct:',1)[0])
-    request_key=hashed({'catalogKey':cache_timing['key'],'profileKey':profile_key,'prompt':messages,'config':CONFIG,
-                        'headsSha':digest(Path('data/ranker/pretrained/evidence-plan-v1/heads.pt'))})
+    request_key=request_version_key(cache_timing['key'],profile_key,messages,head_checkpoint_sha,plan)
     generated=native_decode(backbone.model,backbone.tokenizer,messages,CONFIG['budgets'][str(count)],prefix_state=state)
     validation_start=time.perf_counter();complete,quality=validate_generated(generated['text'],generated['finishReason'],plan,public,catalog)
     validation_ms=(time.perf_counter()-validation_start)*1000
@@ -125,7 +129,7 @@ def benchmark(args):
     load_start=time.perf_counter();backbone=FrozenBackbone(args.model,REVISION,1536,6);load_ms=(time.perf_counter()-load_start)*1000
     cache=ExactCatalogCache(args.out/'snapshots');records=[]
     def run(label,request,cat,count,cold=False):
-        result=one(backbone,heads,cache,request,cat,count,cold)
+        result=one(backbone,heads,cache,request,cat,count,training['checkpoints']['heads']['sha256'],cold)
         row={'condition':label,'cards':count,**result};records.append(row);dump(args.out/f'{len(records)-1}-{label}.json',row)
         print(json.dumps({'condition':label,'cards':count,'ms':row['timing']['fullCompletionMs'],'hit':row['cache']['hit'],'quality':row['quality']}),flush=True)
         return row
@@ -169,6 +173,9 @@ def main():
     parser.add_argument('--dataset',type=Path,default=Path('data/ranker/datasets/v2'))
     parser.add_argument('--heads',type=Path,default=Path('data/ranker/pretrained/evidence-plan-v1'))
     parser.add_argument('--out',type=Path,default=Path('data/ranker/pretrained/catalog-cache-v1'))
-    args=parser.parse_args();benchmark(args)
+    args=parser.parse_args()
+    expected=Path(__file__).resolve().parents[3]/'.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots'/REVISION
+    if args.model.resolve()!=expected.resolve():parser.error('Use the previously verified pinned local snapshot; other model revisions require a new explicit experiment')
+    benchmark(args)
 
 if __name__=='__main__':main()

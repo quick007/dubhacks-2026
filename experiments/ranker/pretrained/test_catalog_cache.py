@@ -2,7 +2,9 @@
 import tempfile
 import unittest
 from pathlib import Path
-from .catalog_cache import hashed
+from .catalog_cache import hashed, request_version_key, catalog_prefix
+from unittest.mock import patch
+import copy
 
 
 class CacheKeyTests(unittest.TestCase):
@@ -10,6 +12,29 @@ class CacheKeyTests(unittest.TestCase):
         self.assertEqual(hashed({'a':1,'b':2}),hashed({'b':2,'a':1}))
         self.assertNotEqual(hashed({'model':'v1','catalog':'a'}),hashed({'model':'v2','catalog':'a'}))
         self.assertNotEqual(hashed({'model':'v1','catalog':'a'}),hashed({'model':'v1','catalog':'b'}))
+
+    def test_actual_request_key_tracks_head_and_image_plan(self):
+        plan={'imageCaptionId':'v1','productOrder':['p']}
+        original=request_version_key('catalog','profile',[{'content':'write'}],'head1',plan)
+        self.assertNotEqual(original,request_version_key('catalog','profile',[{'content':'write'}],'head2',plan))
+        self.assertNotEqual(original,request_version_key('catalog','profile',[{'content':'write'}],'head1',{'imageCaptionId':'v2','productOrder':['p']}))
+        self.assertNotEqual(original,request_version_key('catalog','changed-profile',[{'content':'write'}],'head1',plan))
+
+    def test_actual_catalog_key_reuses_profiles_and_invalidates_facts_model(self):
+        from .test_page_plan import PagePlanTests
+        fixture=PagePlanTests();fixture.setUp()
+        fixture.product.update(category="backpacks",description="Compact factual bag")
+        class Tokenizer:
+            def apply_chat_template(self,messages,**kwargs):
+                return [ord(char) for char in str(messages)]
+        tokenizer=Tokenizer();request=fixture.request;catalog=fixture.catalog
+        original=catalog_prefix(tokenizer,request,catalog)[2]
+        changed=copy.deepcopy(request);changed['context']['statedPreferences']=['compact']
+        self.assertEqual(original,catalog_prefix(tokenizer,changed,catalog)[2])
+        altered=copy.deepcopy(catalog);altered['p']['inStock']=False
+        self.assertNotEqual(original,catalog_prefix(tokenizer,request,altered)[2])
+        with patch('experiments.ranker.pretrained.catalog_cache.REVISION','new-model-version'):
+            self.assertNotEqual(original,catalog_prefix(tokenizer,request,catalog)[2])
 
 
 class NativeCacheTests(unittest.TestCase):
