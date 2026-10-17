@@ -1,0 +1,18 @@
+# Bounded full-page reliability comparison
+
+This single prompt experiment preserves the successful [manifest baseline](GENERATION_DIAGNOSIS.md) (7/12 evidence pages, 0/10 cache pages) and all saved outputs/checkpoints. The intervention is a locked public evidence capsule: section attributes are the intersection across every member, and each card's identity, factual tags and observed-evidence subset are explicit. Product selection is locked; the decoder may not replace a poorly ranked item with a preferred different item. Numeric catalog identity may be copied exactly, but new measurements/claims are prohibited. Titles/headings still require genuine fresh generation, not prewritten wording.
+
+An independent section audit distinguishes real universal-claim failures from false positives. In the prior ten cache manifest attempts, four repeated A responses fail lexical `short` and missing `compact` emphasis, while six contain genuine group/binding errors. For example, Grove has water-resistant/compact, Cedar durable/compact, and River durable/organizer: no tag is universal, so a heading asserting compact/durable for all is false. The second six-card section mixes lightweight/roomy Field/Ridge with durable/compact River, again leaving no universal tags. Changed-profile B still selects River 26L despite lightweight/roomy preferences; faithful text cannot repair that ranking error.
+
+Two separate single-product evidence headings naming actual **Field 20L Daypack** are factual but rejected by the generic section proxy's missing identity/numeric vocabulary. Those remain rejected under the unchanged validator; they are not labeled hallucinations. Safe plural/framing lexical gaps remain separate from true unsupported attributes. No factual vocabulary, novelty, truncation or page-completion check is relaxed.
+
+The fixed roster retains all ten cache conditions plus all twelve evidence-plan cases. Fresh manifest and locked-capsule arms alternate order, use the same selected product/image IDs, frozen 9B model, trained heads, native exact-prefix layouts, cold/warm conditions, and greedy 64/128/224-token budgets for 1/3/6 cards. Every arm includes complete ranking, cache build/materialization where applicable, fresh generation and validation. The original manifest outputs must replay exactly; changed decisions abort the comparison.
+
+```sh
+.tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_full_page_reliability -v
+.tools/pretrained-venv/bin/python -m experiments.ranker.pretrained.full_page_reliability --model /absolute/verified/pinned/snapshot
+```
+
+Four offline tests verify universal intersection versus union, locked identity/support, unknown preferences, and unchanged factual/novelty rejection. Actual model results are pending at this implementation increment. Section grouping and evidence projection remain deterministic policies, not learned layout. Cases were inspected earlier; this is a reliability/mechanism test, not untouched generalization or human conversion evidence.
+
+A separate performance worker owns an exact-prefix/token/stage-cost experiment. The catalog-cache path computes user-first ranking state, discards it, and separately prepares catalog-first decoder state. The existing evidence path already reuses complete ranking state once. Replacing one prefix with the other changes the causal input and is not a cache-only equivalent optimization; independent recurrent/conv/KV snapshots cannot be spliced. Native batching/MTP proposals are compatibility/future-test audits only during this comparison, with no new runtime/model installed.
