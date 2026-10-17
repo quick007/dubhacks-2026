@@ -224,7 +224,7 @@ def assemble(rows, plan, request, catalog):
     return {"rawText": raw, "pagePlan": completed, "quality": quality, "audit": audit}
 
 
-def factorized_arm(backbone, heads, request, catalog, count, width, prefill_step_size=512):
+def factorized_arm(backbone, heads, request, catalog, count, width, prefill_step_size=512, row_builder=None):
     """Full request timing begins BEFORE common ranker prefill in every arm."""
     import torch
     from .fusion import encode_shared_prefix, observable_request
@@ -240,7 +240,7 @@ def factorized_arm(backbone, heads, request, catalog, count, width, prefill_step
         plan = make_page_plan(public, catalog, decision, count)
         validate_page_plan(plan, public, catalog)
         structured_ms = (time.perf_counter()-started)*1000
-        rows = field_rows(plan, public, catalog)
+        rows = (row_builder or field_rows)(plan, public, catalog)
         del embeddings
         outputs, timing = decode_rows(backbone, state, rows, width, prefill_step_size=prefill_step_size)
         assembly_start = time.perf_counter()

@@ -83,6 +83,7 @@ def benchmark(args):
     from .generation_diagnosis import cases_and_saved
     from .parallel_decode import factorized_arm
     from .full_page_reliability import run_arm
+    from .heading_experiment import heading_rows, heading_diagnostics
     start = time.perf_counter()
     control = json.loads(args.controls.read_text())
     validate_controls(control)
@@ -107,7 +108,8 @@ def benchmark(args):
     prior_path = Path('data/ranker/pretrained/full-page-reliability-v1/benchmark.json')
     prior = {row['caseId']: row['arms']['manifest'] for row in json.loads(prior_path.read_text())['records']}
     dump(args.out/'case-plan.json', {'cases': [{k:v for k,v in case.items() if k!='saved'} for case in cases],
-        'widths':[1,2,3,6], 'nativePrefillStepSize':args.prefill_step_size,
+        'widths':[1,2,3,6], 'nativePrefillStepSize':args.prefill_step_size, 'headingPrompt':args.heading_prompt,
+        'headingHelperSha256':digest(Path(__file__).with_name('heading_experiment.py')),
         'controlSha256':digest(args.controls), 'nativeReceiptSha256':digest(args.compatibility),
         'priorSha256':digest(prior_path), 'decoderSourceSha256':sources,
         'policy':'Strict v1 abort preserved. This separate experiment retains raw mismatches and uses unchanged page validation.',
@@ -146,7 +148,10 @@ def benchmark(args):
                     else:
                         width = 1 if name=='sequential' else int(name[-1])
                         value = factorized_arm(backbone, heads, case['request'], case['catalog'], case['cards'], width,
-                                               prefill_step_size=args.prefill_step_size)
+                                               prefill_step_size=args.prefill_step_size,
+                                               row_builder=heading_rows if args.heading_prompt=='compact' else None)
+                        if value['status']=='completed-attempt':
+                            value['headingDiagnostics'] = heading_diagnostics(value['rows'],case['catalog'])
                         if value['status'] != 'completed-attempt':
                             abort = name+': '+value.get('error','native failure')
                         elif width > 1:
@@ -181,6 +186,7 @@ def benchmark(args):
         'modelRevision':REVISION, 'headCheckpoint':receipt['checkpoints']['heads'],
         'residentLoadMs':load_ms, 'totalWallMs':(time.perf_counter()-start)*1000,
         'nativePrefillStepSize':args.prefill_step_size,
+        'headingPrompt':args.heading_prompt,
         'controlSha256':digest(args.controls), 'compatibility':gate, 'records':records,
         'summary':summary(records,12), 'abort':abort, 'memory':backbone.runtime_memory(),
         'limitations':['Inspected synthetic cases; one attempt per case/arm; no conversion/generalization evidence.',
@@ -207,6 +213,7 @@ def main():
     parser.add_argument('--controls',type=Path,default=Path('data/ranker/pretrained/native-batch-diagnosis-v2/probe.json'))
     parser.add_argument('--out',type=Path,default=OUT)
     parser.add_argument('--prefill-step-size',type=int,choices=(256,512),default=512)
+    parser.add_argument('--heading-prompt',choices=('preserved','compact'),default='preserved')
     args = parser.parse_args()
     expected = Path('.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots')/REVISION
     if args.model.resolve() != expected.resolve():
