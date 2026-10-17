@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "recordedAtUtc": "2026-10-17T22:14:51.849857+00:00",
+  "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "caseId": "evidence-r-e1f73b869dc810bc15",
+  "pinnedModelPath": ".cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "runtime": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.32.2"
+  },
+  "scope": "One model process; one pristine common rank state, exact preserved rows, natural greedy decode, seq/batch2/batch3/repeat3 only.",
+  "priorStartupFailure": {
+    "sessionId": 43596,
+    "error": "AttributeError: 'function' object has no attribute 'BatchGenerator'",
+    "stage": "After model/common-prefix prefill and row preflight, before any decoding.",
+    "resolution": "Use importlib.import_module and validate BatchGenerator before model loading; corrected retry separately authorized."
+  },
+  "modelLoadMs": 1711.239124997519,
+  "prefixSha256": "39d1ba9213dcc8f9289ddf62d68247a62d1dad2409bcd4d9939544204fbd7add",
+  "prefixTiming": {
+    "tokenizeMs": 19.832874997518957,
+    "forwardMs": 1381.2225420260802,
+    "batchRows": 1,
+    "candidateReadouts": 8,
+    "prefixTokens": 988,
+    "truncatedRows": 0,
+    "backboneForwardCalls": 1,
+    "representation": "shared-prefix-v1"
+  },
+  "rowsPreflight": [
+    {
+      "rowId": "heading-1",
+      "promptSha256": "fb74ef10bab789b561eb492de53e38264362e5ca635de555a961a1fb9a96625a",
+      "suffixTokens": 189,
+      "maxTokens": 16,
+      "matchedSavedArms": ["sequential", "batch2", "batch3"]
+    },
+    {
+      "rowId": "title-1",
+      "promptSha256": "56bc90377016d0b88c253028ca5caef024593f65d1ba583001811666b76c56db",
+      "suffixTokens": 270,
+      "maxTokens": 36,
+      "matchedSavedArms": ["sequential", "batch2", "batch3"]
+    },
+    {
+      "rowId": "badge-1",
+      "promptSha256": "bf6a8b21a845c4607306004c5aa72c8d0ca87febc89721bdc4a35bb223bf7a80",
+      "suffixTokens": 270,
+      "maxTokens": 12,
+      "matchedSavedArms": ["sequential", "batch2", "batch3"]
+    }
+  ],
+  "headCheckpoint": {
+    "sha256": "0eddd1393e3ad03699820f0dd8d1b5189ac7e0733581725eabb831a0e142ccb2",
+    "exactPredictionReload": true
+  },
+  "baseCompleteStateHash": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+  "arms": {
+    "sequential": {
+      "width": 1,
+      "observer": {
+        "rawTokens": {
+          "heading-1": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "title-1": [51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046],
+          "badge-1": [33, 16, 25, 417, 16, 25, 85688, 220, 16, 22, 43, 5870]
+        },
+        "badgePosition6": {
+          "sampledTokenId": 85688,
+          "indexZeroBased": 6,
+          "top5": [
+            {
+              "tokenId": 85688,
+              "text": " Meadow",
+              "logprob": -1.5625
+            },
+            {
+              "tokenId": 417,
+              "text": " B",
+              "logprob": -1.625
+            },
+            {
+              "tokenId": 2919,
+              "text": " water",
+              "logprob": -1.875
+            },
+            {
+              "tokenId": 2168,
+              "text": " None",
+              "logprob": -3.3125
+            },
+            {
+              "tokenId": 220,
+              "text": " ",
+              "logprob": -3.4375
+            }
+          ],
+          "token85688": {
+            "text": " Meadow",
+            "logprob": -1.5625
+          },
+          "token417": {
+            "text": " B",
+            "logprob": -1.625
+          },
+          "meadowMinusBLogprob": 0.0625,
+          "topMargin": 0.0625
+        }
+      },
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "finishReason": "length",
+          "arSteps": 16,
+          "stopTokenId": null,
+          "text": "S1: a backpacks choice for a daily trip with water-resistant and organizer"
+        },
+        {
+          "rowId": "title-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046
+          ],
+          "finishReason": "stop",
+          "arSteps": 14,
+          "stopTokenId": 248046,
+          "text": "T1: Meadow 17L Daypack \u2014 water-resistant"
+        },
+        {
+          "rowId": "badge-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [33, 16, 25, 417, 16, 25, 85688, 220, 16, 22, 43, 5870],
+          "finishReason": "length",
+          "arSteps": 12,
+          "stopTokenId": null,
+          "text": "B1: B1: Meadow 17L Day"
+        }
+      ],
+      "baseStateBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "baseStateAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "timing": {
+        "cacheForkMaterializeMs": 0.8497092640027404,
+        "suffixBoundaryPreparationMs": 6.270290934480727,
+        "nativeSuffixPrefillAndDecodeMs": 2921.980503713712,
+        "continuousDecodeWallMs": 2932.4924999382347,
+        "nativeDecodeRounds": 42,
+        "maximumRowsEmittingTogether": 1,
+        "rowArSteps": 42,
+        "admissions": [
+          {
+            "admitted": 1,
+            "activeBound": 1,
+            "rowKeys": ["heading-1"]
+          },
+          {
+            "admitted": 1,
+            "activeBound": 1,
+            "rowKeys": ["title-1"]
+          },
+          {
+            "admitted": 1,
+            "activeBound": 1,
+            "rowKeys": ["badge-1"]
+          }
+        ],
+        "finishOrder": ["heading-1", "title-1", "badge-1"],
+        "admissionPolicy": "one native continuous generator; lazily fork at most width active row states; refill on every field finish"
+      },
+      "memory": {
+        "mlxActiveBytes": 5123123724,
+        "mlxPeakBytes": 5699481489,
+        "mlxCacheBytes": 130094289,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "batch2": {
+      "width": 2,
+      "observer": {
+        "rawTokens": {
+          "heading-1": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "title-1": [51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046],
+          "badge-1": [33, 16, 25, 417, 16, 25, 85688, 220, 16, 22, 43, 5870]
+        },
+        "badgePosition6": {
+          "sampledTokenId": 85688,
+          "indexZeroBased": 6,
+          "top5": [
+            {
+              "tokenId": 85688,
+              "text": " Meadow",
+              "logprob": -1.5625
+            },
+            {
+              "tokenId": 417,
+              "text": " B",
+              "logprob": -1.625
+            },
+            {
+              "tokenId": 2919,
+              "text": " water",
+              "logprob": -1.875
+            },
+            {
+              "tokenId": 2168,
+              "text": " None",
+              "logprob": -3.3125
+            },
+            {
+              "tokenId": 220,
+              "text": " ",
+              "logprob": -3.4375
+            }
+          ],
+          "token85688": {
+            "text": " Meadow",
+            "logprob": -1.5625
+          },
+          "token417": {
+            "text": " B",
+            "logprob": -1.625
+          },
+          "meadowMinusBLogprob": 0.0625,
+          "topMargin": 0.0625
+        }
+      },
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "finishReason": "length",
+          "arSteps": 16,
+          "stopTokenId": null,
+          "text": "S1: a backpacks choice for a daily trip with water-resistant and organizer"
+        },
+        {
+          "rowId": "title-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046
+          ],
+          "finishReason": "stop",
+          "arSteps": 14,
+          "stopTokenId": 248046,
+          "text": "T1: Meadow 17L Daypack \u2014 water-resistant"
+        },
+        {
+          "rowId": "badge-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [33, 16, 25, 417, 16, 25, 85688, 220, 16, 22, 43, 5870],
+          "finishReason": "length",
+          "arSteps": 12,
+          "stopTokenId": null,
+          "text": "B1: B1: Meadow 17L Day"
+        }
+      ],
+      "baseStateBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "baseStateAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "timing": {
+        "cacheForkMaterializeMs": 0.8047919254750013,
+        "suffixBoundaryPreparationMs": 5.673250998370349,
+        "nativeSuffixPrefillAndDecodeMs": 2402.2190840914845,
+        "continuousDecodeWallMs": 2413.87616598513,
+        "nativeDecodeRounds": 28,
+        "maximumRowsEmittingTogether": 2,
+        "rowArSteps": 42,
+        "admissions": [
+          {
+            "admitted": 2,
+            "activeBound": 2,
+            "rowKeys": ["heading-1", "title-1"]
+          },
+          {
+            "admitted": 1,
+            "activeBound": 2,
+            "rowKeys": ["badge-1"]
+          }
+        ],
+        "finishOrder": ["title-1", "heading-1", "badge-1"],
+        "admissionPolicy": "one native continuous generator; lazily fork at most width active row states; refill on every field finish"
+      },
+      "memory": {
+        "mlxActiveBytes": 5123123724,
+        "mlxPeakBytes": 6053623768,
+        "mlxCacheBytes": 134111868,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "batch3": {
+      "width": 3,
+      "observer": {
+        "rawTokens": {
+          "heading-1": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "title-1": [51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046],
+          "badge-1": [33, 16, 25, 417, 16, 25, 417, 16, 25, 417, 16, 25]
+        },
+        "badgePosition6": {
+          "sampledTokenId": 417,
+          "indexZeroBased": 6,
+          "top5": [
+            {
+              "tokenId": 417,
+              "text": " B",
+              "logprob": -1.5625
+            },
+            {
+              "tokenId": 85688,
+              "text": " Meadow",
+              "logprob": -1.5625
+            },
+            {
+              "tokenId": 2919,
+              "text": " water",
+              "logprob": -1.875
+            },
+            {
+              "tokenId": 2168,
+              "text": " None",
+              "logprob": -3.25
+            },
+            {
+              "tokenId": 220,
+              "text": " ",
+              "logprob": -3.4375
+            }
+          ],
+          "token85688": {
+            "text": " Meadow",
+            "logprob": -1.5625
+          },
+          "token417": {
+            "text": " B",
+            "logprob": -1.5625
+          },
+          "meadowMinusBLogprob": 0.0,
+          "topMargin": 0.0
+        }
+      },
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "finishReason": "length",
+          "arSteps": 16,
+          "stopTokenId": null,
+          "text": "S1: a backpacks choice for a daily trip with water-resistant and organizer"
+        },
+        {
+          "rowId": "title-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046
+          ],
+          "finishReason": "stop",
+          "arSteps": 14,
+          "stopTokenId": 248046,
+          "text": "T1: Meadow 17L Daypack \u2014 water-resistant"
+        },
+        {
+          "rowId": "badge-1",
+          "firstDivergenceVsSavedSequential": 6,
+          "rawSampledTokenIds": [33, 16, 25, 417, 16, 25, 417, 16, 25, 417, 16, 25],
+          "finishReason": "length",
+          "arSteps": 12,
+          "stopTokenId": null,
+          "text": "B1: B1: B1: B1:"
+        }
+      ],
+      "baseStateBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "baseStateAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "timing": {
+        "cacheForkMaterializeMs": 0.43654197361320257,
+        "suffixBoundaryPreparationMs": 3.292083041742444,
+        "nativeSuffixPrefillAndDecodeMs": 1865.203294204548,
+        "continuousDecodeWallMs": 1871.0262089734897,
+        "nativeDecodeRounds": 16,
+        "maximumRowsEmittingTogether": 3,
+        "rowArSteps": 42,
+        "admissions": [
+          {
+            "admitted": 3,
+            "activeBound": 3,
+            "rowKeys": ["heading-1", "title-1", "badge-1"]
+          }
+        ],
+        "finishOrder": ["badge-1", "title-1", "heading-1"],
+        "admissionPolicy": "one native continuous generator; lazily fork at most width active row states; refill on every field finish"
+      },
+      "memory": {
+        "mlxActiveBytes": 5123123724,
+        "mlxPeakBytes": 6237453733,
+        "mlxCacheBytes": 132673085,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "batch3-repeat": {
+      "width": 3,
+      "observer": {
+        "rawTokens": {
+          "heading-1": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "title-1": [51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046],
+          "badge-1": [33, 16, 25, 417, 16, 25, 417, 16, 25, 417, 16, 25]
+        },
+        "badgePosition6": {
+          "sampledTokenId": 417,
+          "indexZeroBased": 6,
+          "top5": [
+            {
+              "tokenId": 417,
+              "text": " B",
+              "logprob": -1.5625
+            },
+            {
+              "tokenId": 85688,
+              "text": " Meadow",
+              "logprob": -1.5625
+            },
+            {
+              "tokenId": 2919,
+              "text": " water",
+              "logprob": -1.875
+            },
+            {
+              "tokenId": 2168,
+              "text": " None",
+              "logprob": -3.25
+            },
+            {
+              "tokenId": 220,
+              "text": " ",
+              "logprob": -3.4375
+            }
+          ],
+          "token85688": {
+            "text": " Meadow",
+            "logprob": -1.5625
+          },
+          "token417": {
+            "text": " B",
+            "logprob": -1.5625
+          },
+          "meadowMinusBLogprob": 0.0,
+          "topMargin": 0.0
+        }
+      },
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            50, 16, 25, 264, 32036, 82, 5576, 364, 264, 7071, 8151, 440, 2919, 44422, 321, 44661
+          ],
+          "finishReason": "length",
+          "arSteps": 16,
+          "stopTokenId": null,
+          "text": "S1: a backpacks choice for a daily trip with water-resistant and organizer"
+        },
+        {
+          "rowId": "title-1",
+          "firstDivergenceVsSavedSequential": null,
+          "rawSampledTokenIds": [
+            51, 16, 25, 85688, 220, 16, 22, 43, 5870, 4595, 1892, 2919, 44422, 248046
+          ],
+          "finishReason": "stop",
+          "arSteps": 14,
+          "stopTokenId": 248046,
+          "text": "T1: Meadow 17L Daypack \u2014 water-resistant"
+        },
+        {
+          "rowId": "badge-1",
+          "firstDivergenceVsSavedSequential": 6,
+          "rawSampledTokenIds": [33, 16, 25, 417, 16, 25, 417, 16, 25, 417, 16, 25],
+          "finishReason": "length",
+          "arSteps": 12,
+          "stopTokenId": null,
+          "text": "B1: B1: B1: B1:"
+        }
+      ],
+      "baseStateBefore": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "baseStateAfter": "72f534b3af7283654c20b03f8f47a435790056c384d52d754619ca64fa9d6520",
+      "timing": {
+        "cacheForkMaterializeMs": 0.3606249811127782,
+        "suffixBoundaryPreparationMs": 2.7252500876784325,
+        "nativeSuffixPrefillAndDecodeMs": 1881.6125839948654,
+        "continuousDecodeWallMs": 1887.2574999695644,
+        "nativeDecodeRounds": 16,
+        "maximumRowsEmittingTogether": 3,
+        "rowArSteps": 42,
+        "admissions": [
+          {
+            "admitted": 3,
+            "activeBound": 3,
+            "rowKeys": ["heading-1", "title-1", "badge-1"]
+          }
+        ],
+        "finishOrder": ["badge-1", "title-1", "heading-1"],
+        "admissionPolicy": "one native continuous generator; lazily fork at most width active row states; refill on every field finish"
+      },
+      "memory": {
+        "mlxActiveBytes": 5123123724,
+        "mlxPeakBytes": 6237453733,
+        "mlxCacheBytes": 133436133,
+        "processBudgetBytes": 6442450944
+      }
+    }
+  },
+  "logprobComparison": {
+    "sequential": {
+      "finiteComparedCount": 248320,
+      "nonfiniteCount": 0,
+      "nonfinitePatternMatchesSequential": true,
+      "maxAbsoluteLogprobDifferenceVsSequential": 0.0,
+      "meanAbsoluteLogprobDifferenceVsSequential": 0.0
+    },
+    "batch2": {
+      "finiteComparedCount": 248320,
+      "nonfiniteCount": 0,
+      "nonfinitePatternMatchesSequential": true,
+      "maxAbsoluteLogprobDifferenceVsSequential": 0.0,
+      "meanAbsoluteLogprobDifferenceVsSequential": 0.0
+    },
+    "batch3": {
+      "finiteComparedCount": 248320,
+      "nonfiniteCount": 0,
+      "nonfinitePatternMatchesSequential": true,
+      "maxAbsoluteLogprobDifferenceVsSequential": 0.25,
+      "meanAbsoluteLogprobDifferenceVsSequential": 0.023826614022254944
+    },
+    "batch3-repeat": {
+      "finiteComparedCount": 248320,
+      "nonfiniteCount": 0,
+      "nonfinitePatternMatchesSequential": true,
+      "maxAbsoluteLogprobDifferenceVsSequential": 0.25,
+      "meanAbsoluteLogprobDifferenceVsSequential": 0.023826614022254944
+    }
+  },
+  "batch3RepeatLogprobsExactlyEqual": true,
+  "memory": {
+    "mlxActiveBytes": 5123123724,
+    "mlxPeakBytes": 6237453733,
+    "mlxCacheBytes": 0,
+    "processBudgetBytes": 6442450944
+  },
+  "memoryLimitBytes": 6442450944,
+  "inputHashes": {
+    "data/ranker/pretrained/parallel-decode-v1/parallel-case-2-sequential.json": "0660e426359f821bb7f4eab56995f814020cfe47772d32f02a351a0eb62dbf36",
+    "data/ranker/pretrained/parallel-decode-v1/parallel-case-2-batch2.json": "b42a6f02a83873f03628bde34075232a5ed12a5dffd51ab0b67d010295368a29",
+    "data/ranker/pretrained/parallel-decode-v1/parallel-case-2-batch3.json": "346f22953c265a54f8f5b0daac36675687a2dd7ffdd2692ff686e0dbd0d76cfb"
+  },
+  "limitations": [
+    "Observes normalized sample log-probabilities, not pre-normalization raw logits.",
+    "Stable base-state hashes and exact prompt identities rule out source-prefix mutation, not every native cache/merge/position bug.",
+    "Batch-shape floating-point reduction/kernel differences are a hypothesis unless matched-state independent forward controls distinguish them.",
+    "No arithmetic precision, sampler, validator, runtime, budget, prompt or model-weight changes. Observer exists only inside this process.",
+    "Single diagnosed synthetic case; no speed, quality, conversion or general exact-parity claim."
+  ],
+  "evidence": {
+    "data/ranker/pretrained/native-batch-diagnosis-v1/badge-position6-logprobs.npz": "7caa7077981421c938e75a1da129a2c3c3b48d84f90c389417e384e99affad51",
+    "data/ranker/pretrained/native-batch-diagnosis-v1/startup-failure.json": "de785d12060cbcd62137a316caa61c5421b830049e287cafb2a4fce504cb4586"
+  },
+  "diagnosticSource": {
+    "path": "experiments/ranker/pretrained/native_batch_diagnosis.py",
+    "currentSha256": "27f1f40edd843885f02459ef6a04a1e4aa704aa085667ce1b2c8af69e81670fe",
+    "postProbeChanges": "Only the saved-arm prefix/prompt/suffix/budget preflight guards were expanded from sequential to all three preserved arms after measurement; those additional checks passed on CPU. Observation/decode arithmetic was unchanged."
+  },
+  "executionCounts": {
+    "failedStartupProcesses": 1,
+    "successfulCorrectedModelProcesses": 1,
+    "successfulDecodeArms": 4,
+    "additionalModelRuns": 0
+  }
+}
