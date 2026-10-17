@@ -44,7 +44,7 @@ def make_page_plan(request, catalog, decision, card_count):
         product = catalog[pid]
         compatible = [v for v in product['presentationVariants']
                       if request['presentationCompatibility'].get(pid, {}).get(v['id'], False)]
-        action = decision.get('presentationAction')
+        action = decision.get('presentationActions', {}).get(pid) or decision.get('presentationAction')
         variant = next((v for v in compatible if action and action['productId']==pid and action['variantId']==v['id']), compatible[0])
         explicit = set(supported_preferences(request, product))
         reasons = history_reasons(request, catalog, product)
