@@ -12,11 +12,23 @@ def variant_text(variant):
     return {key: variant.get(key) for key in ("title", "imageDescription", "facts", "presentationStyle", "compatibleSurfaces")}
 
 
+def visible_history(request, catalog, limit=4):
+    """Filter cutoff and valid products before stable chronological bounding.
+
+    Future/unknown events cannot evict valid observed events. No description is
+    interpreted as instruction or as proof of a user's latent preference.
+    """
+    events = [event for event in request.get("history", [])
+              if isinstance(event.get("at"), str) and event["at"] <= request["asOf"]
+              and event.get("productId") in catalog]
+    return sorted(events, key=lambda event: event["at"])[-limit:]
+
+
 def input_rows(request, catalog):
     context = request.get("context", {})
     visible = {key: context.get(key) for key in ("task", "statedBudget", "statedRequirements", "statedPreferences", "presentationSurface", "presentationPreferences")}
     history = []
-    for event in request.get("history", [])[-4:]:
+    for event in visible_history(request, catalog):
         if event.get("at", "~") <= request["asOf"] and event.get("productId") in catalog:
             history.append({"type": event.get("type"), "confidence": event.get("confidence"),
                             "description": event.get("description"), "presentationStyle": event.get("presentationStyle"),

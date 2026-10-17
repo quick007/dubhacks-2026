@@ -23,6 +23,15 @@ class PretrainedBoundaryTests(unittest.TestCase):
         self.assertEqual(rows, input_rows(changed, self.catalog)[0])
         self.assertNotIn("audit-", str(rows))
 
+    def test_future_events_cannot_evict_observed_history(self):
+        self.request["history"] = [{"at": "2026-09-10T00:00:00Z", "productId": "audit-p", "type": "save", "confidence": .9}]
+        original = input_rows(self.request, self.catalog)
+        changed = copy.deepcopy(self.request)
+        changed["history"] += [{"at": "2027-01-01T00:00:00Z", "productId": "audit-p", "type": "view"}] * 5
+        self.assertEqual(original, input_rows(changed, self.catalog))
+        changed["history"].reverse()
+        self.assertEqual(original, input_rows(changed, self.catalog))
+
     def test_variant_permutation_is_equivariant_and_guarded(self):
         rows, actions = input_rows(self.request, self.catalog)
         scores = [[.8, 100], [.8, .2]]

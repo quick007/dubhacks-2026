@@ -1,0 +1,88 @@
+{
+  "synthetic": true,
+  "baselinePreserved": true,
+  "stages": {
+    "adaptation": {
+      "rows": 96,
+      "finalAdaptedDecisionMse": 0.025107301771640778,
+      "routerTargetCounts": {
+        "GENERATE": 12,
+        "NONE": 48,
+        "SELECT": 36
+      },
+      "routerPredictionCounts": {
+        "GENERATE": 12,
+        "NONE": 48,
+        "SELECT": 36
+      },
+      "finalAdaptedRouterAccuracy": 1.0
+    },
+    "initial": {
+      "rows": 96,
+      "finalAdaptedDecisionMse": 0.12231268733739853,
+      "routerTargetCounts": {
+        "GENERATE": 12,
+        "SELECT": 36,
+        "NONE": 48
+      },
+      "routerPredictionCounts": {
+        "SELECT": 41,
+        "NONE": 47,
+        "GENERATE": 8
+      },
+      "finalAdaptedRouterAccuracy": 0.8020833134651184
+    }
+  },
+  "audit": {
+    "cachedActionAndReadoutAlignment": true,
+    "privateAndFutureMutationInvariant": true,
+    "fixtureHistoryPromptUnaffectedByBoundaryFix": true,
+    "withinRequestReadoutCosine": {
+      "mean": 0.7001319426511016,
+      "min": 0.40284037590026855,
+      "max": 0.9559226036071777
+    },
+    "trainProductRelevanceCounts": {
+      "0": 26,
+      "3": 24,
+      "2": 22,
+      "1": 24
+    },
+    "trainPresentationTargetCounts": {
+      "0": 68,
+      "1": 60,
+      "3": 64
+    },
+    "missingStatedBudgetRecords": 12,
+    "historyCounts": {
+      "1": 8,
+      "0": 4,
+      "2": 12
+    }
+  },
+  "fixedNextConfig": {
+    "seed": 728,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "productLoss": "per-request best-product cross entropy after mean across variants",
+    "presentationLoss": "conditional compatible-variant cross entropy, only products with informative nonzero labels",
+    "routingLoss": "inverse-frequency weighted cross entropy",
+    "trainingData": "all 24 train records together; no validation/test/private grading inputs for fitting",
+    "backbone": "unchanged frozen 9B shared-prefix readouts; no architecture or decoder update"
+  },
+  "findings": [
+    "No action/label misalignment or injected private/future leakage found. Half the training requests hide their budget; private-rubric labels are partly unidentifiable from observations.",
+    "The old history boundary slices before cutoff filtering and trusts list order. Future events can evict valid history. Fixed to filter/sort then bound; normal v2 fixture prompts are unchanged.",
+    "Router targets are NONE/SELECT/GENERATE=48/36/12 per stage, and plain CE is unweighted. Final route accuracy is 100% on adaptation versus 80.2% on initial training families: fit plus forgetting, not generalization.",
+    "Decision adaptation MSE is .025 on adaptation versus .122 on initial families. Adaptation sees only later 12 records, without replay.",
+    "Pointwise suitability MSE does not directly optimize within-request ranking. Presentation zeros conflate ineligible product relevance with descriptor preference.",
+    "Candidate readouts are causal and query-order-dependent. Cosine correlation is measured, not proof of a faulty backbone or architectural limit.",
+    "Observed histories are synthetic and correlate with private preferred products by construction. This is an observable cue, not a deployment leakage guarantee; future outcomes/private fields never enter model text."
+  ],
+  "sourceInputs": {
+    "data/ranker/datasets/v2/manifest.json": "131841119b3037f170b4b88fc666053555ddb5107c578115eb642bd5a8405977",
+    "data/ranker/pretrained/shared-prefix/training-embeddings.pt": "d0eeae024dc06c0c7aa7bbb2262d164b5f75a64bd79174d2990bcd90c3ff2a38",
+    "data/ranker/pretrained/shared-prefix/training.json": "a0a19d02505477724c173a9b01f0b9a744d632f24af9f8abecbca625ba247343",
+    "data/ranker/pretrained/routing/training.json": "d886637912bdff8b6b5d43e71cff05ea7f439074beec404839d855ff9ac80269"
+  }
+}
