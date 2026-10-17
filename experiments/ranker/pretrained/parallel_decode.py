@@ -9,7 +9,7 @@ import json
 import re
 import time
 
-BUDGETS = {1: {"card": 48, "heading": 16}, 3: {"card": 32, "heading": 32}, 6: {"card": 32, "heading": 16}}
+BUDGETS = {1: {"title": 36, "badge": 12, "heading": 16}, 3: {"title": 24, "badge": 8, "heading": 32}, 6: {"title": 24, "badge": 8, "heading": 16}}
 
 
 def hashed(value):
@@ -33,20 +33,22 @@ def field_rows(plan, request, catalog):
         content = (common + f"Output exactly ONE line S{i}: short heading. Stop after that line. "
             "Heading must be true for EVERY member; only UNIVERSAL tags may be asserted. EMPTY means ZERO product attributes; use framing words only. "
             + "All section evidence: " + json.dumps(section, sort_keys=True) + framing)
-        rows.append({"rowId": f"heading-{i}", "fields": [f"S{i}"], "kind": "heading", "maxTokens": BUDGETS[count]["heading"],
+        rows.append({"rowId": f"heading-{i}", "key": f"heading-{i}", "fields": [f"S{i}"], "kind": "heading", "maxTokens": BUDGETS[count]["heading"],
                      "messages": [{"role": "user", "content": content}]})
     for i, (card, facts) in enumerate(zip(cards, capsule["cards"], strict=True), 1):
         product = catalog[card["productId"]]
         allowed, _, _ = factual_lexicon(product, catalog)
-        content = (common + f"Output exactly TWO lines in order T{i}: NEW 4-8 word title, then B{i}: short supported badge or NONE. Stop after B{i}. "
-            "No S headings or other cards. Product/image selection is LOCKED. Keep identity, assert only selected facts, mention an observed supported tag when listed. "
-            "Title must differ from every approved catalog title. Without badge support return exactly NONE; no generic personal-intent claim. "
+        bindings = (" Product/image selection is LOCKED. Keep identity, assert only selected facts and supported observed tags. "
             + "Selected public evidence: " + json.dumps(facts, sort_keys=True)
             + "; approved titles=" + json.dumps([v["title"] for v in product["presentationVariants"]])
             + "; observed style preferences=" + json.dumps(style)
             + "; allowed words=" + " ".join(sorted(allowed)))
-        rows.append({"rowId": f"card-{i}", "fields": [f"T{i}", f"B{i}"], "kind": "card", "maxTokens": BUDGETS[count]["card"],
-                     "messages": [{"role": "user", "content": content}]})
+        for kind, field in (("title", f"T{i}"), ("badge", f"B{i}")):
+            rule = ("NEW 4-8 word title; differ from approved titles; mention required observed tag when present. "
+                    if kind == "title" else "Short supported badge or exactly NONE. Without badge support return NONE; no generic personal-intent claim. ")
+            content = common + f"Output exactly ONE line {field}: " + rule + f"Stop after {field}; no other fields or cards. " + bindings
+            rows.append({"rowId": f"{kind}-{i}", "key": f"{kind}-{i}", "fields": [field], "kind": kind,
+                         "maxTokens": BUDGETS[count][kind], "messages": [{"role": "user", "content": content}]})
     expected = {1: 64, 3: 128, 6: 224}[count]
     if sum(row["maxTokens"] for row in rows) != expected:
         raise AssertionError("Fixed total output budget changed")
@@ -79,7 +81,7 @@ def exact_row_suffix(tokenizer, row, state, model):
 
 def collect_native(gen, uids, tokenizer, check_memory=None):
     """Retain actual token IDs and autoregressive response counts, including EOS steps."""
-    records = {uid: {"tokenIds": [], "arSteps": 0, "finishReason": None} for uid in uids}
+    records = {uid: {"tokenIds": [], "rawSampledTokenIds": [], "stopTokenId": None, "arSteps": 0, "finishReason": None} for uid in uids}
     rounds, max_live = 0, 0
     started = time.perf_counter()
     while responses := gen.next_generated():
@@ -88,11 +90,14 @@ def collect_native(gen, uids, tokenizer, check_memory=None):
         for response in responses:
             record = records[response.uid]
             record["arSteps"] += 1
+            record["rawSampledTokenIds"].append(int(response.token))
             if response.finish_reason != "stop":
                 record["tokenIds"].append(int(response.token))
             if response.finish_reason is not None:
                 record["finishReason"] = response.finish_reason
+                record["stopTokenId"] = int(response.token) if response.finish_reason == "stop" else None
                 record["completedMs"] = (time.perf_counter() - started) * 1000
+        del response, responses  # Release completed native prompt_cache owners.
         if check_memory:
             check_memory()
     if any(record["finishReason"] is None for record in records.values()):
@@ -103,55 +108,96 @@ def collect_native(gen, uids, tokenizer, check_memory=None):
                      "rowArSteps": sum(record["arSteps"] for record in records.values())}
 
 
+def build_rows(plan, request, catalog):
+    return field_rows(plan, request, catalog)
+
+
+def clone_prefix_state(backbone, state):
+    def materialize(values):
+        backbone.mx.eval(values)
+        backbone.mx.synchronize()
+    return fork_complete_state(state, materialize)
+
+
 def decode_rows(backbone, state, rows, width):
     from mlx_lm.generate import BatchGenerator, StopSequences
     from mlx_lm.sample_utils import make_sampler
     if width not in (1, 2, 3, 6):
         raise ValueError("Only fixed sequential/2/3/6 batch widths allowed")
     mx = backbone.mx
-    output, batches = [], []
-    fork_ms, suffix_ms, decode_ms = 0., 0., 0.
-    for first in range(0, len(rows), width):
-        group = rows[first:first + width]
+    output, active, pending = {}, {}, list(enumerate(rows))
+    fork_ms, suffix_ms, native_ms, rounds, max_live = 0., 0., 0., 0, 0
+    admissions, finish_order = [], []
+    gen = BatchGenerator(backbone.model, completion_batch_size=width, prefill_batch_size=width,
+                         prefill_step_size=512, sampler=make_sampler(temp=0.0))
+    wall_start = time.perf_counter()
+    def admit():
+        nonlocal fork_ms, suffix_ms
+        count = min(width - len(active), len(pending))
+        if count <= 0:
+            return
+        group = [pending.pop(0) for _ in range(count)]
         start = time.perf_counter()
-        def materialize(values):
-            mx.eval(values)
-            mx.synchronize()
-        branches = [fork_complete_state(state, materialize) for _ in group]
+        branches = [clone_prefix_state(backbone, state) for _ in group]
         fork_ms += (time.perf_counter() - start) * 1000
         backbone.check_memory()
         start = time.perf_counter()
         prompts, caches = [], []
-        for row, branch in zip(group, branches, strict=True):
+        for (_, row), branch in zip(group, branches, strict=True):
             suffix, cache = exact_row_suffix(backbone.tokenizer, row, branch, backbone.model)
-            prompts.append(suffix)
-            caches.append(cache)
+            prompts.append(suffix); caches.append(cache)
         suffix_ms += (time.perf_counter() - start) * 1000
-        # Width=1 is the sequential arm of this identical native API. Width>1
-        # inserts concurrent rows; it is not a Python loop over native_decode.
-        gen = BatchGenerator(backbone.model, completion_batch_size=width, prefill_batch_size=width,
-                             prefill_step_size=512, sampler=make_sampler(temp=0.0))
-        start = time.perf_counter()
-        try:
-            eos = [[int(token)] for token in backbone.tokenizer.eos_token_ids]
-            uids = gen.insert(prompts, max_tokens=[r["maxTokens"] for r in group], caches=caches,
-                all_tokens=[list(state["tokens"]) for _ in group],
-                samplers=[make_sampler(temp=0.0) for _ in group], logits_processors=[[] for _ in group],
-                stop_sequences=[StopSequences(eos) for _ in group])
-            records, stats = collect_native(gen, uids, backbone.tokenizer, backbone.check_memory)
+        eos = [[int(token)] for token in backbone.tokenizer.eos_token_ids]
+        uids = gen.insert(prompts, max_tokens=[r["maxTokens"] for _, r in group], caches=caches,
+            all_tokens=[list(state["tokens"]) for _ in group], samplers=[make_sampler(temp=0.0) for _ in group],
+            logits_processors=[[] for _ in group], stop_sequences=[StopSequences(eos) for _ in group])
+        for uid, (index, row), suffix in zip(uids, group, prompts, strict=True):
+            active[uid] = index
+            output[index] = {**row, "tokenIds": [], "rawSampledTokenIds": [], "stopTokenId": None, "arSteps": 0, "finishReason": None,
+                "suffixTokens": len(suffix), "promptSha256": hashed(row["messages"])}
+        admissions.append({"admitted": len(group), "activeBound": len(active), "rowKeys": [r["key"] for _, r in group]})
+        # Native runtime owns these full states until merge/finish. No retained
+        # Python copy per waiting row: admission is bounded by available slots.
+        del branches, caches
+    try:
+        admit()
+        while active:
+            start = time.perf_counter()
+            responses = gen.next_generated()
             mx.synchronize()
-            for uid, row, suffix in zip(uids, group, prompts, strict=True):
-                output.append({**row, **records[uid], "suffixTokens": len(suffix), "promptSha256": hashed(row["messages"])})
-            batches.append({"rows": len(group), **stats})
-        finally:
-            gen.close()
-        decode_ms += (time.perf_counter() - start) * 1000
-        del branches, caches, gen
-        mx.clear_cache()
-        mx.synchronize()
-    return output, {"cacheForkMaterializeMs": fork_ms, "suffixBoundaryPreparationMs": suffix_ms,
-                    "nativeSuffixPrefillAndDecodeMs": decode_ms, "batches": batches,
-                    "maximumRowsEmittingTogether": max((b["maximumRowsEmittingTogether"] for b in batches), default=0)}
+            native_ms += (time.perf_counter() - start) * 1000
+            if not responses:
+                raise RuntimeError("Native batch ended before all admitted rows finished")
+            rounds += 1
+            max_live = max(max_live, len(responses))
+            for response in responses:
+                index = active[response.uid]
+                record = output[index]
+                record["arSteps"] += 1
+                record["rawSampledTokenIds"].append(int(response.token))
+                if response.finish_reason != "stop":
+                    record["tokenIds"].append(int(response.token))
+                if response.finish_reason is not None:
+                    record["finishReason"] = response.finish_reason
+                    record["stopTokenId"] = int(response.token) if response.finish_reason == "stop" else None
+                    record["completedMs"] = (time.perf_counter() - wall_start) * 1000
+                    finish_order.append(record["key"])
+                    del active[response.uid]
+            # Finished Response objects own extracted full native caches. Drop
+            # every reference before allocating replacement prefix branches.
+            del response, responses
+            backbone.check_memory()
+            admit()  # Refill freed slots immediately; no slowest-wave barrier.
+        results = [output[index] for index in range(len(rows))]
+        for record in results:
+            record["text"] = backbone.tokenizer.decode(record["tokenIds"])
+        return results, {"cacheForkMaterializeMs": fork_ms, "suffixBoundaryPreparationMs": suffix_ms,
+            "nativeSuffixPrefillAndDecodeMs": native_ms, "continuousDecodeWallMs": (time.perf_counter()-wall_start)*1000,
+            "nativeDecodeRounds": rounds, "maximumRowsEmittingTogether": max_live,
+            "rowArSteps": sum(r["arSteps"] for r in results), "admissions": admissions, "finishOrder": finish_order,
+            "admissionPolicy": "one native continuous generator; lazily fork at most width active row states; refill on every field finish"}
+    finally:
+        gen.close()
 
 
 def assemble(rows, plan, request, catalog):

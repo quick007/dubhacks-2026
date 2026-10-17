@@ -38,7 +38,11 @@ def parity(reference, candidate):
     details = []
     for key in sorted(left.keys() | right.keys()):
         a, b = left.get(key), right.get(key)
-        exact = bool(a and b and a['tokenIds'] == b['tokenIds'] and a['finishReason'] == b['finishReason'])
+        exact = bool(a and b and a['tokenIds'] == b['tokenIds'] and a['finishReason'] == b['finishReason']
+            and isinstance(a.get('rawSampledTokenIds'), list) and isinstance(b.get('rawSampledTokenIds'), list)
+            and a['rawSampledTokenIds'] == b['rawSampledTokenIds']
+            and a.get('stopTokenId') == b.get('stopTokenId')
+            and a.get('arSteps') == b.get('arSteps') == len(a['rawSampledTokenIds']))
         same_prompt = bool(a and b and a['promptSha256'] == b['promptSha256'] and a['maxTokens'] == b['maxTokens'])
         details.append({'rowId': key, 'exactTokensAndFinish': exact, 'samePromptAndBudget': same_prompt})
     return {'comparable': True, 'exact': same_prefix and unique_nonempty and same_set and all(r['exactTokensAndFinish'] and r['samePromptAndBudget'] for r in details),
