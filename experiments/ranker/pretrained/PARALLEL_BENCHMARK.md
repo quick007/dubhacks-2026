@@ -48,3 +48,62 @@ The third case's badge diverged at sampled token seven: sequential and width two
 All three attempted sequential headings reached the sixteen-token cap; whole-page assembly consequently reports a non-stop finish and the unchanged global validator rejects every generated field. Independent factual titles in the first two cases therefore cannot rescue a complete page. Heading member evidence also exposes indexes/tags without selected names; a first-case heading named River 14L despite selected Grove 23L. These output-design limitations are separate from concurrency correctness. No output was rewritten or validator relaxed.
 
 Peak MLX allocation was 6,284,001,495 bytes against the unchanged 6,442,450,944-byte cap. No OOM occurred. The separately bounded diagnostic completed and reproduced the divergence from one pristine full prefix. Sequential and width two produced exactly equal normalized log-probability vectors at the first divergent position; Meadow exceeded B by 0.0625. Width three tied them and selected lower-ID B. Its repeated width-three distribution was exactly equal, and complete source-state hashes stayed unchanged. This establishes batch-shape-associated output sensitivity, not a proven kernel-versus-cache root cause. See `NATIVE_BATCH_DIAGNOSIS.json` for the actual probabilities, raw tokens, state hashes and full saved distribution evidence. The probe does not continue the rejected comparison or supply a usable-page speed claim.
+
+
+## Independent output audit of executed attempts
+
+The read-only audit covers three distinct cases and eleven independent-field attempts (three sequential, three width two, three width three, two width six). All eleven headings finish by length at sixteen tokens. All eleven titles stop, including two distinct factual new titles repeated across eight attempts; the remaining three title instances copy an approved title. Eight `NONE` badge rows stop, and the three final-case badge rows truncate. There is no demonstrated false negative for a complete page: every page actually contains an unfinished heading. Global truncation masks sound individual title fields, and makes `correctNone=false` despite a correct raw `NONE` in case one; those per-field diagnostics must not be read as evidence that the raw badge violates policy. `NONE` is allowed when support exists and required when it does not.
+
+Case zero, sequential, full attempt 4009 ms:
+
+```text
+S1: River 14L Daypack meets durable and compact needs within
+T1: Grove 23L Daypack — compact
+B1: NONE
+```
+
+The selected product is Grove 23L with water-resistant/compact facts. The heading names the wrong product, asserts unsupported durable, and truncates. T/B stop. The title is independently factual and new; the page remains invalid.
+
+Case one, sequential, full attempt 3791 ms:
+
+```text
+S1: a along an and are as backpack backpacks bag bags bring carry
+T1: Cedar 26L Daypack — compact durable
+B1: NONE
+```
+
+The heading copies vocabulary rather than composing coherent copy and truncates. The title is independently factual/new. Raw `NONE` is correct; the whole-page non-stop finish causes the reported false `correctNone` flag. This is a metric-coupling caveat, not a valid complete page rejected as invalid.
+
+Case two, sequential, full attempt 4196 ms:
+
+```text
+S1: a backpacks choice for a daily trip with water-resistant and organizer
+T1: Meadow 17L Daypack — water-resistant
+B1: B1: Meadow 17L Day
+```
+
+The heading's attributes are factual but the line truncates. The title copies an approved title. The badge repeats its label and truncates; width three instead produces `B1: B1: B1: B1:`. These are actual protocol/copy failures. All eleven assemblies retain row text and order exactly; no extra newline or label is injected by assembly. Factual and safety checks remain unchanged.
+
+
+## Matched-shape follow-up: prepared, launch denied
+
+The follow-up control is prepared in the existing `native_batch_diagnosis.py`: one pinned model process, actual active widths one/two/three, seven responses per row, with exact forks, independently prefetched native caches using matching prefix segmentation, and entirely fresh full prompts using native 512-token prefill. Each condition repeats once (eighteen short arms). It records raw forward logits, exact reconstruction against native response log-probabilities to verify lookahead alignment, earlier-token context identity, top-two margin, complete-state hashes and per-width repeatability. Different prefill chunking in the full-prompt condition is explicit. CPU lane-order, width-bound, vector comparison, CLI and source parsing checks passed; the native comparisons have not run.
+
+Automatic approval review denied the launch before execution, stating that the resource-intensive 9B diagnostic and new artifacts exceeded the original scaffold-only scope and lacked trusted user authorization. No v2 process, GPU load, observations or cache-correctness receipt exists. The original strict failure and v1 measured diagnosis remain unchanged. The action was stopped without a retry or alternate execution path.
+
+The exact blocked launch is:
+
+```sh
+.tools/pretrained-venv/bin/python -m experiments.ranker.pretrained.native_batch_diagnosis --stage v2 --out data/ranker/pretrained/native-batch-diagnosis-v2 --model /Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53
+```
+
+Cache-fork isolation and the observed numerical tie are established only to the extent of the existing tests. The unexecuted matched-shape comparisons cannot be claimed as passed. Semantic-quality benchmarking without an exact-string abort remains conditional on those actual cache-correctness controls; no check or failed result is bypassed by preparing this follow-up.
+
+
+## Continuation outcome: controls executed; peak-memory gate blocks wider run
+
+The historical launch denial above was superseded by new explicit user authorization in a model-optimization continuation. One retry of the exact v2 command was approved and executed. All eighteen matched-shape controls completed; fork/rebuild states and distributions match exactly, repeats are exact, and raw bfloat16 logits show the 0.0625 margin becoming a tie at widths two/three. Fresh-full runs also show shape-sensitive logits. This excludes faulty prefix reuse as a necessary cause, while shared native merge/kernel/position behavior remains incompletely localized.
+
+The post-run peak audit found 6,475,156,144 allocated bytes against the unchanged 6,442,450,944-byte allowance. Functional completion is **not memory compliance**. The active-only boundary guard missed the transient 31.19-MiB excursion. The continuation stopped heavyweight work rather than raising the allowance. The separately prepared `parallel_semantic_benchmark.py` refuses the actual control report before model loading; zero new whole-page comparison arms ran. The original strict parity abort and all twelve-case denominators remain intact.
+
+See [native stage-two diagnosis](NATIVE_BATCH_DIAGNOSIS.md), [structured compliance/preflight audit](NATIVE_BATCH_V2_AUDIT.json), and [independent output audit](FACTORIZED_OUTPUT_AUDIT.md). The preserved benchmark remains 0/11 accepted factorized pages: all eleven headings truncate, although eight title instances and eight raw `NONE` badges independently satisfy their applicable field checks. No new quality or usable-page latency improvement is claimed. Next, reduce diagnostic prefill working memory in a separately labeled matched control without changing the cap; then measure semantic quality and latency, with heading quality treated as its own experiment.
