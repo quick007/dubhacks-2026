@@ -28,6 +28,9 @@ const commands = [
   "fusion",
   "test-fusion",
   "fusion-benchmark",
+  "route-train",
+  "route-benchmark",
+  "test-routing",
 ];
 const env = {
   ...process.env,
@@ -153,7 +156,7 @@ if (!commands.includes(command) || args.includes("--help") || args.includes("-h"
     run(python, ["-c", artifactScript, command, repository, revision, cache, snapshot]);
   } else if (command === "data") {
     run(python, ["-m", "experiments.ranker.dataset_v2.generate", ...args]);
-  } else if (["test", "test-mlx", "test-fusion"].includes(command)) {
+  } else if (["test", "test-mlx", "test-fusion", "test-routing"].includes(command)) {
     const modules =
       command === "test"
         ? [
@@ -162,8 +165,27 @@ if (!commands.includes(command) || args.includes("--help") || args.includes("-h"
           ]
         : command === "test-mlx"
           ? ["experiments.ranker.pretrained.test_mlx_compat"]
-          : ["experiments.ranker.pretrained.test_fusion"];
+          : command === "test-routing"
+            ? ["experiments.ranker.pretrained.test_routing"]
+            : ["experiments.ranker.pretrained.test_fusion"];
     run(python, ["-m", "unittest", ...modules, ...args]);
+  } else if (["route-train", "route-benchmark"].includes(command)) {
+    if (args.some((arg) => /^(--model|--revision)(=|$)/.test(arg))) {
+      throw new Error("Routing wrapper fixes the pinned model/revision.");
+    }
+    run(
+      python,
+      [
+        "-m",
+        "experiments.ranker.pretrained.routing",
+        command === "route-train" ? "train" : "benchmark",
+        "--revision",
+        revision,
+        ...(command === "route-benchmark" ? ["--model", snapshot] : []),
+        ...args,
+      ],
+      600_000,
+    );
   } else {
     if (args.some((arg) => /^(--model|--revision)(=|$)/.test(arg))) {
       throw new Error(

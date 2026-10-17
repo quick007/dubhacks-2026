@@ -698,12 +698,135 @@
     "Uncached 9B structured requests are about 1.4 seconds, not an instant normal-page path. Cached head-only time is not end-to-end latency.",
     "Novel generated wording remains autoregressive; full completion includes independent validation, including failed attempts and rejected fields.",
     "Community artifact hashes verified; exact original upstream conversion revision unspecified.",
-    "NONE/SELECT/GENERATE optional sub-label router is a separate work item, not measured by this two-head proof."
+    "Optional label router trained but generalized poorly: zero generation attempts and seven of eight served NONE. This is a negative result, not evidence of a useful selective generator."
   ],
   "evidence": {
     "data/ranker/pretrained/shared-prefix/run-manifest.json": "47a242401f5cfce5f80ee67405aa9ec30d9f36ea642cac30b819ab0dc6fb1beb",
     "data/ranker/pretrained/shared-prefix/training.json": "a0a19d02505477724c173a9b01f0b9a744d632f24af9f8abecbca625ba247343",
     "data/ranker/pretrained/shared-prefix/evaluation.json": "d6355e5143f5715a7acfebb725265990832825b4293a4847789b8023af5fe2d9",
-    "data/ranker/pretrained/fusion-proof/benchmark.json": "4297fd19bcf42c145d4e16b0a563082ffbd49199993d0a2cb83b9b47585b9267"
+    "data/ranker/pretrained/fusion-proof/benchmark.json": "4297fd19bcf42c145d4e16b0a563082ffbd49199993d0a2cb83b9b47585b9267",
+    "data/ranker/pretrained/routing/training.json": "d886637912bdff8b6b5d43e71cff05ea7f439074beec404839d855ff9ac80269",
+    "data/ranker/pretrained/routing/benchmark.json": "d52e06c9f1ca14eeeac63cd009de95b44abc0e9a89691d9251130a10628eef5b"
+  },
+  "optionalLabelRouter": {
+    "synthetic": true,
+    "teacher": "Toy policy: count explicitly supported public tags: 0 NONE, 1 SELECT, 2+ GENERATE. Not human behavior.",
+    "parameterCount": 12291,
+    "training": {
+      "initial": {
+        "epochs": 80,
+        "rows": 96,
+        "crossEntropyBefore": 1.096684217453003,
+        "crossEntropyAfter": 0.2140926569700241,
+        "firstGradientL2": 0.35107208060301887,
+        "meanAbsolutePredictionChange": 1.6352760791778564,
+        "teacherClassCounts": {
+          "GENERATE": 12,
+          "SELECT": 36,
+          "NONE": 48
+        },
+        "checkpoint": {
+          "schemaVersion": 1,
+          "synthetic": true,
+          "width": 4096,
+          "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+          "representation": "shared-prefix-v1",
+          "sha256": "4b38bef881d43caef3da71e02bf7b2a0046dc4417fcd860e972372f73966762f",
+          "routes": ["NONE", "SELECT", "GENERATE"],
+          "config": {
+            "seed": 37,
+            "epochsPerStage": 80,
+            "learningRate": 0.03,
+            "weightDecay": 0.001,
+            "representation": "shared-prefix-v1",
+            "teacher": "0/1/2+ explicitly supported tags -> NONE/SELECT/GENERATE"
+          },
+          "exactWeightReload": true
+        },
+        "exactPredictionReload": true
+      },
+      "adaptation": {
+        "epochs": 80,
+        "rows": 96,
+        "crossEntropyBefore": 0.6940038800239563,
+        "crossEntropyAfter": 0.07590694725513458,
+        "firstGradientL2": 0.0453699386326887,
+        "meanAbsolutePredictionChange": 1.5221034288406372,
+        "teacherClassCounts": {
+          "GENERATE": 12,
+          "NONE": 48,
+          "SELECT": 36
+        },
+        "checkpoint": {
+          "schemaVersion": 1,
+          "synthetic": true,
+          "width": 4096,
+          "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+          "representation": "shared-prefix-v1",
+          "sha256": "51898c83e181c40e87df69f2d68054e0f3ff73945ac774ef87f6d6a4cb5301ab",
+          "routes": ["NONE", "SELECT", "GENERATE"],
+          "config": {
+            "seed": 37,
+            "epochsPerStage": 80,
+            "learningRate": 0.03,
+            "weightDecay": 0.001,
+            "representation": "shared-prefix-v1",
+            "teacher": "0/1/2+ explicitly supported tags -> NONE/SELECT/GENERATE"
+          },
+          "exactWeightReload": true
+        },
+        "exactPredictionReload": true
+      }
+    },
+    "metrics": {
+      "caseCount": 8,
+      "rawRouteAccuracyVsToyPolicy": 0.375,
+      "guardedRouteAccuracyVsToyPolicy": 0.5,
+      "groundedLabelRateAmongServed": 1.0,
+      "observablePreferenceRelevanceRateAmongServed": 1.0,
+      "lexicallyValidatedFactualityRateAmongServed": 1.0,
+      "generationFailureCount": 0,
+      "generationAttemptCount": 0,
+      "generationServedCount": 0,
+      "generationRate": 0.0,
+      "rawCounts": {
+        "NONE": 6,
+        "SELECT": 2
+      },
+      "servedCounts": {
+        "NONE": 7,
+        "SELECT": 1
+      },
+      "totalLatencyMs": {
+        "n": 8,
+        "p50": 1373.370312503539,
+        "p95": 1418.2600129628554
+      },
+      "priorAlwaysGenerateMs": {
+        "n": 8,
+        "p50": 2938.466687046457,
+        "p95": 3283.6507812258787
+      },
+      "priorSelectionOnlyMs": {
+        "n": 8,
+        "p50": 1333.3242290536873,
+        "p95": 1371.7996208404656
+      }
+    },
+    "teacherCounts": {
+      "SELECT": 3,
+      "NONE": 3,
+      "GENERATE": 2
+    },
+    "limitations": [
+      "Routing teacher is a toy explicit-public-tag-count policy; accuracy is not human relevance.",
+      "Grounding is exact tag evidence plus restrictive lexical validation, not semantic factuality proof.",
+      "Known-support NONE guard is deterministic masking, not learned behavior.",
+      "Baselines are prior sequential measurements on identical case IDs, not concurrent or paired timing arms; always-generate uses full title/copy rather than this optional sub-label.",
+      "Only new routing head trained; language decoder stays frozen and untuned. No architecture novelty claim.",
+      "All data is synthetic; no storefront integration, human conversion or revenue evidence.",
+      "No GENERATE route occurred in the actual eight-case router benchmark; native generation is proven separately by the core fusion benchmark, not this routing run.",
+      "Low held-out routing accuracy and seven of eight served NONE demonstrate poor generalization. Low latency is not evidence of a useful selective generator."
+    ]
   }
 }
