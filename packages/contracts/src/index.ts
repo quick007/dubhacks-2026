@@ -1,3 +1,4 @@
+export { LOCAL_ORIGINS, LOCAL_PROXY_PORT } from "./local.ts";
 import { z } from "zod";
 
 export const CONTRACT_VERSION = 1 as const;
@@ -146,7 +147,7 @@ export const ComparisonRowSchema = z.object({
 });
 export type ComparisonRow = z.infer<typeof ComparisonRowSchema>;
 
-/** Frozen v1 HTTP interface. API is bound only to 127.0.0.1:4311.
+/** Frozen v1 HTTP interface. API binds only to loopback on PORT; root dev exposes the named API origin.
  * GET /api/catalog -> Catalog
  * GET /api/runs -> Run[] (newest first)
  * POST /api/runs RunRequest -> 202 Run; queue full -> 429

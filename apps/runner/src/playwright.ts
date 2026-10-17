@@ -1,9 +1,10 @@
+import { LOCAL_ORIGINS } from "@storefront/contracts";
 import { chromium, type Browser, type BrowserContext, type Page } from "playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { RunnerInput, RunnerOutput } from "./protocol.js";
 
-const ORIGIN = "http://127.0.0.1:4312";
+const ORIGIN = LOCAL_ORIGINS.storefront;
 /** Fixed local demo only. Never accept caller URLs, generated code or real payment actions. */
 export async function runBrowser(input: RunnerInput): Promise<RunnerOutput> {
   const output: RunnerOutput = {

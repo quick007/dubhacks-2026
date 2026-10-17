@@ -36,8 +36,8 @@ failure event. Invalid input or an unhandled infrastructure error exits 1,
 preserving the output shape and adding `error`. Read stdout even on nonzero exit.
 Diagnostics go to stderr. Each request is limited to 2 MiB.
 
-The browser permits only the local demo origin `http://127.0.0.1:4312` (including
-its local Vite websocket), blocks service workers, applies allowlisted variant
+The browser permits only the local demo origin `http://shop.dubhacks.localhost:1356` (including
+its named Vite HMR websocket through Portless), blocks service workers, applies allowlisted variant
 settings, and uses fixed roles through the fake order-confirmation screen.
 All evaluation remains synthetic; this does not measure human conversion lift.
 

@@ -222,3 +222,25 @@ func TestRecoveryLockAndArtifactBoundary(t *testing.T) {
 		t.Fatal("artifact escaped allowlist")
 	}
 }
+
+func TestListenAddress(t *testing.T) {
+	for _, value := range []string{"", "4567", "0", "65536", "abc"} {
+		t.Setenv("PORT", value)
+		t.Setenv("HOST", "0.0.0.0")
+		address, err := listenAddress()
+		switch value {
+		case "":
+			if err != nil || address != "127.0.0.1:4311" {
+				t.Fatal(address, err)
+			}
+		case "4567":
+			if err != nil || address != "127.0.0.1:4567" {
+				t.Fatal(address, err)
+			}
+		default:
+			if err == nil {
+				t.Fatalf("accepted invalid PORT %q", value)
+			}
+		}
+	}
+}

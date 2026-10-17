@@ -1,3 +1,4 @@
+import { LOCAL_ORIGINS } from "@storefront/contracts";
 import { useCallback, useEffect, useState } from "react";
 import {
   CatalogSchema,
@@ -37,7 +38,7 @@ async function api(path: string, body?: RunRequest): Promise<unknown> {
 
 function storefrontUrl(variant: Variant) {
   const config = variant.config;
-  return `http://127.0.0.1:4312/?${new URLSearchParams({ headline: config.headline, showShipping: String(config.showShipping), recommendationOrder: config.recommendationOrder })}`;
+  return `${LOCAL_ORIGINS.storefront}/?${new URLSearchParams({ headline: config.headline, showShipping: String(config.showShipping), recommendationOrder: config.recommendationOrder })}`;
 }
 
 export function App() {
@@ -146,7 +147,7 @@ export function App() {
         </div>
         <a
           className="text-sm font-medium text-teal-800 underline underline-offset-4"
-          href="http://127.0.0.1:4312"
+          href={LOCAL_ORIGINS.storefront}
           target="_blank"
           rel="noreferrer"
         >

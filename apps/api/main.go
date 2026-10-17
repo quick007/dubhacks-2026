@@ -9,6 +9,7 @@ import (
 	"os"
 	"os/signal"
 	"path/filepath"
+	"strconv"
 	"syscall"
 	"time"
 )
@@ -27,9 +28,13 @@ func main() {
 		}
 		return
 	}
-	listener, err := net.Listen("tcp", "127.0.0.1:4311")
+	address, err := listenAddress()
 	if err != nil {
-		log.Fatalf("Cannot start API on 127.0.0.1:4311; stop the process using that port: %v", err)
+		log.Fatal(err)
+	}
+	listener, err := net.Listen("tcp", address)
+	if err != nil {
+		log.Fatalf("Cannot start API on %s; stop the process using that port: %v", address, err)
 	}
 	app, err := NewApp(AppOptions{})
 	if err != nil {
@@ -46,7 +51,7 @@ func main() {
 		defer cancel()
 		_ = server.Shutdown(ctx)
 	}()
-	log.Println("Synthetic storefront API listening on http://127.0.0.1:4311")
+	log.Printf("Synthetic storefront API listening on http://%s", address)
 	if err = server.Serve(listener); err != nil && err != http.ErrServerClosed {
 		log.Print(err)
 	}
@@ -84,4 +89,17 @@ func maintenance(command string) error {
 	defer store.db.Close()
 	fmt.Printf("Local demo %s complete at %s\n", command, directory)
 	return nil
+}
+
+// Portless assigns PORT. Bind only loopback, including when HOST is inherited.
+func listenAddress() (string, error) {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "4311"
+	}
+	number, err := strconv.Atoi(port)
+	if err != nil || number < 1 || number > 65535 {
+		return "", fmt.Errorf("invalid PORT %q", port)
+	}
+	return net.JoinHostPort("127.0.0.1", port), nil
 }

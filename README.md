@@ -6,7 +6,7 @@ A local DubHacks scaffold for testing a demo storefront with synthetic shopper p
 
 ## Run locally
 
-Use Node 22.18+ in the 22.x line, Node 24.11+ in the 24.x line, or Node 26+ (tested: 26.9), pnpm 12.5.1, and Go 1.24+ (tested: 1.27.2). SQLite uses the small `go-sqlite3` driver and requires CGO plus a C compiler; this Mac already has Apple clang. No database server is needed. The Go helper uses `.tools/go/bin/go` when available, then system `go`, or the explicit `STOREFRONT_GO_BINARY` override. A checksum-verified official Go toolchain was installed only under this project’s ignored `.tools/` directory.
+Use Node 24.11+ in the 24.x line, or Node 26+ (tested: 26.9), pnpm 12.5.1, and Go 1.24+ (tested: 1.27.2). SQLite uses the small `go-sqlite3` driver and requires CGO plus a C compiler; this Mac already has Apple clang. No database server is needed. The Go helper uses `.tools/go/bin/go` when available, then system `go`, or the explicit `STOREFRONT_GO_BINARY` override. A checksum-verified official Go toolchain was installed only under this project’s ignored `.tools/` directory.
 
 ```sh
 pnpm install
@@ -15,15 +15,19 @@ pnpm seed
 pnpm dev
 ```
 
-Open **http://127.0.0.1:4310** and click **Run mock comparison**. The dashboard polls for queued/running/completed runs and displays separate development and held-out comparisons. Inspect each run's steps, failure reasons, result artifact, and evidence-linked proposals. **Run browser smoke** runs one real Playwright path through the local demo shop, saving a trace and screenshot. No API key is used by either adapter.
+Open **http://dubhacks.localhost:1356** and click **Run mock comparison**. The dashboard polls for queued/running/completed runs and displays separate development and held-out comparisons. Inspect each run's steps, failure reasons, result artifact, and evidence-linked proposals. **Run browser smoke** runs one real Playwright path through the local demo shop, saving a trace and screenshot. No API key is used by either adapter.
 
-| Service                                                    | Address               |
-| ---------------------------------------------------------- | --------------------- |
-| Dashboard, Vite+ + React + Tailwind + shadcn/ui primitives | http://127.0.0.1:4310 |
-| Go net/http API                                            | http://127.0.0.1:4311 |
-| Local demo shop                                            | http://127.0.0.1:4312 |
+| Service                                                    | Address                             |
+| ---------------------------------------------------------- | ----------------------------------- |
+| Dashboard, Vite+ + React + Tailwind + shadcn/ui primitives | http://dubhacks.localhost:1356      |
+| Go net/http API                                            | http://api.dubhacks.localhost:1356  |
+| Local demo shop                                            | http://shop.dubhacks.localhost:1356 |
 
-`pnpm dev` preflights these fixed ports and fails with a collision message. It never kills an existing service. Ctrl-C stops the services it started. All services bind to loopback. The shop accepts only demo interactions; its order button creates no purchase and collects no payment information.
+`pnpm dev` starts [Portless](https://github.com/vercel-labs/portless) in **plain HTTP on unprivileged port 1356**, then starts the three named apps with dynamically assigned backend ports. All listeners bind only to loopback. The launcher owns the proxy and app processes and stops them on Ctrl-C. It refuses an occupied proxy port and never force-takes a route or kills another project. The shop accepts only demo interactions; its order button creates no purchase and collects no payment information.
+
+The project uses isolated state in ignored `.cache/portless/`. The launcher explicitly disables TLS, LAN mode, hosts-file syncing and network sharing, and never installs an OS service or runs certificate trust commands. It leaves the existing proxy on 1355 and global `~/.portless` state alone. No sudo, trusted CA, `/etc/hosts` edit or global Portless installation is needed. Use Chrome, Edge or Firefox, whose built-in `.localhost` resolution works without hosts changes; Safari can depend on system DNS.
+
+Stable names live in `portless.json`; shared URLs and proxy port live in `packages/contracts/src/local.ts`. Both Vite+ apps honor `PORT` and bind `127.0.0.1`; the Go API also reads and validates `PORT` while keeping loopback binding. Vite allows the named hosts and sends HMR WebSockets through the named proxy. Dashboard `/api` requests use the named API route through loopback with the correct `Host` header, avoiding macOS Node DNS failures and proxy loops. The browser runner permits only the named demo-shop origin.
 
 ## Verify and reset
 
@@ -36,7 +40,7 @@ pnpm build
 pnpm test:smoke
 ```
 
-The small test suite checks shared schemas, runner protocol, storefront settings, and the Go API mock lifecycle/persistence. `pnpm typecheck:tsc-ts` invokes the published `tsc-ts` package; it is distinct from Vite+’s built-in TypeScript Go checks. Standard TypeScript checks remain available too. Playwright starts all three services itself and checks the dashboard comparison, fake checkout, and API browser trace/artifact path. Stop `pnpm dev` before `pnpm test:smoke`, since tests require the same fixed ports. Browser installation is only needed for browser runs and smoke tests; mock runs require no browser binary.
+The small test suite checks shared schemas, runner protocol, storefront settings, and the Go API mock lifecycle/persistence. `pnpm typecheck:tsc-ts` invokes the published `tsc-ts` package; it is distinct from Vite+’s built-in TypeScript Go checks. Standard TypeScript checks remain available too. Playwright starts all three services itself and checks the named dashboard comparison, fake checkout, API browser trace/artifact path, and real CSS hot updates through both frontend HMR WebSockets. Node request checks use loopback transport plus the named `Host` header, while browser navigation uses the named URLs. Stop `pnpm dev` before `pnpm test:smoke`, since tests use the same project proxy port. Browser installation is only needed for browser runs and smoke tests; mock runs require no browser binary.
 
 ```sh
 pnpm seed       # idempotent initial catalog; preserves runs
