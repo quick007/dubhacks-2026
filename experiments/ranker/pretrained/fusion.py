@@ -47,6 +47,51 @@ def _normalized(text):
     return " ".join(re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKC", text).lower()))
 
 
+TITLE_IDENTITY_POLICY = 'public-name-or-unique-mentioned-facts-v1'
+_PRODUCT_TYPES = frozenset(('backpack', 'backpacks', 'daypack', 'daypacks', 'pack', 'packs'))
+
+
+def identity_errors(title, product, catalog):
+    """Recognizable selected name, or a unique *mentioned* public fact signature.
+
+    Brand repetition is optional. Generic context and a common attribute alone
+    cannot identify a product. Uniqueness uses the complete supplied catalog.
+    """
+    def names(p):
+        # Remove capacity units together: _words('18L') otherwise leaves 'l'.
+        name = re.sub(r'\b\d+(?:\.\d+)?[a-z]*\b', '',
+                      unicodedata.normalize('NFKC', p['title']).lower())
+        return _words(name) - GENERIC_WORDS - _PRODUCT_TYPES - _words(p.get('category', '')) - _words(' '.join(p.get('tags', [])))
+
+    def capacities(p):
+        return set(re.findall(r'\b\d+(?:\.\d+)?l\b', unicodedata.normalize('NFKC', p['title']).lower()))
+
+    words = _words(title)
+    selected_names = names(product)
+    foreign = set().union(*(names(p) for p in catalog.values())) - selected_names
+    if words & foreign:
+        return ['other_product_identity']
+    if words & selected_names:
+        return []
+    types = words & _PRODUCT_TYPES
+    if not types:
+        return ['missing_selected_product_identity']
+    normalized = _normalized(title)
+    tags = [tag for tag in product.get('tags', [])
+            if re.search(r'\b' + re.escape(_normalized(tag)) + r'\b', normalized)]
+    literals = set(re.findall(r'\b\d+(?:\.\d+)?l\b', unicodedata.normalize('NFKC', title).lower()))
+    sizes = literals & capacities(product)
+    if not tags and not sizes:
+        return ['missing_selected_product_identity']
+    def matches(p):
+        type_words = _words(p['title'] + ' ' + p.get('category', ''))
+        return bool(type_words & _PRODUCT_TYPES) and sizes <= capacities(p) and set(map(_normalized, tags)) <= set(map(_normalized, p.get('tags', [])))
+    matching = [p for p in catalog.values() if matches(p)]
+    if len(matching) != 1 or matching[0] != product:
+        return ['ambiguous_public_fact_identity']
+    return []
+
+
 def observable_request(request):
     """Rebuild allowlisted public inputs; labels/private fields cannot leak.
 
@@ -147,9 +192,7 @@ def validate_copy(text, product, catalog, finish_reason="stop", preferred_attrib
         approved = [product["title"], *(v["title"] for v in product.get("presentationVariants", []))]
         if _normalized(title) in {_normalized(value) for value in approved}:
             title_errors.append("title_matches_prewritten_approved_title")
-        anchors = _words(product["title"]) | _words(" ".join(product.get("tags", [])))
-        if not (_words(title) & {word for word in anchors if not word.isdigit()}):
-            title_errors.append("missing_product_identity_or_attribute")
+        title_errors.extend(identity_errors(title, product, catalog))
         if preferred_attributes and not _mentions_preference(title, preferred_attributes):
             title_errors.append("supported_observable_preference_not_demonstrated")
         if preferred_attributes and not _mentions_preference(title + " " + copy, preferred_attributes):

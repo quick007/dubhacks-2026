@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "semantic-copy-teacher-v1",
+  "seed": 19073,
+  "frozenBeforeAnyNativeExtractionOrTraining": true,
+  "modelCalls": 0,
+  "generatorSha256": "7709e3540ac2487650da9c85f6ae99c1b53a00a1af5b6456bc34528e9188f3b2",
+  "validatorSha256AtAudit": "f376d8f2d192f94a8b1e72f1fe710bc16a13d4e26c21fd05704cbaf9d9c8ea47",
+  "fileSha256": {
+    "cases.train.jsonl": "1515b46d18ac75fd79c62f544d06698ec0c675c3c6868a4bfa25c7ce5694ed77",
+    "cases.dev.jsonl": "732bec767d5155da61ced587789572533a9aa6abd9cb7846209a9b534a195955",
+    "cases.test.jsonl": "93413db55345169a4ea1c1cf6e0dc18deba47da01b6bcb9eb829941c94fcaddf",
+    "fields.train.jsonl": "9a7b708411e581b1ceb1dcb126410a18d2bd00b6516e450cc2d045958bccfd36",
+    "fields.dev.jsonl": "ffc2a8aebeaa78d8e5409ceb229c8c9a650c38b5324719729bac01a48de50ea1",
+    "fields.test.jsonl": "df9aa23b8c3af94ed774db336a24cfd97f4096ebfc014110380cb926a3dc316a"
+  },
+  "audit": {
+    "status": "passed",
+    "nativeExecution": false,
+    "trainingExecuted": false,
+    "teacherTargetsAreNotModelOutputs": true,
+    "splitDisjointness": "product IDs, image IDs, names, persona families, full preference pairs and full product tag triples",
+    "nonSentinelTargetOverlapAcrossSplits": 0,
+    "sharedSentinelException": "NONE is intentionally shared policy syntax",
+    "summary": {
+      "train": {
+        "requests": 12,
+        "fieldExamples": 168,
+        "products": 72,
+        "teacherPagesPassingUnchangedValidator": 12,
+        "titleFullIdentityPasses": 72,
+        "supportedBadges": 36,
+        "requiredNoneBadges": 36,
+        "emptyUniversalHeadings": 12,
+        "positiveUniversalHeadings": 12
+      },
+      "dev": {
+        "requests": 3,
+        "fieldExamples": 42,
+        "products": 18,
+        "teacherPagesPassingUnchangedValidator": 3,
+        "titleFullIdentityPasses": 18,
+        "supportedBadges": 9,
+        "requiredNoneBadges": 9,
+        "emptyUniversalHeadings": 3,
+        "positiveUniversalHeadings": 3
+      },
+      "test": {
+        "requests": 3,
+        "fieldExamples": 42,
+        "products": 18,
+        "teacherPagesPassingUnchangedValidator": 3,
+        "titleFullIdentityPasses": 18,
+        "supportedBadges": 9,
+        "requiredNoneBadges": 9,
+        "emptyUniversalHeadings": 3,
+        "positiveUniversalHeadings": 3
+      }
+    }
+  },
+  "trainFile": "fields.train.jsonl",
+  "developmentFile": "fields.dev.jsonl",
+  "evaluationOnlyFile": "fields.test.jsonl",
+  "limitations": [
+    "Audited fictional teacher grammar, not human validated production data.",
+    "All targets are synthetic supervision, not model outputs or a measured generation improvement.",
+    "Test targets must not enter training, target selection, prompt tuning or early stopping.",
+    "NONE repeats across splits as required policy syntax; every other normalized target value is split-disjoint.",
+    "Selection/image order is a fixture, not trained ranking quality; no latent persona labels are used in inference."
+  ]
+}

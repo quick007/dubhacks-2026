@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 1,
+  "identityPolicy": "public-name-or-unique-mentioned-facts-v1",
+  "nativeExecution": false,
+  "trainingExecuted": false,
+  "teacherTargetsAreNotModelOutputs": true,
+  "sourceSha256": {
+    "fusion.py": "217abdd3134fc1ee53cfa545c118c1596c05dde010bf0d47382124140c9948e6",
+    "evidence_plan.py": "01e3e96b8f230d7802da445c1e5c6da0503ac7fbef1efe529c93ef10b9c0ca1a",
+    "scheduler_identity_experiment.py": "53c7a72f44285ebc501adad47832b0a079b07298042b1585417fcfdb4680dcc1",
+    "parallel_decode.py": "7c2049fa82c03f17a4ff6973ba1c0d80b329039782df973a1df22ab045dd338b",
+    "SCHEDULER_IDENTITY_CASES.json": "41f3ce458a6bf355fda7e41a6bd62da0661c70d9e3e8c59943ed94d48e47c9b6",
+    "SCHEDULER_IDENTITY_RESULTS.json": "4b3a653bb3a026f4d175e6fc1ebcba272456487aa3637afab5d38129cb451b3a"
+  },
+  "teacherAudit": {
+    "status": "passed",
+    "nativeExecution": false,
+    "trainingExecuted": false,
+    "teacherTargetsAreNotModelOutputs": true,
+    "splitDisjointness": "product IDs, image IDs, names, persona families, full preference pairs and full product tag triples",
+    "nonSentinelTargetOverlapAcrossSplits": 0,
+    "sharedSentinelException": "NONE is intentionally shared policy syntax",
+    "summary": {
+      "train": {
+        "requests": 12,
+        "fieldExamples": 168,
+        "products": 72,
+        "teacherPagesPassingUnchangedValidator": 12,
+        "titleFullIdentityPasses": 72,
+        "supportedBadges": 36,
+        "requiredNoneBadges": 36,
+        "emptyUniversalHeadings": 12,
+        "positiveUniversalHeadings": 12
+      },
+      "dev": {
+        "requests": 3,
+        "fieldExamples": 42,
+        "products": 18,
+        "teacherPagesPassingUnchangedValidator": 3,
+        "titleFullIdentityPasses": 18,
+        "supportedBadges": 9,
+        "requiredNoneBadges": 9,
+        "emptyUniversalHeadings": 3,
+        "positiveUniversalHeadings": 3
+      },
+      "test": {
+        "requests": 3,
+        "fieldExamples": 42,
+        "products": 18,
+        "teacherPagesPassingUnchangedValidator": 3,
+        "titleFullIdentityPasses": 18,
+        "supportedBadges": 9,
+        "requiredNoneBadges": 9,
+        "emptyUniversalHeadings": 3,
+        "positiveUniversalHeadings": 3
+      }
+    }
+  },
+  "teacherTitlesPassingIdentity": {
+    "train": 72,
+    "dev": 18,
+    "test": 18
+  },
+  "savedOutputReplay": [
+    {
+      "caseId": "evidence-page-scale-6",
+      "freshHoldout": false,
+      "arm": "generatedLabels",
+      "status": "saved-native-output-cpu-replay",
+      "oldQuality": {
+        "rejections": [
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "B2:unsupported-or-unresponsive-badge",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B3:unsupported-or-unresponsive-badge",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B4:NONE-required",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B5:NONE-required",
+          "incomplete-or-extra-field-set",
+          "heading-2:wrong-row-protocol",
+          "badge-2:wrong-row-protocol",
+          "badge-3:wrong-row-protocol",
+          "badge-4:wrong-row-protocol",
+          "badge-5:wrong-row-protocol",
+          "wrong-assembled-field-order"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 3,
+        "generatedBadgeCount": 2,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": 0.75,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": false
+      },
+      "newQuality": {
+        "rejections": [
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "B2:unsupported-or-unresponsive-badge",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B3:unsupported-or-unresponsive-badge",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B4:NONE-required",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B5:NONE-required",
+          "incomplete-or-extra-field-set",
+          "heading-2:wrong-row-protocol",
+          "badge-2:wrong-row-protocol",
+          "badge-3:wrong-row-protocol",
+          "badge-4:wrong-row-protocol",
+          "badge-5:wrong-row-protocol",
+          "wrong-assembled-field-order"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 3,
+        "generatedBadgeCount": 2,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": 0.75,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": false
+      },
+      "titles": [
+        {
+          "field": "T1",
+          "rawSavedText": "T1: Grove 23L Daypack \u2014 compact choice",
+          "selectedIdentity": "Grove 23L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T2",
+          "rawSavedText": "T2: Cedar 26L Daypack \u2014 durable and compact",
+          "selectedIdentity": "Cedar 26L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T3",
+          "rawSavedText": "T3: River 26L Daypack \u2014 durable",
+          "selectedIdentity": "River 26L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T4",
+          "rawSavedText": "T4: Field 14L Daypack \u2014 lightweight",
+          "selectedIdentity": "Field 14L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T5",
+          "rawSavedText": "T5: Ridge 23L Daypack \u2014 lightweight",
+          "selectedIdentity": "Ridge 23L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T6",
+          "rawSavedText": "T6: River 14L Daypack \u2014 durable and compact",
+          "selectedIdentity": "River 14L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        }
+      ]
+    },
+    {
+      "caseId": "evidence-page-scale-6",
+      "freshHoldout": false,
+      "arm": "schedulerIdentity",
+      "status": "saved-native-output-cpu-replay",
+      "oldQuality": {
+        "rejections": [
+          "S1:unsupported-or-missing-heading",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 5,
+        "generatedBadgeCount": 4,
+        "generatedHeadingCount": 1,
+        "titleObservedAlignmentRate": 0.75,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": true
+      },
+      "newQuality": {
+        "rejections": [
+          "S1:unsupported-or-missing-heading",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 5,
+        "generatedBadgeCount": 4,
+        "generatedHeadingCount": 1,
+        "titleObservedAlignmentRate": 0.75,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": true
+      },
+      "titles": [
+        {
+          "field": "T1",
+          "rawSavedText": "Grove 23L Daypack for compact everyday travel",
+          "selectedIdentity": "Grove 23L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T2",
+          "rawSavedText": "Cedar 26L Daypack for compact durable travel",
+          "selectedIdentity": "Cedar 26L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T3",
+          "rawSavedText": "Durable River 26L Daypack for travel",
+          "selectedIdentity": "River 26L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T4",
+          "rawSavedText": "Field 14L Daypack for everyday carry",
+          "selectedIdentity": "Field 14L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T5",
+          "rawSavedText": "Ridge 23L Daypack for everyday travel",
+          "selectedIdentity": "Ridge 23L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T6",
+          "rawSavedText": "River 14L Daypack for everyday travel",
+          "selectedIdentity": "River 14L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        }
+      ]
+    },
+    {
+      "caseId": "scheduler-holdout-none-control",
+      "freshHoldout": true,
+      "arm": "schedulerIdentity",
+      "status": "saved-native-output-cpu-replay",
+      "oldQuality": {
+        "rejections": [
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "B6:NONE-required"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 6,
+        "generatedBadgeCount": 0,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": null,
+        "titleObservedAlignmentEvaluatedCards": 0,
+        "correctNone": false
+      },
+      "newQuality": {
+        "rejections": [
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T6:missing_selected_product_identity",
+          "B6:NONE-required"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 5,
+        "generatedBadgeCount": 0,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": null,
+        "titleObservedAlignmentEvaluatedCards": 0,
+        "correctNone": false
+      },
+      "titles": [
+        {
+          "field": "T1",
+          "rawSavedText": "Flint water-resistant packable daypack",
+          "selectedIdentity": "Flint 30L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T2",
+          "rawSavedText": "Delta 16L Daypack for lightweight travel",
+          "selectedIdentity": "Delta 16L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T3",
+          "rawSavedText": "Coral 27L Daypack for everyday travel",
+          "selectedIdentity": "Coral 27L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T4",
+          "rawSavedText": "Briar 22L Daypack for everyday travel",
+          "selectedIdentity": "Briar 22L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T5",
+          "rawSavedText": "Ember 24L Daypack for everyday travel",
+          "selectedIdentity": "Ember 24L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T6",
+          "rawSavedText": "Meet the compact everyday travel choice",
+          "selectedIdentity": "Aster 18L Daypack",
+          "identityErrors": [
+            "missing_selected_product_identity"
+          ],
+          "previouslyAccepted": true,
+          "nowAccepted": false
+        }
+      ]
+    },
+    {
+      "caseId": "scheduler-holdout-none-control",
+      "freshHoldout": true,
+      "arm": "generatedLabels",
+      "status": "saved-native-output-cpu-replay",
+      "oldQuality": {
+        "rejections": [
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "S2:unsupported-or-missing-heading",
+          "B1:NONE-required",
+          "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B2:NONE-required",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B3:NONE-required",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B4:NONE-required",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B5:NONE-required",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B6:NONE-required",
+          "incomplete-or-extra-field-set",
+          "heading-2:wrong-row-protocol",
+          "badge-1:wrong-row-protocol",
+          "badge-2:wrong-row-protocol",
+          "badge-3:wrong-row-protocol",
+          "title-4:wrong-row-protocol",
+          "badge-4:wrong-row-protocol",
+          "badge-5:wrong-row-protocol",
+          "badge-6:wrong-row-protocol",
+          "wrong-assembled-field-order"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 1,
+        "generatedBadgeCount": 0,
+        "generatedHeadingCount": 1,
+        "titleObservedAlignmentRate": null,
+        "titleObservedAlignmentEvaluatedCards": 0,
+        "correctNone": false
+      },
+      "newQuality": {
+        "rejections": [
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "S2:unsupported-or-missing-heading",
+          "B1:NONE-required",
+          "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B2:NONE-required",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B3:NONE-required",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T4:missing_selected_product_identity",
+          "B4:NONE-required",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B5:NONE-required",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B6:NONE-required",
+          "incomplete-or-extra-field-set",
+          "heading-2:wrong-row-protocol",
+          "badge-1:wrong-row-protocol",
+          "badge-2:wrong-row-protocol",
+          "badge-3:wrong-row-protocol",
+          "title-4:wrong-row-protocol",
+          "badge-4:wrong-row-protocol",
+          "badge-5:wrong-row-protocol",
+          "badge-6:wrong-row-protocol",
+          "wrong-assembled-field-order"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 1,
+        "generatedBadgeCount": 0,
+        "generatedHeadingCount": 1,
+        "titleObservedAlignmentRate": null,
+        "titleObservedAlignmentEvaluatedCards": 0,
+        "correctNone": false
+      },
+      "titles": [
+        {
+          "field": "T1",
+          "rawSavedText": "T1: Flint water-resistant travel daypack",
+          "selectedIdentity": "Flint 30L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T2",
+          "rawSavedText": "T2: Delta 16L Daypack \u2014 lightweight",
+          "selectedIdentity": "Delta 16L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T3",
+          "rawSavedText": "T3: Coral 27L Daypack \u2014 organizer",
+          "selectedIdentity": "Coral 27L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T4",
+          "rawSavedText": "Briar 22L Daypack \u2014 durable",
+          "selectedIdentity": "Briar 22L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T5",
+          "rawSavedText": "T5: Ember 24L Daypack \u2014 roomy",
+          "selectedIdentity": "Ember 24L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T6",
+          "rawSavedText": "T6: Aster 18L Daypack \u2014 compact",
+          "selectedIdentity": "Aster 18L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        }
+      ]
+    },
+    {
+      "caseId": "scheduler-holdout-explicit-preferences",
+      "freshHoldout": true,
+      "arm": "generatedLabels",
+      "status": "saved-native-output-cpu-replay",
+      "oldQuality": {
+        "rejections": [
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unfinished-or-markup-output",
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B1:NONE-required",
+          "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B2:NONE-required",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B3:unsupported-or-unresponsive-badge",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B4:unsupported-or-unresponsive-badge",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B5:unsupported-or-unresponsive-badge",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B6:unsupported-or-unresponsive-badge",
+          "incomplete-or-extra-field-set",
+          "heading-2:wrong-row-protocol",
+          "badge-1:wrong-row-protocol",
+          "badge-2:wrong-row-protocol",
+          "badge-3:wrong-row-protocol",
+          "badge-4:wrong-row-protocol",
+          "badge-5:wrong-row-protocol",
+          "badge-6:wrong-row-protocol",
+          "wrong-assembled-field-order"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 0,
+        "generatedBadgeCount": 0,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": 0.0,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": false
+      },
+      "newQuality": {
+        "rejections": [
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unexpected-or-duplicate-output-line",
+          "unfinished-or-markup-output",
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B1:NONE-required",
+          "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B2:NONE-required",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B3:unsupported-or-unresponsive-badge",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B4:unsupported-or-unresponsive-badge",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B5:unsupported-or-unresponsive-badge",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+          "B6:unsupported-or-unresponsive-badge",
+          "incomplete-or-extra-field-set",
+          "heading-2:wrong-row-protocol",
+          "badge-1:wrong-row-protocol",
+          "badge-2:wrong-row-protocol",
+          "badge-3:wrong-row-protocol",
+          "badge-4:wrong-row-protocol",
+          "badge-5:wrong-row-protocol",
+          "badge-6:wrong-row-protocol",
+          "wrong-assembled-field-order"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 0,
+        "generatedBadgeCount": 0,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": 0.0,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": false
+      },
+      "titles": [
+        {
+          "field": "T1",
+          "rawSavedText": "T1: Kestrel 15L Daypack a roomy everyday choice",
+          "selectedIdentity": "Kestrel 15L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T2",
+          "rawSavedText": "T2: Larch 28L Daypack \u2014 lightweight",
+          "selectedIdentity": "Larch 28L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T3",
+          "rawSavedText": "T3: Jasper 25L Daypack \u2014 compact",
+          "selectedIdentity": "Jasper 25L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T4",
+          "rawSavedText": "T4: Moraine 32L Daypack \u2014 durable",
+          "selectedIdentity": "Moraine 32L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T5",
+          "rawSavedText": "T5: Islet 21L Daypack \u2014 durable",
+          "selectedIdentity": "Islet 21L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T6",
+          "rawSavedText": "T6: Horizon 19L Daypack \u2014 compact",
+          "selectedIdentity": "Horizon 19L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        }
+      ]
+    },
+    {
+      "caseId": "scheduler-holdout-explicit-preferences",
+      "freshHoldout": true,
+      "arm": "schedulerIdentity",
+      "status": "saved-native-output-cpu-replay",
+      "oldQuality": {
+        "rejections": [
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 2,
+        "generatedBadgeCount": 4,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": 0.0,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": true
+      },
+      "newQuality": {
+        "rejections": [
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading",
+          "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+          "T6:unsupported-missing-nonnovel-or-unresponsive-title"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 2,
+        "generatedBadgeCount": 4,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": 0.0,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": true
+      },
+      "titles": [
+        {
+          "field": "T1",
+          "rawSavedText": "Kestrel 15L Daypack for everyday travel",
+          "selectedIdentity": "Kestrel 15L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T2",
+          "rawSavedText": "Larch 28L Daypack for lightweight travel",
+          "selectedIdentity": "Larch 28L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": true,
+          "nowAccepted": true
+        },
+        {
+          "field": "T3",
+          "rawSavedText": "Jasper 25L Daypack for everyday travel",
+          "selectedIdentity": "Jasper 25L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T4",
+          "rawSavedText": "Moraine 32L Daypack for everyday travel",
+          "selectedIdentity": "Moraine 32L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T5",
+          "rawSavedText": "Islet 21L Daypack for everyday travel",
+          "selectedIdentity": "Islet 21L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        },
+        {
+          "field": "T6",
+          "rawSavedText": "Horizon 19L Daypack \u2014 compact",
+          "selectedIdentity": "Horizon 19L Daypack",
+          "identityErrors": [],
+          "previouslyAccepted": false,
+          "nowAccepted": false
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Teacher page acceptance is a grammar audit, not a generation pass rate.",
+    "Saved native outputs were not regenerated, rescued, retried or relabeled.",
+    "All saved pages were already rejected; identity can reduce accepted fields without changing page acceptance."
+  ]
+}
