@@ -1,0 +1,2926 @@
+{
+  "synthetic": true,
+  "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "training": false,
+  "headCheckpoint": {
+    "sha256": "0eddd1393e3ad03699820f0dd8d1b5189ac7e0733581725eabb831a0e142ccb2",
+    "exactPredictionReload": true
+  },
+  "intervention": "exact-output-manifest-v1 prompt only",
+  "config": {
+    "seed": 728,
+    "routerSeed": 37,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "productLoss": "per-request best-product cross entropy on mean variant logits",
+    "presentationLoss": "within-product CE on compatible, informative nonzero variant targets",
+    "routingLoss": "all training records; inverse class frequency CE",
+    "headRepresentation": "unchanged shared-prefix-v1 readouts",
+    "decoder": "same frozen backbone, greedy, one single-use cache per arm",
+    "budgets": {
+      "1": 64,
+      "3": 128,
+      "6": 224
+    },
+    "maxPrefixTokens": 1536,
+    "memoryGiB": 6,
+    "tuning": "one fixed attempt, no validation/test hyperparameter selection"
+  },
+  "validatorChanges": false,
+  "residentLoadMs": 2649.100249982439,
+  "summary": {
+    "cache": {
+      "baseline": {
+        "n": 10,
+        "validPages": 0,
+        "validPageRate": 0.0,
+        "newTitleCount": 0,
+        "requestedTitleCount": 24,
+        "headingCount": 0,
+        "badgeCount": 0,
+        "nonstopCount": 8,
+        "fullLatencyMs": {
+          "n": 10,
+          "p50": 6420.174770464655,
+          "p95": 10608.321114408316
+        },
+        "failureMechanisms": {
+          "blank_separator_strictness": 9,
+          "token_budget_truncation_or_nonstop": 8,
+          "wrong_field_set": 10,
+          "badge_factuality_distinct_from_missing_personalization_evidence": 2,
+          "conservative_lexical_rejection_needs_review": 6,
+          "other_catalog_product_identity_in_bound_title": 1,
+          "validator_flagged_bound_fact_requires_context_review": 6,
+          "control_enum_copied_as_content": 1,
+          "copied_approved_title_not_new": 1,
+          "copied_input_instead_of_requested_output": 2,
+          "unparseable_or_markdown_format": 4
+        },
+        "exactFieldOrderCount": 0
+      },
+      "manifest": {
+        "n": 10,
+        "validPages": 0,
+        "validPageRate": 0.0,
+        "newTitleCount": 18,
+        "requestedTitleCount": 24,
+        "headingCount": 4,
+        "badgeCount": 19,
+        "nonstopCount": 0,
+        "fullLatencyMs": {
+          "n": 10,
+          "p50": 4989.131667010952,
+          "p95": 8838.80394377047
+        },
+        "failureMechanisms": {
+          "conservative_lexical_rejection_needs_review": 10,
+          "title_missing_required_observed_attribute": 5,
+          "other_catalog_product_identity_in_bound_title": 1,
+          "validator_flagged_bound_fact_requires_context_review": 6
+        },
+        "exactFieldOrderCount": 10
+      }
+    },
+    "evidence": {
+      "baseline": {
+        "n": 12,
+        "validPages": 1,
+        "validPageRate": 0.08333333333333333,
+        "newTitleCount": 6,
+        "requestedTitleCount": 19,
+        "headingCount": 6,
+        "badgeCount": 0,
+        "nonstopCount": 0,
+        "fullLatencyMs": {
+          "n": 12,
+          "p50": 3194.6159165236168,
+          "p95": 6639.3338439404015
+        },
+        "failureMechanisms": {
+          "badge_factuality_distinct_from_missing_personalization_evidence": 7,
+          "conservative_lexical_rejection_needs_review": 9,
+          "control_enum_copied_as_content": 4,
+          "copied_approved_title_not_new": 5,
+          "wrong_field_set": 2,
+          "title_missing_required_observed_attribute": 1,
+          "duplicate_field_labels": 1,
+          "blank_separator_strictness": 1,
+          "validator_flagged_bound_fact_requires_context_review": 1,
+          "wrong_field_order": 1
+        },
+        "exactFieldOrderCount": 9
+      },
+      "manifest": {
+        "n": 12,
+        "validPages": 7,
+        "validPageRate": 0.5833333333333334,
+        "newTitleCount": 16,
+        "requestedTitleCount": 19,
+        "headingCount": 9,
+        "badgeCount": 14,
+        "nonstopCount": 0,
+        "fullLatencyMs": {
+          "n": 12,
+          "p50": 3198.52404150879,
+          "p95": 6979.671471228355
+        },
+        "failureMechanisms": {
+          "conservative_lexical_rejection_needs_review": 4,
+          "forbidden_claim_terms": 1,
+          "title_missing_required_observed_attribute": 1,
+          "validator_flagged_bound_fact_requires_context_review": 3,
+          "copied_approved_title_not_new": 1
+        },
+        "exactFieldOrderCount": 12
+      }
+    },
+    "all": {
+      "baseline": {
+        "n": 22,
+        "validPages": 1,
+        "validPageRate": 0.045454545454545456,
+        "newTitleCount": 6,
+        "requestedTitleCount": 43,
+        "headingCount": 6,
+        "badgeCount": 0,
+        "nonstopCount": 8,
+        "fullLatencyMs": {
+          "n": 22,
+          "p50": 4986.760478990618,
+          "p95": 9832.516072905855
+        },
+        "failureMechanisms": {
+          "blank_separator_strictness": 10,
+          "token_budget_truncation_or_nonstop": 8,
+          "wrong_field_set": 12,
+          "badge_factuality_distinct_from_missing_personalization_evidence": 9,
+          "conservative_lexical_rejection_needs_review": 15,
+          "other_catalog_product_identity_in_bound_title": 1,
+          "validator_flagged_bound_fact_requires_context_review": 7,
+          "control_enum_copied_as_content": 5,
+          "copied_approved_title_not_new": 6,
+          "copied_input_instead_of_requested_output": 2,
+          "unparseable_or_markdown_format": 4,
+          "title_missing_required_observed_attribute": 1,
+          "duplicate_field_labels": 1,
+          "wrong_field_order": 1
+        },
+        "exactFieldOrderCount": 9
+      },
+      "manifest": {
+        "n": 22,
+        "validPages": 7,
+        "validPageRate": 0.3181818181818182,
+        "newTitleCount": 34,
+        "requestedTitleCount": 43,
+        "headingCount": 13,
+        "badgeCount": 33,
+        "nonstopCount": 0,
+        "fullLatencyMs": {
+          "n": 22,
+          "p50": 3690.441437473055,
+          "p95": 8880.19551250618
+        },
+        "failureMechanisms": {
+          "conservative_lexical_rejection_needs_review": 14,
+          "title_missing_required_observed_attribute": 6,
+          "other_catalog_product_identity_in_bound_title": 1,
+          "validator_flagged_bound_fact_requires_context_review": 9,
+          "forbidden_claim_terms": 1,
+          "copied_approved_title_not_new": 1
+        },
+        "exactFieldOrderCount": 22
+      }
+    }
+  },
+  "memory": {
+    "mlxActiveBytes": 5038041612,
+    "mlxPeakBytes": 6344673924,
+    "mlxCacheBytes": 134797198,
+    "processBudgetBytes": 6442450944
+  },
+  "baselineRawReplayMatches": 22,
+  "limitations": [
+    "Same previously inspected synthetic cases used for diagnosis and comparison, not untouched generalization evidence.",
+    "One manifest serialization change combines exact cardinality, field-to-product binding and control/content separation; effects not separately identified.",
+    "Fresh full ranker prefill and fresh generation in every arm; catalog prepare/materialization included where applicable. No response cache, training, retry or validator relaxation.",
+    "Greedy64/128/224token budgets identical within each pair. Alternating order, one resident model, original cache cold/warm conditions retained.",
+    "Full attempt latency includes rejected fields; only validPages counts complete accepted responses. Single run per case; no production speed or human-lift claim.",
+    "Structure/evidence projection remain deterministic policies; no learned grouping or architectural novelty claim."
+  ],
+  "classificationReview": {
+    "generationRepeated": false,
+    "acceptanceOrTimingChanged": false,
+    "originalBenchmarkSha256": "66f849365db8592c28b08b5a4bdcd74638c58afa2cb23a84b2b91ceb522fce4d",
+    "generationSourceCommit": "afe7e20",
+    "changes": [
+      "Record required observed title attributes separately from lexical rejection.",
+      "Check exact parsed field order separately from field set.",
+      "Label validator bound-fact flags as context-review signals; section proxy numeric/brand rejection is not confirmed hallucination."
+    ]
+  },
+  "perCase": [
+    {
+      "caseId": "cache-0-cold-catalog",
+      "source": "cache",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": ["T1:unsupported-missing-nonnovel-or-unresponsive-title"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 9.756791056133807,
+              "forwardMs": 1966.0871248925105,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1984.9996659904718,
+            "catalogCachePrepareMs": 1339.1743750544265,
+            "promptPreparationMs": 1.2135410215705633,
+            "generationMs": 1727.8589999768883,
+            "prefillAndFirstTokenMs": 659.3683749670163,
+            "nativePromptMs": 647.2226659534499,
+            "autoregressiveAfterFirstTokenMs": 1068.490625009872,
+            "validationMs": 4.135625087656081,
+            "fullCompletionMs": 5061.661000014283
+          },
+          "generation": {
+            "text": "S1: Compact water-resistant daily choice\nT1: Grove 23L Daypack for short trips\nB1: compact",
+            "finishReason": "stop",
+            "promptTokens": 366,
+            "generatedTokens": 28,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.2135410215705633,
+              "generationMs": 1727.8589999768883,
+              "prefillAndFirstTokenMs": 659.3683749670163,
+              "nativePromptMs": 647.2226659534499,
+              "autoregressiveAfterFirstTokenMs": 1068.490625009872
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "title_missing_required_observed_attribute"
+          ]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 20.435167010873556,
+              "forwardMs": 1934.0168330818415,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1955.3974160226062,
+            "catalogCachePrepareMs": 1375.0320828985423,
+            "promptPreparationMs": 1.416624989360571,
+            "generationMs": 3124.5335419662297,
+            "prefillAndFirstTokenMs": 603.9265419822186,
+            "nativePromptMs": 571.354707935825,
+            "autoregressiveAfterFirstTokenMs": 2520.606999984011,
+            "validationMs": 0.3730830503627658,
+            "fullCompletionMs": 6462.361832964234
+          },
+          "generation": {
+            "text": "S1: Compact Everyday Travel Choice\nS2: Durable Short Trip Companion\n\nT1: Grove 23L Daypack \u2014 Compact\nB1: Compact\n\nT2: Grove 23L Daypack\nB2: Water-Resistant\n\nT3: Grove 23L Daypack",
+            "finishReason": "length",
+            "promptTokens": 363,
+            "generatedTokens": 64,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.416624989360571,
+              "generationMs": 3124.5335419662297,
+              "prefillAndFirstTokenMs": 603.9265419822186,
+              "nativePromptMs": 571.354707935825,
+              "autoregressiveAfterFirstTokenMs": 2520.606999984011
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "token_budget_truncation_or_nonstop",
+            "wrong_field_set"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-1-warm-catalog",
+      "source": "cache",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 26.424916926771402,
+              "forwardMs": 1940.0553749874234,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1967.1069589676335,
+            "catalogCachePrepareMs": 61.85116688720882,
+            "promptPreparationMs": 1.316040987148881,
+            "generationMs": 3101.791083929129,
+            "prefillAndFirstTokenMs": 602.9523749602959,
+            "nativePromptMs": 564.4610420567915,
+            "autoregressiveAfterFirstTokenMs": 2498.838708968833,
+            "validationMs": 0.265000038780272,
+            "fullCompletionMs": 5136.7634169291705
+          },
+          "generation": {
+            "text": "S1: Compact Everyday Travel Choice\nS2: Durable Short Trip Companion\n\nT1: Grove 23L Daypack \u2014 Compact\nB1: Compact\n\nT2: Grove 23L Daypack\nB2: Water-Resistant\n\nT3: Grove 23L Daypack",
+            "finishReason": "length",
+            "promptTokens": 363,
+            "generatedTokens": 64,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.316040987148881,
+              "generationMs": 3101.791083929129,
+              "prefillAndFirstTokenMs": 602.9523749602959,
+              "nativePromptMs": 564.4610420567915,
+              "autoregressiveAfterFirstTokenMs": 2498.838708968833
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "token_budget_truncation_or_nonstop",
+            "wrong_field_set"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": ["T1:unsupported-missing-nonnovel-or-unresponsive-title"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 27.061874978244305,
+              "forwardMs": 1945.0943749397993,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1972.7682499215007,
+            "catalogCachePrepareMs": 52.29579098522663,
+            "promptPreparationMs": 1.168792019598186,
+            "generationMs": 1689.7611250169575,
+            "prefillAndFirstTokenMs": 602.0102499751374,
+            "nativePromptMs": 568.6694170581177,
+            "autoregressiveAfterFirstTokenMs": 1087.75087504182,
+            "validationMs": 1.0876660235226154,
+            "fullCompletionMs": 3721.4373749447986
+          },
+          "generation": {
+            "text": "S1: Compact water-resistant daily choice\nT1: Grove 23L Daypack for short trips\nB1: compact",
+            "finishReason": "stop",
+            "promptTokens": 366,
+            "generatedTokens": 28,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.168792019598186,
+              "generationMs": 1689.7611250169575,
+              "prefillAndFirstTokenMs": 602.0102499751374,
+              "nativePromptMs": 568.6694170581177,
+              "autoregressiveAfterFirstTokenMs": 1087.75087504182
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "title_missing_required_observed_attribute"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-2-repeat-unchanged-A",
+      "source": "cache",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": ["T1:unsupported-missing-nonnovel-or-unresponsive-title"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 26.05837502051145,
+              "forwardMs": 1949.467165977694,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1976.0729169938713,
+            "catalogCachePrepareMs": 57.33258405234665,
+            "promptPreparationMs": 1.2677909107878804,
+            "generationMs": 1695.0318339513615,
+            "prefillAndFirstTokenMs": 607.6400839956477,
+            "nativePromptMs": 568.9032080117613,
+            "autoregressiveAfterFirstTokenMs": 1087.3917499557137,
+            "validationMs": 2.0520000252872705,
+            "fullCompletionMs": 3737.9774579312652
+          },
+          "generation": {
+            "text": "S1: Compact water-resistant daily choice\nT1: Grove 23L Daypack for short trips\nB1: compact",
+            "finishReason": "stop",
+            "promptTokens": 366,
+            "generatedTokens": 28,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.2677909107878804,
+              "generationMs": 1695.0318339513615,
+              "prefillAndFirstTokenMs": 607.6400839956477,
+              "nativePromptMs": 568.9032080117613,
+              "autoregressiveAfterFirstTokenMs": 1087.3917499557137
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "title_missing_required_observed_attribute"
+          ]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 26.00958407856524,
+              "forwardMs": 1967.822541948408,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1994.3037080811337,
+            "catalogCachePrepareMs": 56.90104200039059,
+            "promptPreparationMs": 1.432292046956718,
+            "generationMs": 3129.5708330580965,
+            "prefillAndFirstTokenMs": 630.0335420528427,
+            "nativePromptMs": 590.4243330005556,
+            "autoregressiveAfterFirstTokenMs": 2499.537291005254,
+            "validationMs": 0.10750000365078449,
+            "fullCompletionMs": 5186.65679206606
+          },
+          "generation": {
+            "text": "S1: Compact Everyday Travel Choice\nS2: Durable Short Trip Companion\n\nT1: Grove 23L Daypack \u2014 Compact\nB1: Compact\n\nT2: Grove 23L Daypack\nB2: Water-Resistant\n\nT3: Grove 23L Daypack",
+            "finishReason": "length",
+            "promptTokens": 363,
+            "generatedTokens": 64,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.432292046956718,
+              "generationMs": 3129.5708330580965,
+              "prefillAndFirstTokenMs": 630.0335420528427,
+              "nativePromptMs": 590.4243330005556,
+              "autoregressiveAfterFirstTokenMs": 2499.537291005254
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "token_budget_truncation_or_nonstop",
+            "wrong_field_set"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-3-changed-profile-B",
+      "source": "cache",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:NONE-required",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": false
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 10.236916015855968,
+              "forwardMs": 1858.0972920171916,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1407,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1868.679083068855,
+            "catalogCachePrepareMs": 46.71416699420661,
+            "promptPreparationMs": 1.1322080390527844,
+            "generationMs": 3038.4531249292195,
+            "prefillAndFirstTokenMs": 516.8067079503089,
+            "nativePromptMs": 485.8810000587255,
+            "autoregressiveAfterFirstTokenMs": 2521.6464169789106,
+            "validationMs": 0.2980409190058708,
+            "fullCompletionMs": 4959.4608329935
+          },
+          "generation": {
+            "text": "S1: Lightweight Roomy Backpacks\nS2: Durable Organizer Backpacks\n\nT1: Field 14L Daypack \u2014 lightweight\nB1: lightweight roomy\n\nT2: Grove 23L Daypack \u2014 water-resistant\nB2: NONE\n\nT3: Cedar 26",
+            "finishReason": "length",
+            "promptTokens": 321,
+            "generatedTokens": 64,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.1322080390527844,
+              "generationMs": 3038.4531249292195,
+              "prefillAndFirstTokenMs": 516.8067079503089,
+              "nativePromptMs": 485.8810000587255,
+              "autoregressiveAfterFirstTokenMs": 2521.6464169789106
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "blank_separator_strictness",
+            "conservative_lexical_rejection_needs_review",
+            "other_catalog_product_identity_in_bound_title",
+            "token_budget_truncation_or_nonstop",
+            "validator_flagged_bound_fact_requires_context_review",
+            "wrong_field_set"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 25.820458075031638,
+              "forwardMs": 1892.0793338911608,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1407,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1918.3074579341337,
+            "catalogCachePrepareMs": 48.07604197412729,
+            "promptPreparationMs": 1.1353750014677644,
+            "generationMs": 1687.8272499889135,
+            "prefillAndFirstTokenMs": 600.0603329157457,
+            "nativePromptMs": 568.2032089680433,
+            "autoregressiveAfterFirstTokenMs": 1087.7669170731679,
+            "validationMs": 0.443332944996655,
+            "fullCompletionMs": 3659.4455000013113
+          },
+          "generation": {
+            "text": "S1: Lightweight roomy backpacks\nT1: Field 14L Daypack lightweight\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 327,
+            "generatedTokens": 26,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.1353750014677644,
+              "generationMs": 1687.8272499889135,
+              "prefillAndFirstTokenMs": 600.0603329157457,
+              "nativePromptMs": 568.2032089680433,
+              "autoregressiveAfterFirstTokenMs": 1087.7669170731679
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "other_catalog_product_identity_in_bound_title",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-4-return-profile-A",
+      "source": "cache",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": ["T1:unsupported-missing-nonnovel-or-unresponsive-title"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 12.255000066943467,
+              "forwardMs": 1929.098833934404,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1941.8988750549033,
+            "catalogCachePrepareMs": 61.630291980691254,
+            "promptPreparationMs": 1.2040419969707727,
+            "generationMs": 1639.0471250051633,
+            "prefillAndFirstTokenMs": 596.6457920148969,
+            "nativePromptMs": 562.6889590639621,
+            "autoregressiveAfterFirstTokenMs": 1042.4013329902664,
+            "validationMs": 0.363041996024549,
+            "fullCompletionMs": 3648.635582998395
+          },
+          "generation": {
+            "text": "S1: Compact water-resistant daily choice\nT1: Grove 23L Daypack for short trips\nB1: compact",
+            "finishReason": "stop",
+            "promptTokens": 366,
+            "generatedTokens": 28,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.2040419969707727,
+              "generationMs": 1639.0471250051633,
+              "prefillAndFirstTokenMs": 596.6457920148969,
+              "nativePromptMs": 562.6889590639621,
+              "autoregressiveAfterFirstTokenMs": 1042.4013329902664
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "title_missing_required_observed_attribute"
+          ]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 10.04112500231713,
+              "forwardMs": 1909.3714590417221,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1919.6437079226598,
+            "catalogCachePrepareMs": 38.2234170101583,
+            "promptPreparationMs": 1.0574579937383533,
+            "generationMs": 3050.323582952842,
+            "prefillAndFirstTokenMs": 584.6930829575285,
+            "nativePromptMs": 555.9651670046151,
+            "autoregressiveAfterFirstTokenMs": 2465.6304999953136,
+            "validationMs": 0.3880000440403819,
+            "fullCompletionMs": 5014.060124987736
+          },
+          "generation": {
+            "text": "S1: Compact Everyday Travel Choice\nS2: Durable Short Trip Companion\n\nT1: Grove 23L Daypack \u2014 Compact\nB1: Compact\n\nT2: Grove 23L Daypack\nB2: Water-Resistant\n\nT3: Grove 23L Daypack",
+            "finishReason": "length",
+            "promptTokens": 363,
+            "generatedTokens": 64,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.0574579937383533,
+              "generationMs": 3050.323582952842,
+              "prefillAndFirstTokenMs": 584.6930829575285,
+              "nativePromptMs": 555.9651670046151,
+              "autoregressiveAfterFirstTokenMs": 2465.6304999953136
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "token_budget_truncation_or_nonstop",
+            "wrong_field_set"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-5-changed-catalog-unavailable",
+      "source": "cache",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 25.937375030480325,
+              "forwardMs": 1931.660332949832,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1958.1032500136644,
+            "catalogCachePrepareMs": 1361.8854579981416,
+            "promptPreparationMs": 1.2210420100018382,
+            "generationMs": 3052.535125054419,
+            "prefillAndFirstTokenMs": 589.1535000409931,
+            "nativePromptMs": 567.6350001012906,
+            "autoregressiveAfterFirstTokenMs": 2463.381625013426,
+            "validationMs": 0.10120891965925694,
+            "fullCompletionMs": 6377.987707965076
+          },
+          "generation": {
+            "text": "S1: River 26L Daypack \u2014 durable\nS2: River 26L Daypack\nT1: River 26L Daypack \u2014 durable\nB1: GENERATE\nT2: River 26L Daypack\nB2: NONE\nT3: River ",
+            "finishReason": "length",
+            "promptTokens": 365,
+            "generatedTokens": 64,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.2210420100018382,
+              "generationMs": 3052.535125054419,
+              "prefillAndFirstTokenMs": 589.1535000409931,
+              "nativePromptMs": 567.6350001012906,
+              "autoregressiveAfterFirstTokenMs": 2463.381625013426
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "conservative_lexical_rejection_needs_review",
+            "control_enum_copied_as_content",
+            "copied_approved_title_not_new",
+            "token_budget_truncation_or_nonstop",
+            "validator_flagged_bound_fact_requires_context_review",
+            "wrong_field_set"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 10.073500103317201,
+              "forwardMs": 1927.9237090377137,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1938.2695000385866,
+            "catalogCachePrepareMs": 1328.1901250593364,
+            "promptPreparationMs": 1.059834030456841,
+            "generationMs": 1647.0534580294043,
+            "prefillAndFirstTokenMs": 588.9628750737756,
+            "nativePromptMs": 567.5102500244975,
+            "autoregressiveAfterFirstTokenMs": 1058.0905829556286,
+            "validationMs": 0.3629169659689069,
+            "fullCompletionMs": 4916.602334007621
+          },
+          "generation": {
+            "text": "S1: Daily durable compact daypacks\nT1: River 26L Daypack for travel\nB1: durable",
+            "finishReason": "stop",
+            "promptTokens": 368,
+            "generatedTokens": 28,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.059834030456841,
+              "generationMs": 1647.0534580294043,
+              "prefillAndFirstTokenMs": 588.9628750737756,
+              "nativePromptMs": 567.5102500244975,
+              "autoregressiveAfterFirstTokenMs": 1058.0905829556286
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "title_missing_required_observed_attribute",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-6-cold-catalog",
+      "source": "cache",
+      "cards": 3,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": ["S1:unsupported-or-missing-heading"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 3,
+            "generatedBadgeCount": 3,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 9.953791974112391,
+              "forwardMs": 1937.9439170006663,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1948.3710000058636,
+            "catalogCachePrepareMs": 1373.71608405374,
+            "promptPreparationMs": 1.304832985624671,
+            "generationMs": 3288.3195830509067,
+            "prefillAndFirstTokenMs": 756.6723329946399,
+            "nativePromptMs": 735.8218330191448,
+            "autoregressiveAfterFirstTokenMs": 2531.647250056267,
+            "validationMs": 0.7737500127404928,
+            "fullCompletionMs": 6616.172417066991
+          },
+          "generation": {
+            "text": "S1: Everyday durable compact daypacks\nT1: Grove 23L Compact Travel Pack\nB1: Compact\nT2: Cedar 26L Durable Compact Pack\nB2: Compact Durable\nT3: River 26L Durable Organizer Pack\nB3: Durable",
+            "finishReason": "stop",
+            "promptTokens": 496,
+            "generatedTokens": 66,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.304832985624671,
+              "generationMs": 3288.3195830509067,
+              "prefillAndFirstTokenMs": 756.6723329946399,
+              "nativePromptMs": 735.8218330191448,
+              "autoregressiveAfterFirstTokenMs": 2531.647250056267
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B2:unsupported-or-unresponsive-badge",
+              "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B3:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 9.950833045877516,
+              "forwardMs": 1938.6417500209063,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1949.1166670341045,
+            "catalogCachePrepareMs": 1373.432582942769,
+            "promptPreparationMs": 1.3059580232948065,
+            "generationMs": 5767.768624937162,
+            "prefillAndFirstTokenMs": 762.7740419702604,
+            "nativePromptMs": 735.2478340035303,
+            "autoregressiveAfterFirstTokenMs": 5004.994582966901,
+            "validationMs": 0.4035410238429904,
+            "fullCompletionMs": 9097.78270800598
+          },
+          "generation": {
+            "text": "# Section 1\n## Everyday Compact Travel Packs\n\nCard 1: Grove 23L Daypack; tags=['water-resistant', 'compact']; additional factual words=23 4 45.71 compact grove l resistant water.\nCard 2: Cedar 26L Daypack; tags=['durable', 'compact']; additional factual words=26 4 45.13 cedar compact durable l.\nCard 3: River 26L Daypack; tags=['durable', 'organizer']; additional factual words=26 44.65 6",
+            "finishReason": "length",
+            "promptTokens": 495,
+            "generatedTokens": 128,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.3059580232948065,
+              "generationMs": 5767.768624937162,
+              "prefillAndFirstTokenMs": 762.7740419702604,
+              "nativePromptMs": 735.2478340035303,
+              "autoregressiveAfterFirstTokenMs": 5004.994582966901
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "conservative_lexical_rejection_needs_review",
+            "copied_input_instead_of_requested_output",
+            "token_budget_truncation_or_nonstop",
+            "unparseable_or_markdown_format",
+            "validator_flagged_bound_fact_requires_context_review",
+            "wrong_field_set"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-7-warm-catalog",
+      "source": "cache",
+      "cards": 3,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unfinished-or-markup-output",
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B2:unsupported-or-unresponsive-badge",
+              "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B3:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 24.231124902144074,
+              "forwardMs": 1936.385208973661,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1961.2692079972476,
+            "catalogCachePrepareMs": 59.624833054840565,
+            "promptPreparationMs": 1.3781249290332198,
+            "generationMs": 5796.70183302369,
+            "prefillAndFirstTokenMs": 775.5943330703303,
+            "nativePromptMs": 739.6277909865603,
+            "autoregressiveAfterFirstTokenMs": 5021.107499953359,
+            "validationMs": 0.6168750114738941,
+            "fullCompletionMs": 7825.794250005856
+          },
+          "generation": {
+            "text": "# Section 1\n## Everyday Compact Travel Packs\n\nCard 1: Grove 23L Daypack; tags=['water-resistant', 'compact']; additional factual words=23 4 45.71 compact grove l resistant water.\nCard 2: Cedar 26L Daypack; tags=['durable', 'compact']; additional factual words=26 4 45.13 cedar compact durable l.\nCard 3: River 26L Daypack; tags=['durable', 'organizer']; additional factual words=26 44.65 6",
+            "finishReason": "length",
+            "promptTokens": 495,
+            "generatedTokens": 128,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.3781249290332198,
+              "generationMs": 5796.70183302369,
+              "prefillAndFirstTokenMs": 775.5943330703303,
+              "nativePromptMs": 739.6277909865603,
+              "autoregressiveAfterFirstTokenMs": 5021.107499953359
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "conservative_lexical_rejection_needs_review",
+            "copied_input_instead_of_requested_output",
+            "token_budget_truncation_or_nonstop",
+            "unparseable_or_markdown_format",
+            "validator_flagged_bound_fact_requires_context_review",
+            "wrong_field_set"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": ["S1:unsupported-or-missing-heading"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 3,
+            "generatedBadgeCount": 3,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 25.250667007640004,
+              "forwardMs": 1942.9572090739384,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1968.7675000168383,
+            "catalogCachePrepareMs": 57.86837497726083,
+            "promptPreparationMs": 1.3422908959910274,
+            "generationMs": 3358.574458048679,
+            "prefillAndFirstTokenMs": 772.550042020157,
+            "nativePromptMs": 734.1073750285432,
+            "autoregressiveAfterFirstTokenMs": 2586.024416028522,
+            "validationMs": 3.5701669985428452,
+            "fullCompletionMs": 5394.07062495593
+          },
+          "generation": {
+            "text": "S1: Everyday durable compact daypacks\nT1: Grove 23L Compact Travel Pack\nB1: Compact\nT2: Cedar 26L Durable Compact Pack\nB2: Compact Durable\nT3: River 26L Durable Organizer Pack\nB3: Durable",
+            "finishReason": "stop",
+            "promptTokens": 496,
+            "generatedTokens": 66,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.3422908959910274,
+              "generationMs": 3358.574458048679,
+              "prefillAndFirstTokenMs": 772.550042020157,
+              "nativePromptMs": 734.1073750285432,
+              "autoregressiveAfterFirstTokenMs": 2586.024416028522
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-8-cold-catalog",
+      "source": "cache",
+      "cards": 6,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 6,
+            "generatedBadgeCount": 4,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 25.601541972719133,
+              "forwardMs": 1943.13912501093,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1969.4210829911754,
+            "catalogCachePrepareMs": 1378.9114579558372,
+            "promptPreparationMs": 1.5242500230669975,
+            "generationMs": 6106.267124996521,
+            "prefillAndFirstTokenMs": 1116.7323330882937,
+            "nativePromptMs": 1076.3908750377595,
+            "autoregressiveAfterFirstTokenMs": 4989.534791908227,
+            "validationMs": 4.913915996439755,
+            "fullCompletionMs": 9467.782499967143
+          },
+          "generation": {
+            "text": "S1: Compact durable daypacks\nS2: Lightweight roomy daypacks\nT1: Grove 23L Compact Daypack\nB1: Compact\nT2: Cedar 26L Durable Daypack\nB2: Compact Durable\nT3: River 26L Durable Daypack\nB3: Durable\nT4: Field 14L Lightweight Daypack\nB4: NONE\nT5: Ridge 23L Lightweight Daypack\nB5: NONE\nT6: River 14L Compact Daypack\nB6: Compact Durable",
+            "finishReason": "stop",
+            "promptTokens": 716,
+            "generatedTokens": 128,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.5242500230669975,
+              "generationMs": 6106.267124996521,
+              "prefillAndFirstTokenMs": 1116.7323330882937,
+              "nativePromptMs": 1076.3908750377595,
+              "autoregressiveAfterFirstTokenMs": 4989.534791908227
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B2:unsupported-or-unresponsive-badge",
+              "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B3:unsupported-or-unresponsive-badge",
+              "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B4:NONE-required",
+              "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B5:NONE-required",
+              "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B6:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": false
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 23.43933400698006,
+              "forwardMs": 1941.589834052138,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1965.7291669864208,
+            "catalogCachePrepareMs": 1367.775583988987,
+            "promptPreparationMs": 1.390625024214387,
+            "generationMs": 7867.296124924906,
+            "prefillAndFirstTokenMs": 1041.0553339170292,
+            "nativePromptMs": 1011.6292920429261,
+            "autoregressiveAfterFirstTokenMs": 6826.240791007876,
+            "validationMs": 1.14100007340312,
+            "fullCompletionMs": 11211.431458010338
+          },
+          "generation": {
+            "text": "# Section 1\n## Compact Daily Travel Packs\nCard 1: Grove 23L Daypack \u2014 water-resistant; a compact water-resistant grove daypack for daily travel.\nCard 2: Cedar 26L Daypack \u2014 durable; a compact durable cedar daypack for daily travel.\nCard 3: River 26L Daypack \u2014 durable; a durable river daypack with organizer for daily travel.\n\n# Section 2\n## Compact Durable Everyday Packs\nCard 4: Field 14L Daypack \u2014 lightweight; a lightweight field daypack for daily travel.\nCard 5: Ridge 23L Daypack \u2014 lightweight; a lightweight ridge daypack for daily travel.\nCard 6: River 14L Daypack \u2014 durable; a compact durable river daypack for daily travel.",
+            "finishReason": "stop",
+            "promptTokens": 700,
+            "generatedTokens": 175,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.390625024214387,
+              "generationMs": 7867.296124924906,
+              "prefillAndFirstTokenMs": 1041.0553339170292,
+              "nativePromptMs": 1011.6292920429261,
+              "autoregressiveAfterFirstTokenMs": 6826.240791007876
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "conservative_lexical_rejection_needs_review",
+            "unparseable_or_markdown_format",
+            "validator_flagged_bound_fact_requires_context_review",
+            "wrong_field_set"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "cache-9-warm-catalog",
+      "source": "cache",
+      "cards": 6,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B2:unsupported-or-unresponsive-badge",
+              "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B3:unsupported-or-unresponsive-badge",
+              "T4:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B4:NONE-required",
+              "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B5:NONE-required",
+              "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B6:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": false
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 23.64425000268966,
+              "forwardMs": 1939.2949169268832,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1963.7022919487208,
+            "catalogCachePrepareMs": 61.62758299615234,
+            "promptPreparationMs": 1.4202919555827975,
+            "generationMs": 7839.246708084829,
+            "prefillAndFirstTokenMs": 1055.1462500588968,
+            "nativePromptMs": 1010.1092910626904,
+            "autoregressiveAfterFirstTokenMs": 6784.100458025932,
+            "validationMs": 0.2174170222133398,
+            "fullCompletionMs": 9871.186250005849
+          },
+          "generation": {
+            "text": "# Section 1\n## Compact Daily Travel Packs\nCard 1: Grove 23L Daypack \u2014 water-resistant; a compact water-resistant grove daypack for daily travel.\nCard 2: Cedar 26L Daypack \u2014 durable; a compact durable cedar daypack for daily travel.\nCard 3: River 26L Daypack \u2014 durable; a durable river daypack with organizer for daily travel.\n\n# Section 2\n## Compact Durable Everyday Packs\nCard 4: Field 14L Daypack \u2014 lightweight; a lightweight field daypack for daily travel.\nCard 5: Ridge 23L Daypack \u2014 lightweight; a lightweight ridge daypack for daily travel.\nCard 6: River 14L Daypack \u2014 durable; a compact durable river daypack for daily travel.",
+            "finishReason": "stop",
+            "promptTokens": 700,
+            "generatedTokens": 175,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 1.4202919555827975,
+              "generationMs": 7839.246708084829,
+              "prefillAndFirstTokenMs": 1055.1462500588968,
+              "nativePromptMs": 1010.1092910626904,
+              "autoregressiveAfterFirstTokenMs": 6784.100458025932
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "blank_separator_strictness",
+            "conservative_lexical_rejection_needs_review",
+            "unparseable_or_markdown_format",
+            "validator_flagged_bound_fact_requires_context_review",
+            "wrong_field_set"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 6,
+            "generatedBadgeCount": 4,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 9.914458030834794,
+              "forwardMs": 1940.772624919191,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1951.3757911045104,
+            "catalogCachePrepareMs": 59.88820898346603,
+            "promptPreparationMs": 3.4586249385029078,
+            "generationMs": 6050.165374996141,
+            "prefillAndFirstTokenMs": 1106.745416065678,
+            "nativePromptMs": 1074.2872919654474,
+            "autoregressiveAfterFirstTokenMs": 4943.419958930463,
+            "validationMs": 1.2268329737707973,
+            "fullCompletionMs": 8070.052375085652
+          },
+          "generation": {
+            "text": "S1: Compact durable daypacks\nS2: Lightweight roomy daypacks\nT1: Grove 23L Compact Daypack\nB1: Compact\nT2: Cedar 26L Durable Daypack\nB2: Compact Durable\nT3: River 26L Durable Daypack\nB3: Durable\nT4: Field 14L Lightweight Daypack\nB4: NONE\nT5: Ridge 23L Lightweight Daypack\nB5: NONE\nT6: River 14L Compact Daypack\nB6: Compact Durable",
+            "finishReason": "stop",
+            "promptTokens": 716,
+            "generatedTokens": 128,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 934,
+            "timing": {
+              "promptPreparationMs": 3.4586249385029078,
+              "generationMs": 6050.165374996141,
+              "prefillAndFirstTokenMs": 1106.745416065678,
+              "nativePromptMs": 1074.2872919654474,
+              "autoregressiveAfterFirstTokenMs": 4943.419958930463
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-476a18e5ac18fd7f6d",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 5.245583015494049,
+              "forwardMs": 1369.83916698955,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 1009,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1375.3017500275746,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.0631670011207461,
+            "generationMs": 1680.7997500291094,
+            "prefillAndFirstTokenMs": 507.18645798042417,
+            "nativePromptMs": 483.76983299385756,
+            "autoregressiveAfterFirstTokenMs": 1173.6132920486853,
+            "validationMs": 2.3193330271169543,
+            "fullCompletionMs": 3060.664791963063
+          },
+          "generation": {
+            "text": "S1: Compact water-resistant everyday travel choice\nT1: Grove 23L Daypack for daily compact needs\nB1: compact",
+            "finishReason": "stop",
+            "promptTokens": 275,
+            "generatedTokens": 30,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1009,
+            "timing": {
+              "promptPreparationMs": 1.0631670011207461,
+              "generationMs": 1680.7997500291094,
+              "prefillAndFirstTokenMs": 507.18645798042417,
+              "nativePromptMs": 483.76983299385756,
+              "autoregressiveAfterFirstTokenMs": 1173.6132920486853
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 14.604250085540116,
+              "forwardMs": 1375.587375019677,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 1009,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1390.6610829290003,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 4.089416936039925,
+            "generationMs": 1560.9320419607684,
+            "prefillAndFirstTokenMs": 614.89766696468,
+            "nativePromptMs": 571.0168749792501,
+            "autoregressiveAfterFirstTokenMs": 946.0343749960884,
+            "validationMs": 0.32066600397229195,
+            "fullCompletionMs": 2956.5224999096245
+          },
+          "generation": {
+            "text": "S1: Compact Everyday Travel Packs\nT1: Compact Grove Daypack for Daily Use\nB1: water-resistant",
+            "finishReason": "stop",
+            "promptTokens": 367,
+            "generatedTokens": 25,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1009,
+            "timing": {
+              "promptPreparationMs": 4.089416936039925,
+              "generationMs": 1560.9320419607684,
+              "prefillAndFirstTokenMs": 614.89766696468,
+              "nativePromptMs": 571.0168749792501,
+              "autoregressiveAfterFirstTokenMs": 946.0343749960884
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "conservative_lexical_rejection_needs_review"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-b5beff326b517231b1",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 5.247000022791326,
+              "forwardMs": 1362.8906670492142,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 995,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1368.338541011326,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.1651250533759594,
+            "generationMs": 1773.6350839259103,
+            "prefillAndFirstTokenMs": 592.7913750056177,
+            "nativePromptMs": 571.2159579852596,
+            "autoregressiveAfterFirstTokenMs": 1180.8437089202926,
+            "validationMs": 0.305167050100863,
+            "fullCompletionMs": 3143.8795829890296
+          },
+          "generation": {
+            "text": "S1: Compact Durable Everyday Travel Packs\nT1: Cedar 26L Daypack \u2014 Compact and Durable\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 362,
+            "generatedTokens": 31,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 995,
+            "timing": {
+              "promptPreparationMs": 1.1651250533759594,
+              "generationMs": 1773.6350839259103,
+              "prefillAndFirstTokenMs": 592.7913750056177,
+              "nativePromptMs": 571.2159579852596,
+              "autoregressiveAfterFirstTokenMs": 1180.8437089202926
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 4.961124970577657,
+              "forwardMs": 1365.350249921903,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 995,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1370.505667058751,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.0469999397173524,
+            "generationMs": 1562.2067910153419,
+            "prefillAndFirstTokenMs": 502.33608298003674,
+            "nativePromptMs": 480.2024159580469,
+            "autoregressiveAfterFirstTokenMs": 1059.8707080353051,
+            "validationMs": 0.29137497767806053,
+            "fullCompletionMs": 2934.444957994856
+          },
+          "generation": {
+            "text": "S1: Compact durable daily travel packs\nT1: Cedar 26L Daypack for everyday needs\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 273,
+            "generatedTokens": 28,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 995,
+            "timing": {
+              "promptPreparationMs": 1.0469999397173524,
+              "generationMs": 1562.2067910153419,
+              "prefillAndFirstTokenMs": 502.33608298003674,
+              "nativePromptMs": 480.2024159580469,
+              "autoregressiveAfterFirstTokenMs": 1059.8707080353051
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-e1f73b869dc810bc15",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": ["T1:unsupported-missing-nonnovel-or-unresponsive-title"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 5.1148750353604555,
+              "forwardMs": 1372.280584066175,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 988,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1377.7393329655752,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.6511249598115683,
+            "generationMs": 1703.5008749226108,
+            "prefillAndFirstTokenMs": 522.6814169436693,
+            "nativePromptMs": 482.82445792574435,
+            "autoregressiveAfterFirstTokenMs": 1180.8194579789415,
+            "validationMs": 0.40324998553842306,
+            "fullCompletionMs": 3089.7584579652175
+          },
+          "generation": {
+            "text": "S1: water-resistant and organizer daypacks\nT1: Meadow 17L Daypack for water protection\nB1: water-resistant",
+            "finishReason": "stop",
+            "promptTokens": 279,
+            "generatedTokens": 31,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 988,
+            "timing": {
+              "promptPreparationMs": 2.6511249598115683,
+              "generationMs": 1703.5008749226108,
+              "prefillAndFirstTokenMs": 522.6814169436693,
+              "nativePromptMs": 482.82445792574435,
+              "autoregressiveAfterFirstTokenMs": 1180.8194579789415
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "forbidden_claim_terms",
+            "title_missing_required_observed_attribute"
+          ]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": ["B1:unsupported-or-unresponsive-badge"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 5.021082935854793,
+              "forwardMs": 1368.1745410431176,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 988,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1373.3967079315335,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.1207920033484697,
+            "generationMs": 1633.3532090066,
+            "prefillAndFirstTokenMs": 595.9648340940475,
+            "nativePromptMs": 570.8587089320645,
+            "autoregressiveAfterFirstTokenMs": 1037.3883749125525,
+            "validationMs": 1.6423340421169996,
+            "fullCompletionMs": 3010.6321669882163
+          },
+          "generation": {
+            "text": "S1: Water-Resistant Daily Organizer Packs\nT1: Water-Resistant Meadow Daypack\nB1: Organizer",
+            "finishReason": "stop",
+            "promptTokens": 369,
+            "generatedTokens": 27,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 988,
+            "timing": {
+              "promptPreparationMs": 1.1207920033484697,
+              "generationMs": 1633.3532090066,
+              "prefillAndFirstTokenMs": 595.9648340940475,
+              "nativePromptMs": 570.8587089320645,
+              "autoregressiveAfterFirstTokenMs": 1037.3883749125525
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": ["badge_factuality_distinct_from_missing_personalization_evidence"]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-4db622b754cdc83922",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": ["S1:unsupported-or-missing-heading"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 16.211707959882915,
+              "forwardMs": 1383.7649580091238,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 990,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1400.383208063431,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.8511249218136072,
+            "generationMs": 1543.8346669543535,
+            "prefillAndFirstTokenMs": 610.3504589991644,
+            "nativePromptMs": 574.7148339869455,
+            "autoregressiveAfterFirstTokenMs": 933.484207955189,
+            "validationMs": 0.31495909206569195,
+            "fullCompletionMs": 2946.894458029419
+          },
+          "generation": {
+            "text": "S1: Everyday Travel Essentials\nT1: Roomy Water-Resistant Daily Choice\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 369,
+            "generatedTokens": 24,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 990,
+            "timing": {
+              "promptPreparationMs": 1.8511249218136072,
+              "generationMs": 1543.8346669543535,
+              "prefillAndFirstTokenMs": 610.3504589991644,
+              "nativePromptMs": 574.7148339869455,
+              "autoregressiveAfterFirstTokenMs": 933.484207955189
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": ["conservative_lexical_rejection_needs_review"]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 5.640875082463026,
+              "forwardMs": 1405.432292027399,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 990,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1411.40591702424,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.2397079737856984,
+            "generationMs": 1782.89012494497,
+            "prefillAndFirstTokenMs": 537.6984589966014,
+            "nativePromptMs": 493.2425000006333,
+            "autoregressiveAfterFirstTokenMs": 1245.1916659483686,
+            "validationMs": 0.6464580073952675,
+            "fullCompletionMs": 3197.8143750457093
+          },
+          "generation": {
+            "text": "S1: roomy water-resistant daypacks\nT1: Summit 23L Daypack for roomy needs\nB1: roomy",
+            "finishReason": "stop",
+            "promptTokens": 279,
+            "generatedTokens": 32,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 990,
+            "timing": {
+              "promptPreparationMs": 2.2397079737856984,
+              "generationMs": 1782.89012494497,
+              "prefillAndFirstTokenMs": 537.6984589966014,
+              "nativePromptMs": 493.2425000006333,
+              "autoregressiveAfterFirstTokenMs": 1245.1916659483686
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-36f617c0fe5c7f6164",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": ["S1:unsupported-or-missing-heading"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 7.583208032883704,
+              "forwardMs": 1380.7210410013795,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 995,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1388.551166979596,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.053708023391664,
+            "generationMs": 1819.4899159716442,
+            "prefillAndFirstTokenMs": 503.05345794185996,
+            "nativePromptMs": 485.3690000018105,
+            "autoregressiveAfterFirstTokenMs": 1316.4364580297843,
+            "validationMs": 2.0029169972985983,
+            "fullCompletionMs": 3212.751292041503
+          },
+          "generation": {
+            "text": "S1: Field 20L Daypack\nT1: Field 20L Daypack \u2014 water-resistant and roomy\nB1: water-resistant",
+            "finishReason": "stop",
+            "promptTokens": 279,
+            "generatedTokens": 34,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 995,
+            "timing": {
+              "promptPreparationMs": 1.053708023391664,
+              "generationMs": 1819.4899159716442,
+              "prefillAndFirstTokenMs": 503.05345794185996,
+              "nativePromptMs": 485.3690000018105,
+              "autoregressiveAfterFirstTokenMs": 1316.4364580297843
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 14.20912507455796,
+              "forwardMs": 1382.0181670598686,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 995,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1396.6897919308394,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 3.842958016321063,
+            "generationMs": 1958.0744169652462,
+            "prefillAndFirstTokenMs": 632.4096249882132,
+            "nativePromptMs": 597.2538749920204,
+            "autoregressiveAfterFirstTokenMs": 1325.664791977033,
+            "validationMs": 0.6371249910444021,
+            "fullCompletionMs": 3360.212125000544
+          },
+          "generation": {
+            "text": "S1: Water-Resistant Roomy Travel Companion\nT1: Field 20L Daypack \u2014 Water-Resistant\nB1: GENERATE",
+            "finishReason": "stop",
+            "promptTokens": 369,
+            "generatedTokens": 34,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 995,
+            "timing": {
+              "promptPreparationMs": 3.842958016321063,
+              "generationMs": 1958.0744169652462,
+              "prefillAndFirstTokenMs": 632.4096249882132,
+              "nativePromptMs": 597.2538749920204,
+              "autoregressiveAfterFirstTokenMs": 1325.664791977033
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "conservative_lexical_rejection_needs_review",
+            "control_enum_copied_as_content",
+            "copied_approved_title_not_new"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-4171cae29da747fcef",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 12.009291909635067,
+              "forwardMs": 1397.2325830254704,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 996,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1409.621667000465,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.469416940584779,
+            "generationMs": 2375.5458330269903,
+            "prefillAndFirstTokenMs": 621.5063330018893,
+            "nativePromptMs": 576.1849170085043,
+            "autoregressiveAfterFirstTokenMs": 1754.039500025101,
+            "validationMs": 0.5509160691872239,
+            "fullCompletionMs": 3789.595208945684
+          },
+          "generation": {
+            "text": "S1: Everyday Travel Options\nT1: Field 20L Daypack \u2014 Water-Resistant\nB1: NONE\nT2: Field 20L Daypack\nB2: NONE",
+            "finishReason": "stop",
+            "promptTokens": 366,
+            "generatedTokens": 44,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 996,
+            "timing": {
+              "promptPreparationMs": 2.469416940584779,
+              "generationMs": 2375.5458330269903,
+              "prefillAndFirstTokenMs": 621.5063330018893,
+              "nativePromptMs": 576.1849170085043,
+              "autoregressiveAfterFirstTokenMs": 1754.039500025101
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "copied_approved_title_not_new",
+            "wrong_field_set"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 14.749209047295153,
+              "forwardMs": 1383.2994580734521,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 996,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1398.4863329678774,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.7442910941317677,
+            "generationMs": 2017.388915992342,
+            "prefillAndFirstTokenMs": 534.4086249824613,
+            "nativePromptMs": 482.2190830018372,
+            "autoregressiveAfterFirstTokenMs": 1482.9802910098806,
+            "validationMs": 1.0692920768633485,
+            "fullCompletionMs": 3421.768790925853
+          },
+          "generation": {
+            "text": "S1: Field 20L Daypack is a water-resistant roomy bag.\nT1: Field 20L Daypack for everyday short trips\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 277,
+            "generatedTokens": 39,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 996,
+            "timing": {
+              "promptPreparationMs": 2.7442910941317677,
+              "generationMs": 2017.388915992342,
+              "prefillAndFirstTokenMs": 534.4086249824613,
+              "nativePromptMs": 482.2190830018372,
+              "autoregressiveAfterFirstTokenMs": 1482.9802910098806
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-37062e26e3b3ef2b7d",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": ["T1:unsupported-missing-nonnovel-or-unresponsive-title"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 14.18666704557836,
+              "forwardMs": 1429.1684579802677,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 1027,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1443.8352499855682,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.86704208701849,
+            "generationMs": 1751.5955419512466,
+            "prefillAndFirstTokenMs": 541.09499999322,
+            "nativePromptMs": 479.2384169995785,
+            "autoregressiveAfterFirstTokenMs": 1210.5005419580266,
+            "validationMs": 0.39958395063877106,
+            "fullCompletionMs": 3199.233707971871
+          },
+          "generation": {
+            "text": "S1: Laptop sleeve and roomy backpacks\nT1: Cedar 26L Daypack Laptop Sleeve\nB1: laptop-sleeve",
+            "finishReason": "stop",
+            "promptTokens": 291,
+            "generatedTokens": 32,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1027,
+            "timing": {
+              "promptPreparationMs": 2.86704208701849,
+              "generationMs": 1751.5955419512466,
+              "prefillAndFirstTokenMs": 541.09499999322,
+              "nativePromptMs": 479.2384169995785,
+              "autoregressiveAfterFirstTokenMs": 1210.5005419580266
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": ["copied_approved_title_not_new"]
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 5.062040989287198,
+              "forwardMs": 1450.7319590775296,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 1027,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1455.9953330317512,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.1041250545531511,
+            "generationMs": 1785.6889159884304,
+            "prefillAndFirstTokenMs": 619.1244160290807,
+            "nativePromptMs": 597.8962919907644,
+            "autoregressiveAfterFirstTokenMs": 1166.5644999593496,
+            "validationMs": 1.3223330024629831,
+            "fullCompletionMs": 3245.352250058204
+          },
+          "generation": {
+            "text": "S1: Laptop Sleeve and Roomy Storage\nT1: Cedar 26L Daypack \u2014 Laptop Sleeve\nB1: GENERATE",
+            "finishReason": "stop",
+            "promptTokens": 378,
+            "generatedTokens": 30,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1027,
+            "timing": {
+              "promptPreparationMs": 1.1041250545531511,
+              "generationMs": 1785.6889159884304,
+              "prefillAndFirstTokenMs": 619.1244160290807,
+              "nativePromptMs": 597.8962919907644,
+              "autoregressiveAfterFirstTokenMs": 1166.5644999593496
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "conservative_lexical_rejection_needs_review",
+            "control_enum_copied_as_content",
+            "copied_approved_title_not_new"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-c936cadc9fcdc5b182",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": ["T1:unsupported-missing-nonnovel-or-unresponsive-title"],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 13.162707909941673,
+              "forwardMs": 1377.0592079963535,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 1024,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1390.5307080131024,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.1193749960511923,
+            "generationMs": 1594.7135839378461,
+            "prefillAndFirstTokenMs": 606.1468749539927,
+            "nativePromptMs": 581.3022499205545,
+            "autoregressiveAfterFirstTokenMs": 988.5667089838535,
+            "validationMs": 0.253707985393703,
+            "fullCompletionMs": 2987.004082999192
+          },
+          "generation": {
+            "text": "S1: Compact Durable Everyday Travel Packs\nT1: Pine 23L Daypack\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 367,
+            "generatedTokens": 26,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1024,
+            "timing": {
+              "promptPreparationMs": 1.1193749960511923,
+              "generationMs": 1594.7135839378461,
+              "prefillAndFirstTokenMs": 606.1468749539927,
+              "nativePromptMs": 581.3022499205545,
+              "autoregressiveAfterFirstTokenMs": 988.5667089838535
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "copied_approved_title_not_new",
+            "title_missing_required_observed_attribute"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 4.953625029884279,
+              "forwardMs": 1390.0292500620708,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 1024,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1395.1700830366462,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 1.046041026711464,
+            "generationMs": 1700.5743329646066,
+            "prefillAndFirstTokenMs": 521.8725829618052,
+            "nativePromptMs": 491.7516250861808,
+            "autoregressiveAfterFirstTokenMs": 1178.7017500028014,
+            "validationMs": 0.39795797783881426,
+            "fullCompletionMs": 3097.5852500414476
+          },
+          "generation": {
+            "text": "S1: Compact durable daily choice for everyday trips\nT1: Pine 23L Compact Durable Everyday Pack\nB1: compact durable",
+            "finishReason": "stop",
+            "promptTokens": 281,
+            "generatedTokens": 31,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1024,
+            "timing": {
+              "promptPreparationMs": 1.046041026711464,
+              "generationMs": 1700.5743329646066,
+              "prefillAndFirstTokenMs": 521.8725829618052,
+              "nativePromptMs": 491.7516250861808,
+              "autoregressiveAfterFirstTokenMs": 1178.7017500028014
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        }
+      }
+    },
+    {
+      "caseId": "evidence-control-no-history-no-preferences",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 4.7655419912189245,
+              "forwardMs": 1324.7888749465346,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 956,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1329.9185000360012,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.933250041678548,
+            "generationMs": 1565.4739999445155,
+            "prefillAndFirstTokenMs": 528.5656659398228,
+            "nativePromptMs": 490.15629210043704,
+            "autoregressiveAfterFirstTokenMs": 1036.9083340046927,
+            "validationMs": 1.5304159605875611,
+            "fullCompletionMs": 2901.4777920674533
+          },
+          "generation": {
+            "text": "S1: Everyday travel backpacks\nT1: Cedar 26L Daypack for daily needs\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 273,
+            "generatedTokens": 27,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 956,
+            "timing": {
+              "promptPreparationMs": 2.933250041678548,
+              "generationMs": 1565.4739999445155,
+              "prefillAndFirstTokenMs": 528.5656659398228,
+              "nativePromptMs": 490.15629210043704,
+              "autoregressiveAfterFirstTokenMs": 1036.9083340046927
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": null,
+            "titleObservedAlignmentEvaluatedCards": 0,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 13.74575006775558,
+              "forwardMs": 1321.826541912742,
+              "batchRows": 1,
+              "candidateReadouts": 8,
+              "prefixTokens": 956,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 1336.0461659030989,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.9576249653473496,
+            "generationMs": 1599.1114999633282,
+            "prefillAndFirstTokenMs": 633.5365830454975,
+            "nativePromptMs": 579.7255829675123,
+            "autoregressiveAfterFirstTokenMs": 965.5749169178307,
+            "validationMs": 1.0298750130459666,
+            "fullCompletionMs": 2940.548124955967
+          },
+          "generation": {
+            "text": "S1: Compact Durable Everyday Options\nT1: Cedar 26L Daypack\nB1: NONE",
+            "finishReason": "stop",
+            "promptTokens": 362,
+            "generatedTokens": 25,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 956,
+            "timing": {
+              "promptPreparationMs": 2.9576249653473496,
+              "generationMs": 1599.1114999633282,
+              "prefillAndFirstTokenMs": 633.5365830454975,
+              "nativePromptMs": 579.7255829675123,
+              "autoregressiveAfterFirstTokenMs": 965.5749169178307
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "copied_approved_title_not_new"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-1",
+      "source": "evidence",
+      "cards": 1,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 0,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 25.169832981191576,
+              "forwardMs": 2002.9661250300705,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 2028.507124981843,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 2.060583094134927,
+            "generationMs": 1696.4009170187637,
+            "prefillAndFirstTokenMs": 632.6251670252532,
+            "nativePromptMs": 592.7169159986079,
+            "autoregressiveAfterFirstTokenMs": 1063.7757499935105,
+            "validationMs": 1.580666983500123,
+            "fullCompletionMs": 3730.1354160299525
+          },
+          "generation": {
+            "text": "S1: Compact Everyday Travel Options\nT1: Compact Grove Daypack for Daily Use\nB1: Water-Resistant",
+            "finishReason": "stop",
+            "promptTokens": 367,
+            "generatedTokens": 27,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1446,
+            "timing": {
+              "promptPreparationMs": 2.060583094134927,
+              "generationMs": 1696.4009170187637,
+              "prefillAndFirstTokenMs": 632.6251670252532,
+              "nativePromptMs": 592.7169159986079,
+              "autoregressiveAfterFirstTokenMs": 1063.7757499935105
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "conservative_lexical_rejection_needs_review"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 1,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 1,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 26.48200001567602,
+              "forwardMs": 2015.781500027515,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 2042.984375031665,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 4.442792036570609,
+            "generationMs": 1752.0462080137804,
+            "prefillAndFirstTokenMs": 560.2022079983726,
+            "nativePromptMs": 505.57441695127636,
+            "autoregressiveAfterFirstTokenMs": 1191.8440000154078,
+            "validationMs": 0.6722910329699516,
+            "fullCompletionMs": 3800.921499961987
+          },
+          "generation": {
+            "text": "S1: Compact water-resistant everyday travel choice\nT1: Grove 23L Daypack for daily compact needs\nB1: compact",
+            "finishReason": "stop",
+            "promptTokens": 275,
+            "generatedTokens": 30,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1446,
+            "timing": {
+              "promptPreparationMs": 4.442792036570609,
+              "generationMs": 1752.0462080137804,
+              "prefillAndFirstTokenMs": 560.2022079983726,
+              "nativePromptMs": 505.57441695127636,
+              "autoregressiveAfterFirstTokenMs": 1191.8440000154078
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        }
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-3",
+      "source": "evidence",
+      "cards": 3,
+      "arms": {
+        "manifest": {
+          "quality": {
+            "rejections": [],
+            "allFieldsFulfilled": true,
+            "newTitleCount": 3,
+            "generatedBadgeCount": 3,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 15.403500059619546,
+              "forwardMs": 2029.3839999940246,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 2045.4505840316415,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 3.5050410078838468,
+            "generationMs": 3336.139499908313,
+            "prefillAndFirstTokenMs": 725.5336670204997,
+            "nativePromptMs": 673.9542910363525,
+            "autoregressiveAfterFirstTokenMs": 2610.6058328878134,
+            "validationMs": 2.549499971792102,
+            "fullCompletionMs": 5389.810709049925
+          },
+          "generation": {
+            "text": "S1: Everyday travel companion daypacks\nT1: Grove 23L Compact Daily Bag\nB1: Compact\nT2: Cedar 26L Durable Travel Pack\nB2: Compact Durable\nT3: River 26L Durable Organizer Pack\nB3: Durable",
+            "finishReason": "stop",
+            "promptTokens": 405,
+            "generatedTokens": 66,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1446,
+            "timing": {
+              "promptPreparationMs": 3.5050410078838468,
+              "generationMs": 3336.139499908313,
+              "prefillAndFirstTokenMs": 725.5336670204997,
+              "nativePromptMs": 673.9542910363525,
+              "autoregressiveAfterFirstTokenMs": 2610.6058328878134
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": []
+        },
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "unexpected-or-duplicate-output-line",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "B2:unsupported-or-unresponsive-badge",
+              "T3:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B3:unsupported-or-unresponsive-badge",
+              "incomplete-or-extra-field-set"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 1,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 1,
+            "titleObservedAlignmentRate": 0.3333333333333333,
+            "titleObservedAlignmentEvaluatedCards": 3,
+            "correctNone": null
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 24.871833040378988,
+              "forwardMs": 2024.4357500923797,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 2050.049833022058,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 4.52570803463459,
+            "generationMs": 3123.466334072873,
+            "prefillAndFirstTokenMs": 836.4263750845566,
+            "nativePromptMs": 777.4232920492067,
+            "autoregressiveAfterFirstTokenMs": 2287.0399589883164,
+            "validationMs": 1.823166967369616,
+            "fullCompletionMs": 5182.181625044905
+          },
+          "generation": {
+            "text": "S1: Everyday Travel Daypacks\nT1: Compact Choice for Daily Use\nB1: GENERATE\nT2: Durable Compact Option for Routine\nB1: GENERATE\nT3: Durable Organizer for Short Trips\nB1: GENERATE",
+            "finishReason": "stop",
+            "promptTokens": 499,
+            "generatedTokens": 57,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1446,
+            "timing": {
+              "promptPreparationMs": 4.52570803463459,
+              "generationMs": 3123.466334072873,
+              "prefillAndFirstTokenMs": 836.4263750845566,
+              "nativePromptMs": 777.4232920492067,
+              "autoregressiveAfterFirstTokenMs": 2287.0399589883164
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "conservative_lexical_rejection_needs_review",
+            "control_enum_copied_as_content",
+            "duplicate_field_labels",
+            "wrong_field_set"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-6",
+      "source": "evidence",
+      "cards": 6,
+      "arms": {
+        "baseline": {
+          "quality": {
+            "rejections": [
+              "unexpected-or-duplicate-output-line",
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading",
+              "T1:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B1:unsupported-or-unresponsive-badge",
+              "T2:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B2:unsupported-or-unresponsive-badge",
+              "B3:unsupported-or-unresponsive-badge",
+              "T5:unsupported-missing-nonnovel-or-unresponsive-title",
+              "T6:unsupported-missing-nonnovel-or-unresponsive-title",
+              "B6:unsupported-or-unresponsive-badge"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 2,
+            "generatedBadgeCount": 0,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 0.25,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 24.30145803373307,
+              "forwardMs": 2050.4535839427263,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 2075.40508301463,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 5.3899160120636225,
+            "generationMs": 6332.051791949198,
+            "prefillAndFirstTokenMs": 1206.4569579670206,
+            "nativePromptMs": 1093.3420408982784,
+            "autoregressiveAfterFirstTokenMs": 5125.594833982177,
+            "validationMs": 2.9784999787807465,
+            "fullCompletionMs": 8420.297667034902
+          },
+          "generation": {
+            "text": "S1: Compact Durable Everyday Travel Packs\nT1: Compact Durable Everyday Travel Pack\nB1: GENERATE\nT2: Compact Durable Short Trip Pack\nB2: GENERATE\nT3: Durable Organizer Everyday Travel Pack\nB3: GENERATE\n\nS2: Lightweight Roomy Everyday Travel Packs\nT4: Lightweight Roomy Everyday Travel Pack\nB4: NONE\nT5: Lightweight Roomy Short Trip Pack\nB5: NONE\nT6: Compact Durable Short Trip Pack\nB6: GENERATE",
+            "finishReason": "stop",
+            "promptTokens": 704,
+            "generatedTokens": 114,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1446,
+            "timing": {
+              "promptPreparationMs": 5.3899160120636225,
+              "generationMs": 6332.051791949198,
+              "prefillAndFirstTokenMs": 1206.4569579670206,
+              "nativePromptMs": 1093.3420408982784,
+              "autoregressiveAfterFirstTokenMs": 5125.594833982177
+            }
+          },
+          "exactFieldOrder": false,
+          "mechanismFlags": [
+            "badge_factuality_distinct_from_missing_personalization_evidence",
+            "blank_separator_strictness",
+            "conservative_lexical_rejection_needs_review",
+            "control_enum_copied_as_content",
+            "validator_flagged_bound_fact_requires_context_review",
+            "wrong_field_order"
+          ]
+        },
+        "manifest": {
+          "quality": {
+            "rejections": [
+              "S1:unsupported-or-missing-heading",
+              "S2:unsupported-or-missing-heading"
+            ],
+            "allFieldsFulfilled": false,
+            "newTitleCount": 6,
+            "generatedBadgeCount": 4,
+            "generatedHeadingCount": 0,
+            "titleObservedAlignmentRate": 1.0,
+            "titleObservedAlignmentEvaluatedCards": 4,
+            "correctNone": true
+          },
+          "timing": {
+            "rankingPrefix": {
+              "tokenizeMs": 18.51766707841307,
+              "forwardMs": 2147.5740420864895,
+              "batchRows": 1,
+              "candidateReadouts": 12,
+              "prefixTokens": 1446,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "representation": "shared-prefix-v1"
+            },
+            "structuredMs": 2166.900624986738,
+            "catalogCachePrepareMs": 0,
+            "promptPreparationMs": 4.670207970775664,
+            "generationMs": 6741.4314589696005,
+            "prefillAndFirstTokenMs": 1072.1813339041546,
+            "nativePromptMs": 1004.9507500370966,
+            "autoregressiveAfterFirstTokenMs": 5669.250125065446,
+            "validationMs": 5.092957988381386,
+            "fullCompletionMs": 8922.834625001997
+          },
+          "generation": {
+            "text": "S1: Everyday compact water-resistant choices\nS2: Durable compact daily travel options\nT1: Grove 23L Compact Water-Resistant Daypack\nB1: Compact\nT2: Cedar 26L Durable Compact Daypack\nB2: Compact Durable\nT3: River 26L Durable Organizer Daypack\nB3: Durable\nT4: Field 14L Lightweight Roomy Daypack\nB4: NONE\nT5: Ridge 23L Lightweight Roomy Daypack\nB5: NONE\nT6: River 14L Compact Durable Daypack\nB6: Compact Durable",
+            "finishReason": "stop",
+            "promptTokens": 625,
+            "generatedTokens": 140,
+            "promptCache": "complete shared native recurrent+conv+KV prefix appended in place",
+            "sharedPrefixTokens": 1446,
+            "timing": {
+              "promptPreparationMs": 4.670207970775664,
+              "generationMs": 6741.4314589696005,
+              "prefillAndFirstTokenMs": 1072.1813339041546,
+              "nativePromptMs": 1004.9507500370966,
+              "autoregressiveAfterFirstTokenMs": 5669.250125065446
+            }
+          },
+          "exactFieldOrder": true,
+          "mechanismFlags": [
+            "conservative_lexical_rejection_needs_review",
+            "validator_flagged_bound_fact_requires_context_review"
+          ]
+        }
+      }
+    }
+  ],
+  "evidence": {
+    "data/ranker/pretrained/generation-diagnosis-v1/benchmark.json": "66f849365db8592c28b08b5a4bdcd74638c58afa2cb23a84b2b91ceb522fce4d",
+    "data/ranker/pretrained/generation-diagnosis-v1/benchmark-reviewed.json": "e30d5344e725a1a61bcd6813f2d09dd507cc977db11bf6512785519464e3e7ef",
+    "data/ranker/pretrained/generation-diagnosis-v1/case-plan.json": "e701c44ea73e08dd48a32ff1c80540619bd247469d93355cb5171c75ae919be7"
+  }
+}

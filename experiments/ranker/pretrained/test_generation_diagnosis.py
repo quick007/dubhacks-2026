@@ -36,6 +36,14 @@ class ManifestTests(unittest.TestCase):
         raw='S1: Everyday travel choices\nT1: Waterproof compact travel companion\nB1: NONE'
         audit=field_audit(raw,'stop',self.plan,self.request,self.catalog)
         self.assertIn('forbidden_claim_terms',audit['categories'])
+    def test_none_control_is_not_misclassified_as_lexical_content(self):
+        raw='S1: Everyday travel choices\nT1: Your compact travel companion\nB1: NONE'
+        audit=field_audit(raw,'stop',self.plan,self.request,self.catalog)
+        self.assertTrue(audit['exactFieldOrder'])
+        self.assertNotIn('conservative_lexical_rejection_needs_review',audit['categories'])
+        reordered='T1: Your compact travel companion\nB1: NONE\nS1: Everyday travel choices'
+        self.assertIn('wrong_field_order',field_audit(reordered,'stop',self.plan,self.request,self.catalog)['categories'])
+
     def test_factual_guard_unchanged_new_wording_retained(self):
         raw='S1: Everyday travel choices\nT1: Your compact travel companion\nB1: NONE'
         result,quality=validate_generated(raw,'stop',self.plan,self.request,self.catalog)

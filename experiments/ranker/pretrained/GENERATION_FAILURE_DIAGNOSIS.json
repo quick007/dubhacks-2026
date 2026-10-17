@@ -30,6 +30,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "S2", "T1", "B1", "T2", "B2", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 3,
       "fieldDetails": [
         {
@@ -44,7 +45,8 @@
           "text": "Grove 23L Daypack \u2014 Compact",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -87,6 +89,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "S2", "T1", "B1", "T2", "B2", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 3,
       "fieldDetails": [
         {
@@ -101,7 +104,8 @@
           "text": "Grove 23L Daypack \u2014 Compact",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -144,6 +148,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "S2", "T1", "B1", "T2", "B2", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 3,
       "fieldDetails": [
         {
@@ -158,7 +163,8 @@
           "text": "Grove 23L Daypack \u2014 Compact",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -200,11 +206,12 @@
         "conservative_lexical_rejection_needs_review",
         "other_catalog_product_identity_in_bound_title",
         "token_budget_truncation_or_nonstop",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "S2", "T1", "B1", "T2", "B2", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 3,
       "fieldDetails": [
         {
@@ -228,6 +235,7 @@
             "outside_factual_or_generic_lexicon:14,field,lightweight",
             "numeric_context_not_verbatim_product_identity"
           ],
+          "observedSupportedTags": [],
           "otherCatalogTitles": ["Field 14L Daypack"]
         },
         {
@@ -274,6 +282,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "S2", "T1", "B1", "T2", "B2", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 3,
       "fieldDetails": [
         {
@@ -288,7 +297,8 @@
           "text": "Grove 23L Daypack \u2014 Compact",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -327,11 +337,12 @@
         "control_enum_copied_as_content",
         "copied_approved_title_not_new",
         "token_budget_truncation_or_nonstop",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "S2", "T1", "B1", "T2", "B2", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -350,7 +361,8 @@
           "text": "River 26L Daypack \u2014 durable",
           "origin": "required-protocol",
           "catalogTags": ["durable", "organizer"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["durable"]
         },
         {
           "field": "B1",
@@ -399,11 +411,12 @@
         "copied_input_instead_of_requested_output",
         "token_budget_truncation_or_nonstop",
         "unparseable_or_markdown_format",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": ["S1", "T1", "B1", "T2", "B2", "T3", "B3"],
       "parsedLabels": [],
+      "exactFieldOrder": false,
       "blankLines": 1,
       "fieldDetails": [
         {
@@ -424,7 +437,8 @@
           "claimErrors": [
             "outside_factual_or_generic_lexicon:additional,factual,tags,words",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "T2",
@@ -434,7 +448,8 @@
           "claimErrors": [
             "outside_factual_or_generic_lexicon:additional,factual,tags,words",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "T3",
@@ -444,7 +459,8 @@
           "claimErrors": [
             "outside_factual_or_generic_lexicon:additional,factual,tags,words",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["durable"]
         }
       ],
       "rawOutput": "# Section 1\n## Everyday Compact Travel Packs\n\nCard 1: Grove 23L Daypack; tags=['water-resistant', 'compact']; additional factual words=23 4 45.71 compact grove l resistant water.\nCard 2: Cedar 26L Daypack; tags=['durable', 'compact']; additional factual words=26 4 45.13 cedar compact durable l.\nCard 3: River 26L Daypack; tags=['durable', 'organizer']; additional factual words=26 44.65 6",
@@ -485,11 +501,12 @@
         "copied_input_instead_of_requested_output",
         "token_budget_truncation_or_nonstop",
         "unparseable_or_markdown_format",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": ["S1", "T1", "B1", "T2", "B2", "T3", "B3"],
       "parsedLabels": [],
+      "exactFieldOrder": false,
       "blankLines": 1,
       "fieldDetails": [
         {
@@ -510,7 +527,8 @@
           "claimErrors": [
             "outside_factual_or_generic_lexicon:additional,factual,tags,words",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "T2",
@@ -520,7 +538,8 @@
           "claimErrors": [
             "outside_factual_or_generic_lexicon:additional,factual,tags,words",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "T3",
@@ -530,7 +549,8 @@
           "claimErrors": [
             "outside_factual_or_generic_lexicon:additional,factual,tags,words",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["durable"]
         }
       ],
       "rawOutput": "# Section 1\n## Everyday Compact Travel Packs\n\nCard 1: Grove 23L Daypack; tags=['water-resistant', 'compact']; additional factual words=23 4 45.71 compact grove l resistant water.\nCard 2: Cedar 26L Daypack; tags=['durable', 'compact']; additional factual words=26 4 45.13 cedar compact durable l.\nCard 3: River 26L Daypack; tags=['durable', 'organizer']; additional factual words=26 44.65 6",
@@ -580,7 +600,7 @@
         "blank_separator_strictness",
         "conservative_lexical_rejection_needs_review",
         "unparseable_or_markdown_format",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": [
@@ -600,6 +620,7 @@
         "B6"
       ],
       "parsedLabels": [],
+      "exactFieldOrder": false,
       "blankLines": 1,
       "fieldDetails": [
         {
@@ -617,21 +638,24 @@
           "text": "Grove 23L Daypack \u2014 water-resistant; a compact water-resistant grove daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "T2",
           "text": "Cedar 26L Daypack \u2014 durable; a compact durable cedar daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "T3",
           "text": "River 26L Daypack \u2014 durable; a durable river daypack with organizer for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["durable", "organizer"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["durable"]
         },
         {
           "field": "S2",
@@ -648,21 +672,24 @@
           "text": "Field 14L Daypack \u2014 lightweight; a lightweight field daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "T5",
           "text": "Ridge 23L Daypack \u2014 lightweight; a lightweight ridge daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "T6",
           "text": "River 14L Daypack \u2014 durable; a compact durable river daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         }
       ],
       "rawOutput": "# Section 1\n## Compact Daily Travel Packs\nCard 1: Grove 23L Daypack \u2014 water-resistant; a compact water-resistant grove daypack for daily travel.\nCard 2: Cedar 26L Daypack \u2014 durable; a compact durable cedar daypack for daily travel.\nCard 3: River 26L Daypack \u2014 durable; a durable river daypack with organizer for daily travel.\n\n# Section 2\n## Compact Durable Everyday Packs\nCard 4: Field 14L Daypack \u2014 lightweight; a lightweight field daypack for daily travel.\nCard 5: Ridge 23L Daypack \u2014 lightweight; a lightweight ridge daypack for daily travel.\nCard 6: River 14L Daypack \u2014 durable; a compact durable river daypack for daily travel.",
@@ -712,7 +739,7 @@
         "blank_separator_strictness",
         "conservative_lexical_rejection_needs_review",
         "unparseable_or_markdown_format",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": [
@@ -732,6 +759,7 @@
         "B6"
       ],
       "parsedLabels": [],
+      "exactFieldOrder": false,
       "blankLines": 1,
       "fieldDetails": [
         {
@@ -749,21 +777,24 @@
           "text": "Grove 23L Daypack \u2014 water-resistant; a compact water-resistant grove daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "T2",
           "text": "Cedar 26L Daypack \u2014 durable; a compact durable cedar daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "T3",
           "text": "River 26L Daypack \u2014 durable; a durable river daypack with organizer for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["durable", "organizer"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["durable"]
         },
         {
           "field": "S2",
@@ -780,21 +811,24 @@
           "text": "Field 14L Daypack \u2014 lightweight; a lightweight field daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "T5",
           "text": "Ridge 23L Daypack \u2014 lightweight; a lightweight ridge daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "T6",
           "text": "River 14L Daypack \u2014 durable; a compact durable river daypack for daily travel.",
           "origin": "nonprotocol-card-prose-audit-only",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         }
       ],
       "rawOutput": "# Section 1\n## Compact Daily Travel Packs\nCard 1: Grove 23L Daypack \u2014 water-resistant; a compact water-resistant grove daypack for daily travel.\nCard 2: Cedar 26L Daypack \u2014 durable; a compact durable cedar daypack for daily travel.\nCard 3: River 26L Daypack \u2014 durable; a durable river daypack with organizer for daily travel.\n\n# Section 2\n## Compact Durable Everyday Packs\nCard 4: Field 14L Daypack \u2014 lightweight; a lightweight field daypack for daily travel.\nCard 5: Ridge 23L Daypack \u2014 lightweight; a lightweight ridge daypack for daily travel.\nCard 6: River 14L Daypack \u2014 durable; a compact durable river daypack for daily travel.",
@@ -822,6 +856,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -836,7 +871,8 @@
           "text": "Compact Grove Daypack for Daily Use",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:use"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:use"],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -872,6 +908,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -886,7 +923,8 @@
           "text": "Compact Grove Daypack for Daily Use",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:use"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:use"],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -916,6 +954,7 @@
       "categories": ["conservative_lexical_rejection_needs_review"],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -930,14 +969,15 @@
           "text": "Compact Durable Cedar Daypack",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": []
         }
       ],
@@ -957,9 +997,10 @@
         "titleObservedAlignmentEvaluatedCards": 0,
         "correctNone": true
       },
-      "categories": ["conservative_lexical_rejection_needs_review"],
+      "categories": [],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -974,14 +1015,15 @@
           "text": "Cedar 26L Daypack \u2014 Compact and Durable",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": []
         }
       ],
@@ -1004,6 +1046,7 @@
       "categories": ["badge_factuality_distinct_from_missing_personalization_evidence"],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1018,7 +1061,8 @@
           "text": "Water-Resistant Meadow Daypack",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "organizer"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["water-resistant"]
         },
         {
           "field": "B1",
@@ -1050,10 +1094,11 @@
       },
       "categories": [
         "conservative_lexical_rejection_needs_review",
-        "unsupported_bound_product_or_section_fact"
+        "validator_flagged_bound_fact_requires_context_review"
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1071,14 +1116,15 @@
           "claimErrors": [
             "attribute_not_in_selected_product_tags:compact",
             "outside_factual_or_generic_lexicon:compact"
-          ]
+          ],
+          "observedSupportedTags": ["water-resistant"]
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "organizer"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": ["water-resistant"]
         }
       ],
@@ -1114,6 +1160,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1", "T2", "B1", "T3", "B1", "T4"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1128,14 +1175,15 @@
           "text": "Roomy Water-Resistant Daypack",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["roomy"]
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": ["roomy"]
         }
       ],
@@ -1158,6 +1206,7 @@
       "categories": ["conservative_lexical_rejection_needs_review"],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1172,14 +1221,15 @@
           "text": "Roomy Water-Resistant Daily Choice",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["roomy"]
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": ["roomy"]
         }
       ],
@@ -1210,6 +1260,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1224,7 +1275,8 @@
           "text": "Field 20L Daypack \u2014 Water-Resistant",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["water-resistant"]
         },
         {
           "field": "B1",
@@ -1257,6 +1309,7 @@
       "categories": ["copied_approved_title_not_new", "wrong_field_set"],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1", "T2", "B2"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1271,7 +1324,8 @@
           "text": "Field 20L Daypack \u2014 Water-Resistant",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["water-resistant"]
         },
         {
           "field": "B1",
@@ -1311,6 +1365,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1", "T2", "B2"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1325,7 +1380,8 @@
           "text": "Field 20L Daypack \u2014 Water-Resistant",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "B1",
@@ -1363,6 +1419,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1", "T2", "B2"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1377,14 +1434,15 @@
           "text": "Field 20L Daypack \u2014 Water-Resistant",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "roomy"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": []
         }
       ],
@@ -1416,6 +1474,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1430,7 +1489,8 @@
           "text": "Cedar 26L Daypack \u2014 Laptop Sleeve",
           "origin": "required-protocol",
           "catalogTags": ["laptop-sleeve", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["laptop-sleeve"]
         },
         {
           "field": "B1",
@@ -1475,6 +1535,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1", "T2", "B1", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1489,7 +1550,8 @@
           "text": "Cedar 26L Daypack \u2014 Laptop Sleeve",
           "origin": "required-protocol",
           "catalogTags": ["laptop-sleeve", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["laptop-sleeve"]
         },
         {
           "field": "B1",
@@ -1516,12 +1578,10 @@
         "titleObservedAlignmentEvaluatedCards": 1,
         "correctNone": null
       },
-      "categories": [
-        "conservative_lexical_rejection_needs_review",
-        "copied_approved_title_not_new"
-      ],
+      "categories": ["copied_approved_title_not_new", "title_missing_required_observed_attribute"],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1536,14 +1596,15 @@
           "text": "Pine 23L Daypack",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": ["compact", "durable"]
         }
       ],
@@ -1563,12 +1624,10 @@
         "titleObservedAlignmentEvaluatedCards": 1,
         "correctNone": null
       },
-      "categories": [
-        "conservative_lexical_rejection_needs_review",
-        "copied_approved_title_not_new"
-      ],
+      "categories": ["copied_approved_title_not_new", "title_missing_required_observed_attribute"],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1583,14 +1642,15 @@
           "text": "Pine 23L Daypack",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": ["compact", "durable"]
         }
       ],
@@ -1619,6 +1679,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1633,14 +1694,15 @@
           "text": "Cedar 26L Daypack",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": []
         }
       ],
@@ -1663,6 +1725,7 @@
       "categories": ["conservative_lexical_rejection_needs_review"],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1677,14 +1740,15 @@
           "text": "Cedar 26L Daypack \u2014 Compact and Durable",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "B1",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": []
         }
       ],
@@ -1714,6 +1778,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1728,7 +1793,8 @@
           "text": "Compact Grove Daypack for Daily Use",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:use"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:use"],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -1765,6 +1831,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1"],
       "parsedLabels": ["S1", "T1", "B1"],
+      "exactFieldOrder": true,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1779,7 +1846,8 @@
           "text": "Compact Grove Daypack for Daily Use",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:use"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:use"],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -1824,6 +1892,7 @@
       ],
       "expectedLabels": ["S1", "T1", "B1", "T2", "B2", "T3", "B3"],
       "parsedLabels": ["S1", "T1", "B1", "T2", "B1", "T3", "B1"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1838,7 +1907,8 @@
           "text": "Compact Choice for Daily Use",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:use"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:use"],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -1853,14 +1923,16 @@
           "text": "Durable Compact Option for Routine",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "T3",
           "text": "Durable Organizer for Short Trips",
           "origin": "required-protocol",
           "catalogTags": ["durable", "organizer"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:short"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:short"],
+          "observedSupportedTags": ["durable"]
         }
       ],
       "rawOutput": "S1: Everyday Travel Daypacks\nT1: Compact Choice for Daily Use\nB1: GENERATE\nT2: Durable Compact Option for Routine\nB1: GENERATE\nT3: Durable Organizer for Short Trips\nB1: GENERATE",
@@ -1890,11 +1962,12 @@
       "categories": [
         "conservative_lexical_rejection_needs_review",
         "fused_fields",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": ["S1", "T1", "B1", "T2", "B2", "T3", "B3"],
       "parsedLabels": ["S1", "T1", "T2", "T3"],
+      "exactFieldOrder": false,
       "blankLines": 0,
       "fieldDetails": [
         {
@@ -1913,7 +1986,8 @@
             "number_not_in_selected_catalog_facts:1",
             "outside_factual_or_generic_lexicon:1,b",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "T2",
@@ -1924,7 +1998,8 @@
             "number_not_in_selected_catalog_facts:1",
             "outside_factual_or_generic_lexicon:1,b",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "T3",
@@ -1935,7 +2010,8 @@
             "number_not_in_selected_catalog_facts:1",
             "outside_factual_or_generic_lexicon:1,b",
             "numeric_context_not_verbatim_product_identity"
-          ]
+          ],
+          "observedSupportedTags": ["durable"]
         }
       ],
       "rawOutput": "S1: Everyday Travel Backpacks\nT1: Compact Water-Resistant Daily Choice B1: Water-Resistant\nT2: Durable Compact Everyday Option B1: Durable\nT3: Durable Organizer Travel Pack B1: Organizer",
@@ -1975,7 +2051,7 @@
         "blank_separator_strictness",
         "conservative_lexical_rejection_needs_review",
         "duplicate_field_labels",
-        "unsupported_bound_product_or_section_fact",
+        "validator_flagged_bound_fact_requires_context_review",
         "wrong_field_set"
       ],
       "expectedLabels": [
@@ -2010,6 +2086,7 @@
         "T6",
         "B1"
       ],
+      "exactFieldOrder": false,
       "blankLines": 1,
       "fieldDetails": [
         {
@@ -2027,7 +2104,8 @@
           "text": "Compact Grove for Water-Resistant Travel",
           "origin": "required-protocol",
           "catalogTags": ["water-resistant", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -2042,14 +2120,16 @@
           "text": "Durable Cedar for Compact Travel",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "T3",
           "text": "Durable River with Organizer",
           "origin": "required-protocol",
           "catalogTags": ["durable", "organizer"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["durable"]
         },
         {
           "field": "S2",
@@ -2066,21 +2146,24 @@
           "text": "Lightweight Field for Roomy Travel",
           "origin": "required-protocol",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "T5",
           "text": "Lightweight Ridge for Roomy Travel",
           "origin": "required-protocol",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "T6",
           "text": "Durable River for Compact Travel",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["compact", "durable"]
         }
       ],
       "rawOutput": "S1: Compact Everyday Travel Packs\nT1: Compact Grove for Water-Resistant Travel\nB1: Water-Resistant\nT2: Durable Cedar for Compact Travel\nB1: Compact\nT3: Durable River with Organizer\nB1: Organizer\n\nS2: Lightweight Everyday Travel Packs\nT4: Lightweight Field for Roomy Travel\nB1: Roomy\nT5: Lightweight Ridge for Roomy Travel\nB1: Roomy\nT6: Durable River for Compact Travel\nB1: Compact",
@@ -2116,7 +2199,8 @@
         "blank_separator_strictness",
         "conservative_lexical_rejection_needs_review",
         "control_enum_copied_as_content",
-        "unsupported_bound_product_or_section_fact"
+        "validator_flagged_bound_fact_requires_context_review",
+        "wrong_field_order"
       ],
       "expectedLabels": [
         "S1",
@@ -2150,6 +2234,7 @@
         "T6",
         "B6"
       ],
+      "exactFieldOrder": false,
       "blankLines": 1,
       "fieldDetails": [
         {
@@ -2170,7 +2255,8 @@
           "claimErrors": [
             "attribute_not_in_selected_product_tags:durable",
             "outside_factual_or_generic_lexicon:durable"
-          ]
+          ],
+          "observedSupportedTags": ["compact"]
         },
         {
           "field": "B1",
@@ -2185,7 +2271,8 @@
           "text": "Compact Durable Short Trip Pack",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:short"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:short"],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "B2",
@@ -2200,7 +2287,8 @@
           "text": "Durable Organizer Everyday Travel Pack",
           "origin": "required-protocol",
           "catalogTags": ["durable", "organizer"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": ["durable"]
         },
         {
           "field": "B3",
@@ -2225,14 +2313,15 @@
           "text": "Lightweight Roomy Everyday Travel Pack",
           "origin": "required-protocol",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": []
+          "claimErrors": [],
+          "observedSupportedTags": []
         },
         {
           "field": "B4",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": []
         },
         {
@@ -2240,14 +2329,15 @@
           "text": "Lightweight Roomy Short Trip Pack",
           "origin": "required-protocol",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:short"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:short"],
+          "observedSupportedTags": []
         },
         {
           "field": "B5",
           "text": "NONE",
           "origin": "required-protocol",
           "catalogTags": ["lightweight", "roomy"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:none"],
+          "claimErrors": [],
           "observedSupportedTags": []
         },
         {
@@ -2255,7 +2345,8 @@
           "text": "Compact Durable Short Trip Pack",
           "origin": "required-protocol",
           "catalogTags": ["durable", "compact"],
-          "claimErrors": ["outside_factual_or_generic_lexicon:short"]
+          "claimErrors": ["outside_factual_or_generic_lexicon:short"],
+          "observedSupportedTags": ["compact", "durable"]
         },
         {
           "field": "B6",
@@ -2270,7 +2361,7 @@
       "finishReason": "stop"
     }
   ],
-  "categoryDefinition": "Overlapping response-level mechanisms; lexical rejection candidates are not automatically factual or accepted. Markdown/Card prose is inspected for semantic claims only, never rescued into valid protocol fields.",
+  "categoryDefinition": "Overlapping response-level validator/mechanism flags, NOT confirmed hallucination counts. Lexical/numeric/section-identity flags need context review; generic section proxies can reject actual one-product identities. Representative true errors and conservative false negatives are independently reviewed in GENERATION_DIAGNOSIS.md. Markdown/Card prose is inspected for semantic claims only, never rescued into valid protocol fields.",
   "counts": {
     "cache": {
       "blank_separator_strictness": 9,
@@ -2279,7 +2370,7 @@
       "badge_factuality_distinct_from_missing_personalization_evidence": 2,
       "conservative_lexical_rejection_needs_review": 6,
       "other_catalog_product_identity_in_bound_title": 1,
-      "unsupported_bound_product_or_section_fact": 6,
+      "validator_flagged_bound_fact_requires_context_review": 6,
       "control_enum_copied_as_content": 1,
       "copied_approved_title_not_new": 1,
       "copied_input_instead_of_requested_output": 2,
@@ -2287,16 +2378,18 @@
     },
     "evidence": {
       "badge_factuality_distinct_from_missing_personalization_evidence": 12,
-      "conservative_lexical_rejection_needs_review": 21,
-      "unsupported_bound_product_or_section_fact": 4,
+      "conservative_lexical_rejection_needs_review": 18,
+      "validator_flagged_bound_fact_requires_context_review": 4,
       "duplicate_field_labels": 4,
       "token_budget_truncation_or_nonstop": 2,
       "wrong_field_set": 8,
       "control_enum_copied_as_content": 4,
       "copied_approved_title_not_new": 9,
       "unparseable_or_markdown_format": 1,
+      "title_missing_required_observed_attribute": 2,
       "fused_fields": 1,
-      "blank_separator_strictness": 2
+      "blank_separator_strictness": 2,
+      "wrong_field_order": 1
     }
   },
   "population": {

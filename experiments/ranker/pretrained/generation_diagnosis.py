@@ -99,6 +99,7 @@ def field_audit(raw,finish,plan,request,catalog):
     expected=expected_fields(plan)
     if set(parsed)!=set(expected):categories.add('wrong_field_set')
     if len(seen)!=len(set(seen)):categories.add('duplicate_field_labels')
+    if set(parsed)==set(expected) and seen!=expected:categories.add('wrong_field_order')
     if blank:categories.add('blank_separator_strictness')
     if finish!='stop':categories.add('token_budget_truncation_or_nonstop')
     cards=[c for section in plan['sections'] for c in section['products']]
@@ -121,14 +122,18 @@ def field_audit(raw,finish,plan,request,catalog):
         categories.add('copied_input_instead_of_requested_output')
     for key,text in semantic.items():
         if key not in products:continue
-        product=products[key];errors=_field_claim_errors(text,product,catalog)
+        product=products[key];errors=[] if key.startswith('B') and text=='NONE' else _field_claim_errors(text,product,catalog)
         item={'field':key,'text':text,'origin':semantic_origins[key],'catalogTags':product['tags'],'claimErrors':errors}
         if any(e.startswith('attribute_not_in_selected_product_tags:') or e.startswith('number_not_in_selected_catalog_facts:') for e in errors):
-            categories.add('unsupported_bound_product_or_section_fact')
+            categories.add('validator_flagged_bound_fact_requires_context_review')
         if any(e.startswith('unsupported_claim_terms:') for e in errors):categories.add('forbidden_claim_terms')
         outside=[e for e in errors if e.startswith('outside_factual_or_generic_lexicon:')]
         if outside:categories.add('conservative_lexical_rejection_needs_review')
         if key.startswith('T'):
+            support=[fid.rsplit(':',1)[1] for fid in cards[int(key[1:])-1]['approvedFactIds']]
+            item['observedSupportedTags']=support
+            if support and not any((' '+_normalized(tag)+' ') in (' '+_normalized(text)+' ') for tag in support):
+                categories.add('title_missing_required_observed_attribute')
             names=[p['title'] for p in catalog.values() if _normalized(p['title']) in _normalized(text) and p['title']!=product['title']]
             if names:categories.add('other_catalog_product_identity_in_bound_title');item['otherCatalogTitles']=sorted(set(names))
             approved={_normalized(product['title']),*(_normalized(v['title']) for v in product['presentationVariants'])}
@@ -140,7 +145,7 @@ def field_audit(raw,finish,plan,request,catalog):
             if text!='NONE' and (not support or not any((' '+_normalized(tag)+' ') in (' '+_normalized(text)+' ') for tag in support)):
                 categories.add('badge_factuality_distinct_from_missing_personalization_evidence')
         details.append(item)
-    return {'categories':sorted(categories),'expectedLabels':expected,'parsedLabels':seen,'blankLines':blank,
+    return {'categories':sorted(categories),'expectedLabels':expected,'parsedLabels':seen,'exactFieldOrder':seen==expected,'blankLines':blank,
             'fieldDetails':details,'rawOutput':raw,'finishReason':finish}
 
 
@@ -156,7 +161,7 @@ def diagnose(args):
         for arm,saved in row['arms'].items():
             audit=field_audit(saved['generation']['text'],saved['generation']['finishReason'],saved['pagePlan'],requests[row['caseId']]['request'],catalog)
             rows.append({'caseId':row['caseId']+'-'+arm,'source':'evidence','quality':saved['quality'],**audit})
-    report={'synthetic':True,'rows':rows,'categoryDefinition':'Overlapping response-level mechanisms; lexical rejection candidates are not automatically factual or accepted. Markdown/Card prose is inspected for semantic claims only, never rescued into valid protocol fields.',
+    report={'synthetic':True,'rows':rows,'categoryDefinition':'Overlapping response-level validator/mechanism flags, NOT confirmed hallucination counts. Lexical/numeric/section-identity flags need context review; generic section proxies can reject actual one-product identities. Representative true errors and conservative false negatives are independently reviewed in GENERATION_DIAGNOSIS.md. Markdown/Card prose is inspected for semantic claims only, never rescued into valid protocol fields.',
         'counts':{source:dict(Counter(category for row in rows if row['source']==source for category in row['categories'])) for source in ('cache','evidence')},
         'population':{'cache':10,'evidenceArms':24},'intervention':'Replace ambiguous open-ended labels and control enums with one exact output-label/product/evidence manifest. Everything else fixed.',
         'generationSettings':{'sampler':'greedy temperature0','budgets':CONFIG['budgets'],'retries':0,'backboneAndHeads':'unchanged; no training','validator':'unchanged original strict validator; no vocabulary/claim acceptance relaxation'},
@@ -254,8 +259,36 @@ def benchmark(args):
     print(json.dumps({'summary':summaries,'memory':report['memory'],'baselineRawReplayMatches':report['baselineRawReplayMatches']},indent=2),flush=True)
 
 
+def review(args):
+    """Refine mechanism labels on saved text only; acceptance/timing immutable."""
+    diagnose(args)
+    path=args.out/'benchmark.json';original=json.loads(path.read_text());report=copy.deepcopy(original)
+    cases={case['caseId']:case for case in cases_and_saved(args.dataset)}
+    for row in report['records']:
+        case=cases[row['caseId']]
+        for value in row['arms'].values():
+            raw=value['generation']
+            value['audit']=field_audit(raw['text'],raw['finishReason'],value['pagePlan'],case['request'],case['catalog'])
+    for source,arms in report['summary'].items():
+        for arm,metrics in arms.items():
+            values=[r['arms'][arm] for r in report['records'] if source=='all' or r['source']==source]
+            metrics['failureMechanisms']=dict(Counter(category for v in values for category in v['audit']['categories']))
+            metrics['exactFieldOrderCount']=sum(v['audit']['exactFieldOrder'] for v in values)
+    report['classificationReview']={'generationRepeated':False,'acceptanceOrTimingChanged':False,
+        'originalBenchmarkSha256':digest(path),'generationSourceCommit':'afe7e20',
+        'changes':['Record required observed title attributes separately from lexical rejection.','Check exact parsed field order separately from field set.','Label validator bound-fact flags as context-review signals; section proxy numeric/brand rejection is not confirmed hallucination.']}
+    dump(args.out/'benchmark-reviewed.json',report)
+    compact={k:v for k,v in report.items() if k!='records'}
+    compact['perCase']=[{'caseId':r['caseId'],'source':r['source'],'cards':r['cards'],
+        'arms':{arm:{'quality':v['quality'],'timing':v['timing'],'generation':v['generation'],
+                      'exactFieldOrder':v['audit']['exactFieldOrder'],'mechanismFlags':v['audit']['categories']} for arm,v in r['arms'].items()}} for r in report['records']]
+    compact['evidence']={str(p):digest(p) for p in (path,args.out/'benchmark-reviewed.json',args.out/'case-plan.json')}
+    dump(Path('experiments/ranker/pretrained/GENERATION_MANIFEST_RESULTS.json'),compact)
+    print(json.dumps({'summary':report['summary'],'classificationReview':report['classificationReview']},indent=2))
+
+
 def main():
-    parser=argparse.ArgumentParser(__doc__);parser.add_argument('command',choices=('diagnose','benchmark'))
+    parser=argparse.ArgumentParser(__doc__);parser.add_argument('command',choices=('diagnose','benchmark','review'))
     parser.add_argument('--model',type=Path);parser.add_argument('--dataset',type=Path,default=Path('data/ranker/datasets/v2'))
     parser.add_argument('--heads',type=Path,default=Path('data/ranker/pretrained/evidence-plan-v1'))
     parser.add_argument('--out',type=Path,default=OUT);args=parser.parse_args()

@@ -35,4 +35,54 @@ The fixed roster includes **all ten original cache conditions plus all twelve or
 .tools/pretrained-venv/bin/python -m experiments.ranker.pretrained.generation_diagnosis benchmark --model /absolute/verified/pinned/snapshot
 ```
 
-Four offline protocol/guard tests pass. The actual model comparison is pending at this source increment. Diagnosis uses previously inspected cases, so any later improvement is evidence about this failure mechanism, not untouched generalization. No factuality relaxation, retraining, learned layout claim, or broad parameter sweep is included.
+Five offline protocol/guard/reporting tests pass. The actual paired comparison completed; [GENERATION_MANIFEST_RESULTS.json](GENERATION_MANIFEST_RESULTS.json) preserves measured results and raw generated examples. All **22/22 baseline raw replays exactly matched** the earlier saved outputs, and every selected product/image ID matched its saved plan. No model, head, factual validator, novelty criterion or decoding cap was changed.
+
+| Population             | Fully valid pages: baseline → manifest | Accepted NEW titles | Full attempt median: baseline → manifest |
+| ---------------------- | -------------------------------------- | ------------------- | ---------------------------------------- |
+| 10 cache conditions    | 0/10 → 0/10                            | 0/24 → 18/24        | 6420 → 4989 ms                           |
+| 12 evidence-plan cases | 1/12 → **7/12** (58.3%)                | 6/19 → **16/19**    | 3195 → 3199 ms                           |
+| All fixed cases        | 1/22 → 7/22                            | 6/43 → 34/43        | 4987 → 3690 ms                           |
+
+The manifest produced the exact required field order in **22/22** cases, versus 9/22 baseline, and reduced non-stop/truncated responses from 8/22 to zero. Control enum `GENERATE` no longer appears as output. This supports a protocol/binding contribution to the failure mechanism. It does not fix every binding, grounding or heading error. The pooled population includes repeated cache controls and mixed page sizes; its median is not production traffic or independent-user evidence. Cache-attempt speed gains include avoiding extra-field overrun; **zero cache pages were valid**, so none is a successful fast page.
+
+Full evidence-plan size-specific measurements were:
+
+| Cards | Baseline full attempt | Manifest full attempt | Manifest complete page                                |
+| ----- | --------------------: | --------------------: | ----------------------------------------------------- |
+| 1     |               3730 ms |               3801 ms | Valid                                                 |
+| 3     |               5182 ms |           **5390 ms** | Valid                                                 |
+| 6     |               8420 ms |               8923 ms | Rejected headings; six valid new card titles retained |
+
+These are single runs per size. The seven fully valid manifest responses took 2901–5390 ms (median 3098 ms, conditional on successful cases). The evidence-path full-attempt median did not improve, and the near-traditional-page latency target remains unmet. Six-card section headings still make claims not true for every bound product. Peak MLX allocation remained 6,344,673,924 bytes under the 6,442,450,944-byte cap; no OOM or parallel heavy runs occurred.
+
+### Actual after-intervention examples
+
+For Grove 23L (water-resistant/compact, observable supported tag compact), the earlier rejected `Compact Grove Daypack for Daily Use` and unsupported-as-personal-reason `water-resistant` badge became:
+
+```text
+S1: Compact water-resistant everyday travel choice
+T1: Grove 23L Daypack for daily compact needs
+B1: compact
+```
+
+All fields passed the unchanged checks in **3061 ms**, versus a 2957 ms baseline attempt that failed. The title is genuinely new, not an approved-title lookup or template substitution.
+
+The no-history/no-preference control generated:
+
+```text
+S1: Everyday travel backpacks
+T1: Cedar 26L Daypack for daily needs
+B1: NONE
+```
+
+This whole response passed in **2901 ms** without asserting invented personal intent. The three-card evidence case also passed with newly generated `Grove 23L Compact Daily Bag`, `Cedar 26L Durable Travel Pack`, and `River 26L Durable Organizer Pack`, under the generic factual heading `Everyday travel companion daypacks`.
+
+Failures remain visible. In the catalog-first one-card path, `Grove 23L Daypack for short trips` is novel but rejects **both** lexical `short` and omission of the required explicit `compact` attribute. In changed-profile B, the manifest still emits `Field 14L Daypack lightweight` for structured River 26L (durable/organizer): a real binding failure, rejected. Six-card headings such as `Compact durable daypacks` are rejected when a section's products share no such universal tags. These are not rescued into successes.
+
+### Review and limits
+
+The independent agent confirmed fixed case reconstruction (all ten observed profile hashes match), unchanged heads/settings/validator, cold/warm parity in both arms, full timing, and product/image identity assertions. Diagnostic counts were refined **after generation without changing acceptance or latency**: omitted title support is recorded separately, field order is checked explicitly, NONE is treated as a control rather than rejected prose, and numeric/brand flags against the generic section proxy are marked context-review signals. Those flags are not confirmed hallucination counts; a one-product heading naming its actual River 26L item can be factually true yet rejected by the conservative generic section proxy. The detailed original benchmark remains preserved alongside `benchmark-reviewed.json` and evidence hashes.
+
+Validity means the unchanged implemented validator, not every natural-language instruction: novelty checks the selected product's approved titles, and prompt word-count suggestions are not all enforced by that validator. Factuality vocabulary was not enlarged, no rejected wording was rewritten into acceptance, and no truncation or false section claims were ignored.
+
+This is a one-intervention result on cases already inspected during diagnosis, with repeated controls, not untouched generalization or a human conversion result. Product ranking uses the same previously regressed experimental checkpoint; this prompt result does not repair ranking or establish learned section grouping. No additional training or broad sweep was performed. The experiment stops here.
