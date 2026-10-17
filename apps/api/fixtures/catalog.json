@@ -1,0 +1,71 @@
+{
+  "experiment": {
+    "id": "demo-experiment",
+    "name": "Synthetic storefront study",
+    "baselineVariantId": "baseline",
+    "variantIds": ["baseline", "shipping-visible"],
+    "developmentPersonaIds": ["dev-budget", "dev-explorer"],
+    "heldOutPersonaIds": ["heldout-budget", "heldout-repeat"],
+    "seed": 42,
+    "createdAt": "2026-10-17T00:00:00.000Z",
+    "contractVersion": 1
+  },
+  "personas": [
+    {
+      "id": "dev-budget",
+      "name": "Budget shopper",
+      "goal": "Find an affordable item with clear delivery information",
+      "split": "development",
+      "traits": ["budget", "shipping-sensitive"],
+      "history": []
+    },
+    {
+      "id": "dev-explorer",
+      "name": "Curious explorer",
+      "goal": "Discover a popular product",
+      "split": "development",
+      "traits": ["discovery"],
+      "history": []
+    },
+    {
+      "id": "heldout-budget",
+      "name": "Held-out practical shopper",
+      "goal": "Buy a useful gift with clear shipping",
+      "split": "held-out",
+      "traits": ["shipping-sensitive"],
+      "history": []
+    },
+    {
+      "id": "heldout-repeat",
+      "name": "Held-out returning shopper",
+      "goal": "Find a recommendation related to supplied history",
+      "split": "held-out",
+      "traits": ["returning"],
+      "history": ["everyday-tote"]
+    }
+  ],
+  "variants": [
+    {
+      "id": "baseline",
+      "experimentId": "demo-experiment",
+      "name": "Baseline",
+      "isBaseline": true,
+      "config": {
+        "headline": "Everyday goods for curious people",
+        "showShipping": false,
+        "recommendationOrder": "popular"
+      }
+    },
+    {
+      "id": "shipping-visible",
+      "experimentId": "demo-experiment",
+      "name": "Visible shipping",
+      "isBaseline": false,
+      "config": {
+        "headline": "Everyday goods, clear delivery",
+        "showShipping": true,
+        "recommendationOrder": "budget"
+      }
+    }
+  ]
+}

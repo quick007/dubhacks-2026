@@ -1,0 +1,29 @@
+{
+  "name": "storefront-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "test:smoke": "playwright test",
+    "seed": "pnpm --filter @storefront/api seed",
+    "reset": "pnpm --filter @storefront/api reset",
+    "check": "vp check",
+    "typecheck:tsc-ts": "node scripts/check-tsc-ts.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^22.18.0",
+    "tsc-ts": "0.0.2",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3",
+    "vite-plus": "catalog:"
+  },
+  "engines": {
+    "node": "^22.18.0 || ^24.11.0 || >=26.0.0"
+  },
+  "packageManager": "pnpm@12.5.1"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@storefront/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/go.mjs run .",
+    "build": "node ../../scripts/go.mjs build -o ../../.cache/bin/storefront-api .",
+    "typecheck": "node ../../scripts/go.mjs vet ./...",
+    "test": "node ../../scripts/go.mjs test ./...",
+    "seed": "node ../../scripts/go.mjs run . seed",
+    "reset": "node ../../scripts/go.mjs run . reset"
+  }
+}
