@@ -184,9 +184,9 @@ def main():
     parser.add_argument('--prior',type=Path,default=Path('data/ranker/pretrained/parallel-decode-v1'))
     parser.add_argument('--out',type=Path,default=Path('data/ranker/pretrained/native-batch-diagnosis-v1'))
     parser.add_argument('--report',type=Path,default=Path('experiments/ranker/pretrained/NATIVE_BATCH_DIAGNOSIS.json'))
-    parser.add_argument('--stage', choices=('v1','v2','v3','v4'), default='v1')
+    parser.add_argument('--stage', choices=('v1','v2','v3','v4','v5'), default='v1')
     args=parser.parse_args()
-    (run_controls if args.stage in ('v2','v3','v4') else run)(args)
+    (run_controls if args.stage != 'v1' else run)(args)
 
 
 # Stage two is deliberately separate from the original reproducer. The original
@@ -247,7 +247,8 @@ def run_controls(args):
     process_started = time.perf_counter()
     result = {'schemaVersion': int(args.stage[1:]), 'stage': stage,
         'nativePrefillStepSize': prefill_step_size, 'synthetic': True, 'recordedAtUtc': datetime.now(timezone.utc).isoformat(),
-        'prefillObservation': 'materialize native cache state only; preserve unused lazy logits' if stage == 'stage4' else 'legacy observation',
+        'prefillObservation': 'materialize native cache state only; preserve unused lazy logits' if stage in ('stage4','stage5') else 'legacy observation',
+        'rawObservationIndexing': 'per-native-UID autoregressive forward position' if stage == 'stage5' else 'global single-token forward-call index',
         'status': 'running', 'runtime': {name: version(name) for name in ('mlx', 'mlx-lm')},
         'modelRevision': REVISION, 'caseId': case['caseId'], 'memoryLimitBytes': 6*2**30,
         'scope': 'One model process, widths 1/2/3, fork/independent-prefix/fresh-full, each repeated once; seven greedy responses per row; no forcing.',
@@ -335,13 +336,16 @@ def run_controls(args):
                     class ObservedModel:
                         def __init__(self):
                             self.single_token_calls = 0
+                            self.current_uids = []
+                            self.forward_counts = {}
+                            self.row_by_uid = {}
                         def __getattr__(self, name):
                             return getattr(backbone.model, name)
                         def __call__(self, tokens, *pargs, **kwargs):
                             logits = backbone.model(tokens, *pargs, **kwargs)
                             if stage == 'stage3':
                                 mx.eval(logits); mx.synchronize(); backbone.check_memory()
-                            elif stage == 'stage4':
+                            elif stage in ('stage4','stage5'):
                                 if tokens.shape[1] == 1:
                                     mx.eval(logits)
                                 else:
@@ -350,14 +354,32 @@ def run_controls(args):
                             if tokens.shape[1] == 1:
                                 step = self.single_token_calls
                                 self.single_token_calls += 1
-                                if step == 6:
+                                target_index = None
+                                if stage == 'stage5':
+                                    for index,uid in enumerate(self.current_uids):
+                                        position = self.forward_counts.get(uid,0)
+                                        self.forward_counts[uid] = position+1
+                                        if self.row_by_uid[uid] == 'badge-1' and position == 6:
+                                            target_index = index
+                                    capture = target_index is not None
+                                else:
+                                    capture = step == 6
+                                if capture:
                                     raw = logits[:, -1, :]
                                     normalized = raw - mx.logsumexp(raw, axis=-1, keepdims=True)
-                                    raw_observation.update(dtype=str(raw.dtype), forwardStepZeroBased=step,
+                                    raw_observation.update(dtype=str(raw.dtype), forwardStepZeroBased=6 if stage == 'stage5' else step,
+                                        globalSingleTokenCallIndex=step, badgeArrayIndex=target_index,
                                         width=int(raw.shape[0]), raw=np.array(raw.astype(mx.float32)).copy(),
                                         reconstructed=np.array(normalized.astype(mx.float32)).copy())
                             return logits
                     observed_model = ObservedModel()
+                    native_generation_class = native.GenerationBatch
+                    if stage == 'stage5':
+                        class UidObservedGeneration(native_generation_class):
+                            def _step(self):
+                                observed_model.current_uids = list(self.uids)
+                                return super()._step()
+                        native.GenerationBatch = UidObservedGeneration
                     gen = native_class(observed_model, completion_batch_size=width, prefill_batch_size=width,
                                        prefill_step_size=prefill_step_size, sampler=make_sampler(temp=0.0))
                     prompts = [((base['tokens'] if mode == 'full' else [])+suffixes[r['rowId']]) for r in members]
@@ -369,6 +391,7 @@ def run_controls(args):
                             samplers=[make_sampler(temp=0.0) for _ in members], logits_processors=[[] for _ in members],
                             stop_sequences=[native.StopSequences(eos) for _ in members])
                         mapping = dict(zip(uids, [r['rowId'] for r in members], strict=True))
+                        observed_model.row_by_uid = mapping
                         del caches, cache
                         while True:
                             responses = gen.next_generated()
@@ -386,7 +409,7 @@ def run_controls(args):
                                     # use raw FORWARD call 6, not the latest call.
                                     if raw_observation.get('forwardStepZeroBased') != 6 or raw_observation['width'] != width:
                                         raise AssertionError('Target raw forward observation is missing or wrong shape')
-                                    badge_index = [r['rowId'] for r in members].index('badge-1')
+                                    badge_index = raw_observation['badgeArrayIndex'] if stage == 'stage5' else [r['rowId'] for r in members].index('badge-1')
                                     raw = raw_observation['raw'][badge_index].copy()
                                     reconstructed = raw_observation['reconstructed'][badge_index].copy()
                                     actual = np.array(response.logprobs.astype(mx.float32)).reshape(-1).copy()
@@ -408,6 +431,7 @@ def run_controls(args):
                             backbone.check_memory()
                     finally:
                         gen.close()
+                        native.GenerationBatch = native_generation_class
                         del gen, observed_model
                         gc.collect(); mx.synchronize(); mx.clear_cache()
                     record.update(status='completed', rows=records, baseAfter=state_hash(base['cache']),

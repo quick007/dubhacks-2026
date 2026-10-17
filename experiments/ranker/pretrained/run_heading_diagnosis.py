@@ -31,6 +31,9 @@ def run(args):
     if args.out.exists():
         raise ValueError('Preserve all previous output; no overwrite/retry')
     cases = diagnosis_cases(json.loads(Path('data/ranker/pretrained/parallel-decode-v1/parallel-case-plan.json').read_text())['cases'])
+    selected_reference = {case['caseId']:selected_ids(json.loads(Path(
+        f'data/ranker/pretrained/parallel-decode-v1/parallel-case-{index}-sequential.json').read_text())['pagePlan'])
+        for index,case in enumerate(cases)}
     dump(args.out/'case-plan.json', {'cases':cases,'arms':['baseline','compact'],'nativePrefillStepSize':256,
         'controlSha256':digest(args.controls),'compatibility':gate,
         'helperSha256':digest(Path(__file__).with_name('heading_experiment.py')),
@@ -51,12 +54,18 @@ def run(args):
             if abort:
                 value = {'status':'not-attempted','reason':abort}
             else:
-                value = heading_arm(backbone,heads,case['request'],case['catalog'],1,compact=compact,
-                                    width=1,prefill_step_size=256)
-                if value['status'] != 'completed-attempt':
-                    abort = value.get('error','native failure')
-                elif selected_ids(value['pagePlan']) != selected_ids(json.loads(Path(f'data/ranker/pretrained/parallel-decode-v1/parallel-case-{index}-sequential.json').read_text())['pagePlan']):
-                    value['selectionFailure'] = True; abort = 'Selected product/image changed'
+                value = None;attempt_started = time.perf_counter()
+                try:
+                    value = heading_arm(backbone,heads,case['request'],case['catalog'],1,compact=compact,
+                                        width=1,prefill_step_size=256)
+                    if value['status'] != 'completed-attempt':
+                        abort = value.get('error','native failure')
+                    elif selected_ids(value['pagePlan']) != selected_reference[case['caseId']]:
+                        raise ValueError('Selected product/image changed')
+                except Exception as error:
+                    value = {'status':'failed','error':f'{type(error).__name__}: {error}',
+                        'producedAttempt':value,'fullCompletionMs':(time.perf_counter()-attempt_started)*1000}
+                    abort = value['error']
             record['arms'][name] = value
             dump(args.out/f'case-{index}-{name}.json',value)
             if value['status'] != 'not-attempted':
@@ -70,6 +79,8 @@ def run(args):
         if all(record['arms'][key]['status']=='completed-attempt' for key in ('baseline','compact')):
             left,right = [record['arms'][key] for key in ('baseline','compact')]
             a,b = [{r['rowId']:r for r in arm['rows'] if r['kind']!='heading'} for arm in (left,right)]
+            if a.keys()!=b.keys() or left['prefixSha256']!=right['prefixSha256']:
+                abort = 'Changed paired row set or prefix'
             record['cardPromptBudgetAndTokens'] = {key:{'samePromptAndBudget':a[key]['promptSha256']==b[key]['promptSha256'] and a[key]['maxTokens']==b[key]['maxTokens'],
                 'exactRawTokens':a[key]['rawSampledTokenIds']==b[key]['rawSampledTokenIds']} for key in a}
             if not all(v['samePromptAndBudget'] for v in record['cardPromptBudgetAndTokens'].values()):
