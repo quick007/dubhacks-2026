@@ -54,5 +54,36 @@
     "Available RAM is time-varying; macOS reclaimable/cache accounting differs from completely free pages.",
     "Existing swap usage is not itself current memory pressure; report pressure and available bytes together.",
     "Process RSS and MLX allocations overlap and must not be added. Allocator limits detect/encourage bounds rather than guarantee a hard ceiling."
-  ]
+  ],
+  "explicitScaleSupplement": {
+    "guardBytes": 7516192768,
+    "automaticWithinRunIncrease": false,
+    "selection": "Both fixed3/6-card scale cases; own2-case denominator; separate outputs preserve failed12-case6GiB run",
+    "preflightAvailableBytes": 10977345536,
+    "observedPeakBytes": 6940200480,
+    "report": "PARALLEL_SEMANTIC_SCALE_7G_RESULTS.json",
+    "rationale": "No separate user/environment6GiB quota found; parent authorizes substantial local work; explicit change announced after24GiBmachine returned to11.10GBavailable/pressure1."
+  },
+  "finalSystemMemorySnapshot": {
+    "recordedAtUtc": "2026-10-17T22:48:45.561118+00:00",
+    "virtualMemory": {
+      "total": 25769803776,
+      "available": 11460149248,
+      "percent": 55.5,
+      "used": 8092024832,
+      "free": 5696946176,
+      "active": 4591714304,
+      "inactive": 5735825408,
+      "wired": 3500310528
+    },
+    "swapMemory": {
+      "total": 7516192768,
+      "used": 6210453504,
+      "free": 1305739264,
+      "percent": 82.6,
+      "sin": 4118884286464,
+      "sout": 2975498240
+    },
+    "pressureIndicator": "1"
+  }
 }
