@@ -25,6 +25,9 @@ const commands = [
   "smoke",
   "workflow",
   "infer",
+  "fusion",
+  "test-fusion",
+  "fusion-benchmark",
 ];
 const env = {
   ...process.env,
@@ -119,7 +122,7 @@ print(json.dumps({"manifest": str(output), **manifest}, indent=2))
 
 if (!commands.includes(command) || args.includes("--help") || args.includes("-h")) {
   console.log(
-    `Usage: node scripts/pretrained.mjs ${commands.join("|")} [options]\n\nsmoke/workflow/infer default to the pinned local Qwen3.5-9B-4bit snapshot, 320 tokens and a 6 GiB budget.\nworkflow has a 600-second total wall limit. --model/--revision are fixed to this checkpoint.\ndata forwards generator options; smoke/workflow/infer forward experiment CLI options.\nsetup uses PRETRAINED_PYTHON or an existing python3; it never installs a system Python.\ndownload uses anonymous data-only Hugging Face access and verifies/hashes both safetensors shards.\nverify only reads the pinned local snapshot and writes the ignored artifact manifest.\nHF_XET_HIGH_PERFORMANCE defaults to 1; set it to 0 to disable.`,
+    `Usage: node scripts/pretrained.mjs ${commands.join("|")} [options]\n\nsmoke/workflow/infer default to the pinned local Qwen3.5-9B-4bit snapshot, 1536 shared-prefix tokens and a 6 GiB budget.\nworkflow has a 600-second total wall limit. --model/--revision are fixed to this checkpoint.\ndata forwards generator options; smoke/workflow/infer forward experiment CLI options.\nsetup uses PRETRAINED_PYTHON or an existing python3; it never installs a system Python.\ndownload uses anonymous data-only Hugging Face access and verifies/hashes both safetensors shards.\nverify only reads the pinned local snapshot and writes the ignored artifact manifest.\nHF_XET_HIGH_PERFORMANCE defaults to 1; set it to 0 to disable.`,
   );
   if (!commands.includes(command) && !["--help", "-h"].includes(command)) process.exitCode = 1;
 } else if (command === "setup") {
@@ -150,14 +153,16 @@ if (!commands.includes(command) || args.includes("--help") || args.includes("-h"
     run(python, ["-c", artifactScript, command, repository, revision, cache, snapshot]);
   } else if (command === "data") {
     run(python, ["-m", "experiments.ranker.dataset_v2.generate", ...args]);
-  } else if (command === "test" || command === "test-mlx") {
+  } else if (["test", "test-mlx", "test-fusion"].includes(command)) {
     const modules =
       command === "test"
         ? [
             "experiments.ranker.dataset_v2.test_generate",
             "experiments.ranker.pretrained.test_pretrained",
           ]
-        : ["experiments.ranker.pretrained.test_mlx_compat"];
+        : command === "test-mlx"
+          ? ["experiments.ranker.pretrained.test_mlx_compat"]
+          : ["experiments.ranker.pretrained.test_fusion"];
     run(python, ["-m", "unittest", ...modules, ...args]);
   } else {
     if (args.some((arg) => /^(--model|--revision)(=|$)/.test(arg))) {
@@ -169,19 +174,36 @@ if (!commands.includes(command) || args.includes("--help") || args.includes("-h"
       python,
       [
         "-m",
-        "experiments.ranker.pretrained.cli",
-        command,
+        command === "fusion-benchmark"
+          ? "experiments.ranker.pretrained.benchmark"
+          : command === "fusion"
+            ? "experiments.ranker.pretrained.fusion"
+            : "experiments.ranker.pretrained.cli",
+        ...(["fusion", "fusion-benchmark"].includes(command) ? [] : [command]),
         "--model",
         snapshot,
         "--revision",
         revision,
-        "--max-tokens",
-        "320",
+        ...(["fusion", "fusion-benchmark"].includes(command)
+          ? [
+              "--heads",
+              path.join(root, "data/ranker/pretrained/shared-prefix/adaptation"),
+              "--max-input-tokens",
+              "1536",
+            ]
+          : [
+              "--encoding",
+              "shared-prefix",
+              "--run",
+              path.join(root, "data/ranker/pretrained/shared-prefix"),
+              "--max-tokens",
+              "1536",
+            ]),
         "--memory-gib",
         "6",
         ...args,
       ],
-      command === "workflow" ? 600_000 : undefined,
+      ["workflow", "fusion-benchmark"].includes(command) ? 600_000 : undefined,
     );
   }
 }

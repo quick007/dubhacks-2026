@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "recordedAtUtc": "2026-10-17T20:56:26.803639+00:00",
+  "machine": {
+    "chip": "Apple M5",
+    "totalRamBytes": 25769803776,
+    "cpuCores": 10,
+    "loadControlled": false
+  },
+  "artifact": {
+    "repository": "mlx-community/Qwen3.5-9B-4bit",
+    "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "format": "MLX 4-bit safetensors",
+    "quantization": {
+      "group_size": 64,
+      "bits": 4,
+      "mode": "affine"
+    },
+    "verification": "Both shard sizes and SHA-256 values match Hugging Face API LFS metadata for the pinned community repository revision.",
+    "provenance": {
+      "kind": "community MLX quantized conversion",
+      "declaredSource": "Qwen/Qwen3.5-9B",
+      "declaredConversionTool": "mlx-vlm 0.3.12",
+      "originalUpstreamRevision": null,
+      "limitations": [
+        "The community model card base_model points to Qwen3.5-9B-Base while README conversion source says Qwen3.5-9B.",
+        "Matching downloaded shard hashes verifies these published artifacts, not upstream weight identity or reproducibility of the conversion."
+      ]
+    },
+    "artifacts": [
+      {
+        "filename": "model-00001-of-00002.safetensors",
+        "bytes": 5349771222,
+        "sha256": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd",
+        "expected": {
+          "bytes": 5349771222,
+          "sha256": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd"
+        },
+        "verified": true
+      },
+      {
+        "filename": "model-00002-of-00002.safetensors",
+        "bytes": 600449850,
+        "sha256": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d",
+        "expected": {
+          "bytes": 600449850,
+          "sha256": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"
+        },
+        "verified": true
+      }
+    ]
+  },
+  "architecture": {
+    "sharedBackbone": true,
+    "representation": "shared-prefix-v1",
+    "heads": 8194,
+    "headOnlyTraining": true,
+    "decoder": "same resident pretrained wrapper; frozen and untuned",
+    "jointlyTrained": false,
+    "cache": "Complete native DeltaNet recurrent/convolution and attention KV cache; exact verified boundary appended once, no trimming/fork/speculation",
+    "imageInputs": "text descriptions only; no pixels"
+  },
+  "data": {
+    "counts": {
+      "diagnosticPairs": 3,
+      "diagnosticRecords": 6,
+      "families": {
+        "test": 6,
+        "train": 12,
+        "validation": 3
+      },
+      "maxCandidates": 4,
+      "products": 84,
+      "records": {
+        "test": 12,
+        "train": 24,
+        "validation": 6
+      },
+      "users": 42,
+      "variantsPerProduct": 2
+    },
+    "manifestSha256": "131841119b3037f170b4b88fc666053555ddb5107c578115eb642bd5a8405977",
+    "splitPolicy": "Family and exact (focus, use, presentation style) combination assigned before generating users/products; all SKU IDs and complete product fact sets disjoint by split.",
+    "limitations": [
+      "42 cases are a workflow proof, not a representative benchmark.",
+      "Held-out SKU identities/fact sets and exact preference combinations do not imply unseen attributes.",
+      "Presentation supervision grades text descriptors against an invented latent preference rubric, never actual image pixels.",
+      "Catalog recommendations are synthetic; this cannot establish real human conversion or revenue lift."
+    ]
+  },
+  "training": {
+    "initial": {
+      "epochs": 80,
+      "rows": 96,
+      "seconds": 0.011296457960270345,
+      "mseBefore": 0.34408101439476013,
+      "mseAfter": 0.026018066331744194,
+      "firstGradientL2": 0.7911419049471642,
+      "meanAbsolutePredictionChange": 0.42698797583580017,
+      "checkpoint": {
+        "synthetic": true,
+        "config": {
+          "seed": 728,
+          "initialEpochs": 80,
+          "adaptationEpochs": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "maxSeconds": 600,
+          "maxTokens": 1536,
+          "trainable": "shared linear suitability and presentation heads only; pretrained backbone frozen",
+          "encoding": "shared-prefix"
+        },
+        "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+        "encoding": "shared-prefix",
+        "representation": "shared-prefix-v1",
+        "backboneFrozen": true,
+        "sourceHashes": {
+          "boundary.py": "4a715716e66ed5982daded890ce530b63c696a8c5c54715aa6653ffdf4f940de",
+          "test_fusion.py": "41d1ded651bb3a174b257b6576b8e35e1cc574f14a9d3263d4ff338989ef3d8d",
+          "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+          "__init__.py": "386b78fd9a65d94327ce870a8bc4f095713dcd548724a1ba5ea8054d621b7893",
+          "cli.py": "71d18e9fff1bdf7afa8dc82d7c53e2e592647bb9a3b9fac6a718beb700bdf6ad",
+          "fusion.py": "3f7a61eca44b84495463c5e0207c82a82fa9505605a3a12519742a5cc51e2be6",
+          "test_mlx_compat.py": "b81c0a16e4036c955d0f268f2075c6cc5153c340baf11c5808a6277138d85387",
+          "test_pretrained.py": "707b2894be0c3fdf45e5d50b49770d814efb3aad0a5b8dc214cd92755084fcc1"
+        },
+        "sha256": "8b28516c07874581a9c4e56cc6660dbbbb72c251de082f7636b1b68e5c78666f"
+      }
+    },
+    "adaptation": {
+      "epochs": 80,
+      "rows": 96,
+      "seconds": 0.01016770803835243,
+      "mseBefore": 0.19160425662994385,
+      "mseAfter": 0.025107301771640778,
+      "firstGradientL2": 0.17247004349927308,
+      "meanAbsolutePredictionChange": 0.29686135053634644,
+      "checkpoint": {
+        "synthetic": true,
+        "config": {
+          "seed": 728,
+          "initialEpochs": 80,
+          "adaptationEpochs": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "maxSeconds": 600,
+          "maxTokens": 1536,
+          "trainable": "shared linear suitability and presentation heads only; pretrained backbone frozen",
+          "encoding": "shared-prefix"
+        },
+        "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+        "encoding": "shared-prefix",
+        "representation": "shared-prefix-v1",
+        "backboneFrozen": true,
+        "sourceHashes": {
+          "boundary.py": "4a715716e66ed5982daded890ce530b63c696a8c5c54715aa6653ffdf4f940de",
+          "test_fusion.py": "41d1ded651bb3a174b257b6576b8e35e1cc574f14a9d3263d4ff338989ef3d8d",
+          "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+          "__init__.py": "386b78fd9a65d94327ce870a8bc4f095713dcd548724a1ba5ea8054d621b7893",
+          "cli.py": "71d18e9fff1bdf7afa8dc82d7c53e2e592647bb9a3b9fac6a718beb700bdf6ad",
+          "fusion.py": "3f7a61eca44b84495463c5e0207c82a82fa9505605a3a12519742a5cc51e2be6",
+          "test_mlx_compat.py": "b81c0a16e4036c955d0f268f2075c6cc5153c340baf11c5808a6277138d85387",
+          "test_pretrained.py": "707b2894be0c3fdf45e5d50b49770d814efb3aad0a5b8dc214cd92755084fcc1"
+        },
+        "sha256": "e4497c60dd6ec96d9c46a0ab2175cfbfecc60257eb3425eaff692382e166d580"
+      }
+    },
+    "engineeredFeatureBaseline": {
+      "initial": {
+        "epochs": 160,
+        "examples": 48,
+        "seconds": 0.0034441250609233975,
+        "mseBefore": 0.8078341484069824,
+        "mseAfter": 0.062387701123952866,
+        "firstGradientL2": 3.969717502593994,
+        "meanAbsolutePredictionChange": 0.7557201385498047,
+        "checkpoint": {
+          "synthetic": true,
+          "featureNames": [
+            "price",
+            "shipping",
+            "stock",
+            "budget_present",
+            "budget",
+            "budget_margin",
+            "known_violation",
+            "history_count",
+            "preference_count",
+            "requirement_count",
+            "category:backpacks",
+            "candidate:compact",
+            "candidate:durable",
+            "candidate:laptop-sleeve",
+            "candidate:lightweight",
+            "candidate:organizer",
+            "candidate:roomy",
+            "candidate:water-resistant",
+            "preference_match:compact",
+            "preference_match:durable",
+            "preference_match:laptop-sleeve",
+            "preference_match:lightweight",
+            "preference_match:organizer",
+            "preference_match:roomy",
+            "preference_match:water-resistant",
+            "requirement_match:compact",
+            "requirement_match:durable",
+            "requirement_match:laptop-sleeve",
+            "requirement_match:lightweight",
+            "requirement_match:organizer",
+            "requirement_match:roomy",
+            "requirement_match:water-resistant",
+            "history_match:compact",
+            "history_match:durable",
+            "history_match:laptop-sleeve",
+            "history_match:lightweight",
+            "history_match:organizer",
+            "history_match:roomy",
+            "history_match:water-resistant"
+          ],
+          "config": {
+            "seed": 1729,
+            "hiddenWidth": 32,
+            "initialEpochs": 160,
+            "adaptationEpochs": 160,
+            "learningRate": 0.06,
+            "l2": 0.001,
+            "maxTrainingSeconds": 60,
+            "dtype": "float32"
+          },
+          "presentationPolicy": "fixed lexical heuristic, not a trained presentation head",
+          "sha256": "86ba8cf92ada9c47faa9cc312f617b8b9fbfa1e256803aa55e1fdb5ae14235c7",
+          "parameterCount": 1313
+        }
+      },
+      "adaptation": {
+        "epochs": 160,
+        "examples": 48,
+        "seconds": 0.003165750065818429,
+        "mseBefore": 0.06689488887786865,
+        "mseAfter": 0.02930518426001072,
+        "firstGradientL2": 0.2843085825443268,
+        "meanAbsolutePredictionChange": 0.1442091166973114,
+        "checkpoint": {
+          "synthetic": true,
+          "featureNames": [
+            "price",
+            "shipping",
+            "stock",
+            "budget_present",
+            "budget",
+            "budget_margin",
+            "known_violation",
+            "history_count",
+            "preference_count",
+            "requirement_count",
+            "category:backpacks",
+            "candidate:compact",
+            "candidate:durable",
+            "candidate:laptop-sleeve",
+            "candidate:lightweight",
+            "candidate:organizer",
+            "candidate:roomy",
+            "candidate:water-resistant",
+            "preference_match:compact",
+            "preference_match:durable",
+            "preference_match:laptop-sleeve",
+            "preference_match:lightweight",
+            "preference_match:organizer",
+            "preference_match:roomy",
+            "preference_match:water-resistant",
+            "requirement_match:compact",
+            "requirement_match:durable",
+            "requirement_match:laptop-sleeve",
+            "requirement_match:lightweight",
+            "requirement_match:organizer",
+            "requirement_match:roomy",
+            "requirement_match:water-resistant",
+            "history_match:compact",
+            "history_match:durable",
+            "history_match:laptop-sleeve",
+            "history_match:lightweight",
+            "history_match:organizer",
+            "history_match:roomy",
+            "history_match:water-resistant"
+          ],
+          "config": {
+            "seed": 1729,
+            "hiddenWidth": 32,
+            "initialEpochs": 160,
+            "adaptationEpochs": 160,
+            "learningRate": 0.06,
+            "l2": 0.001,
+            "maxTrainingSeconds": 60,
+            "dtype": "float32"
+          },
+          "presentationPolicy": "fixed lexical heuristic, not a trained presentation head",
+          "sha256": "5379c3ece60b10eb45c14283eb764694ee55318c826fb47efab524b2e9f4c9ee",
+          "parameterCount": 1313
+        }
+      }
+    }
+  },
+  "frozenConfig": {
+    "seed": 728,
+    "initialEpochs": 80,
+    "adaptationEpochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "maxSeconds": 600,
+    "maxTokens": 1536,
+    "trainable": "shared linear suitability and presentation heads only; pretrained backbone frozen",
+    "encoding": "shared-prefix"
+  },
+  "trainingSecondsIncludingFeatureExtractionAndEvaluation": 58.969138459069654,
+  "heldOut": {
+    "n": 12,
+    "models": {
+      "heuristic": {
+        "raw": {
+          "ndcgAt3": 0.8359984431706935,
+          "topBestRelevant": 0.75,
+          "relevanceRegret": 0.5833333333333334,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.08333333333333333,
+          "presentationScore": 1.0,
+          "presentationRegretWithinSelectedProduct": 1.0833333333333333,
+          "presentationBestWithinSelectedProduct": 0.25,
+          "presentationIncompatible": 0.25,
+          "abstain": 0.0
+        },
+        "guarded": {
+          "ndcgAt3": 0.8396792273918452,
+          "topBestRelevant": 0.75,
+          "relevanceRegret": 0.5833333333333334,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.08333333333333333,
+          "presentationScore": 1.25,
+          "presentationRegretWithinSelectedProduct": 0.8333333333333334,
+          "presentationBestWithinSelectedProduct": 0.5,
+          "presentationIncompatible": 0.0,
+          "abstain": 0.0
+        }
+      },
+      "heuristic-first-variant": {
+        "raw": {
+          "ndcgAt3": 0.8359984431706935,
+          "topBestRelevant": 0.75,
+          "relevanceRegret": 0.5833333333333334,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.08333333333333333,
+          "presentationScore": 1.0,
+          "presentationRegretWithinSelectedProduct": 1.0833333333333333,
+          "presentationBestWithinSelectedProduct": 0.25,
+          "presentationIncompatible": 0.25,
+          "abstain": 0.0
+        },
+        "guarded": {
+          "ndcgAt3": 0.8396792273918452,
+          "topBestRelevant": 0.75,
+          "relevanceRegret": 0.5833333333333334,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.08333333333333333,
+          "presentationScore": 1.25,
+          "presentationRegretWithinSelectedProduct": 0.8333333333333334,
+          "presentationBestWithinSelectedProduct": 0.5,
+          "presentationIncompatible": 0.0,
+          "abstain": 0.0
+        }
+      },
+      "initial": {
+        "raw": {
+          "ndcgAt3": 0.629653454904859,
+          "topBestRelevant": 0.3333333333333333,
+          "relevanceRegret": 1.5,
+          "knownConstraintViolation": 0.16666666666666666,
+          "privateConstraintViolation": 0.3333333333333333,
+          "presentationScore": 1.0833333333333333,
+          "presentationRegretWithinSelectedProduct": 0.5833333333333334,
+          "presentationBestWithinSelectedProduct": 0.3333333333333333,
+          "presentationIncompatible": 0.25,
+          "abstain": 0.0
+        },
+        "guarded": {
+          "ndcgAt3": 0.7635220131135685,
+          "topBestRelevant": 0.5,
+          "relevanceRegret": 1.0,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.16666666666666666,
+          "presentationScore": 1.3333333333333333,
+          "presentationRegretWithinSelectedProduct": 0.5,
+          "presentationBestWithinSelectedProduct": 0.5833333333333334,
+          "presentationIncompatible": 0.0,
+          "abstain": 0.0
+        }
+      },
+      "adaptation": {
+        "raw": {
+          "ndcgAt3": 0.7096383406014307,
+          "topBestRelevant": 0.4166666666666667,
+          "relevanceRegret": 1.5,
+          "knownConstraintViolation": 0.25,
+          "privateConstraintViolation": 0.3333333333333333,
+          "presentationScore": 0.6666666666666666,
+          "presentationRegretWithinSelectedProduct": 1.0,
+          "presentationBestWithinSelectedProduct": 0.08333333333333333,
+          "presentationIncompatible": 0.3333333333333333,
+          "abstain": 0.0
+        },
+        "guarded": {
+          "ndcgAt3": 0.8742627526791855,
+          "topBestRelevant": 0.6666666666666666,
+          "relevanceRegret": 0.75,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.08333333333333333,
+          "presentationScore": 1.0833333333333333,
+          "presentationRegretWithinSelectedProduct": 1.0,
+          "presentationBestWithinSelectedProduct": 0.4166666666666667,
+          "presentationIncompatible": 0.0,
+          "abstain": 0.0
+        }
+      },
+      "random-head": {
+        "raw": {
+          "ndcgAt3": 0.6420857677785811,
+          "topBestRelevant": 0.25,
+          "relevanceRegret": 1.6666666666666667,
+          "knownConstraintViolation": 0.25,
+          "privateConstraintViolation": 0.3333333333333333,
+          "presentationScore": 1.5833333333333333,
+          "presentationRegretWithinSelectedProduct": 0.25,
+          "presentationBestWithinSelectedProduct": 0.5,
+          "presentationIncompatible": 0.3333333333333333,
+          "abstain": 0.0
+        },
+        "guarded": {
+          "ndcgAt3": 0.7871255294288685,
+          "topBestRelevant": 0.4166666666666667,
+          "relevanceRegret": 1.0,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.08333333333333333,
+          "presentationScore": 1.9166666666666667,
+          "presentationRegretWithinSelectedProduct": 0.3333333333333333,
+          "presentationBestWithinSelectedProduct": 0.75,
+          "presentationIncompatible": 0.0,
+          "abstain": 0.0
+        }
+      },
+      "engineered-initial": {
+        "raw": {
+          "ndcgAt3": 0.7646240921435502,
+          "topBestRelevant": 0.4166666666666667,
+          "relevanceRegret": 1.3333333333333333,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.16666666666666666,
+          "presentationScore": 1.0,
+          "presentationRegretWithinSelectedProduct": 0.8333333333333334,
+          "presentationBestWithinSelectedProduct": 0.25,
+          "presentationIncompatible": 0.3333333333333333,
+          "abstain": 0.0
+        },
+        "guarded": {
+          "ndcgAt3": 0.7683048763647019,
+          "topBestRelevant": 0.4166666666666667,
+          "relevanceRegret": 1.3333333333333333,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.16666666666666666,
+          "presentationScore": 1.3333333333333333,
+          "presentationRegretWithinSelectedProduct": 0.5,
+          "presentationBestWithinSelectedProduct": 0.5833333333333334,
+          "presentationIncompatible": 0.0,
+          "abstain": 0.0
+        }
+      },
+      "engineered-adaptation": {
+        "raw": {
+          "ndcgAt3": 0.7348607458393902,
+          "topBestRelevant": 0.3333333333333333,
+          "relevanceRegret": 1.5,
+          "knownConstraintViolation": 0.08333333333333333,
+          "privateConstraintViolation": 0.16666666666666666,
+          "presentationScore": 1.0833333333333333,
+          "presentationRegretWithinSelectedProduct": 0.9166666666666666,
+          "presentationBestWithinSelectedProduct": 0.25,
+          "presentationIncompatible": 0.3333333333333333,
+          "abstain": 0.0
+        },
+        "guarded": {
+          "ndcgAt3": 0.7768074741987459,
+          "topBestRelevant": 0.4166666666666667,
+          "relevanceRegret": 1.25,
+          "knownConstraintViolation": 0.0,
+          "privateConstraintViolation": 0.08333333333333333,
+          "presentationScore": 1.4166666666666667,
+          "presentationRegretWithinSelectedProduct": 0.6666666666666666,
+          "presentationBestWithinSelectedProduct": 0.5833333333333334,
+          "presentationIncompatible": 0.0,
+          "abstain": 0.0
+        }
+      }
+    },
+    "counterfactuals": {
+      "pairs": [
+        {
+          "pairId": "pair-0",
+          "records": [
+            {
+              "recordId": "r-e1f73b869dc810bc15",
+              "selectedProductId": "p-09841960dab23cf57f",
+              "expectedProductId": "p-09841960dab23cf57f"
+            },
+            {
+              "recordId": "r-4db622b754cdc83922",
+              "selectedProductId": "p-ef59e35349e792f6ac",
+              "expectedProductId": "p-ef59e35349e792f6ac"
+            }
+          ],
+          "selectionChanges": true,
+          "bothCorrect": true
+        },
+        {
+          "pairId": "pair-1",
+          "records": [
+            {
+              "recordId": "r-36f617c0fe5c7f6164",
+              "selectedProductId": "p-625d08c87983723ffa",
+              "expectedProductId": "p-a5bc01ef3cc855986a"
+            },
+            {
+              "recordId": "r-4171cae29da747fcef",
+              "selectedProductId": "p-625d08c87983723ffa",
+              "expectedProductId": "p-1f61afc9698c893fbc"
+            }
+          ],
+          "selectionChanges": false,
+          "bothCorrect": false
+        },
+        {
+          "pairId": "pair-2",
+          "records": [
+            {
+              "recordId": "r-37062e26e3b3ef2b7d",
+              "selectedProductId": "p-d4443ff43c357f12ae",
+              "expectedProductId": "p-cc6a793006cb4e282c"
+            },
+            {
+              "recordId": "r-c936cadc9fcdc5b182",
+              "selectedProductId": "p-d4443ff43c357f12ae",
+              "expectedProductId": "p-3c9da90c49c39352cf"
+            }
+          ],
+          "selectionChanges": false,
+          "bothCorrect": false
+        }
+      ],
+      "notUsedForTrainingOrSelection": true
+    }
+  },
+  "structuredLatencyMs": {
+    "tokenizeMs": {
+      "p50": 13.303437503054738,
+      "p95": 14.804904267657548
+    },
+    "forwardMs": {
+      "p50": 1383.056666527409,
+      "p95": 1424.7529079555534
+    },
+    "headsAndMaskMs": {
+      "p50": 0.0784994917921722,
+      "p95": 0.0995163107290864
+    },
+    "uncachedDecisionMs": {
+      "p50": 1397.4067084491253,
+      "p95": 1439.7285932907835
+    }
+  },
+  "fusionLatency": {
+    "cold": {
+      "measurement": "Three separate Python processes on the same clear request. OS disk/shader caches uncontrolled; not machine-cold.",
+      "processWallMs": {
+        "n": 3,
+        "p50": 6072.568750008941,
+        "p95": 6292.594599467702,
+        "max": 6317.041916074231
+      },
+      "samples": [
+        {
+          "processWallMs": 6014.603542047553,
+          "timing": {
+            "uncachedStructuredMs": 1367.868333007209,
+            "promptPreparationMs": 3.7805000320076942,
+            "generationMs": 1515.2153329690918,
+            "validationMs": 0.27583399787545204,
+            "fullCompletionMs": 2887.605124968104,
+            "coldModelAndHeadLoadMs": 2408.4769579349086,
+            "coldLoadPlusFullCompletionMs": 5296.082082903013
+          },
+          "copyStatus": "generated-partial",
+          "generatedTitleFulfilled": true
+        },
+        {
+          "processWallMs": 6317.041916074231,
+          "timing": {
+            "uncachedStructuredMs": 1372.9683749843389,
+            "promptPreparationMs": 6.609166972339153,
+            "generationMs": 1503.4259159583598,
+            "validationMs": 0.27295900508761406,
+            "fullCompletionMs": 2883.9460000162944,
+            "coldModelAndHeadLoadMs": 2635.1417080732062,
+            "coldLoadPlusFullCompletionMs": 5519.087708089501
+          },
+          "copyStatus": "generated-partial",
+          "generatedTitleFulfilled": true
+        },
+        {
+          "processWallMs": 6072.568750008941,
+          "timing": {
+            "uncachedStructuredMs": 1364.4081660313532,
+            "promptPreparationMs": 4.709749948233366,
+            "generationMs": 1502.666375017725,
+            "validationMs": 1.4024999691173434,
+            "fullCompletionMs": 2873.8236660137773,
+            "coldModelAndHeadLoadMs": 2325.212207972072,
+            "coldLoadPlusFullCompletionMs": 5199.035873985849
+          },
+          "copyStatus": "generated-partial",
+          "generatedTitleFulfilled": true
+        }
+      ]
+    },
+    "resident": {
+      "measurement": "One resident model, fresh full prefix for every arm/request. Complete response includes autoregressive text and independent field validation; excludes transport/browser.",
+      "fullCompletionMs": {
+        "n": 8,
+        "p50": 2938.466687046457,
+        "p95": 3283.6507812258787,
+        "max": 3322.1571249887347
+      },
+      "structuredMs": {
+        "n": 8,
+        "p50": 1336.9173540268093,
+        "p95": 1383.2853681233246,
+        "max": 1390.1982909301296
+      },
+      "selectionOnlyMs": {
+        "n": 8,
+        "p50": 1333.3242290536873,
+        "p95": 1371.7996208404656,
+        "max": 1389.185957959853
+      },
+      "generationMs": {
+        "n": 8,
+        "p50": 1603.671332995873,
+        "p95": 1935.0069295440335,
+        "max": 1996.6941670281813
+      },
+      "generatedTitleCount": 5,
+      "bothFieldsAcceptedCount": 1,
+      "partialAcceptanceCount": 4,
+      "fallbackCount": 3
+    }
+  },
+  "resources": {
+    "structured": {
+      "mlxActiveBytes": 4465912330,
+      "mlxPeakBytes": 5624855452,
+      "mlxCacheBytes": 141935116,
+      "processBudgetBytes": 6442450944
+    },
+    "structuredPeakProcessRssBytes": 4026384384,
+    "fusion": {
+      "mlxActiveBytes": 5038041612,
+      "mlxPeakBytes": 6136597110,
+      "mlxCacheBytes": 130290734,
+      "processBudgetBytes": 6442450944
+    },
+    "fusionPeakProcessRssBytes": 5217320960,
+    "note": "MLX allocations and process RSS overlap; do not add them."
+  },
+  "generation": {
+    "caseSelection": "First public clear and sparse requests, then every public counterfactual request; no private grading labels used.",
+    "acceptedNovelTitles": 5,
+    "bothFieldsAccepted": 1,
+    "partialFieldsAccepted": 4,
+    "fallbackCount": 3,
+    "n": 8,
+    "example": {
+      "title": "Compact Everyday Travel Companion",
+      "copy": null,
+      "supportedExplicitPreferences": ["compact"],
+      "status": "generated-partial"
+    },
+    "guardRevision": "First real attempt rejected an optional sentence. Field-level guard then retained independently valid generated titles while removing invalid optional sentences. No factual vocabulary was relaxed; original rejected attempt remains local at data/ranker/pretrained/fusion/cold-clear.json."
+  },
+  "limitations": [
+    "Single tiny synthetic fixture and fixed schedule; not broad generalization or human lift.",
+    "Adapted NDCG improves, but top-product and presentation accuracies trail heuristic; only one of three preference counterfactual pairs passed.",
+    "Uncached 9B structured requests are about 1.4 seconds, not an instant normal-page path. Cached head-only time is not end-to-end latency.",
+    "Novel generated wording remains autoregressive; full completion includes independent validation, including failed attempts and rejected fields.",
+    "Community artifact hashes verified; exact original upstream conversion revision unspecified.",
+    "NONE/SELECT/GENERATE optional sub-label router is a separate work item, not measured by this two-head proof."
+  ],
+  "evidence": {
+    "data/ranker/pretrained/shared-prefix/run-manifest.json": "47a242401f5cfce5f80ee67405aa9ec30d9f36ea642cac30b819ab0dc6fb1beb",
+    "data/ranker/pretrained/shared-prefix/training.json": "a0a19d02505477724c173a9b01f0b9a744d632f24af9f8abecbca625ba247343",
+    "data/ranker/pretrained/shared-prefix/evaluation.json": "d6355e5143f5715a7acfebb725265990832825b4293a4847789b8023af5fe2d9",
+    "data/ranker/pretrained/fusion-proof/benchmark.json": "4297fd19bcf42c145d4e16b0a563082ffbd49199993d0a2cb83b9b47585b9267"
+  }
+}

@@ -36,6 +36,27 @@ class MLXCompatibilityTests(unittest.TestCase):
         self.assertGreater(report["firstGradientL2"], 0)
         self.assertFalse(torch.equal(before, heads(embeddings)))
 
+    def test_complete_recurrent_conv_and_kv_cache_append_matches_fresh_prefix(self):
+        from mlx_lm.models.cache import ArraysCache, KVCache
+        args = TextModelArgs(model_type="qwen3_5", hidden_size=32, intermediate_size=64,
+                             num_hidden_layers=2, num_attention_heads=4, num_key_value_heads=2,
+                             head_dim=8, vocab_size=32, linear_num_value_heads=2,
+                             linear_num_key_heads=2, linear_key_head_dim=8,
+                             linear_value_head_dim=8, full_attention_interval=2)
+        model = Qwen3_5TextModel(args)
+        model.eval(); model.freeze()
+        cache = [ArraysCache(2), KVCache()]
+        identity = [id(entry) for entry in cache]
+        prefix = model(mx.array([[1, 2, 3]]), cache=cache)
+        mx.eval(prefix, [entry.state for entry in cache])
+        self.assertIsNotNone(cache[0][0])  # convolution state
+        self.assertIsNotNone(cache[0][1])  # recurrent DeltaNet state
+        appended = model(mx.array([[4, 5]]), cache=cache)
+        fresh = model(mx.array([[1, 2, 3, 4, 5]]))
+        mx.eval(appended, fresh, [entry.state for entry in cache])
+        self.assertEqual(identity, [id(entry) for entry in cache])
+        self.assertLess(float(mx.max(mx.abs(appended[:, -1] - fresh[:, -1])).item()), 1e-4)
+
 
 if __name__ == "__main__":
     unittest.main()

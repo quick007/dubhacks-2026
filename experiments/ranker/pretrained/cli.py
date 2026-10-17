@@ -16,7 +16,7 @@ from experiments.ranker.model.features import FeatureEncoder
 from experiments.ranker.model.network import DecisionNetwork, CONFIG as TINY_CONFIG
 
 CONFIG = {"seed": 728, "initialEpochs": 80, "adaptationEpochs": 80, "learningRate": .03,
-          "weightDecay": .001, "maxSeconds": 600, "maxTokens": 320,
+          "weightDecay": .001, "maxSeconds": 600, "maxTokens": 1536,
           "trainable": "shared linear suitability and presentation heads only; pretrained backbone frozen"}
 
 
@@ -41,15 +41,19 @@ def percentile(values, q):
 def save_heads(heads, path, metadata):
     path.mkdir(parents=True, exist_ok=True)
     torch.save(heads.state_dict(), path / "heads.pt")
-    metadata = {**metadata, "sha256": hashlib.sha256((path / "heads.pt").read_bytes()).hexdigest()}
+    metadata = {**metadata, "sourceHashes": {source.name: hashlib.sha256(source.read_bytes()).hexdigest() for source in Path(__file__).parent.glob("*.py")}, "sha256": hashlib.sha256((path / "heads.pt").read_bytes()).hexdigest()}
     dump(path / "metadata.json", metadata)
     return metadata
 
 
-def load_heads(path, size, expected_revision=None):
+def load_heads(path, size, expected_revision=None, expected_encoding=None):
     metadata = json.loads((path / "metadata.json").read_text())
     if expected_revision is not None and metadata.get("modelRevision") != expected_revision:
         raise ValueError("Head checkpoint belongs to a different pretrained revision.")
+    if expected_encoding is not None:
+        representation = "shared-prefix-v1" if expected_encoding == "shared-prefix" else "row-batch-v1"
+        if metadata.get("encoding") != expected_encoding or metadata.get("representation") != representation:
+            raise ValueError("Head checkpoint belongs to a different hidden-state representation.")
     if metadata.get("sha256") != hashlib.sha256((path / "heads.pt").read_bytes()).hexdigest():
         raise ValueError("Head checkpoint hash mismatch.")
     heads = ParallelHeads(size)
@@ -97,6 +101,15 @@ def targets_for(request, actions, labels):
 
 
 def extract(backbone, request, catalog):
+    if getattr(backbone, "encoding", "batched") == "shared-prefix":
+        total = time.perf_counter()
+        from .fusion import encode_shared_prefix
+        embeddings, actions, timing, state = encode_shared_prefix(backbone, request, catalog, max_prefix_tokens=backbone.max_length)
+        timing["textConstructionAndEmbeddingMs"] = (time.perf_counter() - total) * 1000
+        # Training does not retain a cache per example. The fusion inference API
+        # explicitly keeps this exact state for its selected-product continuation.
+        del state
+        return embeddings, actions, timing
     total = time.perf_counter()
     rows, actions = input_rows(request, catalog)
     embeddings, timing = backbone.encode(rows)
@@ -156,8 +169,8 @@ def smoke(args, backbone, catalog, records, labels):
     heads = ParallelHeads(backbone.hidden_size)
     before = heads(embeddings).detach()
     report = fit(heads, embeddings, targets_for(request, actions, labels), 1, time.perf_counter() + 30)
-    checkpoint = save_heads(heads, args.run / "smoke", {"synthetic": True, "modelRevision": args.revision})
-    reloaded = load_heads(args.run / "smoke", backbone.hidden_size)
+    checkpoint = save_heads(heads, args.run / "smoke", {"synthetic": True, "modelRevision": args.revision, "encoding": args.encoding, "representation": "shared-prefix-v1" if args.encoding == "shared-prefix" else "row-batch-v1"})
+    reloaded = load_heads(args.run / "smoke", backbone.hidden_size, expected_revision=args.revision, expected_encoding=args.encoding)
     assert torch.equal(heads(embeddings), reloaded(embeddings))
     assert not torch.equal(before, heads(embeddings))
     result = decisions(request, catalog, actions, reloaded(embeddings).detach().tolist(), "pretrained-smoke")
@@ -197,7 +210,7 @@ def workflow(args, backbone, catalog, records, labels):
     assert not set(stages["initial"]) & set(stages["adaptation"])
     artifact_receipt = Path("data/ranker/pretrained/qwen3.5-9b-4bit-artifacts.json")
     dump(args.run / "run-manifest.json", {"synthetic": True,
-              "artifactVerification": json.loads(artifact_receipt.read_text()) if artifact_receipt.exists() else {"status": "receipt unavailable; expected hashes recorded separately"}, "config": CONFIG, "modelPath": str(args.model), "modelRevision": args.revision,
+              "artifactVerification": json.loads(artifact_receipt.read_text()) if artifact_receipt.exists() else {"status": "receipt unavailable; expected hashes recorded separately"}, "config": CONFIG, "modelPath": str(args.model), "modelRevision": args.revision, "encoding": args.encoding, "representation": "shared-prefix-v1" if args.encoding == "shared-prefix" else "row-batch-v1",
               "backboneFrozen": True, "backboneDevice": backbone.device, "deviceMap": backbone.device_map, "availableBeforeBytes": backbone.available_before_bytes, "noGeneration": True,
               "tinyBaselineConfig": TINY_CONFIG,
               "expectedQuantizedArtifactHashes": {"model-00001-of-00002.safetensors": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd", "model-00002-of-00002.safetensors": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"},
@@ -221,14 +234,14 @@ def workflow(args, backbone, catalog, records, labels):
         embeddings = torch.cat([cache[record][0] for record in ordered_ids])
         targets = torch.cat([targets_for(record_by_id[record], cache[record][1], labels) for record in ordered_ids])
         training[stage] = fit(heads, embeddings, targets, epochs, deadline)
-        training[stage]["checkpoint"] = save_heads(heads, args.run / stage, {"synthetic": True, "config": CONFIG, "modelRevision": args.revision, "backboneFrozen": True})
+        training[stage]["checkpoint"] = save_heads(heads, args.run / stage, {"synthetic": True, "config": CONFIG, "modelRevision": args.revision, "encoding": args.encoding, "representation": "shared-prefix-v1" if args.encoding == "shared-prefix" else "row-batch-v1", "backboneFrozen": True})
     tiny_encoder, tiny_models, tiny_training = train_tiny_baseline(args, catalog, record_by_id, labels, stages)
     training["engineeredFeatureBaseline"] = tiny_training
     dump(args.run / "training.json", training)
     # Independent evaluation starts only after the fixed checkpoints are saved.
     test = lines(args.dataset / "public/test.jsonl")
     truth = {item["recordId"]: item for item in lines(args.dataset / "private/truth.jsonl")}
-    models = {stage: load_heads(args.run / stage, backbone.hidden_size) for stage in ("initial", "adaptation")}
+    models = {stage: load_heads(args.run / stage, backbone.hidden_size, expected_revision=args.revision, expected_encoding=args.encoding) for stage in ("initial", "adaptation")}
     models["random-head"] = ParallelHeads(backbone.hidden_size)
     totals = {name: {"raw": [], "guarded": []} for name in ("heuristic", "heuristic-first-variant", *models, *tiny_models)}
     timings, results = [], []
@@ -293,7 +306,7 @@ def workflow(args, backbone, catalog, records, labels):
 def infer(args, backbone, catalog, records, labels):
     request = json.loads(args.request.read_text()) if args.request else lines(args.dataset / "public/test.jsonl")[0]
     embeddings, actions, timing = extract(backbone, request, catalog)
-    heads = load_heads(args.run / "adaptation", backbone.hidden_size, expected_revision=args.revision)
+    heads = load_heads(args.run / "adaptation", backbone.hidden_size, expected_revision=args.revision, expected_encoding=args.encoding)
     result = decisions(request, catalog, actions, heads(embeddings).detach().tolist(), "qwen-frozen-parallel-head-adapted")
     result["timing"] = timing
     dump(args.run / "inference.json", result)
@@ -306,9 +319,10 @@ def main():
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--revision", required=True)
     parser.add_argument("--dataset", type=Path, default=Path("data/ranker/datasets/v2"))
-    parser.add_argument("--run", type=Path, default=Path("data/ranker/pretrained/initial"))
+    parser.add_argument("--run", type=Path, default=Path("data/ranker/pretrained/shared-prefix"))
     parser.add_argument("--request", type=Path)
-    parser.add_argument("--max-tokens", type=int, default=320)
+    parser.add_argument("--max-tokens", type=int, default=1536)
+    parser.add_argument("--encoding", choices=["shared-prefix", "batched"], default="shared-prefix")
     parser.add_argument("--memory-gib", type=float, default=6)
     args = parser.parse_args()
     args.run.mkdir(parents=True, exist_ok=True)
@@ -316,7 +330,9 @@ def main():
     records = [] if args.command == "infer" else lines(args.dataset / "public/train.jsonl")
     labels = {} if args.command == "infer" else {item["recordId"]: item for item in lines(args.dataset / "labels/train.jsonl")}
     CONFIG["maxTokens"] = args.max_tokens
+    CONFIG["encoding"] = args.encoding
     backbone = FrozenBackbone(args.model, args.revision, args.max_tokens, args.memory_gib)
+    backbone.encoding = args.encoding
     globals()[args.command](args, backbone, catalog, records, labels)
 
 
