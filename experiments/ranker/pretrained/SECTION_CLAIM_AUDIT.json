@@ -1,0 +1,1704 @@
+{
+  "schemaVersion": "section-claim-audit.v1",
+  "synthetic": true,
+  "scope": "All 22 prior manifest outputs only; no current reliability-comparison outputs or private persona labels.",
+  "acceptanceChanged": false,
+  "gpuOrModelsLoaded": false,
+  "population": {
+    "responses": 22,
+    "cacheResponses": 10,
+    "evidenceResponses": 12,
+    "sectionFields": 25
+  },
+  "summary": {
+    "trueUniversalFailureResponses": 7,
+    "cacheTrueUniversalFailureResponses": 6,
+    "evidenceSingleProductProxyFalsePositiveResponses": 2,
+    "trueUniversalFailureSectionFields": 10,
+    "singleProductProxyFalsePositiveSectionFields": 2,
+    "sectionCategories": {
+      "supported_section_wording_under_existing_policy": 13,
+      "true_universal_tag_claim_failure": 10,
+      "single_product_generic_or_numeric_proxy_false_positive": 2,
+      "unknown_or_disallowed_framing_needs_review": 1
+    }
+  },
+  "assertions": {
+    "checksPassed": 5,
+    "scope": "CPU-only independent universal-tag and proxy repro assertions",
+    "preservedPopulationAssertionsPassed": 3
+  },
+  "inputs": {
+    "data/ranker/pretrained/generation-diagnosis-v1/benchmark-reviewed.json": "e30d5344e725a1a61bcd6813f2d09dd507cc977db11bf6512785519464e3e7ef",
+    "data/ranker/datasets/v2/catalog.json": "4780ccaafd6be8398b39e95222dfd23ef17f6c51892ae9397982458a0644419d",
+    "experiments/ranker/pretrained/fusion.py": "ac50c90102709b11dbd8293ca09b6943035c28c872fc5d6a440d0c0c83dfe5df",
+    "experiments/ranker/pretrained/generation_diagnosis.py": "763fb4895319a88d63228bd4b83b65bcf1b5590ba4287cd1056416080d51bdcc",
+    "experiments/ranker/pretrained/section_claim_audit.py": "0653430580241ebd542b93d283ca82d09b864e22cb2b49405a18cf1fbdf55a9e"
+  },
+  "method": [
+    "Tag claims are detected against known public catalog tags, normalized for punctuation/case.",
+    "Each claimed tag must be present on every actual section member, using intersection rather than union.",
+    "Proxy false positives require exactly one member, proxy rejection, actual-product lexical acceptance, and no universal-tag violation.",
+    "Existing proxy errors and original provenance remain visible; no text is rescued or accepted by this diagnostic."
+  ],
+  "limitations": [
+    "Finite tag phrase audit, not unrestricted semantic truth verification.",
+    "Actual-product lexical acceptance alone is not a general proof of factuality.",
+    "Historical inspected synthetic cases; this does not validate new prompt results or generalization."
+  ],
+  "records": [
+    {
+      "caseIndex": 0,
+      "caseId": "cache-0-cold-catalog",
+      "source": "cache",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact water-resistant daily choice",
+          "rawOccurrences": [
+            "Compact water-resistant daily choice"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact water-resistant daily choice",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "compact",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 1,
+      "caseId": "cache-1-warm-catalog",
+      "source": "cache",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact water-resistant daily choice",
+          "rawOccurrences": [
+            "Compact water-resistant daily choice"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact water-resistant daily choice",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "compact",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 2,
+      "caseId": "cache-2-repeat-unchanged-A",
+      "source": "cache",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact water-resistant daily choice",
+          "rawOccurrences": [
+            "Compact water-resistant daily choice"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact water-resistant daily choice",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "compact",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 3,
+      "caseId": "cache-3-changed-profile-B",
+      "source": "cache",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": true,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Lightweight roomy backpacks",
+          "rawOccurrences": [
+            "Lightweight roomy backpacks"
+          ],
+          "memberProductIds": [
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [
+            "durable",
+            "organizer"
+          ],
+          "claimedTags": [
+            "lightweight",
+            "roomy"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "lightweight",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            },
+            {
+              "claimedTag": "roomy",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:lightweight,roomy",
+            "outside_factual_or_generic_lexicon:lightweight,roomy"
+          ],
+          "actualSingleProductErrors": [
+            "attribute_not_in_selected_product_tags:lightweight,roomy",
+            "outside_factual_or_generic_lexicon:lightweight,roomy"
+          ],
+          "unrecognizedProxyTokens": [
+            "lightweight",
+            "roomy"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 4,
+      "caseId": "cache-4-return-profile-A",
+      "source": "cache",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact water-resistant daily choice",
+          "rawOccurrences": [
+            "Compact water-resistant daily choice"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact water-resistant daily choice",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "compact",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 5,
+      "caseId": "cache-5-changed-catalog-unavailable",
+      "source": "cache",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": true,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Daily durable compact daypacks",
+          "rawOccurrences": [
+            "Daily durable compact daypacks"
+          ],
+          "memberProductIds": [
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [
+            "durable",
+            "organizer"
+          ],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "compact",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:compact",
+            "outside_factual_or_generic_lexicon:compact"
+          ],
+          "actualSingleProductErrors": [
+            "attribute_not_in_selected_product_tags:compact",
+            "outside_factual_or_generic_lexicon:compact"
+          ],
+          "unrecognizedProxyTokens": [
+            "compact"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 6,
+      "caseId": "cache-6-cold-catalog",
+      "source": "cache",
+      "requestedCards": 3,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": true,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Everyday durable compact daypacks",
+          "rawOccurrences": [
+            "Everyday durable compact daypacks"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91",
+            "p-72755986095ef5850c",
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "compact",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            },
+            {
+              "claimedTag": "durable",
+              "missingFromProductIds": [
+                "p-277b2ea516baaece91"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:compact,durable",
+            "outside_factual_or_generic_lexicon:compact,durable"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "compact",
+            "durable"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 7,
+      "caseId": "cache-7-warm-catalog",
+      "source": "cache",
+      "requestedCards": 3,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": true,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Everyday durable compact daypacks",
+          "rawOccurrences": [
+            "Everyday durable compact daypacks"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91",
+            "p-72755986095ef5850c",
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "compact",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            },
+            {
+              "claimedTag": "durable",
+              "missingFromProductIds": [
+                "p-277b2ea516baaece91"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:compact,durable",
+            "outside_factual_or_generic_lexicon:compact,durable"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "compact",
+            "durable"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 8,
+      "caseId": "cache-8-cold-catalog",
+      "source": "cache",
+      "requestedCards": 6,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": true,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact durable daypacks",
+          "rawOccurrences": [
+            "Compact durable daypacks"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91",
+            "p-72755986095ef5850c",
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "compact",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            },
+            {
+              "claimedTag": "durable",
+              "missingFromProductIds": [
+                "p-277b2ea516baaece91"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:compact,durable",
+            "outside_factual_or_generic_lexicon:compact,durable"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "compact",
+            "durable"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        },
+        {
+          "field": "S2",
+          "sectionId": "section-2",
+          "text": "Lightweight roomy daypacks",
+          "rawOccurrences": [
+            "Lightweight roomy daypacks"
+          ],
+          "memberProductIds": [
+            "p-10b0216abaaa52d554",
+            "p-b7d0c1f3f535fdfc1b",
+            "p-9af7ba2c62774da29b"
+          ],
+          "members": [
+            {
+              "productId": "p-10b0216abaaa52d554",
+              "title": "Field 14L Daypack",
+              "tags": [
+                "lightweight",
+                "roomy"
+              ]
+            },
+            {
+              "productId": "p-b7d0c1f3f535fdfc1b",
+              "title": "Ridge 23L Daypack",
+              "tags": [
+                "lightweight",
+                "roomy"
+              ]
+            },
+            {
+              "productId": "p-9af7ba2c62774da29b",
+              "title": "River 14L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "lightweight",
+            "roomy"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "lightweight",
+              "missingFromProductIds": [
+                "p-9af7ba2c62774da29b"
+              ]
+            },
+            {
+              "claimedTag": "roomy",
+              "missingFromProductIds": [
+                "p-9af7ba2c62774da29b"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:lightweight,roomy",
+            "outside_factual_or_generic_lexicon:lightweight,roomy"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "lightweight",
+            "roomy"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 9,
+      "caseId": "cache-9-warm-catalog",
+      "source": "cache",
+      "requestedCards": 6,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": true,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact durable daypacks",
+          "rawOccurrences": [
+            "Compact durable daypacks"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91",
+            "p-72755986095ef5850c",
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "compact",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            },
+            {
+              "claimedTag": "durable",
+              "missingFromProductIds": [
+                "p-277b2ea516baaece91"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:compact,durable",
+            "outside_factual_or_generic_lexicon:compact,durable"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "compact",
+            "durable"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        },
+        {
+          "field": "S2",
+          "sectionId": "section-2",
+          "text": "Lightweight roomy daypacks",
+          "rawOccurrences": [
+            "Lightweight roomy daypacks"
+          ],
+          "memberProductIds": [
+            "p-10b0216abaaa52d554",
+            "p-b7d0c1f3f535fdfc1b",
+            "p-9af7ba2c62774da29b"
+          ],
+          "members": [
+            {
+              "productId": "p-10b0216abaaa52d554",
+              "title": "Field 14L Daypack",
+              "tags": [
+                "lightweight",
+                "roomy"
+              ]
+            },
+            {
+              "productId": "p-b7d0c1f3f535fdfc1b",
+              "title": "Ridge 23L Daypack",
+              "tags": [
+                "lightweight",
+                "roomy"
+              ]
+            },
+            {
+              "productId": "p-9af7ba2c62774da29b",
+              "title": "River 14L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "lightweight",
+            "roomy"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "lightweight",
+              "missingFromProductIds": [
+                "p-9af7ba2c62774da29b"
+              ]
+            },
+            {
+              "claimedTag": "roomy",
+              "missingFromProductIds": [
+                "p-9af7ba2c62774da29b"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:lightweight,roomy",
+            "outside_factual_or_generic_lexicon:lightweight,roomy"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "lightweight",
+            "roomy"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 10,
+      "caseId": "evidence-r-476a18e5ac18fd7f6d",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": true,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact water-resistant everyday travel choice",
+          "rawOccurrences": [
+            "Compact water-resistant everyday travel choice"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact water-resistant everyday travel choice",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "compact",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 11,
+      "caseId": "evidence-r-b5beff326b517231b1",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": true,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact durable daily travel packs",
+          "rawOccurrences": [
+            "Compact durable daily travel packs"
+          ],
+          "memberProductIds": [
+            "p-72755986095ef5850c"
+          ],
+          "members": [
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact durable daily travel packs",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "durable"
+          ],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 12,
+      "caseId": "evidence-r-e1f73b869dc810bc15",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "water-resistant and organizer daypacks",
+          "rawOccurrences": [
+            "water-resistant and organizer daypacks"
+          ],
+          "memberProductIds": [
+            "p-0498e1f52ff475c080"
+          ],
+          "members": [
+            {
+              "productId": "p-0498e1f52ff475c080",
+              "title": "Meadow 17L Daypack",
+              "tags": [
+                "water-resistant",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "water-resistant and organizer daypacks",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "organizer",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "organizer",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 13,
+      "caseId": "evidence-r-4db622b754cdc83922",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": true,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "roomy water-resistant daypacks",
+          "rawOccurrences": [
+            "roomy water-resistant daypacks"
+          ],
+          "memberProductIds": [
+            "p-09841960dab23cf57f"
+          ],
+          "members": [
+            {
+              "productId": "p-09841960dab23cf57f",
+              "title": "Summit 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "roomy"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "roomy water-resistant daypacks",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "roomy",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "roomy",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 14,
+      "caseId": "evidence-r-36f617c0fe5c7f6164",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": true,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Field 20L Daypack",
+          "rawOccurrences": [
+            "Field 20L Daypack"
+          ],
+          "memberProductIds": [
+            "p-b769ccb2e0682e216a"
+          ],
+          "members": [
+            {
+              "productId": "p-b769ccb2e0682e216a",
+              "title": "Field 20L Daypack",
+              "tags": [
+                "water-resistant",
+                "roomy"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [
+            "roomy",
+            "water-resistant"
+          ],
+          "claimedTags": [],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [
+            "number_not_in_selected_catalog_facts:20",
+            "outside_factual_or_generic_lexicon:20,field,l",
+            "numeric_context_not_verbatim_product_identity"
+          ],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [
+            "20",
+            "field",
+            "l"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": true,
+          "categories": [
+            "single_product_generic_or_numeric_proxy_false_positive"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 15,
+      "caseId": "evidence-r-4171cae29da747fcef",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": true,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Field 20L Daypack is a water-resistant roomy bag.",
+          "rawOccurrences": [
+            "Field 20L Daypack is a water-resistant roomy bag."
+          ],
+          "memberProductIds": [
+            "p-b769ccb2e0682e216a"
+          ],
+          "members": [
+            {
+              "productId": "p-b769ccb2e0682e216a",
+              "title": "Field 20L Daypack",
+              "tags": [
+                "water-resistant",
+                "roomy"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [
+            "roomy",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "roomy",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [
+            "number_not_in_selected_catalog_facts:20",
+            "outside_factual_or_generic_lexicon:20,field,l",
+            "numeric_context_not_verbatim_product_identity"
+          ],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [
+            "20",
+            "field",
+            "l"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": true,
+          "categories": [
+            "single_product_generic_or_numeric_proxy_false_positive"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 16,
+      "caseId": "evidence-r-37062e26e3b3ef2b7d",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Laptop sleeve and roomy backpacks",
+          "rawOccurrences": [
+            "Laptop sleeve and roomy backpacks"
+          ],
+          "memberProductIds": [
+            "p-d4443ff43c357f12ae"
+          ],
+          "members": [
+            {
+              "productId": "p-d4443ff43c357f12ae",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "laptop-sleeve",
+                "roomy"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Laptop sleeve and roomy backpacks",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "laptop-sleeve",
+            "roomy"
+          ],
+          "claimedTags": [
+            "laptop-sleeve",
+            "roomy"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 17,
+      "caseId": "evidence-r-c936cadc9fcdc5b182",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": true,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact durable daily choice for everyday trips",
+          "rawOccurrences": [
+            "Compact durable daily choice for everyday trips"
+          ],
+          "memberProductIds": [
+            "p-3c9da90c49c39352cf"
+          ],
+          "members": [
+            {
+              "productId": "p-3c9da90c49c39352cf",
+              "title": "Pine 23L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact durable daily choice for everyday trips",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "durable"
+          ],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 18,
+      "caseId": "evidence-control-no-history-no-preferences",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": true,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Everyday travel backpacks",
+          "rawOccurrences": [
+            "Everyday travel backpacks"
+          ],
+          "memberProductIds": [
+            "p-72755986095ef5850c"
+          ],
+          "members": [
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Everyday travel backpacks",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "durable"
+          ],
+          "claimedTags": [],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 19,
+      "caseId": "evidence-page-scale-1",
+      "source": "evidence",
+      "requestedCards": 1,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": true,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Compact water-resistant everyday travel choice",
+          "rawOccurrences": [
+            "Compact water-resistant everyday travel choice"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Compact water-resistant everyday travel choice",
+            "source": "generated"
+          },
+          "universalIntersection": [
+            "compact",
+            "water-resistant"
+          ],
+          "claimedTags": [
+            "compact",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": [],
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 20,
+      "caseId": "evidence-page-scale-3",
+      "source": "evidence",
+      "requestedCards": 3,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": true,
+      "hasTrueUniversalClaimFailure": false,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Everyday travel companion daypacks",
+          "rawOccurrences": [
+            "Everyday travel companion daypacks"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91",
+            "p-72755986095ef5850c",
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": "Everyday travel companion daypacks",
+            "source": "generated"
+          },
+          "universalIntersection": [],
+          "claimedTags": [],
+          "universalClaimViolations": [],
+          "genericProxyErrors": [],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "supported_section_wording_under_existing_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "caseIndex": 21,
+      "caseId": "evidence-page-scale-6",
+      "source": "evidence",
+      "requestedCards": 6,
+      "finishReason": "stop",
+      "originalAllFieldsFulfilled": false,
+      "hasTrueUniversalClaimFailure": true,
+      "hasSingleProductProxyFalsePositive": false,
+      "sections": [
+        {
+          "field": "S1",
+          "sectionId": "section-1",
+          "text": "Everyday compact water-resistant choices",
+          "rawOccurrences": [
+            "Everyday compact water-resistant choices"
+          ],
+          "memberProductIds": [
+            "p-277b2ea516baaece91",
+            "p-72755986095ef5850c",
+            "p-c221e94d3abb1d9e93"
+          ],
+          "members": [
+            {
+              "productId": "p-277b2ea516baaece91",
+              "title": "Grove 23L Daypack",
+              "tags": [
+                "water-resistant",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-72755986095ef5850c",
+              "title": "Cedar 26L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            },
+            {
+              "productId": "p-c221e94d3abb1d9e93",
+              "title": "River 26L Daypack",
+              "tags": [
+                "durable",
+                "organizer"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "compact",
+            "water-resistant"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "compact",
+              "missingFromProductIds": [
+                "p-c221e94d3abb1d9e93"
+              ]
+            },
+            {
+              "claimedTag": "water-resistant",
+              "missingFromProductIds": [
+                "p-72755986095ef5850c",
+                "p-c221e94d3abb1d9e93"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:compact,resistant,water",
+            "outside_factual_or_generic_lexicon:compact,resistant,water"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "compact",
+            "resistant",
+            "water"
+          ],
+          "unknownFramingTokens": [],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure"
+          ]
+        },
+        {
+          "field": "S2",
+          "sectionId": "section-2",
+          "text": "Durable compact daily travel options",
+          "rawOccurrences": [
+            "Durable compact daily travel options"
+          ],
+          "memberProductIds": [
+            "p-10b0216abaaa52d554",
+            "p-b7d0c1f3f535fdfc1b",
+            "p-9af7ba2c62774da29b"
+          ],
+          "members": [
+            {
+              "productId": "p-10b0216abaaa52d554",
+              "title": "Field 14L Daypack",
+              "tags": [
+                "lightweight",
+                "roomy"
+              ]
+            },
+            {
+              "productId": "p-b7d0c1f3f535fdfc1b",
+              "title": "Ridge 23L Daypack",
+              "tags": [
+                "lightweight",
+                "roomy"
+              ]
+            },
+            {
+              "productId": "p-9af7ba2c62774da29b",
+              "title": "River 14L Daypack",
+              "tags": [
+                "durable",
+                "compact"
+              ]
+            }
+          ],
+          "originalFieldProvenance": {
+            "text": null,
+            "source": "rejected"
+          },
+          "universalIntersection": [],
+          "claimedTags": [
+            "compact",
+            "durable"
+          ],
+          "universalClaimViolations": [
+            {
+              "claimedTag": "compact",
+              "missingFromProductIds": [
+                "p-10b0216abaaa52d554",
+                "p-b7d0c1f3f535fdfc1b"
+              ]
+            },
+            {
+              "claimedTag": "durable",
+              "missingFromProductIds": [
+                "p-10b0216abaaa52d554",
+                "p-b7d0c1f3f535fdfc1b"
+              ]
+            }
+          ],
+          "genericProxyErrors": [
+            "attribute_not_in_selected_product_tags:compact,durable",
+            "outside_factual_or_generic_lexicon:compact,durable,options"
+          ],
+          "actualSingleProductErrors": null,
+          "unrecognizedProxyTokens": [
+            "compact",
+            "durable",
+            "options"
+          ],
+          "unknownFramingTokens": [
+            "options"
+          ],
+          "singleProductProxyFalsePositive": false,
+          "categories": [
+            "true_universal_tag_claim_failure",
+            "unknown_or_disallowed_framing_needs_review"
+          ]
+        }
+      ]
+    }
+  ]
+}

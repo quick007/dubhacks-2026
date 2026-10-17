@@ -1,0 +1,1602 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "recordedAtUtc": "2026-10-17T21:43:20.602690+00:00",
+  "experiment": "Independent tokenizer-only exact-prefix and immutable measured-stage analysis",
+  "modelWeightsLoaded": false,
+  "gpuUsed": false,
+  "generationRepeated": false,
+  "caseCount": 22,
+  "appendBoundaryChecks": 88,
+  "allChecksPassed": true,
+  "lcpTokensMin": 4,
+  "lcpTokensMax": 4,
+  "measurementsSource": {
+    "path": "data/ranker/pretrained/generation-diagnosis-v1/benchmark-reviewed.json",
+    "sha256": "e30d5344e725a1a61bcd6813f2d09dd507cc977db11bf6512785519464e3e7ef"
+  },
+  "tokenizerSource": {
+    "tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+    "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  },
+  "records": [
+    {
+      "caseId": "cache-0-cold-catalog",
+      "source": "cache",
+      "cards": 1,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 367,
+          "fullTokens": 1813,
+          "suffixSha256": "775b5b5395e6663fae9d6ba18f28d6b0d162d1d5184c2758ecc3146d0519fb05"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 275,
+          "fullTokens": 1721,
+          "suffixSha256": "7262efbda06ee0efe1b7138db4e4e45cf59c0132729c63068c8968b8e27fb2f5"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 363,
+          "fullTokens": 1297,
+          "suffixSha256": "0dfd983e4c5c8b355b97b875543bafbb5657f0c0fe7be359721bcbcae2401130"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 366,
+          "fullTokens": 1300,
+          "suffixSha256": "dbc391867270c8272c4c67098edaa59c5895725a0cb9c6894dc07981b0e8a5fd"
+        }
+      }
+    },
+    {
+      "caseId": "cache-1-warm-catalog",
+      "source": "cache",
+      "cards": 1,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 367,
+          "fullTokens": 1813,
+          "suffixSha256": "775b5b5395e6663fae9d6ba18f28d6b0d162d1d5184c2758ecc3146d0519fb05"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 275,
+          "fullTokens": 1721,
+          "suffixSha256": "7262efbda06ee0efe1b7138db4e4e45cf59c0132729c63068c8968b8e27fb2f5"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 363,
+          "fullTokens": 1297,
+          "suffixSha256": "0dfd983e4c5c8b355b97b875543bafbb5657f0c0fe7be359721bcbcae2401130"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 366,
+          "fullTokens": 1300,
+          "suffixSha256": "dbc391867270c8272c4c67098edaa59c5895725a0cb9c6894dc07981b0e8a5fd"
+        }
+      }
+    },
+    {
+      "caseId": "cache-2-repeat-unchanged-A",
+      "source": "cache",
+      "cards": 1,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 367,
+          "fullTokens": 1813,
+          "suffixSha256": "775b5b5395e6663fae9d6ba18f28d6b0d162d1d5184c2758ecc3146d0519fb05"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 275,
+          "fullTokens": 1721,
+          "suffixSha256": "7262efbda06ee0efe1b7138db4e4e45cf59c0132729c63068c8968b8e27fb2f5"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 363,
+          "fullTokens": 1297,
+          "suffixSha256": "0dfd983e4c5c8b355b97b875543bafbb5657f0c0fe7be359721bcbcae2401130"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 366,
+          "fullTokens": 1300,
+          "suffixSha256": "dbc391867270c8272c4c67098edaa59c5895725a0cb9c6894dc07981b0e8a5fd"
+        }
+      }
+    },
+    {
+      "caseId": "cache-3-changed-profile-B",
+      "source": "cache",
+      "cards": 1,
+      "rankPrefixSha256": "bac831f805dd63ff820af935ca264c76e1e12b61f8951bf60fd29a812b2d3388",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1407,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1407,
+          "suffixTokens": 364,
+          "fullTokens": 1771,
+          "suffixSha256": "a08d4111ac19f9e147efe5ed6f79df0dcdfd7a65f4417d4a936966840e2c44c8"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1407,
+          "suffixTokens": 275,
+          "fullTokens": 1682,
+          "suffixSha256": "1c591bc5c8e74fec50221e3948da48dd61dc25366a41817753bb14941172ee09"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 321,
+          "fullTokens": 1255,
+          "suffixSha256": "b0e7fc02e395f24b8071bcceb484ec4ed2bc9692924c8e00b9b354129a8a7387"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 327,
+          "fullTokens": 1261,
+          "suffixSha256": "5d3ea29523c98e043db8b498d71d57ebaf472cb333b295afd1002a7b8b62d69b"
+        }
+      }
+    },
+    {
+      "caseId": "cache-4-return-profile-A",
+      "source": "cache",
+      "cards": 1,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 367,
+          "fullTokens": 1813,
+          "suffixSha256": "775b5b5395e6663fae9d6ba18f28d6b0d162d1d5184c2758ecc3146d0519fb05"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 275,
+          "fullTokens": 1721,
+          "suffixSha256": "7262efbda06ee0efe1b7138db4e4e45cf59c0132729c63068c8968b8e27fb2f5"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 363,
+          "fullTokens": 1297,
+          "suffixSha256": "0dfd983e4c5c8b355b97b875543bafbb5657f0c0fe7be359721bcbcae2401130"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 366,
+          "fullTokens": 1300,
+          "suffixSha256": "dbc391867270c8272c4c67098edaa59c5895725a0cb9c6894dc07981b0e8a5fd"
+        }
+      }
+    },
+    {
+      "caseId": "cache-5-changed-catalog-unavailable",
+      "source": "cache",
+      "cards": 1,
+      "rankPrefixSha256": "709db451256c6d9be019f13155d68d848ec887396814514f4b4b70ae3b0104f1",
+      "catalogPrefixSha256": "2d894e39ced90ed7b69d79c77bf8e7eda60a7c845d9e342454547327d720e745",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "e2924591ec13309e2bcfaa58c24bc3f7df0cf29f46cc0c8997a3c8d0a8ffee95",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 369,
+          "fullTokens": 1815,
+          "suffixSha256": "7bbca6f93e2d17ff23b8f7437fd1f0807f24fe595051520b7d9ba1da74ed2d84"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 277,
+          "fullTokens": 1723,
+          "suffixSha256": "5375b516f34a832f615325f5c7a90b3739c36eabe381c76eee10dc7afe553d5f"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 365,
+          "fullTokens": 1299,
+          "suffixSha256": "102e33fddc21205ad5013c2b39828338bac2ab0bbefe5f8ee256fd87d1823bcd"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 368,
+          "fullTokens": 1302,
+          "suffixSha256": "d767da1c9f8513024dbf01adaf98eda333a87189825d06ae75dd8a0717e1f72f"
+        }
+      }
+    },
+    {
+      "caseId": "cache-6-cold-catalog",
+      "source": "cache",
+      "cards": 3,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 499,
+          "fullTokens": 1945,
+          "suffixSha256": "48e9317f96780c525e5ae447e830283abf0093f3d32b289775130e6e538cf025"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 405,
+          "fullTokens": 1851,
+          "suffixSha256": "50f6fb4e229a4c57994ba0b75822ee57ad2679e522086412c8e98b0a19d13670"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 495,
+          "fullTokens": 1429,
+          "suffixSha256": "ac83784d49bea946957924ab2c4018efa297a2bc792eba3ee3c05b5a94f1f6e1"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 496,
+          "fullTokens": 1430,
+          "suffixSha256": "032ccb04f2e8b74530ae839936f91b44507fe33c9be94a9f2bdda88597a8e937"
+        }
+      }
+    },
+    {
+      "caseId": "cache-7-warm-catalog",
+      "source": "cache",
+      "cards": 3,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 499,
+          "fullTokens": 1945,
+          "suffixSha256": "48e9317f96780c525e5ae447e830283abf0093f3d32b289775130e6e538cf025"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 405,
+          "fullTokens": 1851,
+          "suffixSha256": "50f6fb4e229a4c57994ba0b75822ee57ad2679e522086412c8e98b0a19d13670"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 495,
+          "fullTokens": 1429,
+          "suffixSha256": "ac83784d49bea946957924ab2c4018efa297a2bc792eba3ee3c05b5a94f1f6e1"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 496,
+          "fullTokens": 1430,
+          "suffixSha256": "032ccb04f2e8b74530ae839936f91b44507fe33c9be94a9f2bdda88597a8e937"
+        }
+      }
+    },
+    {
+      "caseId": "cache-8-cold-catalog",
+      "source": "cache",
+      "cards": 6,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 704,
+          "fullTokens": 2150,
+          "suffixSha256": "6318b6d2cb8548f953e4aa0db3d6a02d9d13cae12282e8c24a9ab3abeb3c4ef6"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 625,
+          "fullTokens": 2071,
+          "suffixSha256": "008d050cbafef5c3b2ade69d0497abf92a8a0f32be012ea7ba08e36dad93f24d"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 700,
+          "fullTokens": 1634,
+          "suffixSha256": "e46abc8a996e96aa72adae4ce7b8576f465885eea90fd3f205618f0e87d0528d"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 716,
+          "fullTokens": 1650,
+          "suffixSha256": "313e2966f58b1e91ef9516fdf23c4707e9d73eb6076f6ea73173aac2cd7944f1"
+        }
+      }
+    },
+    {
+      "caseId": "cache-9-warm-catalog",
+      "source": "cache",
+      "cards": 6,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 704,
+          "fullTokens": 2150,
+          "suffixSha256": "6318b6d2cb8548f953e4aa0db3d6a02d9d13cae12282e8c24a9ab3abeb3c4ef6"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 625,
+          "fullTokens": 2071,
+          "suffixSha256": "008d050cbafef5c3b2ade69d0497abf92a8a0f32be012ea7ba08e36dad93f24d"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 700,
+          "fullTokens": 1634,
+          "suffixSha256": "e46abc8a996e96aa72adae4ce7b8576f465885eea90fd3f205618f0e87d0528d"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 716,
+          "fullTokens": 1650,
+          "suffixSha256": "313e2966f58b1e91ef9516fdf23c4707e9d73eb6076f6ea73173aac2cd7944f1"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-476a18e5ac18fd7f6d",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "dcc1125dc74d26080e96a75f00190ec4bad2407e146ce7176d9a6e226db407ca",
+      "catalogPrefixSha256": "2923b4243bc997a578e49b46759403bf9426e31b5684ac7476577cf6d169c229",
+      "rankPrefixTokens": 1009,
+      "catalogPrefixTokens": 634,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "08aadfe1437dbb2c3d1456b8c95d00c920c696c8d5effd6538a7884aea51baf2",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1009,
+          "suffixTokens": 367,
+          "fullTokens": 1376,
+          "suffixSha256": "775b5b5395e6663fae9d6ba18f28d6b0d162d1d5184c2758ecc3146d0519fb05"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1009,
+          "suffixTokens": 275,
+          "fullTokens": 1284,
+          "suffixSha256": "7262efbda06ee0efe1b7138db4e4e45cf59c0132729c63068c8968b8e27fb2f5"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 634,
+          "suffixTokens": 364,
+          "fullTokens": 998,
+          "suffixSha256": "802bedd60db66da27164955931ce95bbe56a85e79b475be5d4082c805eb7c752"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 634,
+          "suffixTokens": 367,
+          "fullTokens": 1001,
+          "suffixSha256": "41e093f08ce9088813ee99143cc885df6086b80aabbc3b8b2f9960d26626921a"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-b5beff326b517231b1",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "fdf5e971dbe6d0cd9c1954af7edca62b062e1f3570b9b590980ae61ee925f158",
+      "catalogPrefixSha256": "0f3fcfb6a8d4a21a0f37b0125f5a2f31a3e3cc1b0fa6adf41698186b45589ffe",
+      "rankPrefixTokens": 995,
+      "catalogPrefixTokens": 634,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "884cd29ac51c08e3acf0df572b2bdd3625e86ca850ab947caac6495fdaa81643",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 995,
+          "suffixTokens": 362,
+          "fullTokens": 1357,
+          "suffixSha256": "dc9dd4b2dbcf845484901d0f5cee37f749e2e63472c9f0129e2b11c87c62f30d"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 995,
+          "suffixTokens": 273,
+          "fullTokens": 1268,
+          "suffixSha256": "a2d0c3a9baa8b9e4ce64b2cc315017b2bbbacf09d59cfdbc13fdc268612bb00c"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 634,
+          "suffixTokens": 344,
+          "fullTokens": 978,
+          "suffixSha256": "2591e32b188b5aec5121ddbb020f49b36eb816f6e59cd3c2f7a341f9d863bf9f"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 634,
+          "suffixTokens": 350,
+          "fullTokens": 984,
+          "suffixSha256": "0ce5fcca4ffd251fec3363a665b9c9654d6d767cbbbecfa91584df5350d8513d"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-e1f73b869dc810bc15",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "39d1ba9213dcc8f9289ddf62d68247a62d1dad2409bcd4d9939544204fbd7add",
+      "catalogPrefixSha256": "72372f15ce14726aa8942f298369a88fbcc023fd53798cb3b2e2494ec8794064",
+      "rankPrefixTokens": 988,
+      "catalogPrefixTokens": 639,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "1e6d1a003c8bf4c4c69324d879faff5d8e75b71b288e222a8da4bc6149412197",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 988,
+          "suffixTokens": 369,
+          "fullTokens": 1357,
+          "suffixSha256": "cdc010045e7daa31220548891bde62dbe3e9e97ed2ae4e1f5d5c12224dd4a5fd"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 988,
+          "suffixTokens": 279,
+          "fullTokens": 1267,
+          "suffixSha256": "b89e5d330ea646b444c96728dbdbd01ef8cb14d38833b14d7562f2494048c9b6"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 639,
+          "suffixTokens": 339,
+          "fullTokens": 978,
+          "suffixSha256": "239a172686cebadbad9ae0569bca22488790296896b5839dbdcd9ee6dce63627"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 639,
+          "suffixTokens": 344,
+          "fullTokens": 983,
+          "suffixSha256": "42f9d2f318b1d7feff3ee7cc046a2b5e1d4cace83b52491a39155ef070b34c7e"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-4db622b754cdc83922",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "8a9cb524b2a8cd1575be08e23619830f82a1f4f3a0f425000243568231a8bd0f",
+      "catalogPrefixSha256": "72372f15ce14726aa8942f298369a88fbcc023fd53798cb3b2e2494ec8794064",
+      "rankPrefixTokens": 990,
+      "catalogPrefixTokens": 639,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "1e6d1a003c8bf4c4c69324d879faff5d8e75b71b288e222a8da4bc6149412197",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 990,
+          "suffixTokens": 369,
+          "fullTokens": 1359,
+          "suffixSha256": "a60da67aa29edfd0566c1b15eac4af048fed982838414ef30ca1d64a3f41bf8b"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 990,
+          "suffixTokens": 279,
+          "fullTokens": 1269,
+          "suffixSha256": "81c933e4f7b6e08991695cd56e8deead82ea13029ca6dd894a4df092b861b596"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 639,
+          "suffixTokens": 341,
+          "fullTokens": 980,
+          "suffixSha256": "2916b9bc83aa44db9cacaf69c376039ae80825996053f7ff0403984f8294de32"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 639,
+          "suffixTokens": 346,
+          "fullTokens": 985,
+          "suffixSha256": "4d24d73ef385bd4e37e0b4d346763ba95b9d975a71c5f55dd29637bd5570b231"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-36f617c0fe5c7f6164",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "08eee2fe8a36085db515c25217ee81bcdca6e5f8489b25440144c79acb67d584",
+      "catalogPrefixSha256": "8900b40a80a15c883f1e306c4c92f7a3743f84276522e75465ceb66d601cf805",
+      "rankPrefixTokens": 995,
+      "catalogPrefixTokens": 644,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "4b317304058996c4e15db462351d59bc8c6f0bf18050600745c4b9d71b44cfec",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 995,
+          "suffixTokens": 369,
+          "fullTokens": 1364,
+          "suffixSha256": "4f83568f0babc12cf7db759a554dd2efa13714c296637fdd3731bd11b1fc6b75"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 995,
+          "suffixTokens": 279,
+          "fullTokens": 1274,
+          "suffixSha256": "c39127c60ced3dca3afeb1fbcfc36e89fe2c6d5a632d627f60ef89e292760b5a"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 644,
+          "suffixTokens": 337,
+          "fullTokens": 981,
+          "suffixSha256": "504a4774fe57530519870b434c7479002b12a5c646b949406f11d33a29b26878"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 644,
+          "suffixTokens": 342,
+          "fullTokens": 986,
+          "suffixSha256": "7a3dd419bede6f593b84c8dcd1f7b3bb6c3250b104283a7041ba147ca2d87a5c"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-4171cae29da747fcef",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "a8ae8de81bc25363fe4d2e36381283f65fb61a61f8d0e034e1632db4854099b2",
+      "catalogPrefixSha256": "8900b40a80a15c883f1e306c4c92f7a3743f84276522e75465ceb66d601cf805",
+      "rankPrefixTokens": 996,
+      "catalogPrefixTokens": 644,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "4b317304058996c4e15db462351d59bc8c6f0bf18050600745c4b9d71b44cfec",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 996,
+          "suffixTokens": 366,
+          "fullTokens": 1362,
+          "suffixSha256": "849bb91e48afcb0c630e7e36013cd92c989568663cf92f6a10d33dd390ceeef4"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 996,
+          "suffixTokens": 277,
+          "fullTokens": 1273,
+          "suffixSha256": "72e8b612b05fed7a79c2b41b6ca78ffc90c8ee868c827d4bf87d56f17b6fd1a1"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 644,
+          "suffixTokens": 335,
+          "fullTokens": 979,
+          "suffixSha256": "f6519dc7ecf30656e91f64cc8cd895a4d50e04bff6c3cbeb1f1ce47f4e2ab77e"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 644,
+          "suffixTokens": 341,
+          "fullTokens": 985,
+          "suffixSha256": "a65e1d6bc6bbc76a632689e8f6a657405f22a5f5a615f97ff949e57a19c3d557"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-37062e26e3b3ef2b7d",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "a39e47cd892e4be0eb06deec0af5db845b4d1f60cbb31b2f0cabd3004f2c6001",
+      "catalogPrefixSha256": "e31efc4677f800b11d0cfe93205db90f983d6f02b7706aaf5d753c8da4172dff",
+      "rankPrefixTokens": 1027,
+      "catalogPrefixTokens": 667,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3fc6b900540444d3e2d0895b6507fbdcca2c74b78fe4bada2c9ebe20cf74a206",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1027,
+          "suffixTokens": 378,
+          "fullTokens": 1405,
+          "suffixSha256": "b0901cdf8d8deff37eddfd5799f7295eef87c99f22f33b744fb07ac7a456a3e4"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1027,
+          "suffixTokens": 291,
+          "fullTokens": 1318,
+          "suffixSha256": "1e67e46c6a4ddbb64c99e013ce4e1bff18c0cf6b23d8653d7e8fda84312d40b4"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 667,
+          "suffixTokens": 350,
+          "fullTokens": 1017,
+          "suffixSha256": "6e73dfedf371be46fb51ad63a8eff4a03f47db439450806f5906ba67c41f9673"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 667,
+          "suffixTokens": 358,
+          "fullTokens": 1025,
+          "suffixSha256": "cfc8f06241977ab0dee704de13093d6db69dd0ef673f15d69ed929ff8c6194b7"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-r-c936cadc9fcdc5b182",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "601087e8c278cb6f2a77e2c428b39fbebffabf82dc6175903a48dd9b45c82ec8",
+      "catalogPrefixSha256": "e31efc4677f800b11d0cfe93205db90f983d6f02b7706aaf5d753c8da4172dff",
+      "rankPrefixTokens": 1024,
+      "catalogPrefixTokens": 667,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3fc6b900540444d3e2d0895b6507fbdcca2c74b78fe4bada2c9ebe20cf74a206",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1024,
+          "suffixTokens": 367,
+          "fullTokens": 1391,
+          "suffixSha256": "870f6295606492f8b2e67ed3c9b463c489c54dcd3361b9e66bdaa6b807cdd60b"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1024,
+          "suffixTokens": 281,
+          "fullTokens": 1305,
+          "suffixSha256": "120642011a1b3f6ee5e38353b72179744bc6ec8151397a2f3fea7ef1fb513628"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 667,
+          "suffixTokens": 336,
+          "fullTokens": 1003,
+          "suffixSha256": "be8d1f5decac41fdd0bc860df8d64c5fee211539b16d62a1db73ac50c5e9db32"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 667,
+          "suffixTokens": 345,
+          "fullTokens": 1012,
+          "suffixSha256": "e2cf61f26619bae7dc9cd28d616321b9f0e80a33079011e0f7d2100656221077"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-control-no-history-no-preferences",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "bc290321377805429564ece4c83194be7086df0b04085e9738c57e6d01356e34",
+      "catalogPrefixSha256": "0f3fcfb6a8d4a21a0f37b0125f5a2f31a3e3cc1b0fa6adf41698186b45589ffe",
+      "rankPrefixTokens": 956,
+      "catalogPrefixTokens": 634,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "884cd29ac51c08e3acf0df572b2bdd3625e86ca850ab947caac6495fdaa81643",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 956,
+          "suffixTokens": 362,
+          "fullTokens": 1318,
+          "suffixSha256": "dc9dd4b2dbcf845484901d0f5cee37f749e2e63472c9f0129e2b11c87c62f30d"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 956,
+          "suffixTokens": 273,
+          "fullTokens": 1229,
+          "suffixSha256": "a2d0c3a9baa8b9e4ce64b2cc315017b2bbbacf09d59cfdbc13fdc268612bb00c"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 634,
+          "suffixTokens": 305,
+          "fullTokens": 939,
+          "suffixSha256": "aca0bdea5ab6b0cb267e618696ecd30cef1c103c7a9a041d7e1c590557aa7126"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 634,
+          "suffixTokens": 311,
+          "fullTokens": 945,
+          "suffixSha256": "e40f2fb0c8ab938312f2f1d830b87af265721ecba6e56f41125e8cbfb33431df"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-1",
+      "source": "evidence",
+      "cards": 1,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 367,
+          "fullTokens": 1813,
+          "suffixSha256": "775b5b5395e6663fae9d6ba18f28d6b0d162d1d5184c2758ecc3146d0519fb05"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 275,
+          "fullTokens": 1721,
+          "suffixSha256": "7262efbda06ee0efe1b7138db4e4e45cf59c0132729c63068c8968b8e27fb2f5"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 363,
+          "fullTokens": 1297,
+          "suffixSha256": "0dfd983e4c5c8b355b97b875543bafbb5657f0c0fe7be359721bcbcae2401130"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 366,
+          "fullTokens": 1300,
+          "suffixSha256": "dbc391867270c8272c4c67098edaa59c5895725a0cb9c6894dc07981b0e8a5fd"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-3",
+      "source": "evidence",
+      "cards": 3,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 499,
+          "fullTokens": 1945,
+          "suffixSha256": "48e9317f96780c525e5ae447e830283abf0093f3d32b289775130e6e538cf025"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 405,
+          "fullTokens": 1851,
+          "suffixSha256": "50f6fb4e229a4c57994ba0b75822ee57ad2679e522086412c8e98b0a19d13670"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 495,
+          "fullTokens": 1429,
+          "suffixSha256": "ac83784d49bea946957924ab2c4018efa297a2bc792eba3ee3c05b5a94f1f6e1"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 496,
+          "fullTokens": 1430,
+          "suffixSha256": "032ccb04f2e8b74530ae839936f91b44507fe33c9be94a9f2bdda88597a8e937"
+        }
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-6",
+      "source": "evidence",
+      "cards": 6,
+      "rankPrefixSha256": "a09cc53ab94deafa63a9b068880f190fb81be234bc7953238baf5b17c7118050",
+      "catalogPrefixSha256": "40e2bc3135f4ba50815805586f0bbdef2e70a4428063ba140b795f1e36f81f97",
+      "rankPrefixTokens": 1446,
+      "catalogPrefixTokens": 934,
+      "exactCommonLeadingTokens": 4,
+      "rankIsCatalogPrefix": false,
+      "catalogIsRankPrefix": false,
+      "catalogKey": "3d78490831c848c85fa002d7c851e510ab3454b1207d7a2b0a03eee89f8dda37",
+      "profileChangeCatalogKeyUnchanged": true,
+      "catalogAvailabilityChangeInvalidates": true,
+      "appendChecks": {
+        "rankBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 704,
+          "fullTokens": 2150,
+          "suffixSha256": "6318b6d2cb8548f953e4aa0db3d6a02d9d13cae12282e8c24a9ab3abeb3c4ef6"
+        },
+        "rankManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 1446,
+          "suffixTokens": 625,
+          "fullTokens": 2071,
+          "suffixSha256": "008d050cbafef5c3b2ade69d0497abf92a8a0f32be012ea7ba08e36dad93f24d"
+        },
+        "catalogBaseline": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 700,
+          "fullTokens": 1634,
+          "suffixSha256": "e46abc8a996e96aa72adae4ce7b8576f465885eea90fd3f205618f0e87d0528d"
+        },
+        "catalogManifest": {
+          "exactBoundaryPassed": true,
+          "consumedOnce": true,
+          "prefixTokens": 934,
+          "suffixTokens": 716,
+          "fullTokens": 1650,
+          "suffixSha256": "313e2966f58b1e91ef9516fdf23c4707e9d73eb6076f6ea73173aac2cd7944f1"
+        }
+      }
+    }
+  ],
+  "measuredPairedStages": [
+    {
+      "caseId": "cache-0-cold-catalog",
+      "source": "cache",
+      "cards": 1,
+      "arm": "baseline",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 363,
+      "logicalInputWorkTokens": 2743,
+      "freshPrefillTokens": 2743,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 64,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1955.3974160226062,
+        "catalogCachePrepareMs": 1375.0320828985423,
+        "promptPreparationMs": 1.416624989360571,
+        "prefillAndFirstTokenMs": 603.9265419822186,
+        "autoregressiveAfterFirstTokenMs": 2520.606999984011,
+        "validationMs": 0.3730830503627658,
+        "fullCompletionMs": 6462.361832964234,
+        "accountedNonoverlappingMs": 6456.7527489271015,
+        "residualChecksAndAuditMs": 5.609084037132561,
+        "nativePromptMsOverlappingFirstToken": 571.354707935825
+      }
+    },
+    {
+      "caseId": "cache-0-cold-catalog",
+      "source": "cache",
+      "cards": 1,
+      "arm": "manifest",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 366,
+      "logicalInputWorkTokens": 2746,
+      "freshPrefillTokens": 2746,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 28,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1984.9996659904718,
+        "catalogCachePrepareMs": 1339.1743750544265,
+        "promptPreparationMs": 1.2135410215705633,
+        "prefillAndFirstTokenMs": 659.3683749670163,
+        "autoregressiveAfterFirstTokenMs": 1068.490625009872,
+        "validationMs": 4.135625087656081,
+        "fullCompletionMs": 5061.661000014283,
+        "accountedNonoverlappingMs": 5057.382207131013,
+        "residualChecksAndAuditMs": 4.278792883269489,
+        "nativePromptMsOverlappingFirstToken": 647.2226659534499
+      }
+    },
+    {
+      "caseId": "cache-1-warm-catalog",
+      "source": "cache",
+      "cards": 1,
+      "arm": "baseline",
+      "catalogHit": true,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 363,
+      "logicalInputWorkTokens": 2743,
+      "freshPrefillTokens": 1809,
+      "reusedCatalogTokens": 934,
+      "generatedTokens": 64,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1967.1069589676335,
+        "catalogCachePrepareMs": 61.85116688720882,
+        "promptPreparationMs": 1.316040987148881,
+        "prefillAndFirstTokenMs": 602.9523749602959,
+        "autoregressiveAfterFirstTokenMs": 2498.838708968833,
+        "validationMs": 0.265000038780272,
+        "fullCompletionMs": 5136.7634169291705,
+        "accountedNonoverlappingMs": 5132.3302508099005,
+        "residualChecksAndAuditMs": 4.433166119270027,
+        "nativePromptMsOverlappingFirstToken": 564.4610420567915
+      }
+    },
+    {
+      "caseId": "cache-1-warm-catalog",
+      "source": "cache",
+      "cards": 1,
+      "arm": "manifest",
+      "catalogHit": true,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 366,
+      "logicalInputWorkTokens": 2746,
+      "freshPrefillTokens": 1812,
+      "reusedCatalogTokens": 934,
+      "generatedTokens": 28,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1972.7682499215007,
+        "catalogCachePrepareMs": 52.29579098522663,
+        "promptPreparationMs": 1.168792019598186,
+        "prefillAndFirstTokenMs": 602.0102499751374,
+        "autoregressiveAfterFirstTokenMs": 1087.75087504182,
+        "validationMs": 1.0876660235226154,
+        "fullCompletionMs": 3721.4373749447986,
+        "accountedNonoverlappingMs": 3717.0816239668056,
+        "residualChecksAndAuditMs": 4.3557509779930115,
+        "nativePromptMsOverlappingFirstToken": 568.6694170581177
+      }
+    },
+    {
+      "caseId": "cache-6-cold-catalog",
+      "source": "cache",
+      "cards": 3,
+      "arm": "baseline",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 495,
+      "logicalInputWorkTokens": 2875,
+      "freshPrefillTokens": 2875,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 128,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1949.1166670341045,
+        "catalogCachePrepareMs": 1373.432582942769,
+        "promptPreparationMs": 1.3059580232948065,
+        "prefillAndFirstTokenMs": 762.7740419702604,
+        "autoregressiveAfterFirstTokenMs": 5004.994582966901,
+        "validationMs": 0.4035410238429904,
+        "fullCompletionMs": 9097.78270800598,
+        "accountedNonoverlappingMs": 9092.027373961173,
+        "residualChecksAndAuditMs": 5.755334044806659,
+        "nativePromptMsOverlappingFirstToken": 735.2478340035303
+      }
+    },
+    {
+      "caseId": "cache-6-cold-catalog",
+      "source": "cache",
+      "cards": 3,
+      "arm": "manifest",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 496,
+      "logicalInputWorkTokens": 2876,
+      "freshPrefillTokens": 2876,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 66,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1948.3710000058636,
+        "catalogCachePrepareMs": 1373.71608405374,
+        "promptPreparationMs": 1.304832985624671,
+        "prefillAndFirstTokenMs": 756.6723329946399,
+        "autoregressiveAfterFirstTokenMs": 2531.647250056267,
+        "validationMs": 0.7737500127404928,
+        "fullCompletionMs": 6616.172417066991,
+        "accountedNonoverlappingMs": 6612.485250108875,
+        "residualChecksAndAuditMs": 3.687166958115995,
+        "nativePromptMsOverlappingFirstToken": 735.8218330191448
+      }
+    },
+    {
+      "caseId": "cache-7-warm-catalog",
+      "source": "cache",
+      "cards": 3,
+      "arm": "baseline",
+      "catalogHit": true,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 495,
+      "logicalInputWorkTokens": 2875,
+      "freshPrefillTokens": 1941,
+      "reusedCatalogTokens": 934,
+      "generatedTokens": 128,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1961.2692079972476,
+        "catalogCachePrepareMs": 59.624833054840565,
+        "promptPreparationMs": 1.3781249290332198,
+        "prefillAndFirstTokenMs": 775.5943330703303,
+        "autoregressiveAfterFirstTokenMs": 5021.107499953359,
+        "validationMs": 0.6168750114738941,
+        "fullCompletionMs": 7825.794250005856,
+        "accountedNonoverlappingMs": 7819.590874016285,
+        "residualChecksAndAuditMs": 6.203375989571214,
+        "nativePromptMsOverlappingFirstToken": 739.6277909865603
+      }
+    },
+    {
+      "caseId": "cache-7-warm-catalog",
+      "source": "cache",
+      "cards": 3,
+      "arm": "manifest",
+      "catalogHit": true,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 496,
+      "logicalInputWorkTokens": 2876,
+      "freshPrefillTokens": 1942,
+      "reusedCatalogTokens": 934,
+      "generatedTokens": 66,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1968.7675000168383,
+        "catalogCachePrepareMs": 57.86837497726083,
+        "promptPreparationMs": 1.3422908959910274,
+        "prefillAndFirstTokenMs": 772.550042020157,
+        "autoregressiveAfterFirstTokenMs": 2586.024416028522,
+        "validationMs": 3.5701669985428452,
+        "fullCompletionMs": 5394.07062495593,
+        "accountedNonoverlappingMs": 5390.122790937312,
+        "residualChecksAndAuditMs": 3.9478340186178684,
+        "nativePromptMsOverlappingFirstToken": 734.1073750285432
+      }
+    },
+    {
+      "caseId": "cache-8-cold-catalog",
+      "source": "cache",
+      "cards": 6,
+      "arm": "baseline",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 700,
+      "logicalInputWorkTokens": 3080,
+      "freshPrefillTokens": 3080,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 175,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1965.7291669864208,
+        "catalogCachePrepareMs": 1367.775583988987,
+        "promptPreparationMs": 1.390625024214387,
+        "prefillAndFirstTokenMs": 1041.0553339170292,
+        "autoregressiveAfterFirstTokenMs": 6826.240791007876,
+        "validationMs": 1.14100007340312,
+        "fullCompletionMs": 11211.431458010338,
+        "accountedNonoverlappingMs": 11203.33250099793,
+        "residualChecksAndAuditMs": 8.098957012407482,
+        "nativePromptMsOverlappingFirstToken": 1011.6292920429261
+      }
+    },
+    {
+      "caseId": "cache-8-cold-catalog",
+      "source": "cache",
+      "cards": 6,
+      "arm": "manifest",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 716,
+      "logicalInputWorkTokens": 3096,
+      "freshPrefillTokens": 3096,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 128,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1969.4210829911754,
+        "catalogCachePrepareMs": 1378.9114579558372,
+        "promptPreparationMs": 1.5242500230669975,
+        "prefillAndFirstTokenMs": 1116.7323330882937,
+        "autoregressiveAfterFirstTokenMs": 4989.534791908227,
+        "validationMs": 4.913915996439755,
+        "fullCompletionMs": 9467.782499967143,
+        "accountedNonoverlappingMs": 9461.03783196304,
+        "residualChecksAndAuditMs": 6.744668004103005,
+        "nativePromptMsOverlappingFirstToken": 1076.3908750377595
+      }
+    },
+    {
+      "caseId": "cache-9-warm-catalog",
+      "source": "cache",
+      "cards": 6,
+      "arm": "baseline",
+      "catalogHit": true,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 700,
+      "logicalInputWorkTokens": 3080,
+      "freshPrefillTokens": 2146,
+      "reusedCatalogTokens": 934,
+      "generatedTokens": 175,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1963.7022919487208,
+        "catalogCachePrepareMs": 61.62758299615234,
+        "promptPreparationMs": 1.4202919555827975,
+        "prefillAndFirstTokenMs": 1055.1462500588968,
+        "autoregressiveAfterFirstTokenMs": 6784.100458025932,
+        "validationMs": 0.2174170222133398,
+        "fullCompletionMs": 9871.186250005849,
+        "accountedNonoverlappingMs": 9866.214292007498,
+        "residualChecksAndAuditMs": 4.971957998350263,
+        "nativePromptMsOverlappingFirstToken": 1010.1092910626904
+      }
+    },
+    {
+      "caseId": "cache-9-warm-catalog",
+      "source": "cache",
+      "cards": 6,
+      "arm": "manifest",
+      "catalogHit": true,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 934,
+      "suffixTokens": 716,
+      "logicalInputWorkTokens": 3096,
+      "freshPrefillTokens": 2162,
+      "reusedCatalogTokens": 934,
+      "generatedTokens": 128,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 1951.3757911045104,
+        "catalogCachePrepareMs": 59.88820898346603,
+        "promptPreparationMs": 3.4586249385029078,
+        "prefillAndFirstTokenMs": 1106.745416065678,
+        "autoregressiveAfterFirstTokenMs": 4943.419958930463,
+        "validationMs": 1.2268329737707973,
+        "fullCompletionMs": 8070.052375085652,
+        "accountedNonoverlappingMs": 8066.114832996391,
+        "residualChecksAndAuditMs": 3.9375420892611146,
+        "nativePromptMsOverlappingFirstToken": 1074.2872919654474
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-1",
+      "source": "evidence",
+      "cards": 1,
+      "arm": "baseline",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 0,
+      "suffixTokens": 367,
+      "logicalInputWorkTokens": 1813,
+      "freshPrefillTokens": 1813,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 27,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 2028.507124981843,
+        "catalogCachePrepareMs": 0,
+        "promptPreparationMs": 2.060583094134927,
+        "prefillAndFirstTokenMs": 632.6251670252532,
+        "autoregressiveAfterFirstTokenMs": 1063.7757499935105,
+        "validationMs": 1.580666983500123,
+        "fullCompletionMs": 3730.1354160299525,
+        "accountedNonoverlappingMs": 3728.5492920782417,
+        "residualChecksAndAuditMs": 1.5861239517107606,
+        "nativePromptMsOverlappingFirstToken": 592.7169159986079
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-1",
+      "source": "evidence",
+      "cards": 1,
+      "arm": "manifest",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 0,
+      "suffixTokens": 275,
+      "logicalInputWorkTokens": 1721,
+      "freshPrefillTokens": 1721,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 30,
+      "validPage": true,
+      "stagesMs": {
+        "structuredMs": 2042.984375031665,
+        "catalogCachePrepareMs": 0,
+        "promptPreparationMs": 4.442792036570609,
+        "prefillAndFirstTokenMs": 560.2022079983726,
+        "autoregressiveAfterFirstTokenMs": 1191.8440000154078,
+        "validationMs": 0.6722910329699516,
+        "fullCompletionMs": 3800.921499961987,
+        "accountedNonoverlappingMs": 3800.145666114986,
+        "residualChecksAndAuditMs": 0.775833847001195,
+        "nativePromptMsOverlappingFirstToken": 505.57441695127636
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-3",
+      "source": "evidence",
+      "cards": 3,
+      "arm": "baseline",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 0,
+      "suffixTokens": 499,
+      "logicalInputWorkTokens": 1945,
+      "freshPrefillTokens": 1945,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 57,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 2050.049833022058,
+        "catalogCachePrepareMs": 0,
+        "promptPreparationMs": 4.52570803463459,
+        "prefillAndFirstTokenMs": 836.4263750845566,
+        "autoregressiveAfterFirstTokenMs": 2287.0399589883164,
+        "validationMs": 1.823166967369616,
+        "fullCompletionMs": 5182.181625044905,
+        "accountedNonoverlappingMs": 5179.865042096935,
+        "residualChecksAndAuditMs": 2.3165829479694366,
+        "nativePromptMsOverlappingFirstToken": 777.4232920492067
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-3",
+      "source": "evidence",
+      "cards": 3,
+      "arm": "manifest",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 0,
+      "suffixTokens": 405,
+      "logicalInputWorkTokens": 1851,
+      "freshPrefillTokens": 1851,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 66,
+      "validPage": true,
+      "stagesMs": {
+        "structuredMs": 2045.4505840316415,
+        "catalogCachePrepareMs": 0,
+        "promptPreparationMs": 3.5050410078838468,
+        "prefillAndFirstTokenMs": 725.5336670204997,
+        "autoregressiveAfterFirstTokenMs": 2610.6058328878134,
+        "validationMs": 2.549499971792102,
+        "fullCompletionMs": 5389.810709049925,
+        "accountedNonoverlappingMs": 5387.644624919631,
+        "residualChecksAndAuditMs": 2.166084130294621,
+        "nativePromptMsOverlappingFirstToken": 673.9542910363525
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-6",
+      "source": "evidence",
+      "cards": 6,
+      "arm": "baseline",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 0,
+      "suffixTokens": 704,
+      "logicalInputWorkTokens": 2150,
+      "freshPrefillTokens": 2150,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 114,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 2075.40508301463,
+        "catalogCachePrepareMs": 0,
+        "promptPreparationMs": 5.3899160120636225,
+        "prefillAndFirstTokenMs": 1206.4569579670206,
+        "autoregressiveAfterFirstTokenMs": 5125.594833982177,
+        "validationMs": 2.9784999787807465,
+        "fullCompletionMs": 8420.297667034902,
+        "accountedNonoverlappingMs": 8415.825290954672,
+        "residualChecksAndAuditMs": 4.472376080229878,
+        "nativePromptMsOverlappingFirstToken": 1093.3420408982784
+      }
+    },
+    {
+      "caseId": "evidence-page-scale-6",
+      "source": "evidence",
+      "cards": 6,
+      "arm": "manifest",
+      "catalogHit": false,
+      "rankerTokens": 1446,
+      "separateCatalogTokens": 0,
+      "suffixTokens": 625,
+      "logicalInputWorkTokens": 2071,
+      "freshPrefillTokens": 2071,
+      "reusedCatalogTokens": 0,
+      "generatedTokens": 140,
+      "validPage": false,
+      "stagesMs": {
+        "structuredMs": 2166.900624986738,
+        "catalogCachePrepareMs": 0,
+        "promptPreparationMs": 4.670207970775664,
+        "prefillAndFirstTokenMs": 1072.1813339041546,
+        "autoregressiveAfterFirstTokenMs": 5669.250125065446,
+        "validationMs": 5.092957988381386,
+        "fullCompletionMs": 8922.834625001997,
+        "accountedNonoverlappingMs": 8918.095249915496,
+        "residualChecksAndAuditMs": 4.739375086501241,
+        "nativePromptMsOverlappingFirstToken": 1004.9507500370966
+      }
+    }
+  ],
+  "recommendation": "Proposal only for catalog-to-ranker context-layout substitution: not a semantically equivalent cache optimization. Existing evidence path already retains and appends exact user-first ranker state once.",
+  "limitations": [
+    "Token tests establish exact boundary identity, not hidden-state/logit/generation equality for a changed prompt.",
+    "Qwen3.5 hybrid recurrence/convolution/KV state is conditioned on the complete ordered prefix; independently computed states cannot be spliced or substituted.",
+    "Common leading chat-template tokens are not interchangeable completed-prefix states; no splice/trim/deepcopy experiment is performed.",
+    "Saved timings are single measured attempts, not new performance measurements or percentile estimates. No p95 subtraction.",
+    "nativePromptMs is a subcomponent overlapping prefillAndFirstTokenMs; generationMs already contains first-token and remaining decoding.",
+    "Warm catalog reuse saves only its measured prepare work, not the unchanged approximately 1.94-second ranker forward.",
+    "Output lengths/quality differ between prompt arms; timing differences cannot be attributed solely to cache reuse.",
+    "Synthetic local evidence, no production latency, human conversion, revenue or architecture novelty claim."
+  ]
+}
