@@ -77,6 +77,7 @@ def comparison_policy(reference, candidate):
 
 def benchmark(args):
     import torch
+    import psutil
     from importlib.metadata import version
     from .backbone import FrozenBackbone
     from .evidence_plan import REVISION, digest, dump, load_corrected
@@ -100,15 +101,20 @@ def benchmark(args):
     gate = json.loads(args.compatibility.read_text())
     sources = {name: digest(Path(__file__).with_name(name)) for name in ('parallel_decode.py','test_parallel_decode.py')}
     validate_gate(gate, runtime, sources)
-    if args.out.exists():
+    if args.out.exists() or args.report.exists():
         raise ValueError('Preserve existing experiment outputs; no overwrite/retry')
     cases = [case for case in cases_and_saved(args.dataset) if case['source'] == 'evidence']
     if len(cases) != 12:
         raise ValueError('All twelve fixed cases are required')
+    if args.scale_only:
+        cases = [case for case in cases if case['cards'] in (3,6)]
+        if len(cases)!=2:
+            raise ValueError('Supplement requires both fixed3/6-card scale cases')
     prior_path = Path('data/ranker/pretrained/full-page-reliability-v1/benchmark.json')
     prior = {row['caseId']: row['arms']['manifest'] for row in json.loads(prior_path.read_text())['records']}
     dump(args.out/'case-plan.json', {'cases': [{k:v for k,v in case.items() if k!='saved'} for case in cases],
         'widths':[1,2,3,6], 'nativePrefillStepSize':args.prefill_step_size, 'headingPrompt':args.heading_prompt,
+        'memoryGuardGiB':args.memory_gib,'fixedCaseCount':len(cases),'scaleSupplement':args.scale_only,
         'headingHelperSha256':digest(Path(__file__).with_name('heading_experiment.py')),
         'controlSha256':digest(args.controls), 'nativeReceiptSha256':digest(args.compatibility),
         'priorSha256':digest(prior_path), 'decoderSourceSha256':sources,
@@ -116,6 +122,9 @@ def benchmark(args):
         'order':'Widths 1/2/3/6; manifest first on even indices, last on odd. Order/warmth bias.'})
     torch.set_num_threads(1)
     heads, _, receipt = load_corrected(args.heads)
+    memory_before = psutil.virtual_memory()._asdict()
+    if memory_before['available'] < args.memory_gib*2**30:
+        raise MemoryError('Available machine RAM is below the explicitly selected experiment guard')
     load_start = time.perf_counter()
     class PeakCheckedBackbone(FrozenBackbone):
         def check_memory(self):
@@ -125,7 +134,7 @@ def benchmark(args):
                 raise MemoryError(f'Observed peak {peak} exceeds fixed {self.memory_budget}-byte budget')
     # Existing decoder calls this hook after native rounds. This detects an
     # excursion sooner; the allocator limit itself is not a hard ceiling.
-    backbone = PeakCheckedBackbone(args.model, REVISION, 1536, 6)
+    backbone = PeakCheckedBackbone(args.model, REVISION, 1536, args.memory_gib)
     load_ms = (time.perf_counter()-load_start)*1000
     records, abort = [], None
     for index, case in enumerate(cases):
@@ -152,6 +161,10 @@ def benchmark(args):
                                                row_builder=heading_rows if args.heading_prompt=='compact' else None)
                         if value['status']=='completed-attempt':
                             value['headingDiagnostics'] = heading_diagnostics(value['rows'],case['catalog'])
+                            value['experimentMemoryGuardBytes'] = backbone.memory_budget
+                            value['limitations'] = [line for line in value['limitations']
+                                if not line.startswith('Six-GiB process budget unchanged')]
+                            value['limitations'].append(f'Explicit process allocator experiment guard {backbone.memory_budget} bytes; failed runs at other settings remain separate.')
                         if value['status'] != 'completed-attempt':
                             abort = name+': '+value.get('error','native failure')
                         elif width > 1:
@@ -187,18 +200,21 @@ def benchmark(args):
         'residentLoadMs':load_ms, 'totalWallMs':(time.perf_counter()-start)*1000,
         'nativePrefillStepSize':args.prefill_step_size,
         'headingPrompt':args.heading_prompt,
+        'memoryGuardGiB':args.memory_gib,'fixedCaseCount':len(cases),'scaleSupplement':args.scale_only,
+        'systemMemoryBefore':memory_before,
         'controlSha256':digest(args.controls), 'compatibility':gate, 'records':records,
-        'summary':summary(records,12), 'abort':abort, 'memory':backbone.runtime_memory(),
+        'summary':summary(records,len(cases)), 'abort':abort, 'memory':backbone.runtime_memory(),
         'limitations':['Inspected synthetic cases; one attempt per case/arm; no conversion/generalization evidence.',
             'Fixed widths increase, with warmth/order bias; whole-page versus factorized prompts change a separate factor.',
             'Raw exact-token mismatches remain reported; original strict abort and its outputs remain intact.',
             'Matched fork/rebuild parity plus fresh-full sensitivity exclude prefix reuse as a necessary cause; a shared native merge/kernel issue is not universally ruled out.',
             'Unchanged validator measures lexical factuality, novelty and completion, not full coherence, identity preservation or all prompt constraints.',
-            'Invalid attempts are never usable-page speedups; failed/unattempted cases remain in twelve-case denominators.',
-            'Native prefill segmentation is explicitly changed and recorded; prompts, output budgets, precision, sampler, runtime and memory guard stay fixed. Section grouping is deterministic.']}
+            'Invalid attempts are never usable-page speedups; failed/unattempted cases remain in the complete predeclared roster denominator.',
+            'Native prefill segmentation and experiment memory guard are explicitly recorded; within a comparison prompts, output budgets, precision, sampler and runtime stay fixed. Section grouping is deterministic.',
+            'A scale-only supplement retains both predeclared3/6-card cases and has its own two-case denominator; it never replaces a failed twelve-case run.']}
     dump(args.out/'benchmark.json', report)
     report['evidence'] = {str(path):digest(path) for path in (args.out/'benchmark.json',args.out/'case-plan.json',args.controls,array_path)}
-    dump(REPORT, report)
+    dump(args.report, report)
     print(json.dumps({'summary':report['summary'], 'totalWallMs':report['totalWallMs'], 'abort':abort,
                       'memory':report['memory']}, indent=2), flush=True)
 
@@ -214,6 +230,9 @@ def main():
     parser.add_argument('--out',type=Path,default=OUT)
     parser.add_argument('--prefill-step-size',type=int,choices=(256,512),default=512)
     parser.add_argument('--heading-prompt',choices=('preserved','compact'),default='preserved')
+    parser.add_argument('--memory-gib',type=int,choices=(6,7),default=6)
+    parser.add_argument('--scale-only',action='store_true')
+    parser.add_argument('--report',type=Path,default=REPORT)
     args = parser.parse_args()
     expected = Path('.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots')/REVISION
     if args.model.resolve() != expected.resolve():
