@@ -6,35 +6,35 @@ All timestamps are UTC ISO 8601 strings ending in `Z`. Prices and shipping costs
 
 Object with `schemaVersion: 1`, `synthetic: true`, and `products`. Each product has:
 
-| Field | Type / meaning |
-| --- | --- |
-| `id`, `title`, `category`, `description` | Factual fixture strings |
-| `price`, `shippingCost` | Nonnegative numeric amounts; total cost is their sum |
-| `inStock` | Boolean |
-| `tags` | Factual attribute strings |
-| `presentationVariants` | `{id, title, imageKey, facts: string[]}` alternatives; facts only repeat catalog tags |
+| Field                                    | Type / meaning                                                                        |
+| ---------------------------------------- | ------------------------------------------------------------------------------------- |
+| `id`, `title`, `category`, `description` | Factual fixture strings                                                               |
+| `price`, `shippingCost`                  | Nonnegative numeric amounts; total cost is their sum                                  |
+| `inStock`                                | Boolean                                                                               |
+| `tags`                                   | Factual attribute strings                                                             |
+| `presentationVariants`                   | `{id, title, imageKey, facts: string[]}` alternatives; facts only repeat catalog tags |
 
 ## `public/{train,validation,test}.jsonl`
 
 One request object per line. This is the entire merchant-observable record, with linkage metadata kept out of predictive inputs.
 
-| Field | Type / meaning |
-| --- | --- |
-| `schemaVersion`, `synthetic` | `1`, `true` |
-| `recordId`, `userId` | Opaque stable join identifiers, never model features |
-| `asOf` | Observation cutoff |
-| `context.task` | Shopping goal in plain language |
-| `context.statedBudget` | Numeric maximum total spend, or `null` when unknown |
+| Field                        | Type / meaning                                                                               |
+| ---------------------------- | -------------------------------------------------------------------------------------------- |
+| `schemaVersion`, `synthetic` | `1`, `true`                                                                                  |
+| `recordId`, `userId`         | Opaque stable join identifiers, never model features                                         |
+| `asOf`                       | Observation cutoff                                                                           |
+| `context.task`               | Shopping goal in plain language                                                              |
+| `context.statedBudget`       | Numeric maximum total spend, or `null` when unknown                                          |
 | `context.statedRequirements` | Exact catalog tags explicitly required; `[]` means none observed, not no hidden requirements |
-| `context.statedPreferences` | Observed soft preference tags; may be empty |
-| `history` | Event objects `{at, type, productId, dwellSeconds?, source, confidence}` |
-| `history[].type` | `view`, `save`, or `purchase`; fictional past signal, not future target |
-| `history[].dwellSeconds` | Number, explicit `null`, or omitted; do not fill from private truth |
-| `history[].source` | `synthetic-first-party-event` or `synthetic-shared-session` |
-| `history[].confidence` | `0.85` or `0.35`; source ambiguity rather than a private-preference signal |
-| `candidateProductIds` | Six unique product IDs, all in the task category |
-| `missingFields` | Dot paths documenting unobserved values or empty signals |
-| `provenance` | `{source: "fictional-generator", generatorVersion, observedThrough}`; audit metadata |
+| `context.statedPreferences`  | Observed soft preference tags; may be empty                                                  |
+| `history`                    | Event objects `{at, type, productId, dwellSeconds?, source, confidence}`                     |
+| `history[].type`             | `view`, `save`, or `purchase`; fictional past signal, not future target                      |
+| `history[].dwellSeconds`     | Number, explicit `null`, or omitted; do not fill from private truth                          |
+| `history[].source`           | `synthetic-first-party-event` or `synthetic-shared-session`                                  |
+| `history[].confidence`       | `0.85` or `0.35`; source ambiguity rather than a private-preference signal                   |
+| `candidateProductIds`        | Six unique product IDs, all in the task category                                             |
+| `missingFields`              | Dot paths documenting unobserved values or empty signals                                     |
+| `provenance`                 | `{source: "fictional-generator", generatorVersion, observedThrough}`; audit metadata         |
 
 Every event satisfies `at <= asOf`. Feature builders must independently enforce this cutoff. Unknown budgets remain `null`; unknown requirements/preferences remain empty. No family/split IDs, latent preferences, future actions, relevance labels, or best-product target are present. Event counts are deliberately bounded at three to fit compact candidate contexts.
 

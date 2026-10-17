@@ -4,6 +4,8 @@ A local DubHacks scaffold for testing a demo storefront with synthetic shopper p
 
 See [VISION.md](VISION.md) for the product direction, demo workflow, evaluation methodology, and team workstreams.
 
+Local model work is separate from the app: see the [synthetic ranking baseline](experiments/ranker/README.md) and [pretrained decision-head experiment](experiments/ranker/pretrained/README.md) for commands, data boundaries, and measured limitations.
+
 **All results are synthetic.** Mock scores are deterministic rule outputs. Browser runs exercise a fake local checkout. Neither demonstrates human behavior or proven conversion lift.
 
 ## Run locally
