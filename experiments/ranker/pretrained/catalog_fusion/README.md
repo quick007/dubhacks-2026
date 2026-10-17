@@ -15,6 +15,12 @@ Run the synthetic CPU contracts from the repository root:
 .tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.catalog_fusion.test_catalog_fusion -v
 ```
 
+The CPU-only `preflight` module inventories the real public corpus with the
+already local tokenizer, without loading weights or labels. See
+[FIT_EXTRACTION_PLAN.md](FIT_EXTRACTION_PLAN.md) for exact available paths,
+observed token bounds, artifact sizes and a bounded native-extraction/real-fit
+handoff. Native extraction and actual project fitting remain unexecuted here.
+
 `inputs.catalog_text` uses the existing `clean_product`/`variant_text` allowlists.
 `request_text` encodes fresh public context and the same cutoff-filtered latest
 history type/confidence/tags summary as the compact representation. It does not
