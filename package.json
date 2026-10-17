@@ -12,7 +12,15 @@
     "seed": "pnpm --filter @storefront/api seed",
     "reset": "pnpm --filter @storefront/api reset",
     "check": "vp check",
-    "typecheck:tsc-ts": "node scripts/check-tsc-ts.mjs"
+    "typecheck:tsc-ts": "node scripts/check-tsc-ts.mjs",
+    "ranker:setup": "node scripts/ranker.mjs setup",
+    "ranker:data": "node scripts/ranker.mjs data",
+    "ranker:train": "node scripts/ranker.mjs train",
+    "ranker:evaluate": "node scripts/ranker.mjs evaluate",
+    "ranker:infer": "node scripts/ranker.mjs infer",
+    "ranker:serve": "node scripts/ranker.mjs serve",
+    "ranker:benchmark": "node scripts/ranker.mjs benchmark",
+    "ranker:test": "node scripts/ranker.mjs test"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",

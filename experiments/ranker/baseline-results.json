@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "recordedAtUtc": "2026-10-17T20:26:27.820722+00:00",
+  "experiment": "v1 observable-feature tiny MLP baseline",
+  "claims": "Random-initialized supervised fit followed by real warm-start adaptation. Not a pretrained model, LLM, Jev reproduction, human conversion result or storefront page-load test.",
+  "machine": {
+    "os": "Darwin",
+    "osVersion": "27.0.1",
+    "architecture": "arm64",
+    "hardwareModel": "Mac17,4",
+    "logicalCpuCount": 10,
+    "python": "3.14.7",
+    "numpy": "2.5.4",
+    "blasThreads": 1,
+    "loadControlled": false
+  },
+  "data": {
+    "datasetPath": "data/ranker/datasets/v1",
+    "seed": 2026,
+    "requestCount": 360,
+    "heldOutRequestCount": 60,
+    "familySplit": {
+      "train": 40,
+      "validation": 10,
+      "test": 10
+    },
+    "trainingRequestsPerStage": 120,
+    "datasetManifestSha256": "2d8b0442a32b816108db5e5ab78eb1653d776e12ef7927ee93bf3d684f61976a"
+  },
+  "architecture": {
+    "kind": "parallel engineered-feature tanh MLP",
+    "featureCount": 101,
+    "parameterCount": 3297,
+    "config": {
+      "seed": 1729,
+      "hiddenWidth": 32,
+      "initialEpochs": 160,
+      "adaptationEpochs": 160,
+      "learningRate": 0.06,
+      "l2": 0.001,
+      "maxTrainingSeconds": 60,
+      "dtype": "float32"
+    }
+  },
+  "checkpoints": {
+    "initial": {
+      "path": "data/ranker/runs/initial/initial/weights.npz",
+      "sha256": "b41ae559ce90c121256bc2ba7a507ed497ecb9bb58b3cd61fa30aeb6948a8a16",
+      "parameterCount": 3297
+    },
+    "adaptation": {
+      "path": "data/ranker/runs/initial/adaptation/weights.npz",
+      "sha256": "83f626eeaecbcd57b647e29db16a81c27bff267ca423f4a854d28a83d1f2b265",
+      "parameterCount": 3297
+    }
+  },
+  "training": {
+    "initial": {
+      "epochs": 160,
+      "examples": 720,
+      "seconds": 0.022529541980475187,
+      "mseBefore": 0.408844918012619,
+      "mseAfter": 0.05861900746822357,
+      "firstGradientL2": 2.2082114219665527,
+      "meanAbsolutePredictionChange": 0.5046268701553345
+    },
+    "adaptation": {
+      "epochs": 160,
+      "examples": 720,
+      "seconds": 0.01727770804427564,
+      "mseBefore": 0.06102773919701576,
+      "mseAfter": 0.05341527611017227,
+      "firstGradientL2": 0.09844028949737549,
+      "meanAbsolutePredictionChange": 0.052867598831653595
+    }
+  },
+  "peakTrainingProcessRssBytes": 55361536,
+  "heldOutMetrics": {
+    "heuristic": {
+      "raw": {
+        "count": 60,
+        "ndcgAt3": 0.733798448122149,
+        "topBestRelevantRate": 0.45,
+        "meanRelevanceRegret": 0.7333333333333333,
+        "knownConstraintViolationRate": 0.11666666666666667,
+        "privateConstraintViolationRate": 0.15,
+        "abstentionRate": 0.0
+      },
+      "guarded": {
+        "count": 60,
+        "ndcgAt3": 0.8311217986951773,
+        "topBestRelevantRate": 0.5333333333333333,
+        "meanRelevanceRegret": 0.48333333333333334,
+        "knownConstraintViolationRate": 0.0,
+        "privateConstraintViolationRate": 0.05,
+        "abstentionRate": 0.016666666666666666
+      }
+    },
+    "initial": {
+      "raw": {
+        "count": 60,
+        "ndcgAt3": 0.8252664323231483,
+        "topBestRelevantRate": 0.5,
+        "meanRelevanceRegret": 0.5,
+        "knownConstraintViolationRate": 0.016666666666666666,
+        "privateConstraintViolationRate": 0.1,
+        "abstentionRate": 0.0
+      },
+      "guarded": {
+        "count": 60,
+        "ndcgAt3": 0.8252664323231483,
+        "topBestRelevantRate": 0.5,
+        "meanRelevanceRegret": 0.5,
+        "knownConstraintViolationRate": 0.0,
+        "privateConstraintViolationRate": 0.08333333333333333,
+        "abstentionRate": 0.016666666666666666
+      }
+    },
+    "adaptation": {
+      "raw": {
+        "count": 60,
+        "ndcgAt3": 0.8399481604486547,
+        "topBestRelevantRate": 0.55,
+        "meanRelevanceRegret": 0.5,
+        "knownConstraintViolationRate": 0.016666666666666666,
+        "privateConstraintViolationRate": 0.1,
+        "abstentionRate": 0.0
+      },
+      "guarded": {
+        "count": 60,
+        "ndcgAt3": 0.8399481604486547,
+        "topBestRelevantRate": 0.55,
+        "meanRelevanceRegret": 0.5,
+        "knownConstraintViolationRate": 0.0,
+        "privateConstraintViolationRate": 0.08333333333333333,
+        "abstentionRate": 0.016666666666666666
+      }
+    },
+    "adaptation-no-history": {
+      "raw": {
+        "count": 60,
+        "ndcgAt3": 0.7795421732399094,
+        "topBestRelevantRate": 0.43333333333333335,
+        "meanRelevanceRegret": 0.6166666666666667,
+        "knownConstraintViolationRate": 0.016666666666666666,
+        "privateConstraintViolationRate": 0.1,
+        "abstentionRate": 0.0
+      },
+      "guarded": {
+        "count": 60,
+        "ndcgAt3": 0.7795421732399094,
+        "topBestRelevantRate": 0.43333333333333335,
+        "meanRelevanceRegret": 0.6166666666666667,
+        "knownConstraintViolationRate": 0.0,
+        "privateConstraintViolationRate": 0.08333333333333333,
+        "abstentionRate": 0.016666666666666666
+      }
+    }
+  },
+  "regressions": [
+    "Guarded adaptation vs heuristic: mean relevance regret 0.5000 vs 0.4833 (higher is worse).",
+    "Guarded adaptation vs heuristic: private-constraint violation rate 0.0833 vs 0.0500.",
+    "Guarded initial fit NDCG@3 0.8253 trails guarded heuristic 0.8311.",
+    "Known-constraint zero violation is deterministic masking, not learned behavior."
+  ],
+  "refreshedHttpBenchmark": {
+    "synthetic": true,
+    "measurement": "Loopback HTTP including JSON, feature preparation, decision, guard and response; not integrated browser page-load timing.",
+    "requestsPerMode": 60,
+    "checkpointLoadMs": 7.602708996273577,
+    "workerWarmupMs": 3.5163749707862735,
+    "firstHttpModelMs": 8.087000111117959,
+    "deadlineMs": 5,
+    "fallbacks": 0,
+    "defaultHttpMs": {
+      "p50": 0.22666651057079434,
+      "p95": 0.25952916475944215,
+      "max": 0.39445795118808746
+    },
+    "modelHttpMs": {
+      "p50": 0.270541466306895,
+      "p95": 0.31242321128956974,
+      "max": 0.3892499953508377
+    },
+    "pairedIncrementalMs": {
+      "p50": 0.05162449087947607,
+      "p95": 0.08881314424797893,
+      "max": 0.09962392505258322
+    }
+  },
+  "freshInference": {
+    "modelId": "parallel-mlp-adapted",
+    "selectedProductId": "backpacks-1",
+    "presentationAction": null,
+    "timing": {
+      "inferenceMs": 0.15862495638430119,
+      "checkpointLoadMs": 8.579958928748965
+    },
+    "warnings": [
+      "Synthetic model and evaluation; no evidence of human conversion lift.",
+      "Deterministic known-constraint mask applied; this is not learned behavior."
+    ]
+  },
+  "verification": {
+    "baselineUnitTestsPassed": 15,
+    "commands": [
+      "node scripts/ranker.mjs setup",
+      "node scripts/ranker.mjs test",
+      "node scripts/ranker.mjs infer",
+      "node scripts/ranker.mjs benchmark"
+    ],
+    "trainingRerunForThisReport": false,
+    "evaluationRerunForThisReport": false
+  },
+  "sourceArtifacts": {
+    "run-manifest.json": {
+      "path": "data/ranker/runs/initial/run-manifest.json",
+      "sha256": "826137d6f4baee72d2615f88191fe6754eb3b6aa3399fdfdf3448d6cdebf103a",
+      "modifiedAtUtc": "2026-10-17T20:11:10.976475+00:00"
+    },
+    "training.json": {
+      "path": "data/ranker/runs/initial/training.json",
+      "sha256": "6ecd29cdc0b7097a332a45a66ce035d649785e246a66e5d0c987ca0dc8e56852",
+      "modifiedAtUtc": "2026-10-17T20:11:13.419937+00:00"
+    },
+    "evaluation.json": {
+      "path": "data/ranker/runs/initial/evaluation.json",
+      "sha256": "5b6cb3b58d3db66e463627ffb9212a0375af4484c1f94ebb07a905eede4902b5",
+      "modifiedAtUtc": "2026-10-17T20:11:20.254809+00:00"
+    },
+    "inference.json": {
+      "path": "data/ranker/runs/initial/inference.json",
+      "sha256": "7e2beb59b4cef615e8d317e241a01ecda0161fdb66478f9604e11b16cf14f444",
+      "modifiedAtUtc": "2026-10-17T20:25:28.883164+00:00"
+    },
+    "http-benchmark.json": {
+      "path": "data/ranker/runs/initial/http-benchmark.json",
+      "sha256": "85b0837276c804b951eb43bff3127dc26226b62afd425e9ba0212fd1d6bd9b7d",
+      "modifiedAtUtc": "2026-10-17T20:25:29.576396+00:00"
+    }
+  },
+  "limitations": [
+    "Entirely synthetic small catalog and hidden-utility labels; no proven human conversion or revenue lift.",
+    "No pretrained backbone, language understanding, trained presentation-action policy or storefront integration in this baseline.",
+    "Single frozen training schedule and one held-out fixture; no confidence interval or robustness claim.",
+    "5 ms is worker wait budget, not end-to-end deadline; first HTTP request measured 8.087 ms after model worker warm-up.",
+    "Local timing measured under uncontrolled machine load; weights, datasets and full predictions remain ignored local artifacts."
+  ]
+}
