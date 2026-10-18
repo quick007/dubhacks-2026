@@ -1,0 +1,517 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-02",
+  "arm": "local-model",
+  "run": {
+    "id": "shopper-pair-02-local-model",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-02",
+    "personaSplit": "development",
+    "seed": 2026101802
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "e6bae7bf-62dd-4474-93b4-4479e0cd6192",
+    "contextId": "cc4ef86b-546d-412e-ae68-d302f785180c",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-02-local-model-screenshot-png",
+      "shopper-pair-02-local-model-trace-zip",
+      "shopper-pair-02-local-model-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T04:14:52.072Z",
+  "elapsedMs": 120001.412584,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": false,
+    "deviations": [
+      "Wall-clock budget exceeded"
+    ]
+  },
+  "status": "timeout",
+  "error": "Shopper exhausted the wall-clock budget",
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-0",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T04:14:53.192Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 1120.1445839999942,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-1",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T04:14:59.231Z",
+        "kind": "action",
+        "message": "a bottle for drinking water under $40"
+      },
+      "elapsedMs": 7158.8607090000005,
+      "action": {
+        "type": "search",
+        "query": "a bottle for drinking water under $40"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-2",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T04:15:06.337Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 14265.59941699999,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-3",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T04:15:12.647Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 20574.680124999984,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-4",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 4,
+        "at": "2026-10-18T04:15:19.346Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 27273.574458999996,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-5",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 5,
+        "at": "2026-10-18T04:15:25.796Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 33724.272874999995,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-6",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 6,
+        "at": "2026-10-18T04:15:32.613Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 40540.933334,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-7",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 7,
+        "at": "2026-10-18T04:15:38.729Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 46657.18133399999,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-8",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 8,
+        "at": "2026-10-18T04:15:44.883Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 52810.45545899999,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-9",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 9,
+        "at": "2026-10-18T04:15:51.548Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 59475.530834000005,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-10",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 10,
+        "at": "2026-10-18T04:15:57.845Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 65772.775292,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-11",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 11,
+        "at": "2026-10-18T04:16:04.394Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 72321.5435,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-12",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 12,
+        "at": "2026-10-18T04:16:10.982Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 78909.977334,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-13",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 13,
+        "at": "2026-10-18T04:16:18.797Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 86724.377209,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-14",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 14,
+        "at": "2026-10-18T04:16:24.447Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 92374.39466699999,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-15",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 15,
+        "at": "2026-10-18T04:16:30.480Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 98407.27549999999,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-16",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 16,
+        "at": "2026-10-18T04:16:36.674Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 104601.636834,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-17",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 17,
+        "at": "2026-10-18T04:16:43.413Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 111340.08433399998,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-local-model-step-18",
+        "runId": "shopper-pair-02-local-model",
+        "sequence": 18,
+        "at": "2026-10-18T04:16:49.528Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 117455.521667,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-02-local-model-screenshot-png",
+        "runId": "shopper-pair-02-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:16:52.967Z"
+      },
+      "status": "captured",
+      "sha256": "57bc47dcbb1a7e58347577cffd745695cee8c8519b7bec75338ef682987a1004",
+      "bytes": 1247274,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-02-local-model-trace-zip",
+        "runId": "shopper-pair-02-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:16:52.968Z"
+      },
+      "status": "captured",
+      "sha256": "77ffb5f7ae34597ff565eb2e7548e4c03a3b10befb278ebaf394e4c8c3293cdc",
+      "bytes": 26917099,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-02-local-model-browser-observations-json",
+        "runId": "shopper-pair-02-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:16:52.968Z"
+      },
+      "status": "captured",
+      "sha256": "71ba7c7544beb9cf8b944e233f76aead2a4a89f7884c8e33ec85c412c95046ac",
+      "bytes": 292539,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday steel bottle",
+    "selectedColor": "Graphite",
+    "catalogPrice": 36,
+    "quantity": 1,
+    "productId": "bottle",
+    "variantId": "bottle-graphite",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "shopper-pair-02-local-model-step-3",
+      "shopper-pair-02-local-model-step-4",
+      "shopper-pair-02-local-model-step-5",
+      "shopper-pair-02-local-model-step-6",
+      "shopper-pair-02-local-model-step-7",
+      "shopper-pair-02-local-model-step-8",
+      "shopper-pair-02-local-model-step-9",
+      "shopper-pair-02-local-model-step-10",
+      "shopper-pair-02-local-model-step-11",
+      "shopper-pair-02-local-model-step-12",
+      "shopper-pair-02-local-model-step-13",
+      "shopper-pair-02-local-model-step-14",
+      "shopper-pair-02-local-model-step-15",
+      "shopper-pair-02-local-model-step-16",
+      "shopper-pair-02-local-model-step-17",
+      "shopper-pair-02-local-model-step-18"
+    ],
+    "evidenceArtifactIds": [
+      "shopper-pair-02-local-model-screenshot-png",
+      "shopper-pair-02-local-model-trace-zip",
+      "shopper-pair-02-local-model-browser-observations-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "36",
+        "evidenceArtifactIds": [
+          "shopper-pair-02-local-model-screenshot-png",
+          "shopper-pair-02-local-model-trace-zip",
+          "shopper-pair-02-local-model-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "met",
+        "observed": "[\"drinking-water bottle\"]",
+        "evidenceArtifactIds": [
+          "shopper-pair-02-local-model-screenshot-png",
+          "shopper-pair-02-local-model-trace-zip",
+          "shopper-pair-02-local-model-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "375c9f50-231f-4225-91e0-f2d0207dcf79",
+        "startTimeMs": 6629.600000023842,
+        "durationMs": 286.39999997615814,
+        "capturedAtElapsedMs": 14462.999458999984,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "375c9f50-231f-4225-91e0-f2d0207dcf79",
+        "startTimeMs": 6629.600000023842,
+        "durationMs": 5502.899999976158,
+        "capturedAtElapsedMs": 14463.002833999984,
+        "acceptedFields": 10,
+        "withheldFields": 0,
+        "requiredFields": 10,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "375c9f50-231f-4225-91e0-f2d0207dcf79",
+        "startTimeMs": 6629.600000023842,
+        "durationMs": 6452.799999952316,
+        "capturedAtElapsedMs": 14463.003208999988,
+        "acceptedFields": 19,
+        "withheldFields": 1,
+        "requiredFields": 20,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": true,
+    "kind": "last-safe-model",
+    "reason": "Local model is ordering products; last available result shown…"
+  }
+}

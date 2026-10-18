@@ -1,0 +1,1393 @@
+{
+  "version": "shopper-evidence-aggregate.v1",
+  "status": "partial",
+  "fixedCases": 10,
+  "fixedSessions": 20,
+  "packetSources": {
+    "pair-plan.json": "48f25789e09c7121c5cd9c8e7b1fe8ccf6ee740cf77834f713fcfed9d536910b",
+    "public-observations.json": "458a2c9aa20e7441befcddc7f257d661bbdc02ea7eac5fd3d8ba6cbda9d9d38f",
+    "shopper-instructions.json": "27fc8abd5409c860f5bd3e214d5df55f6b7d111bdc9bfa8a31d7cb417c595b4e",
+    "manifest.json": "6c4ad6f71efc0244562e0d806c42ee5145e0866e9d6ac2b945a25991e58a830a"
+  },
+  "setupErrors": [],
+  "rows": [
+    {
+      "caseId": "shopper-pair-01",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-01-local-model",
+      "path": "shopper-pair-01/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-01",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-01-generic",
+      "path": "shopper-pair-01/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-02",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-02-generic",
+      "path": "shopper-pair-02/generic/session.json",
+      "status": "recorded",
+      "formalStatus": "unattempted",
+      "errors": [
+        "Shopper budget exceeded: 19/24 actions; 120001.17925/120000 ms"
+      ],
+      "sidecarSha256": "e341c6f943bf2f69be2bdf17f54721f14a2993599a173d5aea5b3c3488a66bc4",
+      "session": {
+        "contractVersion": "shopper-session.v1",
+        "caseId": "shopper-pair-02",
+        "arm": "generic",
+        "run": {
+          "id": "shopper-pair-02-generic",
+          "experimentId": "actual-store-isolated-shopper-v1",
+          "personaId": "shopper-pair-02",
+          "personaSplit": "development",
+          "seed": 2026101802
+        },
+        "browser": {
+          "name": "Chrome",
+          "headed": true,
+          "actualNavigation": true,
+          "version": "155.0.8059.82",
+          "automation": "playwright-chrome"
+        },
+        "isolation": {
+          "kind": "fresh-storage-context",
+          "tabId": "7941cb83-8596-43cf-819e-82ce43dd0246",
+          "contextId": "97a9801a-8c5e-442f-b101-abfc07f3baf6",
+          "sharedStorage": false,
+          "storageCleared": true,
+          "initialCartEmpty": true,
+          "evidenceArtifactIds": [
+            "shopper-pair-02-generic-screenshot-png",
+            "shopper-pair-02-generic-trace-zip",
+            "shopper-pair-02-generic-browser-observations-json"
+          ],
+          "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+        },
+        "entryUrl": "http://127.0.0.1:4312/",
+        "startedAt": "2026-10-18T04:12:51.201Z",
+        "elapsedMs": 120001.17925,
+        "timingPrecision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "protocol": {
+          "passed": false,
+          "deviations": [
+            "Wall-clock budget exceeded"
+          ]
+        },
+        "status": "timeout",
+        "error": "Shopper exhausted the wall-clock budget",
+        "realPurchase": false,
+        "fakeOrderConfirmed": false,
+        "steps": [
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-0",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 0,
+              "at": "2026-10-18T04:12:52.813Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 1612.0852909999999,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-1",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 1,
+              "at": "2026-10-18T04:12:58.627Z",
+              "kind": "action",
+              "message": "a bottle for drinking water under $40"
+            },
+            "elapsedMs": 7425.939582999999,
+            "action": {
+              "type": "search",
+              "query": "a bottle for drinking water under $40"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-2",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 2,
+              "at": "2026-10-18T04:13:04.968Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 13767.310125,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-3",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 3,
+              "at": "2026-10-18T04:13:11.043Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 19842.576250000002,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-4",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 4,
+              "at": "2026-10-18T04:13:17.787Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 26586.0755,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-5",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 5,
+              "at": "2026-10-18T04:13:24.186Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 32985.162458,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-6",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 6,
+              "at": "2026-10-18T04:13:30.114Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 38913.041333,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-7",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 7,
+              "at": "2026-10-18T04:13:36.123Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 44921.588291,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-8",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 8,
+              "at": "2026-10-18T04:13:43.035Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 51834.334291,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-9",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 9,
+              "at": "2026-10-18T04:13:49.347Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 58145.733708,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-10",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 10,
+              "at": "2026-10-18T04:13:56.070Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 64868.742125,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-11",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 11,
+              "at": "2026-10-18T04:14:02.570Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 71369.003041,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-12",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 12,
+              "at": "2026-10-18T04:14:10.067Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 78866.178958,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-13",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 13,
+              "at": "2026-10-18T04:14:17.015Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 85813.680291,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-14",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 14,
+              "at": "2026-10-18T04:14:23.101Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 91899.481875,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-15",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 15,
+              "at": "2026-10-18T04:14:29.800Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 98598.418416,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-16",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 16,
+              "at": "2026-10-18T04:14:35.737Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 104535.33475,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-17",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 17,
+              "at": "2026-10-18T04:14:42.222Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 111020.678291,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-generic-step-18",
+              "runId": "shopper-pair-02-generic",
+              "sequence": 18,
+              "at": "2026-10-18T04:14:50.723Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 119521.633583,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact": {
+              "id": "shopper-pair-02-generic-screenshot-png",
+              "runId": "shopper-pair-02-generic",
+              "kind": "screenshot",
+              "path": "screenshot.png",
+              "mimeType": "image/png",
+              "createdAt": "2026-10-18T04:14:52.052Z"
+            },
+            "status": "captured",
+            "sha256": "5f3e93c8a46e57faea25bece58ed0eb93b14c0f29273a960014bda258d23c96a",
+            "bytes": 1222389,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "shopper-pair-02-generic-trace-zip",
+              "runId": "shopper-pair-02-generic",
+              "kind": "trace",
+              "path": "trace.zip",
+              "mimeType": "application/zip",
+              "createdAt": "2026-10-18T04:14:52.052Z"
+            },
+            "status": "captured",
+            "sha256": "abdcfbf84efaedca4e1989efad92e165fc43f8dfb8560ea79d0251b6ee64aabb",
+            "bytes": 25175342,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "shopper-pair-02-generic-browser-observations-json",
+              "runId": "shopper-pair-02-generic",
+              "kind": "result",
+              "path": "browser-observations.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T04:14:52.052Z"
+            },
+            "status": "captured",
+            "sha256": "74a2ca3e7458c1428e7cf91dce1be4e4aaae93b13a5b7f84e343a9cdcd5cb149",
+            "bytes": 169690,
+            "error": null
+          }
+        ],
+        "choice": {
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "catalogPrice": 36,
+          "quantity": 1,
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "observationSource": "independent-dom",
+          "sourceStepIds": [
+            "shopper-pair-02-generic-step-3",
+            "shopper-pair-02-generic-step-4",
+            "shopper-pair-02-generic-step-5",
+            "shopper-pair-02-generic-step-6",
+            "shopper-pair-02-generic-step-7",
+            "shopper-pair-02-generic-step-8",
+            "shopper-pair-02-generic-step-9",
+            "shopper-pair-02-generic-step-10",
+            "shopper-pair-02-generic-step-11",
+            "shopper-pair-02-generic-step-12",
+            "shopper-pair-02-generic-step-13",
+            "shopper-pair-02-generic-step-14",
+            "shopper-pair-02-generic-step-15",
+            "shopper-pair-02-generic-step-16",
+            "shopper-pair-02-generic-step-17",
+            "shopper-pair-02-generic-step-18"
+          ],
+          "evidenceArtifactIds": [
+            "shopper-pair-02-generic-screenshot-png",
+            "shopper-pair-02-generic-trace-zip",
+            "shopper-pair-02-generic-browser-observations-json"
+          ]
+        },
+        "verification": {
+          "verifierId": "independent-catalog-verifier-v1",
+          "independentOfShopperAgent": true,
+          "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+          "hardConstraints": [
+            {
+              "needId": "item-price",
+              "status": "met",
+              "observed": "36",
+              "evidenceArtifactIds": [
+                "shopper-pair-02-generic-screenshot-png",
+                "shopper-pair-02-generic-trace-zip",
+                "shopper-pair-02-generic-browser-observations-json"
+              ]
+            }
+          ],
+          "preferences": [
+            {
+              "needId": "basic-function",
+              "status": "met",
+              "observed": "[\"drinking-water bottle\"]",
+              "evidenceArtifactIds": [
+                "shopper-pair-02-generic-screenshot-png",
+                "shopper-pair-02-generic-trace-zip",
+                "shopper-pair-02-generic-browser-observations-json"
+              ]
+            }
+          ]
+        },
+        "model": {
+          "status": "not-enabled",
+          "readiness": []
+        },
+        "fallback": {
+          "used": false,
+          "kind": "none",
+          "reason": null
+        }
+      },
+      "outcome": "timeout",
+      "artifacts": [
+        {
+          "artifactId": "shopper-pair-02-generic-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-generic-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-generic-browser-observations-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": false,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": false
+      }
+    },
+    {
+      "caseId": "shopper-pair-02",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-02-local-model",
+      "path": "shopper-pair-02/local-model/session.json",
+      "status": "recorded",
+      "formalStatus": "unattempted",
+      "errors": [
+        "Shopper budget exceeded: 19/24 actions; 120001.412584/120000 ms"
+      ],
+      "sidecarSha256": "d697f076dd1f70dddbe02ebb0ada36e69d22883847c31c8ab46e01b77c64af84",
+      "session": {
+        "contractVersion": "shopper-session.v1",
+        "caseId": "shopper-pair-02",
+        "arm": "local-model",
+        "run": {
+          "id": "shopper-pair-02-local-model",
+          "experimentId": "actual-store-isolated-shopper-v1",
+          "personaId": "shopper-pair-02",
+          "personaSplit": "development",
+          "seed": 2026101802
+        },
+        "browser": {
+          "name": "Chrome",
+          "headed": true,
+          "actualNavigation": true,
+          "version": "155.0.8059.82",
+          "automation": "playwright-chrome"
+        },
+        "isolation": {
+          "kind": "fresh-storage-context",
+          "tabId": "e6bae7bf-62dd-4474-93b4-4479e0cd6192",
+          "contextId": "cc4ef86b-546d-412e-ae68-d302f785180c",
+          "sharedStorage": false,
+          "storageCleared": true,
+          "initialCartEmpty": true,
+          "evidenceArtifactIds": [
+            "shopper-pair-02-local-model-screenshot-png",
+            "shopper-pair-02-local-model-trace-zip",
+            "shopper-pair-02-local-model-browser-observations-json"
+          ],
+          "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+        },
+        "entryUrl": "http://127.0.0.1:4312/?model=local",
+        "startedAt": "2026-10-18T04:14:52.072Z",
+        "elapsedMs": 120001.412584,
+        "timingPrecision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "protocol": {
+          "passed": false,
+          "deviations": [
+            "Wall-clock budget exceeded"
+          ]
+        },
+        "status": "timeout",
+        "error": "Shopper exhausted the wall-clock budget",
+        "realPurchase": false,
+        "fakeOrderConfirmed": false,
+        "steps": [
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-0",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 0,
+              "at": "2026-10-18T04:14:53.192Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 1120.1445839999942,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/?model=local"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-1",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 1,
+              "at": "2026-10-18T04:14:59.231Z",
+              "kind": "action",
+              "message": "a bottle for drinking water under $40"
+            },
+            "elapsedMs": 7158.8607090000005,
+            "action": {
+              "type": "search",
+              "query": "a bottle for drinking water under $40"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-2",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 2,
+              "at": "2026-10-18T04:15:06.337Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 14265.59941699999,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-3",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 3,
+              "at": "2026-10-18T04:15:12.647Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 20574.680124999984,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-4",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 4,
+              "at": "2026-10-18T04:15:19.346Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 27273.574458999996,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-5",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 5,
+              "at": "2026-10-18T04:15:25.796Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 33724.272874999995,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-6",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 6,
+              "at": "2026-10-18T04:15:32.613Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 40540.933334,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-7",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 7,
+              "at": "2026-10-18T04:15:38.729Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 46657.18133399999,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-8",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 8,
+              "at": "2026-10-18T04:15:44.883Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 52810.45545899999,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-9",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 9,
+              "at": "2026-10-18T04:15:51.548Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 59475.530834000005,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-10",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 10,
+              "at": "2026-10-18T04:15:57.845Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 65772.775292,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-11",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 11,
+              "at": "2026-10-18T04:16:04.394Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 72321.5435,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-12",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 12,
+              "at": "2026-10-18T04:16:10.982Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 78909.977334,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-13",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 13,
+              "at": "2026-10-18T04:16:18.797Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 86724.377209,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-14",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 14,
+              "at": "2026-10-18T04:16:24.447Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 92374.39466699999,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-15",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 15,
+              "at": "2026-10-18T04:16:30.480Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 98407.27549999999,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-16",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 16,
+              "at": "2026-10-18T04:16:36.674Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 104601.636834,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-17",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 17,
+              "at": "2026-10-18T04:16:43.413Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 111340.08433399998,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          },
+          {
+            "event": {
+              "id": "shopper-pair-02-local-model-step-18",
+              "runId": "shopper-pair-02-local-model",
+              "sequence": 18,
+              "at": "2026-10-18T04:16:49.528Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 117455.521667,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            }
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact": {
+              "id": "shopper-pair-02-local-model-screenshot-png",
+              "runId": "shopper-pair-02-local-model",
+              "kind": "screenshot",
+              "path": "screenshot.png",
+              "mimeType": "image/png",
+              "createdAt": "2026-10-18T04:16:52.967Z"
+            },
+            "status": "captured",
+            "sha256": "57bc47dcbb1a7e58347577cffd745695cee8c8519b7bec75338ef682987a1004",
+            "bytes": 1247274,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "shopper-pair-02-local-model-trace-zip",
+              "runId": "shopper-pair-02-local-model",
+              "kind": "trace",
+              "path": "trace.zip",
+              "mimeType": "application/zip",
+              "createdAt": "2026-10-18T04:16:52.968Z"
+            },
+            "status": "captured",
+            "sha256": "77ffb5f7ae34597ff565eb2e7548e4c03a3b10befb278ebaf394e4c8c3293cdc",
+            "bytes": 26917099,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "shopper-pair-02-local-model-browser-observations-json",
+              "runId": "shopper-pair-02-local-model",
+              "kind": "result",
+              "path": "browser-observations.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T04:16:52.968Z"
+            },
+            "status": "captured",
+            "sha256": "71ba7c7544beb9cf8b944e233f76aead2a4a89f7884c8e33ec85c412c95046ac",
+            "bytes": 292539,
+            "error": null
+          }
+        ],
+        "choice": {
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "catalogPrice": 36,
+          "quantity": 1,
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "observationSource": "independent-dom",
+          "sourceStepIds": [
+            "shopper-pair-02-local-model-step-3",
+            "shopper-pair-02-local-model-step-4",
+            "shopper-pair-02-local-model-step-5",
+            "shopper-pair-02-local-model-step-6",
+            "shopper-pair-02-local-model-step-7",
+            "shopper-pair-02-local-model-step-8",
+            "shopper-pair-02-local-model-step-9",
+            "shopper-pair-02-local-model-step-10",
+            "shopper-pair-02-local-model-step-11",
+            "shopper-pair-02-local-model-step-12",
+            "shopper-pair-02-local-model-step-13",
+            "shopper-pair-02-local-model-step-14",
+            "shopper-pair-02-local-model-step-15",
+            "shopper-pair-02-local-model-step-16",
+            "shopper-pair-02-local-model-step-17",
+            "shopper-pair-02-local-model-step-18"
+          ],
+          "evidenceArtifactIds": [
+            "shopper-pair-02-local-model-screenshot-png",
+            "shopper-pair-02-local-model-trace-zip",
+            "shopper-pair-02-local-model-browser-observations-json"
+          ]
+        },
+        "verification": {
+          "verifierId": "independent-catalog-verifier-v1",
+          "independentOfShopperAgent": true,
+          "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+          "hardConstraints": [
+            {
+              "needId": "item-price",
+              "status": "met",
+              "observed": "36",
+              "evidenceArtifactIds": [
+                "shopper-pair-02-local-model-screenshot-png",
+                "shopper-pair-02-local-model-trace-zip",
+                "shopper-pair-02-local-model-browser-observations-json"
+              ]
+            }
+          ],
+          "preferences": [
+            {
+              "needId": "basic-function",
+              "status": "met",
+              "observed": "[\"drinking-water bottle\"]",
+              "evidenceArtifactIds": [
+                "shopper-pair-02-local-model-screenshot-png",
+                "shopper-pair-02-local-model-trace-zip",
+                "shopper-pair-02-local-model-browser-observations-json"
+              ]
+            }
+          ]
+        },
+        "model": {
+          "status": "complete",
+          "readiness": [
+            {
+              "name": "fieldwork.local-model.rank.after-paint-opportunity",
+              "stage": "rank",
+              "requestId": "375c9f50-231f-4225-91e0-f2d0207dcf79",
+              "startTimeMs": 6629.600000023842,
+              "durationMs": 286.39999997615814,
+              "capturedAtElapsedMs": 14462.999458999984,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "source": "data-local-model-readiness",
+              "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+              "scope": "after-paint-opportunity",
+              "physicalPaintMeasured": false,
+              "imageTransferMeasured": false
+            },
+            {
+              "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+              "stage": "firstThree",
+              "requestId": "375c9f50-231f-4225-91e0-f2d0207dcf79",
+              "startTimeMs": 6629.600000023842,
+              "durationMs": 5502.899999976158,
+              "capturedAtElapsedMs": 14463.002833999984,
+              "acceptedFields": 10,
+              "withheldFields": 0,
+              "requiredFields": 10,
+              "source": "data-local-model-readiness",
+              "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+              "scope": "after-paint-opportunity",
+              "physicalPaintMeasured": false,
+              "imageTransferMeasured": false
+            },
+            {
+              "name": "fieldwork.local-model.complete.after-paint-opportunity",
+              "stage": "complete",
+              "requestId": "375c9f50-231f-4225-91e0-f2d0207dcf79",
+              "startTimeMs": 6629.600000023842,
+              "durationMs": 6452.799999952316,
+              "capturedAtElapsedMs": 14463.003208999988,
+              "acceptedFields": 19,
+              "withheldFields": 1,
+              "requiredFields": 20,
+              "source": "data-local-model-readiness",
+              "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+              "scope": "after-paint-opportunity",
+              "physicalPaintMeasured": false,
+              "imageTransferMeasured": false
+            }
+          ]
+        },
+        "fallback": {
+          "used": true,
+          "kind": "last-safe-model",
+          "reason": "Local model is ordering products; last available result shown…"
+        }
+      },
+      "outcome": "timeout",
+      "artifacts": [
+        {
+          "artifactId": "shopper-pair-02-local-model-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-local-model-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": false,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": false
+      }
+    },
+    {
+      "caseId": "shopper-pair-03",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-03-local-model",
+      "path": "shopper-pair-03/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-03",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-03-generic",
+      "path": "shopper-pair-03/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-04-generic",
+      "path": "shopper-pair-04/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-04-local-model",
+      "path": "shopper-pair-04/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-05",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-05-local-model",
+      "path": "shopper-pair-05/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-05",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-05-generic",
+      "path": "shopper-pair-05/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-06",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-06-generic",
+      "path": "shopper-pair-06/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-06",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-06-local-model",
+      "path": "shopper-pair-06/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-07",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-07-local-model",
+      "path": "shopper-pair-07/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-07",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-07-generic",
+      "path": "shopper-pair-07/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-08-generic",
+      "path": "shopper-pair-08/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-08-local-model",
+      "path": "shopper-pair-08/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-09",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-09-local-model",
+      "path": "shopper-pair-09/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-09",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-09-generic",
+      "path": "shopper-pair-09/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-10",
+      "arm": "generic",
+      "expectedRunId": "shopper-pair-10-generic",
+      "path": "shopper-pair-10/generic/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    },
+    {
+      "caseId": "shopper-pair-10",
+      "arm": "local-model",
+      "expectedRunId": "shopper-pair-10-local-model",
+      "path": "shopper-pair-10/local-model/session.json",
+      "status": "unattempted",
+      "formalStatus": "unattempted",
+      "errors": []
+    }
+  ],
+  "browserDispatched": false,
+  "modelCalled": false,
+  "humanConversionClaim": false,
+  "unseenGeneralizationClaim": false,
+  "physicalPaintClaim": false,
+  "limitations": [
+    "Synthetic development smoke with fixed20 denominator; sidecar validation cannot reconstruct unrecorded actions.",
+    "Contract/catalog checks and observed expected outcome are separate from verified evidence. Missing trace is retained explicitly.",
+    "Evidence file hashes establish saved bytes; they do not establish that an unverified browser claim happened."
+  ],
+  "catalogBindingSha256": "95a1f8017ca2c4227d3a03e7ed84184d792320291c1eb9d31bc0d6f809e7e118",
+  "catalogSnapshotSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+  "evaluatorGoldSha256": "942354dcd845b9211ad4dbcfbc15a99ee9b80c7a3b68c1dccc637199bd9cdee6",
+  "arms": {
+    "generic": {
+      "fixedDenominator": 10,
+      "recorded": 1,
+      "unattempted": 9,
+      "formalRecorded": 0,
+      "formalUnattempted": 10,
+      "exploratoryRecorded": 1,
+      "budgetViolations": 1,
+      "invalidSidecars": 0,
+      "completed": 0,
+      "reportedCompleted": 0,
+      "verifiedDomCompleted": 0,
+      "technicalFailures": 1,
+      "observedExpectedOutcome": 0,
+      "evidenceVerifiedExpectedOutcome": 0,
+      "evidenceVerifiedExpectedOutcomeRateFixedDenominator": 0,
+      "attemptsElapsedMs": [
+        120001.17925
+      ],
+      "attemptsActionCounts": [
+        19
+      ],
+      "actionCountSummary": {
+        "total": 19,
+        "minimum": 19,
+        "maximum": 19,
+        "mean": 19,
+        "scope": "Recorded normalized shopper steps, including navigation; unrecorded browser actions are not inferred"
+      },
+      "attemptsPreferenceFit": [
+        {
+          "caseId": "shopper-pair-02",
+          "runId": "shopper-pair-02-generic",
+          "met": 1,
+          "known": 1,
+          "total": 1
+        }
+      ],
+      "attemptsTimingPrecision": [
+        {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        }
+      ],
+      "readiness": {
+        "rank": {
+          "observedDurationsMs": [],
+          "verifiedArtifactDurationsMs": [],
+          "scope": "browser after-paint opportunity; excludes physical paint and image transfer"
+        },
+        "firstThree": {
+          "observedDurationsMs": [],
+          "verifiedArtifactDurationsMs": [],
+          "scope": "browser after-paint opportunity; excludes physical paint and image transfer"
+        },
+        "complete": {
+          "observedDurationsMs": [],
+          "verifiedArtifactDurationsMs": [],
+          "scope": "browser after-paint opportunity; excludes physical paint and image transfer"
+        }
+      },
+      "fallbackUsed": 0
+    },
+    "local-model": {
+      "fixedDenominator": 10,
+      "recorded": 1,
+      "unattempted": 9,
+      "formalRecorded": 0,
+      "formalUnattempted": 10,
+      "exploratoryRecorded": 1,
+      "budgetViolations": 1,
+      "invalidSidecars": 0,
+      "completed": 0,
+      "reportedCompleted": 0,
+      "verifiedDomCompleted": 0,
+      "technicalFailures": 1,
+      "observedExpectedOutcome": 0,
+      "evidenceVerifiedExpectedOutcome": 0,
+      "evidenceVerifiedExpectedOutcomeRateFixedDenominator": 0,
+      "attemptsElapsedMs": [
+        120001.412584
+      ],
+      "attemptsActionCounts": [
+        19
+      ],
+      "actionCountSummary": {
+        "total": 19,
+        "minimum": 19,
+        "maximum": 19,
+        "mean": 19,
+        "scope": "Recorded normalized shopper steps, including navigation; unrecorded browser actions are not inferred"
+      },
+      "attemptsPreferenceFit": [
+        {
+          "caseId": "shopper-pair-02",
+          "runId": "shopper-pair-02-local-model",
+          "met": 1,
+          "known": 1,
+          "total": 1
+        }
+      ],
+      "attemptsTimingPrecision": [
+        {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        }
+      ],
+      "readiness": {
+        "rank": {
+          "observedDurationsMs": [
+            286.39999997615814
+          ],
+          "verifiedArtifactDurationsMs": [
+            286.39999997615814
+          ],
+          "scope": "browser after-paint opportunity; excludes physical paint and image transfer"
+        },
+        "firstThree": {
+          "observedDurationsMs": [
+            5502.899999976158
+          ],
+          "verifiedArtifactDurationsMs": [
+            5502.899999976158
+          ],
+          "scope": "browser after-paint opportunity; excludes physical paint and image transfer"
+        },
+        "complete": {
+          "observedDurationsMs": [
+            6452.799999952316
+          ],
+          "verifiedArtifactDurationsMs": [
+            6452.799999952316
+          ],
+          "scope": "browser after-paint opportunity; excludes physical paint and image transfer"
+        }
+      },
+      "fallbackUsed": 1
+    }
+  }
+}

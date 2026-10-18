@@ -1,0 +1,154 @@
+{
+  "version": "isolated-chrome-shopper-execution.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "seed": 20261018,
+  "baseUrl": "http://127.0.0.1:4312/",
+  "randomization": "seeded pair permutation; frozen balanced within-pair arm orders retained",
+  "schedule": [
+    {
+      "caseId": "shopper-pair-03",
+      "arm": "local-model",
+      "runId": "shopper-pair-03-local-model"
+    },
+    {
+      "caseId": "shopper-pair-03",
+      "arm": "generic",
+      "runId": "shopper-pair-03-generic"
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "arm": "generic",
+      "runId": "shopper-pair-08-generic"
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "arm": "local-model",
+      "runId": "shopper-pair-08-local-model"
+    },
+    {
+      "caseId": "shopper-pair-01",
+      "arm": "local-model",
+      "runId": "shopper-pair-01-local-model"
+    },
+    {
+      "caseId": "shopper-pair-01",
+      "arm": "generic",
+      "runId": "shopper-pair-01-generic"
+    },
+    {
+      "caseId": "shopper-pair-06",
+      "arm": "generic",
+      "runId": "shopper-pair-06-generic"
+    },
+    {
+      "caseId": "shopper-pair-06",
+      "arm": "local-model",
+      "runId": "shopper-pair-06-local-model"
+    },
+    {
+      "caseId": "shopper-pair-10",
+      "arm": "generic",
+      "runId": "shopper-pair-10-generic"
+    },
+    {
+      "caseId": "shopper-pair-10",
+      "arm": "local-model",
+      "runId": "shopper-pair-10-local-model"
+    },
+    {
+      "caseId": "shopper-pair-02",
+      "arm": "generic",
+      "runId": "shopper-pair-02-generic"
+    },
+    {
+      "caseId": "shopper-pair-02",
+      "arm": "local-model",
+      "runId": "shopper-pair-02-local-model"
+    },
+    {
+      "caseId": "shopper-pair-07",
+      "arm": "local-model",
+      "runId": "shopper-pair-07-local-model"
+    },
+    {
+      "caseId": "shopper-pair-07",
+      "arm": "generic",
+      "runId": "shopper-pair-07-generic"
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "arm": "generic",
+      "runId": "shopper-pair-04-generic"
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "arm": "local-model",
+      "runId": "shopper-pair-04-local-model"
+    },
+    {
+      "caseId": "shopper-pair-09",
+      "arm": "local-model",
+      "runId": "shopper-pair-09-local-model"
+    },
+    {
+      "caseId": "shopper-pair-09",
+      "arm": "generic",
+      "runId": "shopper-pair-09-generic"
+    },
+    {
+      "caseId": "shopper-pair-05",
+      "arm": "local-model",
+      "runId": "shopper-pair-05-local-model"
+    },
+    {
+      "caseId": "shopper-pair-05",
+      "arm": "generic",
+      "runId": "shopper-pair-05-generic"
+    }
+  ],
+  "settings": {
+    "viewport": {
+      "width": 1280,
+      "height": 960
+    },
+    "chrome": "installed headed Google Chrome",
+    "quantity": 1,
+    "independentProcessPerSession": true,
+    "independentStorageContextPerSession": true,
+    "concurrency": 1
+  },
+  "budget": {
+    "maxActions": 24,
+    "maxWallSeconds": 120
+  },
+  "packetSources": {
+    "pair-plan.json": "48f25789e09c7121c5cd9c8e7b1fe8ccf6ee740cf77834f713fcfed9d536910b",
+    "public-observations.json": "458a2c9aa20e7441befcddc7f257d661bbdc02ea7eac5fd3d8ba6cbda9d9d38f",
+    "shopper-instructions.json": "27fc8abd5409c860f5bd3e214d5df55f6b7d111bdc9bfa8a31d7cb417c595b4e",
+    "manifest.json": "6c4ad6f71efc0244562e0d806c42ee5145e0866e9d6ac2b945a25991e58a830a"
+  },
+  "implementationSources": {
+    "shopper-runner.ts": "93cfb0d0d030cb9138455f976dec5ccf4fb44a4dc928107c8f9d8922032c98bd",
+    "shopper-agent.ts": "99439b01caa788ed26d52499afcc24a24200ac5fe59f3ac9af541cdb70ec8d38",
+    "shopper-codex-agent.ts": "dedf6b5bfc8a4ec833e4f9e357e589cc0d3d6439ade289981b5dfcb4adbcd258",
+    "shopper-chrome.ts": "955b078af6868942f30c8c98b6119f7b2b50295b161dbe55218de14313aabe96",
+    "shopper-contract.ts": "ac43e78a4b4f106262a574359f065576473a59e509b7235ef81af40c16e8709e",
+    "shopper-eval-cli.ts": "5f067f986e59fe7cd67ecb34a941a721bcfe0a4dd1ae78ef2a053cebad148ca2"
+  },
+  "limit": 20,
+  "agentConfigured": false,
+  "shopper": {
+    "adapter": "official-codex-cli",
+    "model": "gpt-6.1-sol",
+    "effort": "low",
+    "binary": null,
+    "modelAvailability": null
+  },
+  "browserDispatched": false,
+  "limitations": [
+    "Synthetic development scenarios; no human conversion lift",
+    "Coordinate native timing exclusion windows before run",
+    "Missing readiness observations are not latency samples"
+  ]
+}

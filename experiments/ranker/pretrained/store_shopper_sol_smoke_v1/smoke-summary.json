@@ -1,0 +1,136 @@
+{
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "agent": "official Codex CLI gpt-6.1-sol; low reasoning; existing CLI-managed ChatGPT login",
+  "status": "first-paired-agent-smoke-failed",
+  "casesAttempted": 1,
+  "sessionsAttempted": 2,
+  "comparisonClaim": false,
+  "failure": "Both actual agents selected a visible bottle then repeated Add to cart until wall timeout. No checkout completion.",
+  "followup": "Clarify already-executed action history and expose observed cart count equally to both agents; preserve this attempt.",
+  "rows": [
+    {
+      "arm": "generic",
+      "outcome": "timeout",
+      "elapsedMs": 120001.17925,
+      "actions": 19,
+      "choice": {
+        "originalName": "Everyday steel bottle",
+        "selectedColor": "Graphite",
+        "catalogPrice": 36,
+        "quantity": 1,
+        "productId": "bottle",
+        "variantId": "bottle-graphite",
+        "observationSource": "independent-dom",
+        "sourceStepIds": [
+          "shopper-pair-02-generic-step-3",
+          "shopper-pair-02-generic-step-4",
+          "shopper-pair-02-generic-step-5",
+          "shopper-pair-02-generic-step-6",
+          "shopper-pair-02-generic-step-7",
+          "shopper-pair-02-generic-step-8",
+          "shopper-pair-02-generic-step-9",
+          "shopper-pair-02-generic-step-10",
+          "shopper-pair-02-generic-step-11",
+          "shopper-pair-02-generic-step-12",
+          "shopper-pair-02-generic-step-13",
+          "shopper-pair-02-generic-step-14",
+          "shopper-pair-02-generic-step-15",
+          "shopper-pair-02-generic-step-16",
+          "shopper-pair-02-generic-step-17",
+          "shopper-pair-02-generic-step-18"
+        ],
+        "evidenceArtifactIds": [
+          "shopper-pair-02-generic-screenshot-png",
+          "shopper-pair-02-generic-trace-zip",
+          "shopper-pair-02-generic-browser-observations-json"
+        ]
+      },
+      "artifactChecks": [
+        {
+          "artifactId": "shopper-pair-02-generic-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-generic-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-generic-browser-observations-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "protocol": {
+        "passed": false,
+        "deviations": [
+          "Wall-clock budget exceeded"
+        ]
+      }
+    },
+    {
+      "arm": "local-model",
+      "outcome": "timeout",
+      "elapsedMs": 120001.412584,
+      "actions": 19,
+      "choice": {
+        "originalName": "Everyday steel bottle",
+        "selectedColor": "Graphite",
+        "catalogPrice": 36,
+        "quantity": 1,
+        "productId": "bottle",
+        "variantId": "bottle-graphite",
+        "observationSource": "independent-dom",
+        "sourceStepIds": [
+          "shopper-pair-02-local-model-step-3",
+          "shopper-pair-02-local-model-step-4",
+          "shopper-pair-02-local-model-step-5",
+          "shopper-pair-02-local-model-step-6",
+          "shopper-pair-02-local-model-step-7",
+          "shopper-pair-02-local-model-step-8",
+          "shopper-pair-02-local-model-step-9",
+          "shopper-pair-02-local-model-step-10",
+          "shopper-pair-02-local-model-step-11",
+          "shopper-pair-02-local-model-step-12",
+          "shopper-pair-02-local-model-step-13",
+          "shopper-pair-02-local-model-step-14",
+          "shopper-pair-02-local-model-step-15",
+          "shopper-pair-02-local-model-step-16",
+          "shopper-pair-02-local-model-step-17",
+          "shopper-pair-02-local-model-step-18"
+        ],
+        "evidenceArtifactIds": [
+          "shopper-pair-02-local-model-screenshot-png",
+          "shopper-pair-02-local-model-trace-zip",
+          "shopper-pair-02-local-model-browser-observations-json"
+        ]
+      },
+      "artifactChecks": [
+        {
+          "artifactId": "shopper-pair-02-local-model-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-local-model-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "protocol": {
+        "passed": false,
+        "deviations": [
+          "Wall-clock budget exceeded"
+        ]
+      }
+    }
+  ],
+  "artifactStorage": "Final screenshots/raw logs/session receipts committed; large trace.zip archives and per-action screenshots retained locally and hashed in receipts."
+}
