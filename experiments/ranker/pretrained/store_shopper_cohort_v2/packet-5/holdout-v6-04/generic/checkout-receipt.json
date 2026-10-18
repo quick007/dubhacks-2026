@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "72e9d35e-6d1f-4af9-8298-3b1510a9b351",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-rust-band",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "72e9d35e-6d1f-4af9-8298-3b1510a9b351",
+        "receiptId": "demo-2188a36595d27712d9a989468593bc90",
+        "createdAt": "2026-10-18T09:10:16.872634Z",
+        "items": [
+          {
+            "productId": "lunchbox",
+            "variantId": "lunchbox-rust-band",
+            "quantity": 1,
+            "unitPrice": 32,
+            "lineTotal": 32
+          }
+        ],
+        "subtotal": 32,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 32,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/72e9d35e-6d1f-4af9-8298-3b1510a9b351",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "72e9d35e-6d1f-4af9-8298-3b1510a9b351",
+        "receiptId": "demo-2188a36595d27712d9a989468593bc90",
+        "createdAt": "2026-10-18T09:10:16.872634Z",
+        "items": [
+          {
+            "productId": "lunchbox",
+            "variantId": "lunchbox-rust-band",
+            "quantity": 1,
+            "unitPrice": 32,
+            "lineTotal": 32
+          }
+        ],
+        "subtotal": 32,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 32,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "72e9d35e-6d1f-4af9-8298-3b1510a9b351",
+    "receiptId": "demo-2188a36595d27712d9a989468593bc90"
+  },
+  "errors": []
+}

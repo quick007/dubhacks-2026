@@ -1,0 +1,365 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v3-06",
+  "arm": "local-model",
+  "run": {
+    "id": "holdout-v3-06-local-model",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v3-06",
+    "personaSplit": "held-out",
+    "seed": 2026102106
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "dfe50233-2bbc-4fdf-aaa2-35b6b0e65942",
+    "contextId": "7973c0d9-0d83-403e-81c7-c00c80ba416c",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v3-06-local-model-screenshot-png",
+      "holdout-v3-06-local-model-trace-zip",
+      "holdout-v3-06-local-model-browser-observations-json",
+      "holdout-v3-06-local-model-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T09:08:19.407Z",
+  "elapsedMs": 42335.37837500009,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-0",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T09:08:20.374Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 966.5780830001459,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-1",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T09:08:27.003Z",
+        "kind": "action",
+        "message": "a portable table lamp for an entryway console, at most $65"
+      },
+      "elapsedMs": 7595.641375000123,
+      "action": {
+        "type": "search",
+        "query": "a portable table lamp for an entryway console, at most $65"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-2",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T09:08:31.816Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 12409.272499999963,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-3",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T09:08:36.874Z",
+        "kind": "action",
+        "message": "Portable table light color: Terracotta"
+      },
+      "elapsedMs": 17467.118166000117,
+      "action": {
+        "type": "inspect",
+        "target": "Portable table light color: Terracotta"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-4",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 4,
+        "at": "2026-10-18T09:08:41.965Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 22557.776708000107,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "lamp",
+        "variantId": "lamp-terracotta"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-5",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 5,
+        "at": "2026-10-18T09:08:47.333Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 27925.72770799999,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-6",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 6,
+        "at": "2026-10-18T09:08:53.057Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 33649.42154100002,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-7",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 7,
+        "at": "2026-10-18T09:08:57.627Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 38219.86529100011,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-06-local-model-step-8",
+        "runId": "holdout-v3-06-local-model",
+        "sequence": 8,
+        "at": "2026-10-18T09:09:01.743Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 42335.37491600006,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v3-06-local-model-screenshot-png",
+        "runId": "holdout-v3-06-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:09:02.240Z"
+      },
+      "status": "captured",
+      "sha256": "b0d3c421b1b9192665726fd63b12805810ec534467c13eba8c0f6ce9d6dd6d4f",
+      "bytes": 32497,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-06-local-model-trace-zip",
+        "runId": "holdout-v3-06-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:09:02.240Z"
+      },
+      "status": "captured",
+      "sha256": "a4287127467288661ba7d337a9db557ae8e032ec0229cfcd66a90f0d737a829d",
+      "bytes": 10157062,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-06-local-model-browser-observations-json",
+        "runId": "holdout-v3-06-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:09:02.240Z"
+      },
+      "status": "captured",
+      "sha256": "9db64f81439ecc4a46f37d7c8c04aae080382ad3b887fe7fda6e69beb5e5df3e",
+      "bytes": 123473,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-06-local-model-checkout-receipt-json",
+        "runId": "holdout-v3-06-local-model",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:09:02.247Z"
+      },
+      "status": "captured",
+      "sha256": "6c96bb3bb676dee4e2fcc0b0fdd36f9adfccd631d39f0a614e6955f196d8a362",
+      "bytes": 2112,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Portable table light",
+    "selectedColor": "Terracotta",
+    "catalogPrice": 64,
+    "quantity": 1,
+    "productId": "lamp",
+    "variantId": "lamp-terracotta",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v3-06-local-model-step-4",
+      "holdout-v3-06-local-model-step-7"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v3-06-local-model-screenshot-png",
+      "holdout-v3-06-local-model-trace-zip",
+      "holdout-v3-06-local-model-browser-observations-json",
+      "holdout-v3-06-local-model-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"table-light\"]",
+        "evidenceArtifactIds": [
+          "holdout-v3-06-local-model-screenshot-png",
+          "holdout-v3-06-local-model-trace-zip",
+          "holdout-v3-06-local-model-browser-observations-json",
+          "holdout-v3-06-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "64",
+        "evidenceArtifactIds": [
+          "holdout-v3-06-local-model-screenshot-png",
+          "holdout-v3-06-local-model-trace-zip",
+          "holdout-v3-06-local-model-browser-observations-json",
+          "holdout-v3-06-local-model-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Terracotta\"",
+        "evidenceArtifactIds": [
+          "holdout-v3-06-local-model-screenshot-png",
+          "holdout-v3-06-local-model-trace-zip",
+          "holdout-v3-06-local-model-browser-observations-json",
+          "holdout-v3-06-local-model-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "c3f6c399-a419-4178-a691-fdc2d6f88b65",
+        "startTimeMs": 7103,
+        "durationMs": 281.89999997615814,
+        "capturedAtElapsedMs": 7970.244249999989,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v3-06-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "c3f6c399-a419-4178-a691-fdc2d6f88b65",
+        "startTimeMs": 7103,
+        "durationMs": 281.89999997615814,
+        "capturedAtElapsedMs": 7970.244541000109,
+        "acceptedFields": 10,
+        "withheldFields": 0,
+        "requiredFields": 10,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v3-06-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "c3f6c399-a419-4178-a691-fdc2d6f88b65",
+        "startTimeMs": 7103,
+        "durationMs": 282.10000002384186,
+        "capturedAtElapsedMs": 7970.244582999963,
+        "acceptedFields": 20,
+        "withheldFields": 0,
+        "requiredFields": 20,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v3-06-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

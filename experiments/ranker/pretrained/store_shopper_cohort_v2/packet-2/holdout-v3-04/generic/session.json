@@ -1,0 +1,286 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v3-04",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v3-04-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v3-04",
+    "personaSplit": "held-out",
+    "seed": 2026102104
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "85d03e7e-1b9e-477d-b89b-8f014a00ca6f",
+    "contextId": "1c293d81-8e9e-4b3c-bb70-d3da98d2d56c",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v3-04-generic-screenshot-png",
+      "holdout-v3-04-generic-trace-zip",
+      "holdout-v3-04-generic-browser-observations-json",
+      "holdout-v3-04-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:00:11.099Z",
+  "elapsedMs": 30470.238291000016,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v3-04-generic-step-0",
+        "runId": "holdout-v3-04-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:00:12.088Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 989.1964579999913,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-04-generic-step-1",
+        "runId": "holdout-v3-04-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:00:17.602Z",
+        "kind": "action",
+        "message": "a reusable water bottle for a desk, at most $38"
+      },
+      "elapsedMs": 6503.144290999975,
+      "action": {
+        "type": "search",
+        "query": "a reusable water bottle for a desk, at most $38"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-04-generic-step-2",
+        "runId": "holdout-v3-04-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:00:22.592Z",
+        "kind": "action",
+        "message": "Everyday steel bottle color: Cream"
+      },
+      "elapsedMs": 11492.565375000006,
+      "action": {
+        "type": "inspect",
+        "target": "Everyday steel bottle color: Cream"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-04-generic-step-3",
+        "runId": "holdout-v3-04-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:00:27.278Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 16178.553083000006,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-cream"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-04-generic-step-4",
+        "runId": "holdout-v3-04-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:00:32.511Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 21411.17291600001,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-04-generic-step-5",
+        "runId": "holdout-v3-04-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:00:37.504Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 26404.664541000035,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-04-generic-step-6",
+        "runId": "holdout-v3-04-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:00:41.570Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 30470.235208000056,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v3-04-generic-screenshot-png",
+        "runId": "holdout-v3-04-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:00:41.976Z"
+      },
+      "status": "captured",
+      "sha256": "3cebcda2b4ac96be86ebff12aa30a676cfb28447767a3c8141fad838fe0aec5d",
+      "bytes": 32725,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-04-generic-trace-zip",
+        "runId": "holdout-v3-04-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:00:41.976Z"
+      },
+      "status": "captured",
+      "sha256": "f6f0f5db93f6bc7282999e5ed4433a458cf346f0f0c158cdc053f5803f818d85",
+      "bytes": 7049907,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-04-generic-browser-observations-json",
+        "runId": "holdout-v3-04-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:00:41.976Z"
+      },
+      "status": "captured",
+      "sha256": "19014e08e033c8e2af30de14c5467de4f3ac645538957cf16c8e76fd0fa9fa2f",
+      "bytes": 31598,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-04-generic-checkout-receipt-json",
+        "runId": "holdout-v3-04-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:00:41.978Z"
+      },
+      "status": "captured",
+      "sha256": "021dcff685731710a0ae4612bc703a03e84ccea41fe4fc245d72c4f62290afb6",
+      "bytes": 2109,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday steel bottle",
+    "selectedColor": "Cream",
+    "catalogPrice": 36,
+    "quantity": 1,
+    "productId": "bottle",
+    "variantId": "bottle-cream",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v3-04-generic-step-3",
+      "holdout-v3-04-generic-step-5"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v3-04-generic-screenshot-png",
+      "holdout-v3-04-generic-trace-zip",
+      "holdout-v3-04-generic-browser-observations-json",
+      "holdout-v3-04-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"drinking-water bottle\"]",
+        "evidenceArtifactIds": [
+          "holdout-v3-04-generic-screenshot-png",
+          "holdout-v3-04-generic-trace-zip",
+          "holdout-v3-04-generic-browser-observations-json",
+          "holdout-v3-04-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "36",
+        "evidenceArtifactIds": [
+          "holdout-v3-04-generic-screenshot-png",
+          "holdout-v3-04-generic-trace-zip",
+          "holdout-v3-04-generic-browser-observations-json",
+          "holdout-v3-04-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Cream\"",
+        "evidenceArtifactIds": [
+          "holdout-v3-04-generic-screenshot-png",
+          "holdout-v3-04-generic-trace-zip",
+          "holdout-v3-04-generic-browser-observations-json",
+          "holdout-v3-04-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

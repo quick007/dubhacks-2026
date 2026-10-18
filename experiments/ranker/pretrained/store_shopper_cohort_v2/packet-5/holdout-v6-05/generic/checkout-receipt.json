@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "ab10d815-2a4b-480a-82b6-7c6c2663da73",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "sunglasses",
+          "variantId": "sunglasses-black",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "ab10d815-2a4b-480a-82b6-7c6c2663da73",
+        "receiptId": "demo-91afeb7ef1ccb1e7304b859dfef455e7",
+        "createdAt": "2026-10-18T09:12:11.561407Z",
+        "items": [
+          {
+            "productId": "sunglasses",
+            "variantId": "sunglasses-black",
+            "quantity": 1,
+            "unitPrice": 48,
+            "lineTotal": 48
+          }
+        ],
+        "subtotal": 48,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 48,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/ab10d815-2a4b-480a-82b6-7c6c2663da73",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "ab10d815-2a4b-480a-82b6-7c6c2663da73",
+        "receiptId": "demo-91afeb7ef1ccb1e7304b859dfef455e7",
+        "createdAt": "2026-10-18T09:12:11.561407Z",
+        "items": [
+          {
+            "productId": "sunglasses",
+            "variantId": "sunglasses-black",
+            "quantity": 1,
+            "unitPrice": 48,
+            "lineTotal": 48
+          }
+        ],
+        "subtotal": 48,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 48,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "ab10d815-2a4b-480a-82b6-7c6c2663da73",
+    "receiptId": "demo-91afeb7ef1ccb1e7304b859dfef455e7"
+  },
+  "errors": []
+}

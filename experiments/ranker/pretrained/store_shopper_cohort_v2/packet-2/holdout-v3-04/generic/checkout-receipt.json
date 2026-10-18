@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "9d9771da-a21b-448c-9b64-9e8a14f3b915",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "bottle",
+          "variantId": "bottle-cream",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "9d9771da-a21b-448c-9b64-9e8a14f3b915",
+        "receiptId": "demo-a8b6ce78d797ca1bc11df5780ae965ec",
+        "createdAt": "2026-10-18T09:00:41.53853Z",
+        "items": [
+          {
+            "productId": "bottle",
+            "variantId": "bottle-cream",
+            "quantity": 1,
+            "unitPrice": 36,
+            "lineTotal": 36
+          }
+        ],
+        "subtotal": 36,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 36,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/9d9771da-a21b-448c-9b64-9e8a14f3b915",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "9d9771da-a21b-448c-9b64-9e8a14f3b915",
+        "receiptId": "demo-a8b6ce78d797ca1bc11df5780ae965ec",
+        "createdAt": "2026-10-18T09:00:41.53853Z",
+        "items": [
+          {
+            "productId": "bottle",
+            "variantId": "bottle-cream",
+            "quantity": 1,
+            "unitPrice": 36,
+            "lineTotal": 36
+          }
+        ],
+        "subtotal": 36,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 36,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "9d9771da-a21b-448c-9b64-9e8a14f3b915",
+    "receiptId": "demo-a8b6ce78d797ca1bc11df5780ae965ec"
+  },
+  "errors": []
+}

@@ -1,0 +1,301 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v6-02",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v6-02-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v6-02",
+    "personaSplit": "held-out",
+    "seed": 2026102402
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "d510e36b-ed59-42d9-a158-fbb009980f62",
+    "contextId": "d3392dbb-4fd5-45bd-b502-cf309bfe41a4",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v6-02-generic-screenshot-png",
+      "holdout-v6-02-generic-trace-zip",
+      "holdout-v6-02-generic-browser-observations-json",
+      "holdout-v6-02-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:07:06.496Z",
+  "elapsedMs": 39907.314500000095,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-0",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:07:07.471Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 974.8960420000367,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-1",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:07:12.899Z",
+        "kind": "action",
+        "message": "a cotton towel for my gym locker, at most $31"
+      },
+      "elapsedMs": 6403.592292000074,
+      "action": {
+        "type": "search",
+        "query": "a cotton towel for my gym locker, at most $31"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-2",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:07:17.216Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 10720.480458999984,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-3",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:07:25.235Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 18739.41662500007,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "towel",
+        "variantId": "towel-sage-stripe"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-4",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:07:31.854Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 25357.962749999948,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-5",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:07:36.575Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 30078.564959000098,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-6",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:07:42.101Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 35605.131500000134,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-02-generic-step-7",
+        "runId": "holdout-v6-02-generic",
+        "sequence": 7,
+        "at": "2026-10-18T09:07:46.403Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 39907.31029199995,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v6-02-generic-screenshot-png",
+        "runId": "holdout-v6-02-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:07:46.879Z"
+      },
+      "status": "captured",
+      "sha256": "985706dfb5fd343b7e4eaf101d4eaa0fe0ee32083b57af1231ee1143e1e3227d",
+      "bytes": 32927,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-02-generic-trace-zip",
+        "runId": "holdout-v6-02-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:07:46.879Z"
+      },
+      "status": "captured",
+      "sha256": "c467ab798af4a46e979f042a817bbd80a71338f51a002860616b8432696a6d2d",
+      "bytes": 8743569,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-02-generic-browser-observations-json",
+        "runId": "holdout-v6-02-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:07:46.879Z"
+      },
+      "status": "captured",
+      "sha256": "11d0f5ea19f54219005042fe0aea4c2f20c60bd60ef6162857849d5fb9b7aa08",
+      "bytes": 42699,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-02-generic-checkout-receipt-json",
+        "runId": "holdout-v6-02-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:07:46.883Z"
+      },
+      "status": "captured",
+      "sha256": "134314014afd98d779d2095cbae5c7635bf9366c8e6d1f23e03aeb2510689cce",
+      "bytes": 2119,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everywhere cotton towel",
+    "selectedColor": "Sage stripe",
+    "catalogPrice": 28,
+    "quantity": 1,
+    "productId": "towel",
+    "variantId": "towel-sage-stripe",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v6-02-generic-step-3",
+      "holdout-v6-02-generic-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v6-02-generic-screenshot-png",
+      "holdout-v6-02-generic-trace-zip",
+      "holdout-v6-02-generic-browser-observations-json",
+      "holdout-v6-02-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"drying-towel\"]",
+        "evidenceArtifactIds": [
+          "holdout-v6-02-generic-screenshot-png",
+          "holdout-v6-02-generic-trace-zip",
+          "holdout-v6-02-generic-browser-observations-json",
+          "holdout-v6-02-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "28",
+        "evidenceArtifactIds": [
+          "holdout-v6-02-generic-screenshot-png",
+          "holdout-v6-02-generic-trace-zip",
+          "holdout-v6-02-generic-browser-observations-json",
+          "holdout-v6-02-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Sage stripe\"",
+        "evidenceArtifactIds": [
+          "holdout-v6-02-generic-screenshot-png",
+          "holdout-v6-02-generic-trace-zip",
+          "holdout-v6-02-generic-browser-observations-json",
+          "holdout-v6-02-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

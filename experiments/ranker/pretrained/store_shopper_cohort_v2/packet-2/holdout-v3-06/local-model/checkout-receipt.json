@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "566c642e-5edd-4d62-9a9f-1e4655b9c631",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "lamp",
+          "variantId": "lamp-terracotta",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "566c642e-5edd-4d62-9a9f-1e4655b9c631",
+        "receiptId": "demo-f4b546d165b2fdea35454cfa8d0b567f",
+        "createdAt": "2026-10-18T09:09:01.70752Z",
+        "items": [
+          {
+            "productId": "lamp",
+            "variantId": "lamp-terracotta",
+            "quantity": 1,
+            "unitPrice": 64,
+            "lineTotal": 64
+          }
+        ],
+        "subtotal": 64,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 64,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/566c642e-5edd-4d62-9a9f-1e4655b9c631",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "566c642e-5edd-4d62-9a9f-1e4655b9c631",
+        "receiptId": "demo-f4b546d165b2fdea35454cfa8d0b567f",
+        "createdAt": "2026-10-18T09:09:01.70752Z",
+        "items": [
+          {
+            "productId": "lamp",
+            "variantId": "lamp-terracotta",
+            "quantity": 1,
+            "unitPrice": 64,
+            "lineTotal": 64
+          }
+        ],
+        "subtotal": 64,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 64,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "566c642e-5edd-4d62-9a9f-1e4655b9c631",
+    "receiptId": "demo-f4b546d165b2fdea35454cfa8d0b567f"
+  },
+  "errors": []
+}

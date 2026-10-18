@@ -1,0 +1,285 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v7-10",
+  "arm": "local-model",
+  "run": {
+    "id": "holdout-v7-10-local-model",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v7-10",
+    "personaSplit": "held-out",
+    "seed": 2026102510
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "b4750973-ee73-461c-bc98-14e22fce7a06",
+    "contextId": "11ab5baa-e99c-42de-bb30-9f3b23b43c14",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v7-10-local-model-screenshot-png",
+      "holdout-v7-10-local-model-trace-zip",
+      "holdout-v7-10-local-model-browser-observations-json",
+      "holdout-v7-10-local-model-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T09:10:34.381Z",
+  "elapsedMs": 21716.539790999843,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v7-10-local-model-step-0",
+        "runId": "holdout-v7-10-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T09:10:35.303Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 921.6019999999553,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-10-local-model-step-1",
+        "runId": "holdout-v7-10-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T09:10:40.084Z",
+        "kind": "action",
+        "message": "a cotton towel with an explicit organic-textile certification, at most $35"
+      },
+      "elapsedMs": 5702.481124999933,
+      "action": {
+        "type": "search",
+        "query": "a cotton towel with an explicit organic-textile certification, at most $35"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-10-local-model-step-2",
+        "runId": "holdout-v7-10-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T09:10:44.083Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 9701.40712499991,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-10-local-model-step-3",
+        "runId": "holdout-v7-10-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T09:10:50.151Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 15769.79237499996,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-10-local-model-step-4",
+        "runId": "holdout-v7-10-local-model",
+        "sequence": 4,
+        "at": "2026-10-18T09:10:56.098Z",
+        "kind": "action",
+        "message": "The $28 cotton towel has no explicit organic-textile certification visible. Cotton in its name does not verify certification, so I decline without ordering."
+      },
+      "elapsedMs": 21716.533582999837,
+      "action": {
+        "type": "abandon",
+        "target": "The $28 cotton towel has no explicit organic-textile certification visible. Cotton in its name does not verify certification, so I decline without ordering."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v7-10-local-model-screenshot-png",
+        "runId": "holdout-v7-10-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:10:56.606Z"
+      },
+      "status": "captured",
+      "sha256": "4d81381500118fe9f9e217ba2597a1768e2230923ba85bd6c6f07d64bedd2421",
+      "bytes": 977403,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-10-local-model-trace-zip",
+        "runId": "holdout-v7-10-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:10:56.606Z"
+      },
+      "status": "captured",
+      "sha256": "5b999d23a4dbc5288f6c77a8e4d7157dc8b6535ed8a77699afebb47e83b4788e",
+      "bytes": 7489622,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-10-local-model-browser-observations-json",
+        "runId": "holdout-v7-10-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:10:56.606Z"
+      },
+      "status": "captured",
+      "sha256": "fb2a6256a905ca4e73422e3abc72c57a92ef460631bcbb667e6a6c59f16e1745",
+      "bytes": 54263,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-10-local-model-checkout-receipt-json",
+        "runId": "holdout-v7-10-local-model",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:10:56.609Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v7-10-local-model-screenshot-png",
+          "holdout-v7-10-local-model-trace-zip",
+          "holdout-v7-10-local-model-browser-observations-json",
+          "holdout-v7-10-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v7-10-local-model-screenshot-png",
+          "holdout-v7-10-local-model-trace-zip",
+          "holdout-v7-10-local-model-browser-observations-json",
+          "holdout-v7-10-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "required-fact",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v7-10-local-model-screenshot-png",
+          "holdout-v7-10-local-model-trace-zip",
+          "holdout-v7-10-local-model-browser-observations-json",
+          "holdout-v7-10-local-model-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "a4a94851-271b-4ded-a10e-b764a5cbb67e",
+        "startTimeMs": 5279.800000071526,
+        "durationMs": 283.39999997615814,
+        "capturedAtElapsedMs": 6062.149374999804,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v7-10-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "a4a94851-271b-4ded-a10e-b764a5cbb67e",
+        "startTimeMs": 5279.800000071526,
+        "durationMs": 299.2999999523163,
+        "capturedAtElapsedMs": 10031.929249999812,
+        "acceptedFields": 10,
+        "withheldFields": 0,
+        "requiredFields": 10,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v7-10-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "a4a94851-271b-4ded-a10e-b764a5cbb67e",
+        "startTimeMs": 5279.800000071526,
+        "durationMs": 299.39999997615814,
+        "capturedAtElapsedMs": 10031.929290999891,
+        "acceptedFields": 20,
+        "withheldFields": 0,
+        "requiredFields": 20,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v7-10-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
