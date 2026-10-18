@@ -1,11 +1,23 @@
 import { VariantConfigSchema, type VariantConfig } from "@storefront/contracts";
+import { ADDITIONAL_PRODUCTS } from "./catalog-expansion";
 export type { VariantConfig } from "@storefront/contracts";
 
 export const DEFAULT_CONFIG: VariantConfig = {
-  headline: "Everyday goods for a little more outside.",
+  headline: "Good things. Wherever life takes you.",
   showShipping: false,
   recommendationOrder: "popular",
 };
+
+/** Keeps the demo-control URL in step with the same structured settings the app reads. */
+export function serializeVariantConfig(config: VariantConfig): string {
+  const params = new URLSearchParams();
+  if (config.headline !== DEFAULT_CONFIG.headline) params.set("headline", config.headline);
+  if (config.showShipping !== DEFAULT_CONFIG.showShipping)
+    params.set("showShipping", String(config.showShipping));
+  if (config.recommendationOrder !== DEFAULT_CONFIG.recommendationOrder)
+    params.set("recommendationOrder", config.recommendationOrder);
+  return params.toString();
+}
 
 /** Only these structured query settings affect the demo. No executable code or remote URLs. */
 export function parseVariantConfig(search: string): VariantConfig {
@@ -52,6 +64,15 @@ export const PRODUCTS = [
     color: "clay",
     kind: "notebook",
   },
+  {
+    id: "jacket",
+    name: "Everywhere rain jacket",
+    category: "Waterproof hooded shell",
+    price: 128,
+    color: "sage",
+    kind: "jacket",
+  },
+  ...ADDITIONAL_PRODUCTS,
 ] as const;
 export type Product = (typeof PRODUCTS)[number];
 

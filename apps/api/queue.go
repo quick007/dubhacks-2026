@@ -4,13 +4,22 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"path"
 	"path/filepath"
+	"slices"
 	"storefront/api/internal/contracts"
 	"storefront/api/internal/evaluator"
 	"storefront/api/internal/optimizer"
 	"storefront/api/internal/runner"
+	"storefront/api/internal/scenario"
 	"sync"
 	"time"
+)
+
+// Sessions run in parallel; real browsers are heavy, so fewer of them run at once.
+const (
+	workers      = 8
+	browserSlots = 2
 )
 
 type JobQueue struct {
@@ -18,6 +27,8 @@ type JobQueue struct {
 	capacity      int
 	delay         time.Duration
 	workspaceRoot string
+	scenario      *scenario.Scenario
+	browsers      chan struct{}
 	mu            sync.Mutex
 	count         int
 	stopped       bool
@@ -25,9 +36,20 @@ type JobQueue struct {
 	done          chan struct{}
 }
 
-func newQueue(store *Store, capacity int, delay time.Duration, root string) *JobQueue {
-	q := &JobQueue{store: store, capacity: capacity, delay: delay, workspaceRoot: root, jobs: make(chan string, capacity), done: make(chan struct{})}
-	go q.loop()
+func newQueue(store *Store, capacity int, delay time.Duration, root string, mockScenario *scenario.Scenario) *JobQueue {
+	q := &JobQueue{store: store, capacity: capacity, delay: delay, workspaceRoot: root, scenario: mockScenario, browsers: make(chan struct{}, browserSlots), jobs: make(chan string, capacity), done: make(chan struct{})}
+	var running sync.WaitGroup
+	for range workers {
+		running.Add(1)
+		go func() {
+			defer running.Done()
+			q.work()
+		}()
+	}
+	go func() {
+		running.Wait()
+		close(q.done)
+	}()
 	return q
 }
 
@@ -48,8 +70,7 @@ func (q *JobQueue) submit(run contracts.Run) error {
 	q.jobs <- run.ID
 	return nil
 }
-func (q *JobQueue) loop() {
-	defer close(q.done)
+func (q *JobQueue) work() {
 	for id := range q.jobs {
 		// Make the queued state observable to polling clients, including very fast mock jobs.
 		time.Sleep(15 * time.Millisecond)
@@ -64,8 +85,21 @@ func (q *JobQueue) execute(id string) {
 	if err != nil {
 		return
 	}
+	// Wait for a browser slot before marking the run as running.
+	if run.Adapter == "playwright" {
+		q.browsers <- struct{}{}
+		defer func() { <-q.browsers }()
+	}
 	emit := func(event runner.Event) error {
-		run.Events = append(run.Events, contracts.StepEvent{ID: newID(), RunID: run.ID, Sequence: len(run.Events), At: now(), Kind: event.Kind, Message: event.Message})
+		step := contracts.StepEvent{ID: newID(), RunID: run.ID, Sequence: len(run.Events), At: now(), Kind: event.Kind, Message: event.Message, Page: event.Page, Click: event.Click, Search: event.Search}
+		if event.ScreenshotFile != "" {
+			index := slices.IndexFunc(run.Artifacts, func(item contracts.Artifact) bool { return path.Base(item.Path) == event.ScreenshotFile })
+			if index < 0 {
+				return fmt.Errorf("step screenshot %s was not saved", event.ScreenshotFile)
+			}
+			step.ScreenshotArtifactID = run.Artifacts[index].ID
+		}
+		run.Events = append(run.Events, step)
 		return q.store.saveRun(run)
 	}
 	fail := func(err error) {
@@ -100,7 +134,7 @@ func (q *JobQueue) execute(id string) {
 		run.Artifacts = append(run.Artifacts, contracts.Artifact{ID: newID(), RunID: run.ID, Kind: item.Kind, Path: filepath.ToSlash(filepath.Join("artifacts", run.ID, item.FileName)), MimeType: item.MimeType, CreatedAt: now()})
 		return q.store.saveRun(run)
 	}
-	var adapter runner.Adapter = runner.Mock{StepDelay: q.delay}
+	var adapter runner.Adapter = runner.Mock{StepDelay: q.delay, Scenario: q.scenario}
 	if run.Adapter == "playwright" {
 		adapter = runner.Browser{WorkspaceRoot: q.workspaceRoot, NodeBinary: os.Getenv("NODE_BINARY")}
 	}
@@ -111,7 +145,7 @@ func (q *JobQueue) execute(id string) {
 		fail(err)
 		return
 	}
-	evaluation := (evaluator.Deterministic{}).Evaluate(run, result)
+	evaluation := (evaluator.Deterministic{Scenario: q.scenario}).Evaluate(run, result)
 	run.Evaluation = &evaluation
 	run.Status = "completed"
 	run.CompletedAt = now()

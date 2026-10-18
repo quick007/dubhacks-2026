@@ -1,0 +1,16 @@
+# Product gallery image prompts
+
+Generated with the built-in image generation tool. Each image contains three equal square panels (front, back, detail), displayed individually by the gallery using object positioning.
+
+## mug-views.png
+
+Use case: product-mockup. Asset type: product gallery triptych for a storefront. Create ONE wide horizontal image with exactly THREE equal square panels edge to edge, no gutters, no borders. Each panel is a separate premium photorealistic studio product photograph of THE EXACT SAME PRODUCT: a sage green enamel camping mug, cylindrical shape, cream rim, one rounded C handle, no lid. Left panel: front three-quarter view of the complete product. Middle panel: rear three-quarter view of the complete identical product. Right panel: close detail view showing material and construction of that same product. Background consistent matte pale sage studio backdrop in all panels, subtle contact shadows, soft natural side lighting, tactile real materials. Product fills about 70% of each panel; keep complete product within each first two square panels. Same color, proportions, details and identity across views. No typography, no logos, no watermark, no accessories, no people. Output aspect ratio 3:1.
+
+## pack-views.png
+
+Use case: product-mockup. Asset type: product gallery triptych for a storefront. Create ONE wide horizontal image with exactly THREE equal square panels edge to edge, no gutters, no borders. Each panel is a separate premium photorealistic studio product photograph of THE EXACT SAME PRODUCT: a sand tan canvas daypack, rounded top, one front zip pocket, small top carrying loop, matching tan shoulder straps, no patches. Left panel: front three-quarter view of the complete product. Middle panel: rear three-quarter view of the complete identical product. Right panel: close detail view showing material and construction of that same product. Background consistent matte warm sand studio backdrop in all panels, subtle contact shadows, soft natural side lighting, tactile real materials. Product fills about 70% of each panel; keep complete product within each first two square panels. Same color, proportions, details and identity across views. No typography, no logos, no watermark, no accessories, no people. Output aspect ratio 3:1.
+
+## notebook-views.png
+
+Use case: product-mockup. Asset type: product gallery triptych for a storefront. Create ONE wide horizontal image with exactly THREE equal square panels edge to edge, no gutters, no borders. Each panel is a separate premium photorealistic studio product photograph of THE EXACT SAME PRODUCT: a pocket terracotta cloth hardcover notebook, rounded corners, cream page edges, dark brown elastic closure, blank unmarked cover. Left panel: front three-quarter view of the complete product. Middle panel: rear three-quarter view of the complete identical product. Right panel: close detail view showing material and construction of that same product. Background consistent matte pale clay studio backdrop in all panels, subtle contact shadows, soft natural side lighting, tactile real materials. Product fills about 70% of each panel; keep complete product within each first two square panels. Same color, proportions, details and identity across views. No typography, no logos, no watermark, no accessories, no people. Output aspect ratio 3:1.
+
