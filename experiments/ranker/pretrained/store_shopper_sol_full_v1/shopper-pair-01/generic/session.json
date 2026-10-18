@@ -1,0 +1,231 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-01",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-01-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-01",
+    "personaSplit": "development",
+    "seed": 2026101801
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "a8da8e1c-16f3-4602-8533-2c68d87021f7",
+    "contextId": "5ae97c6c-cd3b-4fce-8724-02e4e1041f7e",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-01-generic-screenshot-png",
+      "shopper-pair-01-generic-trace-zip",
+      "shopper-pair-01-generic-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T04:47:24.994Z",
+  "elapsedMs": 33183.68333300005,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-01-generic-step-0",
+        "runId": "shopper-pair-01-generic",
+        "sequence": 0,
+        "at": "2026-10-18T04:47:25.924Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 929.9679159999941,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-01-generic-step-1",
+        "runId": "shopper-pair-01-generic",
+        "sequence": 1,
+        "at": "2026-10-18T04:47:31.876Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 6882.129582999973,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-01-generic-step-2",
+        "runId": "shopper-pair-01-generic",
+        "sequence": 2,
+        "at": "2026-10-18T04:47:38.570Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 13575.80891599995,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "notebook",
+        "variantId": "notebook-terracotta"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-01-generic-step-3",
+        "runId": "shopper-pair-01-generic",
+        "sequence": 3,
+        "at": "2026-10-18T04:47:45.445Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 20450.908041000017,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-01-generic-step-4",
+        "runId": "shopper-pair-01-generic",
+        "sequence": 4,
+        "at": "2026-10-18T04:47:52.606Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 27611.442249999964,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-01-generic-step-5",
+        "runId": "shopper-pair-01-generic",
+        "sequence": 5,
+        "at": "2026-10-18T04:47:58.178Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 33183.67933299998,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-01-generic-screenshot-png",
+        "runId": "shopper-pair-01-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:47:58.863Z"
+      },
+      "status": "captured",
+      "sha256": "409b436b87892462fbe36bc0b29fd4c03c27a8f12d7628d5765329e453989dae",
+      "bytes": 32847,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-01-generic-trace-zip",
+        "runId": "shopper-pair-01-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:47:58.863Z"
+      },
+      "status": "captured",
+      "sha256": "2e8745d13714685d7bc50de6f37af5e756e05a940d41533b2e4cded97de52ce4",
+      "bytes": 24681536,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-01-generic-browser-observations-json",
+        "runId": "shopper-pair-01-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:47:58.863Z"
+      },
+      "status": "captured",
+      "sha256": "59af4aa542b77ef09fbdefd4bf0d6233f3d9b4f1a763bf63003fc701619ec1ee",
+      "bytes": 27983,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Pocket field notes",
+    "selectedColor": "Terracotta",
+    "catalogPrice": 12,
+    "quantity": 1,
+    "productId": "notebook",
+    "variantId": "notebook-terracotta",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "shopper-pair-01-generic-step-2",
+      "shopper-pair-01-generic-step-4"
+    ],
+    "evidenceArtifactIds": [
+      "shopper-pair-01-generic-screenshot-png",
+      "shopper-pair-01-generic-trace-zip",
+      "shopper-pair-01-generic-browser-observations-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "basic-function",
+        "status": "met",
+        "observed": "[\"note-taking\"]",
+        "evidenceArtifactIds": [
+          "shopper-pair-01-generic-screenshot-png",
+          "shopper-pair-01-generic-trace-zip",
+          "shopper-pair-01-generic-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
