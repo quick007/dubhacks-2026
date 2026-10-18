@@ -10,7 +10,7 @@ export interface SlideDef {
   featured?: boolean;
 }
 
-const ignoredTargets = "input, textarea, select, [role=slider], [role=dialog]";
+const ignoredTargets = "input:not([type=range]), textarea, select, [role=dialog]";
 const SWIPE_PX = 60;
 
 /** One slide at a time. The URL hash names the slide, so links and reloads land on it. */
@@ -41,14 +41,21 @@ export function Deck({ slides, status }: { slides: SlideDef[]; status?: ReactNod
       if (event.altKey || event.ctrlKey || event.metaKey) return;
       const target = event.target instanceof Element ? event.target : null;
       if (target?.closest(ignoredTargets)) return;
+      const fromSlider = target?.closest("[role=slider], input[type=range]");
+      if (fromSlider) {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        // Reserve deck arrows even at the first/last slide, without moving the slider.
+        event.preventDefault();
+      }
       if (event.key === " " && target?.closest("button, a")) return;
       const next = stepFor(event.key, index, slides.length);
       if (next === undefined) return;
       event.preventDefault();
       go(next);
     }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    // Capture before slider controls consume arrow keys.
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
   });
 
   return (
@@ -91,7 +98,6 @@ export function Deck({ slides, status }: { slides: SlideDef[]; status?: ReactNod
       </main>
       <footer className="fixed inset-x-0 bottom-0 z-10 bg-fog/90 backdrop-blur print:hidden">
         <div className="flex items-center gap-4 px-4 py-3 text-sm sm:px-8">
-          <span className="font-bold">Synthetic study</span>
           {status}
           <span className="ml-auto text-muted">
             {index + 1} of {slides.length}

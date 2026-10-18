@@ -13,17 +13,18 @@ export function StruggleSlide({
 }) {
   const run = pair.baseline;
   return (
-    <SlideFrame
-      title={`${pair.persona.name} tries today's shop`}
-      actions={
-        run && (
-          <Button variant="outline" onClick={() => onEvidence(run)}>
-            See every step
-          </Button>
-        )
-      }
-    >
-      <Race persona={pair.persona} lanes={[{ tone: "graphite", run }]} />
+    <SlideFrame title={`${pair.persona.name} on the default page`} className="max-w-4xl">
+      <Race
+        persona={pair.persona}
+        lanes={[{ tone: "graphite", run }]}
+        actions={
+          run && (
+            <Button variant="ghost" onClick={() => onEvidence(run)}>
+              See every step
+            </Button>
+          )
+        }
+      />
     </SlideFrame>
   );
 }

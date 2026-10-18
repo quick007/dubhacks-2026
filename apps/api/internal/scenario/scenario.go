@@ -1,11 +1,13 @@
 // Package scenario holds the scripted mock shopping scenario: catalog facts plus one
 // recorded path per persona and variant. Real agent runs will replace the paths.
+// scripts/capture-fieldwork.mjs records the paths and screenshots on the real demo shop.
 package scenario
 
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"path"
 	"slices"
 	"storefront/api/internal/contracts"
 )
@@ -22,6 +24,8 @@ type Step struct {
 	Click    *contracts.Point  `json:"click,omitempty"`
 	Search   *contracts.Search `json:"search,omitempty"`
 	Products []string          `json:"products,omitempty"`
+	// Screenshot names a captured frame of the real shop; without one the mock draws a stand-in.
+	Screenshot string `json:"screenshot,omitempty"`
 }
 
 // Path is what one mock shopper did. Purchase names the product bought; Reason explains giving up.
@@ -47,17 +51,20 @@ func Load(data []byte) (*Scenario, error) {
 		return nil, fmt.Errorf("invalid scenario: %w", err)
 	}
 	for persona, variants := range s.Paths {
-		for variant, path := range variants {
-			if (path.Purchase == "") == (path.Reason == "") {
+		for variant, recorded := range variants {
+			if (recorded.Purchase == "") == (recorded.Reason == "") {
 				return nil, fmt.Errorf("scenario path %s/%s: set exactly one of purchase or reason", persona, variant)
 			}
 			ids := []string{}
-			if path.Purchase != "" {
-				ids = append(ids, path.Purchase)
+			if recorded.Purchase != "" {
+				ids = append(ids, recorded.Purchase)
 			}
-			for _, step := range path.Steps {
+			for _, step := range recorded.Steps {
 				if !slices.Contains(pageKinds, step.Page.Kind) {
 					return nil, fmt.Errorf("scenario path %s/%s: unknown page kind %q", persona, variant, step.Page.Kind)
+				}
+				if step.Screenshot != "" && (path.Base(step.Screenshot) != step.Screenshot || path.Ext(step.Screenshot) != ".jpg") {
+					return nil, fmt.Errorf("scenario path %s/%s: screenshot %q is not a .jpg file name", persona, variant, step.Screenshot)
 				}
 				ids = append(ids, step.Products...)
 			}

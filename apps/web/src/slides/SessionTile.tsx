@@ -5,14 +5,13 @@ import { useReducedMotion } from "../lib/useReducedMotion";
 import { cn } from "../lib/utils";
 
 const FLIP_MS = 650;
-const REPLAY_PAUSE_MS = 3000;
 const badges = {
   bought: { icon: Check, className: "bg-cobalt text-paper", label: "Bought it" },
   missed: { icon: X, className: "bg-signal text-paper", label: "Did not get it" },
   broke: { icon: TriangleAlert, className: "bg-muted text-paper", label: "Run broke" },
 };
 
-/** Replay recorded steps, pausing on the outcome between loops. */
+/** Replay recorded steps once, then hold the final outcome until the next run. */
 export function SessionTile({
   session,
   delay,
@@ -31,12 +30,8 @@ export function SessionTile({
   const shown = reduced || !settled ? list.length - 1 : Math.min(step, list.length - 1);
 
   useEffect(() => {
-    if (reduced || !settled || list.length < 2) return;
-    const last = step >= list.length - 1;
-    const timer = window.setTimeout(
-      () => setStep(last ? 0 : step + 1),
-      last ? REPLAY_PAUSE_MS : FLIP_MS + (step === 0 ? delay : 0),
-    );
+    if (reduced || !settled || step >= list.length - 1) return;
+    const timer = window.setTimeout(() => setStep(step + 1), FLIP_MS + (step === 0 ? delay : 0));
     return () => window.clearTimeout(timer);
   }, [reduced, settled, step, list.length, delay]);
 

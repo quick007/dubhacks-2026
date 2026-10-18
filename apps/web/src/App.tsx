@@ -14,23 +14,27 @@ import { Deck, type SlideDef } from "./slides/Deck";
 import { EvidenceDrawer } from "./slides/EvidenceDrawer";
 import { FixSlide } from "./slides/FixSlide";
 import { MeetSlide } from "./slides/MeetSlide";
+import { ModelSlide } from "./slides/ModelSlide";
 import { ResultsSlide } from "./slides/ResultsSlide";
 import { RetestSlide } from "./slides/RetestSlide";
 import { SessionsSlide } from "./slides/SessionsSlide";
 import { StruggleSlide } from "./slides/StruggleSlide";
 import { TitleSlide } from "./slides/TitleSlide";
+import { TwoShoppersSlide } from "./slides/TwoShoppersSlide";
 
 const message = (cause: unknown) =>
   cause instanceof Error ? cause.message : "Could not reach the local API.";
 
 const labels: Record<SlideId, string> = {
   title: "Title",
+  two: "Two shoppers",
   meet: "Meet the shopper",
-  struggle: "Today's shop",
-  fix: "A proposed fix",
-  retest: "With the fix",
+  struggle: "Default page",
+  fix: "Personalized page",
+  retest: "With the model",
   sessions: "All sessions",
   results: "Results",
+  model: "The model, measured",
 };
 const featuredSlides = new Set<SlideId>(["meet", "struggle", "fix", "retest"]);
 
@@ -128,6 +132,7 @@ export function App() {
         ]}
       />
     ),
+    two: () => <TwoShoppersSlide personas={catalog.personas} />,
     meet: () => <MeetSlide persona={feature.persona} />,
     struggle: () => <StruggleSlide pair={feature} onEvidence={openEvidence} />,
     fix: () => <FixSlide pair={feature} />,
@@ -145,10 +150,10 @@ export function App() {
     results: () => (
       <ResultsSlide result={story.result} pairs={story.pairs} onEvidence={openEvidence} />
     ),
+    model: () => <ModelSlide />,
   };
   const slides: SlideDef[] = visibleSlides({
     runs: hasRuns,
-    proposal: Boolean(feature.baseline?.proposedChanges[0]),
     result: story.result.total > 0 || story.result.technical.length > 0,
   }).map((id) => ({
     id,

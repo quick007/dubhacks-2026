@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"io/fs"
 	"os"
 	"path"
 	"path/filepath"
@@ -28,6 +29,7 @@ type JobQueue struct {
 	delay         time.Duration
 	workspaceRoot string
 	scenario      *scenario.Scenario
+	frames        fs.FS
 	browsers      chan struct{}
 	mu            sync.Mutex
 	count         int
@@ -36,8 +38,8 @@ type JobQueue struct {
 	done          chan struct{}
 }
 
-func newQueue(store *Store, capacity int, delay time.Duration, root string, mockScenario *scenario.Scenario) *JobQueue {
-	q := &JobQueue{store: store, capacity: capacity, delay: delay, workspaceRoot: root, scenario: mockScenario, browsers: make(chan struct{}, browserSlots), jobs: make(chan string, capacity), done: make(chan struct{})}
+func newQueue(store *Store, capacity int, delay time.Duration, root string, mockScenario *scenario.Scenario, frames fs.FS) *JobQueue {
+	q := &JobQueue{store: store, capacity: capacity, delay: delay, workspaceRoot: root, scenario: mockScenario, frames: frames, browsers: make(chan struct{}, browserSlots), jobs: make(chan string, capacity), done: make(chan struct{})}
 	var running sync.WaitGroup
 	for range workers {
 		running.Add(1)
@@ -134,7 +136,7 @@ func (q *JobQueue) execute(id string) {
 		run.Artifacts = append(run.Artifacts, contracts.Artifact{ID: newID(), RunID: run.ID, Kind: item.Kind, Path: filepath.ToSlash(filepath.Join("artifacts", run.ID, item.FileName)), MimeType: item.MimeType, CreatedAt: now()})
 		return q.store.saveRun(run)
 	}
-	var adapter runner.Adapter = runner.Mock{StepDelay: q.delay, Scenario: q.scenario}
+	var adapter runner.Adapter = runner.Mock{StepDelay: q.delay, Scenario: q.scenario, Frames: q.frames}
 	if run.Adapter == "playwright" {
 		adapter = runner.Browser{WorkspaceRoot: q.workspaceRoot, NodeBinary: os.Getenv("NODE_BINARY")}
 	}

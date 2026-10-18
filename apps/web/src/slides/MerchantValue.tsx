@@ -14,8 +14,8 @@ function tone(before: number, after: number, lowerIsBetter: boolean) {
 export function MerchantValue({ pairs }: { pairs: Pair[] }) {
   const { baseline, candidate } = useMemo(() => merchant(pairs), [pairs]);
   const rows = [
-    ["Suitable orders", baseline.orders, candidate.orders, count, false],
-    ["Suitable order value", baseline.value, candidate.value, money, false],
+    ["Purchases that fit", baseline.orders, candidate.orders, count, false],
+    ["Value of purchases that fit", baseline.value, candidate.value, money, false],
     ["Likely returns", baseline.wrongItems, candidate.wrongItems, count, true],
   ] as const;
   return (

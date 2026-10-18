@@ -1,0 +1,693 @@
+{
+  "source": {
+    "run": "experiments/ranker/pretrained/actual_store_function_results/v3",
+    "commit": "79990df7ef83c9f605375bf3d336bf5ba0a10268",
+    "checkpointSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e",
+    "backbone": "Qwen3.5-9B, 4-bit MLX, frozen",
+    "trainedParameters": 131104,
+    "trainingRequests": 32
+  },
+  "cases": 16,
+  "arms": {
+    "learned": {
+      "topOne": 12,
+      "topSix": 16
+    },
+    "prior": {
+      "topOne": 1,
+      "topSix": 6
+    },
+    "random": {
+      "topOne": 0,
+      "topSix": 6
+    },
+    "permutedQuery": {
+      "topOne": 2,
+      "topSix": 5
+    }
+  },
+  "pairs": {
+    "bothCorrect": 4,
+    "total": 8
+  },
+  "latencyMs": {
+    "median": 203.70204147184268,
+    "min": 191.2377499975264,
+    "max": 208.78620899748057
+  },
+  "modelLoadSeconds": 2.631276458967477,
+  "peakMemoryBytes": 4716428690,
+  "copy": {
+    "valid": 0,
+    "total": 6
+  },
+  "keywordSearch": {
+    "topOne": 15,
+    "topSix": 15
+  },
+  "patience": 6,
+  "products": {
+    "mug": {
+      "name": "Trail mug",
+      "price": 24,
+      "defaultRank": 1
+    },
+    "pack": {
+      "name": "Everyday daypack",
+      "price": 68,
+      "defaultRank": 2
+    },
+    "notebook": {
+      "name": "Pocket field notes",
+      "price": 12,
+      "defaultRank": 3
+    },
+    "jacket": {
+      "name": "Everywhere rain jacket",
+      "price": 128,
+      "defaultRank": 4
+    },
+    "bottle": {
+      "name": "Everyday steel bottle",
+      "price": 36,
+      "defaultRank": 5
+    },
+    "tote": {
+      "name": "Market canvas tote",
+      "price": 42,
+      "defaultRank": 6
+    },
+    "blanket": {
+      "name": "Woven everyday throw",
+      "price": 58,
+      "defaultRank": 7
+    },
+    "lamp": {
+      "name": "Portable table light",
+      "price": 64,
+      "defaultRank": 8
+    },
+    "lunchbox": {
+      "name": "Steel lunch box",
+      "price": 32,
+      "defaultRank": 9
+    },
+    "headphones": {
+      "name": "Everyday over-ear headphones",
+      "price": 89,
+      "defaultRank": 10
+    },
+    "sneakers": {
+      "name": "Everyday canvas sneakers",
+      "price": 96,
+      "defaultRank": 11
+    },
+    "sweatshirt": {
+      "name": "Soft cotton crewneck",
+      "price": 72,
+      "defaultRank": 12
+    },
+    "duffel": {
+      "name": "Weekender duffel",
+      "price": 84,
+      "defaultRank": 13
+    },
+    "sunglasses": {
+      "name": "Everyday round sunglasses",
+      "price": 48,
+      "defaultRank": 14
+    },
+    "organizer": {
+      "name": "Zip essentials pouch",
+      "price": 26,
+      "defaultRank": 15
+    },
+    "towel": {
+      "name": "Everywhere cotton towel",
+      "price": 28,
+      "defaultRank": 16
+    }
+  },
+  "requests": [
+    {
+      "caseId": "store-eval-00",
+      "personaId": "dev-cup",
+      "request": "A drinking cup for the kitchen table.",
+      "target": "mug",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 195.25612506549805,
+      "top": [
+        {
+          "id": "mug",
+          "score": 0.858
+        },
+        {
+          "id": "bottle",
+          "score": 0.053
+        },
+        {
+          "id": "lamp",
+          "score": 0.037
+        },
+        {
+          "id": "notebook",
+          "score": 0.017
+        },
+        {
+          "id": "lunchbox",
+          "score": 0.014
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.007
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-01",
+      "personaId": "ho-water",
+      "request": "For carrying water when I head out.",
+      "target": "bottle",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 191.2377499975264,
+      "top": [
+        {
+          "id": "bottle",
+          "score": 0.373
+        },
+        {
+          "id": "pack",
+          "score": 0.332
+        },
+        {
+          "id": "headphones",
+          "score": 0.076
+        },
+        {
+          "id": "lamp",
+          "score": 0.058
+        },
+        {
+          "id": "sweatshirt",
+          "score": 0.049
+        },
+        {
+          "id": "lunchbox",
+          "score": 0.033
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-02",
+      "personaId": "dev-backpack",
+      "request": "A backpack for taking my everyday things along.",
+      "target": "pack",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 195.8110829582438,
+      "top": [
+        {
+          "id": "pack",
+          "score": 0.986
+        },
+        {
+          "id": "bottle",
+          "score": 0.005
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.003
+        },
+        {
+          "id": "sneakers",
+          "score": 0.003
+        },
+        {
+          "id": "headphones",
+          "score": 0.001
+        },
+        {
+          "id": "notebook",
+          "score": 0.001
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-03",
+      "personaId": "ho-weekend",
+      "request": "A travel bag for a weekend away.",
+      "target": "duffel",
+      "modelRank": 4,
+      "searchRank": 1,
+      "latencyMs": 196.1244170088321,
+      "top": [
+        {
+          "id": "pack",
+          "score": 0.342
+        },
+        {
+          "id": "notebook",
+          "score": 0.187
+        },
+        {
+          "id": "bottle",
+          "score": 0.094
+        },
+        {
+          "id": "duffel",
+          "score": 0.084
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.081
+        },
+        {
+          "id": "organizer",
+          "score": 0.056
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-04",
+      "personaId": "dev-notes",
+      "request": "Somewhere to write a quick note I want to keep.",
+      "target": "notebook",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 193.78266704734415,
+      "top": [
+        {
+          "id": "notebook",
+          "score": 0.464
+        },
+        {
+          "id": "pack",
+          "score": 0.298
+        },
+        {
+          "id": "lunchbox",
+          "score": 0.063
+        },
+        {
+          "id": "sweatshirt",
+          "score": 0.035
+        },
+        {
+          "id": "bottle",
+          "score": 0.033
+        },
+        {
+          "id": "headphones",
+          "score": 0.03
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-05",
+      "personaId": "ho-cables",
+      "request": "A zipped pouch to keep loose cables together.",
+      "target": "organizer",
+      "modelRank": 4,
+      "searchRank": 1,
+      "latencyMs": 204.48554202448577,
+      "top": [
+        {
+          "id": "notebook",
+          "score": 0.415
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.189
+        },
+        {
+          "id": "lamp",
+          "score": 0.118
+        },
+        {
+          "id": "organizer",
+          "score": 0.093
+        },
+        {
+          "id": "pack",
+          "score": 0.056
+        },
+        {
+          "id": "sweatshirt",
+          "score": 0.03
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-06",
+      "personaId": "dev-rain",
+      "request": "A hooded layer for when the rain starts.",
+      "target": "jacket",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 203.96591699682176,
+      "top": [
+        {
+          "id": "jacket",
+          "score": 0.69
+        },
+        {
+          "id": "bottle",
+          "score": 0.11
+        },
+        {
+          "id": "notebook",
+          "score": 0.078
+        },
+        {
+          "id": "blanket",
+          "score": 0.052
+        },
+        {
+          "id": "organizer",
+          "score": 0.025
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.015
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-07",
+      "personaId": "ho-crewneck",
+      "request": "A cotton top with a crew neck.",
+      "target": "sweatshirt",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 203.28095799777657,
+      "top": [
+        {
+          "id": "sweatshirt",
+          "score": 0.907
+        },
+        {
+          "id": "blanket",
+          "score": 0.034
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.019
+        },
+        {
+          "id": "lamp",
+          "score": 0.013
+        },
+        {
+          "id": "sneakers",
+          "score": 0.006
+        },
+        {
+          "id": "notebook",
+          "score": 0.005
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-08",
+      "personaId": "dev-groceries",
+      "request": "Something to carry groceries home in.",
+      "target": "tote",
+      "modelRank": 4,
+      "searchRank": 1,
+      "latencyMs": 205.9453750262037,
+      "top": [
+        {
+          "id": "pack",
+          "score": 0.385
+        },
+        {
+          "id": "notebook",
+          "score": 0.322
+        },
+        {
+          "id": "bottle",
+          "score": 0.102
+        },
+        {
+          "id": "tote",
+          "score": 0.056
+        },
+        {
+          "id": "lunchbox",
+          "score": 0.047
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.022
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-09",
+      "personaId": "ho-lunch",
+      "request": "A container for my packed meal.",
+      "target": "lunchbox",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 204.06558399554342,
+      "top": [
+        {
+          "id": "lunchbox",
+          "score": 0.342
+        },
+        {
+          "id": "bottle",
+          "score": 0.239
+        },
+        {
+          "id": "pack",
+          "score": 0.15
+        },
+        {
+          "id": "lamp",
+          "score": 0.097
+        },
+        {
+          "id": "mug",
+          "score": 0.045
+        },
+        {
+          "id": "sweatshirt",
+          "score": 0.041
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-10",
+      "personaId": "dev-sofa",
+      "request": "A throw blanket for my sofa.",
+      "target": "blanket",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 208.78620899748057,
+      "top": [
+        {
+          "id": "blanket",
+          "score": 0.897
+        },
+        {
+          "id": "notebook",
+          "score": 0.063
+        },
+        {
+          "id": "duffel",
+          "score": 0.008
+        },
+        {
+          "id": "bottle",
+          "score": 0.007
+        },
+        {
+          "id": "lamp",
+          "score": 0.006
+        },
+        {
+          "id": "jacket",
+          "score": 0.004
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-11",
+      "personaId": "ho-swim",
+      "request": "A towel to use after a swim.",
+      "target": "towel",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 203.7443749140948,
+      "top": [
+        {
+          "id": "towel",
+          "score": 0.412
+        },
+        {
+          "id": "notebook",
+          "score": 0.198
+        },
+        {
+          "id": "sweatshirt",
+          "score": 0.09
+        },
+        {
+          "id": "lamp",
+          "score": 0.049
+        },
+        {
+          "id": "lunchbox",
+          "score": 0.048
+        },
+        {
+          "id": "bottle",
+          "score": 0.048
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-12",
+      "personaId": "dev-light",
+      "request": "A cordless light for my table.",
+      "target": "lamp",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 203.65970802959055,
+      "top": [
+        {
+          "id": "lamp",
+          "score": 0.997
+        },
+        {
+          "id": "organizer",
+          "score": 0.001
+        },
+        {
+          "id": "blanket",
+          "score": 0.001
+        },
+        {
+          "id": "bottle",
+          "score": 0
+        },
+        {
+          "id": "sunglasses",
+          "score": 0
+        },
+        {
+          "id": "headphones",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-13",
+      "personaId": "ho-music",
+      "request": "Something that goes over my ears for listening to music.",
+      "target": "headphones",
+      "modelRank": 2,
+      "searchRank": 1,
+      "latencyMs": 206.0933340108022,
+      "top": [
+        {
+          "id": "pack",
+          "score": 0.465
+        },
+        {
+          "id": "headphones",
+          "score": 0.374
+        },
+        {
+          "id": "notebook",
+          "score": 0.061
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.024
+        },
+        {
+          "id": "organizer",
+          "score": 0.019
+        },
+        {
+          "id": "lunchbox",
+          "score": 0.016
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-14",
+      "personaId": "dev-canvas",
+      "request": "Canvas footwear with a low top.",
+      "target": "sneakers",
+      "modelRank": 1,
+      "searchRank": 11,
+      "latencyMs": 201.40662498306483,
+      "top": [
+        {
+          "id": "sneakers",
+          "score": 0.716
+        },
+        {
+          "id": "notebook",
+          "score": 0.116
+        },
+        {
+          "id": "sweatshirt",
+          "score": 0.074
+        },
+        {
+          "id": "sunglasses",
+          "score": 0.052
+        },
+        {
+          "id": "jacket",
+          "score": 0.016
+        },
+        {
+          "id": "organizer",
+          "score": 0.008
+        }
+      ]
+    },
+    {
+      "caseId": "store-eval-15",
+      "personaId": "ho-sunglasses",
+      "request": "Round sunglasses with an acetate frame.",
+      "target": "sunglasses",
+      "modelRank": 1,
+      "searchRank": 1,
+      "latencyMs": 207.3247500229627,
+      "top": [
+        {
+          "id": "sunglasses",
+          "score": 0.983
+        },
+        {
+          "id": "notebook",
+          "score": 0.006
+        },
+        {
+          "id": "lamp",
+          "score": 0.005
+        },
+        {
+          "id": "sweatshirt",
+          "score": 0.002
+        },
+        {
+          "id": "lunchbox",
+          "score": 0.001
+        },
+        {
+          "id": "bottle",
+          "score": 0.001
+        }
+      ]
+    }
+  ]
+}
