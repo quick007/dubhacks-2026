@@ -1,0 +1,181 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-04",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-04-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-04",
+    "personaSplit": "development",
+    "seed": 2026101804
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "49dde18d-cd71-45d9-9ebe-09d141cf479b",
+    "contextId": "9d4263c8-955b-4e79-9bf0-1863ca78b4a3",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-04-generic-screenshot-png",
+      "shopper-pair-04-generic-trace-zip",
+      "shopper-pair-04-generic-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T04:28:25.714Z",
+  "elapsedMs": 120000.046333,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": false,
+    "deviations": [
+      "Wall-clock budget exceeded"
+    ]
+  },
+  "status": "timeout",
+  "error": "Shopper exhausted the wall-clock budget",
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-04-generic-step-0",
+        "runId": "shopper-pair-04-generic",
+        "sequence": 0,
+        "at": "2026-10-18T04:28:26.703Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 989.0562080000001,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-04-generic-step-1",
+        "runId": "shopper-pair-04-generic",
+        "sequence": 1,
+        "at": "2026-10-18T04:28:36.150Z",
+        "kind": "action",
+        "message": "something to carry groceries up to $50"
+      },
+      "elapsedMs": 10435.945667,
+      "action": {
+        "type": "search",
+        "query": "something to carry groceries up to $50"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-04-generic-step-2",
+        "runId": "shopper-pair-04-generic",
+        "sequence": 2,
+        "at": "2026-10-18T04:28:45.365Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 19651.297958,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-04-generic-screenshot-png",
+        "runId": "shopper-pair-04-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:30:26.592Z"
+      },
+      "status": "captured",
+      "sha256": "b994f0e0fd861f8463576c8559595a163e9c0fcb6b664d1ca3bf87120e0ed9af",
+      "bytes": 1195704,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-04-generic-trace-zip",
+        "runId": "shopper-pair-04-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:30:26.592Z"
+      },
+      "status": "captured",
+      "sha256": "d6cf88b50a02f1b6ed0f5fe0b985e5a30559510c1363d3224d434e1544fb59c0",
+      "bytes": 24545183,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-04-generic-browser-observations-json",
+        "runId": "shopper-pair-04-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:30:26.592Z"
+      },
+      "status": "captured",
+      "sha256": "b1f20798d79508481b060af77544a73bb465a8081450994c5373f3ed075f24aa",
+      "bytes": 19710,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-04-generic-screenshot-png",
+          "shopper-pair-04-generic-trace-zip",
+          "shopper-pair-04-generic-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-04-generic-screenshot-png",
+          "shopper-pair-04-generic-trace-zip",
+          "shopper-pair-04-generic-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

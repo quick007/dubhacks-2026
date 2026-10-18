@@ -1,0 +1,150 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-04",
+  "arm": "local-model",
+  "run": {
+    "id": "shopper-pair-04-local-model",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-04",
+    "personaSplit": "development",
+    "seed": 2026101804
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "929e00cf-6645-48ae-9260-7cd2c8fc8a21",
+    "contextId": "124e9bd9-84a6-4ea1-b297-83c998f6a166",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-04-local-model-recovered-observation-png",
+      "shopper-pair-04-local-model-recovery-evidence-json"
+    ],
+    "note": "Actual provider opened a fresh Chrome context and observed empty cart; restored from saved browser receipts after original process disappeared"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": null,
+  "elapsedMs": 349,
+  "timingPrecision": {
+    "sessionElapsed": "estimated",
+    "stepElapsed": "not-recorded",
+    "source": "Only the recorded browser-open to observation event span is known; this is not total runtime or an upper bound. Termination and original monotonic clocks unavailable."
+  },
+  "protocol": {
+    "passed": false,
+    "deviations": [
+      "Original process disappeared during Mac/exec-server interruption",
+      "Total elapsed time and monotonic action clocks unavailable",
+      "No final screenshot or trace; last actual observation screenshot retained"
+    ]
+  },
+  "status": "technical-failure",
+  "error": "Original evaluation process no longer existed after reconnect; no final outcome was saved",
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-04-local-model-step-0",
+        "runId": "shopper-pair-04-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T04:30:27.518Z",
+        "kind": "navigation",
+        "message": "Observed fresh headed Chrome navigation from actual saved provider opened event"
+      },
+      "elapsedMs": null,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-04-local-model-recovered-observation-png",
+        "runId": "shopper-pair-04-local-model",
+        "kind": "screenshot",
+        "path": "recovered-observation.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:38:42.886Z"
+      },
+      "status": "captured",
+      "sha256": "cf8fa23bdebc603f17624fdef35d52f0f7369722a62184211ba9e4045c67d5bb",
+      "bytes": 751491,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-04-local-model-trace-zip",
+        "runId": "shopper-pair-04-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:38:42.886Z"
+      },
+      "status": "missing",
+      "sha256": null,
+      "bytes": 0,
+      "error": "ENOENT: no such file or directory, open '/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_sol_full_v1/shopper-pair-04/local-model/trace.zip'"
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-04-local-model-recovery-evidence-json",
+        "runId": "shopper-pair-04-local-model",
+        "kind": "result",
+        "path": "recovery-evidence.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:38:42.886Z"
+      },
+      "status": "captured",
+      "sha256": "d6334d9b823645a8279915d9cdb20290c87df1b4537472ba1735fb97528ffd3c",
+      "bytes": 5122,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-interruption-recovery-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-04-local-model-recovered-observation-png",
+          "shopper-pair-04-local-model-recovery-evidence-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-04-local-model-recovered-observation-png",
+          "shopper-pair-04-local-model-recovery-evidence-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-observed",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
