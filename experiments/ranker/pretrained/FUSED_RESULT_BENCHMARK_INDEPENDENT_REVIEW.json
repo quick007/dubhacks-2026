@@ -1,0 +1,37 @@
+{
+  "status": "CPU-review-passed-native-unexecuted",
+  "reviewer": "independent short_fit lane",
+  "nativeExecutionByReview": false,
+  "sourceSha256": {
+    "fused_result_benchmark.py": "16bbc054e2ee1c3d6e81caac4695fae0c9c86153db4145e683443686be544e71",
+    "test_fused_result_benchmark.py": "4f929ca63fae038ab293af827c86640407a371a0ba65a084c4396b6e1c3a55a6"
+  },
+  "unitTests": {
+    "command": ".tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_fused_result_benchmark -v",
+    "passed": 12,
+    "failed": 0
+  },
+  "checkedContracts": [
+    "Completed final 240-update adapter only, all completed/evaluated unique steps, exact A/B reload and frozen 927-language receipts; no interim checkpoint.",
+    "Both original FULL image query and focused product query run with copy adapter disabled; original FULL catalog image features and focused catalog factor features retain distinct hash-bound representations.",
+    "All six exact cache=None/cached focused-feature equality and same-segmentation base/adapter full-cache/forced-continuation gates precede any timed request.",
+    "Every timed request recomputes both queries and reauthenticates 108 warm catalog artifacts; controls are reused only as certificates.",
+    "Actual before/after complete raw/common cache hashes match startup controls and remain immutable across independent lane decoding.",
+    "Actual trained scores map all36products/72variants; deterministic hard guards must produce six distinct eligible cards, without smaller fallback.",
+    "Three-card readiness requires all10 fields plus unchanged strict factuality/identity validation and actual serialization; full6 requires both sections/all20 fields.",
+    "All native work uses explicit generation_stream context/fences; frozen927 and actual adapter hashes checked on successful close with persisted finalIntegrity receipt.",
+    "Fixed six-request/three-pair denominator survives failures and bounded one-request attempts; post-freeze teacher quality distinguishes correct ranking/image choices from copy validity."
+  ],
+  "findingsResolvedBeforeFinalReview": [
+    "Fresh actual raw/common source hashes were added against startup certificates and after decode; consumed flags alone were insufficient.",
+    "Successful final927/A-B integrity is now persisted in coldSetup.finalIntegrity.",
+    "completed_copy now requires all240 actual evaluated updates and original exact-gate/warm-start controls."
+  ],
+  "limitations": [
+    "This review executed CPU tests only. Native feature/cache equivalence and integrated result quality/latency remain unmeasured.",
+    "Current summary latency samples qualify copy validity only; evaluate_fixed reports joint product/image/copy qualification separately. Any useful-personalized latency claim must additionally filter requests by teacherQualifiedFirst3/Full6.",
+    "Six requests are a predetermined inspected synthetic replay subset, not an unseen catalog or real-user result.",
+    "The original FULL image query adds a second real native forward; historical structured-ranking latency cannot be substituted for this integrated path.",
+    "Root has paused new native launches for migration after the active short-copy job. No integrated native run was started."
+  ]
+}
