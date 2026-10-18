@@ -32,6 +32,7 @@ func failure(w http.ResponseWriter, err error) {
 }
 func (s *Service) Register(mux *http.ServeMux) {
 	s.registerPresentation(mux)
+	s.registerAuthored(mux)
 	mux.HandleFunc("POST /api/experiment-results", func(w http.ResponseWriter, r *http.Request) {
 		// Local exporter sends no Origin. Reject browser-initiated writes rather
 		// than allowing cross-site requests to this unauthenticated loopback API.
@@ -98,6 +99,10 @@ func (s *Service) Register(mux *http.ServeMux) {
 			var report Report
 			if err = json.Unmarshal(saved.Report, &report); err != nil {
 				failure(w, fmt.Errorf("invalid archived report"))
+				return
+			}
+			if report.Version == "authored-shopping-history.v1" {
+				reply(w, 422, map[string]string{"error": "authored histories are not shopper evaluation metrics"})
 				return
 			}
 			var value any

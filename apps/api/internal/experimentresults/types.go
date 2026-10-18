@@ -101,6 +101,8 @@ func Decode(reader io.Reader) (Envelope, string, error) {
 	var err error
 	if report.Version == "shopper-checkout-cohort.v1" {
 		err = validateCohort(e)
+	} else if report.Version == "authored-shopping-history.v1" {
+		err = validateAuthored(e)
 	} else {
 		err = validate(e, report)
 	}
