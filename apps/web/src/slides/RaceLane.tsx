@@ -23,7 +23,8 @@ export function RaceLane({
   persona: Persona;
 }) {
   const at = Math.min(index, frames.length - 1);
-  const findability = index >= frames.length - 1 ? run?.evaluation?.findability : undefined;
+  const finished = index > frames.length - 1 || (!playing && index >= frames.length - 1);
+  const findability = finished ? run?.evaluation?.findability : undefined;
   return (
     <div className="min-w-0">
       {title && (
@@ -38,7 +39,12 @@ export function RaceLane({
           {title}
         </h2>
       )}
-      <RaceFrame frame={frames[at]} name={persona.name} playing={playing} className={title ? "mt-3" : undefined} />
+      <RaceFrame
+        frame={frames[at]}
+        name={persona.name}
+        playing={playing}
+        className={title ? "mt-3" : undefined}
+      />
       {findability && (
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
           <p

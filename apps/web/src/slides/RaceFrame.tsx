@@ -39,7 +39,7 @@ export function RaceFrame({
   // Keep the previous screen underneath so the next one slides or fades in over it.
   const [current, setCurrent] = useState(frame);
   const [prior, setPrior] = useState<Frame>();
-  if (frame !== current) {
+  if (frame?.event.id !== current?.event.id) {
     setPrior(current);
     setCurrent(frame);
   }

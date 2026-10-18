@@ -1,12 +1,11 @@
 import { Slider } from "@base-ui/react/slider";
 import type { Persona, Run } from "@storefront/contracts";
 import { Pause, Play } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button } from "../components/ui/button";
-import { frames } from "../lib/story";
 import { useReducedMotion } from "../lib/useReducedMotion";
 import { cn } from "../lib/utils";
-import { REPLAY_STEP_MS } from "../lib/replay";
+import { REPLAY_STEP_MS, replayFrames } from "../lib/replay";
 import { RaceLane } from "./RaceLane";
 
 export interface Lane {
@@ -25,12 +24,15 @@ export function Race({
   lanes: Lane[];
   actions?: ReactNode;
 }) {
-  const laneFrames = lanes.map((lane) => frames(lane.run));
+  const laneFrames = lanes.map((lane) => replayFrames(lane.run));
   const last = Math.max(0, ...laneFrames.map((list) => list.length)) - 1;
   const reduced = useReducedMotion();
   const [index, setIndex] = useState(() => (reduced ? Math.max(last, 0) : 0));
   const [playing, setPlaying] = useState(!reduced);
+  const [ended, setEnded] = useState(reduced);
   const running = playing && !reduced && index <= last;
+  const remaining = useRef(REPLAY_STEP_MS);
+  const timedIndex = useRef(index);
 
   // Turning on reduced motion mid-replay stops it on the final frames.
   const [wasReduced, setWasReduced] = useState(reduced);
@@ -43,12 +45,23 @@ export function Race({
   }
 
   useEffect(() => {
+    if (timedIndex.current !== index) {
+      timedIndex.current = index;
+      remaining.current = REPLAY_STEP_MS;
+    }
     if (!running) return;
+    const started = performance.now();
     const timer = window.setTimeout(() => {
       if (index < last) setIndex(index + 1);
-      else setPlaying(false);
-    }, REPLAY_STEP_MS);
-    return () => window.clearTimeout(timer);
+      else {
+        setEnded(true);
+        setPlaying(false);
+      }
+    }, remaining.current);
+    return () => {
+      window.clearTimeout(timer);
+      remaining.current = Math.max(0, remaining.current - (performance.now() - started));
+    };
   }, [running, index, last]);
 
   if (last < 0)
@@ -77,7 +90,11 @@ export function Race({
           aria-label={running ? "Pause" : "Play"}
           onClick={() => {
             if (running) return setPlaying(false);
-            if (index >= last) setIndex(0);
+            if (ended) {
+              remaining.current = REPLAY_STEP_MS;
+              setIndex(0);
+              setEnded(false);
+            }
             setPlaying(true);
           }}
         >
@@ -89,6 +106,7 @@ export function Race({
           max={last}
           onValueChange={(value) => {
             setPlaying(false);
+            setEnded(false);
             setIndex(Array.isArray(value) ? value[0] : value);
           }}
           className="min-w-20 flex-1"

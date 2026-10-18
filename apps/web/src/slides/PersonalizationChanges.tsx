@@ -1,45 +1,50 @@
-import { BadgeCheck, MessageSquareText, Tags } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
+import { personalizationSteps } from "../lib/personalization";
 
-const changes = [
-  {
-    icon: BadgeCheck,
-    title: "A pick with his name on it",
-    detail: 'The "Picked for Bob" badge makes the recommended throw easy to spot.',
-  },
-  {
-    icon: Tags,
-    title: "Useful details, at a glance",
-    detail: 'Cotton, throw blanket, and "For your sofa" chips put the relevant facts on the card.',
-  },
-  {
-    icon: MessageSquareText,
-    title: "A reason to choose it",
-    detail: '"Why this fits" connects the product to his request before he opens it.',
-  },
-];
-
-export function PersonalizationChanges() {
+export function PersonalizationChanges({
+  step,
+  onChange,
+}: {
+  step: number;
+  onChange: (step: number) => void;
+}) {
   return (
-    <aside
-      aria-label="What changed for Bob"
-      className="flex flex-col justify-center gap-6 lg:gap-8"
-    >
-      <h3 className="text-2xl font-bold tracking-tight">What changed for Bob</h3>
-      <ul className="grid gap-5 sm:grid-cols-3 lg:grid-cols-1 lg:gap-7">
-        {changes.map(({ icon: Icon, title, detail }) => (
-          <li key={title} className="flex gap-3">
-            <Icon aria-hidden className="mt-0.5 size-5 shrink-0 text-cobalt" />
-            <div>
-              <p className="text-base leading-snug font-bold">{title}</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-muted">{detail}</p>
-            </div>
-          </li>
+    <aside aria-label="Current change" className="flex flex-col gap-6">
+      <div role="status" className="grid min-h-40">
+        {/* Shared grid space reserves the tallest caption without moving the text or arrows. */}
+        {personalizationSteps.map((item, index) => (
+          <div
+            key={item.image}
+            aria-hidden={index !== step}
+            className={`col-start-1 row-start-1 ${index === step ? "" : "invisible"}`}
+          >
+            <h3 className="text-2xl font-semibold lg:text-3xl">{item.title}</h3>
+            <p className="mt-3 max-w-[23ch] text-2xl leading-snug text-muted lg:text-4xl">
+              {item.detail}
+            </p>
+          </div>
         ))}
-      </ul>
-      <p className="border-t border-line pt-4 text-xs leading-relaxed text-muted">
-        Designed demo treatment. Product order comes from the measured model run; badges and details
-        use the shopper's request and catalog facts.
-      </p>
+      </div>
+      <nav aria-label="Personalization changes" className="flex items-center gap-4">
+        <button
+          type="button"
+          aria-label="Previous change"
+          disabled={step === 0}
+          onClick={() => onChange(step - 1)}
+          className="grid size-10 place-items-center rounded-sm hover:bg-line/50 disabled:invisible"
+        >
+          <ArrowUp aria-hidden className="size-5" />
+        </button>
+        <button
+          type="button"
+          aria-label="Next change"
+          disabled={step === personalizationSteps.length - 1}
+          onClick={() => onChange(step + 1)}
+          className="grid size-10 place-items-center rounded-sm hover:bg-line/50 disabled:invisible"
+        >
+          <ArrowDown aria-hidden className="size-5" />
+        </button>
+      </nav>
     </aside>
   );
 }

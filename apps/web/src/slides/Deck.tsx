@@ -41,6 +41,12 @@ export function Deck({ slides, status }: { slides: SlideDef[]; status?: ReactNod
       if (event.altKey || event.ctrlKey || event.metaKey) return;
       const target = event.target instanceof Element ? event.target : null;
       if (target?.closest(ignoredTargets)) return;
+      // Keep native vertical scrolling inside the staged personalization demo.
+      if (
+        target?.closest("[data-scroll-story]") &&
+        [" ", "PageDown", "PageUp", "Home", "End"].includes(event.key)
+      )
+        return;
       const fromSlider = target?.closest("[role=slider], input[type=range]");
       if (fromSlider) {
         if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
@@ -93,7 +99,11 @@ export function Deck({ slides, status }: { slides: SlideDef[]; status?: ReactNod
           </button>
         ))}
       </nav>
-      <main key={slide.id} aria-label={slide.label} className="flex flex-1 animate-slide-in pb-20">
+      <main
+        key={slide.id}
+        aria-label={slide.label}
+        className={cn("flex flex-1 animate-slide-in", slide.id === "stakes" ? "pb-12" : "pb-20")}
+      >
         {slide.render()}
       </main>
       <footer className="fixed inset-x-0 bottom-0 z-10 bg-fog/90 backdrop-blur print:hidden">

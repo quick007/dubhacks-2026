@@ -6,7 +6,7 @@ const STAGGER_MS = 450;
 const steps: { stage: ShotStage; caption: string }[] = [
   { stage: "browse", caption: "AI shoppers browse your store" },
   { stage: "stuck", caption: "See where each one gets stuck" },
-  { stage: "fit", caption: "The model personalizes each shopper's page" },
+  { stage: "fit", caption: "The model quickly personalizes each shopper's page" },
 ];
 
 export function TitleSlide({ names }: { names: string[] }) {

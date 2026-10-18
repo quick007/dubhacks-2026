@@ -389,6 +389,7 @@ try {
       checkpointSha256: report.heads.learned.sha256,
       backbone: "Qwen3.5-9B, 4-bit MLX, frozen",
       trainedParameters: packet.config.parameters,
+      featureDimensions: packet.config.dimensions,
       trainingRequests: packet.records.filter((r) => r.role === "request" && r.split === "train")
         .length,
     },

@@ -1,6 +1,6 @@
-// Designed presentation treatment, not generated model copy. The product order comes from
-// the frozen model run; badges and descriptions use only the request and catalog facts.
-// Run with the demo storefront running: node scripts/capture-bob-personalization.mjs [shop URL]
+// Incremental, authored demo screenshots. Ranking uses the frozen model run.
+// The sofa purchase and material preference are illustrative, not measured model inputs.
+// Run: node scripts/capture-bob-personalization.mjs [shop URL]
 import { chromium } from "@playwright/test";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
@@ -11,13 +11,27 @@ const request = run.requests.find((item) => item.personaId === "dev-sofa");
 if (request?.target !== "blanket") throw new Error("Bob's sofa-throw request has changed.");
 const output = new URL("apps/web/public/fieldwork/bob/", root);
 await mkdir(output, { recursive: true });
+const sofa = await readFile(new URL("sofa.png", output));
 const browser = await chromium.launch();
 try {
   const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
   await page.goto(process.argv[2] ?? "http://shop.dubhacks.localhost:1356/");
   await page.locator("article.product").first().waitFor();
   await page.evaluate(() => document.fonts.ready);
-  await page.addStyleTag({ content: "html { scroll-behavior: auto !important; }" });
+  // Reserve the same heading space across every capture so each change stays in place.
+  await page.addStyleTag({
+    content: `
+    html { scroll-behavior: auto !important; }
+    .collection .section-heading { height: 94px; box-sizing: border-box; }
+    .collection .section-heading h2 { font-size: 22px; letter-spacing: -.3px; }
+    .collection .section-heading .search-status { font-size: 14px; }
+    .bob-details { height: 66px; box-sizing: border-box; padding-top: 12px; font-size: 15px; line-height: 1.5; }
+    .bob-details strong { display: block; font-weight: 600; }
+    .bob-details p { margin: 3px 0 0; color: var(--muted-blue); }
+    .bob-match { margin: 7px 0 4px; font-size: 15px; line-height: 1.5; color: var(--muted-blue); }
+    .bob-match strong { color: var(--ink); font-weight: 600; }
+  `,
+  });
   const capture = async (name) => {
     await page.locator(".collection").evaluate((element) => {
       window.scrollTo({
@@ -39,7 +53,8 @@ try {
       quality: 90,
     });
   };
-  await capture("default");
+  await capture("original");
+
   await page.evaluate(
     ({ request, products }) => {
       const grid = document.querySelector(".products");
@@ -50,62 +65,52 @@ try {
         ]),
       );
       for (const { id } of request.top) grid.append(cards.get(products[id].name));
-      // Move the remaining catalog behind the measured top six, preserving its existing order.
       const top = new Set(request.top.map(({ id }) => products[id].name));
       for (const [name, card] of cards) if (!top.has(name)) grid.append(card);
       const heading = document.querySelector(".collection .section-heading");
-      heading.querySelector("h2").textContent = "A throw for your sofa, Bob.";
-      heading.querySelector(".search-status").textContent = `You asked: “${request.request}”`;
-      const label = document.createElement("span");
-      label.className = "bob-personalized";
-      label.textContent = "Personalized for Bob";
-      heading.append(label);
-      const target = cards.get(products.blanket.name);
-      target.classList.add("bob-pick");
-      const badge = document.createElement("span");
-      badge.className = "bob-pick-badge";
-      badge.textContent = "Picked for Bob";
-      target.querySelector(".product-art").append(badge);
-      const details = document.createElement("div");
-      details.className = "bob-details";
-      const chips = document.createElement("div");
-      chips.className = "bob-chips";
-      for (const text of ["Cotton", "Throw blanket", "For your sofa"]) {
-        const chip = document.createElement("span");
-        chip.textContent = text;
-        chips.append(chip);
-      }
-      const why = document.createElement("p");
-      const title = document.createElement("strong");
-      title.textContent = "Why this fits";
-      why.append(
-        title,
-        document.createTextNode("A cotton throw blanket for the sofa you had in mind."),
-      );
-      details.append(chips, why);
-      target.querySelector(".product-colors").before(details);
+      heading.querySelector("h2").textContent = "For your sofa";
+      heading.querySelector(".search-status").textContent = request.request;
+      cards.get(products.blanket.name).dataset.bobThrow = "";
     },
     { request, products: run.products },
   );
-  await page.addStyleTag({
-    content: `
-    .collection .section-heading { padding: 22px 0; min-height: 104px; box-sizing: border-box; }
-    .collection .section-heading h2 { font-size: 28px; letter-spacing: -.7px; }
-    .collection .section-heading .search-status { font-size: 16px; }
-    .product-gallery { display: block; }
-    .product-thumbnails { display: none; }
-    .bob-personalized { padding: 11px 18px; border: 1px solid var(--border); border-radius: 999px; background: var(--soft-blue); font-size: 15px; font-weight: 650; white-space: nowrap; }
-    .bob-pick .product-art { outline: 2px solid var(--blue); outline-offset: -2px; }
-    .bob-pick-badge { position: absolute; left: 14px; top: 14px; padding: 10px 16px; border-radius: 999px; color: white; background: var(--blue); font-size: 16px; font-weight: 650; }
-    .bob-details { margin: 8px 0 12px; }
-    .bob-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .bob-chips span { border: 1px solid var(--border); border-radius: 999px; padding: 5px 9px; font-size: 13px; background: white; }
-    .bob-details p { border-left: 3px solid var(--blue); padding: 3px 0 3px 12px; margin: 13px 0 0; font-size: 14px; line-height: 1.5; max-width: 340px; }
-    .bob-details strong { display: block; margin-bottom: 3px; }
-    .bob-pick .add-button { background: var(--blue); color: white; border-color: var(--blue); }
-  `,
+  await capture("request");
+
+  await page.evaluate(() => {
+    const target = document.querySelector("[data-bob-throw]");
+    const details = document.createElement("div");
+    details.className = "bob-details";
+    const material = document.createElement("strong");
+    material.textContent = "Woven cotton";
+    const warmth = document.createElement("p");
+    warmth.textContent = "For cold evenings by the window.";
+    details.append(material, warmth);
+    target.querySelector(".product-thumbnails").replaceWith(details);
   });
-  await capture("personalized");
+  await capture("details");
+
+  await page.evaluate(
+    (image) => {
+      const photo = document.querySelector("[data-bob-throw] .product-art .product-photo");
+      const replacement = document.createElement("img");
+      replacement.src = image;
+      replacement.alt = "Rust cotton throw on a sand sofa beside a window.";
+      photo.replaceChildren(replacement);
+    },
+    `data:image/png;base64,${sofa.toString("base64")}`,
+  );
+  await capture("room");
+
+  await page.evaluate(() => {
+    const note = document.createElement("p");
+    note.className = "bob-match";
+    const reason = document.createElement("strong");
+    reason.textContent = "Pairs with your sand sofa.";
+    note.append(reason);
+    document.querySelector("[data-bob-throw] .product-heading").after(note);
+  });
+  await capture("match");
+
   await writeFile(
     new URL("capture.json", output),
     `${JSON.stringify(
@@ -113,14 +118,16 @@ try {
         personaId: request.personaId,
         request: request.request,
         target: request.target,
+        stages: ["original", "request", "details", "room", "match"],
         treatment:
-          "Designed demo. Ranking from the frozen model run; badges and details are authored from catalog facts.",
+          "Authored demo. Ranking from the frozen model run. Material preference, sofa purchase, and room styling are illustrative.",
+        image: "Sofa scene generated from the existing blanket product photo with imagegen.",
       },
       null,
       2,
     )}\n`,
   );
-  console.log(`Captured Bob's default and personalized pages in ${fileURLToPath(output)}`);
+  console.log(`Captured five incremental stages in ${fileURLToPath(output)}`);
 } finally {
   await browser.close();
 }

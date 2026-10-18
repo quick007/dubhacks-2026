@@ -8,6 +8,9 @@ export const allSlides = [
   "sessions",
   "results",
   "model",
+  "inputs",
+  "speed",
+  "stakes",
 ] as const;
 export type SlideId = (typeof allSlides)[number];
 
@@ -17,7 +20,7 @@ export interface Available {
 }
 
 // The session grid has no entry: it is where a round starts, so it shows even before any run.
-// The model slide reads the frozen model run, not shopper runs.
+// The model slides read the frozen model and LLM runs, not shopper runs.
 const needs: Partial<Record<SlideId, keyof Available>> = {
   struggle: "runs",
   fix: "runs",

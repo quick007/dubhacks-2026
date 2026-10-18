@@ -71,12 +71,13 @@ test("deck runs shoppers, tells the featured shopper's story and shows the held-
     timeout: 10_000,
   });
   await page.goto("/#fix");
-  await page.getByRole("slider", { name: "Compare before and after" }).focus();
-  await page.keyboard.press("ArrowLeft");
+  const walkthrough = page.getByRole("region", { name: "Bob's page changes" });
+  await walkthrough.focus();
+  await page.keyboard.press("ArrowDown");
+  await expect(walkthrough).toHaveAttribute("data-step", "1");
   await expect(page.getByRole("main", { name: "Personalized page", exact: true })).toBeVisible();
-  await page.goto("/#fix");
-  await page.getByRole("slider", { name: "Compare before and after" }).focus();
-  await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("ArrowUp");
+  await expect(walkthrough).toHaveAttribute("data-step", "0");
   await expect(page.getByRole("main", { name: "Personalized page", exact: true })).toBeVisible();
   await page.goto("/#struggle");
   await expect(page.locator("main img").first()).toBeVisible();

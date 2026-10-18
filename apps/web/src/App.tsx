@@ -13,11 +13,14 @@ import { buildPairs, featured, sessions, verdict } from "./lib/story";
 import { Deck, type SlideDef } from "./slides/Deck";
 import { EvidenceDrawer } from "./slides/EvidenceDrawer";
 import { FixSlide } from "./slides/FixSlide";
+import { InputsSlide } from "./slides/InputsSlide";
 import { MeetSlide } from "./slides/MeetSlide";
 import { ModelSlide } from "./slides/ModelSlide";
 import { ResultsSlide } from "./slides/ResultsSlide";
 import { RetestSlide } from "./slides/RetestSlide";
 import { SessionsSlide } from "./slides/SessionsSlide";
+import { SpeedSlide } from "./slides/SpeedSlide";
+import { StakesSlide } from "./slides/StakesSlide";
 import { StruggleSlide } from "./slides/StruggleSlide";
 import { TitleSlide } from "./slides/TitleSlide";
 import { TwoShoppersSlide } from "./slides/TwoShoppersSlide";
@@ -35,6 +38,9 @@ const labels: Record<SlideId, string> = {
   sessions: "All sessions",
   results: "Results",
   model: "The model, measured",
+  inputs: "What the model weighs",
+  speed: "Against an LLM",
+  stakes: "Why speed sells",
 };
 const featuredSlides = new Set<SlideId>(["meet", "struggle", "fix", "retest"]);
 
@@ -151,6 +157,9 @@ export function App() {
       <ResultsSlide result={story.result} pairs={story.pairs} onEvidence={openEvidence} />
     ),
     model: () => <ModelSlide />,
+    inputs: () => <InputsSlide />,
+    speed: () => <SpeedSlide />,
+    stakes: () => <StakesSlide />,
   };
   const slides: SlideDef[] = visibleSlides({
     runs: hasRuns,

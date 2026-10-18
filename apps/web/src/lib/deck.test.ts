@@ -5,7 +5,7 @@ import { allSlides, slideFromHash, stepFor, visibleSlides } from "./deck.ts";
 void test("slides without data are skipped, order is kept", () => {
   const ids = visibleSlides({ runs: false, result: false });
   // The session grid is where the first round starts, so it shows before any run exists.
-  assert.deepEqual(ids, ["title", "two", "meet", "sessions", "model"]);
+  assert.deepEqual(ids, ["title", "two", "meet", "sessions", "model", "inputs", "speed", "stakes"]);
   assert.deepEqual(visibleSlides({ runs: true, result: true }), allSlides);
 });
 
