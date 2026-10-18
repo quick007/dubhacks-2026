@@ -4,7 +4,7 @@ import type { Product, VariantConfig } from "./config";
 import type { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { ProductCard } from "./ProductCard";
-import { localModelStatus, type LocalModelState } from "./local-model";
+import { type LocalModelState } from "./local-model";
 
 const EXAMPLE_SEARCHES = [
   "Rain jacket for campus",
@@ -23,6 +23,7 @@ export function ShopView({
   selectedVariants,
   added,
   localModel,
+  personName,
   onSearchInput,
   onSearchSubmit,
   onExampleSearch,
@@ -40,6 +41,7 @@ export function ShopView({
   selectedVariants: Partial<Record<Product["id"], string>>;
   added: string;
   localModel?: LocalModelState;
+  personName?: string;
   onSearchInput: (value: string) => void;
   onSearchSubmit: () => void;
   onExampleSearch: (query: string) => void;
@@ -91,7 +93,7 @@ export function ShopView({
         </div>
         {config.showShipping && (
           <div className="shipping-info">
-            Free demo shipping on orders over $50 · $5 flat rate otherwise
+            Free shipping on orders over $50 · $5 flat rate otherwise
           </div>
         )}
         <nav className="collection-options" aria-label="Shop by category">
@@ -112,7 +114,9 @@ export function ShopView({
           <div>
             <h2>{heading}</h2>
             <p className="search-status" role="status">
-              {localModel ? localModelStatus(localModel) : query &&
+              {localModel ? (localModel.phase === "error" ? "We couldn’t refresh your collection. Try another search."
+                : localModel.phase === "ranking" || localModel.phase === "copying" ? "Finding a few things for you…"
+                : query ? `Suggestions for “${query}”` : `A collection for ${personName ?? "you"}`) : query &&
                 (experience.matched
                   ? `Suggestions for “${query}”${experience.reason ? ` — ordered for ${experience.reason}` : ""}`
                   : `No close matches for “${query}”. Browse the collection below.`)}

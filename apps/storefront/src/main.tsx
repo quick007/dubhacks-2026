@@ -4,52 +4,57 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { ShoppingCart01Icon } from "@hugeicons/core-free-icons";
 import {
   parseVariantConfig,
-  serializeVariantConfig,
   orderedProducts,
   type Product,
-  type VariantConfig,
 } from "./config";
 import { getCartLines, type CartItem } from "./cart";
 import { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { orderTotal, shippingQuote } from "./shipping";
-import { DemoControls } from "./DemoControls";
+import { INITIAL_PERSONA_ID, SHOPPER_PERSONAS, type ShopperPersona } from "./personas";
+import { checkoutStillCurrent, runCurrentCheckout, switchShoppingPerson } from "./shopping-session";
 import { ShopView } from "./ShopView";
 import { CartView } from "./CartView";
 import { ConfirmationView } from "./ConfirmationView";
 import { useRoute } from "./use-route";
 import type { StorefrontRoute } from "./routes";
-import { localModelEnabled, preserveLocalModelSearch } from "./local-model";
+import { localModelEnabled, localModelEndpoint } from "./local-model";
 import { useLocalModel } from "./use-local-model";
 import { demoTraceEnabled, traceContext, traceEvent, traceProducts } from "./session-trace-bridge";
 import { confirmDemoCheckout, type DemoCheckoutReceipt } from "./demo-checkout-client";
 import "./styles.css";
 
 const TraceControls = lazy(() => import("./TraceControls"));
+const PersonaSwitcher = lazy(() => import("./PersonaSwitcher").then(module => ({ default: module.PersonaSwitcher })));
 
 const initialConfig = parseVariantConfig(window.location.search);
 
 function App() {
   const { route, navigate } = useRoute();
-  const [config, setConfig] = useState(initialConfig);
+  const config = initialConfig;
+  const [personId, setPersonId] = useState(INITIAL_PERSONA_ID);
+  const person = SHOPPER_PERSONAS.find(item => item.id === personId)!;
+  const carts = useRef<Record<string, CartItem[]>>({});
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [selectedVariants, setSelectedVariants] = useState<Partial<Record<Product["id"], string>>>(
-    {},
-  );
+  const selectionScope = `${personId}:${route.query}`;
+  const [selection, setSelection] = useState<{ scope: string; values: Partial<Record<Product["id"], string>> }>({ scope: "", values: {} });
+  const selectedVariants = selection.scope === selectionScope ? selection.values : {};
   const [added, setAdded] = useState("");
   const [searchInput, setSearchInput] = useState(route.query);
   const [checkoutPending, setCheckoutPending] = useState(false);
   const [checkoutError, setCheckoutError] = useState("");
   const [checkoutReceipt, setCheckoutReceipt] = useState<DemoCheckoutReceipt | null>(null);
   const checkoutId = useRef(crypto.randomUUID());
-  const checkoutInFlight = useRef(false);
+  const checkoutInFlight = useRef<string | null>(null);
 
   useEffect(() => {
     setSearchInput(route.query);
   }, [route.query]);
 
-  const localMode = localModelEnabled(window.location.search);
-  const localModel = useLocalModel(localMode && route.page === "shop", route.query);
+  const personalizedDefault = import.meta.env.VITE_PERSONALIZED_STORE === "true";
+  const localMode = localModelEnabled(window.location.search, personalizedDefault);
+  const localModel = useLocalModel(localMode && route.page === "shop", route.query, person.request,
+    localModelEndpoint(window.location.search, personalizedDefault));
   const defaultExperience = personalizeStorefront(route.query, config);
   const catalogProducts = orderedProducts(config.recommendationOrder);
   const experience = localMode
@@ -78,12 +83,12 @@ function App() {
   useEffect(() => {
     document.title =
       page === "cart"
-        ? "Fieldwork — Demo cart"
+        ? "Fieldwork — Your cart"
         : page === "confirmed"
-          ? "Fieldwork — Demo order"
+          ? "Fieldwork — Order confirmation"
           : route.query
             ? `Fieldwork — ${route.query}`
-            : "Fieldwork — Demo Shop";
+            : "Fieldwork — Everyday essentials";
   }, [page, route.query]);
 
   function goToCollection(
@@ -107,46 +112,36 @@ function App() {
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function applyConfig(next: VariantConfig) {
-    if (next.showShipping !== config.showShipping) resetCheckout();
-    setConfig(next);
-    const search = preserveLocalModelSearch(serializeVariantConfig(next), window.location.search);
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`,
-    );
-  }
-
   function resetCheckout() {
     checkoutId.current = crypto.randomUUID();
+    checkoutInFlight.current = null;
+    setCheckoutPending(false);
     setCheckoutReceipt(null);
     setCheckoutError("");
   }
 
   async function placeDemoOrder() {
     if (checkoutInFlight.current) return;
-    checkoutInFlight.current = true;
     const id = checkoutId.current;
+    checkoutInFlight.current = id;
     setCheckoutPending(true); setCheckoutError("");
-    try {
-      const receipt = await confirmDemoCheckout(cart, config.showShipping, id);
-      if (checkoutId.current !== id) return;
-      setCheckoutReceipt(receipt);
-      traceEvent("checkout-success", { count: cart.length });
-      navigate({ ...route, page: "confirmed" });
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
-      if (checkoutId.current === id) setCheckoutError("Demo checkout could not be confirmed. Please try again.");
-    } finally {
-      checkoutInFlight.current = false;
-      setCheckoutPending(false);
-    }
+    await runCurrentCheckout(() => confirmDemoCheckout(cart, config.showShipping, id),
+      () => checkoutStillCurrent(id, checkoutId.current), {
+        confirmed: receipt => {
+          setCheckoutReceipt(receipt);
+          traceEvent("checkout-success", { count: cart.length });
+          navigate({ ...route, page: "confirmed" });
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        },
+        failed: () => setCheckoutError("Your order could not be confirmed. Please try again."),
+        settled: () => {
+          if (checkoutInFlight.current === id) { checkoutInFlight.current = null; setCheckoutPending(false); }
+        },
+      });
   }
 
   return (
     <>
-      <div className="demo-banner">Demo store · No real orders or payments</div>
       <header>
         <a
           className="wordmark"
@@ -160,7 +155,6 @@ function App() {
           fieldwork<span>®</span>
         </a>
         <div className="header-actions">
-          <DemoControls config={config} onChange={applyConfig} />
           {demoTraceEnabled && <Suspense fallback={null}><TraceControls /></Suspense>}
           <button
             aria-label="View cart"
@@ -185,6 +179,7 @@ function App() {
             selectedVariants={selectedVariants}
             added={added}
             localModel={localMode ? localModel : undefined}
+            personName={localMode ? person.displayName : undefined}
             onSearchInput={(value) => {
               setSearchInput(value);
               if (!value.trim() && route.query) goToCollection({ query: "" });
@@ -209,7 +204,7 @@ function App() {
             }
             onVariantChange={(productId, variantId) => {
               traceEvent("selection", { productId, variantId });
-              setSelectedVariants((items) => ({ ...items, [productId]: variantId }));
+              setSelection(previous => ({ scope: selectionScope, values: { ...(previous.scope === selectionScope ? previous.values : {}), [productId]: variantId } }));
             }}
             onAdd={(product, variantId, colorName) => {
               resetCheckout();
@@ -248,6 +243,17 @@ function App() {
           />
         )}
       </main>
+      {localMode && <Suspense fallback={null}><PersonaSwitcher people={SHOPPER_PERSONAS} person={person} onChange={(next: ShopperPersona) => {
+        if (next.id === personId) return;
+        const switched = switchShoppingPerson({ personId, cart, carts: carts.current, checkoutReceipt }, next.id);
+        carts.current = switched.carts;
+        setCart(switched.cart);
+        setPersonId(switched.personId);
+        setSelection({ scope: "", values: {} });
+        setAdded("");
+        resetCheckout();
+        if (route.page !== "shop") goToCollection({});
+      }} /></Suspense>}
       <footer>
         <span className="wordmark">
           fieldwork<span>®</span>

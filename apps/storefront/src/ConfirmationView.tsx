@@ -16,18 +16,18 @@ export function ConfirmationView({
   onBackToCollection: () => void;
 }) {
   const shipping =
-    quote && (quote.amount === 0 ? " · free demo shipping" : ` · $${quote.amount} demo shipping`);
+    quote && (quote.amount === 0 ? " · free shipping" : ` · $${quote.amount} shipping`);
   return (
     <section className="confirmation">
       <span className="checkmark" aria-hidden="true">
         <HugeiconsIcon icon={Tick02Icon} size={36} />
       </span>
-      <h1>Demo order confirmed</h1>
+      <h1>Order confirmed</h1>
       <p>No payment was processed or real order placed.</p>
       <div className="receipt">
-        {itemCount} demo item{itemCount === 1 ? "" : "s"} · ${subtotal} demo subtotal
+        {itemCount} item{itemCount === 1 ? "" : "s"} · ${subtotal} subtotal
         {shipping}
-        {quote && ` · $${total} demo total`}
+        {quote && ` · $${total} total`}
       </div>
       <button className="primary-button" onClick={onBackToCollection}>
         Back to the collection
