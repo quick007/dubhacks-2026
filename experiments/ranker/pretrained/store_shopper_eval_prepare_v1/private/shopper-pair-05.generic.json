@@ -1,0 +1,40 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-05",
+  "arm": "generic",
+  "entryUrl": "http://127.0.0.1:4312/",
+  "shopperNeeds": {
+    "goal": "Find one zipped organizer pouch for loose cables. Do not infer compartments or a measured capacity from a photograph.",
+    "hardConstraints": [
+      {
+        "id": "item-price",
+        "label": "Item price must be at most $30; delivery is outside this budget.",
+        "attribute": "itemPrice",
+        "operator": "at-most",
+        "value": 30
+      }
+    ],
+    "preferences": [
+      {
+        "id": "basic-function",
+        "label": "Prefer a zipped organizer pouch for cables.",
+        "attribute": "functions",
+        "operator": "includes",
+        "value": "cable-organizer"
+      }
+    ]
+  },
+  "recommenderContext": {
+    "query": "a zipped pouch for cables up to $30",
+    "itemBudget": null,
+    "hardRequirements": []
+  },
+  "instructions": [
+    "Navigate in actual headed Chrome; inspect products and select a product/color using the visible store.",
+    "Private shopper needs guide your choice. Only assigned observable context may be entered into search or sent to the recommender; do not reveal private needs there.",
+    "The generic arm retains the store's existing deterministic query/search behavior; it is not a blank-query or no-personalization control.",
+    "Do not use gold product IDs, expected selections or evaluator answers. No first-button purchase script.",
+    "Only a fake demo order may be confirmed. Never make a real purchase or payment.",
+    "Report actual actions and any failure honestly. A fresh Chrome tab does not imply fresh cookies or isolated storage."
+  ]
+}

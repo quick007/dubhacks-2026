@@ -1,0 +1,47 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-07",
+  "arm": "generic",
+  "entryUrl": "http://127.0.0.1:4312/",
+  "shopperNeeds": {
+    "goal": "Find one carry bag for an outing. A tote/carryall or travel bag is acceptable. Do not choose a backpack, and do not substitute a small organizer pouch for the requested bag type.",
+    "hardConstraints": [
+      {
+        "id": "item-price",
+        "label": "Item price must be at most $90; delivery is outside this budget.",
+        "attribute": "itemPrice",
+        "operator": "at-most",
+        "value": 90
+      },
+      {
+        "id": "avoid-backpack",
+        "label": "Do not choose a backpack or daypack.",
+        "attribute": "isBackpack",
+        "operator": "equals",
+        "value": false
+      }
+    ],
+    "preferences": [
+      {
+        "id": "basic-function",
+        "label": "Prefer a tote/carryall or travel-bag form.",
+        "attribute": "functions",
+        "operator": "includes",
+        "value": "carry-bag"
+      }
+    ]
+  },
+  "recommenderContext": {
+    "query": "a carry bag up to $90, not a backpack",
+    "itemBudget": null,
+    "hardRequirements": []
+  },
+  "instructions": [
+    "Navigate in actual headed Chrome; inspect products and select a product/color using the visible store.",
+    "Private shopper needs guide your choice. Only assigned observable context may be entered into search or sent to the recommender; do not reveal private needs there.",
+    "The generic arm retains the store's existing deterministic query/search behavior; it is not a blank-query or no-personalization control.",
+    "Do not use gold product IDs, expected selections or evaluator answers. No first-button purchase script.",
+    "Only a fake demo order may be confirmed. Never make a real purchase or payment.",
+    "Report actual actions and any failure honestly. A fresh Chrome tab does not imply fresh cookies or isolated storage."
+  ]
+}

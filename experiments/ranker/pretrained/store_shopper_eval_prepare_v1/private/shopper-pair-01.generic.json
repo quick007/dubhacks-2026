@@ -1,0 +1,32 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-01",
+  "arm": "generic",
+  "entryUrl": "http://127.0.0.1:4312/",
+  "shopperNeeds": {
+    "goal": "Find one item for writing short notes and reminders. Choose from visible product information; do not assume paper type, page count or weather resistance.",
+    "hardConstraints": [
+      {
+        "id": "basic-function",
+        "label": "The item must be for taking written notes.",
+        "attribute": "functions",
+        "operator": "includes",
+        "value": "note-taking"
+      }
+    ],
+    "preferences": []
+  },
+  "recommenderContext": {
+    "query": "a notebook for quick notes",
+    "itemBudget": null,
+    "hardRequirements": []
+  },
+  "instructions": [
+    "Navigate in actual headed Chrome; inspect products and select a product/color using the visible store.",
+    "Private shopper needs guide your choice. Only assigned observable context may be entered into search or sent to the recommender; do not reveal private needs there.",
+    "The generic arm retains the store's existing deterministic query/search behavior; it is not a blank-query or no-personalization control.",
+    "Do not use gold product IDs, expected selections or evaluator answers. No first-button purchase script.",
+    "Only a fake demo order may be confirmed. Never make a real purchase or payment.",
+    "Report actual actions and any failure honestly. A fresh Chrome tab does not imply fresh cookies or isolated storage."
+  ]
+}

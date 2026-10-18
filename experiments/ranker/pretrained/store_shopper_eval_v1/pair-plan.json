@@ -1,0 +1,280 @@
+{
+  "version": "paired-actual-store-shopper-smoke.v1",
+  "contractVersion": "shopper-session.v1",
+  "initialPairs": 10,
+  "initialRuns": 20,
+  "replicatesPerArm": 1,
+  "defaultBaseUrl": "http://127.0.0.1:4312/",
+  "allowedAlternativeBaseUrl": "http://shop.dubhacks.localhost:1356/",
+  "commonSettings": {
+    "headline": "Good things. Wherever life takes you.",
+    "showShipping": false,
+    "recommendationOrder": "popular",
+    "quantity": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 960
+    }
+  },
+  "budget": {
+    "maxActions": 24,
+    "maxWallSeconds": 120,
+    "wallStart": "navigation dispatch; includes native waits/queue and shopper actions; model startup reported separately",
+    "onLimit": "timeout; retain partial actions and artifacts in the fixed20-run denominator"
+  },
+  "isolation": {
+    "freshReactStateRequired": true,
+    "initialCartEmptyMustBeObserved": true,
+    "freshTabDoesNotMeanFreshStorage": true,
+    "actualReceiptFieldsRequired": [
+      "kind",
+      "sharedStorage",
+      "storageCleared",
+      "initialCartEmpty",
+      "tabId",
+      "contextId",
+      "evidenceArtifactIds",
+      "note"
+    ],
+    "supportedKinds": [
+      "fresh-tab",
+      "fresh-storage-context"
+    ],
+    "freshTabRequiredTruth": {
+      "sharedStorage": true,
+      "storageCleared": false
+    },
+    "crossArmDecisionsOrMemoryPermitted": false
+  },
+  "shopperInstructions": [
+    "Navigate actual headed Chrome and submit only the assigned observable query to search.",
+    "Use private needs to choose independently from visible products and colors. Never receive evaluator gold, correct product IDs, target selectors, another arm decision or a first-button purchase script.",
+    "Choose one qualifying item with quantity1 and only confirm a fake demo order, or abstain with a factual reason if the goal or a hard requirement cannot be verified.",
+    "Do not infer stock, size, capacity, delivery or performance facts from an image, product name or Add to cart button.",
+    "Record actual actions, selected color, choice or abstention, unknowns, missing artifacts and failures. Respect the fixed24-action/120-second budget."
+  ],
+  "schedule": [
+    {
+      "caseId": "shopper-pair-01",
+      "split": "development",
+      "seed": 2026101801,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-01-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-01-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-02",
+      "split": "development",
+      "seed": 2026101802,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-02-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-02-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-03",
+      "split": "development",
+      "seed": 2026101803,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-03-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-03-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "split": "development",
+      "seed": 2026101804,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-04-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-04-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-05",
+      "split": "development",
+      "seed": 2026101805,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-05-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-05-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-06",
+      "split": "development",
+      "seed": 2026101806,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-06-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-06-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-07",
+      "split": "development",
+      "seed": 2026101807,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-07-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-07-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "split": "development",
+      "seed": 2026101808,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-08-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-08-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-09",
+      "split": "development",
+      "seed": 2026101809,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-09-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-09-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "shopper-pair-10",
+      "split": "development",
+      "seed": 2026101810,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "shopper-pair-10-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "shopper-pair-10-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    }
+  ],
+  "predeclaredOrderCounts": {
+    "genericThenLocal": 5,
+    "localThenGeneric": 5
+  },
+  "executionPerformed": false,
+  "limitations": [
+    "Hand-authored synthetic development scenarios; 20-run initial smoke only, not human conversion or causal personalization lift.",
+    "Shared-origin Chrome tabs must honestly record shared storage; do not claim full storage isolation without a supporting provider.",
+    "Arms differ only modelmode; same public context/private needs/pairseed/settings/budget, fresh independent shopper process/context.",
+    "Legacy scripted runner adds first item and is incompatible with this independent shopper evaluation; no legacyrunner/API/frontend edits.",
+    "Existing11 illustrative image-asset personas are not labels, truth or scenario evidence."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-09",
+  "arm": "generic",
+  "entryUrl": "http://127.0.0.1:4312/",
+  "shopperNeeds": {
+    "goal": "I want the exact item named in my public query, only if its item price is strictly below $24. Do not substitute a different type of product to satisfy the price ceiling. If the named item cannot meet it, decline without ordering.",
+    "hardConstraints": [
+      {
+        "id": "item-price",
+        "label": "Item price must be strictly below $24; delivery is outside this budget.",
+        "attribute": "itemPrice",
+        "operator": "less-than",
+        "value": 24
+      },
+      {
+        "id": "exact-name",
+        "label": "Only the exact publicly requested item name is acceptable.",
+        "attribute": "originalName",
+        "operator": "equals",
+        "value": "Trail mug"
+      }
+    ],
+    "preferences": []
+  },
+  "recommenderContext": {
+    "query": "Trail mug under $24",
+    "itemBudget": null,
+    "hardRequirements": []
+  },
+  "instructions": [
+    "Navigate in actual headed Chrome; inspect products and select a product/color using the visible store.",
+    "Private shopper needs guide your choice. Only assigned observable context may be entered into search or sent to the recommender; do not reveal private needs there.",
+    "The generic arm retains the store's existing deterministic query/search behavior; it is not a blank-query or no-personalization control.",
+    "Do not use gold product IDs, expected selections or evaluator answers. No first-button purchase script.",
+    "Only a fake demo order may be confirmed. Never make a real purchase or payment.",
+    "Report actual actions and any failure honestly. A fresh Chrome tab does not imply fresh cookies or isolated storage."
+  ]
+}

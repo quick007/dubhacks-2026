@@ -1,0 +1,47 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-08",
+  "arm": "generic",
+  "entryUrl": "http://127.0.0.1:4312/",
+  "shopperNeeds": {
+    "goal": "Find one rain jacket whose public information explicitly declares waterproofing. Water resistance alone is insufficient. Do not assume a clothing size, stock status or warmth.",
+    "hardConstraints": [
+      {
+        "id": "item-price",
+        "label": "Item price must be at most $130; delivery is outside this budget.",
+        "attribute": "itemPrice",
+        "operator": "at-most",
+        "value": 130
+      },
+      {
+        "id": "waterproof-evidence",
+        "label": "Public catalog information must explicitly declare waterproof.",
+        "attribute": "waterproofDeclared",
+        "operator": "equals",
+        "value": true
+      }
+    ],
+    "preferences": [
+      {
+        "id": "basic-function",
+        "label": "Prefer a rain jacket rather than another waterproof object.",
+        "attribute": "functions",
+        "operator": "includes",
+        "value": "rain-jacket"
+      }
+    ]
+  },
+  "recommenderContext": {
+    "query": "a waterproof rain jacket up to $130",
+    "itemBudget": null,
+    "hardRequirements": []
+  },
+  "instructions": [
+    "Navigate in actual headed Chrome; inspect products and select a product/color using the visible store.",
+    "Private shopper needs guide your choice. Only assigned observable context may be entered into search or sent to the recommender; do not reveal private needs there.",
+    "The generic arm retains the store's existing deterministic query/search behavior; it is not a blank-query or no-personalization control.",
+    "Do not use gold product IDs, expected selections or evaluator answers. No first-button purchase script.",
+    "Only a fake demo order may be confirmed. Never make a real purchase or payment.",
+    "Report actual actions and any failure honestly. A fresh Chrome tab does not imply fresh cookies or isolated storage."
+  ]
+}

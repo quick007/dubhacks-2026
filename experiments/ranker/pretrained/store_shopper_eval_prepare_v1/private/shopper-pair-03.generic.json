@@ -1,0 +1,40 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-03",
+  "arm": "generic",
+  "entryUrl": "http://127.0.0.1:4312/",
+  "shopperNeeds": {
+    "goal": "Find one light for a table beside the bed. Judge its basic table-light function from public information, without assuming battery runtime or an electrical safety certification.",
+    "hardConstraints": [
+      {
+        "id": "item-price",
+        "label": "Item price must be at most $70; delivery is outside this budget.",
+        "attribute": "itemPrice",
+        "operator": "at-most",
+        "value": 70
+      }
+    ],
+    "preferences": [
+      {
+        "id": "basic-function",
+        "label": "Prefer a table light rather than an unrelated household item.",
+        "attribute": "functions",
+        "operator": "includes",
+        "value": "table-light"
+      }
+    ]
+  },
+  "recommenderContext": {
+    "query": "a light for my bedside table up to $70",
+    "itemBudget": null,
+    "hardRequirements": []
+  },
+  "instructions": [
+    "Navigate in actual headed Chrome; inspect products and select a product/color using the visible store.",
+    "Private shopper needs guide your choice. Only assigned observable context may be entered into search or sent to the recommender; do not reveal private needs there.",
+    "The generic arm retains the store's existing deterministic query/search behavior; it is not a blank-query or no-personalization control.",
+    "Do not use gold product IDs, expected selections or evaluator answers. No first-button purchase script.",
+    "Only a fake demo order may be confirmed. Never make a real purchase or payment.",
+    "Report actual actions and any failure honestly. A fresh Chrome tab does not imply fresh cookies or isolated storage."
+  ]
+}

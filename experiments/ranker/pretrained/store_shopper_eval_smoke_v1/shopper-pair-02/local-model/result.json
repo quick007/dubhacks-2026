@@ -1,0 +1,149 @@
+{
+  "pairId": "shopper-pair-02",
+  "arm": "local-model",
+  "seed": 2026101802,
+  "query": "a bottle for drinking water under $40",
+  "url": "http://127.0.0.1:4312/?model=local",
+  "tabId": "548144810",
+  "status": "demo_order_confirmed",
+  "independence": {
+    "sourceOrCatalogFilesRead": false,
+    "goldRead": false,
+    "otherShopperOutcomeReceived": false,
+    "correctTargetReceived": false,
+    "browsing": "Chrome CUA only"
+  },
+  "session": {
+    "freshTab": true,
+    "freshReactSessionEvidence": "New tab opened collection with blank search, initial ordering state and new page-relative readiness entries. React internals were not inspected.",
+    "emptyCartVerified": "Your cart is empty.",
+    "storage": "Chrome tabs share origin storage. No local/session storage was cleared; no storage isolation claimed."
+  },
+  "timing": {
+    "firstBrowserActionExactTime": null,
+    "firstBrowserAction": "createBrowserTab, tool duration 5.6048 s; preceding wall/monotonic checkpoint was not recorded",
+    "firstCheckpoint": {
+      "wall": 1792295449.411345,
+      "iso": "2026-10-18T03:50:49.411570+00:00",
+      "monotonic": 936072.379701291
+    },
+    "endCheckpoint": {
+      "wall": 1792295478.688608,
+      "iso": "2026-10-18T03:51:18.688862+00:00",
+      "monotonic": 936101.656753708
+    },
+    "checkpointElapsedSeconds": 29.277052417,
+    "estimatedFirstActionToFinalObservationSeconds": 35,
+    "under120Seconds": true,
+    "perActionTimes": "Exact per-action wall/monotonic times unavailable. Ordered CUA calls and durations preserved below."
+  },
+  "actions": [
+    {
+      "n": 1,
+      "action": "Open NEW Chrome tab at http://127.0.0.1:4312/?model=local",
+      "callDurationSeconds": 5.6048,
+      "observed": "Demo Shop; blank search; Local model is ordering products…"
+    },
+    {
+      "n": 2,
+      "action": "Click View cart (AX 6)",
+      "callDurationSeconds": 1.051,
+      "observed": "Your cart is empty.",
+      "readOnlyObservation": "document.documentElement.getAttribute('data-local-model-readiness')"
+    },
+    {
+      "n": 3,
+      "action": "Click Continue browsing (AX 293)",
+      "callDurationSeconds": 1.0486,
+      "observed": "Collection with blank search"
+    },
+    {
+      "n": 4,
+      "action": "Set search value (AX 301) to exact query",
+      "callDurationSeconds": 1.326
+    },
+    {
+      "n": 5,
+      "action": "Click Search (AX 302)",
+      "sameCallAsAction": 4,
+      "observed": "Query in title and URL; Local model is ordering products; last available result shown…"
+    },
+    {
+      "n": 6,
+      "action": "Click bottle heading (AX 762)",
+      "callDurationSeconds": 1.0532,
+      "observed": "No detail navigation; heading changed to Everyday steel bottle selected in Graphite; price $36; partial copy status"
+    },
+    {
+      "n": 7,
+      "action": "Click Add to cart (AX 770)",
+      "callDurationSeconds": 1.0078,
+      "observed": "Everyday steel bottle (Graphite) added to cart.; count 1; Complete copy 6.48 s · 19/20 fresh fields · 1 withheld"
+    },
+    {
+      "n": 8,
+      "action": "Click View cart (AX 6)",
+      "callDurationSeconds": 0.7272,
+      "observed": "Everyday steel bottle Graphite · × 1 $36; Demo subtotal $36; No payment required. Nothing will be shipped."
+    },
+    {
+      "n": 9,
+      "action": "Click Place demo order (AX 810)",
+      "callDurationSeconds": 0.7391,
+      "observed": "Demo order confirmed; No payment was processed or real order placed. 1 demo item · $36 demo subtotal"
+    }
+  ],
+  "inputActionCount": 9,
+  "readOnlyCalls": [
+    {
+      "purpose": "After-query ordering settle check before choosing",
+      "callDurationSeconds": 0.6304,
+      "observed": "Local model · Learned product order · Existing storefront gallery · Order 0.38 s · Writing fresh copy…; bottle first"
+    },
+    {
+      "purpose": "Read html data-local-model-readiness attribute",
+      "method": "tab.playwright.evaluate, read-only DOM",
+      "rawFile": "readiness-attribute.txt"
+    },
+    {
+      "purpose": "Confirmation screenshot",
+      "method": "tab.getScreenshot()",
+      "durableFile": null,
+      "note": "Screenshot emitted in native CUA transcript. No durable screenshot file path was provided; no Playwright trace claimed."
+    }
+  ],
+  "selection": {
+    "name": "Everyday steel bottle",
+    "variant": "Graphite",
+    "quantity": 1,
+    "itemPrice": 36,
+    "currency": "USD",
+    "strictlyBelow40": true,
+    "rationale": "Visible item is named Everyday steel bottle, has bottle imagery and $36 price. Selected the bottle rather than the mug. Drinking-water suitability inferred from visible bottle presentation; no additional capacity, heat retention, leakproofing or stock claims made.",
+    "productDetailAttempt": "Clicking visible heading did not navigate to a detail page."
+  },
+  "model": {
+    "afterQueryOrderingObservedBeforeChoice": true,
+    "rankStatusBeforeChoice": "Order 0.38 s · Writing fresh copy…",
+    "firstCardsStatusOnHeadingClick": "First cards 5.51 s · 10/10 fresh fields",
+    "completeStatusByAdd": "Complete copy 6.48 s · 19/20 fresh fields · 1 withheld",
+    "headingClickBeforeCompleteCopy": true,
+    "addToCartBeforeCompleteCopy": false,
+    "completeAtAddEvidence": "DOM attribute read immediately before click already included generation 8 complete event; resulting AX showed complete copy",
+    "readinessLimit": "DOM commit + two requestAnimationFrame callbacks; excludes physical paint, image readiness and variant visibility measurements."
+  },
+  "confirmation": {
+    "heading": "Demo order confirmed",
+    "message": "No payment was processed or real order placed.",
+    "items": 1,
+    "subtotal": 36,
+    "url": "http://127.0.0.1:4312/?model=local#confirmed?q=a+bottle+for+drinking+water+under+%2440"
+  },
+  "errors": [],
+  "limitations": [
+    "No exact pre-first-browser-action clock checkpoint or per-action timestamps; elapsed estimate is conservative and tool durations are recorded.",
+    "Screenshot exists in native CUA transcript, no durable screenshot file.",
+    "Clicked heading but no detail description available; no unsupported bottle performance or stock assertions."
+  ]
+}
+

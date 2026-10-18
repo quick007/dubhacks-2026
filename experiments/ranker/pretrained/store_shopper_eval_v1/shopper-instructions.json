@@ -1,0 +1,268 @@
+[
+  {
+    "caseId": "shopper-pair-01",
+    "privateShopperNeeds": {
+      "goal": "Find one item for writing short notes and reminders. Choose from visible product information; do not assume paper type, page count or weather resistance.",
+      "hardConstraints": [
+        {
+          "id": "basic-function",
+          "label": "The item must be for taking written notes.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "note-taking"
+        }
+      ],
+      "preferences": []
+    }
+  },
+  {
+    "caseId": "shopper-pair-02",
+    "privateShopperNeeds": {
+      "goal": "Find one bottle for carrying drinking water. Choose independently from the visible store; do not assume heat retention, leakproofing, capacity or stock that is not stated.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be strictly below $40; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "less-than",
+          "value": 40
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a bottle intended for carrying drinking water.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "drinking-water bottle"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "shopper-pair-03",
+    "privateShopperNeeds": {
+      "goal": "Find one light for a table beside the bed. Judge its basic table-light function from public information, without assuming battery runtime or an electrical safety certification.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be at most $70; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 70
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a table light rather than an unrelated household item.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "table-light"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "shopper-pair-04",
+    "privateShopperNeeds": {
+      "goal": "Find one carry bag for groceries. A declared tote or carryall is useful; do not assume measured capacity, load strength or durability.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be at most $50; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 50
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a tote or carryall suitable for the basic grocery-carrying function.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "grocery-carryall"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "shopper-pair-05",
+    "privateShopperNeeds": {
+      "goal": "Find one zipped organizer pouch for loose cables. Do not infer compartments or a measured capacity from a photograph.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be at most $30; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 30
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a zipped organizer pouch for cables.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "cable-organizer"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "shopper-pair-06",
+    "privateShopperNeeds": {
+      "goal": "Find one mug in the specifically requested Cobalt color. Use the visible color choices and verify the selected color before adding it. Do not choose another color just because it appears first.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be at most $24; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 24
+        },
+        {
+          "id": "selected-color",
+          "label": "The selected color must be Cobalt.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Cobalt"
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a drinking mug.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "drinking-mug"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "shopper-pair-07",
+    "privateShopperNeeds": {
+      "goal": "Find one carry bag for an outing. A tote/carryall or travel bag is acceptable. Do not choose a backpack, and do not substitute a small organizer pouch for the requested bag type.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be at most $90; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 90
+        },
+        {
+          "id": "avoid-backpack",
+          "label": "Do not choose a backpack or daypack.",
+          "attribute": "isBackpack",
+          "operator": "equals",
+          "value": false
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a tote/carryall or travel-bag form.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "carry-bag"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "shopper-pair-08",
+    "privateShopperNeeds": {
+      "goal": "Find one rain jacket whose public information explicitly declares waterproofing. Water resistance alone is insufficient. Do not assume a clothing size, stock status or warmth.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be at most $130; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 130
+        },
+        {
+          "id": "waterproof-evidence",
+          "label": "Public catalog information must explicitly declare waterproof.",
+          "attribute": "waterproofDeclared",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a rain jacket rather than another waterproof object.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "rain-jacket"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "shopper-pair-09",
+    "privateShopperNeeds": {
+      "goal": "I want the exact item named in my public query, only if its item price is strictly below $24. Do not substitute a different type of product to satisfy the price ceiling. If the named item cannot meet it, decline without ordering.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be strictly below $24; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "less-than",
+          "value": 24
+        },
+        {
+          "id": "exact-name",
+          "label": "Only the exact publicly requested item name is acceptable.",
+          "attribute": "originalName",
+          "operator": "equals",
+          "value": "Trail mug"
+        }
+      ],
+      "preferences": []
+    }
+  },
+  {
+    "caseId": "shopper-pair-10",
+    "privateShopperNeeds": {
+      "goal": "Find a waterproof jacket only if stock is explicitly verified in public product information. An Add to cart button is not stock evidence. If stock is unknown, decline without ordering and state what could not be verified.",
+      "hardConstraints": [
+        {
+          "id": "item-price",
+          "label": "Item price must be at most $130; delivery is outside this budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 130
+        },
+        {
+          "id": "waterproof-evidence",
+          "label": "Waterproof must be explicitly declared.",
+          "attribute": "waterproofDeclared",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "id": "stock-evidence",
+          "label": "Current stock must be explicitly verified, not assumed.",
+          "attribute": "stockVerified",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "preferences": [
+        {
+          "id": "basic-function",
+          "label": "Prefer a rain jacket.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "rain-jacket"
+        }
+      ]
+    }
+  }
+]

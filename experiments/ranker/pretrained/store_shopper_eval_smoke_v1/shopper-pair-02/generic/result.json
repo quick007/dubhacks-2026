@@ -1,0 +1,132 @@
+{
+  "pairId": "shopper-pair-02",
+  "arm": "generic",
+  "seed": 2026101802,
+  "query": "a bottle for drinking water under $40",
+  "baseUrl": "http://127.0.0.1:4312/",
+  "modelParameterUsed": false,
+  "outcome": "completed",
+  "fakeOrderConfirmed": true,
+  "selection": {
+    "name": "Everyday steel bottle",
+    "variant": "Graphite",
+    "quantity": 1,
+    "unitPriceUSD": 36,
+    "subtotalUSD": 36,
+    "strictlyBelow40": true
+  },
+  "reason": "Visible bottle name, portable bottle photo and runner holding bottle fit carrying drinking water. No heat retention, leakproofing, capacity or stock assertions made.",
+  "freshSession": {
+    "newTab": true,
+    "tabId": "548144806",
+    "initialSearchEmpty": true,
+    "initialCartEmpty": true,
+    "reactInternalsInspected": false,
+    "qualification": "Fresh page UI observed in new tab; no internal React session identifier inspected. Chrome tabs share origin storage; storage was not cleared or inspected."
+  },
+  "timing": {
+    "preBrowserUTC": "2026-10-18 03:48:45 UTC",
+    "preBrowserMonotonic": 935949.101516416,
+    "postConfirmationUTC": "2026-10-18 03:49:24 UTC",
+    "postConfirmationMonotonic": 935987.557272208,
+    "confirmationElapsedUpperBoundSeconds": 38.456,
+    "reportWrittenUTC": "2026-10-18T03:50:02.194373+00:00",
+    "reportElapsedSeconds": 76.061,
+    "exactPerActionTimestampsAvailable": false,
+    "note": "Clock read just before first browser call and after confirmation; per-call tool wall durations recorded, not invented per-action timestamps."
+  },
+  "uiActionCounts": {
+    "stateChangingInputsIncludingNewTab": 10,
+    "allDocumentedCUAAPICallsIncludingObservationsAndDeliverableMark": 22,
+    "CUAToolInvocations": 12,
+    "limit": 24
+  },
+  "actions": [
+    {
+      "sequence": 1,
+      "api": "createBrowserTab",
+      "observed": "New Chrome tab http://127.0.0.1:4312/; sessionName \ud83e\uddea Shopper 02; tab 548144806; initial collection with empty search",
+      "toolWallSeconds": 5.2058
+    },
+    {
+      "sequence": 2,
+      "api": "click(6); getAXState",
+      "observed": "View cart: Your cart is empty.",
+      "toolWallSeconds": 0.6261
+    },
+    {
+      "sequence": 3,
+      "api": "click(292); getAXState",
+      "observed": "Continue browsing: collection, empty search",
+      "toolWallSeconds": 0.9413
+    },
+    {
+      "sequence": 4,
+      "api": "typeText(300, exact query); click(301); getAXState",
+      "observed": "Submitted a bottle for drinking water under $40; Picked for your search; Everyday steel bottle $36 Graphite selected",
+      "toolWallSeconds": 1.6912
+    },
+    {
+      "sequence": 5,
+      "api": "click(582); getAXState",
+      "observed": "Clicked bottle heading; no accessibility tree change; no detail page opened",
+      "toolWallSeconds": 1.221
+    },
+    {
+      "sequence": 6,
+      "api": "getScreenshot",
+      "observed": "Visible bottle result $36, Graphite; screenshot emitted in native CUA transcript",
+      "toolWallSeconds": 0.5529
+    },
+    {
+      "sequence": 7,
+      "api": "getAXState(disableDiffing=true)",
+      "observed": "Refreshed controls following screenshot",
+      "toolWallSeconds": 0.4604
+    },
+    {
+      "sequence": 8,
+      "api": "click(581); getAXState",
+      "observed": "In use image: A runner holding the graphite bottle beside a park running path",
+      "toolWallSeconds": 1.168
+    },
+    {
+      "sequence": 9,
+      "api": "click(590); getAXState",
+      "observed": "Everyday steel bottle (Graphite) added to cart.",
+      "toolWallSeconds": 1.1843
+    },
+    {
+      "sequence": 10,
+      "api": "click(6); getAXState",
+      "observed": "Everyday steel bottle Graphite \u00d71 $36; Demo subtotal $36; No payment required. Nothing will be shipped.",
+      "toolWallSeconds": 0.7387
+    },
+    {
+      "sequence": 11,
+      "api": "click(597); getAXState",
+      "observed": "Demo order confirmed; No payment was processed or real order placed; 1 demo item \u00b7 $36 demo subtotal",
+      "toolWallSeconds": 0.7447
+    },
+    {
+      "sequence": 12,
+      "api": "getScreenshot; markDeliverable",
+      "observed": "Confirmation screenshot emitted; live confirmation tab marked deliverable",
+      "toolWallSeconds": 0.406
+    }
+  ],
+  "errors": [
+    {
+      "action": "click bottle heading",
+      "result": "No visible state change; continued using visible result and in-use image."
+    }
+  ],
+  "evidence": {
+    "confirmationText": "Demo order confirmed. No payment was processed or real order placed. 1 demo item \u00b7 $36 demo subtotal.",
+    "confirmationUrl": "http://127.0.0.1:4312/#confirmed?q=a+bottle+for+drinking+water+under+%2440",
+    "screenshots": "Captured via CUA and present in native tool transcript; durable screenshot file unavailable via used documented API.",
+    "trace": "Native CUA transcript only; no Playwright trace generated.",
+    "tabMarkedDeliverable": true
+  },
+  "blockers": []
+}
