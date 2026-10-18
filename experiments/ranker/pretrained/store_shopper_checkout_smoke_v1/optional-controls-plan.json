@@ -1,0 +1,37 @@
+{
+  "schema": "shopper-optional-controls-plan.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "mainCohort": "store_shopper_cohort_v2",
+  "selectedBeforeTheseScenariosWereExecuted": true,
+  "startConditions": {
+    "mainAssignedReceiptsRequired": 120,
+    "minimumRemainingMinutesBeforeDeadline": 25,
+    "deadlineUtc": "2026-10-18T13:00:00Z",
+    "outcomeDependentSelection": false
+  },
+  "aa": {
+    "caseIds": ["holdout-v2-02", "holdout-v3-06"],
+    "sessionsPerCase": 2,
+    "treatmentForBoth": "generic",
+    "labels": ["A", "B"],
+    "purpose": "Small stochastic/evaluator sanity control. Both independently isolated shoppers receive the same private needs and visible baseline experience. No claim of a precise false-positive rate."
+  },
+  "repeats": {
+    "caseIds": ["holdout-v2-01", "holdout-v3-03"],
+    "sessionsPerCase": 2,
+    "arms": ["generic", "local-model"],
+    "order": "Reverse each case's original within-pair order.",
+    "clusterBy": "original case ID",
+    "purpose": "Descriptive repeatability check; repeats are not independent fresh scenarios."
+  },
+  "commonSettings": {
+    "model": "gpt-6.1-sol",
+    "effort": "low",
+    "maxActions": 24,
+    "maxWallSeconds": 120,
+    "concurrency": 1,
+    "quantity": 1
+  },
+  "reporting": "Retain every preselected control assignment, failures and missing outcomes. Keep controls separate from the fixed 60-pair main cohort; never replace a main-cohort result or pool repeated cases as independent observations."
+}
