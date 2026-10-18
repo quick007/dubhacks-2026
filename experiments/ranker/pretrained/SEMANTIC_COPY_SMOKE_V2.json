@@ -1,0 +1,97 @@
+{
+  "status": "blocked",
+  "config": {
+    "seed": 19074,
+    "rank": 4,
+    "scale": 20.0,
+    "learningRate": 0.0001,
+    "epochs": 2,
+    "batchSize": 1,
+    "memoryGiB": 7,
+    "prefillStep": 256,
+    "maximumContext": 4096,
+    "maximumRankingPrefix": 1792,
+    "target": "language_model.model.layers.31.mlp.down_proj",
+    "selection": "final fixed step; no dev/test checkpoint selection",
+    "trainingMode": "frozen upstream eval; exact cached final-MLP inputs; target-only CE"
+  },
+  "sourceSha256": "7e480d5a242c184c2756d4ff2bc649f07af442a5d639576951cddb681b614d2a",
+  "dataManifestSha256": "b9846faa469b4733c3f45d044ece581589f90832346df884c158fab6bf14bb7e",
+  "frozenBase": true,
+  "trainedHeadsUnchanged": true,
+  "controls": {
+    "directFeatureEquivalence": {
+      "nonzeroB": true,
+      "directLoss": 2.796349287033081,
+      "featureLoss": 2.8168084621429443,
+      "gradients": [
+        {
+          "name": "lora_a",
+          "maxAbsDifference": 0.0003461870364844799,
+          "exact": false
+        },
+        {
+          "name": "lora_b",
+          "maxAbsDifference": 0.009264126420021057,
+          "exact": false
+        }
+      ]
+    }
+  },
+  "extraction": [
+    {
+      "caseId": "copy-43a759a1ad17bae9",
+      "rowId": "heading-1",
+      "kind": "heading",
+      "targetTokens": 4,
+      "predictionStart": 2225,
+      "supervisedTokenCount": 4,
+      "teacherInputTokens": 2229,
+      "fullTokens": 2230,
+      "stopTokenId": 248046,
+      "stopToken": "<|im_end|>",
+      "eosReceipt": {
+        "eosTokenIds": [
+          248046
+        ],
+        "eosTokenId": [
+          248046
+        ],
+        "acceptedEosTokenIds": [
+          248046
+        ],
+        "stopDeclaredBy": [
+          "eos_token_ids",
+          "eos_token_id"
+        ]
+      },
+      "promptSha256": "9d62a40c1d31493df408c03b9ac4df1377525ec5458ec9c50ffdc1b01a015f1f",
+      "modelInputSha256": "9b1c6a369ecca218b6f354ec17d09f3b5dfffea9bd74c2c67634b49e3f00be49",
+      "promptTokenCount": 2226
+    }
+  ],
+  "steps": [],
+  "arms": [],
+  "wallMs": 10352.404917008244,
+  "loadMs": 1423.0789169669151,
+  "trainableParameters": [
+    [
+      "language_model.model.layers.31.mlp.down_proj.lora_a",
+      49152
+    ],
+    [
+      "language_model.model.layers.31.mlp.down_proj.lora_b",
+      16384
+    ]
+  ],
+  "blocker": {
+    "type": "AssertionError",
+    "message": "Direct/features loss or gradient mismatch"
+  },
+  "memory": {
+    "mlxActiveBytes": 5276690970,
+    "mlxPeakBytes": 6321408646,
+    "mlxCacheBytes": 134127794,
+    "processBudgetBytes": 7516192768
+  }
+}

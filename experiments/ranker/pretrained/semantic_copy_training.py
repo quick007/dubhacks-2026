@@ -99,6 +99,7 @@ def capture(backbone, adapter, state, field):
             saved['x'] = x; saved['y'] = self.base(x)
             return saved['y']
     xs=[]; hs=[]; ys=[]
+    if len(suffix)>CONFIG['prefillStep']:raise ValueError('Exact feature training requires one complete native row suffix, no shape substitution')
     original = layer.mlp.down_proj
     layer.mlp.down_proj = DownTap(); layer.post_attention_layernorm = NormTap()
     try:
@@ -107,7 +108,9 @@ def capture(backbone, adapter, state, field):
             hidden = model.model(mx.array([suffix[pos:end]]), cache=branch['cache'])
             begin = max(start - pos, 0)
             if begin < end - pos:
-                selected = [saved[k][0, begin:] for k in ('x', 'h', 'y')]
+                # Preserve the ENTIRE [1,L,D] native field-branch shape. Slicing
+                # before the adapter/norm changes floating-point kernel shapes.
+                selected = [saved[k] for k in ('x', 'h', 'y')]
                 mx.eval(selected, [c.state for c in branch['cache']]); mx.synchronize()
                 for dest, value in zip((xs,hs,ys), selected):
                     # float32 exactly represents BF16; restore original dtype below.
@@ -118,10 +121,11 @@ def capture(backbone, adapter, state, field):
             backbone.check_memory()
     finally:
         layer.mlp.down_proj = original; layer.post_attention_layernorm = norm
-    features = {k: np.concatenate(parts) for k, parts in (('x',xs),('h',hs),('y',ys))}
-    if len(features['x']) != len(contract['targets']): raise AssertionError('Target feature alignment')
+    features = {k: np.concatenate(parts,axis=1) for k, parts in (('x',xs),('h',hs),('y',ys))}
+    if features['x'].shape[1]-start != len(contract['targets']): raise AssertionError('Target feature alignment')
     return {**features, 'targets': contract['targets'], 'dtype': str(saved['x'].dtype),
             'contract': {k:v for k,v in contract.items() if k not in ('inputs','targets','promptTokens')},
+            'predictionStartInBranch':start,
             'caseId': field['caseId'], 'rowId': field['rowId'], 'kind': field['kind']}
 
 
@@ -133,7 +137,7 @@ def feature_loss(backbone, adapter, item):
     delta = (adapter.scale * ((x @ adapter.lora_a) @ adapter.lora_b)).astype(x.dtype)
     # Match LoRALinear and DecoderLayer's two additions, including rounding.
     hidden = backbone.model.model.norm(h + (y + delta))
-    logits = backbone.model.language_model.lm_head(hidden)
+    logits = backbone.model.language_model.lm_head(hidden[0,item['predictionStartInBranch']:])
     return nn.losses.cross_entropy(logits.astype(mx.float32), mx.array(item['targets']), reduction='mean')
 
 
@@ -199,6 +203,8 @@ def execute(args):
     import numpy as np
     import psutil
     import torch
+    import subprocess
+    from importlib.metadata import version
     from mlx.utils import tree_flatten
     from mlx_lm.tuner.lora import LoRALinear
     from .backbone import FrozenBackbone
@@ -207,9 +213,16 @@ def execute(args):
     from .shared_evidence_experiment import append_evidence
     if args.out.exists(): raise ValueError('Preserve existing experiment directory')
     if psutil.virtual_memory().available < CONFIG['memoryGiB']*2**30: raise MemoryError('Less than declared7GiB available')
+    manifest=json.loads((DATA/'manifest.json').read_text())
+    for name,expected in manifest['fileSha256'].items():
+        if digest(DATA/name)!=expected:raise ValueError('Frozen payload hash mismatch: '+name)
     args.out.mkdir(parents=True)
     started=time.perf_counter(); report={'status':'started','config':CONFIG,'sourceSha256':digest(Path(__file__)),
         'dataManifestSha256':digest(DATA/'manifest.json'),'frozenBase':True,'trainedHeadsUnchanged':True,
+        'executionCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+        'runtime':{name:version(name) for name in ('mlx','mlx-lm','numpy','torch','transformers')},
+        'inputHashesVerified':manifest['fileSha256'],
+        'modelRevision':REVISION,'tokenizerSha256':digest(MODEL/'tokenizer.json'),
         'controls':{},'extraction':[],'steps':[],'arms':[]}
     def save():
         report.update(wallMs=(time.perf_counter()-started)*1000)
