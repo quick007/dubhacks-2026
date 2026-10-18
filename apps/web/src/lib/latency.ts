@@ -28,7 +28,7 @@ export function latencySeries(): Series[] {
   return [
     {
       id: "ours",
-      label: "Our model",
+      label: "Earlier local model",
       detail: "Qwen3.5-9B features, trained head, laptop",
       ours: true,
       ms: modelRun.requests.map((request) => request.latencyMs),
@@ -77,6 +77,21 @@ export function medianInterval(values: number[], resamples = 4000, seed = 1): [n
 export function logScale(min: number, max: number) {
   return (ms: number) =>
     (100 * Math.log10(Math.min(Math.max(ms, min), max) / min)) / Math.log10(max / min);
+}
+
+/** Equal distances represent equal milliseconds; zero stays at the origin. */
+export function linearScale(min: number, max: number) {
+  return (ms: number) => 100 * (Math.min(Math.max(ms, min), max) - min) / (max - min);
+}
+
+/** A zero-based axis ending at the next whole second above every displayed value. */
+export function linearAxisTicks(values: number[]) {
+  if (!values.length || values.some((value) => !Number.isFinite(value) || value < 0)) {
+    throw new Error("A latency axis requires finite nonnegative measurements");
+  }
+  const end = (Math.floor(Math.max(...values) / 1000) + 1) * 1000;
+  const step = end <= 10_000 ? 2000 : 5000;
+  return [...Array.from({ length: Math.ceil(end / step) }, (_, i) => i * step), end];
 }
 
 /** Axis label for a tick: milliseconds below a second, seconds above. */

@@ -1,4 +1,4 @@
-import { latencySeries, llmRun, median, seconds } from "../lib/latency";
+import { latencySeries, llmRun, median } from "../lib/latency";
 import { modelRun } from "../lib/model";
 import { LatencyChart } from "./LatencyChart";
 import { SlideFrame } from "./SlideFrame";
@@ -12,13 +12,11 @@ export function SpeedSlide() {
     <SlideFrame
       className="max-w-7xl py-6"
       title={`Ranking takes ${ratio} times longer through the hosted client`}
-      lead={`Historical comparison: ${modelRun.cases} public requests against ${Object.keys(modelRun.products).length} products. Local ranking takes ${seconds(median(ours.ms))}; the fastest hosted model takes ${seconds(fastest)}.`}
+      lead={`Historical ranking-only comparison · ${modelRun.cases} matched public requests`}
     >
       <LatencyChart series={series} />
       <p className="mt-6 max-w-[110ch] text-sm leading-relaxed text-muted">
-        Ranking only; copy, images and rendering excluded. Each dot is a request; bars show median
-        uncertainty. Hosted times include Codex CLI turn overhead, with startup excluded; the dashed
-        line is that client's trivial reply. A direct API comparison could differ.
+        Copy, images and rendering excluded. Hosted time includes Codex CLI turn overhead; startup excluded.
         Measured {new Date(llmRun.measuredAt).toLocaleDateString("en-US", { dateStyle: "medium" })}.
       </p>
     </SlideFrame>

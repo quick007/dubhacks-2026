@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import measured from "../fieldwork/current-model.json";
+import currentSpeed from "../fieldwork/current-candidate-speed.json";
 import { SlideFrame } from "./SlideFrame";
 
 export function ModelSlide() {
@@ -9,7 +10,7 @@ export function ModelSlide() {
     { label: "Right product in six", before: rank.before.targetInTopSix, after: rank.after.targetInTopSix },
   ];
   return (
-    <SlideFrame title="The model, measured" lead={`${rank.cases} independent requests against ${rank.catalogProducts} familiar products. A balanced fit improves the earlier trained head.`}>
+    <SlideFrame title="Relevance and latency, measured" lead="Frozen v5 · synthetic known-catalog test">
       <dl className="grid gap-8 sm:grid-cols-3">
         {figures.map(({ label, before, after }) => (
           <div key={label}>
@@ -21,17 +22,18 @@ export function ModelSlide() {
           </div>
         ))}
         <div>
-          <dt className="text-muted">Fresh personalized cards, p50 / p95</dt>
+          <dt className="text-muted">Frozen v5 · added loaded-view time, p50</dt>
           <dd className="mt-2 font-display text-5xl font-extrabold tracking-[-0.015em] text-cobalt">
-            {Math.round(loadedBrowser.local.p50Ms)} / {Math.round(loadedBrowser.local.p95Ms)}<span className="ml-2 text-xl">ms</span>
+            +{Math.round(loadedBrowser.incremental.p50Ms)}<span className="ml-2 text-xl">ms</span>
           </dd>
+          <p className="mt-2 text-muted">{Math.round(loadedBrowser.local.p50Ms)} ms personalized / {Math.round(loadedBrowser.generic.p50Ms)} ms generic</p>
         </div>
       </dl>
       <div className="mt-12 grid gap-8 border-t border-line pt-5 sm:grid-cols-2">
-        <p className="text-xl leading-relaxed">One frozen Qwen backbone, learned product selection and fresh parallel text. Six selected cards contain {server.freshFields} factual generated fields.</p>
-        <p className="text-xl leading-relaxed">The same generic shop is ready in {Math.round(loadedBrowser.generic.p50Ms)} ms p50. Personalization adds {Math.round(loadedBrowser.incremental.p50Ms)} ms p50 on the matched loaded view.</p>
+        <p className="text-lg text-muted">v5: {server.freshFields} fresh fields · six cards<br />First three visible: {Math.round(loadedBrowser.local.p50Ms)} / {Math.round(loadedBrowser.local.p95Ms)} ms p50 / p95</p>
+        <p className="text-lg text-muted">Separate v4 candidate: backend {Math.round(currentSpeed.fullBackend.p50Ms)} / {Math.round(currentSpeed.fullBackend.p95Ms)} ms<br />First three visible: {Math.round(currentSpeed.firstThreeVisible.p50Ms)} / {Math.round(currentSpeed.firstThreeVisible.p95Ms)} ms p50 / p95</p>
       </div>
-      <p className="mt-8 text-sm text-muted">20 paired loaded-shop observations; image cache eligible. First three cards fully visible with decoded images. Physical paint and cold navigation excluded.</p>
+      <p className="mt-6 text-sm text-muted">Loaded views; decoded images, no physical-paint claim. v4: 10 searches; quality unvalidated.</p>
     </SlideFrame>
   );
 }

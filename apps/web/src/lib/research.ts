@@ -2,7 +2,7 @@
 export const findings = [
   {
     value: "0.6%",
-    claim: "of revenue lost for every 100 ms of delay",
+    claim: "Bing revenue loss per 100 ms added",
     method: "Randomized experiment at Bing: 10% of users slowed 100 ms, 10% slowed 250 ms, 2 weeks",
     reference:
       "R. Kohavi, A. Deng, B. Frasca, T. Walker, Y. Xu, N. Pohlmann. Online Controlled Experiments at Large Scale. KDD 2013, §3.4.",
@@ -10,14 +10,14 @@ export const findings = [
   },
   {
     value: "+8.4%",
-    claim: "retail conversions from a 0.1 s faster mobile site",
+    claim: "retail conversions in the mobile-speed study",
     method: "37 retail, travel, luxury and lead generation brands, 4 weeks. Order value rose 9.2%",
     reference: "Deloitte Digital. Milliseconds Make Millions. 2020. Commissioned by Google.",
     url: "https://web.dev/case-studies/milliseconds-make-millions",
   },
   {
     value: "+32%",
-    claim: "chance of a bounce as load time goes from 1 s to 3 s",
+    claim: "higher bounce chance at 3 s versus 1 s",
     method: "Mobile landing pages across industries and countries",
     reference: "Google/SOASTA Research. Think with Google, 2017.",
     url: "https://www.thinkwithgoogle.com/data/page-load-time-statistics/",

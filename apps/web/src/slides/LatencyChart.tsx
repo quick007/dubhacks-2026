@@ -1,5 +1,6 @@
 import {
-  logScale,
+  linearScale,
+  linearAxisTicks,
   median,
   medianInterval,
   seconds,
@@ -10,14 +11,13 @@ import {
 import { cn } from "../lib/utils";
 import { LatencyRow } from "./LatencyRow";
 
-const ticks = [100, 200, 500, 1000, 2000, 5000, 10_000, 20_000];
-/** Log scale: equal steps are equal ratios, so 0.2 s and 6 s both stay readable. */
-const x = logScale(ticks[0], ticks.at(-1)!);
-/** Ticks labeled at phone width, where every label would collide. */
-const major = new Set([100, 1000, 10_000]);
-
 /** Per-request ranking time for each method, with medians and 95% intervals. */
 export function LatencyChart({ series }: { series: Series[] }) {
+  const ticks = linearAxisTicks(series.flatMap((item) => [
+    ...item.ms, ...(item.floorMs === undefined ? [] : [item.floorMs]),
+  ]));
+  const x = linearScale(0, ticks.at(-1)!);
+  const major = new Set([0, ticks[Math.floor(ticks.length / 2)], ticks.at(-1)!]);
   return (
     <figure>
       <div className="grid grid-cols-1 items-center gap-x-8 sm:grid-cols-[minmax(8rem,13rem)_1fr]">
@@ -69,7 +69,7 @@ export function LatencyChart({ series }: { series: Series[] }) {
         <span className="hidden sm:block" />
         <p className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
           <span className="flex items-center gap-2 whitespace-nowrap">
-            <span className="size-2.5 rounded-full bg-graphite/45" /> One request
+            <span className="size-2.5 rounded-full bg-graphite/45" /> Request
           </span>
           <span className="flex items-center gap-2 whitespace-nowrap">
             <span className="h-4 w-1 rounded-full bg-graphite" /> Median
@@ -79,11 +79,10 @@ export function LatencyChart({ series }: { series: Series[] }) {
               <span className="absolute -top-1 left-0 h-2.5 w-0.5 bg-graphite" />
               <span className="absolute -top-1 right-0 h-2.5 w-0.5 bg-graphite" />
             </span>
-            95% interval of the median
+            95% median interval
           </span>
           <span className="flex items-center gap-2 whitespace-nowrap">
-            <span className="h-4 border-l-2 border-dashed border-graphite/60" /> Reply of
-            &ldquo;ok&rdquo;
+            <span className="h-4 border-l-2 border-dashed border-graphite/60" /> Trivial CLI reply
           </span>
         </p>
       </div>

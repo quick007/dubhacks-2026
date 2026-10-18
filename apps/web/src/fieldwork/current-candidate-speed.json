@@ -1,0 +1,92 @@
+{
+  "version": "current-candidate-speed-presentation.v1",
+  "modelVersion": "History-aware v4 candidate",
+  "measurementEngine": "persona-adapter-engine.v4-factorized-profile",
+  "synthetic": true,
+  "qualityGatePassed": false,
+  "modelPromotion": false,
+  "measuredAt": "2026-10-18T13:25:05.559Z",
+  "requests": 10,
+  "profile": "Bob",
+  "queries": [
+    "a lamp for quiet reading",
+    "a notebook for class notes",
+    "a bottle for daily water",
+    "a bag for a short trip",
+    "a towel for pool days",
+    "something for listening on the train",
+    "a light jacket for rainy walks",
+    "a soft layer for evenings",
+    "a container for lunch",
+    "a mug for my morning drink"
+  ],
+  "fullBackend": {
+    "fixedDenominator": 10,
+    "valid": 10,
+    "rawMs": [
+      265.71266597602516,
+      352.3355829529464,
+      282.7110419748351,
+      287.89604105986655,
+      290.86633305996656,
+      289.68529193662107,
+      290.9109169850126,
+      292.37458400893956,
+      284.7861669724807,
+      288.65887504071
+    ],
+    "p50Ms": 288.65887504071,
+    "p95Ms": 352.3355829529464,
+    "estimator": "nearest rank5/10 of10",
+    "scope": "HTTP handler entry through six-card ranking, fresh parallel copy, guards and serialized events; excludes transport/browser/images/startup."
+  },
+  "firstThreeVisible": {
+    "fixedDenominator": 10,
+    "valid": 10,
+    "rawMs": [
+      311.7999999523163,
+      395.39999997615814,
+      315.3000000715256,
+      333.7999999523163,
+      333.5,
+      331.60000002384186,
+      332.5,
+      332.39999997615814,
+      317.90000009536743,
+      333.59999990463257
+    ],
+    "p50Ms": 332.39999997615814,
+    "p95Ms": 395.39999997615814,
+    "estimator": "nearest-rank; fixed10 complete only",
+    "scope": "Native fetch start through three fully visible cards, fresh copy, decoded images and Add controls."
+  },
+  "fullSixVisible": {
+    "fixedDenominator": 10,
+    "valid": 10,
+    "rawMs": [
+      311.7999999523163,
+      413.60000002384186,
+      331.90000009536743,
+      350.5,
+      350.2000000476837,
+      348.39999997615814,
+      349.40000009536743,
+      351,
+      334.60000002384186,
+      350.2999999523163
+    ],
+    "p50Ms": 349.40000009536743,
+    "p95Ms": 413.60000002384186,
+    "estimator": "nearest-rank; fixed10 complete only",
+    "scope": "Native fetch start through six completed cards and decoded images; all six need not fit within viewport."
+  },
+  "scope": "Ten distinct submitted searches on one known public profile. Loaded view; image cache eligible; cold navigation and physical paint excluded. Separate workload/model from frozen v5 quality and historical hosted ranking comparison.",
+  "sources": {
+    "data/ranker/pretrained/search-navigation-after-v1/report.json": "801e289f10bbbd46bee875ca9252846b6dcfe32d43bbfc7654ad66b38da022f5",
+    "experiments/ranker/pretrained/store_search_navigation_polish_v1/report.json": "34f372b7c378bb8f0b0d43bd9830c2cf50cdf9a9eb335abf10aac8f788a63e77"
+  },
+  "sourcePins": {
+    "experiments/ranker/pretrained/store_persona_adapter_engine_v4.py": "1d977c06fa2d4a7db75ab5ec07e8de6604fec3716fa77b057a2e21024fa97b48",
+    "experiments/ranker/pretrained/store_persona_adapter_runtime_v4.py": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d"
+  }
+}

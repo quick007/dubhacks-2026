@@ -6,6 +6,10 @@ import { ModelSlide } from "./slides/ModelSlide";
 import { SpeedSlide } from "./slides/SpeedSlide";
 import { StakesSlide } from "./slides/StakesSlide";
 import { TitleSlide } from "./slides/TitleSlide";
+import { FlywheelSlide } from "./slides/FlywheelSlide";
+import { TrustSlide } from "./slides/TrustSlide";
+import { ShopperContextSlide } from "./slides/ShopperContextSlide";
+import { DisclaimerSlide } from "./slides/DisclaimerSlide";
 
 /** A small measured deck, backed by an explicitly selected immutable Tiger report. */
 export function CohortPresentation({ reportId }: { reportId: string }) {
@@ -24,9 +28,13 @@ export function CohortPresentation({ reportId }: { reportId: string }) {
   if (!result || result.reportId !== reportId) return <p role="status" className="p-8 text-lg text-muted">{error || "Loading verified results…"}</p>;
   return <Deck slides={[
     { id: "title", label: "Storefront Lab", render: () => <TitleSlide names={[]} /> },
-    { id: "results", label: "Shopper results", render: () => <CohortResultsSlide result={result} /> },
+    { id: "inputs", label: "Shopper context", render: () => <ShopperContextSlide /> },
+    { id: "stakes", label: "Why speed matters", render: () => <StakesSlide /> },
+    { id: "results", label: "Observed shopper results", render: () => <CohortResultsSlide result={result} /> },
     { id: "model", label: "The model", render: () => <ModelSlide /> },
     { id: "speed", label: "Ranking comparison", render: () => <SpeedSlide /> },
-    { id: "stakes", label: "Why speed matters", render: () => <StakesSlide /> },
+    { id: "flywheel", label: "The learning loop", render: () => <FlywheelSlide /> },
+    { id: "trust", label: "Trust and responsibility", render: () => <TrustSlide /> },
+    { id: "disclaimer", label: "Disclaimers", render: () => <DisclaimerSlide /> },
   ]} />;
 }

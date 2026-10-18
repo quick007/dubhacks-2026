@@ -36,8 +36,8 @@ export function visibleSlides(available: Available): SlideId[] {
   });
 }
 
-export function slideFromHash(hash: string, ids: SlideId[]) {
-  return Math.max(0, ids.indexOf(hash.replace(/^#/, "") as SlideId));
+export function slideFromHash(hash: string, ids: readonly string[]) {
+  return Math.max(0, ids.indexOf(hash.replace(/^#/, "")));
 }
 
 /** Target slide index for a navigation key, or undefined when the key does nothing. */

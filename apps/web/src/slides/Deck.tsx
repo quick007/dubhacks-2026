@@ -3,7 +3,7 @@ import { slideFromHash, stepFor, type SlideId } from "../lib/deck";
 import { cn } from "../lib/utils";
 
 export interface SlideDef {
-  id: SlideId;
+  id: SlideId | "flywheel" | "trust" | "disclaimer";
   label: string;
   render: () => ReactNode;
   /** Slides about the featured shopper show the session indicator. */

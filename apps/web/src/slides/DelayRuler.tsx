@@ -1,28 +1,28 @@
-import { latencySeries, logScale, median, seconds, tickAlign, tickLabel } from "../lib/latency";
+import { latencySeries, linearAxisTicks, linearScale, median, seconds, tickAlign, tickLabel } from "../lib/latency";
 import { cn } from "../lib/utils";
-
-const ticks = [50, 100, 200, 500, 1000, 2000, 5000, 10_000];
-const x = logScale(ticks[0], ticks.at(-1)!);
 
 /** Delays the studies measured, on the same axis as the waits each method adds. */
 const studied = [
-  { from: 100, to: 250, label: "Bing slowed pages this much and lost revenue", ref: 1 },
-  { from: 1000, to: 3000, label: "Bounce chance rises 32% across this span", ref: 3 },
+  { from: 100, to: 250, label: "Bing slowdown", ref: 1 },
+  { from: 1000, to: 3000, label: "Mobile load-time comparison", ref: 3 },
 ];
 
-/** One log axis: published delays above, our measured waits below. */
+/** One linear axis: published delays above, our measured waits below. */
 export function DelayRuler() {
   const series = latencySeries();
+  const ticks = linearAxisTicks([...studied.flatMap(({ from, to }) => [from, to]),
+    ...series.map((item) => median(item.ms))]);
+  const x = linearScale(0, ticks.at(-1)!);
   return (
-    <figure className="mt-12 hidden md:block">
+    <figure className="mt-8 hidden md:block">
       <div className="relative mx-2 h-40">
-        {studied.map((span) => (
+        {studied.map((span, index) => (
           <div
             key={span.ref}
-            className="absolute top-12"
-            style={{ left: `${x(span.from)}%`, width: `${x(span.to) - x(span.from)}%` }}
+            className="absolute"
+            style={{ top: 12 + index * 24, left: `${x(span.from)}%`, width: `${x(span.to) - x(span.from)}%` }}
           >
-            <p className="absolute bottom-full mb-1.5 w-60 text-sm leading-snug text-muted">
+            <p className="absolute left-full ml-2 -top-1 whitespace-nowrap text-sm text-muted">
               {span.label} <span className="tabular-nums">[{span.ref}]</span>
             </p>
             <div className="h-3 rounded-sm bg-graphite/25 ring-1 ring-graphite/40" />
@@ -73,7 +73,7 @@ export function DelayRuler() {
       </div>
       <figcaption className="text-sm text-muted">
         <span className="font-semibold text-ink">Figure 2.</span> Ranking request time, excluding copy, images and rendering;
-        log scale, medians from Figure 1. Shaded spans are the delays the cited studies tested.
+        linear scale. Shaded spans show the cited studies' delays.
       </figcaption>
     </figure>
   );
