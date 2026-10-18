@@ -1,0 +1,282 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-07",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-07-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-07",
+    "personaSplit": "development",
+    "seed": 2026101807
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "5133afa0-b9cc-42f9-b8f9-90dd2092c314",
+    "contextId": "27604305-ddaf-4839-81cb-59bc2b80046e",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-07-generic-screenshot-png",
+      "shopper-pair-07-generic-trace-zip",
+      "shopper-pair-07-generic-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T04:41:30.278Z",
+  "elapsedMs": 47844.25583399998,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-0",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 0,
+        "at": "2026-10-18T04:41:31.190Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 911.7828750000044,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-1",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 1,
+        "at": "2026-10-18T04:41:38.129Z",
+        "kind": "action",
+        "message": "Bags & travel"
+      },
+      "elapsedMs": 7851.473666999984,
+      "action": {
+        "type": "inspect",
+        "target": "Bags & travel"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-2",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 2,
+        "at": "2026-10-18T04:41:44.761Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 14483.118499999982,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-3",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 3,
+        "at": "2026-10-18T04:41:50.565Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 20287.095291999984,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "tote",
+        "variantId": "tote-olive"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-4",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 4,
+        "at": "2026-10-18T04:41:58.620Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 28342.308667000005,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-5",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 5,
+        "at": "2026-10-18T04:42:05.611Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 35333.002875000006,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-6",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 6,
+        "at": "2026-10-18T04:42:11.601Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 41323.13633399998,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-07-generic-step-7",
+        "runId": "shopper-pair-07-generic",
+        "sequence": 7,
+        "at": "2026-10-18T04:42:18.122Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 47844.252917000005,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-07-generic-screenshot-png",
+        "runId": "shopper-pair-07-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:42:18.847Z"
+      },
+      "status": "captured",
+      "sha256": "2df69e165e5a90d6eec391fd39f259fa852b0b05e2b74f04e03e108e4cd2c741",
+      "bytes": 33002,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-07-generic-trace-zip",
+        "runId": "shopper-pair-07-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:42:18.847Z"
+      },
+      "status": "captured",
+      "sha256": "1895b04e13f1b1e34053bb8e5cc85869854e4e5242f1d758c3a2d52bc75a6c3c",
+      "bytes": 26494692,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-07-generic-browser-observations-json",
+        "runId": "shopper-pair-07-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:42:18.847Z"
+      },
+      "status": "captured",
+      "sha256": "3d5116881fbc848d0ec0ee02846efd9359b32475f64d0adca2f6a1f798d05980",
+      "bytes": 29860,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Market canvas tote",
+    "selectedColor": "Olive",
+    "catalogPrice": 42,
+    "quantity": 1,
+    "productId": "tote",
+    "variantId": "tote-olive",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "shopper-pair-07-generic-step-3",
+      "shopper-pair-07-generic-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "shopper-pair-07-generic-screenshot-png",
+      "shopper-pair-07-generic-trace-zip",
+      "shopper-pair-07-generic-browser-observations-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "42",
+        "evidenceArtifactIds": [
+          "shopper-pair-07-generic-screenshot-png",
+          "shopper-pair-07-generic-trace-zip",
+          "shopper-pair-07-generic-browser-observations-json"
+        ]
+      },
+      {
+        "needId": "avoid-backpack",
+        "status": "met",
+        "observed": "false",
+        "evidenceArtifactIds": [
+          "shopper-pair-07-generic-screenshot-png",
+          "shopper-pair-07-generic-trace-zip",
+          "shopper-pair-07-generic-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "met",
+        "observed": "[\"grocery-carryall\",\"carry-bag\"]",
+        "evidenceArtifactIds": [
+          "shopper-pair-07-generic-screenshot-png",
+          "shopper-pair-07-generic-trace-zip",
+          "shopper-pair-07-generic-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
