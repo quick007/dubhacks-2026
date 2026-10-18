@@ -1,0 +1,54 @@
+{
+  "version": "persona-choice-independent-eval-plan.v3",
+  "status": "fixed-before-new-candidate-fit-or-scoring",
+  "publicCases": 32,
+  "replacementCases": 4,
+  "controls": 96,
+  "pairs": 16,
+  "productAClasses": 16,
+  "productAEachOnce": true,
+  "productBCap": 2,
+  "uniqueUndirectedNeedPairs": 16,
+  "pairSelectionSeed": 2026101936,
+  "sourceOnlyRoleBalanceSeed": 2026101940,
+  "qualityGate": {
+    "mainDenominator": 32,
+    "primaryGrade3At1Minimum": 20,
+    "novelRelevantGradeAtLeast2At1Minimum": 24,
+    "strongGradeAtLeast2WithinFirst3Minimum": 28,
+    "budgetTypedConstraintVariantOrFactViolationsMaximum": 0,
+    "all36SourceFactViolationsMaximum": 0,
+    "replacementTargetAt1Minimum": 3,
+    "replacementDenominator": 4,
+    "primaryAt1MustStrictlyExceed": [
+      "TRAIN-popularity",
+      "latest-owned-repeat",
+      "owned-only-public-context",
+      "shuffled-public-profile",
+      "frozen-base-lexical-decision"
+    ],
+    "purchaseHistoryRemovedIsReportOnly": true,
+    "noThresholdChangesAfterOutcomes": true,
+    "bothRawAndFusedRequired": true,
+    "knownDEVHistoryMinimumDemotions": 8,
+    "knownDEVHistoryMinimumNovelAfter": 8
+  },
+  "catalogSha256": {
+    "experiments/ranker/pretrained/store_catalog_v1/runtime_export.json": "1f5bff7df9075beab1cda7e81aa52bfbc741b9b5a7bc4e0be629f568a80347ac",
+    "experiments/ranker/pretrained/store_catalog_v1/model_inputs.json": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+    "experiments/ranker/pretrained/store_catalog_v1/external_mapping.json": "eaae73bc158c71b19f0b22a6854246b7450316d0f1ca60dd7969b02ebbf95937"
+  },
+  "priorCore32NowDevelopment": true,
+  "TRAINAnnotationsReadForAuthoring": false,
+  "newCandidateOutputsRead": false,
+  "coverageSha256": "80956abdefbe934cb701057e8a07e12e84d9f612b0fe779029e7efb195726690",
+  "coverageConstraint": "Degree-one unused pairs notebook-jacket,bottle-blanket,organizer-sweatshirt prevent balancedBpermutation without duplicatedreversepairs. Parent approved allAonce/Bcap2/16distinctundirectedpairs beforecases and fit.",
+  "profileControls": {
+    "owned-only-public-context": "preservequery/budget/hardguards;blankbackground/colors;purchaseeventsonly",
+    "shuffled-profile": "preservequery/budget/hardguards;movebackground/colors/historyjointlyfromdifferentnonpairprofile",
+    "purchase-history-removed": "report-only;remove purchases preserveotherfields"
+  },
+  "freshness": "New authored wording, explicitneedpaircombinations and historyrolecombinations versus448publicTRAIN+inspected36; samecatalog/syntheticmechanisms, not unseen humans.",
+  "supersedesDraftPlanSha256": "d0a43d7fdd8342db591d861011e4a462ebafa309313729a23c601fe3d77ab08f",
+  "rootGateSha256": "73fa0d52c5ef4fe983834f610ef00cf89a899cf420cdb81008dd5a7909298c6e"
+}

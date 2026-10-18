@@ -1,0 +1,62 @@
+{
+  "version": "persona-choice-clear-v2-independent-source-review.v1",
+  "status": "passed-bounded-CPU-source-review",
+  "plan": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/data/ranker/pretrained/persona-choice-clear-prepare-v3/plan.json",
+  "planSha256": "4e2b11bf765978e04b22878c9ede96472372446cbf393fcc80a39367b4f3f383",
+  "sourceSha256": {
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_choice_clear_train_v2.py": "a1bf3ab61775df0665f10b91fcf3e9c08a7faa1debe6cbdf2615ceb327e2d0cb",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_choice_clear_fit_v2.py": "d22d32de7e5785097b33c7c2050f6076c056dc24fea916ffd5c0fe81bc76aa0e",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/test_store_persona_choice_clear_v2.py": "dc1f0cf56a111e61426ebb4d91c9589cf9565277b37394f76c5ad9a062d44c08",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_choice_train_diagnostic_v1.py": "c6e07dee77a699db34cce3663508d794a5dc0918d89dc9eb4d43b1ebf15939a0"
+  },
+  "tests": {
+    "modules": [
+      "test_store_persona_choice_clear_v2",
+      "test_store_persona_choice_train_diagnostic_v1"
+    ],
+    "passed": 10,
+    "seconds": 0.098,
+    "interpreter": "main .tools/pretrained-venv/bin/python -B",
+    "nativeCalls": 0
+  },
+  "checked": {
+    "logicalClearProfiles": 128,
+    "clearViews": 256,
+    "clearPasses": 14,
+    "pairedUpdates": 3584,
+    "legacyTeacherProfiles": 320,
+    "teacherViews": 640,
+    "teacherWeight": 0.25,
+    "teacherTemperature": 1,
+    "teacherTargets": "softmax immutable original frozen-B0 route-order logits; legacy authored targets removed by pure X/H/Y projection",
+    "priorBaseline": "audited128 CE targets only",
+    "reuseBasisRows": 976,
+    "freshPublicNumericalRows": 264,
+    "totalBasisRows": 1240,
+    "sourcePins": 102,
+    "originalArchiveFilePins": 2928,
+    "zeroAndNonzeroJointNativeFeatureGateRequiredBeforeOptimizer": true,
+    "learnedOriginalArchiveAndTargetFreePostfitControls": 4,
+    "all344NonfitPredictionsRequiredBeforeQualityLabels": true,
+    "fixedRootOwnerSharedLock": true,
+    "memoryGiB": 7,
+    "nativeDeadlineSeconds": 900,
+    "927IntegrityAndCleanupRequired": true,
+    "failedCLIRaisesNonzero": true,
+    "partialPairedGateEvidencePreserved": true
+  },
+  "limitations": [
+    "Source/CPU admission only; no actual new native/gradient/training/quality result claimed.",
+    "Teacher CE includes frozen-target entropy, so its absolute loss is not numerical KL.",
+    "Original metadata contains historical TRAIN targets for provenance; optimizer inputs explicitly replace them with the frozen-base soft targets.",
+    "Reused basis gates are historical; only264 fresh public numerical rows and separate paired objective controls are newly gated.",
+    "The source audit rechecked source/plan hashes, not all2928 potentially large archive file pins; runtime checks archive bytes and actual native tensor receipts."
+  ],
+  "futurePacketManifestSha256": "5e5ef52f1d714e0502987b8de2de838af9e5d4bcab826c8d51c98496f080971f",
+  "futureSemanticAuditSha256": "2fea072366728b8d3fe32c738e006bf89a61a5b5cee2be7b895d6ac79b8310be",
+  "noServingPromotion": true,
+  "GPUCalls": 0,
+  "optimizerUpdatesByReviewer": 0,
+  "futureCandidateOutputsRead": false,
+  "futurePrivateAnnotationsGivenToTrainer": false
+}
