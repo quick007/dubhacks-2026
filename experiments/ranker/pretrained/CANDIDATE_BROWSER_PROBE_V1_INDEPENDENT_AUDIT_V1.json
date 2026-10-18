@@ -1,0 +1,305 @@
+{
+  "version": "candidate-browser-probe-independent-audit.v1",
+  "auditExecution": "CPU/read-only; no browser, service, native GPU or source edits",
+  "sourceInputs": {
+    "experiments/ranker/pretrained/store_candidate_browser_probe_v1.mjs": "3893f863b41fef840fb1e9538f83f5e96726b55f05031ea78bd91b7787f94f16",
+    "experiments/ranker/pretrained/test_store_candidate_browser_probe_v1.mjs": "5180a8dddfac443a181175dc387e4294ca4594a63b56212e6da30e09d5ca1aa0",
+    "experiments/ranker/pretrained/store_candidate_browser_probe_results_v1_attempt_1/report.json": "8d34201d42ca02297941957bc5f8f328a1bbd3b402275f8e98750343d7ebf793",
+    "experiments/ranker/pretrained/store_candidate_browser_probe_results_v1_attempt_1/PROTOCOL_AUDIT.json": "69235eee3dce6ab7ea7da2c8e460b743ab6de69f771e388c67de8829c076081d",
+    "experiments/ranker/pretrained/store_candidate_browser_probe_results_v1_attempt_1/source/store_candidate_browser_probe_v1.mjs": "0781a4aa3d99ad486a881d5f586e6382cd934491bf9542054010ab76139e6d74",
+    "experiments/ranker/pretrained/store_candidate_browser_probe_results_v1_attempt_2/report.json": "a6b6aa80f9b34cc686464d026d27e3d09e745289399753a41b2321f69cae43aa"
+  },
+  "tests": {
+    "nodeProbeUnitTests": 10,
+    "passed": true,
+    "command": "node --test experiments/ranker/pretrained/test_store_candidate_browser_probe_v1.mjs"
+  },
+  "independentChecks": {
+    "archiveProtocolBodyScreenshotSummary": 113,
+    "sourceFactAndLexicalChecks": 384,
+    "total": 497,
+    "passed": true
+  },
+  "attempt1": {
+    "fixedSlots": 8,
+    "legacyActualPostResponseSlots": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "staleSameGotoRepeatSlotsExcluded": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "interpretation": "Original source/report preserved; legacy recorder did not capture explicit actualPostRequests/documentIDs. Captured POST responses exist in four fresh contexts, no new responses in repeats. Do not pool repeats or compare their old timings as warm requests."
+  },
+  "attempt2": {
+    "fixedSlots": 8,
+    "recorded": 8,
+    "unattempted": 0,
+    "protocolPassed": 8,
+    "uniquePostRequestIds": 8,
+    "uniqueDocumentIds": 8,
+    "http200Bodies": 8,
+    "bodyParseErrors": 0,
+    "pendingBodies": 0,
+    "navigationOrCaptureErrors": 0,
+    "requestFailures": 0,
+    "firstThreeTenFieldAndCompleteTwentyFieldPasses": 8,
+    "domCopyAndParsedProvenanceMatches": 8,
+    "trackedSourceHashesMatchingCurrent": 6,
+    "trials": [
+      {
+        "index": 0,
+        "query": "a light for my bedside table",
+        "condition": "fresh-context",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "3fdf095f-367c-4be9-986c-9123e82fa222",
+          "documentId": "8166dc17-87cc-406b-87ac-1b9df900000a",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 618.2000000476837,
+        "reactCommitPlusTwoRafFromEffectMs": 607.8000000715256,
+        "firstProductId": "lamp",
+        "notebookRank": 13,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      },
+      {
+        "index": 1,
+        "query": "a light for my bedside table",
+        "condition": "same-context-repeat",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "6a7598f1-1d04-4c52-bf9a-96b5836d7071",
+          "documentId": "f15ff55a-b537-4243-9825-2c84409f1603",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 270,
+        "reactCommitPlusTwoRafFromEffectMs": 253.5,
+        "firstProductId": "lamp",
+        "notebookRank": 13,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      },
+      {
+        "index": 2,
+        "query": "a bottle for drinking water",
+        "condition": "fresh-context",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "8c1515ca-5ce8-404d-ad7e-63a9eec9b83c",
+          "documentId": "83eda7e6-b4f5-48b8-83d8-24c11fa669f2",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 294.39999997615814,
+        "reactCommitPlusTwoRafFromEffectMs": 277.7000000476837,
+        "firstProductId": "bottle",
+        "notebookRank": 16,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      },
+      {
+        "index": 3,
+        "query": "a bottle for drinking water",
+        "condition": "same-context-repeat",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "10dddab6-2904-45e8-89b7-a0adf9e248ab",
+          "documentId": "1e0f70f2-e93b-4fbc-b263-11dda69417d7",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 268.10000002384186,
+        "reactCommitPlusTwoRafFromEffectMs": 250.70000004768372,
+        "firstProductId": "bottle",
+        "notebookRank": 16,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      },
+      {
+        "index": 4,
+        "query": "a notebook for quick notes",
+        "condition": "fresh-context",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "e7c7e060-c8a9-40d0-a953-bcbacf5dedf4",
+          "documentId": "a54d0f57-9dff-47bc-a893-66d73bda8c72",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 326.2000000476837,
+        "reactCommitPlusTwoRafFromEffectMs": 309.60000002384186,
+        "firstProductId": "organizer",
+        "notebookRank": 13,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      },
+      {
+        "index": 5,
+        "query": "a notebook for quick notes",
+        "condition": "same-context-repeat",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "05ccd766-30bf-41f4-b6cd-9dcd6280a71a",
+          "documentId": "785ab07f-93c8-4d46-be1c-02f96fd6b729",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 267.10000002384186,
+        "reactCommitPlusTwoRafFromEffectMs": 250.60000002384186,
+        "firstProductId": "organizer",
+        "notebookRank": 13,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      },
+      {
+        "index": 6,
+        "query": "a bag for carrying my things",
+        "condition": "fresh-context",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "7317fcb1-7819-437b-afc2-9f1e61a9b995",
+          "documentId": "4d97e765-b4d3-4ccd-a2d9-e7d98d5de6ab",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 307.5,
+        "reactCommitPlusTwoRafFromEffectMs": 290.89999997615814,
+        "firstProductId": "pack",
+        "notebookRank": 8,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      },
+      {
+        "index": 7,
+        "query": "a bag for carrying my things",
+        "condition": "same-context-repeat",
+        "protocol": {
+          "passed": true,
+          "deviations": [],
+          "requestId": "4e142d42-e858-434b-ac20-d015ea77b53e",
+          "documentId": "8003d430-7b50-4e01-8b78-907c87ce3863",
+          "scope": "Exactly one matching actual POST, all three response/mirror stages share a unique request ID, and a new document per navigation"
+        },
+        "copyAndAllSixImagesDecodedFromEffectMs": 272.5,
+        "reactCommitPlusTwoRafFromEffectMs": 256.3000000715256,
+        "firstProductId": "pack",
+        "notebookRank": 8,
+        "domCardCount": 16,
+        "intersectingPrimaryImages": 3,
+        "fullyVisibleFirstSixCards": 0,
+        "visibleFirstSixTitles": 0,
+        "visibleFirstSixCopyAreas": 0,
+        "consoleErrors": [
+          "Error: WebSocket closed without opened."
+        ],
+        "requestFailures": [],
+        "decodeErrors": [],
+        "postResponses": 1,
+        "pendingResponseBodies": 0
+      }
+    ]
+  },
+  "materialFindings": [
+    {
+      "finding": "notebook relevance failure",
+      "detail": "Both notebook-query trials rank organizer first and notebook13th; notebook excluded from six generated-copy cards. Protocol/field/DOM success does not establish preference-sensitive usefulness."
+    },
+    {
+      "finding": "zero useful visible copy in this viewport workload",
+      "detail": "At1280x960 scrollY0 all8 snapshots show16DOMcards,3intersecting primary images,0fully visible first-six cards,0visible titles and0visible copy areas. Do not call this useful above-fold readiness."
+    },
+    {
+      "finding": "uncaught WebSocket page error recorded in all8 trials",
+      "detail": "Error: WebSocket closed without opened. No model HTTP/parse/image failure observed, but source/stack was not captured. Summary.errors omits page errors; preserve this residual rather than claim error-free browser execution."
+    }
+  ],
+  "measurementLimits": [
+    "Effect entry before subscription/fetch is the clock origin; excludes navigation-to-effect and click-to-effect",
+    "React endpoint is DOM commit plus two rAF paint opportunity, not physical paint",
+    "Image endpoint explicitly observes complete plus successful img.decode and polling; covers first3/all6 intended selected images, even below fold",
+    "Same-context repeats use explicit reload; browser cache eligible, OS/model caches uncontrolled; resource records show header-sized reload revalidations rather than full image body transfer",
+    "DOM equality checker covers title/body/badge/name/color, not direct DOM price or variant ID; canonical response fact/variant checks were independently performed offline",
+    "Probe tracked6source files but does not pin local-model.ts parser or native engine in sourceHashes; raw response checkpoint/feature provenance remains archived",
+    "Current CLI exit status does not fail on consoleErrors/parseErrors/field or DOM mismatch alone; inspect summaries/raw evidence rather than equating exit0 with useful quality"
+  ],
+  "promotionOrAboveFoldClaimApproved": false
+}
