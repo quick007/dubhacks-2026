@@ -1,0 +1,157 @@
+{
+  "datasetVersion": "short-raw-root-stbc-v1",
+  "frozenBeforeNative": true,
+  "sourceSha256": "f5af9a6db6f142adf6b2310ffa883aaafec2d83b0cb28e66f3cb79eb88cd6c66",
+  "dependencySha256": {
+    "above_fold.py": "371a2c9d7f9977a172bcfe5e2877ba57fd490f3c4c1c75c5ca93cf01fb5a8595",
+    "above_fold_copy/layout.py": "7f5f27b03bf6255dab9dc40917a1bf66e148872151817209eedc9db3fd54a43f",
+    "branch_local_copy.py": "2fdee8ee4c224163c1ea9adbbebea764aa112abe416df99558ef42b1a6b691ea",
+    "scheduler_identity_experiment.py": "f9b993f82e14c0a874194db5dbed25c97e61c21f302ac57c1b66980967cd0f92",
+    "fusion.py": "217abdd3134fc1ee53cfa545c118c1596c05dde010bf0d47382124140c9948e6",
+    "page_plan.py": "65e9579323ddecb7099bf2c6264e9108cc789e6cf870971aedaf251d28bd3fe2",
+    "evidence_plan.py": "01e3e96b8f230d7802da445c1e5c6da0503ac7fbef1efe529c93ef10b9c0ca1a",
+    "semantic_copy_tokens.py": "1da9b33f036b28b46ffb71ceb45f696c60f9dff0541511379c58e74a2d7835b1",
+    "semantic_copy_gradient_features.py": "1abf395953c35abd961d0c0330a61f5161f41f967ecc154326c696f3728ae8bb",
+    "catalog_fusion/generalization_v2.py": "a4802adbac9eaff3dddc5ef2ec1859c981392f881b1516f90141f7f192dc604c"
+  },
+  "parentSha256": {
+    "semantic_copy_data/cases.train.jsonl": "1515b46d18ac75fd79c62f544d06698ec0c675c3c6868a4bfa25c7ce5694ed77",
+    "semantic_copy_pairs/cases.dev.jsonl": "09c95bf5a462b589fed8f27df85721db35ebe21b6aa0728510003ff618d1daed",
+    "semantic_copy_pairs/cases.test.jsonl": "8d31a23f62ab1fa061e57eb1266a487e51085569c1e7663c786143d4d5910f99"
+  },
+  "fileSha256": {
+    "cases.dev.jsonl": "0dba832ffd14da3ac024c0f3f33ccbc248cf5c452069d4a554293086571ecc28",
+    "cases.test.jsonl": "45e71cd8cc97d24ce15275abd6dd8fa73183a564625fff7086e2de6b675e8789",
+    "cases.train.jsonl": "76f8230dc3a9ab820ee55f797967a53936fcbf5eb1e6b9711a974250028f8c10",
+    "fields.dev.jsonl": "96b06be8a26de106b6f524323d4567c46e460b38d6516065b6c9f2f8245e7d79",
+    "fields.test.jsonl": "e8c8052de54d400ca69f63600e9b6556704499bfd8fe0c3968f4e37e023b62b4",
+    "fields.train.jsonl": "b003203cf973a70362fb95f478fe954737b47284503aaafff8cc53320d2be29b"
+  },
+  "coverage": {
+    "train": {
+      "cases": 12,
+      "fields": 240,
+      "firstThreeFieldsPerCase": 10,
+      "fullSixFieldsPerCase": 20,
+      "bodyTargets": 72,
+      "positiveObservedBodyCountsByAtom": {
+        "adjustable": 1,
+        "compact": 3,
+        "compressible": 3,
+        "durable": 2,
+        "expandable": 2,
+        "foldable": 3,
+        "lightweight": 3,
+        "mesh": 6,
+        "organizer": 1,
+        "packable": 4,
+        "padded": 1,
+        "quilted": 1,
+        "reflective": 2,
+        "rolltop": 1,
+        "roomy": 2,
+        "structured": 3,
+        "ventilated": 3,
+        "water-resistant": 3
+      },
+      "requiredNoneBadges": 40,
+      "universalHeadings": 12,
+      "neutralHeadings": 12,
+      "allTeacherFirstThreeAndFullSixPassUnchangedValidators": true
+    },
+    "dev": {
+      "cases": 3,
+      "fields": 60,
+      "firstThreeFieldsPerCase": 10,
+      "fullSixFieldsPerCase": 20,
+      "bodyTargets": 18,
+      "positiveObservedBodyCountsByAtom": {
+        "adjustable": 3,
+        "compressible": 1,
+        "foldable": 1,
+        "reflective": 3,
+        "rolltop": 2,
+        "structured": 2
+      },
+      "requiredNoneBadges": 6,
+      "universalHeadings": 3,
+      "neutralHeadings": 3,
+      "allTeacherFirstThreeAndFullSixPassUnchangedValidators": true
+    },
+    "test": {
+      "cases": 3,
+      "fields": 60,
+      "firstThreeFieldsPerCase": 10,
+      "fullSixFieldsPerCase": 20,
+      "bodyTargets": 18,
+      "positiveObservedBodyCountsByAtom": {
+        "padded": 1,
+        "quilted": 3,
+        "rolltop": 1,
+        "roomy": 3,
+        "ventilated": 2,
+        "water-resistant": 2
+      },
+      "requiredNoneBadges": 6,
+      "universalHeadings": 3,
+      "neutralHeadings": 3,
+      "allTeacherFirstThreeAndFullSixPassUnchangedValidators": true
+    }
+  },
+  "limits": {
+    "rootTokens": 512,
+    "commonAppendTokens": 512,
+    "contextTokens": 4096,
+    "teacherSuffixTokens": 256,
+    "firstThreeFields": 10,
+    "fullSixFields": 20,
+    "firstThreeOutputCap": 208,
+    "fullSixOutputCap": 416,
+    "trainingFields": 240
+  },
+  "nativeExecution": false,
+  "trainingExecuted": false,
+  "prefixFormat": "exact untemplated generalization_v2.query_text_v2(...,focused); one shared common native user turn then one local native field user turn",
+  "fieldOrder": [
+    "S1",
+    "T1",
+    "B1",
+    "C1",
+    "T2",
+    "B2",
+    "C2",
+    "T3",
+    "B3",
+    "C3",
+    "S2",
+    "T4",
+    "B4",
+    "C4",
+    "T5",
+    "B5",
+    "C5",
+    "T6",
+    "B6",
+    "C6"
+  ],
+  "firstThreeFieldOrder": [
+    "S1",
+    "T1",
+    "B1",
+    "C1",
+    "T2",
+    "B2",
+    "C2",
+    "T3",
+    "B3",
+    "C3"
+  ],
+  "limitations": [
+    "12 new public training requests on old TRAIN-only catalogs; old dev/test inspected and evaluator-only.",
+    "Synthetic teacher strings are supervision, never runtime fallback/template output.",
+    "All18 copy facts covered; seven-atom ranking head is a separate model/domain and is not validated by these locked copy cases.",
+    "Validation reuses unchanged strict3-card STBC contract on each true section with metadata-only local index projection.",
+    "Full6 copy completion is distinct from first3 payload; no browser/render/conversion/learned grouping claim.",
+    "Every native field must still pass exact nonzeroA/B gradient parity/source-cache preservation before240updates."
+  ]
+}
