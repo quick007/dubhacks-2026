@@ -123,7 +123,8 @@ def capture(backbone, adapter, state, field):
         layer.mlp.down_proj = original; layer.post_attention_layernorm = norm
     features = {k: np.concatenate(parts,axis=1) for k, parts in (('x',xs),('h',hs),('y',ys))}
     if features['x'].shape[1]-start != len(contract['targets']): raise AssertionError('Target feature alignment')
-    return {**features, 'targets': contract['targets'], 'dtype': str(saved['x'].dtype),
+    return {**features, 'targets': contract['targets'],
+            'dtypes':{k:str(saved[k].dtype) for k in ('x','h','y')},
             'contract': {k:v for k,v in contract.items() if k not in ('inputs','targets','promptTokens')},
             'predictionStartInBranch':start,
             'caseId': field['caseId'], 'rowId': field['rowId'], 'kind': field['kind']}
@@ -132,8 +133,9 @@ def capture(backbone, adapter, state, field):
 def feature_loss(backbone, adapter, item):
     import mlx.nn as nn
     mx = backbone.mx
-    dtype = mx.bfloat16 if item['dtype'] == 'mlx.core.bfloat16' else mx.float16 if item['dtype'] == 'mlx.core.float16' else mx.float32
-    x,h,y = (mx.array(item[k], dtype=dtype) for k in ('x','h','y'))
+    dtypes={str(t):t for t in (mx.bfloat16,mx.float16,mx.float32)}
+    if set(item['dtypes'].values())-set(dtypes):raise ValueError('Unrecognized frozen feature dtype')
+    x,h,y = (mx.array(item[k], dtype=dtypes[item['dtypes'][k]]) for k in ('x','h','y'))
     delta = (adapter.scale * ((x @ adapter.lora_a) @ adapter.lora_b)).astype(x.dtype)
     # Match LoRALinear and DecoderLayer's two additions, including rounding.
     hidden = backbone.model.model.norm(h + (y + delta))
@@ -254,7 +256,8 @@ def execute(args):
             for field in fields:
                 value=capture(bb,adapter,state,field); features.append(value)
                 report['extraction'].append({'caseId':field['caseId'],'rowId':field['rowId'],'kind':field['kind'],
-                    'targetTokens':len(value['targets']),**value['contract']})
+                    'targetTokens':len(value['targets']),'featureDtypes':value['dtypes'],
+                    'featureShapes':{k:list(value[k].shape) for k in ('x','h','y')},**value['contract']})
                 if proof_item is None:
                     contract=teacher_tokens(bb.tokenizer,state['messages']+field['messages'][-1:],field['targetValue'],field['maxTokens'])
                     proof_item={'prompt':contract['promptTokens'],'forcedContinuation':contract['targets'][:3]}
