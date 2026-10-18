@@ -22,7 +22,7 @@ export function ConfirmationView({
       <span className="checkmark" aria-hidden="true">
         <HugeiconsIcon icon={Tick02Icon} size={36} />
       </span>
-      <h1>Demo order confirmed</h1>
+      <h1 tabIndex={-1}>Demo order confirmed</h1>
       <p>No payment was processed or real order placed.</p>
       <div className="receipt">
         {itemCount} demo item{itemCount === 1 ? "" : "s"} · ${subtotal} demo subtotal

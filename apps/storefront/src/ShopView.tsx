@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Search01Icon } from "@hugeicons/core-free-icons";
 import type { Product, VariantConfig } from "./config";
@@ -20,7 +21,6 @@ export function ShopView({
   searchInput,
   visibleProducts,
   selectedVariants,
-  added,
   onSearchInput,
   onSearchSubmit,
   onExampleSearch,
@@ -36,7 +36,6 @@ export function ShopView({
   searchInput: string;
   visibleProducts: Product[];
   selectedVariants: Partial<Record<Product["id"], string>>;
-  added: string;
   onSearchInput: (value: string) => void;
   onSearchSubmit: () => void;
   onExampleSearch: (query: string) => void;
@@ -47,10 +46,19 @@ export function ShopView({
 }) {
   const collection = COLLECTIONS.find((item) => item.id === collectionId) ?? COLLECTIONS[0];
   const heading = collection.id === "all" ? experience.collection : collection.label;
+  const collectionNav = useRef<HTMLElement>(null);
+
+  // Keep the active category visible when the tab row scrolls on small screens.
+  useEffect(() => {
+    collectionNav.current
+      ?.querySelector<HTMLElement>('[aria-pressed="true"]')
+      ?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [collectionId]);
+
   return (
     <>
       <section className="hero">
-        <h1>{experience.headline}</h1>
+        <h1 tabIndex={-1}>{experience.headline}</h1>
         <form
           className="shop-search"
           role="search"
@@ -88,7 +96,7 @@ export function ShopView({
             Free demo shipping on orders over $50 · $5 flat rate otherwise
           </div>
         )}
-        <nav className="collection-options" aria-label="Shop by category">
+        <nav className="collection-options" aria-label="Shop by category" ref={collectionNav}>
           {COLLECTIONS.map((item) => (
             <button
               type="button"
@@ -130,9 +138,6 @@ export function ShopView({
             />
           ))}
         </div>
-        <p className="added-message" role="status">
-          {added}
-        </p>
       </section>
     </>
   );

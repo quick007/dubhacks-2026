@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ShoppingCart01Icon } from "@hugeicons/core-free-icons";
@@ -8,7 +8,13 @@ import {
   type Product,
   type VariantConfig,
 } from "./config";
-import { getCartLines, type CartItem } from "./cart";
+import {
+  addCartItem,
+  getCartLines,
+  removeCartLine,
+  removeOneCartItem,
+  type CartItem,
+} from "./cart";
 import { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { orderTotal, shippingQuote } from "./shipping";
@@ -29,7 +35,7 @@ function App() {
   const [selectedVariants, setSelectedVariants] = useState<Partial<Record<Product["id"], string>>>(
     {},
   );
-  const [added, setAdded] = useState("");
+  const [added, setAdded] = useState<{ id: number; text: string } | null>(null);
   const [searchInput, setSearchInput] = useState(route.query);
 
   useEffect(() => {
@@ -59,6 +65,25 @@ function App() {
             ? `Fieldwork — ${route.query}`
             : "Fieldwork — Demo Shop";
   }, [page, route.query]);
+
+  // Dismiss the add-to-cart confirmation after a short pause.
+  useEffect(() => {
+    if (!added) return;
+    const timer = window.setTimeout(() => setAdded(null), 4000);
+    return () => window.clearTimeout(timer);
+  }, [added]);
+
+  useEffect(() => {
+    if (page !== "shop") setAdded(null);
+  }, [page]);
+
+  // Move focus to the new view heading so screen readers announce the change.
+  const previousPage = useRef(page);
+  useEffect(() => {
+    if (previousPage.current === page) return;
+    previousPage.current = page;
+    document.querySelector<HTMLElement>("main h1")?.focus({ preventScroll: true });
+  }, [page]);
 
   function goToCollection(
     next: Partial<Pick<StorefrontRoute, "query" | "collectionId">>,
@@ -129,7 +154,6 @@ function App() {
             searchInput={searchInput}
             visibleProducts={visibleProducts}
             selectedVariants={selectedVariants}
-            added={added}
             onSearchInput={(value) => {
               setSearchInput(value);
               if (!value.trim() && route.query) goToCollection({ query: "" });
@@ -153,8 +177,11 @@ function App() {
               setSelectedVariants((items) => ({ ...items, [productId]: variantId }))
             }
             onAdd={(product, variantId, colorName) => {
-              setCart((items) => [...items, { productId: product.id, variantId }]);
-              setAdded(`${product.name} (${colorName}) added to cart.`);
+              setCart((items) => addCartItem(items, { productId: product.id, variantId }));
+              setAdded((current) => ({
+                id: (current?.id ?? 0) + 1,
+                text: `${product.name} (${colorName}) added to cart.`,
+              }));
             }}
           />
         )}
@@ -164,6 +191,16 @@ function App() {
             subtotal={subtotal}
             quote={quote}
             total={total}
+            onQuantity={(variantId, change) =>
+              setCart((items) => {
+                if (change === 1) {
+                  const line = cartLines.find((candidate) => candidate.variant.id === variantId);
+                  return line ? addCartItem(items, { productId: line.product.id, variantId }) : items;
+                }
+                return removeOneCartItem(items, variantId);
+              })
+            }
+            onRemove={(variantId) => setCart((items) => removeCartLine(items, variantId))}
             onPlaceOrder={() => {
               navigate({ ...route, page: "confirmed" });
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -179,13 +216,21 @@ function App() {
             total={total}
             onBackToCollection={() => {
               setCart([]);
-              setAdded("");
+              setAdded(null);
               goToCollection({}, { replace: true });
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           />
         )}
       </main>
+      {page === "shop" && added && (
+        <div className="add-toast" role="status">
+          <span>{added.text}</span>
+          <button type="button" onClick={() => navigate({ ...route, page: "cart" })}>
+            Open cart
+          </button>
+        </div>
+      )}
       <footer>
         <span className="wordmark">
           fieldwork<span>®</span>

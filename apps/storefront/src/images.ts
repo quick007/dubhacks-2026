@@ -23,7 +23,7 @@ export type ProductImage = {
 function studioImages(productId: Product["id"], name: string): ProductImage[] {
   return ["Front", "Back", "Detail"].map((label, index) => ({
     id: `${productId}-${label.toLowerCase()}`,
-    src: `/products/${productId}-views.png`,
+    src: `/products/${productId}-views.jpg`,
     label,
     alt: `${name} — ${label.toLowerCase()} view`,
     context: "studio",

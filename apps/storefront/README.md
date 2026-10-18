@@ -6,7 +6,7 @@ Pages and filters live in the hash (`#collection?q=…&c=…`, `#cart`, `#confir
 
 Every product has three color choices, defined in `src/variants.ts` with stable variant IDs. Selecting a color shows its corresponding photograph. Every color has the same gallery views as the original: studio angles, details, backgrounds and lifestyle scenes where available. Alternate-color contact sheets use explicit tile coordinates so main photos and thumbnails show the same square view. Alternate-color photos are generated using the original product as a reference. The lunch box varies its retaining band's color while keeping the steel box and bamboo lid unchanged.
 
-The cart records product and variant IDs, groups repeated additions of the same variant and keeps different colors on separate lines. All colors of a product share its fixture price. Color selection survives category/search changes and visits to the cart within the current page session. No model selects colors automatically.
+The cart records product and variant IDs, groups repeated additions of the same variant and keeps different colors on separate lines. Each line has a quantity stepper and a Remove action; the subtotal, shipping and demo total update in place. All colors of a product share its fixture price. Color selection survives category/search changes and visits to the cart within the current page session. No model selects colors automatically. Adding an item shows a brief confirmation that links to the cart and dismisses itself after a few seconds.
 
 When shipping details are visible, the cart restates the same fixture terms as the hero — free over $50, $5 flat rate otherwise — and the demo total adds the flat rate. With shipping hidden, delivery terms stay out of the cart, which is the measurable difference the shipping-visible variant provides.
 
@@ -23,7 +23,7 @@ The catalog now has 16 products. The daypack and rain jacket remain the detailed
 
 ## Try it
 
-Start the shop and submit a phrase such as `rain jacket for campus`, `work bag`, `hiking gear` or `family park`, or pick one of the example chips below the search field. The headline, collection heading, ordering and lead image change together. Every photo remains available through the thumbnails. Clearing the search restores the baseline headline and order, with product-focused still-life photos leading each product gallery (textured/tabletop settings where available, otherwise the studio view). Studio, detail and alternate-setting views remain available through thumbnails.
+Start the shop and submit a phrase such as `rain jacket for campus`, `work bag`, `hiking gear` or `family park`, or pick one of the example chips below the search field. The headline, collection heading, ordering and lead image change together. Every photo remains available through the thumbnails: the strip is a single tab stop and the arrow keys (plus Home and End) move between views. Clearing the search restores the baseline headline and order, with product-focused still-life photos leading each product gallery (textured/tabletop settings where available, otherwise the studio view). Studio, detail and alternate-setting views remain available through thumbnails.
 
 The search policy is a local deterministic keyword demo, not a model or measured personalization result. A product-specific term outweighs a contextual ranking boost. Unknown queries preserve the baseline. Current search state stays in memory for this visit; there is no browsing-history collection or external inference request.
 
@@ -34,7 +34,7 @@ The search policy is a local deterministic keyword demo, not a model or measured
 - `src/images.ts`: image IDs, source paths, captions, alt text, context and descriptive tags. Studio triptychs use explicit crop positions; each lifestyle image is its own file.
 - `src/personalization.ts`: replaceable query-to-context and ranking policy.
 - `src/ProductGallery.tsx`: displays a chosen image and lets the shopper override it.
-- `public/products/`: image assets and generation prompts. Images are AI-generated fixture media. Existing product reference images anchor identity across contexts.
+- `public/products/`: image assets and generation prompts. Images are AI-generated fixture media. Existing product reference images anchor identity across contexts. The four studio triptychs are stored as compressed JPEGs (converted from PNG) to keep the initial payload small.
 
 Use `pnpm --filter @storefront/storefront test` to check intent ranking, baseline fallback, image compatibility and asset existence. `pnpm --filter @storefront/storefront build` checks types and bundles the page.
 
