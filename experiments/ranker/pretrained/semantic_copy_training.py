@@ -18,7 +18,8 @@ DATA = ROOT / 'semantic_copy_data'
 MODEL = Path('.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53')
 CONFIG = {'seed': 19074, 'rank': 4, 'scale': 20., 'learningRate': .0001,
           'epochs': 2, 'batchSize': 1, 'memoryGiB': 7, 'prefillStep': 256,
-          'maximumContext': 4096, 'target': 'language_model.model.layers.31.mlp.down_proj',
+          'maximumContext': 4096, 'maximumRankingPrefix': 1792,
+          'target': 'language_model.model.layers.31.mlp.down_proj',
           'selection': 'final fixed step; no dev/test checkpoint selection',
           'trainingMode': 'frozen upstream eval; exact cached final-MLP inputs; target-only CE'}
 
@@ -47,9 +48,9 @@ def teacher_tokens(tokenizer, messages, value, cap):
 
 def layout(plan, request, catalog):
     from .semantic_copy_data.generator import public_messages
-    from .scheduler_identity_experiment import values_layout
+    from .heading_experiment import heading_rows
     common, evidence = public_messages(plan, request, catalog)
-    _, rows, _ = values_layout(plan, request, catalog)
+    rows = heading_rows(plan, request, catalog)
     for row in rows:
         field = row['fields'][0]; number = int(field[1:])
         bound = 'section' if row['kind'] == 'heading' else 'card'
@@ -165,6 +166,7 @@ def cache_proof(backbone, adapter, item):
                 mx.eval([c.state for c in cache]); mx.synchronize()
             logits=model.language_model.lm_head(hidden[:,-1:])
             mx.eval(logits); mx.synchronize()
+            if not bool(mx.all(mx.isfinite(logits)).item()):raise FloatingPointError('Nonfinite prefix logits')
         states.append(cache); last.append(logits)
     hashes=[state_hash(c) for c in states]
     effect=float(mx.max(mx.abs(last[0].astype(mx.float32)-last[1].astype(mx.float32))).item())
@@ -175,6 +177,7 @@ def cache_proof(backbone, adapter, item):
         for token in item['forcedContinuation']:
             logit=model(mx.array([[token]]),cache=cache)[:,-1]
             mx.eval(logit,[c.state for c in cache]);mx.synchronize()
+            if not bool(mx.all(mx.isfinite(logit)).item()):raise FloatingPointError('Nonfinite continuation logits')
             sampled.append(int(mx.argmax(logit,axis=-1).item())); logs.append(logit)
         continuations.append((sampled,logs,state_hash(cache)))
     exact=continuations[0][0]==continuations[1][0] and continuations[0][2]==continuations[1][2] and all(bool(mx.array_equal(a,b).item()) for a,b in zip(continuations[0][1],continuations[1][1]))
@@ -233,7 +236,7 @@ def execute(args):
             if not fields:continue
             begin=time.perf_counter()
             with disabled(model,adapter):
-                _,_,_,rank=encode_shared_prefix(bb,case['request'],case['catalog'],1536)
+                _,_,_,rank=encode_shared_prefix(bb,case['request'],case['catalog'],CONFIG['maximumRankingPrefix'])
                 state,_=append_evidence(bb,rank,fields[0]['messages'][0])
             for field in fields:
                 value=capture(bb,adapter,state,field); features.append(value)
@@ -260,8 +263,10 @@ def execute(args):
             return nn.losses.cross_entropy(logits.astype(mx.float32),mx.array(contract['targets']),reduction='mean')
         ld,gd=nn.value_and_grad(adapter,direct)();lf,gf=nn.value_and_grad(adapter,lambda:feature_loss(bb,adapter,feature))()
         mx.eval(ld,gd,lf,gf);mx.synchronize();bb.check_memory()
-        gradients=[{'name':a,'maxAbsDifference':float(mx.max(mx.abs(x-y)).item()),'exact':bool(mx.array_equal(x,y).item())}
-            for (a,x),(b,y) in zip(tree_flatten(gd),tree_flatten(gf)) if a==b]
+        direct_grads=dict(tree_flatten(gd)); feature_grads=dict(tree_flatten(gf))
+        if set(direct_grads)!=set(feature_grads) or len(direct_grads)!=2:raise AssertionError('Gradient roster mismatch')
+        gradients=[{'name':a,'maxAbsDifference':float(mx.max(mx.abs(x-feature_grads[a])).item()),'exact':bool(mx.array_equal(x,feature_grads[a]).item())}
+            for a,x in direct_grads.items()]
         report['controls']['directFeatureEquivalence']={'nonzeroB':True,'directLoss':float(ld.item()),'featureLoss':float(lf.item()),'gradients':gradients}
         if float(ld.item())!=float(lf.item()) or not all(g['exact'] for g in gradients):raise AssertionError('Direct/features loss or gradient mismatch')
         report['controls']['nonzeroCacheProof']=cache_proof(bb,adapter,proof_item)
@@ -278,11 +283,13 @@ def execute(args):
                 if not bool(mx.isfinite(loss).item()) or not all(bool(mx.all(mx.isfinite(g)).item()) for _,g in tree_flatten(grads)):raise FloatingPointError('Nonfinite loss or gradient')
                 norm=sum(float(mx.sum(g.astype(mx.float32)**2).item()) for _,g in tree_flatten(grads))**.5
                 optimizer.update(adapter,grads);mx.eval(adapter.parameters(),optimizer.state);mx.synchronize();bb.check_memory()
+                if not all(bool(mx.all(mx.isfinite(p)).item()) for _,p in tree_flatten(adapter.trainable_parameters())):raise FloatingPointError('Nonfinite updated adapter')
+                if not all(bool(mx.all(mx.isfinite(p)).item()) for _,p in tree_flatten(optimizer.state) if hasattr(p,'dtype')):raise FloatingPointError('Nonfinite optimizer state')
                 report['steps'].append({'epoch':epoch,'rowId':item['rowId'],'caseId':item['caseId'],'loss':float(loss.item()),'gradientL2':norm,'ms':(time.perf_counter()-begin)*1000})
                 if len(report['steps'])%28==0:print(json.dumps({'step':len(report['steps']),'loss':float(loss.item()),'memory':bb.runtime_memory()}),flush=True);save()
         report['lossAfter']=float(np.mean([float(feature_loss(bb,adapter,f).item()) for f in features]))
         report['parameterAbsoluteChanges']={name:float(np.abs(np.array(value)-initial[name]).sum()) for name,value in tree_flatten(adapter.trainable_parameters())}
-        if not sum(report['parameterAbsoluteChanges'].values()):raise AssertionError('No actual adapter update')
+        if not report['parameterAbsoluteChanges'].get('lora_b',0)>0:raise AssertionError('No actual LoRA-B update')
         report['controls']['learnedCacheProof']=cache_proof(bb,adapter,proof_item)
         checkpoint=args.out/'adapter.safetensors';mx.save_safetensors(str(checkpoint),dict(tree_flatten(adapter.trainable_parameters())))
         saved=mx.load(str(checkpoint)); originals={k:np.array(v) for k,v in tree_flatten(adapter.trainable_parameters())}
@@ -300,7 +307,8 @@ def execute(args):
             original_layout=scheduler.values_layout; original_encode=fusion.encode_shared_prefix
             heads,_,_=load_corrected(Path('data/ranker/pretrained/evidence-plan-v1'))
             def base_rank(*a,**kw):
-                with disabled(model,adapter):return original_encode(*a,**kw)
+                # Separate experimental prefix bound, declared before this run.
+                with disabled(model,adapter):return original_encode(*a[:3],CONFIG['maximumRankingPrefix'])
             scheduler.values_layout=layout;fusion.encode_shared_prefix=base_rank
             try:
                 for split in ('dev','test'):
