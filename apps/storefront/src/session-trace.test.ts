@@ -43,13 +43,14 @@ test("event schema only accepts fixture identities and structured action metadat
   buffer.event("selection", { productId: "secret", variantId: "secret" });
   buffer.event("checkout-success", { count: 1 });
   buffer.product("mug"); buffer.product("mug"); buffer.product("secret");
-  buffer.readiness({ name: "fieldwork.local-model.complete.after-paint-opportunity", duration: 10, detail: { query: "secret", requestId: "secret", copySource: { kind: "parallel-text-cache" } } });
+  buffer.readiness({ name: "fieldwork.local-model.complete.after-paint-opportunity", duration: 10, detail: { query: "secret", requestId: "secret", copySource: { kind: "fresh-parallel-head" } } });
   const trace = buffer.export()!;
   assert.equal(trace.events.length, 6);
   assert.ok(!JSON.stringify(trace).includes("secret"));
   assert.equal(trace.events[1]?.data.variantId, "mug-cobalt");
   assert.equal(trace.events[0]?.context.modelVersion, null);
   assert.equal(trace.events.at(-1)?.data.scope, "after-paint-opportunity");
+  assert.equal(trace.events.at(-1)?.data.copySource, "fresh-parallel-head");
   now += 10; buffer.stop(); buffer.event("search"); assert.equal(buffer.export()!.events.length, 6);
 });
 test("bounds stop a complete replay prefix and expiry prevents later export", () => {
@@ -67,4 +68,12 @@ test("bounds stop a complete replay prefix and expiry prevents later export", ()
   size.replay({ type: 2, timestamp: 0, data: { node: { type: 3, id: 1, textContent: "x".repeat(TRACE_LIMITS.bytes + 1) } } });
   assert.equal(size.export()?.replay.events.length, 0);
   assert.equal(size.export()?.stopReason, "buffer-limit");
+});
+
+test("readiness recognizes every existing copy-source kind while excluding arbitrary provenance", () => {
+  const buffer = createTraceBuffer(() => 1, () => "test");
+  for (const kind of ["fresh-native", "fresh-parallel-head", "generated-earlier", "mixed-native-cache", "no-generation", "private@example.invalid"]) {
+    buffer.readiness({ name: "fieldwork.local-model.complete.after-paint-opportunity", duration: 10, detail: { copySource: { kind } } });
+  }
+  assert.deepEqual(buffer.export()?.events.map((event) => event.data.copySource), ["fresh-native", "fresh-parallel-head", "generated-earlier", "mixed-native-cache", "no-generation", null]);
 });

@@ -111,7 +111,7 @@ export function createTraceBuffer(now: () => number = Date.now, uuid: () => stri
       if (!stage || !Number.isFinite(entry.duration)) return;
       const detail = entry.detail as { copySource?: { kind?: string } } | undefined;
       const kind = detail?.copySource?.kind;
-      event("model-readiness", { stage, durationMs: entry.duration, scope: "after-paint-opportunity", copySource: ["fresh-native", "parallel-text-cache", "no-generation"].includes(kind ?? "") ? kind : null });
+      event("model-readiness", { stage, durationMs: entry.duration, scope: "after-paint-opportunity", copySource: ["fresh-native", "fresh-parallel-head", "generated-earlier", "mixed-native-cache", "no-generation"].includes(kind ?? "") ? kind : null });
     },
     replay(value: unknown) { const safe = sanitizeReplay(value); if (safe) append(trace.replay.events, safe, TRACE_LIMITS.replayEvents); },
     export(): DemoSessionTrace | null { return now() >= trace.expiresAt ? null : structuredClone(trace); },
