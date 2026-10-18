@@ -1,0 +1,2580 @@
+{
+  "version": "persona-warm-browser-independent-audit.v1",
+  "createdAt": "2026-10-18T12:44:16.319618+00:00",
+  "verdict": "13/13 exact public numerical/selection/copy parity; warm loaded-profile readiness verified, not causal paired speedup or quality promotion",
+  "fixedDenominators": {
+    "allRequests": 13,
+    "loadedProfileSwitches": 10,
+    "recorded": 13,
+    "unattempted": 0,
+    "protocolPassed": 13,
+    "loadedVisibleFirst3": 10,
+    "loadedDecodedFull6": 10,
+    "functional": 2,
+    "nativeReceiptsCompared": 26,
+    "generatedFieldsCompared": 260,
+    "renderedFull6StringsCompared": 247
+  },
+  "evidence": {
+    "warmReport": "data/ranker/pretrained/persona-warm-browser-v1-attempt-1/report.json",
+    "warmReportSha256": "ff598a333ba2d3604c5bbb3d0ef23ca03462755e851ebd658af07a1e10d9ddb7",
+    "priorReport": "data/ranker/pretrained/persona-development-browser-v3-attempt-1/report.json",
+    "priorReportSha256": "5f2135156560c83d0c82d077af39f8c78b3c924787e6809c1bc5cc256e46520f",
+    "publicCatalogSha256": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450",
+    "sourcePinsInCommon": 139,
+    "changedCommonPins": [],
+    "sourcePinsBeforeAfterUnchanged": true,
+    "startupBeforeAfterAndDiskExact": true,
+    "currentCodeSourceHashes": [
+      {
+        "path": "apps/storefront/src/PersonaSwitcher.tsx",
+        "sha256": "9c1a1dfe3082eb4d4a7fa542d5f63bf9422e0b7dc26d880a8c6ed6aa6e6fcb2e",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/ProductCard.tsx",
+        "sha256": "f666bbfbbc61ca285f7619e7833f09a7617b2214a26c586fa5bb6c52942b65a8",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/ProductGallery.tsx",
+        "sha256": "f5976a52ddb7fc9bc611b15e1833812fbcf345c6be548cb07a2020ac3683a9bc",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/ProductPhoto.tsx",
+        "sha256": "82e67036f498801a28f0676245edf52091e45d86915bb277d701be21e17a2c00",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/ShopView.tsx",
+        "sha256": "abac729d436866347d869454d53ccb571e616995e5d76ffdec143c6ef5b555fb",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/catalog-expansion.ts",
+        "sha256": "694f22afb2b5dace9a35d742d91d0fab381edab94c5b6b5a5d6c6d962a4d7735",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/config.ts",
+        "sha256": "dc496877b87032ac88a682d9f46adecd6d3c6e5fcb2e8875c9f06df795e6bb89",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/images.ts",
+        "sha256": "bbb72c2ef95fa9c00a968551e66e27f274e579c8811e72ecc0b0449ea28ff527",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/local-model-client.ts",
+        "sha256": "25c30399fc840354c45aea24cbe2cbd8010542fd9a6de7e82aa39481aab33972",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/local-model-mode.test.ts",
+        "sha256": "cc8b7b1d6e69a1249c4a958396661aba6215a397a0f270258bfce68155998d13",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/local-model-mode.ts",
+        "sha256": "1c8003c43ad1626034b528a7d86484c3fb29819aced70eea7d9b1942cb797b41",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/local-model-performance.ts",
+        "sha256": "6a5033019baf465c8e6e3314237dc53392b54b6fa613ba07d34485f3337ae32b",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/local-model.ts",
+        "sha256": "757a0cb0d7ad1272597cbc4f54240f4d29910a45817ccef144c26a5b82319107",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/main.tsx",
+        "sha256": "b8ab479d7723ab9f665c974f12fc4afcad220cec03ad0f695344026c6aa70183",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/personas.ts",
+        "sha256": "bf1a546ad4cd4518eb5fd3d91cd3d175721dcd27e8e3e2e60131e20ecf40099b",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/product-asset-source.ts",
+        "sha256": "b030bba7cd078fce93decc5a0edb3839a325fe52ec1c2b2ccf24001cfb6d3e66",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/product-responsive-runtime.ts",
+        "sha256": "f2c0ac6fc5b07289b48064fe8616de27792bd7325e75e954b5c64fb2a41854d7",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/product-responsive-source.ts",
+        "sha256": "9cee8ba7ffa09cc884599707f63d6a835ea3bd74efdf784697c3816e40b2195c",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/styles.css",
+        "sha256": "98d4fee4ee5a8e9bc343998b2f049225323c0b00aa3013c3a932fe8f66b54390",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/use-local-model.ts",
+        "sha256": "0f5ea4f4260a9e0534751fdadaabd770f1d7be05151e09f7a25ee7bfc75c0b3c",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/src/variants.ts",
+        "sha256": "09bb4d47fb5c4e644c023421dda20323a58791156451061a1c5790244fb62ee3",
+        "currentMatches": true
+      },
+      {
+        "path": "apps/storefront/vite.config.ts",
+        "sha256": "4a6d8cffbcf817d488d0e126a7de8d6e54bf99cb9dfc870642874fd55a485f8c",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_candidate_browser_probe_v1.mjs",
+        "sha256": "3893f863b41fef840fb1e9538f83f5e96726b55f05031ea78bd91b7787f94f16",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_candidate_browser_probe_v2.mjs",
+        "sha256": "32804cc2c953177d22c3a02cdf16ce64d69d3e4721b4a09f39337bd4a14de1c7",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_candidate_collection_probe_v1.mjs",
+        "sha256": "badd6718b64e69d819534de0c3228f8bc10778707141a5c65934692fd361262e",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_candidate_engine_v1.py",
+        "sha256": "014e02881f9c4f3fceaffb6a927d031856d461f1f4907c63a824749af32b8a67",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_candidate_image_service_v1.py",
+        "sha256": "68729ac3aa020af9f05f03e0c54fdcbc52ea54a7086f235cb515aa7acdfecd4d",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_demo_engine.py",
+        "sha256": "bf2168f8898211ec2752d60676e933a647441fd15df93c4ad0450881c958deff",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_demo_image_binding_v1.py",
+        "sha256": "365adb11a097e233e1ba65039c9bc225e7e1eb7028c323f30480fab0699335d0",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_demo_service.py",
+        "sha256": "435a4be0471da26a9863a27c3583dc8e404b450c4cfd6b6d1ca533bda16eb2f9",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_adapter_contract_v2.py",
+        "sha256": "2a1cc4cbda12d1c750cab62707ef398b69b41302ab841df9098b78a44f5160c0",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_adapter_engine_v2.py",
+        "sha256": "5dfa1e455d568884fcd72adea24d808522fcf7c712b55397e5dacc8115ed4875",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_adapter_engine_v3.py",
+        "sha256": "f1a4c0371745a9530f2d47b4bc3be732c718245d41c2c8a8fc61b45e5fc528d3",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_adapter_runtime_v2.py",
+        "sha256": "a00573f724d33f4a2601158376bdecfc3cce7aec1c7aa8ebc3d42099a7a2f3b5",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_adapter_runtime_v3.py",
+        "sha256": "6fb9626541a20d5ab9c55b7a1b930e7e57f107ff9dd70ac36493829621ecbc61",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs",
+        "sha256": "8a15441a7e0f5c94e241c383d341217645cc73cf1df2107b1e8135ccd4581f63",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_browser_probe_v2.mjs",
+        "sha256": "e8583a9feaa4848522d8cabe91387b2112f683095bcc2426ee7c0a6d0df144d8",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_context_v1.py",
+        "sha256": "381bd4a40987461eac344fba71574a21c29aba0b02c71807e5f5e495bf33b77c",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_development_admission_v1.py",
+        "sha256": "8f3f36d6c4575d7a84eb460b3850efd81c16c0988bb4b5fc02418baeae81e83e",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_http_semantic_probe_v2.py",
+        "sha256": "4a403dceb6796edee3986ca01d09aea3d708fa9a4d9a33cdc4f592e97e0dc04c",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_qwen_fit_v1.py",
+        "sha256": "ef04f3e06702fd69317c67eb6a06ab854749321090887296c9ab8ce923ee0fac",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_qwen_v1.py",
+        "sha256": "6297fd8a4e4d5ce9f80b4b7382e72c1083cff0b357d711db89ef7a5c5a2a17b3",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_warm_browser_probe_v1.mjs",
+        "sha256": "f59928e640a3a9381ce25ea02c5b0efb47dfb38673cc5fd1a1ef473b9117f8eb",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_persona_warm_http_probe_v1.py",
+        "sha256": "d37a42c217eda183f78fafb6fbf879937daee87e0ec09dfdb21b8421f6b896bd",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/store_rank_session_v5.py",
+        "sha256": "81dd458578fe087b7d2ad6eb9c2b0ceb03d456d11555d5ca9fc8abf62fb81d28",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs",
+        "sha256": "900e6d5168cb8ad8e5a6f92d7da5188645e565eb1d71869f9146db43f4b57aeb",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/test_store_persona_browser_probe_v2.mjs",
+        "sha256": "260af8474796200837e34cef9697642d2f28dec03ce269291887079b98db272c",
+        "currentMatches": true
+      },
+      {
+        "path": "experiments/ranker/pretrained/test_store_persona_warm_browser_probe_v1.mjs",
+        "sha256": "cebd5f534e42a17167cd760f7a94473180dee11ae9096193d48b3256d69f8669",
+        "currentMatches": true
+      },
+      {
+        "path": "scripts/prepare-product-responsive-webp.mjs",
+        "sha256": "48ae7d92938bdf8eaaaec4d5504465a7b567b4b2881a382ad57181145ec4a3c2",
+        "currentMatches": true
+      },
+      {
+        "path": "scripts/prepare-product-runtime-projection.mjs",
+        "sha256": "d66b4fe447330a090d0eea03169321bbe7cdce25bf6019c0a073cf39a3cb6908",
+        "currentMatches": true
+      },
+      {
+        "path": "scripts/prepare-product-webp.mjs",
+        "sha256": "50d4962f9a4886905aa704ab5acd26060c8b4acf4a495fd476eb1dbee02c000f",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_http_semantic_probe_v2.py",
+        "sha256": "4a403dceb6796edee3986ca01d09aea3d708fa9a4d9a33cdc4f592e97e0dc04c",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_http_semantic_probe_v1.py",
+        "sha256": "84615912b90454c0c094e4527f5b24f806fb4a102ec7971c0ceb35e5343ba887",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_adapter_contract_v2.py",
+        "sha256": "2a1cc4cbda12d1c750cab62707ef398b69b41302ab841df9098b78a44f5160c0",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_adapter_runtime_v2.py",
+        "sha256": "a00573f724d33f4a2601158376bdecfc3cce7aec1c7aa8ebc3d42099a7a2f3b5",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_adapter_engine_v2.py",
+        "sha256": "5dfa1e455d568884fcd72adea24d808522fcf7c712b55397e5dacc8115ed4875",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_choice_scoring_v1.py",
+        "sha256": "8606cfd91b5c551f78fd12f805b9ed35c5c5b14760f37736e95f1b1e87ef748f",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_choice_capture_v1.py",
+        "sha256": "a071dffce1fc51a73bd0143c562b7a68a11d84c7653271e788f8149f9cbf1094",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_qwen_lexical_choice_inputs_v2.py",
+        "sha256": "6f0eba923ee97f2f919af9982f6e9458b78d6d22b2f38f8366c43794a3e2ee5b",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_context_v1.py",
+        "sha256": "381bd4a40987461eac344fba71574a21c29aba0b02c71807e5f5e495bf33b77c",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_qwen_v1.py",
+        "sha256": "6297fd8a4e4d5ce9f80b4b7382e72c1083cff0b357d711db89ef7a5c5a2a17b3",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_demo_engine.py",
+        "sha256": "bf2168f8898211ec2752d60676e933a647441fd15df93c4ad0450881c958deff",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_candidate_engine_v1.py",
+        "sha256": "014e02881f9c4f3fceaffb6a927d031856d461f1f4907c63a824749af32b8a67",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_candidate_image_service_v1.py",
+        "sha256": "68729ac3aa020af9f05f03e0c54fdcbc52ea54a7086f235cb515aa7acdfecd4d",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_parallel_text_data_v1.py",
+        "sha256": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_query_intent_gate_v3.py",
+        "sha256": "d988ab5fa1e24dabffc62996c51e4e8ab0ad4563f834ca757107d0a4ab430226",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_query_intent_audit_v3.py",
+        "sha256": "aeb83de941339e852b70b12433aaec91629f091bf8bc6313a367dc24dfb356d0",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/audit_persona_combined_query_replay_v1.py",
+        "sha256": "085e265e6093d3cdcc040d1509b06c7e2475b53de7a1b7798fba525239790de6",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/audit_persona_choice_combined_v1.py",
+        "sha256": "cac3469c0eb67cfe86b796f8760035e52d14412d5f46e98ae1f01ce1fbf2106d",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_development_admission_v1.py",
+        "sha256": "8f3f36d6c4575d7a84eb460b3850efd81c16c0988bb4b5fc02418baeae81e83e",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/audit_persona_choice_combined_v2.py",
+        "sha256": "950cebc62d752b33dbfe7a09031958671afcba3e130bc2abc1428517c321907d",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_adapter_runtime_v3.py",
+        "sha256": "6fb9626541a20d5ab9c55b7a1b930e7e57f107ff9dd70ac36493829621ecbc61",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_adapter_engine_v3.py",
+        "sha256": "f1a4c0371745a9530f2d47b4bc3be732c718245d41c2c8a8fc61b45e5fc528d3",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_warm_http_probe_v1.py",
+        "sha256": "d37a42c217eda183f78fafb6fbf879937daee87e0ec09dfdb21b8421f6b896bd",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/test_persona_combined_query_replay_v1.py",
+        "sha256": "404f82ba008b7148bdc6adc6bf0f5d7f56b204d443041b243a365940a9134d57",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_combined_query_v1.py",
+        "sha256": "851388b6603f7ef04a8af2b13bf07949235becfeb5feaab95162a92ddb63bff0",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_function_adaptation.py",
+        "sha256": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/catalog_fusion/runtime.py",
+        "sha256": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+        "currentMatches": true
+      },
+      {
+        "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_catalog_v1.py",
+        "sha256": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+        "currentMatches": true
+      }
+    ],
+    "largeWeightsIndependentlyRehashed": false,
+    "sameModelAndCopyProvenanceAll13": {
+      "rankCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+      "v5QueryCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+      "nativeCopyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+      "actualParallelCopyHeadSha256": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889"
+    }
+  },
+  "startup": {
+    "version": "persona-adapter-runtime.v3",
+    "enabled": true,
+    "publicPeopleSha256": "4737c785313b3200798133679ee914aae638d5b03f46b052ecf77451f75f5b1d",
+    "requestQuery": "Browse the store",
+    "rows": [
+      {
+        "publicPersonId": "bob",
+        "formatterTextSha256": "c6955f06222bf00e182efc443d4dc18c8250e292792c1b3715a5c13b463e8050",
+        "formatterTextBytes": 1179,
+        "featureTensorSha256": "aa148dc8cbfdb29412f707f9214301d7d35470eaf373c9e38578bb8ec5b72788",
+        "cacheKeySha256": "c6955f06222bf00e182efc443d4dc18c8250e292792c1b3715a5c13b463e8050",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 561.176749994047,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "maya",
+        "formatterTextSha256": "1ee7e3eb668e2606c21b1ccef3a94ca3723632678e19eb6bd5155e2f8b7cb9f3",
+        "formatterTextBytes": 1068,
+        "featureTensorSha256": "57440599b62760371c116a5e907c4a8661e5805c0ab12b15cdb940bc849c02ba",
+        "cacheKeySha256": "1ee7e3eb668e2606c21b1ccef3a94ca3723632678e19eb6bd5155e2f8b7cb9f3",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 404.70616694074124,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "priya",
+        "formatterTextSha256": "fd54336e3cca3c5c01ec4d3a644fb76534896d95984649fb8d9b345ee526a9cc",
+        "formatterTextBytes": 1447,
+        "featureTensorSha256": "7602f4951b765c8ed1b546191181ec208cec770917ff448412e458d317978b5d",
+        "cacheKeySha256": "fd54336e3cca3c5c01ec4d3a644fb76534896d95984649fb8d9b345ee526a9cc",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 571.8745000194758,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "lena",
+        "formatterTextSha256": "b249d62fe91f9a402d6912644fc624d713e8dc592c47e11b5ae29e110cb30971",
+        "formatterTextBytes": 1203,
+        "featureTensorSha256": "f7398c52e0c954f0e4f1dd686b3647169025d40e74922d826bf8f6ef1a299958",
+        "cacheKeySha256": "b249d62fe91f9a402d6912644fc624d713e8dc592c47e11b5ae29e110cb30971",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 481.0244170948863,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "june",
+        "formatterTextSha256": "a27ec6c5781ef4afbb7f34bc31f8683cf1d8ae4a895055a4a1e3e3c12a7ff01f",
+        "formatterTextBytes": 902,
+        "featureTensorSha256": "192ce3af52a0f585fc093137990b380ec9f2f3815759c58359e53fc696cc05b6",
+        "cacheKeySha256": "a27ec6c5781ef4afbb7f34bc31f8683cf1d8ae4a895055a4a1e3e3c12a7ff01f",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 390.46587492339313,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "grace",
+        "formatterTextSha256": "7a4b98597d80f4d59c559efdfc6c56e01d003333f01ac8a424119e13f22c51b4",
+        "formatterTextBytes": 1416,
+        "featureTensorSha256": "f02933a3024aa60266a1b390d71c82666410e71ebe7d3038cc7def8889ab958e",
+        "cacheKeySha256": "7a4b98597d80f4d59c559efdfc6c56e01d003333f01ac8a424119e13f22c51b4",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 581.1034580692649,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "sam",
+        "formatterTextSha256": "85872d6b7c59a65a3ed24f6dc749c50829f33870badd15b81bbba7aa4732acb2",
+        "formatterTextBytes": 1341,
+        "featureTensorSha256": "7e477ee2534e049f3b20c3711f0393910f3759fb426d6e4e23d55735f5b1a343",
+        "cacheKeySha256": "85872d6b7c59a65a3ed24f6dc749c50829f33870badd15b81bbba7aa4732acb2",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 572.6566250668839,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "ana",
+        "formatterTextSha256": "3f6ccc04169fe21fc90da8cf824cf0c039448a14271fb1b9757c6c531a201cc6",
+        "formatterTextBytes": 1096,
+        "featureTensorSha256": "23068b584b241012c26bd09757237d8473554affa3d5fd03f11267dacb5878f6",
+        "cacheKeySha256": "3f6ccc04169fe21fc90da8cf824cf0c039448a14271fb1b9757c6c531a201cc6",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 473.693749983795,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "rosa",
+        "formatterTextSha256": "f00819010c20c1a7ef2ef694964d197c413668bf1f3823f2b725d25190978319",
+        "formatterTextBytes": 1447,
+        "featureTensorSha256": "5fe3e4355ff65289c338d2060499a426344b86e2e2acf30ab49d75ebbdfc21b9",
+        "cacheKeySha256": "f00819010c20c1a7ef2ef694964d197c413668bf1f3823f2b725d25190978319",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 580.206917016767,
+        "featureSource": "fresh-base-color-feature"
+      },
+      {
+        "publicPersonId": "felix",
+        "formatterTextSha256": "ef5d7bae9182bb90f8efc8dae9322b14738d9479ba83c2fc44fc12d13259dd12",
+        "formatterTextBytes": 1171,
+        "featureTensorSha256": "a6f4407d010e3aed1a0cd071d5d33ff5a6a852a8fc6134828a9acaceb7fc2163",
+        "cacheKeySha256": "ef5d7bae9182bb90f8efc8dae9322b14738d9479ba83c2fc44fc12d13259dd12",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 489.25550002604723,
+        "featureSource": "fresh-base-color-feature"
+      }
+    ],
+    "encodingMs": 5120.442457962781,
+    "baseEncodingCalls": [
+      {
+        "textSha256": "c6955f06222bf00e182efc443d4dc18c8250e292792c1b3715a5c13b463e8050",
+        "textBytes": 1179,
+        "elapsedMs": 558.0315409461036,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.5387499695643783,
+        "nativeForwardMs": 553.5380420042202,
+        "paddedTokensPerRow": 280
+      },
+      {
+        "textSha256": "1ee7e3eb668e2606c21b1ccef3a94ca3723632678e19eb6bd5155e2f8b7cb9f3",
+        "textBytes": 1068,
+        "elapsedMs": 404.6429580776021,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 1.3157910434529185,
+        "nativeForwardMs": 402.4014170281589,
+        "paddedTokensPerRow": 255
+      },
+      {
+        "textSha256": "fd54336e3cca3c5c01ec4d3a644fb76534896d95984649fb8d9b345ee526a9cc",
+        "textBytes": 1447,
+        "elapsedMs": 571.5732079697773,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.33408403396606445,
+        "nativeForwardMs": 570.240915985778,
+        "paddedTokensPerRow": 354
+      },
+      {
+        "textSha256": "b249d62fe91f9a402d6912644fc624d713e8dc592c47e11b5ae29e110cb30971",
+        "textBytes": 1203,
+        "elapsedMs": 480.9177500428632,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.527041032910347,
+        "nativeForwardMs": 479.14245806168765,
+        "paddedTokensPerRow": 289
+      },
+      {
+        "textSha256": "a27ec6c5781ef4afbb7f34bc31f8683cf1d8ae4a895055a4a1e3e3c12a7ff01f",
+        "textBytes": 902,
+        "elapsedMs": 390.2052079793066,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.489042024128139,
+        "nativeForwardMs": 388.1159999873489,
+        "paddedTokensPerRow": 195
+      },
+      {
+        "textSha256": "7a4b98597d80f4d59c559efdfc6c56e01d003333f01ac8a424119e13f22c51b4",
+        "textBytes": 1416,
+        "elapsedMs": 580.8350839652121,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.8268340025097132,
+        "nativeForwardMs": 577.8749169548973,
+        "paddedTokensPerRow": 353
+      },
+      {
+        "textSha256": "85872d6b7c59a65a3ed24f6dc749c50829f33870badd15b81bbba7aa4732acb2",
+        "textBytes": 1341,
+        "elapsedMs": 572.585416957736,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.9557079756632447,
+        "nativeForwardMs": 569.8507080087438,
+        "paddedTokensPerRow": 328
+      },
+      {
+        "textSha256": "3f6ccc04169fe21fc90da8cf824cf0c039448a14271fb1b9757c6c531a201cc6",
+        "textBytes": 1096,
+        "elapsedMs": 473.62829197663814,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.28329191263765097,
+        "nativeForwardMs": 472.53041702788323,
+        "paddedTokensPerRow": 260
+      },
+      {
+        "textSha256": "f00819010c20c1a7ef2ef694964d197c413668bf1f3823f2b725d25190978319",
+        "textBytes": 1447,
+        "elapsedMs": 579.8637910047546,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.26929203886538744,
+        "nativeForwardMs": 578.7378340028226,
+        "paddedTokensPerRow": 359
+      },
+      {
+        "textSha256": "ef5d7bae9182bb90f8efc8dae9322b14738d9479ba83c2fc44fc12d13259dd12",
+        "textBytes": 1171,
+        "elapsedMs": 489.091582945548,
+        "nativeBackboneForwardCalls": 1,
+        "batchRows": 1,
+        "adaptersDisabled": true,
+        "truncatedRows": 0,
+        "nativeTokenizeMs": 0.8249999955296516,
+        "nativeForwardMs": 487.0811249129474,
+        "paddedTokensPerRow": 278
+      }
+    ],
+    "nativeBackboneForwardCalls": 10,
+    "rankingWarmResponses": 0,
+    "copyWarmResponses": 0,
+    "responseWordsCached": false,
+    "rankWholePromptFeaturesPrecomputedHere": false,
+    "cacheProducerSourceSha256": "6fb9626541a20d5ab9c55b7a1b930e7e57f107ff9dd70ac36493829621ecbc61",
+    "scope": "one-time authorized public profile color/context encoding, excluded from request latency",
+    "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+  },
+  "startupBindings": {
+    "bob": {
+      "startup": {
+        "publicPersonId": "bob",
+        "formatterTextSha256": "c6955f06222bf00e182efc443d4dc18c8250e292792c1b3715a5c13b463e8050",
+        "formatterTextBytes": 1179,
+        "featureTensorSha256": "aa148dc8cbfdb29412f707f9214301d7d35470eaf373c9e38578bb8ec5b72788",
+        "cacheKeySha256": "c6955f06222bf00e182efc443d4dc18c8250e292792c1b3715a5c13b463e8050",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 561.176749994047,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "c6955f06222bf00e182efc443d4dc18c8250e292792c1b3715a5c13b463e8050",
+        "cacheKeySha256": "c6955f06222bf00e182efc443d4dc18c8250e292792c1b3715a5c13b463e8050",
+        "featureTensorSha256": "aa148dc8cbfdb29412f707f9214301d7d35470eaf373c9e38578bb8ec5b72788",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "maya": {
+      "startup": {
+        "publicPersonId": "maya",
+        "formatterTextSha256": "1ee7e3eb668e2606c21b1ccef3a94ca3723632678e19eb6bd5155e2f8b7cb9f3",
+        "formatterTextBytes": 1068,
+        "featureTensorSha256": "57440599b62760371c116a5e907c4a8661e5805c0ab12b15cdb940bc849c02ba",
+        "cacheKeySha256": "1ee7e3eb668e2606c21b1ccef3a94ca3723632678e19eb6bd5155e2f8b7cb9f3",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 404.70616694074124,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "1ee7e3eb668e2606c21b1ccef3a94ca3723632678e19eb6bd5155e2f8b7cb9f3",
+        "cacheKeySha256": "1ee7e3eb668e2606c21b1ccef3a94ca3723632678e19eb6bd5155e2f8b7cb9f3",
+        "featureTensorSha256": "57440599b62760371c116a5e907c4a8661e5805c0ab12b15cdb940bc849c02ba",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "priya": {
+      "startup": {
+        "publicPersonId": "priya",
+        "formatterTextSha256": "fd54336e3cca3c5c01ec4d3a644fb76534896d95984649fb8d9b345ee526a9cc",
+        "formatterTextBytes": 1447,
+        "featureTensorSha256": "7602f4951b765c8ed1b546191181ec208cec770917ff448412e458d317978b5d",
+        "cacheKeySha256": "fd54336e3cca3c5c01ec4d3a644fb76534896d95984649fb8d9b345ee526a9cc",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 571.8745000194758,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "fd54336e3cca3c5c01ec4d3a644fb76534896d95984649fb8d9b345ee526a9cc",
+        "cacheKeySha256": "fd54336e3cca3c5c01ec4d3a644fb76534896d95984649fb8d9b345ee526a9cc",
+        "featureTensorSha256": "7602f4951b765c8ed1b546191181ec208cec770917ff448412e458d317978b5d",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "lena": {
+      "startup": {
+        "publicPersonId": "lena",
+        "formatterTextSha256": "b249d62fe91f9a402d6912644fc624d713e8dc592c47e11b5ae29e110cb30971",
+        "formatterTextBytes": 1203,
+        "featureTensorSha256": "f7398c52e0c954f0e4f1dd686b3647169025d40e74922d826bf8f6ef1a299958",
+        "cacheKeySha256": "b249d62fe91f9a402d6912644fc624d713e8dc592c47e11b5ae29e110cb30971",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 481.0244170948863,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "b249d62fe91f9a402d6912644fc624d713e8dc592c47e11b5ae29e110cb30971",
+        "cacheKeySha256": "b249d62fe91f9a402d6912644fc624d713e8dc592c47e11b5ae29e110cb30971",
+        "featureTensorSha256": "f7398c52e0c954f0e4f1dd686b3647169025d40e74922d826bf8f6ef1a299958",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "june": {
+      "startup": {
+        "publicPersonId": "june",
+        "formatterTextSha256": "a27ec6c5781ef4afbb7f34bc31f8683cf1d8ae4a895055a4a1e3e3c12a7ff01f",
+        "formatterTextBytes": 902,
+        "featureTensorSha256": "192ce3af52a0f585fc093137990b380ec9f2f3815759c58359e53fc696cc05b6",
+        "cacheKeySha256": "a27ec6c5781ef4afbb7f34bc31f8683cf1d8ae4a895055a4a1e3e3c12a7ff01f",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 390.46587492339313,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "a27ec6c5781ef4afbb7f34bc31f8683cf1d8ae4a895055a4a1e3e3c12a7ff01f",
+        "cacheKeySha256": "a27ec6c5781ef4afbb7f34bc31f8683cf1d8ae4a895055a4a1e3e3c12a7ff01f",
+        "featureTensorSha256": "192ce3af52a0f585fc093137990b380ec9f2f3815759c58359e53fc696cc05b6",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "grace": {
+      "startup": {
+        "publicPersonId": "grace",
+        "formatterTextSha256": "7a4b98597d80f4d59c559efdfc6c56e01d003333f01ac8a424119e13f22c51b4",
+        "formatterTextBytes": 1416,
+        "featureTensorSha256": "f02933a3024aa60266a1b390d71c82666410e71ebe7d3038cc7def8889ab958e",
+        "cacheKeySha256": "7a4b98597d80f4d59c559efdfc6c56e01d003333f01ac8a424119e13f22c51b4",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 581.1034580692649,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "7a4b98597d80f4d59c559efdfc6c56e01d003333f01ac8a424119e13f22c51b4",
+        "cacheKeySha256": "7a4b98597d80f4d59c559efdfc6c56e01d003333f01ac8a424119e13f22c51b4",
+        "featureTensorSha256": "f02933a3024aa60266a1b390d71c82666410e71ebe7d3038cc7def8889ab958e",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "sam": {
+      "startup": {
+        "publicPersonId": "sam",
+        "formatterTextSha256": "85872d6b7c59a65a3ed24f6dc749c50829f33870badd15b81bbba7aa4732acb2",
+        "formatterTextBytes": 1341,
+        "featureTensorSha256": "7e477ee2534e049f3b20c3711f0393910f3759fb426d6e4e23d55735f5b1a343",
+        "cacheKeySha256": "85872d6b7c59a65a3ed24f6dc749c50829f33870badd15b81bbba7aa4732acb2",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 572.6566250668839,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "85872d6b7c59a65a3ed24f6dc749c50829f33870badd15b81bbba7aa4732acb2",
+        "cacheKeySha256": "85872d6b7c59a65a3ed24f6dc749c50829f33870badd15b81bbba7aa4732acb2",
+        "featureTensorSha256": "7e477ee2534e049f3b20c3711f0393910f3759fb426d6e4e23d55735f5b1a343",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "ana": {
+      "startup": {
+        "publicPersonId": "ana",
+        "formatterTextSha256": "3f6ccc04169fe21fc90da8cf824cf0c039448a14271fb1b9757c6c531a201cc6",
+        "formatterTextBytes": 1096,
+        "featureTensorSha256": "23068b584b241012c26bd09757237d8473554affa3d5fd03f11267dacb5878f6",
+        "cacheKeySha256": "3f6ccc04169fe21fc90da8cf824cf0c039448a14271fb1b9757c6c531a201cc6",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 473.693749983795,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "3f6ccc04169fe21fc90da8cf824cf0c039448a14271fb1b9757c6c531a201cc6",
+        "cacheKeySha256": "3f6ccc04169fe21fc90da8cf824cf0c039448a14271fb1b9757c6c531a201cc6",
+        "featureTensorSha256": "23068b584b241012c26bd09757237d8473554affa3d5fd03f11267dacb5878f6",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "rosa": {
+      "startup": {
+        "publicPersonId": "rosa",
+        "formatterTextSha256": "f00819010c20c1a7ef2ef694964d197c413668bf1f3823f2b725d25190978319",
+        "formatterTextBytes": 1447,
+        "featureTensorSha256": "5fe3e4355ff65289c338d2060499a426344b86e2e2acf30ab49d75ebbdfc21b9",
+        "cacheKeySha256": "f00819010c20c1a7ef2ef694964d197c413668bf1f3823f2b725d25190978319",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 580.206917016767,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "f00819010c20c1a7ef2ef694964d197c413668bf1f3823f2b725d25190978319",
+        "cacheKeySha256": "f00819010c20c1a7ef2ef694964d197c413668bf1f3823f2b725d25190978319",
+        "featureTensorSha256": "5fe3e4355ff65289c338d2060499a426344b86e2e2acf30ab49d75ebbdfc21b9",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    },
+    "felix": {
+      "startup": {
+        "publicPersonId": "felix",
+        "formatterTextSha256": "ef5d7bae9182bb90f8efc8dae9322b14738d9479ba83c2fc44fc12d13259dd12",
+        "formatterTextBytes": 1171,
+        "featureTensorSha256": "a6f4407d010e3aed1a0cd071d5d33ff5a6a852a8fc6134828a9acaceb7fc2163",
+        "cacheKeySha256": "ef5d7bae9182bb90f8efc8dae9322b14738d9479ba83c2fc44fc12d13259dd12",
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 489.25550002604723,
+        "featureSource": "fresh-base-color-feature"
+      },
+      "runtimeColor": {
+        "formatterTextSha256": "ef5d7bae9182bb90f8efc8dae9322b14738d9479ba83c2fc44fc12d13259dd12",
+        "cacheKeySha256": "ef5d7bae9182bb90f8efc8dae9322b14738d9479ba83c2fc44fc12d13259dd12",
+        "featureTensorSha256": "a6f4407d010e3aed1a0cd071d5d33ff5a6a852a8fc6134828a9acaceb7fc2163",
+        "cacheOrigin": "startup-preencoding",
+        "warmCacheSha256": "c3c84b0d52c125ffd94283db6587dee95211a65934745ec33e7508653af997ab"
+      }
+    }
+  },
+  "loadedSwitchTimings": {
+    "queryEncoding": {
+      "n": 10,
+      "rawMs": [
+        269.47312499396503,
+        213.20045902393758,
+        207.87370798643678,
+        211.7605839157477,
+        221.31479100789875,
+        256.8624579580501,
+        214.6899999352172,
+        222.65241702552885,
+        212.53320900723338,
+        283.45225006341934
+      ],
+      "p50Ms": 214.6899999352172,
+      "p95Ms": 283.45225006341934,
+      "estimator": "nearest-rank"
+    },
+    "colorAcquisition": {
+      "n": 10,
+      "rawMs": [
+        0.7345839403569698,
+        0.4778330912813544,
+        0.3791659837588668,
+        0.3700000233948231,
+        0.39245898369699717,
+        0.42625004425644875,
+        0.3552919952198863,
+        0.42733398731797934,
+        0.37770799826830626,
+        0.6822500145062804
+      ],
+      "p50Ms": 0.39245898369699717,
+      "p95Ms": 0.7345839403569698,
+      "estimator": "nearest-rank"
+    },
+    "rankDecision": {
+      "n": 10,
+      "rawMs": [
+        27.257459005340934,
+        25.570166995748878,
+        19.238916924223304,
+        27.00545801781118,
+        22.641209070570767,
+        19.961208919994533,
+        19.402625039219856,
+        20.803167019039392,
+        23.503458010964096,
+        21.13408292643726
+      ],
+      "p50Ms": 21.13408292643726,
+      "p95Ms": 27.257459005340934,
+      "estimator": "nearest-rank"
+    },
+    "runtimeRank": {
+      "n": 10,
+      "rawMs": [
+        327.8722920222208,
+        271.35475003160536,
+        256.41079200431705,
+        265.8243749756366,
+        273.72283302247524,
+        312.26195802446455,
+        260.7283750548959,
+        277.0260830875486,
+        263.39758292306215,
+        338.9474169816822
+      ],
+      "p50Ms": 271.35475003160536,
+      "p95Ms": 338.9474169816822,
+      "estimator": "nearest-rank"
+    },
+    "runtimeIntegrityChecks": {
+      "n": 10,
+      "rawMs": [
+        4.352624993771315,
+        3.618209040723741,
+        3.783291904255748,
+        3.648958052508533,
+        3.5339578753337264,
+        3.565250081010163,
+        3.1808329513296485,
+        3.5828331019729376,
+        3.388958051800728,
+        3.433624980971217
+      ],
+      "p50Ms": 3.565250081010163,
+      "p95Ms": 4.352624993771315,
+      "estimator": "nearest-rank"
+    },
+    "serverRank": {
+      "n": 10,
+      "rawMs": [
+        337.3436250258237,
+        279.7940409509465,
+        265.5088750179857,
+        273.2389169977978,
+        282.65783400274813,
+        324.14266699925065,
+        271.6280410531908,
+        288.85637503117323,
+        275.21295798942447,
+        350.172333070077
+      ],
+      "p50Ms": 279.7940409509465,
+      "p95Ms": 350.172333070077,
+      "estimator": "nearest-rank"
+    },
+    "serverFirst3": {
+      "n": 10,
+      "rawMs": [
+        350.64050008077174,
+        292.5939579727128,
+        278.4558749990538,
+        286.3507089205086,
+        294.8347919154912,
+        337.8917499212548,
+        284.55545799806714,
+        301.9567499868572,
+        287.4234579503536,
+        363.70587500277907
+      ],
+      "p50Ms": 292.5939579727128,
+      "p95Ms": 363.70587500277907,
+      "estimator": "nearest-rank"
+    },
+    "serverFull6": {
+      "n": 10,
+      "rawMs": [
+        357.8565410571173,
+        299.86370797269046,
+        285.38725001271814,
+        293.7156669795513,
+        301.7876249505207,
+        344.5380419725552,
+        292.7982499822974,
+        308.9624170679599,
+        294.929749914445,
+        370.53916708100587
+      ],
+      "p50Ms": 299.86370797269046,
+      "p95Ms": 370.53916708100587,
+      "estimator": "nearest-rank"
+    },
+    "serverPostRankToFull6": {
+      "n": 10,
+      "rawMs": [
+        20.51291603129357,
+        20.069667021743953,
+        19.87837499473244,
+        20.476749981753528,
+        19.129790947772563,
+        20.39537497330457,
+        21.170208929106593,
+        20.106042036786675,
+        19.716791925020516,
+        20.36683401092887
+      ],
+      "p50Ms": 20.106042036786675,
+      "p95Ms": 21.170208929106593,
+      "estimator": "nearest-rank"
+    },
+    "copyHeadForwardArgmax": {
+      "n": 10,
+      "rawMs": [
+        0.6350829498842359,
+        0.25120796635746956,
+        0.175209017470479,
+        0.359458033926785,
+        0.169374980032444,
+        0.21079101134091616,
+        0.24625007063150406,
+        0.18895906396210194,
+        0.18029101192951202,
+        0.18629105761647224
+      ],
+      "p50Ms": 0.18895906396210194,
+      "p95Ms": 0.6350829498842359,
+      "estimator": "nearest-rank"
+    },
+    "firstThreeFromFetch": {
+      "n": 10,
+      "rawMs": [
+        392.39999997615814,
+        332.7999999523163,
+        332.5,
+        332.8000000715256,
+        332.5,
+        383.5,
+        335.5,
+        351.10000002384186,
+        335.39999997615814,
+        416.60000002384186
+      ],
+      "p50Ms": 335.39999997615814,
+      "p95Ms": 416.60000002384186,
+      "estimator": "nearest-rank"
+    },
+    "firstThreeFromAction": {
+      "n": 10,
+      "rawMs": [
+        412.39999997615814,
+        347.60000002384186,
+        348.39999997615814,
+        348.10000002384186,
+        346.2000000476837,
+        398.10000002384186,
+        349.5,
+        364.89999997615814,
+        350.2000000476837,
+        431.60000002384186
+      ],
+      "p50Ms": 349.5,
+      "p95Ms": 431.60000002384186,
+      "estimator": "nearest-rank"
+    },
+    "firstThreeBrowserTransportResidual": {
+      "n": 10,
+      "rawMs": [
+        41.7594998953864,
+        40.20604197960347,
+        54.044125000946224,
+        46.44929115101695,
+        37.66520808450878,
+        45.608250078745186,
+        50.94454200193286,
+        49.14325003698468,
+        47.97654202580452,
+        52.89412502106279
+      ],
+      "p50Ms": 46.44929115101695,
+      "p95Ms": 54.044125000946224,
+      "estimator": "nearest-rank"
+    },
+    "fullSixFromFetch": {
+      "n": 10,
+      "rawMs": [
+        410.8000000715256,
+        349.39999997615814,
+        347.2999999523163,
+        349.40000009536743,
+        350.7999999523163,
+        400,
+        335.5,
+        368,
+        352.2999999523163,
+        416.60000002384186
+      ],
+      "p50Ms": 350.7999999523163,
+      "p95Ms": 416.60000002384186,
+      "estimator": "nearest-rank"
+    },
+    "fullSixFromAction": {
+      "n": 10,
+      "rawMs": [
+        430.8000000715256,
+        364.2000000476837,
+        363.1999999284744,
+        364.7000000476837,
+        364.5,
+        414.60000002384186,
+        349.5,
+        381.7999999523163,
+        367.10000002384186,
+        431.60000002384186
+      ],
+      "p50Ms": 364.7000000476837,
+      "p95Ms": 431.60000002384186,
+      "estimator": "nearest-rank"
+    },
+    "fullSixBrowserTransportResidual": {
+      "n": 10,
+      "rawMs": [
+        52.94345901440829,
+        49.53629200346768,
+        61.91274993959814,
+        55.684333115816116,
+        49.01237500179559,
+        55.46195802744478,
+        42.70175001770258,
+        59.037582932040095,
+        57.3702500378713,
+        46.06083294283599
+      ],
+      "p50Ms": 52.94345901440829,
+      "p95Ms": 61.91274993959814,
+      "estimator": "nearest-rank"
+    }
+  },
+  "requests": [
+    {
+      "attempt": 1,
+      "personId": "bob",
+      "kind": "bare-navigation",
+      "query": "Browse the store",
+      "requestId": "4bb4ad11-fd04-4a65-9031-9d80b7602522",
+      "priorRequestId": "01410994-c411-491c-88e5-caf6680aac7c",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "blanket",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "sunglasses"
+      ],
+      "fullOrder": [
+        "blanket",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "sunglasses",
+        "lamp",
+        "pack",
+        "headphones",
+        "bottle",
+        "mug",
+        "towel",
+        "tote",
+        "duffel"
+      ],
+      "scoreVectorSha256": "264905e7be5ece34c4b96e84ca5e2a38f97e0c4814ba353295d58fe4c24bcc4a",
+      "wordSlotRecordsSha256": "ee62463067b1215b9a5127275bbb96a00d9eef433435e716b5ce4f080daa5a4f",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 282.79516694601625,
+        "colorAcquisition": 6.019541993737221,
+        "rankDecision": 56.096125044859946,
+        "runtimeRank": 391.9543750816956,
+        "runtimeIntegrityChecks": 4.688583081588149,
+        "serverRank": 412.7431249944493,
+        "serverFirst3": 426.61808407865465,
+        "serverFull6": 433.26775007881224,
+        "serverPostRankToFull6": 20.524625084362924,
+        "copyHeadForwardArgmax": 1.8896249821409583,
+        "fullSixFromFetch": 495.39999997615814,
+        "fullSixFromAction": 936.2000000476837,
+        "fullSixBrowserTransportResidual": 62.1322498973459
+      },
+      "warmReceiptSha256": "c810ae5e36c4ca6f03748f6d5e8454437468a35e8fd30184055dcdd2bebd5eef",
+      "priorReceiptSha256": "36cb1425ea47bd45128c43f003b71caa0c84d80787f555c92920dd880d7b3271",
+      "first3Visible": false,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 2,
+      "personId": "maya",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "3927e167-23f5-40b7-b00e-fd257aeb9c90",
+      "priorRequestId": "cd3a4ae0-b37d-4d72-8cfd-c5d86573abf6",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "blanket",
+        "lamp",
+        "organizer",
+        "sweatshirt",
+        "notebook",
+        "lunchbox"
+      ],
+      "fullOrder": [
+        "blanket",
+        "lamp",
+        "organizer",
+        "sweatshirt",
+        "notebook",
+        "lunchbox",
+        "sunglasses",
+        "pack",
+        "mug",
+        "headphones",
+        "bottle",
+        "towel",
+        "tote",
+        "duffel"
+      ],
+      "scoreVectorSha256": "142e6e5e4ab5f46d621020754db3fa2ad1f37874f0fed2f53638602f7cb3b2de",
+      "wordSlotRecordsSha256": "ef3c5bf398ac1d1b1e731cccacbe3255d967a5ed4914e3ee4ef3dd8e95261a70",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": true,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 269.47312499396503,
+        "colorAcquisition": 0.7345839403569698,
+        "rankDecision": 27.257459005340934,
+        "runtimeRank": 327.8722920222208,
+        "runtimeIntegrityChecks": 4.352624993771315,
+        "serverRank": 337.3436250258237,
+        "serverFirst3": 350.64050008077174,
+        "serverFull6": 357.8565410571173,
+        "serverPostRankToFull6": 20.51291603129357,
+        "copyHeadForwardArgmax": 0.6350829498842359,
+        "firstThreeFromFetch": 392.39999997615814,
+        "firstThreeFromAction": 412.39999997615814,
+        "firstThreeBrowserTransportResidual": 41.7594998953864,
+        "fullSixFromFetch": 410.8000000715256,
+        "fullSixFromAction": 430.8000000715256,
+        "fullSixBrowserTransportResidual": 52.94345901440829
+      },
+      "warmReceiptSha256": "b415a2814482cb88b2bc0de0a5e5bdd841cf2ef66c64d809d5936b6650072c23",
+      "priorReceiptSha256": "9db4a43fe0f305fcfda2e7461077de9c3e9f08b249ea5fc6cd0c80cfc6c2cb3a",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 3,
+      "personId": "priya",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "0c526cd0-bf95-4703-9bce-50bbcd2b46b2",
+      "priorRequestId": "07ae8df3-f3fa-497a-86c6-fbc290ed63a1",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "notebook",
+        "organizer",
+        "lunchbox",
+        "sunglasses",
+        "mug",
+        "bottle"
+      ],
+      "fullOrder": [
+        "notebook",
+        "organizer",
+        "lunchbox",
+        "sunglasses",
+        "mug",
+        "bottle",
+        "tote",
+        "towel"
+      ],
+      "scoreVectorSha256": "a7c1b6aad38806ce9e60ca01830dcdea14328d35166d06d99be2931437820290",
+      "wordSlotRecordsSha256": "2be918295306bfdc20af6a437f3a5117e70b17a5895a89ef93df55c1a4ce8002",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 213.20045902393758,
+        "colorAcquisition": 0.4778330912813544,
+        "rankDecision": 25.570166995748878,
+        "runtimeRank": 271.35475003160536,
+        "runtimeIntegrityChecks": 3.618209040723741,
+        "serverRank": 279.7940409509465,
+        "serverFirst3": 292.5939579727128,
+        "serverFull6": 299.86370797269046,
+        "serverPostRankToFull6": 20.069667021743953,
+        "copyHeadForwardArgmax": 0.25120796635746956,
+        "firstThreeFromFetch": 332.7999999523163,
+        "firstThreeFromAction": 347.60000002384186,
+        "firstThreeBrowserTransportResidual": 40.20604197960347,
+        "fullSixFromFetch": 349.39999997615814,
+        "fullSixFromAction": 364.2000000476837,
+        "fullSixBrowserTransportResidual": 49.53629200346768
+      },
+      "warmReceiptSha256": "e1cb2c30965cf1923980d38019c70a626d0baab83c2cfa3607a08944e4d7afd4",
+      "priorReceiptSha256": "5a7697950b6d2735145b984d2a169ee86ece11e04c9f21994a178f5c83ddafd4",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 4,
+      "personId": "lena",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "b8c3348f-6fcc-417d-aebf-63158cc49c41",
+      "priorRequestId": "15e72a57-55b1-4899-b8b6-fe169c5957e8",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "jacket",
+        "notebook",
+        "organizer",
+        "lamp",
+        "lunchbox",
+        "sweatshirt"
+      ],
+      "fullOrder": [
+        "jacket",
+        "notebook",
+        "organizer",
+        "lamp",
+        "lunchbox",
+        "sweatshirt",
+        "blanket",
+        "sunglasses",
+        "sneakers",
+        "bottle",
+        "towel",
+        "headphones",
+        "pack",
+        "tote",
+        "mug",
+        "duffel"
+      ],
+      "scoreVectorSha256": "0e70137a0accbf0c9f1fcd3839231c8cbabfc1b2d6ae3418a7bae7a4ef7a73fc",
+      "wordSlotRecordsSha256": "bb23363460c0a43f11556e24e601c71d85f8e7b6a2ed5940bbbfd6dadde847f8",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 207.87370798643678,
+        "colorAcquisition": 0.3791659837588668,
+        "rankDecision": 19.238916924223304,
+        "runtimeRank": 256.41079200431705,
+        "runtimeIntegrityChecks": 3.783291904255748,
+        "serverRank": 265.5088750179857,
+        "serverFirst3": 278.4558749990538,
+        "serverFull6": 285.38725001271814,
+        "serverPostRankToFull6": 19.87837499473244,
+        "copyHeadForwardArgmax": 0.175209017470479,
+        "firstThreeFromFetch": 332.5,
+        "firstThreeFromAction": 348.39999997615814,
+        "firstThreeBrowserTransportResidual": 54.044125000946224,
+        "fullSixFromFetch": 347.2999999523163,
+        "fullSixFromAction": 363.1999999284744,
+        "fullSixBrowserTransportResidual": 61.91274993959814
+      },
+      "warmReceiptSha256": "351ff204cf7d7ecc72a3cd68e6160265807106a880fea192e617bcdf554d80ad",
+      "priorReceiptSha256": "68e06729b59cb04a41b4beba01bf833f98bd43d72260b50d674cd69df7ace9f6",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 5,
+      "personId": "june",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "8f6a5c85-869f-4b03-817e-0bdd4ff18755",
+      "priorRequestId": "8fe18fb6-22e1-49e4-a646-e3ce1c287eff",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "headphones",
+        "notebook",
+        "organizer",
+        "sweatshirt",
+        "lamp",
+        "lunchbox"
+      ],
+      "fullOrder": [
+        "headphones",
+        "notebook",
+        "organizer",
+        "sweatshirt",
+        "lamp",
+        "lunchbox",
+        "mug",
+        "blanket",
+        "sunglasses",
+        "pack",
+        "sneakers",
+        "bottle",
+        "duffel",
+        "tote",
+        "towel"
+      ],
+      "scoreVectorSha256": "8809f7f3b92837cfb44e8c04d40c0f1b93ab7be7740dbc2188ec2669d9e28039",
+      "wordSlotRecordsSha256": "6eb83f8a00a8303da48a2511290a7a17f5a972b0ebabc41c8c22eb4ac4de6191",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 211.7605839157477,
+        "colorAcquisition": 0.3700000233948231,
+        "rankDecision": 27.00545801781118,
+        "runtimeRank": 265.8243749756366,
+        "runtimeIntegrityChecks": 3.648958052508533,
+        "serverRank": 273.2389169977978,
+        "serverFirst3": 286.3507089205086,
+        "serverFull6": 293.7156669795513,
+        "serverPostRankToFull6": 20.476749981753528,
+        "copyHeadForwardArgmax": 0.359458033926785,
+        "firstThreeFromFetch": 332.8000000715256,
+        "firstThreeFromAction": 348.10000002384186,
+        "firstThreeBrowserTransportResidual": 46.44929115101695,
+        "fullSixFromFetch": 349.40000009536743,
+        "fullSixFromAction": 364.7000000476837,
+        "fullSixBrowserTransportResidual": 55.684333115816116
+      },
+      "warmReceiptSha256": "60880a5cc704b45addaf2b4c99433eb5ba0b9d8ecfdd0ba653224c6b98b2b426",
+      "priorReceiptSha256": "c83e856fb7f83702e7c441e31bbdc93c0f05944b50e0dfbb4e08cd4da6394fec",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 6,
+      "personId": "grace",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "8223c47d-c108-4fcf-bc14-2342c12db522",
+      "priorRequestId": "725acef3-0b58-48bf-821d-3b0e7f385088",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "bottle",
+        "organizer",
+        "sunglasses",
+        "lunchbox",
+        "towel",
+        "notebook"
+      ],
+      "fullOrder": [
+        "bottle",
+        "organizer",
+        "sunglasses",
+        "lunchbox",
+        "towel",
+        "notebook",
+        "lamp",
+        "blanket",
+        "tote",
+        "mug"
+      ],
+      "scoreVectorSha256": "eb8a422d94055bb43481e084bab12443ef1cd15fe8cec00297fcc9a1fe90f4b5",
+      "wordSlotRecordsSha256": "86f895fc1b68195bc57e8bf3505e033995b3c4b876929377363a7244de7c7fb0",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 221.31479100789875,
+        "colorAcquisition": 0.39245898369699717,
+        "rankDecision": 22.641209070570767,
+        "runtimeRank": 273.72283302247524,
+        "runtimeIntegrityChecks": 3.5339578753337264,
+        "serverRank": 282.65783400274813,
+        "serverFirst3": 294.8347919154912,
+        "serverFull6": 301.7876249505207,
+        "serverPostRankToFull6": 19.129790947772563,
+        "copyHeadForwardArgmax": 0.169374980032444,
+        "firstThreeFromFetch": 332.5,
+        "firstThreeFromAction": 346.2000000476837,
+        "firstThreeBrowserTransportResidual": 37.66520808450878,
+        "fullSixFromFetch": 350.7999999523163,
+        "fullSixFromAction": 364.5,
+        "fullSixBrowserTransportResidual": 49.01237500179559
+      },
+      "warmReceiptSha256": "16690bb300326c3da156daa45ccc9083ec429b08cafcb33492edb32b62efaf92",
+      "priorReceiptSha256": "7a23a40ed33917d654e22b77c413c81d7c5f2908cd8e7b01d33a8afbae15cdd1",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 7,
+      "personId": "sam",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "c3e9308e-eb1b-42f5-8dd4-63409d237199",
+      "priorRequestId": "c4747db5-5302-4a90-b661-59390c3ca946",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "duffel",
+        "notebook",
+        "organizer",
+        "sweatshirt",
+        "lunchbox",
+        "lamp"
+      ],
+      "fullOrder": [
+        "duffel",
+        "notebook",
+        "organizer",
+        "sweatshirt",
+        "lunchbox",
+        "lamp",
+        "pack",
+        "blanket",
+        "sunglasses",
+        "towel",
+        "bottle",
+        "mug",
+        "headphones",
+        "sneakers",
+        "tote"
+      ],
+      "scoreVectorSha256": "64bcca1a0bf496c3e89a2c2176ecee3831998f5d255740982a7a4be112dad075",
+      "wordSlotRecordsSha256": "450b64794adb89e577fc398a30ec7be89ac75217714b5afa001acdf510cc6ca5",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 256.8624579580501,
+        "colorAcquisition": 0.42625004425644875,
+        "rankDecision": 19.961208919994533,
+        "runtimeRank": 312.26195802446455,
+        "runtimeIntegrityChecks": 3.565250081010163,
+        "serverRank": 324.14266699925065,
+        "serverFirst3": 337.8917499212548,
+        "serverFull6": 344.5380419725552,
+        "serverPostRankToFull6": 20.39537497330457,
+        "copyHeadForwardArgmax": 0.21079101134091616,
+        "firstThreeFromFetch": 383.5,
+        "firstThreeFromAction": 398.10000002384186,
+        "firstThreeBrowserTransportResidual": 45.608250078745186,
+        "fullSixFromFetch": 400,
+        "fullSixFromAction": 414.60000002384186,
+        "fullSixBrowserTransportResidual": 55.46195802744478
+      },
+      "warmReceiptSha256": "d1e374ebf317d1bea33458f1b59cb3ef31df713d051cc0e30d7af118d3e351c7",
+      "priorReceiptSha256": "fe9340bf61ebf0f70a2434446e0705f665fef6c6d514a38efe609c6d76801184",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 8,
+      "personId": "ana",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "d526b10d-41ad-440f-966b-47065079b636",
+      "priorRequestId": "800e53e0-e13e-4138-b4fd-86795de2cf22",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "notebook",
+        "organizer",
+        "mug",
+        "lunchbox",
+        "lamp",
+        "sunglasses"
+      ],
+      "fullOrder": [
+        "notebook",
+        "organizer",
+        "mug",
+        "lunchbox",
+        "lamp",
+        "sunglasses",
+        "blanket",
+        "bottle",
+        "pack",
+        "towel",
+        "tote"
+      ],
+      "scoreVectorSha256": "640e0f30e9dba2d7ae17bae8997a6532135f2a194e81ae88d853ec52a8050d96",
+      "wordSlotRecordsSha256": "da768e8546f6872147fc576b9d8833b0b8d2e55cce064462a8195f570fb39399",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 214.6899999352172,
+        "colorAcquisition": 0.3552919952198863,
+        "rankDecision": 19.402625039219856,
+        "runtimeRank": 260.7283750548959,
+        "runtimeIntegrityChecks": 3.1808329513296485,
+        "serverRank": 271.6280410531908,
+        "serverFirst3": 284.55545799806714,
+        "serverFull6": 292.7982499822974,
+        "serverPostRankToFull6": 21.170208929106593,
+        "copyHeadForwardArgmax": 0.24625007063150406,
+        "firstThreeFromFetch": 335.5,
+        "firstThreeFromAction": 349.5,
+        "firstThreeBrowserTransportResidual": 50.94454200193286,
+        "fullSixFromFetch": 335.5,
+        "fullSixFromAction": 349.5,
+        "fullSixBrowserTransportResidual": 42.70175001770258
+      },
+      "warmReceiptSha256": "3c1b7712f4e2087c5e5a367cf7b92cab56dee3603315b51cbd5d84b09a196a16",
+      "priorReceiptSha256": "a7bb0fcd8e81343e90c2d188d6180258bb36f2857cd9260865bb03b54563fb0a",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 9,
+      "personId": "rosa",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "95997854-75eb-490b-8daa-e604bf5d4d11",
+      "priorRequestId": "e5154d41-772f-4637-973f-7c487b1ae8f2",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "bottle",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "lamp"
+      ],
+      "fullOrder": [
+        "bottle",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "lamp",
+        "sunglasses",
+        "towel",
+        "pack",
+        "blanket",
+        "tote",
+        "headphones",
+        "mug",
+        "duffel"
+      ],
+      "scoreVectorSha256": "e91bfbbe1e69f92cf47d96028905e2a74254b5aee137c30e7ff71c7c42e75e2c",
+      "wordSlotRecordsSha256": "fdc4bc1bdf347d615891f080f7bb8ddef57562ae7b0c0766ed95f744c046cc26",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 222.65241702552885,
+        "colorAcquisition": 0.42733398731797934,
+        "rankDecision": 20.803167019039392,
+        "runtimeRank": 277.0260830875486,
+        "runtimeIntegrityChecks": 3.5828331019729376,
+        "serverRank": 288.85637503117323,
+        "serverFirst3": 301.9567499868572,
+        "serverFull6": 308.9624170679599,
+        "serverPostRankToFull6": 20.106042036786675,
+        "copyHeadForwardArgmax": 0.18895906396210194,
+        "firstThreeFromFetch": 351.10000002384186,
+        "firstThreeFromAction": 364.89999997615814,
+        "firstThreeBrowserTransportResidual": 49.14325003698468,
+        "fullSixFromFetch": 368,
+        "fullSixFromAction": 381.7999999523163,
+        "fullSixBrowserTransportResidual": 59.037582932040095
+      },
+      "warmReceiptSha256": "71e51e7474bd2905819f8facf5de65ddac80214e28eada34d6e19d9cccf38d99",
+      "priorReceiptSha256": "db675aad0e764ce28c9f7f1a946f65be674030d0465cd253546a209e8fcb380f",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 10,
+      "personId": "felix",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "c85f5648-2d4c-466b-b40d-d3fdf54e23a5",
+      "priorRequestId": "be5ed6f3-2f22-4b1f-a90a-5dc91acc2811",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "sneakers",
+        "notebook",
+        "lamp",
+        "organizer",
+        "lunchbox",
+        "sweatshirt"
+      ],
+      "fullOrder": [
+        "sneakers",
+        "notebook",
+        "lamp",
+        "organizer",
+        "lunchbox",
+        "sweatshirt",
+        "sunglasses",
+        "blanket",
+        "towel",
+        "bottle",
+        "tote",
+        "headphones",
+        "pack",
+        "mug",
+        "duffel"
+      ],
+      "scoreVectorSha256": "fd4fecfe310baa61de11abbcd662fcae82f652ccdd5c7f49790c897a4fe69fd4",
+      "wordSlotRecordsSha256": "ec542a39f01a608a4c05c78d3edc8d14480828046313487c96f6bad8e7e239eb",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 212.53320900723338,
+        "colorAcquisition": 0.37770799826830626,
+        "rankDecision": 23.503458010964096,
+        "runtimeRank": 263.39758292306215,
+        "runtimeIntegrityChecks": 3.388958051800728,
+        "serverRank": 275.21295798942447,
+        "serverFirst3": 287.4234579503536,
+        "serverFull6": 294.929749914445,
+        "serverPostRankToFull6": 19.716791925020516,
+        "copyHeadForwardArgmax": 0.18029101192951202,
+        "firstThreeFromFetch": 335.39999997615814,
+        "firstThreeFromAction": 350.2000000476837,
+        "firstThreeBrowserTransportResidual": 47.97654202580452,
+        "fullSixFromFetch": 352.2999999523163,
+        "fullSixFromAction": 367.10000002384186,
+        "fullSixBrowserTransportResidual": 57.3702500378713
+      },
+      "warmReceiptSha256": "e8663311f080ed94f77b3e2d9b249020b758de7ec3403ab14be09eaaa54aea95",
+      "priorReceiptSha256": "1453fb8aae75a4a408d821d4cd88b52fe5efe39a6ad8fa804b69bde4fe1c31ab",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 11,
+      "personId": "bob",
+      "kind": "loaded-profile-switch",
+      "query": "Browse the store",
+      "requestId": "76df1868-1ce6-4a33-a102-3e894f9ae448",
+      "priorRequestId": "41bc1a02-579f-4460-966c-e9f1b3ca5bd6",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "blanket",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "sunglasses"
+      ],
+      "fullOrder": [
+        "blanket",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "sunglasses",
+        "lamp",
+        "pack",
+        "headphones",
+        "bottle",
+        "mug",
+        "towel",
+        "tote",
+        "duffel"
+      ],
+      "scoreVectorSha256": "264905e7be5ece34c4b96e84ca5e2a38f97e0c4814ba353295d58fe4c24bcc4a",
+      "wordSlotRecordsSha256": "ee62463067b1215b9a5127275bbb96a00d9eef433435e716b5ce4f080daa5a4f",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": true,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 0,
+        "rankLMProjectionCalls": 1,
+        "rankGradientEvaluationCalls": 0,
+        "catalogPrefixHit": null,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": true,
+        "rankBodyForwards": 0,
+        "catalogPrefixHit": null
+      },
+      "timingMs": {
+        "queryEncoding": 283.45225006341934,
+        "colorAcquisition": 0.6822500145062804,
+        "rankDecision": 21.13408292643726,
+        "runtimeRank": 338.9474169816822,
+        "runtimeIntegrityChecks": 3.433624980971217,
+        "serverRank": 350.172333070077,
+        "serverFirst3": 363.70587500277907,
+        "serverFull6": 370.53916708100587,
+        "serverPostRankToFull6": 20.36683401092887,
+        "copyHeadForwardArgmax": 0.18629105761647224,
+        "firstThreeFromFetch": 416.60000002384186,
+        "firstThreeFromAction": 431.60000002384186,
+        "firstThreeBrowserTransportResidual": 52.89412502106279,
+        "fullSixFromFetch": 416.60000002384186,
+        "fullSixFromAction": 431.60000002384186,
+        "fullSixBrowserTransportResidual": 46.06083294283599
+      },
+      "warmReceiptSha256": "2311a9ea7cbe693b9f413dcb17323a90be2e7b70a789c52d001d6091c08e1b13",
+      "priorReceiptSha256": "a5053e79149ffa93763b70031f6cf3cb6af3bc9705010b5f20b33a028b649b69",
+      "first3Visible": true,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 12,
+      "personId": "bob",
+      "kind": "first-work-bag-query",
+      "query": "work bag",
+      "requestId": "fa68c5fc-5890-48aa-a19e-2456b89213e2",
+      "priorRequestId": "c469ae0a-92c1-405d-91eb-16eb28fe470b",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "pack",
+        "duffel",
+        "tote",
+        "organizer",
+        "notebook",
+        "sweatshirt"
+      ],
+      "fullOrder": [
+        "pack",
+        "duffel",
+        "tote",
+        "organizer",
+        "notebook",
+        "sweatshirt",
+        "bottle",
+        "lunchbox",
+        "sunglasses",
+        "blanket",
+        "lamp",
+        "headphones",
+        "mug",
+        "towel"
+      ],
+      "scoreVectorSha256": "8ffa886a0a00b209b57b504598f47234f3a1e2acd88b6d7da09f6bc633c560aa",
+      "wordSlotRecordsSha256": "486824889874e4b9ac8c49cbed2f4e377398360beb68e3f2a394455c02480cde",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": false,
+        "baseForwardCalls": 2,
+        "rankBodyForwards": 6,
+        "rankLMProjectionCalls": 2,
+        "rankGradientEvaluationCalls": 1,
+        "catalogPrefixHit": false,
+        "catalogPrefixPrefillForwards": 3
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": false,
+        "rankXHYCacheHit": false,
+        "rankBodyForwards": 3,
+        "catalogPrefixHit": true
+      },
+      "timingMs": {
+        "queryEncoding": 223.05529203731567,
+        "colorAcquisition": 474.6197919594124,
+        "rankDecision": 2485.979999997653,
+        "runtimeRank": 3213.4492499753833,
+        "runtimeIntegrityChecks": 4.666875931434333,
+        "serverRank": 3224.1439589997754,
+        "serverFirst3": 3251.0225840378553,
+        "serverFull6": 3262.3890839749947,
+        "serverPostRankToFull6": 38.24512497521937,
+        "copyHeadForwardArgmax": 0.6509999511763453,
+        "fullSixFromFetch": 3314.600000023842,
+        "fullSixFromAction": 3329.100000023842,
+        "fullSixBrowserTransportResidual": 52.21091604884714
+      },
+      "warmReceiptSha256": "7e8cd5b39e1560f923fc8703140055f830bf8ec0adb020527762351078d6e965",
+      "priorReceiptSha256": "17457d37cbe4960d1259b0e50546aa9d65bd291a0a094c3c2f53862380b3fd7a",
+      "first3Visible": false,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    },
+    {
+      "attempt": 13,
+      "personId": "bob",
+      "kind": "same-query-reload",
+      "query": "work bag",
+      "requestId": "9ca66372-ced2-427b-bda7-976c531f2f97",
+      "priorRequestId": "0d262355-856c-46f3-b360-63d052a47968",
+      "checks": {
+        "lexicalRouteLogits16": true,
+        "v5Scores16": true,
+        "scores16": true,
+        "learnedQuerySpecificProbability": true,
+        "fusionFormula": true,
+        "publicRequest": true,
+        "publicRequestHash": true,
+        "fullOrder": true,
+        "selectedIds": true,
+        "variants": true,
+        "sections": true,
+        "imageBindings": true,
+        "profilePanel": true,
+        "rawWordSlotRecords": true,
+        "runtimeInputRows": true,
+        "nativeFinalOrder": true,
+        "nativeCards": true,
+        "guards": true
+      },
+      "selectedProductIds": [
+        "pack",
+        "duffel",
+        "tote",
+        "organizer",
+        "notebook",
+        "sweatshirt"
+      ],
+      "fullOrder": [
+        "pack",
+        "duffel",
+        "tote",
+        "organizer",
+        "notebook",
+        "sweatshirt",
+        "bottle",
+        "lunchbox",
+        "sunglasses",
+        "blanket",
+        "lamp",
+        "headphones",
+        "mug",
+        "towel"
+      ],
+      "scoreVectorSha256": "8ffa886a0a00b209b57b504598f47234f3a1e2acd88b6d7da09f6bc633c560aa",
+      "wordSlotRecordsSha256": "486824889874e4b9ac8c49cbed2f4e377398360beb68e3f2a394455c02480cde",
+      "warmCacheCounters": {
+        "queryCacheHit": false,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": false,
+        "baseForwardCalls": 1,
+        "rankBodyForwards": 3,
+        "rankLMProjectionCalls": 2,
+        "rankGradientEvaluationCalls": 1,
+        "catalogPrefixHit": true,
+        "catalogPrefixPrefillForwards": 0
+      },
+      "priorCacheCounters": {
+        "queryCacheHit": true,
+        "colorCacheHit": true,
+        "rankXHYCacheHit": false,
+        "rankBodyForwards": 3,
+        "catalogPrefixHit": true
+      },
+      "timingMs": {
+        "queryEncoding": 225.74320808053017,
+        "colorAcquisition": 0.3664999967440963,
+        "rankDecision": 1207.4111249530688,
+        "runtimeRank": 1464.804874965921,
+        "runtimeIntegrityChecks": 4.520791000686586,
+        "serverRank": 1473.3815420186147,
+        "serverFirst3": 1486.531333066523,
+        "serverFull6": 1492.2427920391783,
+        "serverPostRankToFull6": 18.861250020563602,
+        "copyHeadForwardArgmax": 0.24141697213053703,
+        "fullSixFromFetch": 1537.5,
+        "fullSixFromAction": 1641,
+        "fullSixBrowserTransportResidual": 45.25720796082169
+      },
+      "warmReceiptSha256": "8cf897da7c3491c247b5dcb8e9570cc0b4f99c98221294a599870e54ef5fcd9f",
+      "priorReceiptSha256": "04665244f9c50eaf0c010e470cbec8afc04f84d636270a6aa5ece4ac8402e85a",
+      "first3Visible": false,
+      "full6Contract": true,
+      "acceptedGeneratedFields": 20,
+      "renderedFull6Strings": 19
+    }
+  ],
+  "nativeReceiptInventory": [
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/4bb4ad11-fd04-4a65-9031-9d80b7602522/receipt.json",
+      "sha256": "b9c7b3349c826c4a680157d24212a6619a84d5fb21a3f4ce9447c10d6b915343"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/01410994-c411-491c-88e5-caf6680aac7c/receipt.json",
+      "sha256": "c49e94d966a35a771f0c489c9b3c5bf158643208571a0900c4f0581f415bdc45"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/3927e167-23f5-40b7-b00e-fd257aeb9c90/receipt.json",
+      "sha256": "fb8d18e6eddc07f927f78d3e1ca9aa493838a01e4dc605822caf7e0456f98eaa"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/cd3a4ae0-b37d-4d72-8cfd-c5d86573abf6/receipt.json",
+      "sha256": "d61c8335c4e58cabb37942604a9b2243c241257939d951d8d245fafafb48de38"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/0c526cd0-bf95-4703-9bce-50bbcd2b46b2/receipt.json",
+      "sha256": "efad1513db0e945756d9e3904b50709221d63de45f015fc4f07c3c0f3c04f3cf"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/07ae8df3-f3fa-497a-86c6-fbc290ed63a1/receipt.json",
+      "sha256": "ef6c9d68f5004a8fd81fe20e819ce7cced79d2f1f4ca0bfb939ff62801c71d9e"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/b8c3348f-6fcc-417d-aebf-63158cc49c41/receipt.json",
+      "sha256": "673617dc26b0df1619483437f5dd89fed7659f6461f2939a817db2172ebc7168"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/15e72a57-55b1-4899-b8b6-fe169c5957e8/receipt.json",
+      "sha256": "5f24c545f064b3c4103c20b56dc1684a6c003f3c3804473323887c09ae0587f1"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/8f6a5c85-869f-4b03-817e-0bdd4ff18755/receipt.json",
+      "sha256": "3ec12cc2df35551453bef2faad70765fcac560054f4b7d720623b5c956a2cce2"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/8fe18fb6-22e1-49e4-a646-e3ce1c287eff/receipt.json",
+      "sha256": "21d90fed5803177f1a391f734752bd23dbd168dcd272ed71dfbd0e4d95f96fea"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/8223c47d-c108-4fcf-bc14-2342c12db522/receipt.json",
+      "sha256": "d5a1a3967739c5007259a9f9ba01a7b76ba5b275c6cccbea17db56faabfe801a"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/725acef3-0b58-48bf-821d-3b0e7f385088/receipt.json",
+      "sha256": "e3b6ccbd23b53b700a9bfa717bd6e1a9a01a292e8f4dc66e6e1e9719d5187202"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/c3e9308e-eb1b-42f5-8dd4-63409d237199/receipt.json",
+      "sha256": "ecff90230d5704ae2762fe29d80184f33a9179de660e63a317d299825e0c9615"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/c4747db5-5302-4a90-b661-59390c3ca946/receipt.json",
+      "sha256": "4fcb8fabcbec6c820bc20a44efe925ada2a7d6f15d22c1d9b1a0bd46ea205736"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/d526b10d-41ad-440f-966b-47065079b636/receipt.json",
+      "sha256": "b836ef497cb11a1614b1621ca7ba8fadc9b413df254cddd289ea5ff95d438739"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/800e53e0-e13e-4138-b4fd-86795de2cf22/receipt.json",
+      "sha256": "89d757b8f428b7d4a0930648a264f1de6ecf4992aa7eb7c3daf1a39a9465b0d8"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/95997854-75eb-490b-8daa-e604bf5d4d11/receipt.json",
+      "sha256": "497f218a4ad1e4aa7ccb521a79d6d08ece6d7a3028badb7a4bc050e08851e4c6"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/e5154d41-772f-4637-973f-7c487b1ae8f2/receipt.json",
+      "sha256": "254846418c51d2ea0e1376fe6026853f9b8b916793fcfaecbc55eecaf0d1b360"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/c85f5648-2d4c-466b-b40d-d3fdf54e23a5/receipt.json",
+      "sha256": "f4b0000c8c5e40e4f4447bea5e3e9fdb4257f00888ace927c0896b2423ee2786"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/be5ed6f3-2f22-4b1f-a90a-5dc91acc2811/receipt.json",
+      "sha256": "7ec0252ef821f0dd9718d121e25b32810112fdd9ad5dd93667b1f8274b9c59cf"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/76df1868-1ce6-4a33-a102-3e894f9ae448/receipt.json",
+      "sha256": "f9a2e4963e3e6bb0608b773ba1d1ffd3d8361e3ec8328d6802cc874bc8e1aa90"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/41bc1a02-579f-4460-966c-e9f1b3ca5bd6/receipt.json",
+      "sha256": "58301160b80a4a5896981ce52d94e65abd86d1769adbcc03c8e02f5c3613475a"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/fa68c5fc-5890-48aa-a19e-2456b89213e2/receipt.json",
+      "sha256": "7c18a81acaf9c96270c6bedf6c572c6bc028a01484ad7470590400f86b7094d9"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/c469ae0a-92c1-405d-91eb-16eb28fe470b/receipt.json",
+      "sha256": "2b222ea5c82630907390118b36d1f210aaa4fbaa21f68561968559e8e0f98c3f"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-preencoded-service-v3-attempt-1/requests/9ca66372-ced2-427b-bda7-976c531f2f97/receipt.json",
+      "sha256": "46696caff819eed79f46aebf8fcf671d9e49e5149b5c1f7139f7d17611243ee6"
+    },
+    {
+      "path": "data/ranker/pretrained/persona-adapter-development-service-v1-attempt-1/requests/0d262355-856c-46f3-b360-63d052a47968/receipt.json",
+      "sha256": "a28256d07a58dbb6a82373ab49ddabe3af9c5b1bf837e6b9bc533750696ce2bc"
+    }
+  ],
+  "functional": [
+    {
+      "file": "functional-rapid-switch.json",
+      "sha256": "18311056f876747b63fa3c7f9cc486fa66dada4d8fd2381d63bdfc7597e2a0eb",
+      "passed": true,
+      "failures": [],
+      "checkoutRaceExercised": null,
+      "cancellationScope": "Actual browser AbortSignal observed; server may already have completed a native step. No assertion that GPU work was immediately interrupted.",
+      "checkoutRaceScope": null
+    },
+    {
+      "file": "functional-cart-checkout.json",
+      "sha256": "e981e220f2de7b5180f5a922e72ad79ee07d2b404b294dc69cfb3b0d8deec384",
+      "passed": true,
+      "failures": [],
+      "checkoutRaceExercised": false,
+      "cancellationScope": null,
+      "checkoutRaceScope": "Checkout had already settled before switch; completed-receipt invalidation checked. No live in-flight checkout race pass claimed."
+    }
+  ],
+  "timingInterpretation": {
+    "guardsStandaloneMs": null,
+    "guardScope": "Hard guards and variant binding included in runtimeRank; no isolated guard timer. Runtime rank also includes encodings, decision, feature reads, integrity checks and CPU work. Do not subtract nested medians to invent guard time.",
+    "copyScope": "serverPostRankToFull6 includes fresh copy, validation, source checks, persistence/event work; head forward is a nested narrow subset.",
+    "browserResidualScope": "Per-case browser from-fetch readiness minus corresponding server ready time; combines dispatch/queue/transport/serialization, DOM/image decode and observer scheduling. Not pure network, paint or nonoverlapping stage measurement.",
+    "overlap": "Component timers overlap inside runtime/server/browser totals; separate medians are not additive. p95 at n10 is maximum, not stable tail evidence.",
+    "comparisonScope": "Same public outputs, different service/cache histories. Prior Maya and reload query feature cache hit, warm run forces fresh B1 for every request. First work-bag catalog prefix cold here versus already warm prior; no paired causal latency ratio.",
+    "cacheScope": "Color full-formatter context includes actual query; XHY cache keyed by whole prompt including query. Neither is query-independent history cache. No response word cache. Startup encoding excluded from request latency.",
+    "initialNavigation": "Bare navigation records zero wholly useful cards at capture and no first3 readiness. Reload has no initialViewport snapshot and no first3 readiness; do not fabricate a zero-card pixel observation for reload. Decoded full6 is separate, not useful above-fold navigation."
+  },
+  "qualityStatus": {
+    "developmentDemo": true,
+    "qualityGatePassed": false,
+    "modelPromotion": false,
+    "knownDEVPrimary": "17/32",
+    "knownFrozenBaseDEVPrimary": "20/32",
+    "semanticMissesUnchanged": "Four public profiles repeat owned products; notebook/organizer/lunchbox occupy30/60 loaded-profile slots; Lena soft-color miss; see prior public10 independent audit.",
+    "noFutureQualityOrPrivateLabelsRead": true
+  },
+  "noRawOrSourceMutation": true,
+  "noBrowserGPUOrGit": true,
+  "priorLoadedSwitchReportedTimings": {
+    "loadedSwitchFirst3": {
+      "fixedDenominator": 10,
+      "valid": 10,
+      "rawMs": [
+        593.8999999761581,
+        930.8000000715256,
+        844.3999999761581,
+        719.8000000715256,
+        933.6000000238419,
+        933.2000000476837,
+        884.3000000715256,
+        986,
+        834.3999999761581,
+        835.3999999761581
+      ],
+      "p50Ms": 844.3999999761581,
+      "p95Ms": 986,
+      "estimator": "nearest-rank; fixed10 complete only"
+    },
+    "loadedSwitchFull6": {
+      "fixedDenominator": 10,
+      "valid": 10,
+      "rawMs": [
+        610.5,
+        947.5,
+        844.3999999761581,
+        731.4000000953674,
+        950.2000000476837,
+        948.2999999523163,
+        900.8000000715256,
+        1000.6000000238419,
+        851.1000000238419,
+        851.3999999761581
+      ],
+      "p50Ms": 851.3999999761581,
+      "p95Ms": 1000.6000000238419,
+      "estimator": "nearest-rank; fixed10 complete only"
+    }
+  },
+  "actualNativeCounterTotals13": {
+    "baseForwardCalls": 14,
+    "rankBodyForwards": 9,
+    "rankLMProjectionCalls": 15,
+    "rankGradientEvaluationCalls": 2
+  }
+}

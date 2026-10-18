@@ -1,0 +1,318 @@
+{
+  "version": "persona-choice-clear-v2-results.v1",
+  "decision": "NO QUALITY PROMOTION",
+  "overallPromotionPass": false,
+  "offlineCoreAndReplacementPass": false,
+  "evaluationScope": "Authored known16-product packet v4:32 cases in16 matched groups plus4 separately scored replacement requests; canonical catalog order is primary; inspected packet is now DEVELOPMENT. This is not unseen-human/catalog evidence.",
+  "crossPacketComparison": "No improvement claim against earlier candidates: their authored evaluation packets differ.",
+  "recipe": {
+    "rank": 4,
+    "scale": 20.0,
+    "dropout": 0.0,
+    "seed": 19083,
+    "initialB": "exactzero",
+    "optimizer": "Adam",
+    "learningRate": 0.0001,
+    "epochs": 14,
+    "trainProfilesExpected": 128,
+    "ordersPerProfile": 2,
+    "featuresExpected": 256,
+    "updatesExpected": 3584,
+    "loss": "CE(audited128 maximum-grade labels) + .25 CE(frozen-B0 legacy320 soft targets)",
+    "selection": "one fixed final3584 checkpoint; no arms/earlystop",
+    "projection": "full frozen native quantized LM projection then16gather",
+    "memoryGiB": 7,
+    "maxNativeSeconds": 900,
+    "pilotOptimizerUpdates": null,
+    "pilotRows": null,
+    "sourcePrefixPath": "two exact721token literalcatalog caches, perprofile continuation to[:-16], actual last16 suffix",
+    "actualSuffixTokens": 16,
+    "wholePromptNoCacheBitParityClaim": false,
+    "cachedScoringMode": "plain",
+    "dynamicMode": "gradient-public-XHY-last16",
+    "teacherProfiles": 320,
+    "teacherViews": 640,
+    "teacherWeight": 0.25,
+    "teacherTemperature": 1.0,
+    "teacherSeedOffset": 1000,
+    "oldAuthoredPriorityLabelsInOptimizer": false,
+    "oneNativeRunThenIntegrationQA": true
+  },
+  "checkpointSha256": "cf8482c25e9f159558f0e78df2cd0709be9f256ce17d12aa7bb13f345a47ecfa",
+  "mechanical": {
+    "nativeStatus": "completed-fixed-fit-and-predictions",
+    "actualOptimizerUpdates": 3584,
+    "elapsedSeconds": 532.0196157089667,
+    "timingScope": "complete native extraction/reuse/fit/control/prediction lifetime; not per-request or browser latency",
+    "memory": {
+      "mlxActiveBytes": 5038303826,
+      "mlxPeakBytes": 6046273826,
+      "mlxCacheBytes": 73501892,
+      "processBudgetBytes": 7516192768
+    },
+    "sourcePins": 102,
+    "sourcePinsUnchanged": true,
+    "originalReuseSourceBytesUnchanged": true,
+    "frozenBaseTensors": 927,
+    "frozen927HashesUnchanged": true,
+    "shutdownCompleted": true,
+    "reusedBasisRows": 976,
+    "freshPublicNumericalRows": 264,
+    "pairedInitialControlsExact": 4,
+    "pairedControlsScope": "two paired TRAIN objectives at zero/nonzero B; original976 basis gates preserved, not a claim of896 new per-target gates",
+    "postfitNativeOriginalArchiveAndTargetFreeControlsExact": 4,
+    "checkpointReloadExact": true,
+    "changedAdapterTensors": [
+      "lora_b",
+      "lora_a"
+    ],
+    "publicXHYCacheEntries": 20,
+    "publicCacheTeacherOrTargetsIncluded": false
+  },
+  "queryFeatures": {
+    "status": "completed-query-features",
+    "freshNativeForwards": 20,
+    "exactPriorVectorsReused": 16,
+    "savedVectors": 36,
+    "optimizerUpdates": 0
+  },
+  "predictionFreeze": {
+    "rawPromptRecords": 344,
+    "combinedModels": 4,
+    "recordsPerModel": 344,
+    "allBeforePrivateQualityLabels": true
+  },
+  "metrics": {
+    "raw": {
+      "main": {
+        "learned": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 19,
+          "novelRelevantTop1": 24,
+          "strongPositiveTop3": 30,
+          "ownedTop1": 2,
+          "ndcg6": 0.7565604185564957
+        },
+        "frozen-base-lexical-decision": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 23,
+          "novelRelevantTop1": 28,
+          "strongPositiveTop3": 32,
+          "ownedTop1": 2,
+          "ndcg6": 0.8340537557603207
+        },
+        "TRAIN-popularity": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 2,
+          "novelRelevantTop1": 2,
+          "strongPositiveTop3": 7,
+          "ownedTop1": 4,
+          "ndcg6": 0.22019532635723174
+        },
+        "latest-owned-repeat": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 1,
+          "novelRelevantTop1": 1,
+          "strongPositiveTop3": 2,
+          "ownedTop1": 29,
+          "ndcg6": 0.1895885982489122
+        }
+      },
+      "strictBaselinePrimaryCounts": {
+        "shuffled-public-profile": 2,
+        "owned-only-public-context": 1,
+        "TRAIN-popularity": 2,
+        "frozen-base-lexical-decision": 23,
+        "latest-owned-repeat": 1
+      },
+      "replacement": {
+        "learned": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 4,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 4,
+          "ownedTop1": 4,
+          "ndcg6": 0.9260710650101901
+        },
+        "frozen-base-lexical-decision": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 4,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 4,
+          "ownedTop1": 4,
+          "ndcg6": 0.9097849310200627
+        },
+        "TRAIN-popularity": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 1,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 1,
+          "ownedTop1": 1,
+          "ndcg6": 0.31370990196741516
+        },
+        "latest-owned-repeat": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 4,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 4,
+          "ownedTop1": 4,
+          "ndcg6": 0.952426204812441
+        }
+      },
+      "facts": {
+        "violationCount": 0,
+        "violations": [],
+        "scope": "source product item prices and typed eligibility; selected variants/images/copy remain serving-pending",
+        "selectedVariantImageCopyVerified": false
+      },
+      "offlineCoreAndReplacementPass": false
+    },
+    "combined": {
+      "main": {
+        "learned": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 19,
+          "novelRelevantTop1": 24,
+          "strongPositiveTop3": 30,
+          "ownedTop1": 2,
+          "ndcg6": 0.7257033063115856
+        },
+        "frozen-base-lexical-decision": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 22,
+          "novelRelevantTop1": 27,
+          "strongPositiveTop3": 32,
+          "ownedTop1": 2,
+          "ndcg6": 0.7686265146165594
+        },
+        "TRAIN-popularity": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 1,
+          "novelRelevantTop1": 1,
+          "strongPositiveTop3": 6,
+          "ownedTop1": 3,
+          "ndcg6": 0.17649476291947191
+        },
+        "latest-owned-repeat": {
+          "fixedDenominator": 32,
+          "groups": 16,
+          "primaryTop1": 1,
+          "novelRelevantTop1": 1,
+          "strongPositiveTop3": 6,
+          "ownedTop1": 29,
+          "ndcg6": 0.16647586397888903
+        }
+      },
+      "strictBaselinePrimaryCounts": {
+        "shuffled-public-profile": 1,
+        "owned-only-public-context": 1,
+        "TRAIN-popularity": 1,
+        "frozen-base-lexical-decision": 22,
+        "latest-owned-repeat": 1
+      },
+      "replacement": {
+        "learned": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 4,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 4,
+          "ownedTop1": 4,
+          "ndcg6": 0.9535098713137025
+        },
+        "frozen-base-lexical-decision": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 4,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 4,
+          "ownedTop1": 4,
+          "ndcg6": 0.9535098713137025
+        },
+        "TRAIN-popularity": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 1,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 1,
+          "ownedTop1": 1,
+          "ndcg6": 0.4042361498381914
+        },
+        "latest-owned-repeat": {
+          "fixedDenominator": 4,
+          "groups": 4,
+          "primaryTop1": 4,
+          "novelRelevantTop1": 0,
+          "strongPositiveTop3": 4,
+          "ownedTop1": 4,
+          "ndcg6": 0.9535098713137025
+        }
+      },
+      "facts": {
+        "violationCount": 0,
+        "violations": [],
+        "scope": "source product item prices and typed eligibility; selected variants/images/copy remain serving-pending",
+        "selectedVariantImageCopyVerified": false
+      },
+      "offlineCoreAndReplacementPass": false
+    },
+    "samePacketLearnedMinusFrozenBase": {
+      "raw": {
+        "primaryTop1": -4,
+        "novelRelevantTop1": -4,
+        "strongPositiveTop3": -2
+      },
+      "combined": {
+        "primaryTop1": -3,
+        "novelRelevantTop1": -3,
+        "strongPositiveTop3": -2
+      }
+    }
+  },
+  "knownDevelopmentHistory": {
+    "developmentOnly": true,
+    "fixedPairs": 10,
+    "rawOwnedPriorityDemotions": 8,
+    "novelRelevantAfterTop1": 5,
+    "pass": false
+  },
+  "combinedKnownDevelopmentHistory": {
+    "developmentOnly": true,
+    "fixedPairs": 10,
+    "rawOwnedPriorityDemotions": 8,
+    "novelRelevantAfterTop1": 5,
+    "pass": false
+  },
+  "failureReasons": [
+    "Learned primary top1=19/32, below predeclared20 threshold.",
+    "Frozen-base primary is23/32 raw and22/32 fused; learned19/32 has negative contribution on the same packet.",
+    "Known DEVELOPMENT history has8/10 owned-priority demotions but only5/10 novel relevant top1 after purchase, below8/10 requirement."
+  ],
+  "trainingDiagnostics": {
+    "firstRecordedPairedSample": {
+      "step": 1,
+      "jointCE": 5.920487403869629,
+      "clearCE": 5.525823593139648,
+      "teacherCE": 1.5786548852920532
+    },
+    "lastRecordedPairedSample": {
+      "step": 3584,
+      "jointCE": 0.5765673518180847,
+      "clearCE": 0.017461776733398438,
+      "teacherCE": 2.236422300338745
+    },
+    "scope": "Saved stochastic per-step losses on different paired examples; not aggregate TRAIN accuracy, convergence proof, or evaluation improvement. No new training/scoring was run for this archive."
+  },
+  "servingScope": "No promotion/deployment/default-profile change. Source prices/typed eligibility had0 violations; selected variants/images/fresh copy and live readiness remain separate serving evidence."
+}
