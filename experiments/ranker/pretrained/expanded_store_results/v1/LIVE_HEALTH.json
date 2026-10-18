@@ -1,0 +1,2679 @@
+{
+  "status": "ready",
+  "ready": true,
+  "error": null,
+  "queuedRequests": 0,
+  "startup": {
+    "rankCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+    "copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+    "sourceTensorsHashed": 927,
+    "residentLoadMs": 983.3189160563052,
+    "engineInitializationMs": 10711.328834062442,
+    "initializationScope": "engine constructor including source/checkpoint verification, model load, frozen hashes and catalog head; excludes process imports, worker lock wait and browser",
+    "memory": {
+      "mlxActiveBytes": 5038303752,
+      "mlxPeakBytes": 5101611528,
+      "mlxCacheBytes": 70295364,
+      "processBudgetBytes": 7516192768
+    },
+    "width": 20,
+    "nativeFallback": false,
+    "rankSessionProvenance": {
+      "featureBase": {
+        "kind": "original-v3-frozen-feature-base",
+        "run": "data/ranker/pretrained/actual-store-function-v3-attempt-1",
+        "reportSha256": "3a14a970a95b1289795d618ba6de8bfc12c07c4e7b8cafc8c4e0951645f4906d",
+        "packetSha256": "3b42c3f917df39c42643ac9771502e9e74ae0e7af24c1827c1107f8d248f645a",
+        "originalRunNativeForwards": 64,
+        "catalogFeatureVectors": 16,
+        "catalogTensorAndReceiptPins": 32,
+        "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+        "originalV3HeadSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e"
+      },
+      "rankHead": {
+        "kind": "v5-known-catalog-function-head",
+        "version": "store-v5-rank-session.v1",
+        "servingExportSha256": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703",
+        "headCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+        "newRunNativeForwards": 96,
+        "totalFeatureVectors": 144,
+        "reusedTrainAndCatalogVectors": 48,
+        "trainQueries": 96,
+        "freshEvaluationQueries": 32,
+        "trainSteps": 80,
+        "frozen927TrainingHashesUnchanged": true,
+        "teacherOrEvaluationFilesReadAtServing": false,
+        "requestEncodingUnchanged": true,
+        "selection": "explicit caller-selected serving export checksum; adapter performs no quality promotion",
+        "scope": "known16 single-function paraphrase adaptation; not promoted"
+      }
+    },
+    "persona": {
+      "kind": "persona-adapter-engine.v2",
+      "checkpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+      "servingManifestSha256": "0307f876f84154cff025e7473b76b52719f95b9dabdcc3009c7d81b464eed03b",
+      "productRanking": "fresh trained LoRA LM route logits plus learned query-intent blend",
+      "queryIntent": {
+        "checkpointSha256": "c524f37b2cbd9929bb34f45cb169523b6d143aa2062e40b3035caba27d9df92a",
+        "sourceSha256": "d988ab5fa1e24dabffc62996c51e4e8ab0ad4563f834ca757107d0a4ab430226",
+        "sourceManifestSha256": "25fdb0c976dc3b6e01e826e7f30ea63fc65e3fbb85f56f24f4c83e8538703232",
+        "feature": "same exact base query4096",
+        "phraseOrPersonRules": false
+      },
+      "color": {
+        "checkpointSha256": "2ec600745b19086b4bedcc4f66c283b5870b65eebce43f8715f0e8cbb154ea56",
+        "failedOldProductOrderingUsed": false,
+        "scope": "same learned within-product scores only"
+      },
+      "publicDecisionFeatureCacheEntries": 20,
+      "privateTargetOrTeacherInputs": false,
+      "freshPerRequest": "LM route scores, query-intent score, learned variant selection and neural copy words",
+      "featureEncoding": "cache-hit flags and actual forward counts in each receipt",
+      "adapterOwnership": "shared pristine base, mutually exclusive copy/rank modules, copy restored in finally",
+      "timingScope": "admission through public input checks, exact cached or fresh base/query/decision features, fresh LoRA LM-route decision, learned query-intent blend, learned source-bound variant selection, fresh neural word slots, factual gates and serialized events; excludes startup/network/browser/images",
+      "scope": "explicit candidate; combined acceptance and live parity not implied",
+      "measurementEngine": "persona-adapter-engine.v4-factorized-profile",
+      "featurePreencoding": {
+        "version": "persona-adapter-runtime.v4-factorized-profile",
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "enabled": true,
+        "publicPeopleSha256": "4737c785313b3200798133679ee914aae638d5b03f46b052ecf77451f75f5b1d",
+        "profileQuery": "Browse the store",
+        "profileItemBudget": null,
+        "profileHardRequirements": [],
+        "publicPersonaAndHistoryPreservedExactly": true,
+        "colorPreencoding": {
+          "version": "persona-adapter-runtime.v3",
+          "enabled": true,
+          "publicPeopleSha256": "4737c785313b3200798133679ee914aae638d5b03f46b052ecf77451f75f5b1d",
+          "requestQuery": "Browse the store",
+          "rows": [
+            {
+              "publicPersonId": "bob",
+              "formatterTextSha256": "d7f20d9100749bffca45bd37f9bc66d7005616dfb29a96c5d00b227c20954dd8",
+              "formatterTextBytes": 1181,
+              "featureTensorSha256": "ea8b2d7840fa13fd46c92f4e8544f1cfb1d07680430e50e824ad551115b60c0c",
+              "cacheKeySha256": "d7f20d9100749bffca45bd37f9bc66d7005616dfb29a96c5d00b227c20954dd8",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 452.83041591756046,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "maya",
+              "formatterTextSha256": "c8acfec5e1f88ed7e2bd346877b5b5d927ca113f71d42ac1e07218c1b11602fb",
+              "formatterTextBytes": 1070,
+              "featureTensorSha256": "0f38d000bf556a6717c645ecb03b417051b52a700887b40c6cab0791333a3a26",
+              "cacheKeySha256": "c8acfec5e1f88ed7e2bd346877b5b5d927ca113f71d42ac1e07218c1b11602fb",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 362.6734169665724,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "priya",
+              "formatterTextSha256": "570adc567dbabf4aa39d7241f84e439efb46ef36c8f75dc1dc08078547bac693",
+              "formatterTextBytes": 1449,
+              "featureTensorSha256": "68af93e0b3f4c1ac125b2f2791b42c852fe1cd05255f0245860639cdefbdbdde",
+              "cacheKeySha256": "570adc567dbabf4aa39d7241f84e439efb46ef36c8f75dc1dc08078547bac693",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 504.40374994650483,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "lena",
+              "formatterTextSha256": "ba8658585c4ad6c8c7de36f851909c3513344f8c4abf21c04e06c5bfebfd6d67",
+              "formatterTextBytes": 1204,
+              "featureTensorSha256": "9749cefe0661875d53182d6b3e36c8bcc29d4700540227c6ee8c9a7d5498ada3",
+              "cacheKeySha256": "ba8658585c4ad6c8c7de36f851909c3513344f8c4abf21c04e06c5bfebfd6d67",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 430.0951659679413,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "june",
+              "formatterTextSha256": "48dff48bea140e5540054221f6245e5cc2bc380d4de4c4b84d2b555e1b80735e",
+              "formatterTextBytes": 903,
+              "featureTensorSha256": "d5240059066471986f0a4142817559f26c5573d9831bc8ff15a80060f5a5f16b",
+              "cacheKeySha256": "48dff48bea140e5540054221f6245e5cc2bc380d4de4c4b84d2b555e1b80735e",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 338.52645894512534,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "grace",
+              "formatterTextSha256": "667dd439c15829f4a9b91c7d05e5dfa0b8e568ee5c831b5aef30b602aa564a76",
+              "formatterTextBytes": 1418,
+              "featureTensorSha256": "7c68102330f631ecabfd15bf6b20593fef40cd1bc889bfe7c7a7e03f52676847",
+              "cacheKeySha256": "667dd439c15829f4a9b91c7d05e5dfa0b8e568ee5c831b5aef30b602aa564a76",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 504.18070901650935,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "sam",
+              "formatterTextSha256": "113abffae1b7659d92dd688db07e6b84a84e3dd3e327b823cf332b775f62caa8",
+              "formatterTextBytes": 1342,
+              "featureTensorSha256": "e7411df71727dc020fb80ca795c43422d2d2fb13a098be80b5e419250e3be427",
+              "cacheKeySha256": "113abffae1b7659d92dd688db07e6b84a84e3dd3e327b823cf332b775f62caa8",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 526.3397500384599,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "ana",
+              "formatterTextSha256": "f5d7727247488dc738da7f9133702f64bb260e0efb8f773baa32b436425ca547",
+              "formatterTextBytes": 1098,
+              "featureTensorSha256": "299ee6e26e048df5de8161759ed78b685b7cb1f4fe8f5f828658cef97bb8829a",
+              "cacheKeySha256": "f5d7727247488dc738da7f9133702f64bb260e0efb8f773baa32b436425ca547",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 446.89254206605256,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "rosa",
+              "formatterTextSha256": "8ad384ac3d922019de9e1d911c8b3b278bffd77726aebc48238681cd70956499",
+              "formatterTextBytes": 1449,
+              "featureTensorSha256": "31732fdbaaf90a2ae389a151b12d10740769cf45d6b1a4895b0b7fa0ea2b8f1f",
+              "cacheKeySha256": "8ad384ac3d922019de9e1d911c8b3b278bffd77726aebc48238681cd70956499",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 540.4010000638664,
+              "featureSource": "fresh-base-color-feature"
+            },
+            {
+              "publicPersonId": "felix",
+              "formatterTextSha256": "c58374e7975e1c6eeedafbec5276b854090d61341d6a2c1ca823380cc41d6a5b",
+              "formatterTextBytes": 1172,
+              "featureTensorSha256": "7b16a144b61ee22a373ed7f2c50d7ff51d19400dcc03918b9c214c3763d4052d",
+              "cacheKeySha256": "c58374e7975e1c6eeedafbec5276b854090d61341d6a2c1ca823380cc41d6a5b",
+              "nativeBackboneForwardCalls": 1,
+              "encodingMs": 458.0430840142071,
+              "featureSource": "fresh-base-color-feature"
+            }
+          ],
+          "encodingMs": 4577.217875048518,
+          "baseEncodingCalls": [
+            {
+              "textSha256": "d7f20d9100749bffca45bd37f9bc66d7005616dfb29a96c5d00b227c20954dd8",
+              "textBytes": 1181,
+              "elapsedMs": 452.6501669315621,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.30154199339449406,
+              "nativeForwardMs": 449.1942080203444,
+              "paddedTokensPerRow": 279
+            },
+            {
+              "textSha256": "c8acfec5e1f88ed7e2bd346877b5b5d927ca113f71d42ac1e07218c1b11602fb",
+              "textBytes": 1070,
+              "elapsedMs": 362.4104580376297,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 2.492666942998767,
+              "nativeForwardMs": 358.013333985582,
+              "paddedTokensPerRow": 254
+            },
+            {
+              "textSha256": "570adc567dbabf4aa39d7241f84e439efb46ef36c8f75dc1dc08078547bac693",
+              "textBytes": 1449,
+              "elapsedMs": 504.225958022289,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 1.952708000317216,
+              "nativeForwardMs": 499.17849991470575,
+              "paddedTokensPerRow": 353
+            },
+            {
+              "textSha256": "ba8658585c4ad6c8c7de36f851909c3513344f8c4abf21c04e06c5bfebfd6d67",
+              "textBytes": 1204,
+              "elapsedMs": 429.81137498281896,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.7865839870646596,
+              "nativeForwardMs": 426.81408300995827,
+              "paddedTokensPerRow": 287
+            },
+            {
+              "textSha256": "48dff48bea140e5540054221f6245e5cc2bc380d4de4c4b84d2b555e1b80735e",
+              "textBytes": 903,
+              "elapsedMs": 338.4297920856625,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.5827079294249415,
+              "nativeForwardMs": 336.01787500083447,
+              "paddedTokensPerRow": 193
+            },
+            {
+              "textSha256": "667dd439c15829f4a9b91c7d05e5dfa0b8e568ee5c831b5aef30b602aa564a76",
+              "textBytes": 1418,
+              "elapsedMs": 504.08979202620685,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.4237910034134984,
+              "nativeForwardMs": 502.87691596895456,
+              "paddedTokensPerRow": 352
+            },
+            {
+              "textSha256": "113abffae1b7659d92dd688db07e6b84a84e3dd3e327b823cf332b775f62caa8",
+              "textBytes": 1342,
+              "elapsedMs": 526.1966671096161,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.35137508530169725,
+              "nativeForwardMs": 524.9712920049205,
+              "paddedTokensPerRow": 326
+            },
+            {
+              "textSha256": "f5d7727247488dc738da7f9133702f64bb260e0efb8f773baa32b436425ca547",
+              "textBytes": 1098,
+              "elapsedMs": 446.73016702290624,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.31849998049438,
+              "nativeForwardMs": 442.2792079858482,
+              "paddedTokensPerRow": 259
+            },
+            {
+              "textSha256": "8ad384ac3d922019de9e1d911c8b3b278bffd77726aebc48238681cd70956499",
+              "textBytes": 1449,
+              "elapsedMs": 540.287125040777,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.5440840031951666,
+              "nativeForwardMs": 538.7005420634523,
+              "paddedTokensPerRow": 358
+            },
+            {
+              "textSha256": "c58374e7975e1c6eeedafbec5276b854090d61341d6a2c1ca823380cc41d6a5b",
+              "textBytes": 1172,
+              "elapsedMs": 457.94008299708366,
+              "nativeBackboneForwardCalls": 1,
+              "batchRows": 1,
+              "adaptersDisabled": true,
+              "truncatedRows": 0,
+              "nativeTokenizeMs": 0.5702499765902758,
+              "nativeForwardMs": 456.08425000682473,
+              "paddedTokensPerRow": 276
+            }
+          ],
+          "nativeBackboneForwardCalls": 10,
+          "rankingWarmResponses": 0,
+          "copyWarmResponses": 0,
+          "responseWordsCached": false,
+          "rankWholePromptFeaturesPrecomputedHere": false,
+          "cacheProducerSourceSha256": "6fb9626541a20d5ab9c55b7a1b930e7e57f107ff9dd70ac36493829621ecbc61",
+          "scope": "one-time authorized public profile color/context encoding, excluded from request latency",
+          "warmCacheSha256": "f970e73444319d46773ee0552a711d027d2e4967033e3cda0cd4a9677928f20c"
+        },
+        "rankProfileRows": [
+          {
+            "publicPersonId": "bob",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 6,
+            "attemptedNativeBodyForwards": 6,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": false,
+            "catalogPrefixCreatedThisRequest": true,
+            "catalogPrefixTokensReused": 0,
+            "catalogPrefixTokensPrefilled": 721,
+            "catalogPrefixPrefillForwards": 3,
+            "freshPublicPrefixTokens": 495,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "fd9ab6bbda56cbb10eb00a02f0b346e4215aa869515fc99e9e33b4acc0707e8b"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "c6797160b6889d5ef0ca88fdda29fba520f83e0d9acc07edb47f2e7e50e413fa"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "ade7e681f399143bcaa121a9778ac71cdd49298e3ce9e552e91ea1435e8ac925"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "c04aca1d3e77355095efdd6e998d3d4486db3d3b31e874946f4567c6ecfb9609",
+              "cachedRouteScoresSha256": "c04aca1d3e77355095efdd6e998d3d4486db3d3b31e874946f4567c6ecfb9609"
+            },
+            "elapsedMs": 2237.564207985997,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+            "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+            "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+            "profileCacheEntries": 1,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "maya",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 3,
+            "attemptedNativeBodyForwards": 3,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 436,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "c24146e87a5db9ffec1e99d9c6484562e482207776d9c6a8cb75430c5ff00db1",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "ee6487ecee6359869f666a4d2726b9ec479a0eb678e8f1c692cf145a5ff64d45"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "25ba5ded4d08ab45961676d02d3af828e5377d0796e18593b52c881efafbdb84"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "d8eaea755ce559f52d087a809ded2aa32b9c90479626ec97955d7336659ba214"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "29749b7f8cc5d3441d6948e879a97e77d6ce129e8b793f366f0ca6529902ac9e",
+              "cachedRouteScoresSha256": "29749b7f8cc5d3441d6948e879a97e77d6ce129e8b793f366f0ca6529902ac9e"
+            },
+            "elapsedMs": 966.57754201442,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "c24146e87a5db9ffec1e99d9c6484562e482207776d9c6a8cb75430c5ff00db1",
+            "profileKeySha256": "c083d7f7aaf81554ce123741ab5c31f0a210b34c62917719c388c4441dad355e",
+            "pureFeatureSha256": "50ceac65e8b47c05314f653a01c5afb3784315a9321c3dd354e87e60f9fca8d1",
+            "profileCacheEntries": 2,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "priya",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 4,
+            "attemptedNativeBodyForwards": 4,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 689,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "78ccc626c86e2ae34da930616c09356efc10962752dd2f4e87d9a759b6317817",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "29ef36f0e49c6c1c403072c17d92e47a04e288f1f7c529c9aae9f302fc7471e1"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "3cd7e0cddb13cd2b71c77710c7baff82ecd737c82016a1a5ca71176850d25f8e"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "3808a38a109b7683e21c103fc4903101916b6a2fbf355600f3103b32b4d75e51"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "19a45696eab94eab3d60845d5815727958dba1955e781425eff6e2cd677ffe69",
+              "cachedRouteScoresSha256": "19a45696eab94eab3d60845d5815727958dba1955e781425eff6e2cd677ffe69"
+            },
+            "elapsedMs": 1279.7595830634236,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "78ccc626c86e2ae34da930616c09356efc10962752dd2f4e87d9a759b6317817",
+            "profileKeySha256": "ecdcd59d0d680ff6383674a431d29445b8859bbd585e447eeaeb7fb6e41c14d9",
+            "pureFeatureSha256": "226c9e1843cea847387f3fd0be6ef3c8f408d550ebe08a4787b47dbdb21ff3ab",
+            "profileCacheEntries": 3,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "lena",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 3,
+            "attemptedNativeBodyForwards": 3,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 499,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "e84a52f0d02a98081f0d4edc8b1bd579728a2ee9799198c9d8095a02968a26ca",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "a65ef14f6a5e7ae058c879b48552129a77e9cceb4fd68e3f7daa76d2fee2cdba"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "8619fb670e5a55c9fa5def867296a96480a0013c515dcf6a539a0fdc36763ea8"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "d9482944601f2aa30cb9ebf0083ecb17fb7111e6647ecacf17d414e8d0002e13"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "af69c2824032377c77c379ed051b0cbb72fe82b23dde491fa842f008aa28b84a",
+              "cachedRouteScoresSha256": "af69c2824032377c77c379ed051b0cbb72fe82b23dde491fa842f008aa28b84a"
+            },
+            "elapsedMs": 1020.9207910811529,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "e84a52f0d02a98081f0d4edc8b1bd579728a2ee9799198c9d8095a02968a26ca",
+            "profileKeySha256": "fc1bb91345fb97d33c720dd104c2a5caa63686bdf3b56e179176d62590f0207a",
+            "pureFeatureSha256": "dcabbdc2481830c292a5d6a0164e2ad2c337c3511603e53b123d8420ca6c73d3",
+            "profileCacheEntries": 4,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "june",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 3,
+            "attemptedNativeBodyForwards": 3,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 288,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "e4797e1abe5e5e388a638a5de9fcd0385de7be26921bf666332323ef69c24849",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "db4da108f3593019b09625bfde4f6df6bccdcd6c2f604513ab9f821916a9debd"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "d1fe8ddc417fab702a3e08b7598aec849ad286f115e256a5abf816adc5926c0f"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "7d127b7bb8c43869c6b6cc93be8fe9c8507fc2e37243d8a1d3a5bbd3d6ce0683"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "dd3639c1b7c4306e85a61cda8fe11e08dace4d3704a34adcd59bc094c3726462",
+              "cachedRouteScoresSha256": "dd3639c1b7c4306e85a61cda8fe11e08dace4d3704a34adcd59bc094c3726462"
+            },
+            "elapsedMs": 750.2908749738708,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "e4797e1abe5e5e388a638a5de9fcd0385de7be26921bf666332323ef69c24849",
+            "profileKeySha256": "494aa96d7ee86e60f4b8e107a69bd8636b98488660096df2ee8974f830b9e7cc",
+            "pureFeatureSha256": "bdcb5500ff7295df50d00084f40b18eba245757b6b8f6a5ab03dde7e6d83b61a",
+            "profileCacheEntries": 5,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "grace",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 4,
+            "attemptedNativeBodyForwards": 4,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 685,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "e55f9aa80a6230ca7b0677bfc6c0d7bacc13c94bd6cfb4c485caf5a68881c79d",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "a4e8aa97447b00b1f6af390ca0d06e7393b4a0dde5b97439247e8e26a42a6b19"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "bb4955cf6871cfbe069c3d33cb170940cf3a898d5b13dbc9561b31837ac19fc4"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "2b83fd13db76ed02d31275141b3da6fe098082af874135877268e13ad1a16840"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "5cb596ad2e51d5422fbfca53b87a754383568c0ca4c9e650913157dad96940cb",
+              "cachedRouteScoresSha256": "5cb596ad2e51d5422fbfca53b87a754383568c0ca4c9e650913157dad96940cb"
+            },
+            "elapsedMs": 1267.0885829720646,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "e55f9aa80a6230ca7b0677bfc6c0d7bacc13c94bd6cfb4c485caf5a68881c79d",
+            "profileKeySha256": "888b35ad3d43a536f87a9f9cea80d782206105c2a699adb9c6edd4cf21a00233",
+            "pureFeatureSha256": "b68d2eb5cad9c8405afca85171a513bea3f8ef6165583fd864e09dec0565f3c6",
+            "profileCacheEntries": 6,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "sam",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 4,
+            "attemptedNativeBodyForwards": 4,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 595,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "164b58e15a80146a01b2adfeb648c0b62a06cb3816a0a7290e97a9ed19176d2c",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "31db501e14d0736a8dd8d68be8d0bdb84439e9a02ee47fe639d3884438583473"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "1027c34579f8b70e39b9f11a47bb5dfa737d06b2a2830a99bfb5706d4160cd30"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "e5d632ba13a100b82c3d5551a48aad9745cd5bb09a8436f436753ed88980eacc"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "f390d5adc128fcf79eb4073e91fb26ab06a255d47063428ec464b14e24e0d4bc",
+              "cachedRouteScoresSha256": "f390d5adc128fcf79eb4073e91fb26ab06a255d47063428ec464b14e24e0d4bc"
+            },
+            "elapsedMs": 1296.0425419732928,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "164b58e15a80146a01b2adfeb648c0b62a06cb3816a0a7290e97a9ed19176d2c",
+            "profileKeySha256": "6096a96a148b4cb06df09effdfa038c6d1a329c33806dc2828f50cd45d598050",
+            "pureFeatureSha256": "e12456970a3a4beca39887965a03142340b3b51484a9f67f716d9b74801f0303",
+            "profileCacheEntries": 7,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "ana",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 3,
+            "attemptedNativeBodyForwards": 3,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 444,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "140f14ff436ee6785fd4d14c3b3b8abb30dd1eeff0229292e59c204d453cfd9d",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "274529fb3d3008a6213db0628954b79d09b5bf979615122061e9866dda901c71"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "17bb67662f6145eae33343854059c719b3028e6ae4f84779c951435f021f5adb"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "ba4dd94f55380614d1ca26e28fcfbac6bab3bed187f8e672ce7c00227c3cabc3"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "857c19a551c7667633774515fba8367417e9ec5b54cfe5e48073374b87d9d8e6",
+              "cachedRouteScoresSha256": "857c19a551c7667633774515fba8367417e9ec5b54cfe5e48073374b87d9d8e6"
+            },
+            "elapsedMs": 954.198291990906,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "140f14ff436ee6785fd4d14c3b3b8abb30dd1eeff0229292e59c204d453cfd9d",
+            "profileKeySha256": "5e4fa75d94e26dae250f03e5176f428eb769de40fb7ac86c6913e4bcba4e037c",
+            "pureFeatureSha256": "f449e6bbcdca61aae4ba2ed6768106deea106dc93b6ac8b4a2cf14dfe844db1e",
+            "profileCacheEntries": 8,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "rosa",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 4,
+            "attemptedNativeBodyForwards": 4,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 693,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "384fd25b71b596cfd352a4c3d1fdd76c2748a64528dfa2efbe46ce7db1290de9",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "93fc857b1b2e57651244049ec90aa7401efe47237ba6e95162ae61456bb2b59e"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "3bf577e913a29176bd6249fe3db5b26b305faec449a05647224a525b8205b716"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "c4a38f8582737945f63e1d7f8156a708b060624374f8ebd0c7fe36fedc37c840"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "27b1173098736213d7cebae8589cebfcf573391ad5a8bc80c9aa0a61abea385f",
+              "cachedRouteScoresSha256": "27b1173098736213d7cebae8589cebfcf573391ad5a8bc80c9aa0a61abea385f"
+            },
+            "elapsedMs": 1322.6081669563428,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "384fd25b71b596cfd352a4c3d1fdd76c2748a64528dfa2efbe46ce7db1290de9",
+            "profileKeySha256": "6e8d95ef5bb8cb03a1be08e3bd318e8f6aa04f4937b87869dfcab322af46bd75",
+            "pureFeatureSha256": "0d8fb3f9304b3ab6e467f97b2849268ee0e527a206931c4372a5c19c0704fdf1",
+            "profileCacheEntries": 9,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          },
+          {
+            "publicPersonId": "felix",
+            "kind": "fresh-native-neutral-profile-last16",
+            "cacheHit": false,
+            "nativeBodyForwards": 3,
+            "attemptedNativeBodyForwards": 3,
+            "nativeLanguageModelProjectionCalls": 2,
+            "gradientEvaluationCalls": 1,
+            "catalogPrefixCacheUsed": true,
+            "catalogPrefixCacheHit": true,
+            "catalogPrefixCreatedThisRequest": false,
+            "catalogPrefixTokensReused": 721,
+            "catalogPrefixTokensPrefilled": 0,
+            "catalogPrefixPrefillForwards": 0,
+            "freshPublicPrefixTokens": 487,
+            "nativeRankSuffixTokens": 16,
+            "targetFreeCapture": {
+              "version": "persona-choice-public-gradient-capture.v1",
+              "targetOrLossProvided": false,
+              "optimizerUpdates": 0,
+              "scalar": "sum16publicroutinglogits",
+              "promptTokenIdsSha256": "157284e32c394475c8e7bbe2998e28b077be3b1c86184c64397b892b1013f378",
+              "featureTensors": {
+                "x": {
+                  "shape": [
+                    1,
+                    16,
+                    12288
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "0cab195b97b1d0041e54a798588e81bf3747f0e281f74290c012bbb6f8612827"
+                },
+                "h": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "618a6d5beaca0124060df470348ee6bbbdfcea131c778c61fdc163128b861641"
+                },
+                "y": {
+                  "shape": [
+                    1,
+                    16,
+                    4096
+                  ],
+                  "dtype": "mlx.core.bfloat16",
+                  "sha256": "f3f68341608f0268cb9e2206267cc96604e852376156d0b6da279280db8e8d6d"
+                }
+              },
+              "sourceCacheUnchanged": true,
+              "adapterUnchanged": true,
+              "nativeCachedRouteScoresExact": true,
+              "nativeRouteScoresSha256": "28bf151c3472862b7e1544fe14290f26df8ba8ebacd372e7176c6e7edb33e944",
+              "cachedRouteScoresSha256": "28bf151c3472862b7e1544fe14290f26df8ba8ebacd372e7176c6e7edb33e944"
+            },
+            "elapsedMs": 1084.7259579459205,
+            "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+            "promptTokenIdsSha256": "157284e32c394475c8e7bbe2998e28b077be3b1c86184c64397b892b1013f378",
+            "profileKeySha256": "e8a118c51ea50eb56fd83ac14ca1da8fc8fcef7d2f69de7986a1e3f18c98ea49",
+            "pureFeatureSha256": "dca1a7f1472610066e95fccc0508d4f4ca8a1e01cb5f683e4dad2f88940eb3e0",
+            "profileCacheEntries": 10,
+            "conditioningPolicy": "factorized-public-persona-history.v1",
+            "actualQueryOrGuardFieldsUsedForContext": false,
+            "actualQueryUsedForFreshQueryHeadAndGuards": true,
+            "freshLearnedDecision": true,
+            "cachedScoringMode": "plain",
+            "dynamicMode": "gradient-public-XHY-last16",
+            "copyAdapterParticipated": false,
+            "generatedContinuationTokens": 0,
+            "optimizerUpdates": 0,
+            "targetWeightsProvided": false,
+            "scoresOrRankingsOrResponseWordsCached": false,
+            "routeProjectionMode": "ordinary",
+            "selected16ProjectionApplied": false,
+            "projectionPolicy": "ordinary reference; unknown-profile misses always retain native/full exact capture"
+          }
+        ],
+        "rankProfilePreencodingMs": 12360.124374972656,
+        "rankingWarmResponses": 0,
+        "copyWarmResponses": 0,
+        "responseWordsCached": false,
+        "rankProfileCachePureXHYOnly": true,
+        "scoresOrRankingsCached": false,
+        "cacheProducerSourceSha256": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d",
+        "scope": "DIFFERENT profile-only conditioning experiment; no V2/V3 quality or logit parity claim",
+        "encodingMs": 16937.342250021175,
+        "nativeBodyForwards": 37,
+        "profileWarmupSha256": "2e0f3f56f471aa9826307fbb9aa3f882e0477f5eb522b3442c478b0916583b45"
+      },
+      "forceFreshQuery": false,
+      "wholePromptRankCacheIncludesQuery": false,
+      "noResponseWarmupOrTextCache": true,
+      "contextConditioning": {
+        "version": "factorized-public-persona-history.v1",
+        "query": "Browse the store",
+        "itemBudget": null,
+        "hardRequirements": [],
+        "publicPersonaAndObservedHistoryPreservedExactly": true,
+        "actualRequestUsedForFreshQueryHeadAndHardGuards": true,
+        "differentFromV2V3": true,
+        "modelPromotion": false
+      },
+      "queryPrefixCandidate": {
+        "version": "persona-query-prefix-engine.v1",
+        "defaultMode": "ordinary",
+        "availableModes": [
+          "ordinary",
+          "prefix"
+        ],
+        "preparation": {
+          "status": "prepared-not-benchmark-validated",
+          "version": "store-query-prefix-reuse.v1",
+          "prefixTokens": 26,
+          "prefixTokenSha256": "b322850d47452972af8d78198b1620e598f6dc5e8b454270d54ad661c17b6f9b",
+          "prefixLiteralSha256": "83e7a40c0121fd65d588e994b74513d235a01e139d2ae67098dce8a9ad27ea71",
+          "withholdBoundaryTokens": 1,
+          "backboneForwardCalls": 1,
+          "prefixOnlyNoDynamicRequestFields": true,
+          "cacheTypes": [
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache",
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache",
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache",
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache",
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache",
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache",
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache",
+            "ArraysCache",
+            "ArraysCache",
+            "ArraysCache",
+            "KVCache"
+          ],
+          "sourceStateSha256": "ab5db3be123c789b38914af5d3fe216ec4f3af35ad7070f728833f04b6621899",
+          "cacheArrayBytesReportedByRuntime": 59899904,
+          "assetKey": "db1bacb1b216529b35943b5087b0adbfd730a0eca30dca08a328d1aeb00b8499",
+          "cacheBindingKey": "8fefaad10e687f07da076bf5136d607db382f99057f5ba6d05d1708cf376a8c2",
+          "frozen927": {
+            "tensorsHashed": 927,
+            "sha256": "16176ff63bd8b0b5bfcfe561eb6c9bd51c61e503b15f545d57add5d0e42a7d17",
+            "matchesBinding": true
+          },
+          "prepareMsExcludedFromWarmRequests": 6473.311832989566,
+          "cacheSharing": "all KV history+offset and both convolution/SSM states, full deepcopy per B1 suffix; no trim, no shared mutable query branch"
+        },
+        "assetBinding": {
+          "version": "store-query-prefix-reuse.v1",
+          "assets": [
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/03cccf06fb0190c3fd3cde5ee1e16759276b37d8d1a566f67543f7f93dd0c468.json",
+              "bytes": 1883,
+              "mtimeNs": 1792291671831335670,
+              "sha256": "5441b78b46b4cc6754d9c3e0c7247cc4d8d21aa6e0d0309359f30c2dec3ba9ec"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/03cccf06fb0190c3fd3cde5ee1e16759276b37d8d1a566f67543f7f93dd0c468.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291671830533412,
+              "sha256": "74b0aa12951973470c35817e73963b388753003e5f45fd08f260a0e0e432aeca"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/1c1f2c07d2f0210c7d91134ed05dd51c81222718b81c3d1dfaef06e97044dda0.json",
+              "bytes": 1883,
+              "mtimeNs": 1792291673238505718,
+              "sha256": "f44524c75042dc63a2be4d460aa80718679c49e0fe16a13552ef714b3ed4ab57"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/1c1f2c07d2f0210c7d91134ed05dd51c81222718b81c3d1dfaef06e97044dda0.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291673237962421,
+              "sha256": "8180434081f93786b4e8168f66d1f8170e65724b7a9d04cb5d86f415e51d5eaa"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/23fb7808c08f30772abc27b9cfb0649acdab453f5dcb743283e5b590238f2e82.json",
+              "bytes": 1884,
+              "mtimeNs": 1792291673842189406,
+              "sha256": "2e245889cee9ecddb629ab9e1219d4435d5332593e7a249538ed962857b90d5b"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/23fb7808c08f30772abc27b9cfb0649acdab453f5dcb743283e5b590238f2e82.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291673841291772,
+              "sha256": "f8cae0ed9fbc46d99c8990df87526279afaa67ca8481cd15b225660fa9cc5d13"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/2b82ac1875fc96c2a361f3e60f0d4c7928ef2fd128f96b8ccbbee24a44ff4ec0.json",
+              "bytes": 1883,
+              "mtimeNs": 1792291673638027773,
+              "sha256": "b893b49415d7a3fa2b230ae3693bde25a0612f7baf4b0dac0f1f8c1861dda5f8"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/2b82ac1875fc96c2a361f3e60f0d4c7928ef2fd128f96b8ccbbee24a44ff4ec0.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291673637143598,
+              "sha256": "e530d50b951a7a044b743027a8e1fb8dac4d3328a290c29690eb86079ec4b02b"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/39896e811d4a44c7868bd4a94847de4901d205508028053c3971de474faa2aaa.json",
+              "bytes": 1881,
+              "mtimeNs": 1792291672640648378,
+              "sha256": "3e88c19fd76111d562225fabff7dddf00b87977039e6eec4c3da96195b5735be"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/39896e811d4a44c7868bd4a94847de4901d205508028053c3971de474faa2aaa.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291672639993580,
+              "sha256": "1706e18823ecee12ff38a162ef1eac01f07b551285f1517e2922733a3a6e6195"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4a4f2e45d969192deb5b2d17544c8b1e34e54137abecf179d6c71ae6009d99ae.json",
+              "bytes": 1884,
+              "mtimeNs": 1792291671215382323,
+              "sha256": "aada17ddfe657d2519bca0cd3c205eab404085a47dea242f35d64d3951e16a38"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4a4f2e45d969192deb5b2d17544c8b1e34e54137abecf179d6c71ae6009d99ae.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291671214900151,
+              "sha256": "08b3bfda676e728afe09cb0ea2d73db4453e907438f0ddf14184ab9ea34d410e"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4b414ad72ae06261f61670b5080e62c14072ce93a9543147105ba54cc537367a.json",
+              "bytes": 1879,
+              "mtimeNs": 1792291672842355404,
+              "sha256": "990c634d4511980b474007c6fe6c51b16370354936e9f8ed17b90c02ce05d628"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4b414ad72ae06261f61670b5080e62c14072ce93a9543147105ba54cc537367a.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291672841568771,
+              "sha256": "5b7cd5c919a1eb665d2c1b32de735e795872f3bc5a434c8e556bb19a714da538"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/525715fc2611beada4971894d10e774f0c1062b6f6505caad8b684a366d19abe.json",
+              "bytes": 1881,
+              "mtimeNs": 1792291672443529230,
+              "sha256": "d06f34234bc47f22ce9759d9329743fd1ccacb0c8fb59b3b89258bd460ee7c53"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/525715fc2611beada4971894d10e774f0c1062b6f6505caad8b684a366d19abe.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291672442746514,
+              "sha256": "92ac7c7af82c68cb5336739d6d56001fad187d1bcaf5e8653476ef549c414378"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/66dfe3bc82c674c67b2646ab2cf48d49306412c1df7e4edb1dbba2ee2e85bc2c.json",
+              "bytes": 1886,
+              "mtimeNs": 1792291673041942742,
+              "sha256": "a3bfbde270d7f547f05ccbed5dac0fbcfb8ae2e5f165400cefac9af18b19c6f1"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/66dfe3bc82c674c67b2646ab2cf48d49306412c1df7e4edb1dbba2ee2e85bc2c.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291673041149151,
+              "sha256": "541d69b150af2c44eacba71eb24480e75dc2668c957b95b547d16824b4d3aa76"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/7d48a1dd94fc08bb6a68a1e462cacec1c7fb9862e99a63f3b3e91b478362884d.json",
+              "bytes": 1882,
+              "mtimeNs": 1792291670822309330,
+              "sha256": "74944ab0406d37163d5d475ff36fcb56ff782db37edf113b7c6675c5005d280a"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/7d48a1dd94fc08bb6a68a1e462cacec1c7fb9862e99a63f3b3e91b478362884d.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291670822113454,
+              "sha256": "6deb4384249ea4fef30052ab22d72d2e13b14c1fbfa3e5a36e0716f13ea11561"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8226b737e46c8f00baf55e820566b48983a09c10f3ee18a88f9eb6116c956321.json",
+              "bytes": 1881,
+              "mtimeNs": 1792291672035603386,
+              "sha256": "8baa1d62337e24aa6df15c7a1b521524055b1c7401de5e2caf8d47f9ad8ae6b8"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8226b737e46c8f00baf55e820566b48983a09c10f3ee18a88f9eb6116c956321.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291672035037214,
+              "sha256": "88513c8f1931d4542e858ec72c84f7470639ca63ef235e970246509eae35c86c"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8533f03a8cf8c9e290d14b8a0627c6ceeeaca34c0711262b7c4349b41ab4072b.json",
+              "bytes": 1884,
+              "mtimeNs": 1792291673444054780,
+              "sha256": "247a5d5b61efd8524a08091eac6e2347605d02bfc18c83f2ba7039a9cd386cf2"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8533f03a8cf8c9e290d14b8a0627c6ceeeaca34c0711262b7c4349b41ab4072b.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291673443165980,
+              "sha256": "3157fbac8ad56f72252bfe1c46ae1057f8e8c2fef529103277f8cfb1a4c2f4a5"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/93609dbff8a6aab036dc576b7a4b3c2f433053b47e2ef2393d42a129800442aa.json",
+              "bytes": 1879,
+              "mtimeNs": 1792291672241291366,
+              "sha256": "db015b2ec556ef5b3a594d6f4f66e393f6183c5099eda3b8ffc43c3714a7e19f"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/93609dbff8a6aab036dc576b7a4b3c2f433053b47e2ef2393d42a129800442aa.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291672240672110,
+              "sha256": "5eda7ee2d649ac8530363b8662c31690a282af527056660ba0c44a25b06c6ca3"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/ba6bc1b5d186f5d8b13688414654fefad81af6f60e5561ff8807e4c8a1cc5eba.json",
+              "bytes": 1884,
+              "mtimeNs": 1792291671017458626,
+              "sha256": "59682855c54093f0c392a7628f03782169c808dadd0a97218690efaa4d722aa9"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/ba6bc1b5d186f5d8b13688414654fefad81af6f60e5561ff8807e4c8a1cc5eba.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291671016902871,
+              "sha256": "83261b3f67bf9821ffdc35964c77e0ed66c9f517d78c05239076b62f19c1f7a4"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/c66f11fd8f8348cbe84de105c1a68a21206f23620a0e9c2dad24cdeb8f3bd628.json",
+              "bytes": 1883,
+              "mtimeNs": 1792291671421916311,
+              "sha256": "0cf12e875bdad4580ca57aea5a91fc9e0ea5189b975df8c76c00098305598f0c"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/c66f11fd8f8348cbe84de105c1a68a21206f23620a0e9c2dad24cdeb8f3bd628.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291671421037219,
+              "sha256": "41055da05e40c46a76ac770b54690a2d1579dff432f1630557e268ca25461035"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/fe61b7d0923651d8f575d8e5bdcfe0361506a4dd5dde455f7ddf874effd8828b.json",
+              "bytes": 1880,
+              "mtimeNs": 1792291671627509916,
+              "sha256": "145b7b6f7f8fc74030b85735fea2d89919a1f79c8128ae19affb187a2b4338b6"
+            },
+            {
+              "group": "catalogFeatures",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/fe61b7d0923651d8f575d8e5bdcfe0361506a4dd5dde455f7ddf874effd8828b.pt",
+              "bytes": 17961,
+              "mtimeNs": 1792291671626787034,
+              "sha256": "ca85aaeb1c4fda0d767aca96cf93433696f96f8bfe9abd7cb8eddb7ae49d92e2"
+            },
+            {
+              "group": "head",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v5-attempt-1/learned.pt",
+              "bytes": 563477,
+              "mtimeNs": 1792310016996007826,
+              "sha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b"
+            },
+            {
+              "group": "head",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json",
+              "bytes": 15019,
+              "mtimeNs": 1792310065924172012,
+              "sha256": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703"
+            },
+            {
+              "group": "head",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/fit/adapter.safetensors",
+              "bytes": 262313,
+              "mtimeNs": 1792323391672508533,
+              "sha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b"
+            },
+            {
+              "group": "head",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-qwen-fit-v1-attempt-1/public-demo-features.pt",
+              "bytes": 355705,
+              "mtimeNs": 1792318226805423142,
+              "sha256": "dbf8c335a533120f5220a19f88ad163e4984631e7d9a7e80e5894080d02af28e"
+            },
+            {
+              "group": "head",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-qwen-optimize-v2-attempt-1/raw-2500/head.pt",
+              "bytes": 2694037,
+              "mtimeNs": 1792318770966794154,
+              "sha256": "2ec600745b19086b4bedcc4f66c283b5870b65eebce43f8715f0e8cbb154ea56"
+            },
+            {
+              "group": "head",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/query-intent-gate-v3-fit-attempt-1/head.pt",
+              "bytes": 19597,
+              "mtimeNs": 1792323750132848190,
+              "sha256": "c524f37b2cbd9929bb34f45cb169523b6d143aa2062e40b3035caba27d9df92a"
+            },
+            {
+              "group": "model",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/blobs/3a/3acb9f38a41e3f05344c3255f717897c11421fbb6e5f97124ee1da869f15ad95",
+              "bytes": 5349771222,
+              "mtimeNs": 1792269838526084002,
+              "sha256": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd"
+            },
+            {
+              "group": "model",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/blobs/e6/e6f7e2e79e5580f4610b07cccd10b7da2284d09f0d25afd20d5c795d9366d69f",
+              "bytes": 600449850,
+              "mtimeNs": 1792269630091490796,
+              "sha256": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"
+            },
+            {
+              "group": "model",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/0435ae3f4b3c8b907f7359a2f8f7150d316f3435",
+              "bytes": 3331,
+              "mtimeNs": 1792269100774918757,
+              "sha256": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8"
+            },
+            {
+              "group": "model",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/d366fa524ccd8f4ed93a67c7857597dc56172b92",
+              "bytes": 123592,
+              "mtimeNs": 1792269630791813864,
+              "sha256": "dd023913fb87cfdae27fb11dcf695117c925833796ccac3c64117d6652d8ff1e"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/base.py",
+              "bytes": 4425,
+              "mtimeNs": 1792269022197629554,
+              "sha256": "63d8e58a4b6f8c0902719499c693647fbf486bbd5d22b09868a07d37e08c83d6"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/cache.py",
+              "bytes": 58349,
+              "mtimeNs": 1792269023292272899,
+              "sha256": "c96cb169fd5e0ec4584a162dd61dc62ab08ccdca03a9850f8a491ce6809145e6"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/gated_delta.py",
+              "bytes": 21102,
+              "mtimeNs": 1792269025658499348,
+              "sha256": "f69e837ea68641dbb06fdb5dcc024a9a7e1d9353f08ae58c05275253a0c39428"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_5.py",
+              "bytes": 20559,
+              "mtimeNs": 1792269033399125964,
+              "sha256": "851449fd9989d6bf4b3c4fed92ddc3be5f1e781eb2246f89c54d7eff2518d9c6"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_next.py",
+              "bytes": 17853,
+              "mtimeNs": 1792269033400326054,
+              "sha256": "67ca08a4d08cb7be124965e95399735e556f1eaeb21a16bc23cb88d1ac035e11"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/inference-parity.json",
+              "bytes": 1000,
+              "mtimeNs": 1792323433812441650,
+              "sha256": "1143a2c5d2931c811759bda0657fbe09d6e79a3d52ba75692153e127536dcd0d"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/serving.json",
+              "bytes": 2000,
+              "mtimeNs": 1792323433813776997,
+              "sha256": "0307f876f84154cff025e7473b76b52719f95b9dabdcc3009c7d81b464eed03b"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/backbone.py",
+              "bytes": 5244,
+              "mtimeNs": 1792269362445805352,
+              "sha256": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_function_adaptation.py",
+              "bytes": 33847,
+              "mtimeNs": 1792291591634907364,
+              "sha256": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_contract_v2.py",
+              "bytes": 9706,
+              "mtimeNs": 1792325843317057835,
+              "sha256": "2a1cc4cbda12d1c750cab62707ef398b69b41302ab841df9098b78a44f5160c0"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v2.py",
+              "bytes": 17324,
+              "mtimeNs": 1792325843317141253,
+              "sha256": "5dfa1e455d568884fcd72adea24d808522fcf7c712b55397e5dacc8115ed4875"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v3.py",
+              "bytes": 5645,
+              "mtimeNs": 1792327603581548477,
+              "sha256": "f1a4c0371745a9530f2d47b4bc3be732c718245d41c2c8a8fc61b45e5fc528d3"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v4.py",
+              "bytes": 4310,
+              "mtimeNs": 1792328890513806862,
+              "sha256": "1d977c06fa2d4a7db75ab5ec07e8de6604fec3716fa77b057a2e21024fa97b48"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v2.py",
+              "bytes": 26302,
+              "mtimeNs": 1792325843317212045,
+              "sha256": "a00573f724d33f4a2601158376bdecfc3cce7aec1c7aa8ebc3d42099a7a2f3b5"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v3.py",
+              "bytes": 11564,
+              "mtimeNs": 1792327603581641311,
+              "sha256": "6fb9626541a20d5ab9c55b7a1b930e7e57f107ff9dd70ac36493829621ecbc61"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v4.py",
+              "bytes": 14227,
+              "mtimeNs": 1792328890513931446,
+              "sha256": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_capture_v1.py",
+              "bytes": 6417,
+              "mtimeNs": 1792325843318569683,
+              "sha256": "a071dffce1fc51a73bd0143c562b7a68a11d84c7653271e788f8149f9cbf1094"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_features_v2.py",
+              "bytes": 13398,
+              "mtimeNs": 1792325843319202605,
+              "sha256": "16656aefd43f2f8b9cec8438bdfcf64ad11b4131eb4684db5c609d2140756418"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_scoring_v1.py",
+              "bytes": 1958,
+              "mtimeNs": 1792325843319739652,
+              "sha256": "8606cfd91b5c551f78fd12f805b9ed35c5c5b14760f37736e95f1b1e87ef748f"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_portless_http_v1.py",
+              "bytes": 993,
+              "mtimeNs": 1792338679463680326,
+              "sha256": "cf7d8025af0ec9ba302451fd7d7771ecab2e39ca8a6f993b8d19d783d94fde78"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_prefix_engine_v1.py",
+              "bytes": 9540,
+              "mtimeNs": 1792338679462842612,
+              "sha256": "ef23e048d7539b4067acc426c4e0273c1073d75d06fe9f03b9a79d8990269dcd"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_prefix_runtime_v1.py",
+              "bytes": 7055,
+              "mtimeNs": 1792338679463051947,
+              "sha256": "9f67d2e9e6fe6590154897ed8b41cfa4a54d8322f52de22af541b993d735ac66"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_projection_runtime_v1.py",
+              "bytes": 15402,
+              "mtimeNs": 1792338679462626110,
+              "sha256": "cbb052fff219ecf0e8ab54f0ed4fb4575cd1d99c19bda5f2066e366257724f15"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_route_projection_v2.py",
+              "bytes": 10759,
+              "mtimeNs": 1792338679463507491,
+              "sha256": "d1d45fffe658860ba63b0f492e2ce836856e62956bd662cc0d224706ae293316"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_query_prefix_reuse_v1.py",
+              "bytes": 19913,
+              "mtimeNs": 1792311740539905047,
+              "sha256": "ff0d370779000a28d534b1fc0870d86ff69512d28e4758602363428b5233d68f"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_qwen_lexical_choice_inputs_v2.py",
+              "bytes": 8534,
+              "mtimeNs": 1792325843322774096,
+              "sha256": "6f0eba923ee97f2f919af9982f6e9458b78d6d22b2f38f8366c43794a3e2ee5b"
+            },
+            {
+              "group": "source",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/synthetic_history_v1/demo-people.json",
+              "bytes": 43087,
+              "mtimeNs": 1792325843334467995,
+              "sha256": "4737c785313b3200798133679ee914aae638d5b03f46b052ecf77451f75f5b1d"
+            },
+            {
+              "group": "tokenizer",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/blobs/45/458bcbf483ed805b4297af928f717e64bd00c633a07be5fae5717cacbd48e2ef",
+              "bytes": 19989343,
+              "mtimeNs": 1792269735560273234,
+              "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+            },
+            {
+              "group": "tokenizer",
+              "path": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/a068e2468cff426a9b105006e74e044030a6faf4",
+              "bytes": 1139,
+              "mtimeNs": 1792269737945427845,
+              "sha256": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182"
+            }
+          ],
+          "frozen927HashesSha256": "16176ff63bd8b0b5bfcfe561eb6c9bd51c61e503b15f545d57add5d0e42a7d17",
+          "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+          "assetKey": "db1bacb1b216529b35943b5087b0adbfd730a0eca30dca08a328d1aeb00b8499",
+          "prefixLiteralSha256": "83e7a40c0121fd65d588e994b74513d235a01e139d2ae67098dce8a9ad27ea71",
+          "withholdBoundaryTokens": 1,
+          "cacheMode": "frozen-base-copy-adapter-disabled",
+          "logicalAssetAliases": {
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/model-00001-of-00002.safetensors": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/blobs/3a/3acb9f38a41e3f05344c3255f717897c11421fbb6e5f97124ee1da869f15ad95",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/model-00002-of-00002.safetensors": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/blobs/e6/e6f7e2e79e5580f4610b07cccd10b7da2284d09f0d25afd20d5c795d9366d69f",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/config.json": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/0435ae3f4b3c8b907f7359a2f8f7150d316f3435",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/model.safetensors.index.json": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/d366fa524ccd8f4ed93a67c7857597dc56172b92",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/tokenizer.json": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/blobs/45/458bcbf483ed805b4297af928f717e64bd00c633a07be5fae5717cacbd48e2ef",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/tokenizer_config.json": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/a068e2468cff426a9b105006e74e044030a6faf4",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/base.py": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/base.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/cache.py": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/cache.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/gated_delta.py": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/gated_delta.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_5.py": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_5.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_next.py": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_next.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/inference-parity.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/inference-parity.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/serving.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/serving.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/backbone.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/backbone.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_function_adaptation.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_function_adaptation.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_contract_v2.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_contract_v2.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v2.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v2.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v3.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v3.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v4.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_engine_v4.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v2.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v2.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v3.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v3.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v4.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_adapter_runtime_v4.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_capture_v1.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_capture_v1.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_features_v2.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_features_v2.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_scoring_v1.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_choice_scoring_v1.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_portless_http_v1.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_portless_http_v1.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_prefix_engine_v1.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_prefix_engine_v1.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_prefix_runtime_v1.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_prefix_runtime_v1.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_projection_runtime_v1.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_query_projection_runtime_v1.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_route_projection_v2.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_persona_route_projection_v2.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_query_prefix_reuse_v1.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_query_prefix_reuse_v1.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_qwen_lexical_choice_inputs_v2.py": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_qwen_lexical_choice_inputs_v2.py",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/synthetic_history_v1/demo-people.json": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/synthetic_history_v1/demo-people.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/03cccf06fb0190c3fd3cde5ee1e16759276b37d8d1a566f67543f7f93dd0c468.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/03cccf06fb0190c3fd3cde5ee1e16759276b37d8d1a566f67543f7f93dd0c468.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/03cccf06fb0190c3fd3cde5ee1e16759276b37d8d1a566f67543f7f93dd0c468.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/03cccf06fb0190c3fd3cde5ee1e16759276b37d8d1a566f67543f7f93dd0c468.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/1c1f2c07d2f0210c7d91134ed05dd51c81222718b81c3d1dfaef06e97044dda0.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/1c1f2c07d2f0210c7d91134ed05dd51c81222718b81c3d1dfaef06e97044dda0.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/1c1f2c07d2f0210c7d91134ed05dd51c81222718b81c3d1dfaef06e97044dda0.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/1c1f2c07d2f0210c7d91134ed05dd51c81222718b81c3d1dfaef06e97044dda0.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/23fb7808c08f30772abc27b9cfb0649acdab453f5dcb743283e5b590238f2e82.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/23fb7808c08f30772abc27b9cfb0649acdab453f5dcb743283e5b590238f2e82.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/23fb7808c08f30772abc27b9cfb0649acdab453f5dcb743283e5b590238f2e82.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/23fb7808c08f30772abc27b9cfb0649acdab453f5dcb743283e5b590238f2e82.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/2b82ac1875fc96c2a361f3e60f0d4c7928ef2fd128f96b8ccbbee24a44ff4ec0.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/2b82ac1875fc96c2a361f3e60f0d4c7928ef2fd128f96b8ccbbee24a44ff4ec0.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/2b82ac1875fc96c2a361f3e60f0d4c7928ef2fd128f96b8ccbbee24a44ff4ec0.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/2b82ac1875fc96c2a361f3e60f0d4c7928ef2fd128f96b8ccbbee24a44ff4ec0.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/39896e811d4a44c7868bd4a94847de4901d205508028053c3971de474faa2aaa.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/39896e811d4a44c7868bd4a94847de4901d205508028053c3971de474faa2aaa.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/39896e811d4a44c7868bd4a94847de4901d205508028053c3971de474faa2aaa.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/39896e811d4a44c7868bd4a94847de4901d205508028053c3971de474faa2aaa.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4a4f2e45d969192deb5b2d17544c8b1e34e54137abecf179d6c71ae6009d99ae.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4a4f2e45d969192deb5b2d17544c8b1e34e54137abecf179d6c71ae6009d99ae.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4a4f2e45d969192deb5b2d17544c8b1e34e54137abecf179d6c71ae6009d99ae.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4a4f2e45d969192deb5b2d17544c8b1e34e54137abecf179d6c71ae6009d99ae.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4b414ad72ae06261f61670b5080e62c14072ce93a9543147105ba54cc537367a.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4b414ad72ae06261f61670b5080e62c14072ce93a9543147105ba54cc537367a.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4b414ad72ae06261f61670b5080e62c14072ce93a9543147105ba54cc537367a.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/4b414ad72ae06261f61670b5080e62c14072ce93a9543147105ba54cc537367a.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/525715fc2611beada4971894d10e774f0c1062b6f6505caad8b684a366d19abe.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/525715fc2611beada4971894d10e774f0c1062b6f6505caad8b684a366d19abe.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/525715fc2611beada4971894d10e774f0c1062b6f6505caad8b684a366d19abe.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/525715fc2611beada4971894d10e774f0c1062b6f6505caad8b684a366d19abe.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/66dfe3bc82c674c67b2646ab2cf48d49306412c1df7e4edb1dbba2ee2e85bc2c.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/66dfe3bc82c674c67b2646ab2cf48d49306412c1df7e4edb1dbba2ee2e85bc2c.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/66dfe3bc82c674c67b2646ab2cf48d49306412c1df7e4edb1dbba2ee2e85bc2c.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/66dfe3bc82c674c67b2646ab2cf48d49306412c1df7e4edb1dbba2ee2e85bc2c.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/7d48a1dd94fc08bb6a68a1e462cacec1c7fb9862e99a63f3b3e91b478362884d.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/7d48a1dd94fc08bb6a68a1e462cacec1c7fb9862e99a63f3b3e91b478362884d.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/7d48a1dd94fc08bb6a68a1e462cacec1c7fb9862e99a63f3b3e91b478362884d.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/7d48a1dd94fc08bb6a68a1e462cacec1c7fb9862e99a63f3b3e91b478362884d.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8226b737e46c8f00baf55e820566b48983a09c10f3ee18a88f9eb6116c956321.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8226b737e46c8f00baf55e820566b48983a09c10f3ee18a88f9eb6116c956321.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8226b737e46c8f00baf55e820566b48983a09c10f3ee18a88f9eb6116c956321.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8226b737e46c8f00baf55e820566b48983a09c10f3ee18a88f9eb6116c956321.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8533f03a8cf8c9e290d14b8a0627c6ceeeaca34c0711262b7c4349b41ab4072b.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8533f03a8cf8c9e290d14b8a0627c6ceeeaca34c0711262b7c4349b41ab4072b.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8533f03a8cf8c9e290d14b8a0627c6ceeeaca34c0711262b7c4349b41ab4072b.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/8533f03a8cf8c9e290d14b8a0627c6ceeeaca34c0711262b7c4349b41ab4072b.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/93609dbff8a6aab036dc576b7a4b3c2f433053b47e2ef2393d42a129800442aa.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/93609dbff8a6aab036dc576b7a4b3c2f433053b47e2ef2393d42a129800442aa.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/93609dbff8a6aab036dc576b7a4b3c2f433053b47e2ef2393d42a129800442aa.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/93609dbff8a6aab036dc576b7a4b3c2f433053b47e2ef2393d42a129800442aa.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/ba6bc1b5d186f5d8b13688414654fefad81af6f60e5561ff8807e4c8a1cc5eba.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/ba6bc1b5d186f5d8b13688414654fefad81af6f60e5561ff8807e4c8a1cc5eba.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/ba6bc1b5d186f5d8b13688414654fefad81af6f60e5561ff8807e4c8a1cc5eba.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/ba6bc1b5d186f5d8b13688414654fefad81af6f60e5561ff8807e4c8a1cc5eba.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/c66f11fd8f8348cbe84de105c1a68a21206f23620a0e9c2dad24cdeb8f3bd628.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/c66f11fd8f8348cbe84de105c1a68a21206f23620a0e9c2dad24cdeb8f3bd628.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/c66f11fd8f8348cbe84de105c1a68a21206f23620a0e9c2dad24cdeb8f3bd628.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/c66f11fd8f8348cbe84de105c1a68a21206f23620a0e9c2dad24cdeb8f3bd628.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/fe61b7d0923651d8f575d8e5bdcfe0361506a4dd5dde455f7ddf874effd8828b.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/fe61b7d0923651d8f575d8e5bdcfe0361506a4dd5dde455f7ddf874effd8828b.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/fe61b7d0923651d8f575d8e5bdcfe0361506a4dd5dde455f7ddf874effd8828b.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/features/catalog/fe61b7d0923651d8f575d8e5bdcfe0361506a4dd5dde455f7ddf874effd8828b.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v5-attempt-1/learned.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v5-attempt-1/learned.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/query-intent-gate-v3-fit-attempt-1/head.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/query-intent-gate-v3-fit-attempt-1/head.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/fit/adapter.safetensors": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-choice-train-v1-attempt-1/fit/adapter.safetensors",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-qwen-optimize-v2-attempt-1/raw-2500/head.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-qwen-optimize-v2-attempt-1/raw-2500/head.pt",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-qwen-fit-v1-attempt-1/public-demo-features.pt": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/persona-qwen-fit-v1-attempt-1/public-demo-features.pt"
+          },
+          "logicalAssetAliasesSha256": "86627e6ee859a738c3a1a9cc32c7313edcfc7c39f1505d947739c9b957dc2926"
+        },
+        "fullRequestTextAndTokenIdsPreserved": true,
+        "dynamicSuffixFreshPerRequest": true,
+        "noQueryFeatureOrScoreOrRankingOrAnswerCache": false,
+        "featureVectorsInRequestEvidenceOnly": true,
+        "sourceSha256": "ef23e048d7539b4067acc426c4e0273c1073d75d06fe9f03b9a79d8990269dcd",
+        "scope": "unused constant prefix preparation only; fixed ordinary full-query encoder",
+        "noScoreRankingOrAnswerCache": true,
+        "queryFeatureCachePolicy": "lru32",
+        "failedPrefixBranchDisabled": true
+      },
+      "routeProjectionCandidate": {
+        "version": "persona-query-selected-projection-engine.v1",
+        "defaultMode": "selected",
+        "availableModes": [
+          "selected"
+        ],
+        "queryEncodingModes": [
+          "ordinary"
+        ],
+        "queryFeatureCacheModes": [
+          "lru32"
+        ],
+        "defaultQueryEncoding": "ordinary",
+        "defaultQueryFeatureCache": "lru32",
+        "failedPrefixBranchDisabled": true,
+        "unusedPrefixPreparationRetainedForMemoryAccounting": true,
+        "projectionSourceSha256": "d1d45fffe658860ba63b0f492e2ce836856e62956bd662cc0d224706ae293316",
+        "preparation": {
+          "version": "persona-selected-route-projection.v2",
+          "sourceSha256": "d1d45fffe658860ba63b0f492e2ce836856e62956bd662cc0d224706ae293316",
+          "quantizedClassSourceSha256": "8ca4574a212f14cbec4c446826474583ef0bf1e2cb1630574fd730c77af03b33",
+          "routeTokenIds": [
+            49755,
+            3641,
+            8129,
+            25372,
+            16002,
+            84503,
+            2430,
+            27056,
+            3618,
+            41581,
+            64923,
+            22787,
+            8697,
+            57364,
+            53979,
+            41198
+          ],
+          "specification": {
+            "bits": 4,
+            "groupSize": 64,
+            "mode": "affine",
+            "inputDimensions": 4096,
+            "vocabularyRows": 248320,
+            "ordinaryBias": false
+          },
+          "selectedTensorReceipts": {
+            "weight": {
+              "shape": [
+                16,
+                512
+              ],
+              "dtype": "mlx.core.uint32",
+              "sha256": "752c771e4c65d8f0a0401149bd0a821e88453d8e7150c34a4a960f53fc68c71a"
+            },
+            "scales": {
+              "shape": [
+                16,
+                64
+              ],
+              "dtype": "mlx.core.bfloat16",
+              "sha256": "64d56ca4f720677c0ed2bacafb9a72647ac9aeb179f3f0ea1437907662ccba13"
+            },
+            "biases": {
+              "shape": [
+                16,
+                64
+              ],
+              "dtype": "mlx.core.bfloat16",
+              "sha256": "211b066b123c43146a7159a1cc92ad3e8e76411f77bb9f3f5467e672f6e219df"
+            }
+          },
+          "preparationMs": 7.126208976842463,
+          "headRequantizedOrDequantized": false,
+          "modelOrHeadReplaced": false,
+          "queryOrResponseFeaturesCached": false,
+          "CPUFixture": false,
+          "nativeExactnessMeasured": false,
+          "sourceInvariance": "identity/config checks per call; selected source/cache content hashes on explicit full check; caller retains full927 before/after proof"
+        },
+        "queryFeaturePreencoding": {
+          "version": "persona-query-selected-projection-runtime.v1",
+          "scope": "exact public default Browse query/budget/guard feature preencoding only",
+          "uniquePublicFullQueryKeys": 8,
+          "publicProfiles": 10,
+          "encodingModes": [
+            "ordinary"
+          ],
+          "rows": [
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+              "originalFormatterTokenSha256": "0fed3bd7b79b389ebe9cf41deb42fa0778374a8895edcacf5556ffd9f9b51f3d",
+              "originalFormatterTokens": 64,
+              "wholeTextSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+              "wholeTokenSha256": "0fed3bd7b79b389ebe9cf41deb42fa0778374a8895edcacf5556ffd9f9b51f3d",
+              "wholeRequestTokens": 64,
+              "featureSha256": "3d8922f69c0e65ac2a558fa0aa61bb85365c73dd7c8e22c1783ceacb24bd1459",
+              "queryFeatureCacheKeySha256": "709a6c6b5de06347b419e9f547828511f9296756a22f4fb2c907abb483672b8f",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 191.25604105647653,
+              "publicSourcePersonIds": [
+                "bob",
+                "maya"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            },
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "93341113627ea2cf68653a2a2e318caa7ad58df0e1ebf504a4db1bc33c425963",
+              "originalFormatterTokenSha256": "4857b4b93bc7f7b0eb374be80cac0027243d335974d5507deed4f8ae2ffbf875",
+              "originalFormatterTokens": 64,
+              "wholeTextSha256": "93341113627ea2cf68653a2a2e318caa7ad58df0e1ebf504a4db1bc33c425963",
+              "wholeTokenSha256": "4857b4b93bc7f7b0eb374be80cac0027243d335974d5507deed4f8ae2ffbf875",
+              "wholeRequestTokens": 64,
+              "featureSha256": "44f389d9718772b3b16cc9e3ee24842c78a4be116a48f454d1fabed55e7b9f24",
+              "queryFeatureCacheKeySha256": "11fdb20cafcf97622699316957cb6cb9179151bb25f2ab4bad7c9c3ed956787d",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 178.23370802216232,
+              "publicSourcePersonIds": [
+                "priya"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            },
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "fe488cef8fac17fa07699186b4249ad2307b31a9005c03213b467b0b45f4ad98",
+              "originalFormatterTokenSha256": "4cd7b1c3f20eb87e85c3b38c7dbf8301ade44b4a6add37e7921aff8bec086b67",
+              "originalFormatterTokens": 65,
+              "wholeTextSha256": "fe488cef8fac17fa07699186b4249ad2307b31a9005c03213b467b0b45f4ad98",
+              "wholeTokenSha256": "4cd7b1c3f20eb87e85c3b38c7dbf8301ade44b4a6add37e7921aff8bec086b67",
+              "wholeRequestTokens": 65,
+              "featureSha256": "4ed470585708b2e19759f0ab57559310c3c69fc927af3b5a8cee6a2714145b05",
+              "queryFeatureCacheKeySha256": "70a8a1f172693f047b8a8f1b13c77af0deb4dc951a917a070794077a84f3878d",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 172.8603329975158,
+              "publicSourcePersonIds": [
+                "lena"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            },
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "9ec8d81e6dba1087aaaa6ff9547100731c35bf7e774aea03666c5cd2a6bac86a",
+              "originalFormatterTokenSha256": "2b57e153d3ab43b6e3ce83d75aa32d53b70b235cd12262ec70eb5afb7b943f4e",
+              "originalFormatterTokens": 65,
+              "wholeTextSha256": "9ec8d81e6dba1087aaaa6ff9547100731c35bf7e774aea03666c5cd2a6bac86a",
+              "wholeTokenSha256": "2b57e153d3ab43b6e3ce83d75aa32d53b70b235cd12262ec70eb5afb7b943f4e",
+              "wholeRequestTokens": 65,
+              "featureSha256": "437e09d13f6b904e5d7860197c6c51d6e21552e1915238a033e766a239494c42",
+              "queryFeatureCacheKeySha256": "f58f7a0aace4eea1d6fad082384fd5f3e39cab5bd89ee94295fa4d4b2679c04e",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 172.8125000372529,
+              "publicSourcePersonIds": [
+                "june",
+                "sam"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            },
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "7e25cc34d1c81bed76a26b5441471c83376b5d81e882d15780803cbd8db42cd1",
+              "originalFormatterTokenSha256": "0453a20781a6204932e88c3e98c5b59c262d98150d479d0fa56bdb2963cfcd2e",
+              "originalFormatterTokens": 64,
+              "wholeTextSha256": "7e25cc34d1c81bed76a26b5441471c83376b5d81e882d15780803cbd8db42cd1",
+              "wholeTokenSha256": "0453a20781a6204932e88c3e98c5b59c262d98150d479d0fa56bdb2963cfcd2e",
+              "wholeRequestTokens": 64,
+              "featureSha256": "ad21fdddcee7033f3b0eaa35d630537bd988e33abcf70c0ef4dcd8ad1f0a6aa8",
+              "queryFeatureCacheKeySha256": "1409d0f9d135fab2a078a9670fdec7853c15910b3233214c67ea4c7b85703a5a",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 178.01245907321572,
+              "publicSourcePersonIds": [
+                "grace"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            },
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "fd69027011a234c19c5f1a987f19345565d72a5dba1c51d4ea34220d749602af",
+              "originalFormatterTokenSha256": "db9bab0b5e04f09fe212775354121756c09b3580924b924781d11ba791b6dfcf",
+              "originalFormatterTokens": 64,
+              "wholeTextSha256": "fd69027011a234c19c5f1a987f19345565d72a5dba1c51d4ea34220d749602af",
+              "wholeTokenSha256": "db9bab0b5e04f09fe212775354121756c09b3580924b924781d11ba791b6dfcf",
+              "wholeRequestTokens": 64,
+              "featureSha256": "9606d6b34210a9f091399b1d928c4f83ae6f5ca8dc7ffbcd7d017fb41276ee78",
+              "queryFeatureCacheKeySha256": "2fb05f9f124f5c349fe4c6c9bbb1027543c366a66b7103a84b5e9a90148926a9",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 176.13774992059916,
+              "publicSourcePersonIds": [
+                "ana"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            },
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "57e4c6447b10af1af8ccae137081798faf7fbd96403d0a68d1d92b825eab6b70",
+              "originalFormatterTokenSha256": "319b27ae670b3bd549439080c205c74407de22131c94e1b1a436c70610877d60",
+              "originalFormatterTokens": 64,
+              "wholeTextSha256": "57e4c6447b10af1af8ccae137081798faf7fbd96403d0a68d1d92b825eab6b70",
+              "wholeTokenSha256": "319b27ae670b3bd549439080c205c74407de22131c94e1b1a436c70610877d60",
+              "wholeRequestTokens": 64,
+              "featureSha256": "df4d13d2270d70cb319e99db1c38be673e8cfc6466582fc078714db0363218cd",
+              "queryFeatureCacheKeySha256": "0ed1d9beef0949223a99365eec05b185279c554cbff7475037ecafc070cf6427",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 179.9146248959005,
+              "publicSourcePersonIds": [
+                "rosa"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            },
+            {
+              "queryEncodingMode": "ordinary",
+              "originalFormatterTextSha256": "50409fbd5ffc96a52d8bc9424a98f328008dbca766889ae9fa732a5bc33ac113",
+              "originalFormatterTokenSha256": "7eb899f74dd57acdbbfe9ca09f58555dba50e1a06763eac4a8d79925d5b0fb77",
+              "originalFormatterTokens": 65,
+              "wholeTextSha256": "50409fbd5ffc96a52d8bc9424a98f328008dbca766889ae9fa732a5bc33ac113",
+              "wholeTokenSha256": "7eb899f74dd57acdbbfe9ca09f58555dba50e1a06763eac4a8d79925d5b0fb77",
+              "wholeRequestTokens": 65,
+              "featureSha256": "6c1e0fb05ef7aa93b225d7e4b4167cd0703853dbc8b197b8415eb39844116893",
+              "queryFeatureCacheKeySha256": "f9f90ebafdbb2e81fe45834bab988387620d099e41b9a2be84376bc8100f5b89",
+              "queryFeatureCacheHit": false,
+              "elapsedMs": 176.86350003350526,
+              "publicSourcePersonIds": [
+                "felix"
+              ],
+              "dtype": "torch.float32",
+              "shape": [
+                1,
+                4096
+              ],
+              "nativeBackboneForwardCalls": 1
+            }
+          ],
+          "encodingMs": 1426.7147079808637,
+          "nativeBackboneForwardCalls": 8,
+          "queryFeatureCacheEntries": 8,
+          "capacity": 32,
+          "scoresRankingsResponsesOrRawTextCached": false,
+          "cachedValues": "normalized query4096 features plus integrity hash",
+          "actualQueriesBudgetsHardRequirementsPreserved": true,
+          "defaultQueryFeatureCacheMode": "lru32",
+          "cacheModeBeforePracticalPolicy": "off"
+        },
+        "queryCacheStoresFeaturesOnly": true,
+        "scoreRankingAnswerCache": false,
+        "compactQualityChangeUnvalidated": true,
+        "nativeProjectionExactnessOrSpeedNotImplied": true,
+        "portlessHTTP": {
+          "version": "persona-local-portless-http.v1",
+          "sourceSha256": "cf7d8025af0ec9ba302451fd7d7771ecab2e39ca8a6f993b8d19d783d94fde78",
+          "allowedOrigins": [
+            "http://127.0.0.1:4313",
+            "http://localhost:4313",
+            "http://shop.dubhacks.localhost:1356"
+          ]
+        }
+      },
+      "practicalServing": {
+        "version": "persona-practical-engine.v1",
+        "policy": {
+          "queryEncoding": "ordinary",
+          "routeProjection": "selected",
+          "queryFeatureCache": "lru32",
+          "queryFeatureCacheCapacity": 32,
+          "defaultPublicQueryKeysPreencoded": 8,
+          "prefixReuseEnabled": false,
+          "compactQueryEnabled": false,
+          "scoresRankingsOrAnswersCached": false,
+          "freshFusionVariantSelectionAndCopy": true,
+          "modelPromotion": false,
+          "qualityGateOverride": false,
+          "conditioningQualityValidated": false
+        },
+        "sourceSha256": "5c9d7e5e37440a0828a63805089df75194c7f57f693e1a38865ff83c6d65498a",
+        "measurementControlsExposed": false,
+        "queryFeatureDisclosure": "Exact full original query/budget/guards+encoder/model binding; features only. Hits report native0; misses freshB1. Every request recomputes fusion, route scores, source variants and neural copy.",
+        "coldUnknownProfileDisclosure": "New persona/history may require one-time full native profile capture; separately measured.",
+        "performanceScope": "measured development configuration; prior model quality failed, V4 conditioning unvalidated; no model promotion"
+      }
+    },
+    "expandedCatalog": {
+      "version": "expanded-personalized-resident-engine.v1",
+      "products": 35,
+      "variants": 105,
+      "catalogSha256": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d",
+      "bindingManifestSha256": "971f30d146415abffac4b0aee59827b04d7c06458a38ae9bcd0cd22d46539088",
+      "originalLoRAFamilies": 16,
+      "newSkuLoRATrainingClaim": false,
+      "strictSpecificSearchEligibilityBeforePersonalization": true,
+      "copy": {
+        "version": "expanded-public-fact-parallel-copy.v1",
+        "kind": "fresh-parallel-head",
+        "assetSha256": {
+          "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-parallel-copy-fit-v1-attempt-1/serving-manifest.json": "2279a7997a63678892368445a357d9c8f65402b14fee4a4c933ff4c91b40b1f5",
+          "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-parallel-copy-fit-v1-attempt-1/head.pt": "902153a4bc490c06073e5a38c00b5b6cd01d64ce5caf93064fb8106997084905",
+          "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-parallel-copy-fit-v1-attempt-1/public-runtime-features.json": "f713523194d5d30739ec240480b7f270d784015cedb8d510b00e587d9fa841bf",
+          "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/features.pt": "569c4af5fc5b6524cef4d07619f8601f6bc3a3ee84296832cf548a3e2832b81f",
+          "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/report.json": "09a67f18d62074475e3400ffee71ee9cb3d9a8d9d6e56fa79638de0a0b1c7cfc",
+          "/Users/lukas/Documents/Projects/dubhacks-2026/packages/contracts/data/expanded-store-catalog-v1.json": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d"
+        },
+        "checkpointSha256": "902153a4bc490c06073e5a38c00b5b6cd01d64ce5caf93064fb8106997084905",
+        "featuresSha256": "569c4af5fc5b6524cef4d07619f8601f6bc3a3ee84296832cf548a3e2832b81f",
+        "featureBundleFile": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/features.pt",
+        "publicFactsSha256": "f713523194d5d30739ec240480b7f270d784015cedb8d510b00e587d9fa841bf",
+        "catalogSha256": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d",
+        "nativeProvenance": {
+          "evidenceSource": "native-frozen-qwen",
+          "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+          "copyAdapterEnabled": false,
+          "rankAdapterEnabled": false,
+          "nativeForwards": 105,
+          "truncatedRows": 0,
+          "catalogSha256": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d",
+          "frozenTensorCount": 927,
+          "frozen927HashesUnchanged": true,
+          "shutdownVerified": true,
+          "nativeReceiptFile": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/report.json",
+          "nativeReceiptSha256": "09a67f18d62074475e3400ffee71ee9cb3d9a8d9d6e56fa79638de0a0b1c7cfc"
+        },
+        "trainingScope": "TRAIN-ALL expanded public catalog synthetic copy; no heldout quality claim",
+        "heldoutBindings": 0,
+        "teacherStringsReadAtServing": false,
+        "headSlots": 14,
+        "vocabularySize": 153,
+        "style": "plain",
+        "productCount": 35,
+        "bindingCount": 105,
+        "manifest": {
+          "version": "expanded-public-fact-parallel-copy.v1",
+          "scope": "TRAIN-ALL expanded public catalog synthetic copy; no heldout quality claim",
+          "ready": true,
+          "catalogSha256": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d",
+          "catalogFile": "/Users/lukas/Documents/Projects/dubhacks-2026/packages/contracts/data/expanded-store-catalog-v1.json",
+          "headFile": "head.pt",
+          "headSha256": "902153a4bc490c06073e5a38c00b5b6cd01d64ce5caf93064fb8106997084905",
+          "publicFile": "public-runtime-features.json",
+          "publicSha256": "f713523194d5d30739ec240480b7f270d784015cedb8d510b00e587d9fa841bf",
+          "featureBundleFile": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/features.pt",
+          "featureBundleSha256": "569c4af5fc5b6524cef4d07619f8601f6bc3a3ee84296832cf548a3e2832b81f",
+          "nativeReceiptFile": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/report.json",
+          "nativeReceiptSha256": "09a67f18d62074475e3400ffee71ee9cb3d9a8d9d6e56fa79638de0a0b1c7cfc",
+          "sourceSha256": {
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_expanded_parallel_copy_v1.py": "e1891273cd59a743885909b7fa385a74b1e12be3854e8523c21f9e144c302cf8",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_parallel_text_data_v1.py": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_parallel_text_head_v1.py": "dd534fed7a956ac34c3533976f274ccf0aa1f564516ab9b86c36c2e87f8fa3d8",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_copy_data_v2.py": "ac424d601d8dc97d480d3c22ed0175de002e46281c7c35f9054f00bb32a8082e",
+            "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b"
+          },
+          "allBindingsSupervised": true,
+          "heldoutQualityClaim": false,
+          "runtimeTeacherLookup": false,
+          "productCount": 35,
+          "bindingCount": 105,
+          "optimizerUpdates": 400,
+          "reloadExactSlotParity": true,
+          "trainReplay": {
+            "fields": 1575,
+            "accepted": 1575,
+            "exact": 1575,
+            "slotIdsSha256": "65b96a26f35ef4d3196ce2f7f5d89f990f49cfcc312736bc844cf204d7fbf0f5"
+          }
+        }
+      },
+      "modelPromotion": false,
+      "qualityUnvalidated": true,
+      "querySuggestionPreencoding": {
+        "queries": [
+          "Rain jackets",
+          "Work bags",
+          "Browse the store"
+        ],
+        "keys": [
+          {
+            "wholeQueryTextSha256": "711c7eb0a2f827c4eb47a59c2b292d756fe9d0ac9a7ce48e965be2140c8c0164",
+            "query": "Rain jackets",
+            "actualItemBudget": 90,
+            "native": {
+              "tokenizeMs": 0.13266701716929674,
+              "forwardMs": 179.5794579666108,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "bob",
+              "maya"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "be0b67a9f3b5ccc2fb3171f670d675070104d448d5052320c8dae89d6cca1e69",
+            "query": "Work bags",
+            "actualItemBudget": 90,
+            "native": {
+              "tokenizeMs": 0.08737505413591862,
+              "forwardMs": 178.81787498481572,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "bob",
+              "maya"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+            "query": "Browse the store",
+            "actualItemBudget": 90,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.2138750860467553,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "bob",
+              "maya"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "afe9a23c93747ce527c3ac99b9c07c3cfaefb318d47812196d8f3816eabbc70f",
+            "query": "Rain jackets",
+            "actualItemBudget": 55,
+            "native": {
+              "tokenizeMs": 0.08283404167741537,
+              "forwardMs": 178.62120794598013,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "priya"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "d1fb1a67b67552646e8dd558640a6c697eee26104c768df1916f15a4504cf4ae",
+            "query": "Work bags",
+            "actualItemBudget": 55,
+            "native": {
+              "tokenizeMs": 0.1080420333892107,
+              "forwardMs": 178.2719170441851,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "priya"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "93341113627ea2cf68653a2a2e318caa7ad58df0e1ebf504a4db1bc33c425963",
+            "query": "Browse the store",
+            "actualItemBudget": 55,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.33362500835210085,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "priya"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "79a739da15d9835cbca51b34eac574006feae536b5565c9293e577e114a908d4",
+            "query": "Rain jackets",
+            "actualItemBudget": 150,
+            "native": {
+              "tokenizeMs": 0.0752920750528574,
+              "forwardMs": 171.3699579704553,
+              "batchRows": 1,
+              "paddedTokensPerRow": 64,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 64,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "lena"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "48f390083c4b326988651b7ff97c89bdff836b17ca3c3e0042866702d3a86633",
+            "query": "Work bags",
+            "actualItemBudget": 150,
+            "native": {
+              "tokenizeMs": 0.18258299678564072,
+              "forwardMs": 171.7031670268625,
+              "batchRows": 1,
+              "paddedTokensPerRow": 64,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 64,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "lena"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "fe488cef8fac17fa07699186b4249ad2307b31a9005c03213b467b0b45f4ad98",
+            "query": "Browse the store",
+            "actualItemBudget": 150,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.2042920095846057,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "lena"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "3139a9a830b2b2d7546b89d37a1a4cbcb547c07c0179eaa4a2d5acdf37a903ee",
+            "query": "Rain jackets",
+            "actualItemBudget": 115,
+            "native": {
+              "tokenizeMs": 0.08670904207974672,
+              "forwardMs": 171.1250419029966,
+              "batchRows": 1,
+              "paddedTokensPerRow": 64,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 64,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "june",
+              "sam"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "297f15ae0d1034ed0e8ef4d8b86c1a11f243751438241ca3c328ebc62513b0f9",
+            "query": "Work bags",
+            "actualItemBudget": 115,
+            "native": {
+              "tokenizeMs": 0.11591706424951553,
+              "forwardMs": 171.39716597739607,
+              "batchRows": 1,
+              "paddedTokensPerRow": 64,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 64,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "june",
+              "sam"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "9ec8d81e6dba1087aaaa6ff9547100731c35bf7e774aea03666c5cd2a6bac86a",
+            "query": "Browse the store",
+            "actualItemBudget": 115,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.19337504636496305,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "june",
+              "sam"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "882819fbd3e0c3e174ea5ec6df7ee8f98f09a76bb7200cee3e384bf474f34d54",
+            "query": "Rain jackets",
+            "actualItemBudget": 65,
+            "native": {
+              "tokenizeMs": 0.08224998600780964,
+              "forwardMs": 177.92837508022785,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "grace"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "baf29a0d3fa478860b981428b9e704983f4af69d62a7fdebe8912fb24230d272",
+            "query": "Work bags",
+            "actualItemBudget": 65,
+            "native": {
+              "tokenizeMs": 0.12345798313617706,
+              "forwardMs": 178.02849994041026,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "grace"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "7e25cc34d1c81bed76a26b5441471c83376b5d81e882d15780803cbd8db42cd1",
+            "query": "Browse the store",
+            "actualItemBudget": 65,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.2061669947579503,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "grace"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "ecaac173990424518625372145aacf0e470275b1ab8a7b1af751687713386ccb",
+            "query": "Rain jackets",
+            "actualItemBudget": 70,
+            "native": {
+              "tokenizeMs": 0.12237497139722109,
+              "forwardMs": 178.83425008039922,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "ana"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "9c7b7f7f0a1b68f31453f116404659826fc7531a9fa822d393497ee0ced95cf6",
+            "query": "Work bags",
+            "actualItemBudget": 70,
+            "native": {
+              "tokenizeMs": 0.07058307528495789,
+              "forwardMs": 178.16045903600752,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "ana"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "fd69027011a234c19c5f1a987f19345565d72a5dba1c51d4ea34220d749602af",
+            "query": "Browse the store",
+            "actualItemBudget": 70,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.19249995239078999,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "ana"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "4c791d407f85226c4924ed8739578fe0497f308ed7cf1ad7e4e7c493c3e6ee9d",
+            "query": "Rain jackets",
+            "actualItemBudget": 95,
+            "native": {
+              "tokenizeMs": 0.06029196083545685,
+              "forwardMs": 178.084957995452,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "rosa"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "ca41cb54fd1d35e34ee9c4456a3cf1ceed7a9de5729e4b50ce9c78db382b8846",
+            "query": "Work bags",
+            "actualItemBudget": 95,
+            "native": {
+              "tokenizeMs": 0.07441698107868433,
+              "forwardMs": 180.90562499128282,
+              "batchRows": 1,
+              "paddedTokensPerRow": 63,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 63,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "rosa"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "57e4c6447b10af1af8ccae137081798faf7fbd96403d0a68d1d92b825eab6b70",
+            "query": "Browse the store",
+            "actualItemBudget": 95,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.7930418942123652,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "rosa"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "1463c8923b191aa91974c995f60feffce002378f35a399ff831728e7dc508b61",
+            "query": "Rain jackets",
+            "actualItemBudget": 120,
+            "native": {
+              "tokenizeMs": 0.24270801804959774,
+              "forwardMs": 177.91354190558195,
+              "batchRows": 1,
+              "paddedTokensPerRow": 64,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 64,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "felix"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "a90aa7188c3991057f59379a0a4ee1738b6de1fe604cad68d9198ef5b421e6a5",
+            "query": "Work bags",
+            "actualItemBudget": 120,
+            "native": {
+              "tokenizeMs": 0.17908401787281036,
+              "forwardMs": 177.64116695616394,
+              "batchRows": 1,
+              "paddedTokensPerRow": 64,
+              "truncatedRows": 0,
+              "backboneForwardCalls": 1,
+              "prefixReused": false,
+              "reusedPrefixTokens": 0,
+              "freshSuffixTokens": 64,
+              "sourceUnchanged": true,
+              "ordinaryCacheNone": true
+            },
+            "publicSourcePersonIds": [
+              "felix"
+            ]
+          },
+          {
+            "wholeQueryTextSha256": "50409fbd5ffc96a52d8bc9424a98f328008dbca766889ae9fa732a5bc33ac113",
+            "query": "Browse the store",
+            "actualItemBudget": 120,
+            "native": {
+              "backboneForwardCalls": 0,
+              "batchRows": 0,
+              "truncatedRows": 0,
+              "paddedTokensPerRow": 0,
+              "tokenizeMs": 0.7953750900924206,
+              "forwardMs": 0.0,
+              "queryFeatureCacheHit": true
+            },
+            "publicSourcePersonIds": [
+              "felix"
+            ]
+          }
+        ],
+        "uniqueKeys": 24,
+        "elapsedMs": 2884.144457988441,
+        "scoresRankingsOrAnswersCached": false,
+        "featureCacheCapacity": 32
+      }
+    }
+  }
+}

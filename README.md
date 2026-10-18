@@ -1,7 +1,7 @@
 # Storefront Lab
 
 A local DubHacks demo for adapting a storefront to a shopper's public request.
-The React shop has 16 fixture products, color/gallery controls and a fake
+The React shop has 35 fixture products, color/gallery controls and a fake
 checkout. An optional local Qwen path learns product ordering and generates
 fresh titles, badges, headings and short copy from selected catalog facts.
 
@@ -65,7 +65,43 @@ exercises a scripted fake checkout and requires
 `pnpm exec playwright install chromium`. Its first-item purchase script does
 not represent an independent shopper choosing a suitable product.
 
-## Enable the local model
+## Current personalized demo
+
+On the configured Apple silicon machine, run `pnpm dev:personalized:demo` and open
+<http://127.0.0.1:4313>. The running recording storefront is
+<http://shop.dubhacks.localhost:1356/>; the canonical presentation is
+<http://dubhacks.localhost:1356/>. Leave an existing ready session running.
+The launcher refuses occupied model/UI ports and never downloads weights or credentials.
+
+The current source-bound catalog has 35 products and 105 actual color variants.
+Specific rain-jacket and work-bag searches filter eligible public product types
+before learned personalization. Budgets and supported hard constraints remain
+hard guards; insufficient matches produce honest shortfalls. Lena's budget admits
+all three rain jackets; Sam's admits all three work bags.
+
+One frozen Qwen backbone supplies input features. The original 16-route LoRA
+provides declared family priors for new products, combined with learned catalog/query
+projections and learned within-product color selection. Exact input features may
+be reused; scores, selections and generated words are recomputed for every request.
+A new parallel word head fitted all 105 public fact bindings in 400 CPU updates,
+with 1,575/1,575 supervised fields exact and accepted. This is a known-catalog
+fit, not an unseen-catalog or human-conversion result.
+
+Ten actual warm six-card requests completed the backend in 85.5 ms median.
+Ten loaded-collection profile switches reached three fully visible cards with
+decoded images in 138.8 ms median. These exclude startup and initial navigation;
+full six-card image completion was not established. Two fresh-query HTTP samples
+completed the backend in 266.8 and 310.9 ms. The interrupted novel-query browser
+audit is preserved, without a cold-browser latency claim. See the
+[current measurements](experiments/ranker/pretrained/expanded_store_results/v1/CURRENT_LIVE_SUMMARY.json)
+and [serving contract](experiments/ranker/pretrained/STORE_EXPANDED_ENGINE_V1.md).
+
+Local expanded artifacts are required: `data/ranker/pretrained/expanded-native-features-v1-attempt-2/`
+and `data/ranker/pretrained/expanded-parallel-copy-fit-v1-attempt-1/`, alongside
+original Qwen/ranking/profile checkpoints. Weights and feature tensors stay local.
+Historical launchers and measurements below remain separate versioned evidence.
+
+## Historical local model backends
 
 The verified native environment uses Apple silicon, Python 3.14.7, MLX 0.32.4
 and MLX-LM 0.32.2. One frozen Qwen3.5-9B four-bit backbone supplies fresh query
@@ -126,8 +162,8 @@ passes. Model weights and public numerical feature caches remain local and are
 not part of the Git repository.
 
 On the configured machine, `pnpm dev:personalized:demo` starts the explicitly
-non-promoted, factorized-profile development demo at <http://127.0.0.1:4313>.
-It requires the copied local artifact bundle and preserved evidence in the
+non-promoted expanded development demo at <http://127.0.0.1:4313>.
+It requires the expanded artifacts above plus the preserved underlying evidence in the
 [factorized entry guide](scripts/dev-personalized-factorized.md). It refuses busy
 model/UI ports, uses local simulated checkout, and stops only its own children
 on Ctrl+C. No weights, credentials or paid service are fetched.

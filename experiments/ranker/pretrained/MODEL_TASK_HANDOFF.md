@@ -1,5 +1,31 @@
 # Model engineering handoff
 
+## Current recording checkpoint — 2026-10-18
+
+The canonical 35-product/105-variant development demo is running on loopback8767,
+with storefront4313 and local-only checkout4331. Use `pnpm dev:personalized:demo`
+for a new owned lifetime; do not start it over a ready session. Canonical live URLs:
+http://shop.dubhacks.localhost:1356/ and http://dubhacks.localhost:1356/.
+
+Binding: `store_expanded_integration_v2/manifest.json`, SHA
+`971f30d146415abffac4b0aee59827b04d7c06458a38ae9bcd0cd22d46539088`.
+Native output: `data/personalized-development/2026-10-18T15-54-04.966Z-42330f4f-d52a-40b2-be98-b199c08847fb/native`.
+Original16 LoRA routes supply family priors; new35 catalog vectors and105 copy-fact
+vectors are genuine frozen-Qwen features. The new copy head passed1575/1575
+supervised fields after400CPU updates; all105 bindings are TRAIN. No new-ID LoRA,
+unseen quality, promotion or human conversion claim is made. Thirty actual
+profile/search checks passed eligibility/budgets with no unrelated padding.
+
+Warm backend10six-card samples:85.5ms median. Loaded-collection visible/decoded
+three cards:138.8ms median across10actualprofile switches. Fullsix-image completion
+not established. Two fresh-query HTTP samples:266.8/310.9ms backend; the first
+novel browser trial's stale-mirror audit failure/cancellation is preserved. Startup,
+initial navigation and physical paint are excluded. Exact query input features may
+be reused; every request recomputes learned scores, actions and word slots.
+See `expanded_store_results/v1/CURRENT_LIVE_SUMMARY.json` and
+`STORE_EXPANDED_ENGINE_V1.md`. Keep the current worker running for recording.
+
+
 ## Search navigation polish, 2026-10-18 13:29 UTC
 
 A real UX bug was confirmed: search submission scrolled to the hero. At the
