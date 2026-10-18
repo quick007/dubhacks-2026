@@ -1,5 +1,44 @@
 # Local model demo
 
+The current fast known-catalog candidate uses `store_candidate_image_service_v1`,
+the 320-step parallel copy head, public Qwen fact features and reviewed v11
+integration manifest. Its optional explicit v5 rank-head export uses the verified
+original v3 catalog features without disguising the new run's 96 native forwards
+as the original run's 64. The independent ranking audit records 29/32 first
+choices and 32/32 targets in six, versus 14/32 and 29/32 for v3 on the same
+independently authored queries. This is known-catalog paraphrase evaluation.
+See the [root setup](../../../README.md#enable-the-local-model) and
+[fresh-query audit](STORE_PARALLEL_TEXT_TRAIN_ALL_FRESH_V1_AUDIT.md). All 48
+product/color bindings were supervised; its short learned word-slot decoder
+uses no runtime teacher lookup. The shopper query affects the Qwen ranker,
+while text is conditioned on the selected catalog facts and plain style.
+
+Copy events declare `copySource`: `fresh-parallel-head`, `fresh-native`,
+`generated-earlier`, `mixed-native-cache` or `no-generation`. The frontend checks
+consistent generation flags, labels catalog-trained text, and never calls
+earlier-generated cache text fresh. Zero eligible products emit no-generation;
+short groups with fewer than three products withhold their untrained heading
+without padding the roster. All cards retain the original name, exact price,
+real variant and existing gallery/cart action. The separate generated-cache
+mode is experimental and retains the old AR copy failures.
+
+Requests use the original single-worker HTTP queue, budgets, cancellation and
+frozen-tensor checks. The image entry additionally pins its serving helper,
+rank adapter and asset-verification scripts for the entire lifetime. It checks
+those pins before emitting each payload. Failed startup preserves the original
+error and attempts frozen-hash cleanup; native stream teardown still runs if
+hashing or receipt writes fail. Shutdown records separate rank/export checks.
+
+Responsive WebP delivery retains all original images and catalog facts. Its
+3,125-byte runtime manifest carries geometry only; full source/derivative hashes
+stay in offline audit manifests. Freeze/startup verify all assets. The API mock
+fixture transition to fieldwork-study is an explicit auxiliary-source exception:
+its private persona goals never enter model query or product inputs.
+
+Use the current command in the root setup guide. Choose a new output directory
+per lifetime. The following AR protocol and old commands describe historical
+comparisons; their older integration receipts do not cover the current frontend.
+
 The opt-in storefront path uses the completed actual-store v3 ranking head and
 320-update copy v2 adapter on one resident local Qwen backbone. It performs a
 fresh native query encoding and generates every displayed title, badge, body

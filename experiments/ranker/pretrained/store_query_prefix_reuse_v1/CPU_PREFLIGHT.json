@@ -1,0 +1,349 @@
+{
+  "version": "store-query-prefix-reuse.v1",
+  "status": "cpu-token-boundary-and-installed-source-preflight-passed",
+  "nativeExecution": false,
+  "nativeModelCalls": 0,
+  "nativeCacheCreated": false,
+  "sourceCacheParity": "not executed; native all32 gate required",
+  "labelsRead": false,
+  "publicCasesFile": "experiments/ranker/pretrained/store_function_v5/public-cases.json",
+  "publicCasesSha256": "11bfab0beeca88d4f4c71ced21016358bdc68cef20c4c4c1d244cde76e572924",
+  "fixedCases": 32,
+  "cachedPrefixTokens": 26,
+  "withholdBoundaryTokensFixed": 1,
+  "prefixLiteralSha256": "83e7a40c0121fd65d588e994b74513d235a01e139d2ae67098dce8a9ad27ea71",
+  "prefixTokenSha256": "b322850d47452972af8d78198b1620e598f6dc5e8b454270d54ad661c17b6f9b",
+  "all32ActualWholeRequestPrefixIdsExact": true,
+  "wholeTokenRange": [
+    69,
+    78
+  ],
+  "suffixTokenRange": [
+    43,
+    52
+  ],
+  "numericPolicy": {
+    "minimumCosine": 0.99999,
+    "maximumAbsoluteError": 0.001
+  },
+  "installedRuntimeSource": {
+    "mlxVersion": "0.32.4",
+    "mlxLmVersion": "0.32.2",
+    "files": {
+      "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/cache.py": "c96cb169fd5e0ec4584a162dd61dc62ab08ccdca03a9850f8a491ce6809145e6",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_5.py": "851449fd9989d6bf4b3c4fed92ddc3be5f1e781eb2246f89c54d7eff2518d9c6",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/base.py": "63d8e58a4b6f8c0902719499c693647fbf486bbd5d22b09868a07d37e08c83d6",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/gated_delta.py": "f69e837ea68641dbb06fdb5dcc024a9a7e1d9353f08ae58c05275253a0c39428",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_next.py": "67ca08a4d08cb7be124965e95399735e556f1eaeb21a16bc23cb88d1ac035e11"
+    },
+    "capability": "make_prompt_cache/model.make_cache; from_state(deepcopy(full.state));24ArraysCache+8KVCache. No recurrent trim/rollback used.",
+    "nativeParity": "Not executed by source inspection; required separately"
+  },
+  "sources": {
+    "store_query_prefix_reuse_v1.py": "ff0d370779000a28d534b1fc0870d86ff69512d28e4758602363428b5233d68f",
+    "test_store_query_prefix_reuse_v1.py": "ef9cf911970b6a42ee2bf51db58347a67c08c9d96b0954e771703c9f56f7a7ec",
+    "STORE_QUERY_PREFIX_REUSE_V1_PLAN.md": "02891d4d22ae35baebca533041260e57ea33be31ec599d0e04dd0a68b7a96fcb",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "store_function_adaptation.py": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+    "store_rank_session.py": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0",
+    "store_rank_session_v5.py": "81dd458578fe087b7d2ad6eb9c2b0ceb03d456d11555d5ca9fc8abf62fb81d28",
+    "semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "fused_prefix.py": "fac303dfa4e0c8812b5bd0295497df88aae501299a4ddeff3ebc28c067b70f2d",
+    "native_batch_diagnosis.py": "0e010754c957d7c8677a3463679fbe1eb098eff65dcb4117ed24fcebe78afca4"
+  },
+  "rows": [
+    {
+      "caseId": "v5-eval-00",
+      "wholeTokenCount": 76,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 50,
+      "wholeTextSha256": "1cb3f436a76442244dd935192a693e2a0e4dee2ea45110c98b0f53201d60dfa8",
+      "wholeTokenSha256": "f4911c6cbcc537f7893e58105ec688720fb73b5df6f72bfc5c1274f67185b23c",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-01",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "9a0448728d226da00a4b5a1b553f49742ad398d2aa088509d2ea1778c29012e6",
+      "wholeTokenSha256": "8ad55e47cc6b997877421411dbaebbd913b37e39fb3f55e3146779a16b066ba9",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-02",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "02db09bb65b1f9333e25ca073074d5cd561306e24c0dc1fbe5eeb08872ba850f",
+      "wholeTokenSha256": "e9fd9bb918993099a4636f4b5ce5c1b908ba3d5197cffb3961fcd9081c6abbed",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-03",
+      "wholeTokenCount": 78,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 52,
+      "wholeTextSha256": "afec8ca6c4a382feaffc47cd98535f5afd27481c0eb3a83ffc78e428a789c06d",
+      "wholeTokenSha256": "8c5c407b2591835fd2fde1458d0a298005240437b86ab4dd9a4fbb4704d68bf9",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-04",
+      "wholeTokenCount": 74,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 48,
+      "wholeTextSha256": "e1a217a7d8287a8020dc3565a4069bdeb01e0249e686f816116fc244cd84ce8c",
+      "wholeTokenSha256": "87fd702c9d524755e44027af045af1b51622528c79bedbc70177a7aa55111b79",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-05",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "cdb0b18e5af062f3db2444a915d9dfa8229abbe1028cdf16881bb7db2ceec2dc",
+      "wholeTokenSha256": "5b364115dda54b77d25b65fd56f6a7ce6d419247e218298b6ff7e56b23ae0f5d",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-06",
+      "wholeTokenCount": 75,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 49,
+      "wholeTextSha256": "0e8ec77b367ed99e7ee575e1cccae1bea705520642a0d58987873a61b02661d0",
+      "wholeTokenSha256": "c571e7f4c13e84d1343bde3f5a273817843ac764c5afa8d3836f2006fcb3ddd1",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-07",
+      "wholeTokenCount": 72,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 46,
+      "wholeTextSha256": "fd07eaf02071d79305fda78e56aaed6fb1e89149e1a9e2582d74e56c9e93dce0",
+      "wholeTokenSha256": "52406ee690ad263deaa5cb47f4759b75dbc2f557ae4611150f30380c6ea07f25",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-08",
+      "wholeTokenCount": 72,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 46,
+      "wholeTextSha256": "8c421969b6c38a741eb3fd2c5817b5afd514223da35dfc3106145465ad994e06",
+      "wholeTokenSha256": "59802c59084a0fde57b7abc373dc21885d78d14db2fd46feb0761ab52e984adc",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-09",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "816edff0378f02bb9511c7d2d4218f2370578660c00f97fe3217987785f81e30",
+      "wholeTokenSha256": "ae188cb91b9b72a1a9c7988745eae5245acae9847b02767bc2a222afd5083b3d",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-10",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "722b21f0eba0602d867c1757b7259e480944640aee7ccbd43c8a8400042aa0cd",
+      "wholeTokenSha256": "ef8202b28e70e919083aa3dd343b386ad549c657f5781f086ecf2acb441c995e",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-11",
+      "wholeTokenCount": 76,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 50,
+      "wholeTextSha256": "d53f7b2be3509594335736b9fc5493d63d263eb399f001316ad805f579efc67e",
+      "wholeTokenSha256": "a4008e3f6c852b2ca4176311f6a6f4b37791f42bb73ad5ce68f651491f53454d",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-12",
+      "wholeTokenCount": 77,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 51,
+      "wholeTextSha256": "1872ab7371a72836682d58e68f22b6e4ca7ee45170173fc8475cffa905edca9d",
+      "wholeTokenSha256": "a69fe5ceed05e1e381ea55290eb11e83f48083c811cccb78cb3bf4ba34eb9dac",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-13",
+      "wholeTokenCount": 78,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 52,
+      "wholeTextSha256": "8a0deda8e992ea286f7fbf3c88a342ab89a808b9a94f4b63f9e14a6aa7644d40",
+      "wholeTokenSha256": "bc626d6bb90471ca1ab188efe81a50cd967fd82b1d543f252e5942a577926cb1",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-14",
+      "wholeTokenCount": 71,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 45,
+      "wholeTextSha256": "48c72bb82ae532f57e75803f4252fb9e6d34b4afc0d9fb7fe05b157cc4c0e0fd",
+      "wholeTokenSha256": "91aa9cbf0561a3949dbc664801cad32ad1f324ad26e24a7408597e729db02756",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-15",
+      "wholeTokenCount": 71,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 45,
+      "wholeTextSha256": "ca6c6af7bcf3f45b5505c391759f811414a91302ba3429f3125e36f468fa2fc8",
+      "wholeTokenSha256": "488a2ca0a2c6a063b4f64de32e947ec047497013cfbb30d48c28d94a68393a5b",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-16",
+      "wholeTokenCount": 75,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 49,
+      "wholeTextSha256": "bb0d02e33d261cdf8a397b95a3fc1ce811423673fca52928322c48c3958e5c2a",
+      "wholeTokenSha256": "40814782a66d1ec0b002fde6788a3420b2352c2510f0b97b00022e5ab8f52517",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-17",
+      "wholeTokenCount": 74,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 48,
+      "wholeTextSha256": "1d45773f62ebe3c325c122f87018331e3a46634e1adc5726c8fd692e54367200",
+      "wholeTokenSha256": "817ed9d99c1cb1836fdb221b0148ae14805dbf48d6dcbf557cfee4a7596a5339",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-18",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "beab4d4dded847db09d395bf1815c451b81138111124046a152087abb0871b98",
+      "wholeTokenSha256": "25a8394058e1dca6a776e6cb9c29a0406a3db043516ee194571472e3896c3b05",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-19",
+      "wholeTokenCount": 72,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 46,
+      "wholeTextSha256": "c018196cbe74d2cc8b7646ebb3aa39d31f91fcf610ee2c0c2d0f91203ee58bdb",
+      "wholeTokenSha256": "e68439155d6d32477071f16a6a54aaae274de9ca27d31a8a25a48737be8c8a81",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-20",
+      "wholeTokenCount": 70,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 44,
+      "wholeTextSha256": "ae5c1870bdf49009c65c6a15b197e92819664bf2221c5617bbf88be951c403b3",
+      "wholeTokenSha256": "a89926df68f37ec6bfa6a090f666aa023b98bffb40bfdd51f37b4dec6bd44a10",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-21",
+      "wholeTokenCount": 69,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 43,
+      "wholeTextSha256": "dcf6d03636b421277e300696836792c18604752b27b4f5c13343ca315172b4de",
+      "wholeTokenSha256": "f19b5cfcdbdfab691acda15b2a542009785a4c457ae007c9534c411b9282a089",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-22",
+      "wholeTokenCount": 77,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 51,
+      "wholeTextSha256": "25561fbc11998a3482dd434d6a7ffcebbf3c6ae6f7b6bd32c0c6ba2be1fb9ef4",
+      "wholeTokenSha256": "1cc9f8034a162f7035598d696f61ef915612a7b12b1a3bcf2c7b0942b402dbb2",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-23",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "60e6fd35f0d1f3dc1b7479c53217e44897e435efef44c785f68aee6592f691c2",
+      "wholeTokenSha256": "2f069ee3fda4cc6ee0641db72b77c089c489963f3e534dc5182d393bcf2d6a28",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-24",
+      "wholeTokenCount": 71,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 45,
+      "wholeTextSha256": "cf3e5b579efbf8f4f88d1dfb4e4e2d4aba3b7490ee8dd5e6dde7a26580091c79",
+      "wholeTokenSha256": "851b6862aea4c7bf51807f7718257f52f3cfde16f0af893f0ea2d1cb47fc36bd",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-25",
+      "wholeTokenCount": 76,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 50,
+      "wholeTextSha256": "f404f064f6ab08f8f7fcc14d86f6eb6419c86cc6e28733ab0a9218867bffa451",
+      "wholeTokenSha256": "2c08dff2efaaf05fb93dfdef3a37049f0b7c10375132c20b612422871737842d",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-26",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "8219a260332c148f9e5501e248cf038c50b81bcab6c949c99a64b647adb60961",
+      "wholeTokenSha256": "5237eec7fff5fd1d389bde6ca644a12ed96da0735fb68404970fae043d769d4f",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-27",
+      "wholeTokenCount": 74,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 48,
+      "wholeTextSha256": "e8d2346567e5561f0bd8501d6c5e7b10a610f99bf29ac04d77a38bc38e9197e7",
+      "wholeTokenSha256": "9168e5ae7d71ccefb95088de613a5e5bf042d9d1a1d475af8ae6dcd15101a86e",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-28",
+      "wholeTokenCount": 73,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 47,
+      "wholeTextSha256": "a031b6569a4dfef4ccad7496335cfa97477869347f40277dc64ec4e3a0766fa7",
+      "wholeTokenSha256": "14d3c934428400376f37373512a75a9bdf81d6bed1019dd0d8ad19c96e001721",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-29",
+      "wholeTokenCount": 75,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 49,
+      "wholeTextSha256": "eab6db0989184fd434862a4f2df41c985721086ddd43ee48089bf9be400e4e18",
+      "wholeTokenSha256": "4f1a44434ba2a91178acbc59c2cf0f9ea2af282563510e45d0e6334f1ee8e769",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-30",
+      "wholeTokenCount": 69,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 43,
+      "wholeTextSha256": "902b2ea7fd701ba772baa6904502753384fb1ce166c56fb5be0876a591f5efac",
+      "wholeTokenSha256": "e67c2e21fb078cf58036a93ff21711847f9b17278a6e3bae5385f4e0ddba36fd",
+      "actualPrefixIdsExact": true
+    },
+    {
+      "caseId": "v5-eval-31",
+      "wholeTokenCount": 78,
+      "reusedPrefixTokens": 26,
+      "freshSuffixTokens": 52,
+      "wholeTextSha256": "5fbbea8ff67376ec6c66683e25c4ae54d8d6c633aa2f236dba398710e9271626",
+      "wholeTokenSha256": "05920048d1bd49144adfc059e2afef86fe2ab09218731cdca8f1bfca6161ae52",
+      "actualPrefixIdsExact": true
+    }
+  ],
+  "limitations": [
+    "No speed or native parity measurement.",
+    "No weights or large catalog feature files freshly hashed in this CPU preflight; required explicitly by root-owned preparation and final gate.",
+    "Existing v5 cohort/model/session unchanged; helper is isolated and not wired to serving."
+  ]
+}

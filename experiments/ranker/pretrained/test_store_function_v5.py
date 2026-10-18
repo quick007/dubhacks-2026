@@ -13,7 +13,7 @@ import torch
 from . import store_function_data_v5 as data
 from . import store_function_adaptation_v5 as run
 from .store_catalog_v1 import load_snapshot
-from .store_demo_image_binding_v1 import ImageDeliveryCatalogBinding, VERSION as IMAGE_BINDING_VERSION
+from .store_demo_image_binding_v1 import ImageDeliveryCatalogBinding, VERSION as IMAGE_BINDING_VERSION, freeze_image_delivery
 from .store_demo_engine import checked_request, ranking_input
 from .store_function_adaptation import request_text
 
@@ -22,6 +22,10 @@ class FunctionV5Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.packet = data.build(); cls.snapshot = load_snapshot()
+        cls.integration_temp = tempfile.TemporaryDirectory()
+        cls.addClassCleanup(cls.integration_temp.cleanup)
+        cls.integration_manifest = Path(cls.integration_temp.name) / "manifest.json"
+        freeze_image_delivery(cls.integration_manifest)
 
     def test_balanced_all16_function_training_and_distinct_fresh32(self):
         p = self.packet
@@ -123,7 +127,7 @@ class FunctionV5Tests(unittest.TestCase):
     def test_dataset_pin_change_rejected_before_eval_labels_parse(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary) / 'data'; data.freeze(directory)
-            manifest = data.HERE / 'store_demo_integration_v10/manifest.json'
+            manifest = self.integration_manifest
             packet = run.prepare(directory, data.PRIOR, manifest, catalog_binding_factory=ImageDeliveryCatalogBinding)
             (directory / 'evaluation-labels.json').write_text('[]')
             with self.assertRaisesRegex(ValueError, 'dataset file changed'):
@@ -133,7 +137,7 @@ class FunctionV5Tests(unittest.TestCase):
         # Fake encoder/lock/hash/model verifier only; never acquire the real GPU.
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary); directory = root / 'data'; data.freeze(directory)
-            manifest = data.HERE / 'store_demo_integration_v10/manifest.json'
+            manifest = self.integration_manifest
             packet = run.prepare(directory, data.PRIOR, manifest, catalog_binding_factory=ImageDeliveryCatalogBinding); packet_path = root / 'packet.json'
             packet_path.write_text(json.dumps(packet)); closed = []
             class FakeEncoder:
@@ -164,7 +168,7 @@ class FunctionV5Tests(unittest.TestCase):
     def test_original_strict_default_rejects_image_manifest(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary) / 'data'; data.freeze(directory)
-            manifest = data.HERE / 'store_demo_integration_v10/manifest.json'
+            manifest = self.integration_manifest
             with self.assertRaisesRegex(ValueError, 'Exact reviewed demo integration receipt required'):
                 run.prepare(directory, data.PRIOR, manifest)
 
@@ -183,7 +187,7 @@ class FunctionV5Tests(unittest.TestCase):
                 prepare.assert_called_once_with(root, root, root, catalog_binding_factory=factory)
 
     def test_current_api_fixture_never_parsed_and_all_v2_encoded_inputs_unchanged(self):
-        manifest = data.HERE / 'store_demo_integration_v10/manifest.json'
+        manifest = self.integration_manifest
         old = json.loads((data.HERE / 'store_function_v5_prepare_v2/preflight.json').read_text())
         api_fixture = (data.HERE.parents[2] / 'apps/api/fixtures/catalog.json').resolve()
         original = Path.read_text
@@ -199,7 +203,7 @@ class FunctionV5Tests(unittest.TestCase):
         self.assertEqual(current['catalogBinding']['manifestVersion'], IMAGE_BINDING_VERSION)
 
     def test_cpu_preflight_real_reuse_and_no_eval_parse_or_native_import(self):
-        manifest = data.HERE / 'store_demo_integration_v10/manifest.json'
+        manifest = self.integration_manifest
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary) / 'data'; data.freeze(directory)
             original = Path.read_text

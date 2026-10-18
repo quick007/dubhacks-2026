@@ -1,0 +1,57 @@
+{
+  "version": "shopping-model-input-bridge-independent-audit.v1",
+  "status": "changes-requested",
+  "nativeExecuted": false,
+  "optimizerExecuted": false,
+  "apiFilesEdited": false,
+  "tests": {
+    "command": ".tools/pretrained-venv/bin/python -B -m unittest discover -s apps/api/scripts -p test_shopping_model_input.py",
+    "passed": 6,
+    "seconds": 0.413
+  },
+  "sources": {
+    "apps/api/scripts/shopping_model_input.py": "ad18dfac964ed36d5aeb8e572aea96d8713b639bf924a137b4086ae2b36143f2",
+    "apps/api/scripts/test_shopping_model_input.py": "87c13c9ad0db8a1e40dc231575ef2705c0371319a931de4d1ec8d941dcbba2c6"
+  },
+  "findings": [
+    {
+      "id": "catalog-index-binding",
+      "severity": "blocking-correctness",
+      "target": "shopping_model_input.catalogs",
+      "reproduction": "Swap external_mapping products[0] and[1] while retaining the exact intake map; catalogs() accepts mug at productIndex1, whose publicSupport is Everyday daypack.",
+      "reason": "Model target indices are inferred from unchecked mapping order; sourcePins hash current bytes but do not anchor the projection to the independent frozen catalog.",
+      "requestedFix": "Verify authoritative pinned snapshot/projection and compare catalog+mapping before deriving targets; reject permutation/mutation with a regression."
+    },
+    {
+      "id": "synthetic-flag-type",
+      "severity": "blocking-fail-closed-contract",
+      "target": "shopping_model_input.prepare/load_packet",
+      "reproduction": "prepare([synthetic_fixture], allow_synthetic='false') accepts1choice and emits string allowSynthetic.",
+      "reason": "Truthy non-boolean serialized manifest values enable synthetic inclusion despite explicit-flags-only contract. CLI itself supplies bools correctly.",
+      "requestedFix": "Require type(allow_synthetic) is bool at prepare; test nonbool values and rehashed-manifest check-packet tamper rejection."
+    }
+  ],
+  "confirmed": {
+    "contextOnly": true,
+    "queryObserved": false,
+    "semanticIntentSupervision": false,
+    "chosenIdInRequest": false,
+    "candidateIdsInRequest": false,
+    "wholeSessionHashSplit": true,
+    "candidateNegativesInferred": false,
+    "actualConsumer": "store_function_adaptation.fit_inputs",
+    "consumerRequestLoads": "TRAIN only; validation/test store access raises",
+    "emptyRealPacket": "skipped-no-training-rows",
+    "vectors": "explicitly synthetic deterministic4096CPU protocol fixtures",
+    "current16MappingCorrect": true,
+    "currentModelInputsMatchIndependentPin": true,
+    "currentExternalMappingMatchesIndependentPin": true,
+    "sourcePinsAndSerializedFileRehashChecked": true
+  },
+  "limits": [
+    "Protocol only; no optimizer/native features/prediction quality or objective suitability evidence.",
+    "No shopper query was collected, so these rows cannot train semantic request intent.",
+    "Production-real rows were not independently queried here; machine evidence from API owner is pending.",
+    "Catalog drift and flag-type corrections need independent recheck."
+  ]
+}

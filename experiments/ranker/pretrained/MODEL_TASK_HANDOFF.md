@@ -302,3 +302,150 @@ Unchangedservice restoredPID4452, data/ranker/pretrained/store-demo-v6-post-prof
 healthready zeroqueue927tensors. v5gracefulshutdownintegrityconfirmed.
 Architectureexperiments remainqueued per 'notnow'; no newtraining/download/
 install/deployment. Allsource/nativeevidencearchived store_demo_performance_results/v1.
+
+## Resumed overnight: useful known-catalog parallel text
+
+The later user restart superseded the earlier pause. Work resumed with serialized
+native jobs and CPU preparation/audits. Main pushed through `3cc5fa7`; weights
+and feature tensors remain local. All previous checkpoints/failures preserved.
+
+The explicit ALL48 catalog demo head at
+`data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/head.pt`
+has SHA `074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889`.
+Fixed320 CPU steps, 528/528 supervised outputs correct, independent teacher-blocked
+reload confirms real learned outputs. It reads cached frozen public Qwen feature
+vectors, canonical name/color/price tokens and a fixed plain style; serving
+loads no teacher, gold or TRAIN output file. All48 bindings were trained; this
+is a curated demo, not heldout generalization. Original34/14 split had0/126
+heldout card fields, and three CPU research variants also failed. All archived
+losslessly under `store_parallel_text_results/v1/`, without weights.
+
+Successful fresh native run:
+`data/ranker/pretrained/store-parallel-text-train-all-fresh-v1-attempt-2`.
+All32 fresh queries return six cards and20 valid fields; median first3/full6
+193.428/193.498ms. Offline primary-function top1 30/32, top6 31/32; notebook
+and blanket misses remain. All8 separate guard probes passed. Attempt1 is still
+failed after its32 valid timings because its guard audit mishandled a safe
+conflicting-color error. Both complete shutdowns verify all927 frozen tensors
+and native adapter unchanged. Full source/raw archives and independent audits
+are committed. Startup/browser/images remain separate endpoints.
+
+Fresh AR8GiB experiment completed three paired queries: width20/root reuse
+4571.540ms versus ordinary width10 6402.946ms; both0/3 useful full pages. Earlier
+width20/7GiB profile exceeded budget and remains failed. Repaired native-generated
+earlier-copy cache run completed32 hits, median219.627ms, all under300ms, but
+0/32 full useful pages and9/32 first3 title/body. Its original eight warming
+costs, invalid fields, first failed nested-deadline run and genuine new miss/hit
+proof remain archived under `store_native_candidate_results/v1/`. Cache was not
+promoted based on speed alone. Read STORE_NATIVE_CANDIDATES_V1_RESULTS.md.
+
+Actual candidate service is currently PID30860, sole native worker on8766,
+`data/ranker/pretrained/store-candidate-demo-v1-attempt-1`, parallel mode,
+reviewed frontend integrationv6. First HTTP after startup full20/20 fields456.811ms.
+Live budget/color/conflict checks preserve zero-generation abstention and
+partial-group heading withholding, no padding. New frontend copySource flags
+visibly separate fresh learned catalog-trained text, fresh native AR, earlier
+cache, mixed work and no-generation. Original AR CLI remains unchanged and
+available with explicit reviewed manifest. Tracing owner added lazy opt-in
+hooks to main.tsx at a coordinated boundary; main is pinned in v6. They own
+those hooks/dependencies/docs, model task does not stage them.
+
+Browser integration is in progress with no active shopper-agent batch. First
+probe's four new-context requests passed, but four same-URL repeats did not
+navigate or send new POSTs; PROTOCOL_AUDIT excludes them, raw evidence retained.
+Repaired attempt2 performs actual reload and requires unique document/request
+IDs:8/8 actual POSTs and all20 fields match DOM/provenance. First3/full6 decoded
+image endpoints from query effect were fresh-context618.2/294.4/326.2/307.5ms,
+reload270.0/268.1/267.1/272.5ms. The default hero leaves card text below the
+viewport (zero fully visible cards), so these are DOM/image readiness, not
+useful above-fold or physical-paint claims. Each page also retains a WebSocket
+console error, with cause unproven. Separate pre-scrolled collection-view probe
+and independent browser audit are next. Preserve these raw outputs.
+
+Queued useful work: learned public-fact pointer decoder research for heldout
+color composition (CPU-only two fixed arms), compact fresh-AR diagnostic16
+requests after browser timing releases. No DFlash install/download or paid
+compute. Root owns native lock/jobs; all other model agents CPU only.
+
+## Latest morning boundary: balanced rank and responsive delivery
+
+Main now includes86a4b51 (responsive assets, compact runtime, lifecycle guards,
+v5 rank adapter/data/audit),45e2ff5 (browser/pointer evidence), and teammate
+checkout/telemetry consumer commits through55daca6. All checkpoints, original
+images, failed attempts and local candidate outputs remain preserved. No weights
+or feature tensors were committed.
+
+V5 head5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b;
+serving export17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703.
+96 native forwards +48 reused =144 vectors; all927 tensors unchanged. Independent
+1,317-check replay:29/32 top1 and32/32 top6 versus old14/32 and29/32. Corrected
+miss-rank diagnostics are separate; all310 original run files unchanged. Copy
+head074169e3... and public feature2624a947... remain the ALL48 TRAIN demo.
+
+Latest independent browser audit verifies8/8 navigation and4/4 fully visible
+first3 views. V5 notebook ranks1st instead of13th on the fixed development query.
+Loaded visibility/decode median269.95ms; cold/reload full-content+6images
+533.10/362.40ms. All20 fields factual,16 catalog cards retained. No physical
+paint, high-DPR generalization, comparative shopper effect or causal speedup is
+claimed. Partial raw capture attempt4/8 remains unscored, with exact historical
+source recovered. Read STORE_COMPACT_V5_BROWSER_INDEPENDENT_AUDIT_V1.md.
+
+Both temporary service PIDs84158/87933 exited gracefully with927/adapter/copy
+assets/image sources unchanged; v5 shutdown also verifies head/export. V11
+manifest7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839
+pins final checkout frontend main5c70bb1... . Frontend90191 on4312 proxies
+local-only authoritative checkout4331/PID89743. Generic real Sol development
+smoke confirmed POST202+GET200/disk/DOM receipt. Harness is preparing60 pairs
+and holds Chrome until root READY. No private cohort goals/gold are shared.
+
+Root is finishing bounded component profiling and a20-pair generic incremental
+latency probe before freezing/restoring the cohort service. Profile attempt1
+failed in excluded observer warmup (delegating tokenizer restoration), with all
+40 timed arms unattempted and clean927/checkpoint shutdown. Attempt2 uses the
+same unchanged model and fixes the observer only. Do not infer timings from a
+failed run. Model/worker changes are forbidden during the frozen shopper cohort;
+future prefix/catalog-cache candidates run only in agreed isolated windows.
+
+The automatic telemetry pipeline and new context-only consumer are separate
+from query supervision: no shopper queries or real customer rows exist in the
+verified dataset. Four explicit synthetic positive choices pass actual
+fit_inputs with clearly fake4096 CPU protocol vectors; no optimizer/native
+embedding/live training occurred. Guides apps/api/SHOPPING_TELEMETRY.md and
+apps/api/SHOPPING_MODEL_INPUT.md. Parent cloud thread cannot be reached by local
+app messaging (thread not found); live commentary/shared main and harness relay
+carry status.
+
+## Frozen cohort and isolated integration, 2026-10-18 08:47 UTC
+
+The bounded profile and 20-pair browser comparison are complete. Original full6
+p50/p95 was192.785/202.370ms; the instrumented observer adds paired median3.782ms.
+Fresh Qwen encoding dominates at170.622ms exclusive median. All40 profile arms
+passed exact-output parity. Browser generic/local first-useful p50/p95 is
+64.3/65.1ms versus281.1/297.7ms; paired additional delay217.4/234.4ms. All40
+browser slots passed, with cached-image eligibility and loopback scope explicit.
+
+READY.json SHA b679afab96666a0fc96536d6abfe5d08f7f6cbc33765cba44ed8b75721c1ebfb
+released native4200/8766, storefront90191/4312 and checkout89743/4331. The
+60-pair cohort started08:42:32Z, freezes670 source/assets/checkpoint files and
+keeps all assigned failures in denominators. No other native or browser jobs
+may run until the harness releases its timing window. Do not modify READY or
+frozen files, even for unrelated improvements. Shutdown integrity is pending
+until this service lifetime ends.
+
+Latest upstream presentation update675ef4c was fast-forwarded before freeze;
+it changes apps/web only. It did not remove the actual storefront's older
+Demo store banner or cart labels. These are being corrected in the separate
+worktree /Users/lukas/Documents/Projects/dubhacks-persona-integration on
+codex/persona-integration, preserving the existing visual design. User now
+authorizes a compact bottom-right person switcher, separately authored public
+history/backgrounds, meaningful synthetic activity and actual candidate
+training/evaluation. Synthetic and real provenance must remain separate;
+private cohort goals/gold never enter model inputs.
+
+Morning acceptance requires coherent switching/query/cart/navigation, real
+session export through Tiger into an actually trained and held-out-evaluated
+candidate, verified cohort results bound into the existing presentation website,
+package/build/test checks, concise run instructions and normal remote main
+verification. Integrate candidate work only after the cohort finishes. Preserve
+failed candidates and retain the current model unless measured evidence merits
+promotion. The earlier CPU bridge with fake protocol vectors is not training.

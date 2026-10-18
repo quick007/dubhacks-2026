@@ -1,0 +1,114 @@
+{
+  "version": "shopping-model-input-bridge-independent-audit.v2",
+  "status": "pass-bounded-context-only-consumer-contract",
+  "supersedesVerdictOf": "SHOPPING_MODEL_INPUT_BRIDGE_INDEPENDENT_AUDIT_V1.json",
+  "v1PreservedSha256": "76f9e1668c37fed75bcd9789e1f6d738cb96d5631401011364529b82814b944f",
+  "apiFilesEdited": false,
+  "nativeExecuted": false,
+  "optimizerExecuted": false,
+  "trainingExecuted": false,
+  "tests": {
+    "command": ".tools/pretrained-venv/bin/python -B -m unittest discover -s apps/api/scripts -p test_shopping_model_input.py",
+    "passed": 8,
+    "seconds": 15.807,
+    "producerNodeChoiceBuilderTests": {
+      "passed": 5,
+      "independentlyRerunHere": false
+    }
+  },
+  "independentLightweightEvidenceChecks": 50,
+  "sources": {
+    "apps/api/scripts/shopping_model_input.py": "ad18dfac964ed36d5aeb8e572aea96d8713b639bf924a137b4086ae2b36143f2",
+    "apps/api/scripts/test_shopping_model_input.py": "87c13c9ad0db8a1e40dc231575ef2705c0371319a931de4d1ec8d941dcbba2c6"
+  },
+  "producerVerificationSha256": "55a995e290d896787936ba9e1f1c1f083499a6cecc3c0562e1876500dd755f18",
+  "resolvedFindings": [
+    {
+      "id": "catalog-index-binding",
+      "result": "PASS",
+      "evidence": "Actual base.load_snapshot verifies independent raw/projection pins, receipt, exact ordered projection; regressions reject reordered mapping/model_inputs/runtime_export despite rewriting per-file receipts."
+    },
+    {
+      "id": "synthetic-flag-type",
+      "result": "PASS",
+      "evidence": "prepare and load_packet require exact bool; regression rejects strings false/true, integers0/1, None and containers; serialized flag tamper rejected."
+    }
+  ],
+  "actualSerializedConsumerReplays": {
+    "default": {
+      "status": "skipped-no-training-rows",
+      "trainingRows": 0,
+      "nativeEncoded": false,
+      "trainingExecuted": false,
+      "featureSource": "synthetic-protocol-only-cpu"
+    },
+    "synthetic": {
+      "status": "passed",
+      "consumer": "store_function_adaptation.fit_inputs",
+      "trainingRows": 4,
+      "queryShape": [
+        4,
+        4096
+      ],
+      "catalogShape": [
+        16,
+        4096
+      ],
+      "targetShape": [
+        4
+      ],
+      "validationTestRequestsLoaded": 0,
+      "requestLoads": 4,
+      "featureSource": "synthetic-protocol-only-cpu",
+      "nativeEncoded": false,
+      "trainingExecuted": false,
+      "predictionQualityMeasured": false
+    }
+  },
+  "replayProcedure": "Independently load_packet both preserved v2packet directories, call cpu_consumer_check using ACTUAL store_function_adaptation.fit_inputs, require exact equality with saved receipt. Both passed.",
+  "snapshots": {
+    "default": {
+      "manifestSha256": "d5f3906a5d764fd232120656568aa2c062663450007864c912d65e497bc9a477",
+      "packet": "data/shopping-context-default-v2",
+      "acceptedChoices": 0,
+      "allowSynthetic": false,
+      "sessionCount": 0,
+      "splitCounts": {
+        "test": 0,
+        "train": 0,
+        "validation": 0
+      }
+    },
+    "synthetic": {
+      "manifestSha256": "9eb896add068cde4b52f068e5b42c7ec68232530c02f96f1a938eaff47fd888d",
+      "packet": "data/shopping-context-synthetic-v2",
+      "acceptedChoices": 4,
+      "allowSynthetic": true,
+      "sessionCount": 2,
+      "splitCounts": {
+        "test": 0,
+        "train": 4,
+        "validation": 0
+      }
+    }
+  },
+  "scope": {
+    "contextOnly": true,
+    "shopperQueryObserved": false,
+    "chosenProductInEncoderRequest": false,
+    "separatePositiveTargetOnly": true,
+    "candidatesRetainedAsExposureNotNegatives": true,
+    "wholeSessionSplitsPreserved": true,
+    "crossSplitFixture": "1TRAIN/1validation/1test; only1TRAIN request loaded plus16catalog rows; heldout access would raise",
+    "all16ProductIndicesVerified": true,
+    "vectors": "explicitly fake deterministic4096CPU protocol fixtures; not native features or prediction evidence",
+    "v5DriverOrServingArtifactChanged": false
+  },
+  "remainingLimits": [
+    "No real customer cohort established: these4choices came from2explicitly synthetic browser sessions. Production-default accepted0.",
+    "No shopper query was collected; context-conditioned observations cannot supervise semantic shopper intent.",
+    "Consumer preparation only: no optimizer, native feature provenance, trained candidate, prediction evaluation or deployment.",
+    "Future observational objective must handle exposures, repeated actions, session weighting and heldout evaluation. All16-class loss suitability was not established.",
+    "Source/file digests attest frozen local evidence integrity, not independent authentication of the upstream cloud export."
+  ]
+}

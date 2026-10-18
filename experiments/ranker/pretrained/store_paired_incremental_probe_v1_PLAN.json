@@ -1,0 +1,237 @@
+{
+  "version": "paired-loaded-collection-incremental.v1",
+  "pairs": [
+    {
+      "pairIndex": 0,
+      "repeat": 0,
+      "queryIndex": 0,
+      "query": "a light for my bedside table",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 1,
+      "repeat": 0,
+      "queryIndex": 1,
+      "query": "a bottle for drinking water",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 2,
+      "repeat": 0,
+      "queryIndex": 2,
+      "query": "a notebook for quick notes",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 3,
+      "repeat": 0,
+      "queryIndex": 3,
+      "query": "a bag for carrying my things",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 4,
+      "repeat": 1,
+      "queryIndex": 0,
+      "query": "a light for my bedside table",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 5,
+      "repeat": 1,
+      "queryIndex": 1,
+      "query": "a bottle for drinking water",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 6,
+      "repeat": 1,
+      "queryIndex": 2,
+      "query": "a notebook for quick notes",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 7,
+      "repeat": 1,
+      "queryIndex": 3,
+      "query": "a bag for carrying my things",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 8,
+      "repeat": 2,
+      "queryIndex": 0,
+      "query": "a light for my bedside table",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 9,
+      "repeat": 2,
+      "queryIndex": 1,
+      "query": "a bottle for drinking water",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 10,
+      "repeat": 2,
+      "queryIndex": 2,
+      "query": "a notebook for quick notes",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 11,
+      "repeat": 2,
+      "queryIndex": 3,
+      "query": "a bag for carrying my things",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 12,
+      "repeat": 3,
+      "queryIndex": 0,
+      "query": "a light for my bedside table",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 13,
+      "repeat": 3,
+      "queryIndex": 1,
+      "query": "a bottle for drinking water",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 14,
+      "repeat": 3,
+      "queryIndex": 2,
+      "query": "a notebook for quick notes",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 15,
+      "repeat": 3,
+      "queryIndex": 3,
+      "query": "a bag for carrying my things",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 16,
+      "repeat": 4,
+      "queryIndex": 0,
+      "query": "a light for my bedside table",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 17,
+      "repeat": 4,
+      "queryIndex": 1,
+      "query": "a bottle for drinking water",
+      "order": [
+        "local",
+        "generic"
+      ]
+    },
+    {
+      "pairIndex": 18,
+      "repeat": 4,
+      "queryIndex": 2,
+      "query": "a notebook for quick notes",
+      "order": [
+        "generic",
+        "local"
+      ]
+    },
+    {
+      "pairIndex": 19,
+      "repeat": 4,
+      "queryIndex": 3,
+      "query": "a bag for carrying my things",
+      "order": [
+        "local",
+        "generic"
+      ]
+    }
+  ],
+  "fixedPairs": 20,
+  "fixedArms": 40,
+  "perArmDenominator": 20,
+  "viewport": {
+    "width": 1280,
+    "height": 960
+  },
+  "deviceScaleFactor": 1,
+  "bootstrapQuery": "Browse the store",
+  "scoredQueries": [
+    "a light for my bedside table",
+    "a bottle for drinking water",
+    "a notebook for quick notes",
+    "a bag for carrying my things"
+  ],
+  "origin": "http://127.0.0.1:4312",
+  "workload": "Every arm gets a NEW isolated context and one unscored Browse bootstrap, then collection pre-scroll and two rAF BEFORE one assigned hash query. No post-dispatch scroll. Twenty paired queries; 10 generic-first and 10 local-first; all first/outlier observations retained.",
+  "browserCache": "Context begins HTTP-cache cold at unscored bootstrap; scored hash dispatch is LOADED and cache-eligible from that own bootstrap. Not cold-navigation latency. OS/filesystem/native caches uncontrolled; resource timings retained.",
+  "nativeCache": "Resident native model and catalog/static fact features warm. Local bootstrap and scored query each require one fresh native query POST and fresh neural copy; no response cache. Generic requires zero POSTs.",
+  "nativeRequestsPlanned": {
+    "unscoredBootstrap": 20,
+    "scored": 20,
+    "total": 40
+  },
+  "primaryEndpoint": "Hash dispatch performance.now to current-query first min(3, actual DOM count) complete cards/title/copy fully visible and primary images complete+decoded. Both arms use the same observer two-rAF barrier after current-query DOM, decoded images and full visibility. Generic proof is status+input; local proof begins at the existing current-request firstThree React-commit performance mark, then requires its app mirror and actual response10 fields. App mirror frames overlap the common observer frames; no extra local-only frame barrier. Passive clone overhead applies to local; raw-body settlement is outside endpoint timing.",
+  "localFullEndpoint": "Same dispatch clock to current complete mirror, all20 accepted fields across six cards plus six primary images decoded; DOM copy/raw response verified after capture. Six-card visibility is not required or claimed.",
+  "genericFields": "Existing static product titles/prices/variants; generic has no generated badges/body and no invented model field counts.",
+  "zeroResults": "Actual zero DOM cards plus current query response recorded separately; never a three-card success or included as a nonempty useful-content latency.",
+  "estimator": "Nearest-rank p50/p95. Headline percentiles only with all20 valid nonempty samples per arm; paired local-minus-generic percentiles only with all20 valid pairs. Missing/failure remains null; no replacement/drop/success-only distribution.",
+  "physicalPaintMeasured": false,
+  "timeoutMs": 30000,
+  "bodySettlementMs": 5000
+}

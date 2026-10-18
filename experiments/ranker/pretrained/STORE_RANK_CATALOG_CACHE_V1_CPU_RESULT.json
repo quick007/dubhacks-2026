@@ -1,0 +1,24 @@
+{
+  "version": "catalog-cache-cpu-result.v1",
+  "status": "PASS-CPU-only-not-promoted",
+  "command": ".tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_store_rank_catalog_cache_v1 -v",
+  "testsRun": 5,
+  "failures": 0,
+  "errors": 0,
+  "testFrameworkElapsedSeconds": 0.043,
+  "coverage": [
+    "exact catalog probabilities reused with fresh query projection calls",
+    "all32 tensor/receipt tamper paths reject before request and changes reject after request",
+    "owned tensor/receipt/projection clones cannot mutate cache",
+    "unknown rows, inactive access, changed complete catalog, and reentrant use rejected",
+    "original exception propagated and private memory mutations detected"
+  ],
+  "nativeExecution": false,
+  "latencyOrNativeParityClaim": false,
+  "liveServingChanges": false,
+  "pins": {
+    "experiments/ranker/pretrained/store_rank_catalog_cache_v1.py": "a103847c082b31d6dde854506c058c5ad25aebfac7f804555fef0344208a4a90",
+    "experiments/ranker/pretrained/test_store_rank_catalog_cache_v1.py": "0d87de5ac3fa3e5bd25023888e010646487c16123672857f97dbbccdf5df4956",
+    "experiments/ranker/pretrained/STORE_RANK_CATALOG_CACHE_V1_CANDIDATE.md": "2dffd07516acc6aaacc44bf7540b710947d7b141f1efdae6f3c5393f61e3f9fd"
+  }
+}

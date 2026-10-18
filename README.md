@@ -41,6 +41,14 @@ A `202` response confirms a durable local receipt; cloud acknowledgement is
 separate. Hosted export of real shopper evidence requires approval for that
 specific payload and destination.
 
+The [shopping telemetry guide](apps/api/SHOPPING_TELEMETRY.md) covers separately
+configured session observations, sanitized replay and versioned training exports.
+Normal development collection is off. Synthetic test sessions stay excluded from
+the default real-session export; replay is separate from training examples. The
+[model-input bridge](apps/api/SHOPPING_MODEL_INPUT.md) validates a separate
+context-only learner packet. Its consumer check uses explicitly synthetic CPU
+protocol vectors; no shopper query was captured and no live model was retrained.
+
 In the dashboard, open **All sessions** and choose **Run a round** to queue
 the deterministic mock comparisons. The separate legacy Playwright adapter
 exercises a scripted fake checkout and requires
@@ -50,8 +58,10 @@ not represent an independent shopper choosing a suitable product.
 ## Enable the local model
 
 The verified native environment uses Apple silicon, Python 3.14.7, MLX 0.32.4
-and MLX-LM 0.32.2. One frozen Qwen3.5-9B four-bit backbone supplies features to
-a trained ranking head and runs an adapted decoder for copy. The resident
+and MLX-LM 0.32.2. One frozen Qwen3.5-9B four-bit backbone supplies fresh query
+features to a trained ranking head. The fast catalog demo predicts fresh short
+text with a trained parallel word head over cached public Qwen fact features.
+The adapted autoregressive copy decoder remains a separate backend. The resident
 service handles requests serially on `127.0.0.1:8766`.
 
 This optional path requires the existing local environment, pinned Qwen weights
@@ -62,14 +72,21 @@ and completed serving checkpoints. They are not supplied by a fresh Git clone:
 | Python environment | `.tools/pretrained-venv/` |
 | Pinned model snapshot | `.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/` |
 | Actual-store ranking run | `data/ranker/pretrained/actual-store-function-v3-attempt-1/` |
+| Additional ranking candidate | `data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json` |
 | Copy adapter run | `data/ranker/pretrained/actual-store-copy-fit-v2-attempt-1/` |
+| Catalog-trained parallel head | `data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/` |
+| Verified public fact features | `data/ranker/pretrained/store-parallel-text-v1-attempt-1/features.pt` |
 
 With those artifacts available, start one resident worker from the repository
 root. Choose a new output directory for each service lifetime:
 
 ```sh
-.tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.store_demo_service \
-  --width 10 --output data/ranker/pretrained/store-demo-new-session
+.tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.store_candidate_image_service_v1 \
+  --candidate-run data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2 \
+  --integration-manifest experiments/ranker/pretrained/store_demo_integration_v11/manifest.json \
+  --rank-head-export data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json \
+  --rank-head-export-sha256 17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703 \
+  --output data/ranker/pretrained/store-candidate-new-session
 ```
 
 Wait for `GET http://127.0.0.1:8766/health` to report `ready: true`, then open
@@ -87,7 +104,68 @@ gallery; image selection and hidden-persona inference are not learned here.
 Stock and sizes remain unknown. Unsafe or unfinished generated fields are
 withheld, while catalog names and prices remain available.
 
+The parallel head is a fully supervised catalog demo: all 48 product/color
+bindings and three short writing styles were trained. It predicts word/EOS
+slots from learned weights; serving reads public facts and verified features,
+without teacher strings or response templates. The shopper query changes order;
+copy describes selected identity, color and price. New catalogs and unseen
+combinations are unproven; earlier heldout-color failures remain preserved.
+The status line explicitly labels catalog-trained text and distinguishes it
+from copy generated earlier. The original fresh autoregressive implementation
+and all its outputs remain available for historical comparisons. Its older
+frontend receipts do not cover the current image-delivery integration.
+
+The shop serves responsive WebP derivatives with a compact geometry manifest.
+All original images remain unchanged, and gallery/color selection is preserved.
+`node scripts/prepare-product-runtime-projection.mjs --check` verifies the
+projection against the full source/derivative audit manifests.
+
 ## Measured status
+
+The matched loaded-shop comparison completed 20 pairs with all 40 observations
+retained. Generic first-three visibility and decoded images took p50/p95
+64.3/65.1 ms; fresh local personalization took 281.1/297.7 ms. Paired additional
+delay was 217.4/234.4 ms. These are loopback, already-loaded collection views
+with browser-cache-eligible images, measured through the same visibility and
+two-frame observer. They exclude cold navigation and physical paint. The local
+arm produced all 20 fresh fields; the generic arm used static catalog copy.
+
+An isolated host profile attributes 170.62 ms exclusive median to fresh Qwen
+query encoding and 0.145 ms to the parallel text-head forward pass. Original
+full-six p50/p95 was 192.78/202.37 ms; instrumentation added paired median
+3.78 ms. See the [profile review](experiments/ranker/pretrained/STORE_FAST_PATH_PROFILE_V1_INDEPENDENT_REVIEW.md).
+Neither a tiny head timing nor ranking alone describes complete storefront readiness.
+
+The [balanced ranker audit](experiments/ranker/pretrained/function_v5_audit_v1/INDEPENDENT_AUDIT.md)
+reproduces 29/32 correct first choices and 32/32 targets in six on independently
+authored known-catalog queries. The prior ranker scores 14/32 and 29/32 on those
+same requests. No hidden persona goals enter inference. The
+[latest browser audit](experiments/ranker/pretrained/STORE_COMPACT_V5_BROWSER_INDEPENDENT_AUDIT_V1.md)
+verifies eight navigation requests with all 20 factual fields and a separate
+four-query loaded view: three fully visible cards with decoded images in
+269.95 ms median. Navigation through full text plus six primary images takes
+533.10 ms median in new contexts and 362.40 ms on reloads. These small development
+samples preserve startup outliers and Vite errors; no physical-paint or
+conversion effect is claimed.
+
+The [audited parallel-head benchmark](experiments/ranker/pretrained/STORE_PARALLEL_TEXT_TRAIN_ALL_FRESH_V1_AUDIT.md)
+completed 32 curated public requests, all with six cards and 20 factual fields.
+Median backend first-three/full-six readiness was 193.43/193.50 ms, including
+fresh query encoding, ranking, generation, guards and JSON. Offline top-one
+relevance was 30/32; one notebook target was absent from six. These are trained
+catalog results, excluding startup, network, browser and images. The first HTTP
+request after resident startup took 456.81 ms for full copy. The separate
+[browser baseline](experiments/ranker/pretrained/STORE_FULL_PERSONALIZED_CONTENT_BASELINE_V1.md)
+measures navigation through all 20 fields and six decoded primary images:
+497.80 ms median in four new contexts and 348.85 ms across four reloads. A loaded,
+pre-scrolled view takes 237.95 ms median for three fully visible factual cards.
+The hero leaves card copy below the fold during navigation; none of these
+measurements establishes physical paint or human conversion.
+The [native candidate comparison](experiments/ranker/pretrained/STORE_NATIVE_CANDIDATES_V1_RESULTS.md)
+preserves slower fresh-AR and fast generated-earlier cache attempts with their
+copy failures.
+
+Earlier autoregressive measurements follow:
 
 Warm six-card smoke requests recorded ordering around 0.2 seconds and fresh
 copy payloads around 5 to 6 seconds. Ordering latency excludes copy; serialized

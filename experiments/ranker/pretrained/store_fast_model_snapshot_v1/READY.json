@@ -1,0 +1,459 @@
+{
+  "schema": "fast-storefront-model-ready.v1",
+  "status": "ready",
+  "createdAt": "2026-10-18T08:37:59.819007+00:00",
+  "repositoryRoot": "/Users/lukas/Documents/Projects/dubhacks-2026",
+  "repositoryHeadObserved": "675ef4c26f9d74045cc60a0cc58fe8bc424e8860",
+  "implementationCommits": {
+    "fastImagesRanker": "86a4b51",
+    "checkoutFrontend": "0c4b5ab",
+    "checkoutBackend": "b05147c",
+    "telemetryConsumer": "55daca6",
+    "websiteSlideshowIntegrated": "675ef4c"
+  },
+  "processes": {
+    "storefront": {
+      "pid": 90191,
+      "port": 4312,
+      "origin": "http://127.0.0.1:4312",
+      "listenerPids": [
+        90191
+      ]
+    },
+    "checkout": {
+      "pid": 89743,
+      "port": 4331,
+      "origin": "http://127.0.0.1:4331",
+      "listenerPids": [
+        89743
+      ]
+    },
+    "model": {
+      "pid": 4200,
+      "port": 8766,
+      "origin": "http://127.0.0.1:8766",
+      "listenerPids": [
+        4200
+      ]
+    }
+  },
+  "healthUrl": "http://127.0.0.1:8766/health",
+  "health": {
+    "status": 200,
+    "bodySha256": "902c2dabc87bdf2322c20a2276bc99aa42e085880778a80f00693d914315a2f5",
+    "body": {
+      "status": "ready",
+      "ready": true,
+      "error": null,
+      "queuedRequests": 0,
+      "startup": {
+        "rankCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+        "copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+        "sourceTensorsHashed": 927,
+        "residentLoadMs": 1123.6344169592485,
+        "engineInitializationMs": 10857.761042076163,
+        "initializationScope": "engine constructor including source/checkpoint verification, model load, frozen hashes and catalog head; excludes process imports, worker lock wait and browser",
+        "memory": {
+          "mlxActiveBytes": 5038303752,
+          "mlxPeakBytes": 5101611528,
+          "mlxCacheBytes": 70295364,
+          "processBudgetBytes": 7516192768
+        },
+        "width": 10,
+        "nativeFallback": false,
+        "rankSessionProvenance": {
+          "featureBase": {
+            "kind": "original-v3-frozen-feature-base",
+            "run": "data/ranker/pretrained/actual-store-function-v3-attempt-1",
+            "reportSha256": "3a14a970a95b1289795d618ba6de8bfc12c07c4e7b8cafc8c4e0951645f4906d",
+            "packetSha256": "3b42c3f917df39c42643ac9771502e9e74ae0e7af24c1827c1107f8d248f645a",
+            "originalRunNativeForwards": 64,
+            "catalogFeatureVectors": 16,
+            "catalogTensorAndReceiptPins": 32,
+            "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+            "originalV3HeadSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e"
+          },
+          "rankHead": {
+            "kind": "v5-known-catalog-function-head",
+            "version": "store-v5-rank-session.v1",
+            "servingExportSha256": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703",
+            "headCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+            "newRunNativeForwards": 96,
+            "totalFeatureVectors": 144,
+            "reusedTrainAndCatalogVectors": 48,
+            "trainQueries": 96,
+            "freshEvaluationQueries": 32,
+            "trainSteps": 80,
+            "frozen927TrainingHashesUnchanged": true,
+            "teacherOrEvaluationFilesReadAtServing": false,
+            "requestEncodingUnchanged": true,
+            "selection": "explicit caller-selected serving export checksum; adapter performs no quality promotion",
+            "scope": "known16 single-function paraphrase adaptation; not promoted"
+          }
+        },
+        "candidateVersion": "store-candidate-engine.v1",
+        "copyMode": "parallel",
+        "copyCandidate": {
+          "version": "store-candidate-engine.v1",
+          "kind": "fresh-parallel-head",
+          "checkpointSha256": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+          "featuresSha256": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+          "publicFactsSha256": "bbd2400e0c6e2907c783f01b7c157714cae00ec5b76fc619790a939a0f9d07f3",
+          "assetSha256": {
+            "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/head.pt": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+            "data/ranker/pretrained/store-parallel-text-v1-attempt-1/features.pt": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+            "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/public-runtime-features.json": "bbd2400e0c6e2907c783f01b7c157714cae00ec5b76fc619790a939a0f9d07f3",
+            "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/serving-manifest.json": "4bf86af880a59ffb420646bbaf24cd200b743dccb5d0cf9274190d3d0a4acfae"
+          },
+          "trainingScope": "TRAIN-ALL public catalog demo; no heldout evaluation",
+          "heldoutBindings": 0,
+          "teacherStringsReadAtServing": false,
+          "offlineFeatures": "48 frozen-base Qwen fact encodings; no request/target features",
+          "headSlots": 14,
+          "vocabularySize": 107,
+          "style": "plain"
+        },
+        "candidateSourcesSha256": {
+          "store_candidate_engine_v1.py": "014e02881f9c4f3fceaffb6a927d031856d461f1f4907c63a824749af32b8a67",
+          "store_parallel_text_head_v1.py": "dd534fed7a956ac34c3533976f274ccf0aa1f564516ab9b86c36c2e87f8fa3d8",
+          "store_parallel_text_data_v1.py": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+          "store_parallel_text_demo_all_v1.py": "2f7d01ad4dca0c9bb882c2ba7b1add92f513bf6cb2f2b77f2795a7f464c06adb",
+          "store_generated_copy_cache_v1.py": "a5c372b7b1a80a156bbb4e30e08e2d407d9a4a24b275eabcd03d52c7e1a65c62",
+          "store_demo_engine.py": "bf2168f8898211ec2752d60676e933a647441fd15df93c4ad0450881c958deff"
+        },
+        "nativeFreshBackend": "store_demo_service CLI remains available",
+        "imageDelivery": {
+          "version": "same-dimension-product-webp.v1",
+          "encoder": {
+            "version": "1.6.0\nlibsharpyuv: 0.4.2",
+            "quality": 82,
+            "method": 4,
+            "metadata": "icc",
+            "resize": false,
+            "crop": false,
+            "encoderJobs": 1,
+            "multithreadFlag": false
+          },
+          "summary": {
+            "sourceCount": 87,
+            "sourceBytes": 44840476,
+            "optimizedBytes": 13245460,
+            "savedBytes": 31595016,
+            "optimizedToOriginalRatio": 0.29539070905491727,
+            "bytesSavedPercent": 70.46092909450827,
+            "nonSmallerDerivativeCount": 0
+          },
+          "manifestFile": "apps/storefront/src/responsive-product-assets.json",
+          "manifestSha256": "5724357f24475bb03ee845ad4903d01b998f0753b7802087223fbe62120e416a",
+          "responsiveManifestFile": "apps/storefront/src/responsive-product-sizes.json",
+          "responsiveManifestSha256": "548fc11314e848c47c72117c1c3557cb0646e9f16ff4c400b2069f225e3193d2",
+          "responsiveSummary": {
+            "sourceCount": 87,
+            "sourceBytes": 44840476,
+            "fullSizeWebpBytes": 13245460,
+            "variantCount": 409,
+            "variantBytes": 15374078,
+            "perWidth": {
+              "192": {
+                "count": 87,
+                "bytes": 374496
+              },
+              "384": {
+                "count": 87,
+                "bytes": 1079774
+              },
+              "768": {
+                "count": 87,
+                "bytes": 3294260
+              },
+              "1152": {
+                "count": 87,
+                "bytes": 6259114
+              },
+              "1536": {
+                "count": 61,
+                "bytes": 4366434
+              }
+            }
+          },
+          "runtimeProjectionFile": "apps/storefront/src/product-image-runtime.json",
+          "runtimeProjectionSha256": "c92cbbda72ecf32873ce233f7411645b899a393d48d3b550394a25685ec7fb08",
+          "runtimeProjectionBytes": 3125,
+          "delivery": "responsive whole-sheet WebP srcset/sizes; small lazy thumbnails; original-format fallback; full-size alternative retained",
+          "originalAssetBytesUnchanged": true,
+          "catalogFactsUnchanged": true,
+          "modelInputsUnchanged": true,
+          "learnedImageFeatures": false,
+          "selection": "existing color/gallery metadata; alternate format only",
+          "derivativeHashesVerifiedAtFreeze": true
+        },
+        "imageDeliveryManifestSha256": "7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839",
+        "imageServingSourcesSha256": {
+          "experiments/ranker/pretrained/store_candidate_image_service_v1.py": "68729ac3aa020af9f05f03e0c54fdcbc52ea54a7086f235cb515aa7acdfecd4d",
+          "experiments/ranker/pretrained/store_demo_image_binding_v1.py": "365adb11a097e233e1ba65039c9bc225e7e1eb7028c323f30480fab0699335d0",
+          "experiments/ranker/pretrained/store_rank_session_v5.py": "81dd458578fe087b7d2ad6eb9c2b0ceb03d456d11555d5ca9fc8abf62fb81d28",
+          "scripts/prepare-product-webp.mjs": "50d4962f9a4886905aa704ab5acd26060c8b4acf4a495fd476eb1dbee02c000f",
+          "scripts/prepare-product-responsive-webp.mjs": "48ae7d92938bdf8eaaaec4d5504465a7b567b4b2881a382ad57181145ec4a3c2",
+          "scripts/prepare-product-runtime-projection.mjs": "d66b4fe447330a090d0eea03169321bbe7cdce25bf6019c0a073cf39a3cb6908"
+        }
+      }
+    }
+  },
+  "healthIdentitySha256": "ca1e4477a2da7720f09bfbb3711560790d0ad633aff2129ad1b17f73063910e4",
+  "integrationManifest": {
+    "path": "experiments/ranker/pretrained/store_demo_integration_v11/manifest.json",
+    "sha256": "7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839",
+    "version": "actual-store-render-image-delivery.v3"
+  },
+  "sourceHashes": {
+    "apps/api/app.go": "eae9d92c24664ce9e317f526ca95697a3e7df41b1bdc9d5fa20ab3d9d68c66aa",
+    "apps/api/cmd/demo-checkout-server/main.go": "ecc23f70b19790e89bcf9a6df347d6e2ad76adf29e57166a9be7c5817fa73dfa",
+    "apps/api/internal/democheckout/catalog.json": "af01ff9269d2eaa438395716d70ae60ff4abec816300512e5e6dfe643bfbe906",
+    "apps/api/internal/democheckout/checkout.go": "ad185f0fd1ba31d3e2ac6ee16cfc68f6c9c12b911b073c8baf0e506c6848b73a",
+    "apps/storefront/src/CartView.tsx": "b03e672835650e62b20f3909a0b3533262ff34feb8f7f2302979502dd1658417",
+    "apps/storefront/src/ConfirmationView.tsx": "34bd9bdfc94ac3f164ffa72cc6ebfdb015a95f0e2148ca06213d92384eab9cbf",
+    "apps/storefront/src/DemoControls.tsx": "ce74cb58a8ad87398f8b880ffb5c4cdbda1d490f9e3a261a429599579cf2e1cc",
+    "apps/storefront/src/LegacyTraceControls.tsx": "b4a9a8af7cae1065e06aeecfa7e1b646870016c77599b07735a0de839fa1466c",
+    "apps/storefront/src/ProductCard.tsx": "0ab0de77256aecc58d9258525bdeb40539efce1ff7c9620bc4fc39b697f9a527",
+    "apps/storefront/src/ProductGallery.tsx": "f5976a52ddb7fc9bc611b15e1833812fbcf345c6be548cb07a2020ac3683a9bc",
+    "apps/storefront/src/ProductPhoto.tsx": "82e67036f498801a28f0676245edf52091e45d86915bb277d701be21e17a2c00",
+    "apps/storefront/src/ShopView.tsx": "b30f066c6658c703868d3a358e7d452bd7ca7b88dcc716208e52b8874a303c75",
+    "apps/storefront/src/TelemetryNotice.tsx": "b68193039bb855be11ba833bee2a2f0a2e0b21ad734f7f4d42fe5e0d9de23a84",
+    "apps/storefront/src/TraceControls.tsx": "c11ced8c27af17e29d790543bb346af4c9737cc21d7964a7bb294c7d88e401e4",
+    "apps/storefront/src/cart.ts": "aa22ce8c42fe49605757e2a9a81aa5906162c882153fa2fee0145d1633d7e281",
+    "apps/storefront/src/catalog-expansion.ts": "694f22afb2b5dace9a35d742d91d0fab381edab94c5b6b5a5d6c6d962a4d7735",
+    "apps/storefront/src/collections.ts": "1891fac9318734703b843843a9d948d4c9911ddaa974c8fa6762d62ce3edd93a",
+    "apps/storefront/src/color-gallery-layouts.json": "a04ce992c5b17c1703480acbcb753797f290a318a2f576bda044adce3d3f17b8",
+    "apps/storefront/src/config.ts": "dc496877b87032ac88a682d9f46adecd6d3c6e5fcb2e8875c9f06df795e6bb89",
+    "apps/storefront/src/demo-checkout-client.ts": "319fe29a7f60e4033f63585481cd4165fcbb4fdd8a825eedf9c223a7d377c285",
+    "apps/storefront/src/images.ts": "bbb72c2ef95fa9c00a968551e66e27f274e579c8811e72ecc0b0449ea28ff527",
+    "apps/storefront/src/local-model-performance.ts": "6a5033019baf465c8e6e3314237dc53392b54b6fa613ba07d34485f3337ae32b",
+    "apps/storefront/src/local-model.ts": "6a36aa74706631838c9bb16f660f63991db8857b5d970d983cca047237305e46",
+    "apps/storefront/src/main.tsx": "5c70bb1cb5d602554c0a5d05f57f950a4771274c54c0226dcca1d7b16665779f",
+    "apps/storefront/src/personalization.ts": "ddc5b14e85c26c0a0a85c140698f106d20db45feee366c6ccba691334bc93758",
+    "apps/storefront/src/product-asset-source.ts": "b030bba7cd078fce93decc5a0edb3839a325fe52ec1c2b2ccf24001cfb6d3e66",
+    "apps/storefront/src/product-image-runtime.json": "c92cbbda72ecf32873ce233f7411645b899a393d48d3b550394a25685ec7fb08",
+    "apps/storefront/src/product-responsive-runtime.ts": "f2c0ac6fc5b07289b48064fe8616de27792bd7325e75e954b5c64fb2a41854d7",
+    "apps/storefront/src/product-responsive-source.ts": "9cee8ba7ffa09cc884599707f63d6a835ea3bd74efdf784697c3816e40b2195c",
+    "apps/storefront/src/responsive-product-assets.json": "5724357f24475bb03ee845ad4903d01b998f0753b7802087223fbe62120e416a",
+    "apps/storefront/src/responsive-product-sizes.json": "548fc11314e848c47c72117c1c3557cb0646e9f16ff4c400b2069f225e3193d2",
+    "apps/storefront/src/routes.ts": "86ac68c9b36b900bd478d2fd1c15d5aa44e4eab83c82db8ceda3e3afb60e62b9",
+    "apps/storefront/src/session-trace-bridge.ts": "68cc09f335e91f7fb02e28f2f636b89dd6a769b80c52e32952b01e4bea606fef",
+    "apps/storefront/src/session-trace-runtime.ts": "dfa0add858315081f003decd417bb0dad772be980f66e90b12a734b4644eb4b6",
+    "apps/storefront/src/session-trace.ts": "aed837598bb0f1a33d52cc7eca067c209531aa2a82fcb3f0690a6d87f7c42c8a",
+    "apps/storefront/src/shipping.ts": "34f8469704bf2a4589073084407457d09eb6f9bdbe9cb4cc32c4c944a4f112c8",
+    "apps/storefront/src/shopping-events.ts": "73be4627f3f44aedb0897d6c6e1bee89fdfacbb1bd8c4c58ab73be5e71e2dd66",
+    "apps/storefront/src/shopping-telemetry-config.ts": "be36d50e48d70ebed965425e1590dbf9bfe309a193a3b261f8463982ceaf8813",
+    "apps/storefront/src/shopping-telemetry-runtime.ts": "52d4f57ccd32bc8583bf4af2bdb853aeb4782e588ba583f314c8cc6d36182046",
+    "apps/storefront/src/shopping-transport.ts": "4023f08831b0e8511784727e9f9bb7f7136a507a35b0afd739f1d831a7124872",
+    "apps/storefront/src/styles.css": "65b69176c025d24387866b42ce9ccecd6abdfd0a8fe8402658638937790136a1",
+    "apps/storefront/src/use-local-model.ts": "dc8a8f6711f17cc283dd5e544d3de6583ef78b83d28a9ffa1d746fe64048d712",
+    "apps/storefront/src/use-route.ts": "f928fdf654789efe3cd802f464ce731d7cdabfd95f9a05a6c63bd2fd14d65f5d",
+    "apps/storefront/src/variants.ts": "09bb4d47fb5c4e644c023421dda20323a58791156451061a1c5790244fb62ee3",
+    "apps/storefront/vite.config.ts": "d821544debe5e019336984276eb3435ab28a45ae8ac92cd206c2cced238bdccc",
+    "experiments/ranker/pretrained/backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "experiments/ranker/pretrained/catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "experiments/ranker/pretrained/catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "experiments/ranker/pretrained/semantic_copy_feature_fit.py": "f94f6dccb3ec228a7e018cc0069467c012a12a2ef58140d75a0540c4c3b88c87",
+    "experiments/ranker/pretrained/semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "experiments/ranker/pretrained/store_candidate_engine_v1.py": "014e02881f9c4f3fceaffb6a927d031856d461f1f4907c63a824749af32b8a67",
+    "experiments/ranker/pretrained/store_candidate_image_service_v1.py": "68729ac3aa020af9f05f03e0c54fdcbc52ea54a7086f235cb515aa7acdfecd4d",
+    "experiments/ranker/pretrained/store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+    "experiments/ranker/pretrained/store_copy_wide_v2.py": "a6631ff3b9e930b6c5a74465326fb8eba05aba6a736690c18b577718d98d096c",
+    "experiments/ranker/pretrained/store_demo_engine.py": "bf2168f8898211ec2752d60676e933a647441fd15df93c4ad0450881c958deff",
+    "experiments/ranker/pretrained/store_demo_image_binding_v1.py": "365adb11a097e233e1ba65039c9bc225e7e1eb7028c323f30480fab0699335d0",
+    "experiments/ranker/pretrained/store_demo_service.py": "435a4be0471da26a9863a27c3583dc8e404b450c4cfd6b6d1ca533bda16eb2f9",
+    "experiments/ranker/pretrained/store_function_adaptation.py": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+    "experiments/ranker/pretrained/store_generated_copy_cache_v1.py": "a5c372b7b1a80a156bbb4e30e08e2d407d9a4a24b275eabcd03d52c7e1a65c62",
+    "experiments/ranker/pretrained/store_hybrid_benchmark_v2.py": "3f76e456d54e0a1c7c36f9553df061d3771db744232432106c1574089011c7dd",
+    "experiments/ranker/pretrained/store_model_bridge.py": "91124b1793bf9960761547f0feb4c1e8609593bd70f4f7abf3c1b97c40c38eaf",
+    "experiments/ranker/pretrained/store_parallel_text_data_v1.py": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+    "experiments/ranker/pretrained/store_parallel_text_demo_all_v1.py": "2f7d01ad4dca0c9bb882c2ba7b1add92f513bf6cb2f2b77f2795a7f464c06adb",
+    "experiments/ranker/pretrained/store_parallel_text_head_v1.py": "dd534fed7a956ac34c3533976f274ccf0aa1f564516ab9b86c36c2e87f8fa3d8",
+    "experiments/ranker/pretrained/store_rank_session.py": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0",
+    "experiments/ranker/pretrained/store_rank_session_v5.py": "81dd458578fe087b7d2ad6eb9c2b0ceb03d456d11555d5ca9fc8abf62fb81d28",
+    "scripts/prepare-product-responsive-webp.mjs": "48ae7d92938bdf8eaaaec4d5504465a7b567b4b2881a382ad57181145ec4a3c2",
+    "scripts/prepare-product-runtime-projection.mjs": "d66b4fe447330a090d0eea03169321bbe7cdce25bf6019c0a073cf39a3cb6908",
+    "scripts/prepare-product-webp.mjs": "50d4962f9a4886905aa704ab5acd26060c8b4acf4a495fd476eb1dbee02c000f"
+  },
+  "checkpointAndCatalogHashes": {
+    "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/head.pt": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+    "data/ranker/pretrained/store-parallel-text-v1-attempt-1/features.pt": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+    "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/public-runtime-features.json": "bbd2400e0c6e2907c783f01b7c157714cae00ec5b76fc619790a939a0f9d07f3",
+    "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/serving-manifest.json": "4bf86af880a59ffb420646bbaf24cd200b743dccb5d0cf9274190d3d0a4acfae",
+    "data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703",
+    "data/ranker/pretrained/actual-store-function-v5-attempt-1/learned.pt": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+    "data/ranker/pretrained/actual-store-copy-fit-v2-attempt-1/adapter.safetensors": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+    "apps/api/internal/democheckout/catalog.json": "af01ff9269d2eaa438395716d70ae60ff4abec816300512e5e6dfe643bfbe906",
+    "experiments/ranker/pretrained/store_demo_integration_v11/manifest.json": "7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839"
+  },
+  "catalog": {
+    "products": 16,
+    "productColorBindings": 48,
+    "rawExportSha256": "fa440e919e1f36890a1c97d8e05ea01bd4ce46811eaed57c0dc61db7b049a0d8",
+    "modelInputsCanonicalSha256": "205572ed535b6f40cd56ede51208c348ad05998ad4d205f193a8b5bfe3e79fb7",
+    "hiddenPersonaTruthPassedToInference": false
+  },
+  "model": {
+    "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "sourceTensorsHashedAtStartup": 927,
+    "rankHeadSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+    "rankHeadExportSha256": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703",
+    "copyMode": "fresh-parallel-head",
+    "all48CopyBindingsSupervised": true,
+    "responseTextCacheUsed": false,
+    "queryEncoding": "fresh full canonical public request; no prefix reuse in cohort",
+    "trainingOrWeightsChangedDuringCohort": false,
+    "currentLifetimeFrozenHashComparisonAtShutdown": "pending until graceful cohort termination"
+  },
+  "checkout": {
+    "proxyApiOrigin": "http://127.0.0.1:4331",
+    "catalogSha256": "af01ff9269d2eaa438395716d70ae60ff4abec816300512e5e6dfe643bfbe906",
+    "receiptDirectory": "/Users/lukas/Documents/Projects/dubhacks-2026/data/demo-checkout-cohort-v1",
+    "priorDevelopmentSmokeGet": {
+      "status": 200,
+      "bodySha256": "0636827a01af3a95d64e1245b91b3174eadb2952df944c9ead6da848e2d73cd2",
+      "body": {
+        "receipt": {
+          "schema": "fieldwork.demo-checkout-receipt.v1",
+          "checkoutId": "59bda87a-ca2f-4006-b2f2-bcd5a6893d06",
+          "receiptId": "demo-98fbff1550eb28bc922ab445b77ede86",
+          "createdAt": "2026-10-18T08:20:05.182907Z",
+          "items": [
+            {
+              "productId": "bottle",
+              "variantId": "bottle-graphite",
+              "quantity": 1,
+              "unitPrice": 36,
+              "lineTotal": 36
+            }
+          ],
+          "subtotal": 36,
+          "shipping": {
+            "status": "hidden",
+            "cost": null
+          },
+          "total": 36,
+          "realPurchase": false
+        }
+      }
+    },
+    "realPayment": false,
+    "cloudWrite": false
+  },
+  "readinessEvidence": {
+    "path": "experiments/ranker/pretrained/store_paired_incremental_probe_results_v1_attempt_1/report.json",
+    "sha256": "6f448811ced78a72855432969b9ca83d2748840f10e741cf8d1f902a37836672",
+    "fixedPairs": 20,
+    "protocolPassedArms": 40,
+    "genericFirstUseful": {
+      "fixedDenominator": 20,
+      "valid": 20,
+      "missing": 0,
+      "rawMs": [
+        62.59999990463257,
+        63.799999952316284,
+        81.19999992847443,
+        64.5,
+        64.60000002384186,
+        64.89999997615814,
+        64.5,
+        64.70000004768372,
+        64.70000004768372,
+        63.300000071525574,
+        65.10000002384186,
+        64.30000007152557,
+        64.10000002384186,
+        63.299999952316284,
+        64.5,
+        63.5,
+        64.60000002384186,
+        62.60000002384186,
+        63.700000047683716,
+        63.199999928474426
+      ],
+      "p50Ms": 64.30000007152557,
+      "p95Ms": 65.10000002384186,
+      "minimumMs": 62.59999990463257,
+      "maximumMs": 81.19999992847443,
+      "estimator": "nearest-rank; no percentile when fixed complete denominator is missing"
+    },
+    "localFirstUseful": {
+      "fixedDenominator": 20,
+      "valid": 20,
+      "missing": 0,
+      "rawMs": [
+        281,
+        281,
+        280.10000002384186,
+        296.5,
+        281.3000000715256,
+        280.59999990463257,
+        264.3000000715256,
+        296.7999999523163,
+        281.2999999523163,
+        281,
+        281,
+        297.6999999284744,
+        282.39999997615814,
+        282.1999999284744,
+        264.7000000476837,
+        298.39999997615814,
+        281.10000002384186,
+        281.10000002384186,
+        281.10000002384186,
+        297.60000002384186
+      ],
+      "p50Ms": 281.10000002384186,
+      "p95Ms": 297.6999999284744,
+      "minimumMs": 264.3000000715256,
+      "maximumMs": 298.39999997615814,
+      "estimator": "nearest-rank; no percentile when fixed complete denominator is missing"
+    },
+    "incrementalLocalMinusGeneric": {
+      "fixedDenominator": 20,
+      "valid": 20,
+      "missing": 0,
+      "rawMs": [
+        218.40000009536743,
+        217.20000004768372,
+        198.90000009536743,
+        232,
+        216.70000004768372,
+        215.69999992847443,
+        199.80000007152557,
+        232.09999990463257,
+        216.59999990463257,
+        217.69999992847443,
+        215.89999997615814,
+        233.39999985694885,
+        218.29999995231628,
+        218.89999997615814,
+        200.20000004768372,
+        234.89999997615814,
+        216.5,
+        218.5,
+        217.39999997615814,
+        234.40000009536743
+      ],
+      "p50Ms": 217.39999997615814,
+      "p95Ms": 234.40000009536743,
+      "minimumMs": 198.90000009536743,
+      "maximumMs": 234.89999997615814,
+      "estimator": "nearest-rank; no percentile when fixed complete denominator is missing"
+    },
+    "scope": "Paired loaded/pre-scrolled collection requests, not cold navigation or generic generated20fields; no physical paint claim"
+  },
+  "upstreamIntegration": {
+    "commit": "675ef4c",
+    "changedScope": "apps/web presentation website, its screenshots/tests/scripts; no apps/storefront/API/model changes",
+    "cohortRuntimeSourcePinsStillExact": true
+  },
+  "resourceContract": {
+    "cohortOwner": "01a14d29-68ba-71a3-b36b-3be096ea4020",
+    "allResearchBrowsersClosed": true,
+    "noOtherNativeJobsRunning": true,
+    "modelAndStorefrontFrozenThroughCohort": true,
+    "newGpuJobRequiresCoordinatedWindow": true
+  }
+}
