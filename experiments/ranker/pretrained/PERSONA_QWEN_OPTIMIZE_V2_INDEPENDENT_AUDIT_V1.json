@@ -1,0 +1,539 @@
+{
+  "version": "persona-qwen-optimization-independent-audit.v1",
+  "status": "all-three-valid-research-runs-quality-fails",
+  "adjudicatedArtifact": "data/ranker/pretrained/persona-qwen-optimize-v2-independent-audit-v1-attempt-1/AUDIT.json",
+  "adjudicatedArtifactSha256": "44ecb48f5618b1643b203a334ecfdf50c3ef779fd8c76b75c70a906ae514b8df",
+  "sourceSha256": "d9a7a83d5109f32ac8785bcd7669100286c57c6433628389a923d7e9e8590939",
+  "all1296ScoreRowsExactlyReplayed": true,
+  "allCheckpointReloadAndTrainOnlyCentersVerified": true,
+  "actual3750Updates": "Producer counters/source/seeded-change/gradient/loss/final-checkpoint evidence verified; no optimizer recreated.",
+  "TRAIN": {
+    "raw-2500": {
+      "metrics": {
+        "denominator": 320,
+        "grade3Top1": 320,
+        "novelRelevantTop1": 320,
+        "strongPositiveTop3": 320,
+        "ownedTop1": 0,
+        "ndcg6": 1.0000000000000058
+      },
+      "loss": {
+        "productCrossEntropy": 0.6477718949317932,
+        "variantCrossEntropy": 0.6911537051200867,
+        "jointLoss": 0.9933487176895142,
+        "jointEntropyFloor": 0.9625412225723267,
+        "jointExcess": 0.0308074951171875
+      }
+    },
+    "centered-250": {
+      "metrics": {
+        "denominator": 320,
+        "grade3Top1": 320,
+        "novelRelevantTop1": 320,
+        "strongPositiveTop3": 320,
+        "ownedTop1": 0,
+        "ndcg6": 1.0000000000000058
+      },
+      "loss": {
+        "productCrossEntropy": 0.6512015461921692,
+        "variantCrossEntropy": 0.6916526556015015,
+        "jointLoss": 0.9970278739929199,
+        "jointEntropyFloor": 0.9625412225723267,
+        "jointExcess": 0.03448665142059326
+      }
+    },
+    "centered-1000": {
+      "metrics": {
+        "denominator": 320,
+        "grade3Top1": 320,
+        "novelRelevantTop1": 320,
+        "strongPositiveTop3": 320,
+        "ownedTop1": 0,
+        "ndcg6": 1.0000000000000058
+      },
+      "loss": {
+        "productCrossEntropy": 0.6434248685836792,
+        "variantCrossEntropy": 0.6793884038925171,
+        "jointLoss": 0.9831190705299377,
+        "jointEntropyFloor": 0.9625412225723267,
+        "jointExcess": 0.020577847957611084
+      }
+    }
+  },
+  "DEV32": {
+    "raw-2500": {
+      "primaryTop1": 8,
+      "novelRelevantTop1": 11,
+      "strongPositiveTop3": 22,
+      "ownedTop1": 1,
+      "ndcg6": 0.5201921862621746
+    },
+    "centered-250": {
+      "primaryTop1": 8,
+      "novelRelevantTop1": 9,
+      "strongPositiveTop3": 16,
+      "ownedTop1": 3,
+      "ndcg6": 0.4199817457468562
+    },
+    "centered-1000": {
+      "primaryTop1": 8,
+      "novelRelevantTop1": 9,
+      "strongPositiveTop3": 16,
+      "ownedTop1": 2,
+      "ndcg6": 0.3959951662028487
+    }
+  },
+  "publicDemoSummary": {
+    "raw-2500": {
+      "demo-nonfit": {
+        "functionalAnchorTop1": 10,
+        "functionalAnchorFirst3": 10,
+        "rowsWithOwnedFirst3": 0,
+        "rowsWithOwnedFirst6": 5
+      },
+      "demo-default-query-nonfit": {
+        "functionalAnchorTop1": 5,
+        "functionalAnchorFirst3": 10,
+        "rowsWithOwnedFirst3": 0,
+        "rowsWithOwnedFirst6": 6
+      }
+    },
+    "centered-250": {
+      "demo-nonfit": {
+        "functionalAnchorTop1": 10,
+        "functionalAnchorFirst3": 10,
+        "rowsWithOwnedFirst3": 0,
+        "rowsWithOwnedFirst6": 2
+      },
+      "demo-default-query-nonfit": {
+        "functionalAnchorTop1": 4,
+        "functionalAnchorFirst3": 10,
+        "rowsWithOwnedFirst3": 0,
+        "rowsWithOwnedFirst6": 3
+      }
+    },
+    "centered-1000": {
+      "demo-nonfit": {
+        "functionalAnchorTop1": 10,
+        "functionalAnchorFirst3": 10,
+        "rowsWithOwnedFirst3": 0,
+        "rowsWithOwnedFirst6": 3
+      },
+      "demo-default-query-nonfit": {
+        "functionalAnchorTop1": 2,
+        "functionalAnchorFirst3": 10,
+        "rowsWithOwnedFirst3": 0,
+        "rowsWithOwnedFirst6": 4
+      }
+    }
+  },
+  "publicDistribution": {
+    "TRAINUniqueCounts": {
+      "historyPattern": 108,
+      "backgroundFirstTwo": 20,
+      "query": 2,
+      "colors": 4
+    },
+    "demo-nonfit": {
+      "denominator": 10,
+      "historyPatternSeen": 10,
+      "backgroundFirstTwoSeen": 10,
+      "querySeen": 10,
+      "colorPreferenceListSeen": 10
+    },
+    "demo-default-query-nonfit": {
+      "denominator": 10,
+      "historyPatternSeen": 10,
+      "backgroundFirstTwoSeen": 10,
+      "querySeen": 0,
+      "colorPreferenceListSeen": 10
+    },
+    "independent-evaluation": {
+      "denominator": 32,
+      "historyPatternSeen": 0,
+      "backgroundFirstTwoSeen": 0,
+      "querySeen": 0,
+      "colorPreferenceListSeen": 0
+    },
+    "development-replay": {
+      "denominator": 40,
+      "historyPatternSeen": 6,
+      "backgroundFirstTwoSeen": 0,
+      "querySeen": 40,
+      "colorPreferenceListSeen": 40
+    }
+  },
+  "DEV32Inferability": [
+    {
+      "profileId": "ind-qwen-eval-00-a",
+      "pair": 0,
+      "arm": "A",
+      "primaryProductId": "mug",
+      "publicPrimaryCue": "Makes hot cacao at a small desk after dinner; the main practical interest is a dedicated drinking cup for that routine.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-00-b",
+      "pair": 0,
+      "arm": "B",
+      "primaryProductId": "notebook",
+      "publicPrimaryCue": "Also wants somewhere to write short tasting notes, with loose scraps currently used for that.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-01-a",
+      "pair": 1,
+      "arm": "A",
+      "primaryProductId": "pack",
+      "publicPrimaryCue": "Takes a computer and a few books between two workspaces each day; hands-free daily carrying is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "Hands-free computer/books favors daypack; other bags can still be useful.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-01-b",
+      "pair": 1,
+      "arm": "B",
+      "primaryProductId": "jacket",
+      "publicPrimaryCue": "Walks from the station in changeable weather, so an outer rain layer is a useful second need.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "Hands-free computer/books favors daypack; other bags can still be useful.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-02-a",
+      "pair": 2,
+      "arm": "A",
+      "primaryProductId": "notebook",
+      "publicPrimaryCue": "Records plant growth and watering experiments by hand; the main practical interest is keeping those written pages together.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "Keeping written pages together favors notebook in this catalog, though a binder would be another real-world interpretation.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-02-b",
+      "pair": 2,
+      "arm": "B",
+      "primaryProductId": "organizer",
+      "publicPrimaryCue": "Pencils and little charging adapters are currently loose in the same bag and could use a separate case.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "Keeping written pages together favors notebook in this catalog, though a binder would be another real-world interpretation.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-03-a",
+      "pair": 3,
+      "arm": "A",
+      "primaryProductId": "jacket",
+      "publicPrimaryCue": "Waits outside for a bus and walks the last part of the journey through drizzle; a hooded outer rain layer is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-03-b",
+      "pair": 3,
+      "arm": "B",
+      "primaryProductId": "sneakers",
+      "publicPrimaryCue": "Also needs ordinary casual footwear for that daily walk; the old pair is becoming worn.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-04-a",
+      "pair": 4,
+      "arm": "A",
+      "primaryProductId": "bottle",
+      "publicPrimaryCue": "Takes exercise classes; the main practical interest is a reusable container for drinking water between activities.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-04-b",
+      "pair": 4,
+      "arm": "B",
+      "primaryProductId": "towel",
+      "publicPrimaryCue": "Sometimes finishes with a pool shower and also needs something for drying off afterwards.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-05-a",
+      "pair": 5,
+      "arm": "A",
+      "primaryProductId": "tote",
+      "publicPrimaryCue": "Collects bread and a few loose vegetables on foot; easy hand-carrying of those purchases is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-05-b",
+      "pair": 5,
+      "arm": "B",
+      "primaryProductId": "lunchbox",
+      "publicPrimaryCue": "Often stays out over lunch and would also like a container for a prepared meal.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-06-a",
+      "pair": 6,
+      "arm": "A",
+      "primaryProductId": "blanket",
+      "publicPrimaryCue": "Has arranged a reading seat by a drafty window; a shared fabric cover across the knees is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-06-b",
+      "pair": 6,
+      "arm": "B",
+      "primaryProductId": "sweatshirt",
+      "publicPrimaryCue": "Also spends cool evenings moving around the flat, when a wearable cotton layer would be useful.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-07-a",
+      "pair": 7,
+      "arm": "A",
+      "primaryProductId": "lamp",
+      "publicPrimaryCue": "Reads printed books in a dim corner after sunset; a small side-table light is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-07-b",
+      "pair": 7,
+      "arm": "B",
+      "primaryProductId": "blanket",
+      "publicPrimaryCue": "A fabric cover across the lap is another useful addition for staying in that corner on cooler evenings.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-08-a",
+      "pair": 8,
+      "arm": "A",
+      "primaryProductId": "lunchbox",
+      "publicPrimaryCue": "Has begun cooking an extra portion at night; carrying that prepared meal to the next day workspace is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-08-b",
+      "pair": 8,
+      "arm": "B",
+      "primaryProductId": "mug",
+      "publicPrimaryCue": "A dedicated cup for a warm drink at that desk is another practical interest.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-09-a",
+      "pair": 9,
+      "arm": "A",
+      "primaryProductId": "headphones",
+      "publicPrimaryCue": "Studies spoken lessons in a shared flat; private listening without speakers is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-09-b",
+      "pair": 9,
+      "arm": "B",
+      "primaryProductId": "lamp",
+      "publicPrimaryCue": "Also reads printed exercises late in the evening and could use a small table light.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-10-a",
+      "pair": 10,
+      "arm": "A",
+      "primaryProductId": "sneakers",
+      "publicPrimaryCue": "Has made long walks between errands a daily habit; casual footwear for those trips is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-10-b",
+      "pair": 10,
+      "arm": "B",
+      "primaryProductId": "bottle",
+      "publicPrimaryCue": "Would also like a reusable container to carry drinking water along the route.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-11-a",
+      "pair": 11,
+      "arm": "A",
+      "primaryProductId": "sweatshirt",
+      "publicPrimaryCue": "Starts the day in a cool indoor studio; an easy wearable layer over a shirt is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-11-b",
+      "pair": 11,
+      "arm": "B",
+      "primaryProductId": "sunglasses",
+      "publicPrimaryCue": "Later walks through bright open streets, where eyewear for the sun would be another useful addition.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-12-a",
+      "pair": 12,
+      "arm": "A",
+      "primaryProductId": "duffel",
+      "publicPrimaryCue": "Makes overnight visits with folded clothes and small essentials; carrying that overnight kit is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "Overnight clothes favors weekender, but a sufficiently large daypack is a plausible lower-priority alternative; views also show interest in it.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-12-b",
+      "pair": 12,
+      "arm": "B",
+      "primaryProductId": "headphones",
+      "publicPrimaryCue": "Would also like private listening for spoken programs on the train.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "Overnight clothes favors weekender, but a sufficiently large daypack is a plausible lower-priority alternative; views also show interest in it.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-13-a",
+      "pair": 13,
+      "arm": "A",
+      "primaryProductId": "sunglasses",
+      "publicPrimaryCue": "Spends sunny afternoons watching outdoor matches; eyewear for bright conditions is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-13-b",
+      "pair": 13,
+      "arm": "B",
+      "primaryProductId": "tote",
+      "publicPrimaryCue": "Usually stops at small food stalls afterwards and would also use a simple hand-carried shopping bag.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-14-a",
+      "pair": 14,
+      "arm": "A",
+      "primaryProductId": "organizer",
+      "publicPrimaryCue": "Handles plugs, leads and adapters while moving between places; keeping those small things in a zip case is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-14-b",
+      "pair": 14,
+      "arm": "B",
+      "primaryProductId": "pack",
+      "publicPrimaryCue": "Also carries a computer and papers between buildings each day and could use a hands-free daily bag.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-15-a",
+      "pair": 15,
+      "arm": "A",
+      "primaryProductId": "towel",
+      "publicPrimaryCue": "Has started regular pool sessions; drying off after leaving the water is the main practical interest.",
+      "publicPurchaseResolvesFirstNeed": false,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    },
+    {
+      "profileId": "ind-qwen-eval-15-b",
+      "pair": 15,
+      "arm": "B",
+      "primaryProductId": "duffel",
+      "publicPrimaryCue": "Also needs a larger hand-carried bag for a change of clothes and the rest of the pool kit.",
+      "publicPurchaseResolvesFirstNeed": true,
+      "assessment": "Supported functional category and authored priority are inferable from public fields.",
+      "ambiguity": "No major category ambiguity found; alternative usefulness remains a judgment.",
+      "judgmentScope": "Post-hoc author review after outputs/labels; not blinded human validation."
+    }
+  ],
+  "goldLimitations": [
+    "Authored main/secondary priorities, not uniquely correct human purchases.",
+    "All unlisted products receive grade0; some view/cart or general-use alternatives could deserve grade1 in human adjudication.",
+    "Purchase is treated as satisfying a need, with no replacement or gifting intent; public avoid-duplicates wording supports this synthetic policy.",
+    "All32 are now development; this is not blind adjudication and cannot create a new holdout."
+  ],
+  "causalLimits": [
+    "Perfect TRAIN + weak development establishes transfer failure after optimization; it does not isolate embedding, pooling, head or data as the sole cause.",
+    "Common last-token Qwen vector and learned shared projection are one fixed representation; no native ablation was run in this review.",
+    "20 background blocks,2 query strings,4 color lists and correlated histories leave substantial shortcut opportunities.",
+    "Semantic TRAIN diversification and independently varied distracting interests/colors/priorities are better-supported next tests than capacity blame or lowering the gate."
+  ],
+  "sourceFilesSha256": {
+    "data/ranker/pretrained/persona-qwen-context-v1-attempt-1/preflight.json": "71c9cabc533083e726cfd5938fed9e2cacf88e4ef841b102b4dc3a73ba619c35",
+    "experiments/ranker/pretrained/persona_qwen_independent_eval_v2/public.json": "2994a34b2df30fe80600c88df2a878a962e2212a7436220d33032b0234b7a342",
+    "experiments/ranker/pretrained/persona_qwen_independent_eval_v2/labels.private.json": "95242eb91920e55b807b022a0436d5b895e92c0ba51f5fc6faedfa868f95c638",
+    "experiments/ranker/pretrained/audit_persona_qwen_optimize_v2.py": "d9a7a83d5109f32ac8785bcd7669100286c57c6433628389a923d7e9e8590939"
+  },
+  "noOptimizerNativeBrowserGit": true
+}

@@ -1,0 +1,170 @@
+{
+  "version": "persona-qwen-attempt1-independent-diagnosis.v1",
+  "status": "offline-gate-failed-no-promotion",
+  "checkpointSha256": "ad641a62da8845e5a904d9a326fc67eaf32d739792f09f73436761d834b9163a",
+  "adjudicatorExitStatus": 2,
+  "independentGateChecks": {
+    "primary20": false,
+    "novel24": false,
+    "strongTop3_28": false,
+    "zeroFactConstraintViolations": true,
+    "devOwnedDemotions8": false,
+    "devNovelAfter8": true,
+    "primaryStrictlyExceeds_most-recent-owned-repeat": true,
+    "primaryStrictlyExceeds_shuffled-context": true,
+    "primaryStrictlyExceeds_training-popularity": true,
+    "primaryStrictlyExceeds_zero-context-owned-only": true
+  },
+  "formerFresh32Scope": "now DEVELOPMENT replay after outcomes inspected",
+  "formerFresh32": {
+    "fixedDenominator": 32,
+    "primaryTop1": 4,
+    "novelRelevantTop1": 7,
+    "strongPositiveTop3": 15,
+    "ndcg6": 0.4049944584866802
+  },
+  "TRAIN": {
+    "rows": 320,
+    "primaryTop1": 190,
+    "rawPrimaryTop1": 190,
+    "novelRelevantTop1": 296,
+    "strongPositiveTop3": 319,
+    "ownedTop1": 8,
+    "acceptableVariantTop1": 305,
+    "meanNdcg6": 0.8787455207388545,
+    "primaryRawRanks": {
+      "count": 320,
+      "mean": 1.821875,
+      "stdPopulation": 1.3542143421094686,
+      "min": 1.0,
+      "p05": 1.0,
+      "median": 1.0,
+      "p95": 4.0,
+      "max": 9.0
+    }
+  },
+  "TRAINByOriginalContrast": {
+    "original": {
+      "denominator": 160,
+      "primaryTop1": 45,
+      "novelRelevantTop1": 151,
+      "strongPositiveTop3": 159,
+      "ownedTop1": 0,
+      "meanJointLoss": 2.4431447803974153
+    },
+    "contrast": {
+      "denominator": 160,
+      "primaryTop1": 145,
+      "novelRelevantTop1": 145,
+      "strongPositiveTop3": 160,
+      "ownedTop1": 8,
+      "meanJointLoss": 1.389849091693759
+    }
+  },
+  "TRAINLoss": {
+    "productCrossEntropy": 1.2625938653945923,
+    "variantCrossEntropy": 1.3078060150146484,
+    "variantWeight": 0.5,
+    "jointCrossEntropy": 1.9164968729019165,
+    "productEntropyFloor": 0.641694188117981,
+    "variantEntropyFloor": 0.6416941285133362,
+    "jointEntropyFloor": 0.9625412225723267,
+    "jointExcessOverEntropy": 0.9539556503295898,
+    "producerLossTrace": [
+      {
+        "step": 1,
+        "loss": 4.916746139526367,
+        "ownershipCoefficient": -0.0029999997932463884
+      },
+      {
+        "step": 26,
+        "loss": 4.345343112945557,
+        "ownershipCoefficient": -0.07977646589279175
+      },
+      {
+        "step": 51,
+        "loss": 4.314292907714844,
+        "ownershipCoefficient": -0.15541207790374756
+      },
+      {
+        "step": 76,
+        "loss": 4.270787239074707,
+        "ownershipCoefficient": -0.22841042280197144
+      },
+      {
+        "step": 101,
+        "loss": 4.392604827880859,
+        "ownershipCoefficient": -0.29857057332992554
+      },
+      {
+        "step": 126,
+        "loss": 4.209212303161621,
+        "ownershipCoefficient": -0.35604041814804077
+      },
+      {
+        "step": 151,
+        "loss": 3.8694045543670654,
+        "ownershipCoefficient": -0.41841545701026917
+      },
+      {
+        "step": 176,
+        "loss": 3.5322117805480957,
+        "ownershipCoefficient": -0.48902517557144165
+      },
+      {
+        "step": 201,
+        "loss": 3.4069314002990723,
+        "ownershipCoefficient": -0.5489361882209778
+      },
+      {
+        "step": 226,
+        "loss": 2.6224098205566406,
+        "ownershipCoefficient": -0.6107550263404846
+      },
+      {
+        "step": 250,
+        "loss": 1.9956145286560059,
+        "ownershipCoefficient": -0.6763281226158142
+      }
+    ],
+    "lastLossRecordedBeforeFinalUpdate": true
+  },
+  "TRAINGroupCount": 80,
+  "alignment": {
+    "exactPublicProfiles": true,
+    "actualConsumerProductAndVariantTargetsExact": true,
+    "publicOwnedProductsEqualLabels": true,
+    "originalInputsUnchanged": true
+  },
+  "TRAINLabelMultiplicity": {
+    "oneGrade3": 304,
+    "twoGrade3": 16
+  },
+  "nativeIntegrity": "432 complete receipts,864 archive hashes,927/shutdown producer receipts verified; no native hashes recreated by reviewer",
+  "diagnosis": [
+    "Substantial250-step TRAIN underfit remains: loss still falling and approximately.954 above joint target entropy bound.",
+    "Original160 substantially worse than contrasted160; grade>=2 partial relevance masks weak grade3 choices.",
+    "No target/profile mismatch found. Multiple grade3 TRAIN contrasts are legitimate and handled as sets.",
+    "Raw context and catalog embeddings strongly anisotropic; centering is a testable optimization hypothesis, not an established quality improvement.",
+    "Failed old32 and old40/history may guide development now; no new unseen-generalization claim."
+  ],
+  "servingAcceptance": "pending, no promotion",
+  "CPUOnlyTests": {
+    "passed": 3,
+    "seconds": 0.429,
+    "fakeFixturesOnly": true
+  },
+  "filesSha256": {
+    "data/ranker/pretrained/persona-qwen-independent-audit-v1-attempt-1/ADJUDICATION.json": "b2f53251b6abe557191744c0a4ae0c6d61355c22541ac1dfff6e1398a4673523",
+    "data/ranker/pretrained/persona-qwen-train-independent-audit-v1-attempt-2/INPUTS_FROZEN.json": "44481bcf2a613d9da17a00b3c0a99aa222a78069b214d1977b0c14b1c3f7e7b4",
+    "data/ranker/pretrained/persona-qwen-train-independent-audit-v1-attempt-2/TRAIN_PREDICTIONS.json": "576dbc3f95f4911f4e1676ae3da78374e8afd4a693e8d2762d5037daa0f08807",
+    "data/ranker/pretrained/persona-qwen-train-independent-audit-v1-attempt-2/QUICK_TRAIN.json": "8297229edad4e040f4ff88046343141446f12c4aa0dbad37a63ad81ceb68ea98",
+    "data/ranker/pretrained/persona-qwen-train-independent-audit-v1-attempt-2/DIAGNOSIS.json": "bfa1dae1ef335313ff6205fa5fcb6c6f9066ce0ffc3733ddf1170e231973816e",
+    "experiments/ranker/pretrained/audit_persona_qwen_train_v1.py": "2515ce328f8e920836379f4da6db0857e0cee5d5dd6ce7b12f671193df94e809",
+    "experiments/ranker/pretrained/test_persona_qwen_train_audit_v1.py": "db58978819055c225a81c0f64dcd7ffe90bdfa78b3936781d660d963b97692a8",
+    "data/ranker/pretrained/persona-qwen-train-independent-audit-v1-attempt-1/FAILURE.json": "bff36db2b1fc544570e1592c7c625e5f73d7435686c5ce52436df4cd02e7cdc0",
+    "data/ranker/pretrained/persona-qwen-train-independent-audit-v1-attempt-1/source.py": "b9f12c06f6a5dfee41bbeee2c6d6d3e5ec835d2be0795edbc158f6875c024fcb"
+  },
+  "preservedInitialAuditFailure": "Attempt1 diagnostic source/inputs/FAILURE saved after reviewer unique-grade3 assumption rejected16 valid multi-positive contrast rows; successful attempt2 is separate.",
+  "noOptimizerNativeBrowserOrGitByReviewer": true
+}

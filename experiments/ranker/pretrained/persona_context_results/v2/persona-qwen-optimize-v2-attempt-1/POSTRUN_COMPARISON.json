@@ -1,0 +1,2155 @@
+{
+  "version": "persona-qwen-optimization-development-comparison.v2",
+  "resultsSha256": "c740e1d3b598e2cce8e5917bb93c8d10b2e9a7be160790a6dbff93d8a3fef386",
+  "planSha256": "b9ec986785923a00253e90609e7d72f0a2663f1f5a5ac7cf7a6765be091ad0c0",
+  "freezeSha256": "7c0fb6159ba58a74d180b20284785c9e3fd0d6f4f960d73be94782012c8647dd",
+  "verified": {
+    "raw-2500": {
+      "checkpointSha256": "2ec600745b19086b4bedcc4f66c283b5870b65eebce43f8715f0e8cbb154ea56",
+      "predictionFilesVerified": 6
+    },
+    "centered-250": {
+      "checkpointSha256": "8a6824ea9fbd28ff11e3358363a2d3a8562de3899acf17ab671824f77d21fc20",
+      "predictionFilesVerified": 6
+    },
+    "centered-1000": {
+      "checkpointSha256": "2ac2d413170785683e7eef1f5793843307e7d34b4d236a32f882f4da6557401e",
+      "predictionFilesVerified": 6
+    }
+  },
+  "actualUpdatesVerified": 3750,
+  "scope": "Three-arm DEVELOPMENT selection; old32 and old40 already inspected. No unseen outcome claim. No serving/copy/paint/timing evidence.",
+  "original250Reference": {
+    "checkpointSha256": "ad641a62da8845e5a904d9a326fc67eaf32d739792f09f73436761d834b9163a",
+    "development32Metrics": {
+      "fixedDenominator": 32,
+      "predictions": 32,
+      "userGroups": 16,
+      "semanticClassCoverage": 16,
+      "topGrade3Rate": 0.125,
+      "novelRelevantTop1Rate": 0.21875,
+      "ownedDuplicateTop1Rate": 0.0,
+      "ndcg6": 0.4049944584866802,
+      "acceptableVariantTop1Rate": 0.21875,
+      "groupNovelRelevantTop1Rates": {
+        "ind-qwen-eval-group-00": 0.0,
+        "ind-qwen-eval-group-01": 0.0,
+        "ind-qwen-eval-group-02": 1.0,
+        "ind-qwen-eval-group-03": 0.5,
+        "ind-qwen-eval-group-04": 0.0,
+        "ind-qwen-eval-group-05": 0.0,
+        "ind-qwen-eval-group-06": 0.5,
+        "ind-qwen-eval-group-07": 1.0,
+        "ind-qwen-eval-group-08": 0.5,
+        "ind-qwen-eval-group-09": 0.0,
+        "ind-qwen-eval-group-10": 0.0,
+        "ind-qwen-eval-group-11": 0.0,
+        "ind-qwen-eval-group-12": 0.0,
+        "ind-qwen-eval-group-13": 0.0,
+        "ind-qwen-eval-group-14": 0.0,
+        "ind-qwen-eval-group-15": 0.0
+      },
+      "rows": [
+        {
+          "profileId": "ind-qwen-eval-00-a",
+          "userGroupId": "ind-qwen-eval-group-00",
+          "topProductId": "tote",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.280390126950546,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-00-b",
+          "userGroupId": "ind-qwen-eval-group-00",
+          "topProductId": "lamp",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.38685280723454163,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-01-a",
+          "userGroupId": "ind-qwen-eval-group-01",
+          "topProductId": "mug",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.12016719726451973,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-01-b",
+          "userGroupId": "ind-qwen-eval-group-01",
+          "topProductId": "mug",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3562071871080222,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-02-a",
+          "userGroupId": "ind-qwen-eval-group-02",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.7309292742059024,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "ind-qwen-eval-02-b",
+          "userGroupId": "ind-qwen-eval-group-02",
+          "topProductId": "organizer",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 1.0,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "ind-qwen-eval-03-a",
+          "userGroupId": "ind-qwen-eval-group-03",
+          "topProductId": "sneakers",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.8339912323981488,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "ind-qwen-eval-03-b",
+          "userGroupId": "ind-qwen-eval-group-03",
+          "topProductId": "sunglasses",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.6309297535714575,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-04-a",
+          "userGroupId": "ind-qwen-eval-group-04",
+          "topProductId": "organizer",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3390090350877799,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-04-b",
+          "userGroupId": "ind-qwen-eval-group-04",
+          "topProductId": "organizer",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-05-a",
+          "userGroupId": "ind-qwen-eval-group-05",
+          "topProductId": "mug",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.12016719726451973,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-05-b",
+          "userGroupId": "ind-qwen-eval-group-05",
+          "topProductId": "lamp",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.5,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-06-a",
+          "userGroupId": "ind-qwen-eval-group-06",
+          "topProductId": "blanket",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.9073218002554915,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "ind-qwen-eval-06-b",
+          "userGroupId": "ind-qwen-eval-group-06",
+          "topProductId": "mug",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 2,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-07-a",
+          "userGroupId": "ind-qwen-eval-group-07",
+          "topProductId": "lamp",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 1.0,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "ind-qwen-eval-07-b",
+          "userGroupId": "ind-qwen-eval-group-07",
+          "topProductId": "blanket",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 1.0,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "ind-qwen-eval-08-a",
+          "userGroupId": "ind-qwen-eval-group-08",
+          "topProductId": "mug",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.6763610077981964,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "ind-qwen-eval-08-b",
+          "userGroupId": "ind-qwen-eval-group-08",
+          "topProductId": "notebook",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.5,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-09-a",
+          "userGroupId": "ind-qwen-eval-group-09",
+          "topProductId": "mug",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.2128453970090281,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-09-b",
+          "userGroupId": "ind-qwen-eval-group-09",
+          "topProductId": "notebook",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.6309297535714575,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-10-a",
+          "userGroupId": "ind-qwen-eval-group-10",
+          "topProductId": "sunglasses",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.4966392596877323,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-10-b",
+          "userGroupId": "ind-qwen-eval-group-10",
+          "topProductId": "pack",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-11-a",
+          "userGroupId": "ind-qwen-eval-group-11",
+          "topProductId": "lamp",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3390090350877799,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-11-b",
+          "userGroupId": "ind-qwen-eval-group-11",
+          "topProductId": "lamp",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-12-a",
+          "userGroupId": "ind-qwen-eval-group-12",
+          "topProductId": "pack",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.606422698504514,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-12-b",
+          "userGroupId": "ind-qwen-eval-group-12",
+          "topProductId": "pack",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.6309297535714575,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-13-a",
+          "userGroupId": "ind-qwen-eval-group-13",
+          "topProductId": "notebook",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-13-b",
+          "userGroupId": "ind-qwen-eval-group-13",
+          "topProductId": "notebook",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-14-a",
+          "userGroupId": "ind-qwen-eval-group-14",
+          "topProductId": "notebook",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.30451296789464855,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-14-b",
+          "userGroupId": "ind-qwen-eval-group-14",
+          "topProductId": "notebook",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 2,
+          "ndcg6": 0.3562071871080222,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-15-a",
+          "userGroupId": "ind-qwen-eval-group-15",
+          "topProductId": "organizer",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "ind-qwen-eval-15-b",
+          "userGroupId": "ind-qwen-eval-group-15",
+          "topProductId": "organizer",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        }
+      ],
+      "primaryTop1": 4,
+      "rawPrimaryTop1": 4,
+      "positiveTop3": 15,
+      "strongPositiveTop3": 15,
+      "bothPairSidesPrimary": 1,
+      "bothPairSidesRawPrimary": 1,
+      "pairRows": [
+        {
+          "profileId": "ind-qwen-eval-00-a",
+          "pairId": "ind-qwen-eval-pair-00",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-00-b",
+          "pairId": "ind-qwen-eval-pair-00",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-01-a",
+          "pairId": "ind-qwen-eval-pair-01",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-01-b",
+          "pairId": "ind-qwen-eval-pair-01",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-02-a",
+          "pairId": "ind-qwen-eval-pair-02",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-02-b",
+          "pairId": "ind-qwen-eval-pair-02",
+          "primaryTop1": true,
+          "rawPrimaryTop1": true,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-03-a",
+          "pairId": "ind-qwen-eval-pair-03",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-03-b",
+          "pairId": "ind-qwen-eval-pair-03",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-04-a",
+          "pairId": "ind-qwen-eval-pair-04",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-04-b",
+          "pairId": "ind-qwen-eval-pair-04",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-05-a",
+          "pairId": "ind-qwen-eval-pair-05",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-05-b",
+          "pairId": "ind-qwen-eval-pair-05",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-06-a",
+          "pairId": "ind-qwen-eval-pair-06",
+          "primaryTop1": true,
+          "rawPrimaryTop1": true,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-06-b",
+          "pairId": "ind-qwen-eval-pair-06",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-07-a",
+          "pairId": "ind-qwen-eval-pair-07",
+          "primaryTop1": true,
+          "rawPrimaryTop1": true,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-07-b",
+          "pairId": "ind-qwen-eval-pair-07",
+          "primaryTop1": true,
+          "rawPrimaryTop1": true,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-08-a",
+          "pairId": "ind-qwen-eval-pair-08",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-08-b",
+          "pairId": "ind-qwen-eval-pair-08",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-09-a",
+          "pairId": "ind-qwen-eval-pair-09",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-09-b",
+          "pairId": "ind-qwen-eval-pair-09",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-10-a",
+          "pairId": "ind-qwen-eval-pair-10",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-10-b",
+          "pairId": "ind-qwen-eval-pair-10",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-11-a",
+          "pairId": "ind-qwen-eval-pair-11",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-11-b",
+          "pairId": "ind-qwen-eval-pair-11",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-12-a",
+          "pairId": "ind-qwen-eval-pair-12",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-12-b",
+          "pairId": "ind-qwen-eval-pair-12",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "ind-qwen-eval-13-a",
+          "pairId": "ind-qwen-eval-pair-13",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-13-b",
+          "pairId": "ind-qwen-eval-pair-13",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-14-a",
+          "pairId": "ind-qwen-eval-pair-14",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-14-b",
+          "pairId": "ind-qwen-eval-pair-14",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-15-a",
+          "pairId": "ind-qwen-eval-pair-15",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "ind-qwen-eval-15-b",
+          "pairId": "ind-qwen-eval-pair-15",
+          "primaryTop1": false,
+          "rawPrimaryTop1": false,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        }
+      ]
+    },
+    "development40Metrics": {
+      "fixedDenominator": 40,
+      "predictions": 40,
+      "userGroups": 20,
+      "semanticClassCoverage": 5,
+      "topGrade3Rate": 0.1,
+      "novelRelevantTop1Rate": 0.65,
+      "ownedDuplicateTop1Rate": 0.0,
+      "ndcg6": 0.60895218549955,
+      "acceptableVariantTop1Rate": 0.675,
+      "groupNovelRelevantTop1Rates": {
+        "history-u-f53529d1fa30": 1.0,
+        "history-u-2d06d9b88ea1": 1.0,
+        "history-u-0749c6a336ab": 1.0,
+        "history-u-cd6c03902481": 1.0,
+        "history-u-378e76c6514d": 1.0,
+        "history-u-ba2d029542fd": 1.0,
+        "history-u-893ae71881e3": 1.0,
+        "history-u-6523936b2dc2": 1.0,
+        "history-u-b26bd684de9b": 0.5,
+        "history-u-2be212299092": 1.0,
+        "history-u-2a04ca3e2197": 1.0,
+        "history-u-e2e0220de681": 1.0,
+        "history-u-721baf61f0e2": 0.0,
+        "history-u-e18d69d24d12": 1.0,
+        "history-u-a8f7a4bb99f1": 0.5,
+        "history-u-de53a54f5d16": 0.0,
+        "history-u-682238228067": 0.0,
+        "history-u-f97261b4521b": 0.0,
+        "history-u-232e17fafe09": 0.0,
+        "history-u-b8738f1373f1": 0.0
+      },
+      "rows": [
+        {
+          "profileId": "history-u-f53529d1fa30-s1",
+          "userGroupId": "history-u-f53529d1fa30",
+          "topProductId": "lamp",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.8428282648809379,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-f53529d1fa30-s2",
+          "userGroupId": "history-u-f53529d1fa30",
+          "topProductId": "blanket",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 1.0,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-2d06d9b88ea1-s1",
+          "userGroupId": "history-u-2d06d9b88ea1",
+          "topProductId": "blanket",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 1.0,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-2d06d9b88ea1-s2",
+          "userGroupId": "history-u-2d06d9b88ea1",
+          "topProductId": "lamp",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.7591919243197319,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-0749c6a336ab-s1",
+          "userGroupId": "history-u-0749c6a336ab",
+          "topProductId": "lamp",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.8428282648809379,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-0749c6a336ab-s2",
+          "userGroupId": "history-u-0749c6a336ab",
+          "topProductId": "lamp",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.8428282648809379,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-cd6c03902481-s1",
+          "userGroupId": "history-u-cd6c03902481",
+          "topProductId": "blanket",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 1.0,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-cd6c03902481-s2",
+          "userGroupId": "history-u-cd6c03902481",
+          "topProductId": "lamp",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.8428282648809379,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-378e76c6514d-s1",
+          "userGroupId": "history-u-378e76c6514d",
+          "topProductId": "bottle",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.47078692139073114,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-378e76c6514d-s2",
+          "userGroupId": "history-u-378e76c6514d",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.47078692139073114,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-ba2d029542fd-s1",
+          "userGroupId": "history-u-ba2d029542fd",
+          "topProductId": "bottle",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.723072095276683,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-ba2d029542fd-s2",
+          "userGroupId": "history-u-ba2d029542fd",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.47078692139073114,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-893ae71881e3-s1",
+          "userGroupId": "history-u-893ae71881e3",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.4129814977047997,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-893ae71881e3-s2",
+          "userGroupId": "history-u-893ae71881e3",
+          "topProductId": "bottle",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.8075588805057204,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-6523936b2dc2-s1",
+          "userGroupId": "history-u-6523936b2dc2",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.432992518862129,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-6523936b2dc2-s2",
+          "userGroupId": "history-u-6523936b2dc2",
+          "topProductId": "bottle",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.8075588805057204,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-b26bd684de9b-s1",
+          "userGroupId": "history-u-b26bd684de9b",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.6260443999936466,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-b26bd684de9b-s2",
+          "userGroupId": "history-u-b26bd684de9b",
+          "topProductId": "tote",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.4669794508023413,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-2be212299092-s1",
+          "userGroupId": "history-u-2be212299092",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.7895959410076381,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-2be212299092-s2",
+          "userGroupId": "history-u-2be212299092",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.6920202103528978,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-2a04ca3e2197-s1",
+          "userGroupId": "history-u-2a04ca3e2197",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3652457712878007,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-2a04ca3e2197-s2",
+          "userGroupId": "history-u-2a04ca3e2197",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.7378720384008995,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-e2e0220de681-s1",
+          "userGroupId": "history-u-e2e0220de681",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.6456204509041226,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-e2e0220de681-s2",
+          "userGroupId": "history-u-e2e0220de681",
+          "topProductId": "organizer",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.38656565720663316,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-721baf61f0e2-s1",
+          "userGroupId": "history-u-721baf61f0e2",
+          "topProductId": "bottle",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.619993237061603,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-721baf61f0e2-s2",
+          "userGroupId": "history-u-721baf61f0e2",
+          "topProductId": "bottle",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.5773534652239384,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-e18d69d24d12-s1",
+          "userGroupId": "history-u-e18d69d24d12",
+          "topProductId": "lunchbox",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.6920202103528978,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-e18d69d24d12-s2",
+          "userGroupId": "history-u-e18d69d24d12",
+          "topProductId": "tote",
+          "topGrade": 3,
+          "topGrade3": true,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.9926195041747018,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-a8f7a4bb99f1-s1",
+          "userGroupId": "history-u-a8f7a4bb99f1",
+          "topProductId": "lunchbox",
+          "topGrade": 2,
+          "topGrade3": false,
+          "novelRelevantTop1": true,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.8354477690556398,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-a8f7a4bb99f1-s2",
+          "userGroupId": "history-u-a8f7a4bb99f1",
+          "topProductId": "bottle",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.547831481922746,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-de53a54f5d16-s1",
+          "userGroupId": "history-u-de53a54f5d16",
+          "topProductId": "bottle",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.6489436297638531,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-de53a54f5d16-s2",
+          "userGroupId": "history-u-de53a54f5d16",
+          "topProductId": "bottle",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 1,
+          "ndcg6": 0.5741414090136012,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-682238228067-s1",
+          "userGroupId": "history-u-682238228067",
+          "topProductId": "tote",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-682238228067-s2",
+          "userGroupId": "history-u-682238228067",
+          "topProductId": "sunglasses",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3209627963360124,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-f97261b4521b-s1",
+          "userGroupId": "history-u-f97261b4521b",
+          "topProductId": "sunglasses",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3726262671130988,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-f97261b4521b-s2",
+          "userGroupId": "history-u-f97261b4521b",
+          "topProductId": "organizer",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3741951202093122,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-232e17fafe09-s1",
+          "userGroupId": "history-u-232e17fafe09",
+          "topProductId": "organizer",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.439797981079933,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-232e17fafe09-s2",
+          "userGroupId": "history-u-232e17fafe09",
+          "topProductId": "mug",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.0,
+          "acceptableVariantTop1": false
+        },
+        {
+          "profileId": "history-u-b8738f1373f1-s1",
+          "userGroupId": "history-u-b8738f1373f1",
+          "topProductId": "pack",
+          "topGrade": 1,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.5509858876386381,
+          "acceptableVariantTop1": true
+        },
+        {
+          "profileId": "history-u-b8738f1373f1-s2",
+          "userGroupId": "history-u-b8738f1373f1",
+          "topProductId": "organizer",
+          "topGrade": 0,
+          "topGrade3": false,
+          "novelRelevantTop1": false,
+          "ownedDuplicateTop1": false,
+          "ownedDuplicatesTop6": 0,
+          "ndcg6": 0.3741951202093122,
+          "acceptableVariantTop1": false
+        }
+      ],
+      "primaryTop1": null,
+      "rawPrimaryTop1": null,
+      "positiveTop3": 37,
+      "strongPositiveTop3": 34,
+      "bothPairSidesPrimary": null,
+      "bothPairSidesRawPrimary": null,
+      "pairRows": [
+        {
+          "profileId": "history-u-f53529d1fa30-s1",
+          "pairId": "history-u-f53529d1fa30",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-f53529d1fa30-s2",
+          "pairId": "history-u-f53529d1fa30",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-2d06d9b88ea1-s1",
+          "pairId": "history-u-2d06d9b88ea1",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-2d06d9b88ea1-s2",
+          "pairId": "history-u-2d06d9b88ea1",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-0749c6a336ab-s1",
+          "pairId": "history-u-0749c6a336ab",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-0749c6a336ab-s2",
+          "pairId": "history-u-0749c6a336ab",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-cd6c03902481-s1",
+          "pairId": "history-u-cd6c03902481",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-cd6c03902481-s2",
+          "pairId": "history-u-cd6c03902481",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-378e76c6514d-s1",
+          "pairId": "history-u-378e76c6514d",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-378e76c6514d-s2",
+          "pairId": "history-u-378e76c6514d",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-ba2d029542fd-s1",
+          "pairId": "history-u-ba2d029542fd",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-ba2d029542fd-s2",
+          "pairId": "history-u-ba2d029542fd",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-893ae71881e3-s1",
+          "pairId": "history-u-893ae71881e3",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-893ae71881e3-s2",
+          "pairId": "history-u-893ae71881e3",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-6523936b2dc2-s1",
+          "pairId": "history-u-6523936b2dc2",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-6523936b2dc2-s2",
+          "pairId": "history-u-6523936b2dc2",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-b26bd684de9b-s1",
+          "pairId": "history-u-b26bd684de9b",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-b26bd684de9b-s2",
+          "pairId": "history-u-b26bd684de9b",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-2be212299092-s1",
+          "pairId": "history-u-2be212299092",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-2be212299092-s2",
+          "pairId": "history-u-2be212299092",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-2a04ca3e2197-s1",
+          "pairId": "history-u-2a04ca3e2197",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-2a04ca3e2197-s2",
+          "pairId": "history-u-2a04ca3e2197",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-e2e0220de681-s1",
+          "pairId": "history-u-e2e0220de681",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-e2e0220de681-s2",
+          "pairId": "history-u-e2e0220de681",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-721baf61f0e2-s1",
+          "pairId": "history-u-721baf61f0e2",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-721baf61f0e2-s2",
+          "pairId": "history-u-721baf61f0e2",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-e18d69d24d12-s1",
+          "pairId": "history-u-e18d69d24d12",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-e18d69d24d12-s2",
+          "pairId": "history-u-e18d69d24d12",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-a8f7a4bb99f1-s1",
+          "pairId": "history-u-a8f7a4bb99f1",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-a8f7a4bb99f1-s2",
+          "pairId": "history-u-a8f7a4bb99f1",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-de53a54f5d16-s1",
+          "pairId": "history-u-de53a54f5d16",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-de53a54f5d16-s2",
+          "pairId": "history-u-de53a54f5d16",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-682238228067-s1",
+          "pairId": "history-u-682238228067",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "history-u-682238228067-s2",
+          "pairId": "history-u-682238228067",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "history-u-f97261b4521b-s1",
+          "pairId": "history-u-f97261b4521b",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-f97261b4521b-s2",
+          "pairId": "history-u-f97261b4521b",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "history-u-232e17fafe09-s1",
+          "pairId": "history-u-232e17fafe09",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": true
+        },
+        {
+          "profileId": "history-u-232e17fafe09-s2",
+          "pairId": "history-u-232e17fafe09",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": false,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "history-u-b8738f1373f1-s1",
+          "pairId": "history-u-b8738f1373f1",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": false
+        },
+        {
+          "profileId": "history-u-b8738f1373f1-s2",
+          "pairId": "history-u-b8738f1373f1",
+          "primaryTop1": null,
+          "rawPrimaryTop1": null,
+          "positiveTop3": true,
+          "strongPositiveTop3": false
+        }
+      ]
+    }
+  },
+  "demoChoiceComparison": {
+    "demo-nonfit": [
+      {
+        "profileId": "bob",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-moss",
+            "selectedColor": "Moss"
+          },
+          "raw-2500": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-moss",
+            "selectedColor": "Moss"
+          },
+          "centered-250": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-moss",
+            "selectedColor": "Moss"
+          },
+          "centered-1000": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-moss",
+            "selectedColor": "Moss"
+          }
+        }
+      },
+      {
+        "profileId": "maya",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-rust",
+            "selectedColor": "Rust"
+          },
+          "raw-2500": {
+            "productId": "lamp",
+            "name": "Portable table light",
+            "variantId": "lamp-terracotta",
+            "selectedColor": "Terracotta"
+          },
+          "centered-250": {
+            "productId": "lamp",
+            "name": "Portable table light",
+            "variantId": "lamp-terracotta",
+            "selectedColor": "Terracotta"
+          },
+          "centered-1000": {
+            "productId": "lamp",
+            "name": "Portable table light",
+            "variantId": "lamp-terracotta",
+            "selectedColor": "Terracotta"
+          }
+        }
+      },
+      {
+        "profileId": "priya",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-navy",
+            "selectedColor": "Navy"
+          },
+          "raw-2500": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-navy",
+            "selectedColor": "Navy"
+          },
+          "centered-250": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-navy",
+            "selectedColor": "Navy"
+          },
+          "centered-1000": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-navy",
+            "selectedColor": "Navy"
+          }
+        }
+      },
+      {
+        "profileId": "lena",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "jacket",
+            "name": "Everywhere rain jacket",
+            "variantId": "jacket-forest",
+            "selectedColor": "Forest"
+          },
+          "raw-2500": {
+            "productId": "jacket",
+            "name": "Everywhere rain jacket",
+            "variantId": "jacket-forest",
+            "selectedColor": "Forest"
+          },
+          "centered-250": {
+            "productId": "jacket",
+            "name": "Everywhere rain jacket",
+            "variantId": "jacket-forest",
+            "selectedColor": "Forest"
+          },
+          "centered-1000": {
+            "productId": "jacket",
+            "name": "Everywhere rain jacket",
+            "variantId": "jacket-forest",
+            "selectedColor": "Forest"
+          }
+        }
+      },
+      {
+        "profileId": "june",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          },
+          "raw-2500": {
+            "productId": "headphones",
+            "name": "Everyday over-ear headphones",
+            "variantId": "headphones-sand",
+            "selectedColor": "Sand"
+          },
+          "centered-250": {
+            "productId": "headphones",
+            "name": "Everyday over-ear headphones",
+            "variantId": "headphones-sand",
+            "selectedColor": "Sand"
+          },
+          "centered-1000": {
+            "productId": "headphones",
+            "name": "Everyday over-ear headphones",
+            "variantId": "headphones-sand",
+            "selectedColor": "Sand"
+          }
+        }
+      },
+      {
+        "profileId": "grace",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "lunchbox",
+            "name": "Steel lunch box",
+            "variantId": "lunchbox-navy-band",
+            "selectedColor": "Navy band"
+          },
+          "raw-2500": {
+            "productId": "lunchbox",
+            "name": "Steel lunch box",
+            "variantId": "lunchbox-navy-band",
+            "selectedColor": "Navy band"
+          },
+          "centered-250": {
+            "productId": "lunchbox",
+            "name": "Steel lunch box",
+            "variantId": "lunchbox-navy-band",
+            "selectedColor": "Navy band"
+          },
+          "centered-1000": {
+            "productId": "lunchbox",
+            "name": "Steel lunch box",
+            "variantId": "lunchbox-navy-band",
+            "selectedColor": "Navy band"
+          }
+        }
+      },
+      {
+        "profileId": "sam",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          },
+          "raw-2500": {
+            "productId": "duffel",
+            "name": "Weekender duffel",
+            "variantId": "duffel-charcoal",
+            "selectedColor": "Charcoal"
+          },
+          "centered-250": {
+            "productId": "duffel",
+            "name": "Weekender duffel",
+            "variantId": "duffel-charcoal",
+            "selectedColor": "Charcoal"
+          },
+          "centered-1000": {
+            "productId": "duffel",
+            "name": "Weekender duffel",
+            "variantId": "duffel-charcoal",
+            "selectedColor": "Charcoal"
+          }
+        }
+      },
+      {
+        "profileId": "ana",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-terracotta",
+            "selectedColor": "Terracotta"
+          },
+          "raw-2500": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          },
+          "centered-250": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          },
+          "centered-1000": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          }
+        }
+      },
+      {
+        "profileId": "rosa",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "bottle",
+            "name": "Everyday steel bottle",
+            "variantId": "bottle-steel-blue",
+            "selectedColor": "Steel blue"
+          },
+          "raw-2500": {
+            "productId": "towel",
+            "name": "Everywhere cotton towel",
+            "variantId": "towel-blue-stripe",
+            "selectedColor": "Blue stripe"
+          },
+          "centered-250": {
+            "productId": "towel",
+            "name": "Everywhere cotton towel",
+            "variantId": "towel-blue-stripe",
+            "selectedColor": "Blue stripe"
+          },
+          "centered-1000": {
+            "productId": "towel",
+            "name": "Everywhere cotton towel",
+            "variantId": "towel-blue-stripe",
+            "selectedColor": "Blue stripe"
+          }
+        }
+      },
+      {
+        "profileId": "felix",
+        "publicQuery": "Show me a few useful things for the next couple of weeks.",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "sunglasses",
+            "name": "Everyday round sunglasses",
+            "variantId": "sunglasses-tortoise",
+            "selectedColor": "Tortoise"
+          },
+          "raw-2500": {
+            "productId": "sneakers",
+            "name": "Everyday canvas sneakers",
+            "variantId": "sneakers-olive",
+            "selectedColor": "Olive"
+          },
+          "centered-250": {
+            "productId": "sneakers",
+            "name": "Everyday canvas sneakers",
+            "variantId": "sneakers-olive",
+            "selectedColor": "Olive"
+          },
+          "centered-1000": {
+            "productId": "sneakers",
+            "name": "Everyday canvas sneakers",
+            "variantId": "sneakers-olive",
+            "selectedColor": "Olive"
+          }
+        }
+      }
+    ],
+    "demo-default-query-nonfit": [
+      {
+        "profileId": "bob-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "lamp",
+            "name": "Portable table light",
+            "variantId": "lamp-ivory",
+            "selectedColor": "Ivory"
+          },
+          "raw-2500": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-moss",
+            "selectedColor": "Moss"
+          },
+          "centered-250": {
+            "productId": "lamp",
+            "name": "Portable table light",
+            "variantId": "lamp-ivory",
+            "selectedColor": "Ivory"
+          },
+          "centered-1000": {
+            "productId": "lamp",
+            "name": "Portable table light",
+            "variantId": "lamp-ivory",
+            "selectedColor": "Ivory"
+          }
+        }
+      },
+      {
+        "profileId": "maya-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "lamp",
+            "name": "Portable table light",
+            "variantId": "lamp-terracotta",
+            "selectedColor": "Terracotta"
+          },
+          "raw-2500": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-rust",
+            "selectedColor": "Rust"
+          },
+          "centered-250": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-rust",
+            "selectedColor": "Rust"
+          },
+          "centered-1000": {
+            "productId": "blanket",
+            "name": "Woven everyday throw",
+            "variantId": "blanket-rust",
+            "selectedColor": "Rust"
+          }
+        }
+      },
+      {
+        "profileId": "priya-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-navy",
+            "selectedColor": "Navy"
+          },
+          "raw-2500": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-navy",
+            "selectedColor": "Navy"
+          },
+          "centered-250": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-navy",
+            "selectedColor": "Navy"
+          },
+          "centered-1000": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-navy",
+            "selectedColor": "Navy"
+          }
+        }
+      },
+      {
+        "profileId": "lena-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "pack",
+            "name": "Everyday daypack",
+            "variantId": "pack-forest",
+            "selectedColor": "Forest"
+          },
+          "raw-2500": {
+            "productId": "pack",
+            "name": "Everyday daypack",
+            "variantId": "pack-forest",
+            "selectedColor": "Forest"
+          },
+          "centered-250": {
+            "productId": "jacket",
+            "name": "Everywhere rain jacket",
+            "variantId": "jacket-navy",
+            "selectedColor": "Navy"
+          },
+          "centered-1000": {
+            "productId": "pack",
+            "name": "Everyday daypack",
+            "variantId": "pack-forest",
+            "selectedColor": "Forest"
+          }
+        }
+      },
+      {
+        "profileId": "june-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          },
+          "raw-2500": {
+            "productId": "bottle",
+            "name": "Everyday steel bottle",
+            "variantId": "bottle-graphite",
+            "selectedColor": "Graphite"
+          },
+          "centered-250": {
+            "productId": "headphones",
+            "name": "Everyday over-ear headphones",
+            "variantId": "headphones-sand",
+            "selectedColor": "Sand"
+          },
+          "centered-1000": {
+            "productId": "bottle",
+            "name": "Everyday steel bottle",
+            "variantId": "bottle-graphite",
+            "selectedColor": "Graphite"
+          }
+        }
+      },
+      {
+        "profileId": "grace-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "lunchbox",
+            "name": "Steel lunch box",
+            "variantId": "lunchbox-navy-band",
+            "selectedColor": "Navy band"
+          },
+          "raw-2500": {
+            "productId": "lunchbox",
+            "name": "Steel lunch box",
+            "variantId": "lunchbox-navy-band",
+            "selectedColor": "Navy band"
+          },
+          "centered-250": {
+            "productId": "bottle",
+            "name": "Everyday steel bottle",
+            "variantId": "bottle-steel-blue",
+            "selectedColor": "Steel blue"
+          },
+          "centered-1000": {
+            "productId": "mug",
+            "name": "Trail mug",
+            "variantId": "mug-cobalt",
+            "selectedColor": "Cobalt"
+          }
+        }
+      },
+      {
+        "profileId": "sam-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          },
+          "raw-2500": {
+            "productId": "organizer",
+            "name": "Zip essentials pouch",
+            "variantId": "organizer-ochre",
+            "selectedColor": "Ochre"
+          },
+          "centered-250": {
+            "productId": "headphones",
+            "name": "Everyday over-ear headphones",
+            "variantId": "headphones-navy",
+            "selectedColor": "Navy"
+          },
+          "centered-1000": {
+            "productId": "headphones",
+            "name": "Everyday over-ear headphones",
+            "variantId": "headphones-navy",
+            "selectedColor": "Navy"
+          }
+        }
+      },
+      {
+        "profileId": "ana-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-terracotta",
+            "selectedColor": "Terracotta"
+          },
+          "raw-2500": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-terracotta",
+            "selectedColor": "Terracotta"
+          },
+          "centered-250": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-terracotta",
+            "selectedColor": "Terracotta"
+          },
+          "centered-1000": {
+            "productId": "notebook",
+            "name": "Pocket field notes",
+            "variantId": "notebook-terracotta",
+            "selectedColor": "Terracotta"
+          }
+        }
+      },
+      {
+        "profileId": "rosa-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "bottle",
+            "name": "Everyday steel bottle",
+            "variantId": "bottle-steel-blue",
+            "selectedColor": "Steel blue"
+          },
+          "raw-2500": {
+            "productId": "towel",
+            "name": "Everywhere cotton towel",
+            "variantId": "towel-blue-stripe",
+            "selectedColor": "Blue stripe"
+          },
+          "centered-250": {
+            "productId": "towel",
+            "name": "Everywhere cotton towel",
+            "variantId": "towel-blue-stripe",
+            "selectedColor": "Blue stripe"
+          },
+          "centered-1000": {
+            "productId": "towel",
+            "name": "Everywhere cotton towel",
+            "variantId": "towel-blue-stripe",
+            "selectedColor": "Blue stripe"
+          }
+        }
+      },
+      {
+        "profileId": "felix-default-query",
+        "publicQuery": "Browse the store",
+        "topChoices": {
+          "original-raw-250": {
+            "productId": "sneakers",
+            "name": "Everyday canvas sneakers",
+            "variantId": "sneakers-olive",
+            "selectedColor": "Olive"
+          },
+          "raw-2500": {
+            "productId": "sneakers",
+            "name": "Everyday canvas sneakers",
+            "variantId": "sneakers-olive",
+            "selectedColor": "Olive"
+          },
+          "centered-250": {
+            "productId": "sunglasses",
+            "name": "Everyday round sunglasses",
+            "variantId": "sunglasses-tortoise",
+            "selectedColor": "Tortoise"
+          },
+          "centered-1000": {
+            "productId": "sunglasses",
+            "name": "Everyday round sunglasses",
+            "variantId": "sunglasses-tortoise",
+            "selectedColor": "Tortoise"
+          }
+        }
+      }
+    ]
+  },
+  "demoScope": "20 public original/default-query top choices only, no independently labeled demo utility score",
+  "conclusion": "All arms fit TRAIN320; raw2500 strongest of these three on old32 DEV, all remain below prior numerical quality thresholds. No promoted serving artifact."
+}
