@@ -72,7 +72,7 @@ export function DelayRuler() {
         ))}
       </div>
       <figcaption className="text-sm text-muted">
-        <span className="font-semibold text-ink">Figure 2.</span> Added wait before the page adapts,
+        <span className="font-semibold text-ink">Figure 2.</span> Ranking request time, excluding copy, images and rendering;
         log scale, medians from Figure 1. Shaded spans are the delays the cited studies tested.
       </figcaption>
     </figure>

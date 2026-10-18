@@ -55,7 +55,7 @@ presentation with the existing results receiver on port 4311, run
 `DEV_API_ORIGIN=http://127.0.0.1:4311 PORT=4310 pnpm --filter @storefront/web dev`
 and open <http://127.0.0.1:4310>. The immutable report is
 `store-shopper-checkout-cohort-v2-final`; its actual-browser acceptance passed
-[50 checks](experiments/ranker/pretrained/store_cohort_presentation_acceptance_v1/report.json).
+[50 checks](experiments/ranker/pretrained/store_cohort_presentation_acceptance_v2/report.json).
 
 The explicit `?legacy=1` dashboard retains **All sessions** and **Run a round**
 for deterministic mock comparisons. The separate legacy Playwright adapter
