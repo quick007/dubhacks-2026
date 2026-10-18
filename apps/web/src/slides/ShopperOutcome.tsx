@@ -28,7 +28,7 @@ export function ShopperOutcome({ pair, onOpen }: { pair: Pair; onOpen: (run: Run
       onClick={() => run && onOpen(run)}
       className="group text-left"
     >
-      <span className="block font-voice text-2xl italic group-hover:underline group-hover:underline-offset-4 sm:text-3xl">
+      <span className="block font-display text-2xl font-semibold tracking-[-0.015em] group-hover:underline group-hover:underline-offset-4 sm:text-3xl">
         {pair.persona.name}
       </span>
       <span className="mt-3 flex items-center gap-2">

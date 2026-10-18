@@ -1,5 +1,6 @@
 import type { Run } from "@storefront/contracts";
 import { ArrowRight } from "lucide-react";
+import { modelRun } from "../lib/model";
 import type { Pair, Verdict } from "../lib/story";
 import { MerchantValue } from "./MerchantValue";
 import { ShopperOutcome } from "./ShopperOutcome";
@@ -33,15 +34,15 @@ export function ResultsSlide({
     <div className="mx-auto flex w-full max-w-6xl flex-col justify-center px-4 py-10 sm:px-8">
       {result.total > 0 && (
         <>
-          <p
-            className="flex flex-wrap items-baseline gap-x-8 font-display text-8xl leading-none font-black tracking-[-0.03em] sm:text-[11rem]"
-            style={{ fontVariationSettings: '"wdth" 75' }}
-          >
+          <p className="flex flex-wrap items-baseline gap-x-8 font-display text-6xl leading-[1.1] font-semibold tracking-[-0.025em] sm:text-8xl">
             <Share value={result.before} total={result.total} className="text-graphite" />
             <ArrowRight className="size-[0.35em] self-center" aria-label="to" />
             <Share value={result.after} total={result.total} className="text-cobalt" />
           </p>
           <p className="mt-4 text-2xl">new shoppers bought something that fits</p>
+          <p className="mt-2 text-lg text-muted">
+            Each simulated shopper checks the first {modelRun.patience} products, then leaves.
+          </p>
           <ul className="mt-12 flex flex-wrap gap-x-12 gap-y-8">
             {result.shoppers.map((pair) => (
               <li key={pair.persona.id}>

@@ -24,7 +24,7 @@ export function SlideFrame({
     >
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="font-display text-4xl leading-[0.95] font-extrabold tracking-[-0.015em] sm:text-6xl">
+          <h2 className="font-display text-4xl leading-[1.15] font-semibold tracking-[-0.02em] text-balance sm:text-5xl">
             {title}
           </h2>
           {lead && <p className="mt-4 max-w-[60ch] text-lg text-muted sm:text-xl">{lead}</p>}

@@ -100,7 +100,7 @@ func TestMockEndToEnd(t *testing.T) {
 	runs := waitCompleted(t, app, 4)
 	for _, run := range runs {
 		snapshot := snapshots[run.ID]
-		if !reflect.DeepEqual(run.Config, snapshot.Config) || !reflect.DeepEqual(run.Persona, snapshot.Persona) || run.Seed != snapshot.Seed || run.BaselineVariantID != "baseline" {
+		if !reflect.DeepEqual(run.Config, snapshot.Config) || !reflect.DeepEqual(run.Persona, snapshot.Persona) || run.Seed != snapshot.Seed || run.BaselineVariantID != catalog.Experiment.BaselineVariantID {
 			t.Fatal("immutable snapshot changed")
 		}
 		resultIndex := slices.IndexFunc(run.Artifacts, func(item contracts.Artifact) bool { return item.Kind == "result" })
@@ -113,7 +113,7 @@ func TestMockEndToEnd(t *testing.T) {
 			}
 		}
 		frame := request(t, app, "GET", "/api/artifacts/"+run.Events[1].ScreenshotArtifactID, nil)
-		if frame.Code != 200 || frame.Header().Get("Content-Type") != "image/svg+xml" || frame.Header().Get("X-Content-Type-Options") != "nosniff" || !strings.Contains(frame.Header().Get("Content-Security-Policy"), "sandbox") {
+		if frame.Code != 200 || frame.Header().Get("Content-Type") != "image/jpeg" || frame.Header().Get("X-Content-Type-Options") != "nosniff" || !strings.Contains(frame.Header().Get("Content-Security-Policy"), "sandbox") {
 			t.Fatalf("frame served unsafely: %d %v", frame.Code, frame.Header())
 		}
 		statuses := []string{}
@@ -139,10 +139,7 @@ func TestMockEndToEnd(t *testing.T) {
 		if run.PersonaSplit == "held-out" && len(run.ProposedChanges) != 0 {
 			t.Fatal("held-out run entered optimizer")
 		}
-		if run.PersonaSplit == "development" && run.VariantID == "baseline" {
-			if len(run.ProposedChanges) != 1 {
-				t.Fatal("missing evidence-based development proposal")
-			}
+		if run.PersonaSplit == "development" {
 			run.PersonaSplit = "held-out"
 			if len((optimizer.Factual{}).Propose(run)) != 0 {
 				t.Fatal("optimizer accepted held-out persona")
@@ -171,7 +168,7 @@ func TestMockEndToEnd(t *testing.T) {
 func TestQueueAndStrictInput(t *testing.T) {
 	app := testApp(t, t.TempDir(), 1)
 	defer app.Close()
-	body := map[string]any{"experimentId": "jacket-study", "variantId": "baseline", "personaId": "dev-commuter"}
+	body := map[string]any{"experimentId": "fieldwork-study", "variantId": "default", "personaId": "dev-cup"}
 	if response := request(t, app, "POST", "/api/runs", body); response.Code != 202 {
 		t.Fatal(response.Body.String())
 	}
@@ -278,7 +275,7 @@ func TestMockSessionsRunInParallel(t *testing.T) {
 	defer app.Close()
 	catalog := decode[contracts.Catalog](t, request(t, app, "GET", "/api/catalog", nil))
 	for _, persona := range catalog.Personas[:4] {
-		response := request(t, app, "POST", "/api/runs", contracts.RunRequest{ExperimentID: catalog.Experiment.ID, VariantID: "baseline", PersonaID: persona.ID, Adapter: "mock"})
+		response := request(t, app, "POST", "/api/runs", contracts.RunRequest{ExperimentID: catalog.Experiment.ID, VariantID: catalog.Experiment.BaselineVariantID, PersonaID: persona.ID, Adapter: "mock"})
 		if response.Code != 202 {
 			t.Fatal(response.Body.String())
 		}

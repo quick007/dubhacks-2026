@@ -61,6 +61,8 @@ test("deck runs shoppers, tells the featured shopper's story and shows the held-
     .toBeGreaterThanOrEqual(20);
   await expect(page.getByText("AI shoppers browse your store")).toBeVisible();
   await page.keyboard.press("ArrowRight");
+  await expect(page.getByRole("heading", { name: "Two shoppers, one store" })).toBeVisible();
+  await page.keyboard.press("ArrowRight");
   await expect(page.getByRole("heading", { name: /^Meet / })).toBeVisible();
   await page.goto("/#sessions");
   await expect(page.getByText("Running at once")).toBeVisible();
@@ -68,6 +70,14 @@ test("deck runs shoppers, tells the featured shopper's story and shows the held-
   await expect(page.getByText("new shoppers bought something that fits")).toBeVisible({
     timeout: 10_000,
   });
+  await page.goto("/#fix");
+  await page.getByRole("slider", { name: "Compare before and after" }).focus();
+  await page.keyboard.press("ArrowLeft");
+  await expect(page.getByRole("main", { name: "Personalized page", exact: true })).toBeVisible();
+  await page.goto("/#fix");
+  await page.getByRole("slider", { name: "Compare before and after" }).focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.getByRole("main", { name: "Personalized page", exact: true })).toBeVisible();
   await page.goto("/#struggle");
   await expect(page.locator("main img").first()).toBeVisible();
   await page.getByRole("button", { name: "See every step" }).click();

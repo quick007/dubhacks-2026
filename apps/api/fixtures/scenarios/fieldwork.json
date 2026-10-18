@@ -1,0 +1,1605 @@
+{
+  "id": "fieldwork",
+  "products": [
+    {
+      "id": "mug",
+      "name": "Trail mug",
+      "price": 24,
+      "attributes": {
+        "product": ["mug"]
+      }
+    },
+    {
+      "id": "pack",
+      "name": "Everyday daypack",
+      "price": 68,
+      "attributes": {
+        "product": ["pack"]
+      }
+    },
+    {
+      "id": "notebook",
+      "name": "Pocket field notes",
+      "price": 12,
+      "attributes": {
+        "product": ["notebook"]
+      }
+    },
+    {
+      "id": "jacket",
+      "name": "Everywhere rain jacket",
+      "price": 128,
+      "attributes": {
+        "product": ["jacket"]
+      }
+    },
+    {
+      "id": "bottle",
+      "name": "Everyday steel bottle",
+      "price": 36,
+      "attributes": {
+        "product": ["bottle"]
+      }
+    },
+    {
+      "id": "tote",
+      "name": "Market canvas tote",
+      "price": 42,
+      "attributes": {
+        "product": ["tote"]
+      }
+    },
+    {
+      "id": "blanket",
+      "name": "Woven everyday throw",
+      "price": 58,
+      "attributes": {
+        "product": ["blanket"]
+      }
+    },
+    {
+      "id": "lamp",
+      "name": "Portable table light",
+      "price": 64,
+      "attributes": {
+        "product": ["lamp"]
+      }
+    },
+    {
+      "id": "lunchbox",
+      "name": "Steel lunch box",
+      "price": 32,
+      "attributes": {
+        "product": ["lunchbox"]
+      }
+    },
+    {
+      "id": "headphones",
+      "name": "Everyday over-ear headphones",
+      "price": 89,
+      "attributes": {
+        "product": ["headphones"]
+      }
+    },
+    {
+      "id": "sneakers",
+      "name": "Everyday canvas sneakers",
+      "price": 96,
+      "attributes": {
+        "product": ["sneakers"]
+      }
+    },
+    {
+      "id": "sweatshirt",
+      "name": "Soft cotton crewneck",
+      "price": 72,
+      "attributes": {
+        "product": ["sweatshirt"]
+      }
+    },
+    {
+      "id": "duffel",
+      "name": "Weekender duffel",
+      "price": 84,
+      "attributes": {
+        "product": ["duffel"]
+      }
+    },
+    {
+      "id": "sunglasses",
+      "name": "Everyday round sunglasses",
+      "price": 48,
+      "attributes": {
+        "product": ["sunglasses"]
+      }
+    },
+    {
+      "id": "organizer",
+      "name": "Zip essentials pouch",
+      "price": 26,
+      "attributes": {
+        "product": ["organizer"]
+      }
+    },
+    {
+      "id": "towel",
+      "name": "Everywhere cotton towel",
+      "price": 28,
+      "attributes": {
+        "product": ["towel"]
+      }
+    }
+  ],
+  "optimalSteps": {
+    "dev-cup": 5,
+    "ho-water": 5,
+    "dev-backpack": 5,
+    "ho-weekend": 5,
+    "dev-notes": 5,
+    "ho-cables": 5,
+    "dev-rain": 5,
+    "ho-crewneck": 5,
+    "dev-groceries": 5,
+    "ho-lunch": 5,
+    "dev-sofa": 5,
+    "ho-swim": 5,
+    "dev-light": 5,
+    "ho-music": 5,
+    "dev-canvas": 5,
+    "ho-sunglasses": 5
+  },
+  "paths": {
+    "dev-cup": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page. Adds the trail mug to the cart",
+            "products": ["mug", "pack", "notebook"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["mug"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "76874a247e32ed8e.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["mug"],
+            "screenshot": "ca47b51d1de74fc5.jpg"
+          }
+        ],
+        "purchase": "mug"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "5ad1c279cb26c612.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the trail mug to the cart",
+            "products": ["mug", "bottle", "lamp"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "d686f8ca4a539fa6.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["mug"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "76874a247e32ed8e.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["mug"],
+            "screenshot": "ca47b51d1de74fc5.jpg"
+          }
+        ],
+        "purchase": "mug"
+      }
+    },
+    "ho-water": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products. Adds the everyday steel bottle to the cart",
+            "products": ["jacket", "bottle", "tote"],
+            "click": {
+              "x": 0.5,
+              "y": 0.781
+            },
+            "screenshot": "066c686ac6281d60.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["bottle"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "25c861eb7be9358b.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["bottle"],
+            "screenshot": "dfc9d8655eab07b1.jpg"
+          }
+        ],
+        "purchase": "bottle"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "01f2ae7df4f29d99.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the everyday steel bottle to the cart",
+            "products": ["bottle", "pack", "headphones"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "33b24720ef8fd4f0.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["bottle"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "25c861eb7be9358b.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["bottle"],
+            "screenshot": "dfc9d8655eab07b1.jpg"
+          }
+        ],
+        "purchase": "bottle"
+      }
+    },
+    "dev-backpack": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page. Adds the everyday daypack to the cart",
+            "products": ["mug", "pack", "notebook"],
+            "click": {
+              "x": 0.5,
+              "y": 0.894
+            },
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["pack"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "0f019e20e4e54d98.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["pack"],
+            "screenshot": "e37bf72f6d276093.jpg"
+          }
+        ],
+        "purchase": "pack"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "d0952f09ea674689.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the everyday daypack to the cart",
+            "products": ["pack", "bottle", "sunglasses"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "0b27fb40ca0a75ba.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["pack"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "0f019e20e4e54d98.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["pack"],
+            "screenshot": "e37bf72f6d276093.jpg"
+          }
+        ],
+        "purchase": "pack"
+      }
+    },
+    "ho-weekend": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "87e9eaa1ee04ba4a.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page",
+            "products": ["pack", "notebook", "bottle"],
+            "screenshot": "e950a67054273c6e.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products. Adds the weekender duffel to the cart",
+            "products": ["duffel", "sunglasses", "organizer"],
+            "click": {
+              "x": 0.18,
+              "y": 0.781
+            },
+            "screenshot": "78637ba8db17abd2.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["duffel"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "0eca462cf241d3ad.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["duffel"],
+            "screenshot": "871310e7c1e2e411.jpg"
+          }
+        ],
+        "purchase": "duffel"
+      }
+    },
+    "dev-notes": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page. Adds the pocket field notes to the cart",
+            "products": ["mug", "pack", "notebook"],
+            "click": {
+              "x": 0.82,
+              "y": 0.894
+            },
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["notebook"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "e22d8a354a5bfd76.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["notebook"],
+            "screenshot": "7646ff44976facec.jpg"
+          }
+        ],
+        "purchase": "notebook"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "c4b04100de8c2c92.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the pocket field notes to the cart",
+            "products": ["notebook", "pack", "lunchbox"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "fce3e6873d035274.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["notebook"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "e22d8a354a5bfd76.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["notebook"],
+            "screenshot": "7646ff44976facec.jpg"
+          }
+        ],
+        "purchase": "notebook"
+      }
+    },
+    "ho-cables": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "01dcc9bb8ea40355.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page",
+            "products": ["notebook", "sunglasses", "lamp"],
+            "screenshot": "bd9e5ffec344b759.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products. Adds the zip essentials pouch to the cart",
+            "products": ["organizer", "pack", "sweatshirt"],
+            "click": {
+              "x": 0.18,
+              "y": 0.781
+            },
+            "screenshot": "e651f7d5d32f6b4f.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["organizer"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "a7d82dcbfe0a9b44.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["organizer"],
+            "screenshot": "814450656b9f67da.jpg"
+          }
+        ],
+        "purchase": "organizer"
+      }
+    },
+    "dev-rain": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products. Adds the everywhere rain jacket to the cart",
+            "products": ["jacket", "bottle", "tote"],
+            "click": {
+              "x": 0.18,
+              "y": 0.781
+            },
+            "screenshot": "066c686ac6281d60.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["jacket"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "49535487d2e7dfee.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["jacket"],
+            "screenshot": "e858062fd0c9d80c.jpg"
+          }
+        ],
+        "purchase": "jacket"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "15acf6f0adda6b4d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the everywhere rain jacket to the cart",
+            "products": ["jacket", "bottle", "notebook"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "24fde69ba0b4fc99.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["jacket"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "49535487d2e7dfee.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["jacket"],
+            "screenshot": "e858062fd0c9d80c.jpg"
+          }
+        ],
+        "purchase": "jacket"
+      }
+    },
+    "ho-crewneck": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "3b6b34b2a19261b2.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the soft cotton crewneck to the cart",
+            "products": ["sweatshirt", "blanket", "sunglasses"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "2c3454013cbef2c8.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["sweatshirt"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "049fbcf28cb7c0ed.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["sweatshirt"],
+            "screenshot": "c0860f5e18a5f7c4.jpg"
+          }
+        ],
+        "purchase": "sweatshirt"
+      }
+    },
+    "dev-groceries": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products. Adds the market canvas tote to the cart",
+            "products": ["jacket", "bottle", "tote"],
+            "click": {
+              "x": 0.82,
+              "y": 0.781
+            },
+            "screenshot": "066c686ac6281d60.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["tote"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "f7b44cb8d486b389.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["tote"],
+            "screenshot": "949a0fd562778c5a.jpg"
+          }
+        ],
+        "purchase": "tote"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "aba908f1248ea223.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page",
+            "products": ["pack", "notebook", "bottle"],
+            "screenshot": "228c59c3d531d981.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products. Adds the market canvas tote to the cart",
+            "products": ["tote", "lunchbox", "sunglasses"],
+            "click": {
+              "x": 0.18,
+              "y": 0.781
+            },
+            "screenshot": "47a9bcd0a8effcd3.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["tote"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "f7b44cb8d486b389.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["tote"],
+            "screenshot": "949a0fd562778c5a.jpg"
+          }
+        ],
+        "purchase": "tote"
+      }
+    },
+    "ho-lunch": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "1ec178d530a7b65f.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the steel lunch box to the cart",
+            "products": ["lunchbox", "bottle", "pack"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "a12805f878ea5fcb.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["lunchbox"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "b62527993b04a35d.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["lunchbox"],
+            "screenshot": "72aa22e5963d3172.jpg"
+          }
+        ],
+        "purchase": "lunchbox"
+      }
+    },
+    "dev-sofa": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "487adce70bf5b806.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the woven everyday throw to the cart",
+            "products": ["blanket", "notebook", "duffel"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "7804a8d9c8372d0e.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["blanket"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "a1341798495f3604.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["blanket"],
+            "screenshot": "f41dd2062d83802f.jpg"
+          }
+        ],
+        "purchase": "blanket"
+      }
+    },
+    "ho-swim": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "729ac2e1c1789dea.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the everywhere cotton towel to the cart",
+            "products": ["towel", "notebook", "sweatshirt"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "a01456c621ebae8d.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["towel"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "5180571e31227178.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["towel"],
+            "screenshot": "a61520d8a0e8e905.jpg"
+          }
+        ],
+        "purchase": "towel"
+      }
+    },
+    "dev-light": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "85dce48c4e95d038.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the portable table light to the cart",
+            "products": ["lamp", "organizer", "blanket"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "4f25679861e2872e.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["lamp"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "75c33f17fe421f20.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["lamp"],
+            "screenshot": "cd2598253613aa4d.jpg"
+          }
+        ],
+        "purchase": "lamp"
+      }
+    },
+    "ho-music": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "8ee7329090a2ddbe.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the everyday over-ear headphones to the cart",
+            "products": ["pack", "headphones", "notebook"],
+            "click": {
+              "x": 0.5,
+              "y": 0.894
+            },
+            "screenshot": "6a11d107718f55d0.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["headphones"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "edbf142062cd431c.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["headphones"],
+            "screenshot": "f8b2aaf13d287722.jpg"
+          }
+        ],
+        "purchase": "headphones"
+      }
+    },
+    "dev-canvas": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "505cf6671295c1eb.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the everyday canvas sneakers to the cart",
+            "products": ["sneakers", "notebook", "sweatshirt"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "f8bf7cfd80e288cb.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["sneakers"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "2ccd467083c201fb.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["sneakers"],
+            "screenshot": "d710f4091450faf6.jpg"
+          }
+        ],
+        "purchase": "sneakers"
+      }
+    },
+    "ho-sunglasses": {
+      "default": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "579f5410616b7819.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The default page",
+            "products": ["mug", "pack", "notebook"],
+            "screenshot": "c3668111f362e91d.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products, further down"
+            },
+            "message": "Next 3 products",
+            "products": ["jacket", "bottle", "tote"],
+            "screenshot": "066c686ac6281d60.jpg"
+          }
+        ],
+        "reason": "Sees no fit in the first 6 products and leaves"
+      },
+      "ranked": {
+        "steps": [
+          {
+            "page": {
+              "kind": "home",
+              "label": "Home"
+            },
+            "message": "Opens the shop",
+            "screenshot": "a5a11fe58a36980c.jpg"
+          },
+          {
+            "page": {
+              "kind": "category",
+              "label": "Products"
+            },
+            "message": "The personalized page. Adds the everyday round sunglasses to the cart",
+            "products": ["sunglasses", "notebook", "lamp"],
+            "click": {
+              "x": 0.18,
+              "y": 0.894
+            },
+            "screenshot": "b7ed5a5fc08fb435.jpg"
+          },
+          {
+            "page": {
+              "kind": "cart",
+              "label": "Cart"
+            },
+            "message": "Opens the cart",
+            "products": ["sunglasses"],
+            "click": {
+              "x": 0.312,
+              "y": 0.656
+            },
+            "screenshot": "0483cfbdc39bffac.jpg"
+          },
+          {
+            "page": {
+              "kind": "confirmation",
+              "label": "Confirmation"
+            },
+            "message": "Checks out",
+            "products": ["sunglasses"],
+            "screenshot": "514d5d5dfe48cd43.jpg"
+          }
+        ],
+        "purchase": "sunglasses"
+      }
+    }
+  }
+}

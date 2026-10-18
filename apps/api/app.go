@@ -3,12 +3,13 @@ package main
 import (
 	"crypto/rand"
 	"database/sql"
-	_ "embed"
+	"embed"
 	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
+	"io/fs"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -23,8 +24,11 @@ import (
 //go:embed fixtures/catalog.json
 var catalogJSON []byte
 
-//go:embed fixtures/scenarios/jacket.json
+//go:embed fixtures/scenarios/fieldwork.json
 var scenarioJSON []byte
+
+//go:embed fixtures/frames/fieldwork/*.jpg
+var frameFiles embed.FS
 var errQueueFull = errors.New("local queue is full; wait for an active run to complete")
 
 func now() string { return time.Now().UTC().Format(time.RFC3339Nano) }
@@ -56,6 +60,19 @@ func NewApp(options AppOptions) (*App, error) {
 	if err != nil {
 		return nil, err
 	}
+	frames, err := fs.Sub(frameFiles, "fixtures/frames/fieldwork")
+	if err != nil {
+		return nil, err
+	}
+	for persona, variants := range mockScenario.Paths {
+		for variant, recorded := range variants {
+			for _, step := range recorded.Steps {
+				if _, err := fs.Stat(frames, step.Screenshot); step.Screenshot != "" && err != nil {
+					return nil, fmt.Errorf("scenario path %s/%s: missing frame %s", persona, variant, step.Screenshot)
+				}
+			}
+		}
+	}
 	if options.DataDir == "" {
 		options.DataDir = os.Getenv("STOREFRONT_DATA_DIR")
 		if options.DataDir == "" {
@@ -72,8 +89,9 @@ func NewApp(options AppOptions) (*App, error) {
 			return nil, err
 		}
 	}
+	// One round is every shopper on both variants: 16 shoppers, 32 sessions.
 	if options.QueueCapacity <= 0 {
-		options.QueueCapacity = 20
+		options.QueueCapacity = 40
 	}
 	if options.MockStepDelay == 0 {
 		options.MockStepDelay = 200 * time.Millisecond
@@ -102,7 +120,7 @@ func NewApp(options AppOptions) (*App, error) {
 		release()
 		return nil, err
 	}
-	app := &App{store: store, results: results, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario), mux: http.NewServeMux(), releaseLock: release}
+	app := &App{store: store, results: results, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario, frames), mux: http.NewServeMux(), releaseLock: release}
 	app.routes()
 	return app, nil
 }

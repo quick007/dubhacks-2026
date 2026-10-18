@@ -7,6 +7,7 @@ import (
 	"storefront/api/internal/contracts"
 	"storefront/api/internal/scenario"
 	"testing"
+	"testing/fstest"
 )
 
 func TestMockReplaysScenarioPath(t *testing.T) {
@@ -45,5 +46,35 @@ func TestMockReplaysScenarioPath(t *testing.T) {
 	}
 	if _, err := (Mock{}).Execute(context.Background(), Context{Run: contracts.Run{PersonaID: "zzz"}}); err == nil {
 		t.Fatal("ran without a scenario path")
+	}
+}
+
+func TestMockSavesCapturedScreenshots(t *testing.T) {
+	s, err := scenario.Load([]byte(`{"id":"t","products":[{"id":"p","name":"Mug","price":24,"attributes":{}}],"optimalSteps":{"a":1},
+"paths":{"a":{"v":{"steps":[{"page":{"kind":"home","label":"Home"},"message":"Opened the shop","screenshot":"home.jpg"}],"purchase":"p"}}}}`))
+	if err != nil {
+		t.Fatal(err)
+	}
+	dir := t.TempDir()
+	artifacts := []Artifact{}
+	c := Context{
+		Run:               contracts.Run{ID: "r", PersonaID: "a", VariantID: "v"},
+		ArtifactDirectory: dir,
+		Emit:              func(Event) error { return nil },
+		SaveArtifact:      func(a Artifact) error { artifacts = append(artifacts, a); return nil },
+	}
+	if _, err := (Mock{Scenario: s}).Execute(context.Background(), c); err == nil {
+		t.Fatal("replayed a captured step without its frames")
+	}
+	frames := fstest.MapFS{"home.jpg": {Data: []byte("jpeg")}}
+	if _, err := (Mock{Scenario: s, Frames: frames}).Execute(context.Background(), c); err != nil {
+		t.Fatal(err)
+	}
+	saved, err := os.ReadFile(filepath.Join(dir, "step-00.jpg"))
+	if err != nil || string(saved) != "jpeg" || artifacts[0].MimeType != "image/jpeg" {
+		t.Fatalf("captured frame not saved: %q %+v", saved, artifacts)
+	}
+	if _, err := scenario.Load([]byte(`{"id":"t","products":[],"optimalSteps":{},"paths":{"a":{"v":{"steps":[{"page":{"kind":"home","label":"Home"},"message":"x","screenshot":"../x.jpg"}],"reason":"r"}}}}`)); err == nil {
+		t.Fatal("accepted a screenshot path outside the frames")
 	}
 }

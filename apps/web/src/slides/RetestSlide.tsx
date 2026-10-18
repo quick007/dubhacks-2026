@@ -4,12 +4,12 @@ import { SlideFrame } from "./SlideFrame";
 
 export function RetestSlide({ pair }: { pair: Pair }) {
   return (
-    <SlideFrame title={`Same ${pair.persona.name}, with the fix`}>
+    <SlideFrame title={`Same ${pair.persona.name}, on the model's page`}>
       <Race
         persona={pair.persona}
         lanes={[
-          { title: "Today's shop", tone: "graphite", run: pair.baseline },
-          { title: "With the fix", tone: "cobalt", run: pair.candidate },
+          { title: "Default page", tone: "graphite", run: pair.baseline },
+          { title: "Personalized page", tone: "cobalt", run: pair.candidate },
         ]}
       />
     </SlideFrame>
