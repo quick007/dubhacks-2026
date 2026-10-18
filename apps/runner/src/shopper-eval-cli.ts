@@ -36,7 +36,7 @@ function safeId(value: unknown): asserts value is string {
 }
 
 export type Packet = { cases: ShopperCase[]; runIds: Record<string, string>; defaultBaseUrl: string;
-  budget: { maxActions: number; maxWallSeconds: number }; sources: Record<string, string> };
+  budget: { maxActions: number; maxWallSeconds: number }; sources: Record<string, string>; experimentId?: string };
 
 /** Deliberately reads only public context, private shopper instructions and schedule; never evaluator gold/catalog. */
 export async function loadShopperPacket(directory: string): Promise<Packet> {
@@ -47,6 +47,7 @@ export async function loadShopperPacket(directory: string): Promise<Packet> {
   const fileHashes = object(manifest.files);
   names.forEach((name, index) => requireValue(fileHashes[name] === inputs[index].sha256, `Shopper packet file changed: ${name}`));
   const plan = object(inputs[0].value), schedule = plan.schedule;
+  if (plan.experimentId !== undefined) safeId(plan.experimentId);
   requireValue(plan.contractVersion === SHOPPER_CONTRACT_VERSION && plan.initialPairs === 10 && plan.initialRuns === 20,
     "Fixed ten-pair/twenty-run shopper plan required");
   requireValue(Array.isArray(schedule) && schedule.length === 10 && Array.isArray(inputs[1].value) && Array.isArray(inputs[2].value), "Fixed ten-row packet arrays required");
@@ -75,7 +76,8 @@ export async function loadShopperPacket(directory: string): Promise<Packet> {
   requireValue(typeof plan.defaultBaseUrl === "string", "Declared local base URL required");
   // The contract applies the local-origin allowlist and URL normalization.
   buildShopperAssignment(cases[0], "generic", plan.defaultBaseUrl);
-  return { cases, runIds, defaultBaseUrl: plan.defaultBaseUrl, budget: { maxActions: 24, maxWallSeconds: 120 },
+  return { cases, runIds, defaultBaseUrl: plan.defaultBaseUrl, ...(plan.experimentId ? { experimentId: plan.experimentId as string } : {}),
+    budget: { maxActions: 24, maxWallSeconds: 120 },
     sources: { ...Object.fromEntries(names.map((name, index) => [name, inputs[index].sha256])), "manifest.json": manifestInput.sha256 } };
 }
 
