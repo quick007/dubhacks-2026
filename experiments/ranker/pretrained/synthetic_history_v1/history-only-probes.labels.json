@@ -1,0 +1,546 @@
+{
+  "schemaVersion": "agent-authored-shopping-history.v1",
+  "scope": "Private diagnostic judgments, read only after prediction freeze; not training labels.",
+  "labels": [
+    {
+      "pairId": "history-only-01",
+      "changedPurchaseProductId": "blanket",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-01-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 1,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 3,
+          "lamp": 2,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "mug"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-01-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 1,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 3,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "blanket",
+          "mug"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-02",
+      "changedPurchaseProductId": "lamp",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-02-a",
+        "relevanceGrades": {
+          "mug": 1,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 2,
+          "lamp": 3,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "notebook"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-02-b",
+        "relevanceGrades": {
+          "mug": 1,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 3,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "lamp",
+          "notebook"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-03",
+      "changedPurchaseProductId": "notebook",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-03-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 3,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 1,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 2,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "pack"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-03-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 1,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 3,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "notebook",
+          "pack"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-04",
+      "changedPurchaseProductId": "jacket",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-04-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 2,
+          "notebook": 0,
+          "jacket": 3,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 1,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "bottle"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-04-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 3,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 1,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "jacket",
+          "bottle"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-05",
+      "changedPurchaseProductId": "headphones",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-05-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 1,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 3,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 2,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "notebook"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-05-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 1,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 3,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "headphones",
+          "notebook"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-06",
+      "changedPurchaseProductId": "lunchbox",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-06-a",
+        "relevanceGrades": {
+          "mug": 1,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 2,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 3,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "tote"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-06-b",
+        "relevanceGrades": {
+          "mug": 1,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 3,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "lunchbox",
+          "tote"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-07",
+      "changedPurchaseProductId": "duffel",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-07-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 1,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 3,
+          "sunglasses": 0,
+          "organizer": 2,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "bottle"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-07-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 1,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 3,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "duffel",
+          "bottle"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-08",
+      "changedPurchaseProductId": "organizer",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-08-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 2,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 1,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 3,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "mug"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-08-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 3,
+          "jacket": 0,
+          "bottle": 0,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 1,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "organizer",
+          "mug"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-09",
+      "changedPurchaseProductId": "towel",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-09-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 2,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 1,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 3
+        },
+        "alreadyOwnedProductIds": [
+          "organizer"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-09-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 3,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 1,
+          "sunglasses": 0,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "towel",
+          "organizer"
+        ]
+      }
+    },
+    {
+      "pairId": "history-only-10",
+      "changedPurchaseProductId": "sneakers",
+      "expectedHistoryEffect": "The newly purchased item should lose recommendation priority; plausible unowned complements retain priority. No request asks for a duplicate or replacement.",
+      "profileA": {
+        "profileId": "history-only-10-a",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 1,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 3,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 2,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "mug"
+        ]
+      },
+      "profileB": {
+        "profileId": "history-only-10-b",
+        "relevanceGrades": {
+          "mug": 0,
+          "pack": 0,
+          "notebook": 0,
+          "jacket": 0,
+          "bottle": 1,
+          "tote": 0,
+          "blanket": 0,
+          "lamp": 0,
+          "lunchbox": 0,
+          "headphones": 0,
+          "sneakers": 0,
+          "sweatshirt": 0,
+          "duffel": 0,
+          "sunglasses": 3,
+          "organizer": 0,
+          "towel": 0
+        },
+        "alreadyOwnedProductIds": [
+          "sneakers",
+          "mug"
+        ]
+      }
+    }
+  ]
+}
