@@ -1,0 +1,391 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v6-08",
+  "arm": "local-model",
+  "run": {
+    "id": "holdout-v6-08-local-model",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v6-08",
+    "personaSplit": "held-out",
+    "seed": 2026102408
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "a238d28e-12ec-48ca-9567-a4111e461603",
+    "contextId": "b09db72b-cfd0-4476-9026-75329e235161",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v6-08-local-model-screenshot-png",
+      "holdout-v6-08-local-model-trace-zip",
+      "holdout-v6-08-local-model-browser-observations-json",
+      "holdout-v6-08-local-model-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T09:16:15.218Z",
+  "elapsedMs": 53848.34950000001,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-0",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T09:16:16.328Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 1110.5405409999657,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-1",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T09:16:21.314Z",
+        "kind": "action",
+        "message": "a travel duffel for an overnight visit, at most $86"
+      },
+      "elapsedMs": 6096.741291000042,
+      "action": {
+        "type": "search",
+        "query": "a travel duffel for an overnight visit, at most $86"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-2",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T09:16:27.798Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 12580.25012500002,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-3",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T09:16:33.251Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 18033.633125000168,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-4",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 4,
+        "at": "2026-10-18T09:16:37.646Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 22428.20812500012,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-5",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 5,
+        "at": "2026-10-18T09:16:44.572Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 29354.155166000128,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "duffel",
+        "variantId": "duffel-charcoal"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-6",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 6,
+        "at": "2026-10-18T09:16:53.349Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 38131.26720799995,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-7",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 7,
+        "at": "2026-10-18T09:16:58.689Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 43470.86575000011,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-8",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 8,
+        "at": "2026-10-18T09:17:04.104Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 48886.12550000008,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-08-local-model-step-9",
+        "runId": "holdout-v6-08-local-model",
+        "sequence": 9,
+        "at": "2026-10-18T09:17:09.066Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 53848.34712500009,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v6-08-local-model-screenshot-png",
+        "runId": "holdout-v6-08-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:17:09.619Z"
+      },
+      "status": "captured",
+      "sha256": "60d8661bcc8504109f6f54f5a0a25c10838a05b69368a0dc44acaed207b5a1e0",
+      "bytes": 32468,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-08-local-model-trace-zip",
+        "runId": "holdout-v6-08-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:17:09.619Z"
+      },
+      "status": "captured",
+      "sha256": "e0f4e4d9be4646bf0734ed1030cd8c0812aeea788bd1df05fff7dddf10e32da8",
+      "bytes": 14515186,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-08-local-model-browser-observations-json",
+        "runId": "holdout-v6-08-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:17:09.619Z"
+      },
+      "status": "captured",
+      "sha256": "3730e83ec1d2add4ba5dad6f9bcb11bc3c7ca29a6b0408ac31b55e563a5861ba",
+      "bytes": 144671,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-08-local-model-checkout-receipt-json",
+        "runId": "holdout-v6-08-local-model",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:17:09.627Z"
+      },
+      "status": "captured",
+      "sha256": "87f476ebe9a22c8e01152935467dc872ff36c3a5f7e05f7981a9ba2a2963cd8a",
+      "bytes": 2120,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Weekender duffel",
+    "selectedColor": "Charcoal",
+    "catalogPrice": 84,
+    "quantity": 1,
+    "productId": "duffel",
+    "variantId": "duffel-charcoal",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v6-08-local-model-step-5",
+      "holdout-v6-08-local-model-step-8"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v6-08-local-model-screenshot-png",
+      "holdout-v6-08-local-model-trace-zip",
+      "holdout-v6-08-local-model-browser-observations-json",
+      "holdout-v6-08-local-model-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"carry-bag\"]",
+        "evidenceArtifactIds": [
+          "holdout-v6-08-local-model-screenshot-png",
+          "holdout-v6-08-local-model-trace-zip",
+          "holdout-v6-08-local-model-browser-observations-json",
+          "holdout-v6-08-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "84",
+        "evidenceArtifactIds": [
+          "holdout-v6-08-local-model-screenshot-png",
+          "holdout-v6-08-local-model-trace-zip",
+          "holdout-v6-08-local-model-browser-observations-json",
+          "holdout-v6-08-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "travel-form",
+        "status": "met",
+        "observed": "\"Canvas travel bag\"",
+        "evidenceArtifactIds": [
+          "holdout-v6-08-local-model-screenshot-png",
+          "holdout-v6-08-local-model-trace-zip",
+          "holdout-v6-08-local-model-browser-observations-json",
+          "holdout-v6-08-local-model-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Charcoal\"",
+        "evidenceArtifactIds": [
+          "holdout-v6-08-local-model-screenshot-png",
+          "holdout-v6-08-local-model-trace-zip",
+          "holdout-v6-08-local-model-browser-observations-json",
+          "holdout-v6-08-local-model-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "f6ae47b2-0c90-4528-813f-500d9cf2e884",
+        "startTimeMs": 5530.199999928474,
+        "durationMs": 284.89999997615814,
+        "capturedAtElapsedMs": 6478.120916000102,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v6-08-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "f6ae47b2-0c90-4528-813f-500d9cf2e884",
+        "startTimeMs": 5530.199999928474,
+        "durationMs": 285,
+        "capturedAtElapsedMs": 6478.12208300014,
+        "acceptedFields": 10,
+        "withheldFields": 0,
+        "requiredFields": 10,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v6-08-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "f6ae47b2-0c90-4528-813f-500d9cf2e884",
+        "startTimeMs": 5530.199999928474,
+        "durationMs": 298.7000000476837,
+        "capturedAtElapsedMs": 6478.122250000015,
+        "acceptedFields": 20,
+        "withheldFields": 0,
+        "requiredFields": 20,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v6-08-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

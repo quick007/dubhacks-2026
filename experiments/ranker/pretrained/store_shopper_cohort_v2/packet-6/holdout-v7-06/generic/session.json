@@ -1,0 +1,286 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v7-06",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v7-06-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v7-06",
+    "personaSplit": "held-out",
+    "seed": 2026102506
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "6e978fdb-b352-4324-b0a8-b50f1ea6046d",
+    "contextId": "96ab8bb3-723f-464d-910e-f99da85b16de",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v7-06-generic-screenshot-png",
+      "holdout-v7-06-generic-trace-zip",
+      "holdout-v7-06-generic-browser-observations-json",
+      "holdout-v7-06-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:27:36.417Z",
+  "elapsedMs": 31457.1826249999,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v7-06-generic-step-0",
+        "runId": "holdout-v7-06-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:27:37.407Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 990.3053749999963,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-06-generic-step-1",
+        "runId": "holdout-v7-06-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:27:42.276Z",
+        "kind": "action",
+        "message": "a notebook for jotting recipe ideas, at most $12"
+      },
+      "elapsedMs": 5858.60020800028,
+      "action": {
+        "type": "search",
+        "query": "a notebook for jotting recipe ideas, at most $12"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-06-generic-step-2",
+        "runId": "holdout-v7-06-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:27:47.277Z",
+        "kind": "action",
+        "message": "Pocket field notes color: Navy"
+      },
+      "elapsedMs": 10859.827000000048,
+      "action": {
+        "type": "inspect",
+        "target": "Pocket field notes color: Navy"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-06-generic-step-3",
+        "runId": "holdout-v7-06-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:27:52.715Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 16297.687042000238,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "notebook",
+        "variantId": "notebook-navy"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-06-generic-step-4",
+        "runId": "holdout-v7-06-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:27:57.093Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 20675.41687500011,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-06-generic-step-5",
+        "runId": "holdout-v7-06-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:28:02.252Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 25834.89174999995,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-06-generic-step-6",
+        "runId": "holdout-v7-06-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:28:07.875Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 31457.17916700011,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v7-06-generic-screenshot-png",
+        "runId": "holdout-v7-06-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:28:08.304Z"
+      },
+      "status": "captured",
+      "sha256": "409b436b87892462fbe36bc0b29fd4c03c27a8f12d7628d5765329e453989dae",
+      "bytes": 32847,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-06-generic-trace-zip",
+        "runId": "holdout-v7-06-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:28:08.304Z"
+      },
+      "status": "captured",
+      "sha256": "a2475e158bdbf1fb459d4468250f649dd454ffe285c797db37dab7ab582c7b3e",
+      "bytes": 6946749,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-06-generic-browser-observations-json",
+        "runId": "holdout-v7-06-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:28:08.304Z"
+      },
+      "status": "captured",
+      "sha256": "fa94eb48ec8c96945d1fc5f2c725df99cd1a307a6c26d62e83768d63d9e57c94",
+      "bytes": 33278,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-06-generic-checkout-receipt-json",
+        "runId": "holdout-v7-06-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:28:08.307Z"
+      },
+      "status": "captured",
+      "sha256": "f5e1493175bb1af1f2c6c60a71c202bbdd47e3b7c12bd485ca8ff49c10b9961f",
+      "bytes": 2120,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Pocket field notes",
+    "selectedColor": "Navy",
+    "catalogPrice": 12,
+    "quantity": 1,
+    "productId": "notebook",
+    "variantId": "notebook-navy",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v7-06-generic-step-3",
+      "holdout-v7-06-generic-step-5"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v7-06-generic-screenshot-png",
+      "holdout-v7-06-generic-trace-zip",
+      "holdout-v7-06-generic-browser-observations-json",
+      "holdout-v7-06-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"note-taking\"]",
+        "evidenceArtifactIds": [
+          "holdout-v7-06-generic-screenshot-png",
+          "holdout-v7-06-generic-trace-zip",
+          "holdout-v7-06-generic-browser-observations-json",
+          "holdout-v7-06-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "12",
+        "evidenceArtifactIds": [
+          "holdout-v7-06-generic-screenshot-png",
+          "holdout-v7-06-generic-trace-zip",
+          "holdout-v7-06-generic-browser-observations-json",
+          "holdout-v7-06-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Navy\"",
+        "evidenceArtifactIds": [
+          "holdout-v7-06-generic-screenshot-png",
+          "holdout-v7-06-generic-trace-zip",
+          "holdout-v7-06-generic-browser-observations-json",
+          "holdout-v7-06-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

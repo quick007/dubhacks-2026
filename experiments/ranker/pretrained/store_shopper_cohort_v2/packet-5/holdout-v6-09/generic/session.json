@@ -1,0 +1,240 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v6-09",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v6-09-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v6-09",
+    "personaSplit": "held-out",
+    "seed": 2026102409
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "cc7c1dd3-d77d-42e0-879d-30bc736f76b1",
+    "contextId": "1c19cd0a-11b2-415b-814c-8381976cc178",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v6-09-generic-screenshot-png",
+      "holdout-v6-09-generic-trace-zip",
+      "holdout-v6-09-generic-browser-observations-json",
+      "holdout-v6-09-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:20:42.843Z",
+  "elapsedMs": 29764.437790999655,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v6-09-generic-step-0",
+        "runId": "holdout-v6-09-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:20:43.807Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 964.0674159997143,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-09-generic-step-1",
+        "runId": "holdout-v6-09-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:20:48.592Z",
+        "kind": "action",
+        "message": "a canvas tote for shopping strictly below $42"
+      },
+      "elapsedMs": 5748.22729099961,
+      "action": {
+        "type": "search",
+        "query": "a canvas tote for shopping strictly below $42"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-09-generic-step-2",
+        "runId": "holdout-v6-09-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:20:53.950Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 11106.331040999852,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-09-generic-step-3",
+        "runId": "holdout-v6-09-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:21:00.190Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 17346.492832999676,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-09-generic-step-4",
+        "runId": "holdout-v6-09-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:21:06.417Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 23573.804999999702,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v6-09-generic-step-5",
+        "runId": "holdout-v6-09-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:21:12.608Z",
+        "kind": "action",
+        "message": "The displayed Market canvas tote costs $42, which is not strictly below $42. Declining without ordering."
+      },
+      "elapsedMs": 29764.43287499994,
+      "action": {
+        "type": "abandon",
+        "target": "The displayed Market canvas tote costs $42, which is not strictly below $42. Declining without ordering."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v6-09-generic-screenshot-png",
+        "runId": "holdout-v6-09-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:21:13.128Z"
+      },
+      "status": "captured",
+      "sha256": "60215f88cba576e7d8f2f422991a36cffd1598f75c5a00603f225f516a6f9415",
+      "bytes": 967892,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-09-generic-trace-zip",
+        "runId": "holdout-v6-09-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:21:13.128Z"
+      },
+      "status": "captured",
+      "sha256": "a5c123d8fc9e59c5f9f24d45a2186108d3dceecb2353da6d8bdc01422ab3c3ea",
+      "bytes": 8547802,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-09-generic-browser-observations-json",
+        "runId": "holdout-v6-09-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:21:13.128Z"
+      },
+      "status": "captured",
+      "sha256": "a29c9fd6ea04c24c9a23c2f02d06ff462d308405c7b8055a29721cd59aee685b",
+      "bytes": 38846,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v6-09-generic-checkout-receipt-json",
+        "runId": "holdout-v6-09-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:21:13.132Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v6-09-generic-screenshot-png",
+          "holdout-v6-09-generic-trace-zip",
+          "holdout-v6-09-generic-browser-observations-json",
+          "holdout-v6-09-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v6-09-generic-screenshot-png",
+          "holdout-v6-09-generic-trace-zip",
+          "holdout-v6-09-generic-browser-observations-json",
+          "holdout-v6-09-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

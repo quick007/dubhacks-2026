@@ -1,0 +1,286 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v2-03",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v2-03-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v2-03",
+    "personaSplit": "held-out",
+    "seed": 2026102003
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "a4078c10-5d8b-4331-813e-2b3f36e139f9",
+    "contextId": "c5420550-2d4a-453f-a03b-38d0042c8440",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v2-03-generic-screenshot-png",
+      "holdout-v2-03-generic-trace-zip",
+      "holdout-v2-03-generic-browser-observations-json",
+      "holdout-v2-03-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:26:23.518Z",
+  "elapsedMs": 32588.985582999885,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v2-03-generic-step-0",
+        "runId": "holdout-v2-03-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:26:24.468Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 950.170167000033,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-03-generic-step-1",
+        "runId": "holdout-v2-03-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:26:28.995Z",
+        "kind": "action",
+        "message": "a lunch container for bringing sandwiches to the studio, at most $35"
+      },
+      "elapsedMs": 5476.852917000186,
+      "action": {
+        "type": "search",
+        "query": "a lunch container for bringing sandwiches to the studio, at most $35"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-03-generic-step-2",
+        "runId": "holdout-v2-03-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:26:33.847Z",
+        "kind": "action",
+        "message": "Steel lunch box color: Navy band"
+      },
+      "elapsedMs": 10328.836624999996,
+      "action": {
+        "type": "inspect",
+        "target": "Steel lunch box color: Navy band"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-03-generic-step-3",
+        "runId": "holdout-v2-03-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:26:41.694Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 18176.650541999843,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "lunchbox",
+        "variantId": "lunchbox-navy-band"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-03-generic-step-4",
+        "runId": "holdout-v2-03-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:26:46.908Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 23389.765833000187,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-03-generic-step-5",
+        "runId": "holdout-v2-03-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:26:51.276Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 27758.29404200008,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-03-generic-step-6",
+        "runId": "holdout-v2-03-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:26:56.107Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 32588.983124999795,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v2-03-generic-screenshot-png",
+        "runId": "holdout-v2-03-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:26:56.505Z"
+      },
+      "status": "captured",
+      "sha256": "c76ae662d8e56cecaf8b0c58657e10f7a89c63a7e659d146d34e6851742525d6",
+      "bytes": 32885,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-03-generic-trace-zip",
+        "runId": "holdout-v2-03-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:26:56.505Z"
+      },
+      "status": "captured",
+      "sha256": "135b2178e3f74a70c063a6f68bbb06bb6b02a14d23d67aa2a43e7f2ba9047dfc",
+      "bytes": 7180874,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-03-generic-browser-observations-json",
+        "runId": "holdout-v2-03-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:26:56.505Z"
+      },
+      "status": "captured",
+      "sha256": "b3effdd65c47ec33f96cfdf72044accd22863bcb463b9a7e9d8b50aa12de3ed3",
+      "bytes": 32054,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-03-generic-checkout-receipt-json",
+        "runId": "holdout-v2-03-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:26:56.508Z"
+      },
+      "status": "captured",
+      "sha256": "2e753c0d005785a14d700c6bbe73424e4440c4dec108f673848fa6d84599c6b2",
+      "bytes": 2135,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Steel lunch box",
+    "selectedColor": "Navy band",
+    "catalogPrice": 32,
+    "quantity": 1,
+    "productId": "lunchbox",
+    "variantId": "lunchbox-navy-band",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v2-03-generic-step-3",
+      "holdout-v2-03-generic-step-5"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v2-03-generic-screenshot-png",
+      "holdout-v2-03-generic-trace-zip",
+      "holdout-v2-03-generic-browser-observations-json",
+      "holdout-v2-03-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"packed-meal container\"]",
+        "evidenceArtifactIds": [
+          "holdout-v2-03-generic-screenshot-png",
+          "holdout-v2-03-generic-trace-zip",
+          "holdout-v2-03-generic-browser-observations-json",
+          "holdout-v2-03-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "32",
+        "evidenceArtifactIds": [
+          "holdout-v2-03-generic-screenshot-png",
+          "holdout-v2-03-generic-trace-zip",
+          "holdout-v2-03-generic-browser-observations-json",
+          "holdout-v2-03-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Navy band\"",
+        "evidenceArtifactIds": [
+          "holdout-v2-03-generic-screenshot-png",
+          "holdout-v2-03-generic-trace-zip",
+          "holdout-v2-03-generic-browser-observations-json",
+          "holdout-v2-03-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

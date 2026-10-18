@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "6ac0e0fd-edc4-4cdf-985f-01f34e8bd49e",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "duffel",
+          "variantId": "duffel-charcoal",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "6ac0e0fd-edc4-4cdf-985f-01f34e8bd49e",
+        "receiptId": "demo-26e29d893567405e3fe0114c2a1809af",
+        "createdAt": "2026-10-18T09:16:14.400833Z",
+        "items": [
+          {
+            "productId": "duffel",
+            "variantId": "duffel-charcoal",
+            "quantity": 1,
+            "unitPrice": 84,
+            "lineTotal": 84
+          }
+        ],
+        "subtotal": 84,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 84,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/6ac0e0fd-edc4-4cdf-985f-01f34e8bd49e",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "6ac0e0fd-edc4-4cdf-985f-01f34e8bd49e",
+        "receiptId": "demo-26e29d893567405e3fe0114c2a1809af",
+        "createdAt": "2026-10-18T09:16:14.400833Z",
+        "items": [
+          {
+            "productId": "duffel",
+            "variantId": "duffel-charcoal",
+            "quantity": 1,
+            "unitPrice": 84,
+            "lineTotal": 84
+          }
+        ],
+        "subtotal": 84,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 84,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "6ac0e0fd-edc4-4cdf-985f-01f34e8bd49e",
+    "receiptId": "demo-26e29d893567405e3fe0114c2a1809af"
+  },
+  "errors": []
+}

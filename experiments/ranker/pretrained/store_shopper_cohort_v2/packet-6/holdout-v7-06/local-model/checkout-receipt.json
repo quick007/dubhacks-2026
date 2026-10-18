@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "419c4d81-0318-4a78-8ba5-97a0fdf5018d",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "notebook",
+          "variantId": "notebook-navy",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "419c4d81-0318-4a78-8ba5-97a0fdf5018d",
+        "receiptId": "demo-56dadc4e6a938c6babd7d23a2817eeb7",
+        "createdAt": "2026-10-18T09:27:35.723053Z",
+        "items": [
+          {
+            "productId": "notebook",
+            "variantId": "notebook-navy",
+            "quantity": 1,
+            "unitPrice": 12,
+            "lineTotal": 12
+          }
+        ],
+        "subtotal": 12,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 12,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/419c4d81-0318-4a78-8ba5-97a0fdf5018d",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "419c4d81-0318-4a78-8ba5-97a0fdf5018d",
+        "receiptId": "demo-56dadc4e6a938c6babd7d23a2817eeb7",
+        "createdAt": "2026-10-18T09:27:35.723053Z",
+        "items": [
+          {
+            "productId": "notebook",
+            "variantId": "notebook-navy",
+            "quantity": 1,
+            "unitPrice": 12,
+            "lineTotal": 12
+          }
+        ],
+        "subtotal": 12,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 12,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "419c4d81-0318-4a78-8ba5-97a0fdf5018d",
+    "receiptId": "demo-56dadc4e6a938c6babd7d23a2817eeb7"
+  },
+  "errors": []
+}
