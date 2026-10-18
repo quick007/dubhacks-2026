@@ -1,0 +1,231 @@
+{
+  "status": "cpu-data-contracts-passed",
+  "counts": {
+    "train": {
+      "cases": 64,
+      "multiNeed": 16,
+      "emptyTarget": 4,
+      "families": {
+        "current-single-need": 16,
+        "sparse-observed-search": 16,
+        "two-simultaneous-needs": 16,
+        "negative-only-two-option": 8,
+        "exact-name-overrides-stale-search": 2,
+        "hard-constraint-or-empty": 6
+      }
+    },
+    "evaluation": {
+      "cases": 24,
+      "multiNeed": 8,
+      "emptyTarget": 3,
+      "families": {
+        "profile-counterfactual": 4,
+        "current-preference-counterfactual": 4,
+        "heldout-two-need-combination": 8,
+        "exact-name-overrides-stale-search": 3,
+        "hard-constraint-or-empty": 5
+      }
+    }
+  },
+  "preferencePairs": 8,
+  "trainMultiNeedSets": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      15
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      8
+    ],
+    [
+      8,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      12,
+      13
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      14,
+      15
+    ]
+  ],
+  "evaluationMultiNeedSets": [
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      14
+    ],
+    [
+      2,
+      15
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      12
+    ],
+    [
+      6,
+      11
+    ],
+    [
+      9,
+      13
+    ]
+  ],
+  "multiNeedSetOverlap": [],
+  "nativeForwards": 0,
+  "optimizerUpdates": 0,
+  "labelProvenance": "Author-written synthetic relevance, traceable to actual public product facts; no teacher calls, customer logs, hidden personas or inferred demographic traits.",
+  "evaluationStatus": "New author-written wording, not model-scored in v4; visible to data author and reviewers, not a sealed benchmark. All identities/functions TRAIN-seen.",
+  "v3Status": "Inspected v3 evaluation is DEVELOPMENT REPLAY. It is not included or renamed as fresh v4 evaluation.",
+  "auditVersion": "store-function-v4-author-cpu-audit.v1",
+  "createdAtUtc": "2026-10-18T02:56:13.932843+00:00",
+  "freezeSha256": "1e7f6997ede308d20af137241743546135955f7570242662cc2f899829e06f26",
+  "unitTests": {
+    "passed": 12,
+    "seconds": 3.294,
+    "command": ".tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_store_function_data_v4"
+  },
+  "tokenPreflight": {
+    "tokenizerSha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+    "queryTokens": [
+      93,
+      120
+    ],
+    "productTokens": [
+      45,
+      65
+    ],
+    "allWithin512": true,
+    "chatTemplateApplied": false,
+    "plannedCatalogVectors": 16,
+    "plannedTrainRequestVectors": 64,
+    "plannedEvaluationRequestVectors": 24,
+    "plannedTotalVectors": 104,
+    "nativeExecuted": false
+  },
+  "evaluationNegativeOnlyCaseIds": [
+    "v4-evaluation-02",
+    "v4-evaluation-03",
+    "v4-evaluation-04",
+    "v4-evaluation-05"
+  ],
+  "metricContractFixtures": {
+    "label-oracle": {
+      "fixedCases": 24,
+      "nonemptyCases": 21,
+      "emptyCases": 3,
+      "hitAtOne": 21,
+      "allTargetsAtTheirCount": 21,
+      "relevantRetrievedAtK": 29,
+      "relevantTargetDenominator": 29,
+      "correctEmptyAbstentions": 3,
+      "safeCases": 24,
+      "casesWithExplicitAvoidanceInOutput": 0,
+      "fixedPreferencePairs": 8,
+      "pairsWithBothTargetSetsRecovered": 8
+    },
+    "single-correct-item-fixture": {
+      "fixedCases": 24,
+      "nonemptyCases": 21,
+      "emptyCases": 3,
+      "hitAtOne": 21,
+      "allTargetsAtTheirCount": 13,
+      "relevantRetrievedAtK": 21,
+      "relevantTargetDenominator": 29,
+      "correctEmptyAbstentions": 3,
+      "safeCases": 24,
+      "casesWithExplicitAvoidanceInOutput": 0,
+      "fixedPreferencePairs": 8,
+      "pairsWithBothTargetSetsRecovered": 4
+    },
+    "empty-output-fixture": {
+      "fixedCases": 24,
+      "nonemptyCases": 21,
+      "emptyCases": 3,
+      "hitAtOne": 0,
+      "allTargetsAtTheirCount": 0,
+      "relevantRetrievedAtK": 0,
+      "relevantTargetDenominator": 29,
+      "correctEmptyAbstentions": 3,
+      "safeCases": 24,
+      "casesWithExplicitAvoidanceInOutput": 0,
+      "fixedPreferencePairs": 8,
+      "pairsWithBothTargetSetsRecovered": 0
+    }
+  },
+  "metricFixturesAreModelEvidence": false,
+  "archivedDraft": {
+    "path": "experiments/ranker/pretrained/store_function_v4_draft_01",
+    "datasetHashesVerified": true,
+    "exactBuilderAndTestsArchivedAndHashesVerified": true,
+    "reason": "Preserved initial positive-plus-negative draft before improving avoidance cases into negative-only diagnostics."
+  },
+  "architectureImplications": [
+    "The existing single-label query softmax is incompatible with multi-positive and empty target supervision; do not squeeze two relevant products into one target class.",
+    "One bounded option keeps the catalog function head and changes the query output to 16 independent sigmoid function scores. Train on external TRAIN desired-product multi-hot targets, keep explicit avoidance supervision separate, and apply deterministic eligibility masks before selection.",
+    "Zero grades mean unrequested for this explicit synthetic case, not a universal incompatibility claim. Use explicit avoided items as hard negative supervision; review weighting of other functions before dense BCE.",
+    "Calibrate relevance/abstention thresholds on a TRAIN-only calibration partition or cross-validation. Never choose them using these 24 evaluation labels. Budget-blocked desired sets must abstain instead of backfilling unrelated products.",
+    "Handle exact current names as explicit product identity requests; stale observed searches cannot redirect them. Budget and unknown hard attributes still apply.",
+    "Measure set recovery and per-need coverage, alongside hit@1, constraint safety, empty abstention and exact-name behavior. A changed result or one good card is insufficient.",
+    "No runner, fit, inference service, request bridge or storefront was changed. A future adapter must deliberately map the new public schema."
+  ],
+  "modelQualityEstablished": false,
+  "blockers": []
+}
