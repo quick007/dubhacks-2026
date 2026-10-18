@@ -1,0 +1,2729 @@
+{
+  "schemaVersion": "store-demo-v1-qualitative-audit.v1",
+  "status": "completed-exhaustive-offline-review",
+  "method": "LLM read all136 non-null accepted native fields delivered in the nine completed stream payloads. Display means supplied for frontend rendering; this audit did not inspect browser paint. This is contextual qualitative review, not independent human evaluation or a changed validator.",
+  "summary": {
+    "requestReceipts": 9,
+    "uniqueQueries": 6,
+    "nativeFieldsAttempted": 144,
+    "acceptedNativeFieldsInStream": 136,
+    "withheldFields": 8,
+    "allAcceptedNativeFieldsReviewed": true,
+    "acceptedFieldJudgments": {
+      "usable_source_compatible": 129,
+      "potentially_misleading_collection_scope": 7
+    },
+    "acceptedByKind": {
+      "S": 15,
+      "T": 43,
+      "B": 43,
+      "C": 35
+    },
+    "ambiguousCollectionBodyOccurrences": 7,
+    "unfinishedOrRepeatedNativeFieldsAmongDisplayed": 0,
+    "directWrongNameColorOrPriceFound": 0,
+    "unsupportedPerformanceStockShippingClaimsFound": 0,
+    "basicSemanticQueryOccurrences": 6,
+    "basicSemanticTopOneMatches": 4,
+    "basicSemanticTopOneMisses": 2,
+    "basicSemanticUniqueQueries": 3,
+    "basicSemanticUniqueMatches": 2,
+    "basicSemanticUniqueMisses": 1,
+    "waterproofHardConstraintCases": 1,
+    "waterproofHardConstraintMatches": 1,
+    "exactIdentityBudgetAbstentionCases": 1,
+    "correctExactIdentityBudgetAbstentions": 1,
+    "openBrowseUnscored": 1,
+    "firstThreePayloadsUnchangedInCompleteEvent": 8,
+    "sampleScope": "Fixed nine-receipt snapshot; duplicate bottle, light and notebook requests are repeated observations, not independent unseen cases."
+  },
+  "sources": [
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "sha256": "184d910e0096b2805d9f11bc688054e404fab724f5d6ff2a6a8d4964ba19e6c4"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "sha256": "f63799748fc45589fc7b57a9524620b0c79cbebd8e3836633d0801425185b185"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/154269f5-8b26-47af-982f-285cb61d069e/receipt.json",
+      "sha256": "b32b872aca239c04b42a4a04b068d0990b38bb7dad7ceb430dabd01e3277c149"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "sha256": "f5f09c212eb5f070943b6f16dce1696145cd43fe160a68c5bd169107bfc41c35"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "sha256": "5da0bb585e328d03741c6dcfb6758f81aa06bacfbc9c16351147b37f733015ed"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/6b67c575-843e-41a5-9173-151cdcc0e042/receipt.json",
+      "sha256": "338814416d80f1a5bc724acae7aca0d52485d3fdd10ce40fe38d1bfcd61c5979"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "sha256": "069e21c240aa485a8de06b10639fdc3490803a8bce17ee66e253cd52488be3f2"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "sha256": "35f6bf7e59efebab491aa6e8829f83e0d3af0a59493fa348bb447333620492f0"
+    },
+    {
+      "path": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "sha256": "5343ea0536b1c2f473ebd5ef45dfb2dd094b11e33f6330c046adb5cd1010ae3e"
+    }
+  ],
+  "requests": [
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "input": {
+        "query": "a notebook for quick notes"
+      },
+      "effectiveRequest": {
+        "query": "a notebook for quick notes",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "organizer",
+      "expectedBasicPublicFunctionProductId": "notebook",
+      "topOneJudgment": "miss",
+      "selectedProductIds": [
+        "organizer",
+        "lamp",
+        "lunchbox",
+        "bottle",
+        "headphones",
+        "mug"
+      ],
+      "finalEligibleCount": 16,
+      "finalShortfall": 0,
+      "displayedFields": 19,
+      "withheldFields": 1,
+      "requiredFields": 20,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "input": {
+        "query": "a bottle for drinking water"
+      },
+      "effectiveRequest": {
+        "query": "a bottle for drinking water",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "bottle",
+      "expectedBasicPublicFunctionProductId": "bottle",
+      "topOneJudgment": "match",
+      "selectedProductIds": [
+        "bottle",
+        "mug",
+        "lunchbox",
+        "pack",
+        "headphones",
+        "lamp"
+      ],
+      "finalEligibleCount": 16,
+      "finalShortfall": 0,
+      "displayedFields": 19,
+      "withheldFields": 1,
+      "requiredFields": 20,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "154269f5-8b26-47af-982f-285cb61d069e",
+      "input": {
+        "query": "Trail mug under $20"
+      },
+      "effectiveRequest": {
+        "query": "Trail mug under $20",
+        "preferences": [],
+        "itemBudget": 20.0,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": null,
+      "expectedBasicPublicFunctionProductId": null,
+      "topOneJudgment": "correct_exact_identity_budget_abstention",
+      "selectedProductIds": [],
+      "finalEligibleCount": 0,
+      "finalShortfall": 6,
+      "displayedFields": 0,
+      "withheldFields": 0,
+      "requiredFields": 0,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/154269f5-8b26-47af-982f-285cb61d069e/receipt.json",
+      "sourceCompleteEventIndex": 1,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "input": {
+        "query": "a light for my bedside table"
+      },
+      "effectiveRequest": {
+        "query": "a light for my bedside table",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "lamp",
+      "expectedBasicPublicFunctionProductId": "lamp",
+      "topOneJudgment": "match",
+      "selectedProductIds": [
+        "lamp",
+        "mug",
+        "towel",
+        "tote",
+        "lunchbox",
+        "headphones"
+      ],
+      "finalEligibleCount": 16,
+      "finalShortfall": 0,
+      "displayedFields": 19,
+      "withheldFields": 1,
+      "requiredFields": 20,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "input": {
+        "query": "Browse the store"
+      },
+      "effectiveRequest": {
+        "query": "Browse the store",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "notebook",
+      "expectedBasicPublicFunctionProductId": null,
+      "topOneJudgment": "not_scored_open_browse",
+      "selectedProductIds": [
+        "notebook",
+        "sunglasses",
+        "lunchbox",
+        "lamp",
+        "jacket",
+        "sneakers"
+      ],
+      "finalEligibleCount": 16,
+      "finalShortfall": 0,
+      "displayedFields": 18,
+      "withheldFields": 2,
+      "requiredFields": 20,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "6b67c575-843e-41a5-9173-151cdcc0e042",
+      "input": {
+        "query": "a waterproof rain jacket"
+      },
+      "effectiveRequest": {
+        "query": "a waterproof rain jacket",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "jacket",
+      "expectedBasicPublicFunctionProductId": "jacket",
+      "topOneJudgment": "match_deterministic_hard_constraint",
+      "selectedProductIds": [
+        "jacket"
+      ],
+      "finalEligibleCount": 1,
+      "finalShortfall": 5,
+      "displayedFields": 4,
+      "withheldFields": 0,
+      "requiredFields": 4,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/6b67c575-843e-41a5-9173-151cdcc0e042/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "input": {
+        "query": "a bottle for drinking water"
+      },
+      "effectiveRequest": {
+        "query": "a bottle for drinking water",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "bottle",
+      "expectedBasicPublicFunctionProductId": "bottle",
+      "topOneJudgment": "match",
+      "selectedProductIds": [
+        "bottle",
+        "mug",
+        "lunchbox",
+        "pack",
+        "headphones",
+        "lamp"
+      ],
+      "finalEligibleCount": 16,
+      "finalShortfall": 0,
+      "displayedFields": 19,
+      "withheldFields": 1,
+      "requiredFields": 20,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "input": {
+        "query": "a light for my bedside table"
+      },
+      "effectiveRequest": {
+        "query": "a light for my bedside table",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "lamp",
+      "expectedBasicPublicFunctionProductId": "lamp",
+      "topOneJudgment": "match",
+      "selectedProductIds": [
+        "lamp",
+        "mug",
+        "towel",
+        "tote",
+        "lunchbox",
+        "headphones"
+      ],
+      "finalEligibleCount": 16,
+      "finalShortfall": 0,
+      "displayedFields": 19,
+      "withheldFields": 1,
+      "requiredFields": 20,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "input": {
+        "query": "a notebook for quick notes"
+      },
+      "effectiveRequest": {
+        "query": "a notebook for quick notes",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "copyConditioning": {
+        "query": "Show a clear collection of store products.",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "topProductId": "organizer",
+      "expectedBasicPublicFunctionProductId": "notebook",
+      "topOneJudgment": "miss",
+      "selectedProductIds": [
+        "organizer",
+        "lamp",
+        "lunchbox",
+        "bottle",
+        "headphones",
+        "mug"
+      ],
+      "finalEligibleCount": 16,
+      "finalShortfall": 0,
+      "displayedFields": 19,
+      "withheldFields": 1,
+      "requiredFields": 20,
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "sourceCompleteEventIndex": 2,
+      "baseRankingCountsAreNotFinalPolicyCounts": true
+    }
+  ],
+  "acceptedFields": [
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "T1",
+      "text": "In Ochre, Zip essentials pouch",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "B1",
+      "text": "In Ochre",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "C1",
+      "text": "In Ochre, this Zip essentials pouch has an item price of $26.00.",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "T2",
+      "text": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/title",
+      "rawJsonPointer": "/rawRows/4"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "B2",
+      "text": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/badge",
+      "rawJsonPointer": "/rawRows/5"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "C2",
+      "text": "This collection of Portable table light in Ivory has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "potentially_misleading_collection_scope",
+      "note": "Name/Ivory/$64 are correct; collection of a singular catalog item is unsupported scope wording and could imply a bundle. Flag for prospective screen; no receipt edited.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/6"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "T3",
+      "text": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/title",
+      "rawJsonPointer": "/rawRows/7"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "B3",
+      "text": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/badge",
+      "rawJsonPointer": "/rawRows/8"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "S2",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/heading",
+      "rawJsonPointer": "/rawRows/10"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "T4",
+      "text": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/title",
+      "rawJsonPointer": "/rawRows/11"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "B4",
+      "text": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/badge",
+      "rawJsonPointer": "/rawRows/12"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "C4",
+      "text": "Everyday steel bottle is shown in Graphite at $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/13"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "T5",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/title",
+      "rawJsonPointer": "/rawRows/14"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "B5",
+      "text": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/badge",
+      "rawJsonPointer": "/rawRows/15"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "C5",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/16"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "T6",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/title",
+      "rawJsonPointer": "/rawRows/17"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "B6",
+      "text": "In Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/badge",
+      "rawJsonPointer": "/rawRows/18"
+    },
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "C6",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/19"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "T1",
+      "text": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "B1",
+      "text": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "C1",
+      "text": "Everyday steel bottle is shown in Graphite at $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "T2",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/title",
+      "rawJsonPointer": "/rawRows/4"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "B2",
+      "text": "In Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/badge",
+      "rawJsonPointer": "/rawRows/5"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "C2",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/6"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "T3",
+      "text": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/title",
+      "rawJsonPointer": "/rawRows/7"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "B3",
+      "text": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/badge",
+      "rawJsonPointer": "/rawRows/8"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "S2",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/heading",
+      "rawJsonPointer": "/rawRows/10"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "T4",
+      "text": "Everyday daypack selected in Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/title",
+      "rawJsonPointer": "/rawRows/11"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "B4",
+      "text": "In Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/badge",
+      "rawJsonPointer": "/rawRows/12"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "C4",
+      "text": "Everyday daypack is shown in Sand at $68.00.",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/13"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "T5",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/title",
+      "rawJsonPointer": "/rawRows/14"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "B5",
+      "text": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/badge",
+      "rawJsonPointer": "/rawRows/15"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "C5",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/16"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "T6",
+      "text": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/title",
+      "rawJsonPointer": "/rawRows/17"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "B6",
+      "text": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/badge",
+      "rawJsonPointer": "/rawRows/18"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "C6",
+      "text": "This collection of Portable table light in Ivory has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "potentially_misleading_collection_scope",
+      "note": "Name/Ivory/$64 are correct; collection of a singular catalog item is unsupported scope wording and could imply a bundle. Flag for prospective screen; no receipt edited.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/19"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "T1",
+      "text": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "B1",
+      "text": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "C1",
+      "text": "This collection of Portable table light in Ivory has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "potentially_misleading_collection_scope",
+      "note": "Name/Ivory/$64 are correct; collection of a singular catalog item is unsupported scope wording and could imply a bundle. Flag for prospective screen; no receipt edited.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "T2",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/title",
+      "rawJsonPointer": "/rawRows/4"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "B2",
+      "text": "In Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/badge",
+      "rawJsonPointer": "/rawRows/5"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "C2",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/6"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "T3",
+      "text": "Everywhere cotton towel in Sage stripe",
+      "boundFacts": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "selectedColor": "Sage stripe"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/title",
+      "rawJsonPointer": "/rawRows/7"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "B3",
+      "text": "Sage stripe selected",
+      "boundFacts": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "selectedColor": "Sage stripe"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/badge",
+      "rawJsonPointer": "/rawRows/8"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "C3",
+      "text": "Everywhere cotton towel in Sage stripe is listed at $28.00.",
+      "boundFacts": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "selectedColor": "Sage stripe"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/9"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "S2",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/heading",
+      "rawJsonPointer": "/rawRows/10"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "T4",
+      "text": "Market canvas tote shown in Olive",
+      "boundFacts": {
+        "name": "Market canvas tote",
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "selectedColor": "Olive"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/title",
+      "rawJsonPointer": "/rawRows/11"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "B4",
+      "text": "In Olive",
+      "boundFacts": {
+        "name": "Market canvas tote",
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "selectedColor": "Olive"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/badge",
+      "rawJsonPointer": "/rawRows/12"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "T5",
+      "text": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/title",
+      "rawJsonPointer": "/rawRows/14"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "B5",
+      "text": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/badge",
+      "rawJsonPointer": "/rawRows/15"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "C5",
+      "text": "Steel lunch box with Olive band is listed at $32.00.",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/16"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "T6",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/title",
+      "rawJsonPointer": "/rawRows/17"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "B6",
+      "text": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/badge",
+      "rawJsonPointer": "/rawRows/18"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "C6",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/19"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "T1",
+      "text": "Pocket field notes selected in Terracotta",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "B1",
+      "text": "Terracotta selected",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "C1",
+      "text": "In Terracotta, Pocket field notes has an item price of $12.00.",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "T2",
+      "text": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/title",
+      "rawJsonPointer": "/rawRows/4"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "B2",
+      "text": "In Tortoise",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/badge",
+      "rawJsonPointer": "/rawRows/5"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "T3",
+      "text": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/title",
+      "rawJsonPointer": "/rawRows/7"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "B3",
+      "text": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/badge",
+      "rawJsonPointer": "/rawRows/8"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "S2",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/heading",
+      "rawJsonPointer": "/rawRows/10"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "T4",
+      "text": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/title",
+      "rawJsonPointer": "/rawRows/11"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "B4",
+      "text": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/badge",
+      "rawJsonPointer": "/rawRows/12"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "C4",
+      "text": "This collection of Portable table light in Ivory has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "potentially_misleading_collection_scope",
+      "note": "Name/Ivory/$64 are correct; collection of a singular catalog item is unsupported scope wording and could imply a bundle. Flag for prospective screen; no receipt edited.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/13"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "T5",
+      "text": "Everywhere rain jacket selected in Forest",
+      "boundFacts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/title",
+      "rawJsonPointer": "/rawRows/14"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "B5",
+      "text": "Forest selected",
+      "boundFacts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/badge",
+      "rawJsonPointer": "/rawRows/15"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "C5",
+      "text": "Everywhere rain jacket is shown in Forest with an item price of $128.00.",
+      "boundFacts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/16"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "T6",
+      "text": "Everyday canvas sneakers shown in Off-white",
+      "boundFacts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Off-white"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/title",
+      "rawJsonPointer": "/rawRows/17"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "B6",
+      "text": "In Off-white",
+      "boundFacts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Off-white"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/badge",
+      "rawJsonPointer": "/rawRows/18"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "C6",
+      "text": "Everyday canvas sneakers shown in Off-white at $96.00.",
+      "boundFacts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Off-white"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/19"
+    },
+    {
+      "requestId": "6b67c575-843e-41a5-9173-151cdcc0e042",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/6b67c575-843e-41a5-9173-151cdcc0e042/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "6b67c575-843e-41a5-9173-151cdcc0e042",
+      "field": "T1",
+      "text": "Everywhere rain jacket selected in Forest",
+      "boundFacts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/6b67c575-843e-41a5-9173-151cdcc0e042/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "6b67c575-843e-41a5-9173-151cdcc0e042",
+      "field": "B1",
+      "text": "Forest selected",
+      "boundFacts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/6b67c575-843e-41a5-9173-151cdcc0e042/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "6b67c575-843e-41a5-9173-151cdcc0e042",
+      "field": "C1",
+      "text": "Everywhere rain jacket is shown in Forest with an item price of $128.00.",
+      "boundFacts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/6b67c575-843e-41a5-9173-151cdcc0e042/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "T1",
+      "text": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "B1",
+      "text": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "C1",
+      "text": "Everyday steel bottle is shown in Graphite at $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "T2",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/title",
+      "rawJsonPointer": "/rawRows/4"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "B2",
+      "text": "In Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/badge",
+      "rawJsonPointer": "/rawRows/5"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "C2",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/6"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "T3",
+      "text": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/title",
+      "rawJsonPointer": "/rawRows/7"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "B3",
+      "text": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/badge",
+      "rawJsonPointer": "/rawRows/8"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "S2",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/heading",
+      "rawJsonPointer": "/rawRows/10"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "T4",
+      "text": "Everyday daypack selected in Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/title",
+      "rawJsonPointer": "/rawRows/11"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "B4",
+      "text": "In Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/badge",
+      "rawJsonPointer": "/rawRows/12"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "C4",
+      "text": "Everyday daypack is shown in Sand at $68.00.",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/13"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "T5",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/title",
+      "rawJsonPointer": "/rawRows/14"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "B5",
+      "text": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/badge",
+      "rawJsonPointer": "/rawRows/15"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "C5",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/16"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "T6",
+      "text": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/title",
+      "rawJsonPointer": "/rawRows/17"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "B6",
+      "text": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/badge",
+      "rawJsonPointer": "/rawRows/18"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "C6",
+      "text": "This collection of Portable table light in Ivory has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "potentially_misleading_collection_scope",
+      "note": "Name/Ivory/$64 are correct; collection of a singular catalog item is unsupported scope wording and could imply a bundle. Flag for prospective screen; no receipt edited.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/19"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "T1",
+      "text": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "B1",
+      "text": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "C1",
+      "text": "This collection of Portable table light in Ivory has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "potentially_misleading_collection_scope",
+      "note": "Name/Ivory/$64 are correct; collection of a singular catalog item is unsupported scope wording and could imply a bundle. Flag for prospective screen; no receipt edited.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "T2",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/title",
+      "rawJsonPointer": "/rawRows/4"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "B2",
+      "text": "In Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/badge",
+      "rawJsonPointer": "/rawRows/5"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "C2",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/6"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "T3",
+      "text": "Everywhere cotton towel in Sage stripe",
+      "boundFacts": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "selectedColor": "Sage stripe"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/title",
+      "rawJsonPointer": "/rawRows/7"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "B3",
+      "text": "Sage stripe selected",
+      "boundFacts": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "selectedColor": "Sage stripe"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/badge",
+      "rawJsonPointer": "/rawRows/8"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "C3",
+      "text": "Everywhere cotton towel in Sage stripe is listed at $28.00.",
+      "boundFacts": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "selectedColor": "Sage stripe"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/9"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "S2",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/heading",
+      "rawJsonPointer": "/rawRows/10"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "T4",
+      "text": "Market canvas tote shown in Olive",
+      "boundFacts": {
+        "name": "Market canvas tote",
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "selectedColor": "Olive"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/title",
+      "rawJsonPointer": "/rawRows/11"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "B4",
+      "text": "In Olive",
+      "boundFacts": {
+        "name": "Market canvas tote",
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "selectedColor": "Olive"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/badge",
+      "rawJsonPointer": "/rawRows/12"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "T5",
+      "text": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/title",
+      "rawJsonPointer": "/rawRows/14"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "B5",
+      "text": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/badge",
+      "rawJsonPointer": "/rawRows/15"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "C5",
+      "text": "Steel lunch box with Olive band is listed at $32.00.",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/16"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "T6",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/title",
+      "rawJsonPointer": "/rawRows/17"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "B6",
+      "text": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/badge",
+      "rawJsonPointer": "/rawRows/18"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "C6",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/19"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "S1",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/heading",
+      "rawJsonPointer": "/rawRows/0"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "T1",
+      "text": "In Ochre, Zip essentials pouch",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/title",
+      "rawJsonPointer": "/rawRows/1"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "B1",
+      "text": "In Ochre",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/badge",
+      "rawJsonPointer": "/rawRows/2"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "C1",
+      "text": "In Ochre, this Zip essentials pouch has an item price of $26.00.",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/3"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "T2",
+      "text": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/title",
+      "rawJsonPointer": "/rawRows/4"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "B2",
+      "text": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/badge",
+      "rawJsonPointer": "/rawRows/5"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "C2",
+      "text": "This collection of Portable table light in Ivory has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "potentially_misleading_collection_scope",
+      "note": "Name/Ivory/$64 are correct; collection of a singular catalog item is unsupported scope wording and could imply a bundle. Flag for prospective screen; no receipt edited.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/6"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "T3",
+      "text": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/title",
+      "rawJsonPointer": "/rawRows/7"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "B3",
+      "text": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/0/cards/2/badge",
+      "rawJsonPointer": "/rawRows/8"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "S2",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/heading",
+      "rawJsonPointer": "/rawRows/10"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "T4",
+      "text": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/title",
+      "rawJsonPointer": "/rawRows/11"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "B4",
+      "text": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/badge",
+      "rawJsonPointer": "/rawRows/12"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "C4",
+      "text": "Everyday steel bottle is shown in Graphite at $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/0/bodyCopy",
+      "rawJsonPointer": "/rawRows/13"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "T5",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/title",
+      "rawJsonPointer": "/rawRows/14"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "B5",
+      "text": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/badge",
+      "rawJsonPointer": "/rawRows/15"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "C5",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/1/bodyCopy",
+      "rawJsonPointer": "/rawRows/16"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "T6",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/title",
+      "rawJsonPointer": "/rawRows/17"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "B6",
+      "text": "In Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/badge",
+      "rawJsonPointer": "/rawRows/18"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "C6",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "acceptedByProspectiveDemoScreen": true,
+      "qualitativeJudgment": "usable_source_compatible",
+      "note": "Read against bound facts: no wrong identity/color/price, unsupported capability/stock/shipping claim or unfinished/repeated wording found.",
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "displayJsonPointer": "/events/2/sections/1/cards/2/bodyCopy",
+      "rawJsonPointer": "/rawRows/19"
+    }
+  ],
+  "withheldFields": [
+    {
+      "requestId": "002a042d-5344-4946-9664-6642285e84e0",
+      "field": "C3",
+      "rawNativeText": "Steel lunch box with Olive band selected",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/002a042d-5344-4946-9664-6642285e84e0/receipt.json",
+      "rawJsonPointer": "/rawRows/9"
+    },
+    {
+      "requestId": "143c54ed-9b43-409e-a1cd-e347130aa60b",
+      "field": "C3",
+      "rawNativeText": "Steel lunch box with Olive band selected",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/143c54ed-9b43-409e-a1cd-e347130aa60b/receipt.json",
+      "rawJsonPointer": "/rawRows/9"
+    },
+    {
+      "requestId": "564d0de7-9b6c-403b-b243-4bf2b5ecbae6",
+      "field": "C4",
+      "rawNativeText": "Market canvas tote shown in Olive",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/564d0de7-9b6c-403b-b243-4bf2b5ecbae6/receipt.json",
+      "rawJsonPointer": "/rawRows/13"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "C2",
+      "rawNativeText": "Everyday round sunglasses with Tortoise selected",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "rawJsonPointer": "/rawRows/6"
+    },
+    {
+      "requestId": "5f31ec25-9b2d-4484-825c-bd109e08a9ff",
+      "field": "C3",
+      "rawNativeText": "Steel lunch box with Olive band selected",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/5f31ec25-9b2d-4484-825c-bd109e08a9ff/receipt.json",
+      "rawJsonPointer": "/rawRows/9"
+    },
+    {
+      "requestId": "a638f9e5-f674-4fd0-bde6-58084efc3087",
+      "field": "C3",
+      "rawNativeText": "Steel lunch box with Olive band selected",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/a638f9e5-f674-4fd0-bde6-58084efc3087/receipt.json",
+      "rawJsonPointer": "/rawRows/9"
+    },
+    {
+      "requestId": "b274ab9b-2cf7-48dd-9b36-8f207c9abd8e",
+      "field": "C4",
+      "rawNativeText": "Market canvas tote shown in Olive",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/b274ab9b-2cf7-48dd-9b36-8f207c9abd8e/receipt.json",
+      "rawJsonPointer": "/rawRows/13"
+    },
+    {
+      "requestId": "cae24c1b-2d06-471d-8715-725119d94aa1",
+      "field": "C3",
+      "rawNativeText": "Steel lunch box with Olive band selected",
+      "reasons": [
+        "unfinished-body"
+      ],
+      "sourcePath": "data/ranker/pretrained/store-demo-v1/requests/cae24c1b-2d06-471d-8715-725119d94aa1/receipt.json",
+      "rawJsonPointer": "/rawRows/9"
+    }
+  ],
+  "limits": [
+    "No GPU/model/tokenizer/native generation, frontend edit, Git action or old strict-gate change.",
+    "Neutral source-fact copy conditioning differs from shopper query: request affects ranking, not generation wording.",
+    "Deterministic first-declared color/image bindings and hard/exact guards are not learned personalization.",
+    "No browser visual/readiness timing, hidden-persona inference or human conversion evidence.",
+    "The ambiguous lamp wording is a prospective screen concern; recorded v1 native text and receipt acceptance remain unchanged."
+  ]
+}

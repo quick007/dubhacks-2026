@@ -5,6 +5,7 @@ import { ShoppingCart01Icon } from "@hugeicons/core-free-icons";
 import {
   parseVariantConfig,
   serializeVariantConfig,
+  orderedProducts,
   type Product,
   type VariantConfig,
 } from "./config";
@@ -18,6 +19,8 @@ import { CartView } from "./CartView";
 import { ConfirmationView } from "./ConfirmationView";
 import { useRoute } from "./use-route";
 import type { StorefrontRoute } from "./routes";
+import { localModelEnabled, preserveLocalModelSearch } from "./local-model";
+import { useLocalModel } from "./use-local-model";
 import "./styles.css";
 
 const initialConfig = parseVariantConfig(window.location.search);
@@ -36,7 +39,17 @@ function App() {
     setSearchInput(route.query);
   }, [route.query]);
 
-  const experience = personalizeStorefront(route.query, config);
+  const localMode = localModelEnabled(window.location.search);
+  const localModel = useLocalModel(localMode && route.page === "shop", route.query);
+  const defaultExperience = personalizeStorefront(route.query, config);
+  const catalogProducts = orderedProducts(config.recommendationOrder);
+  const experience = localMode
+    ? { ...defaultExperience, headline: config.headline, collection: "Collection", reason: null,
+        matched: Boolean(localModel.rank),
+        products: localModel.rank
+          ? localModel.rank.productIds.flatMap((id) => catalogProducts.filter((product) => product.id === id))
+          : catalogProducts }
+    : defaultExperience;
   const collection = COLLECTIONS.find((item) => item.id === route.collectionId) ?? COLLECTIONS[0];
   const visibleProducts =
     collection.id === "all"
@@ -83,7 +96,7 @@ function App() {
 
   function applyConfig(next: VariantConfig) {
     setConfig(next);
-    const search = serializeVariantConfig(next);
+    const search = preserveLocalModelSearch(serializeVariantConfig(next), window.location.search);
     window.history.replaceState(
       null,
       "",
@@ -130,6 +143,7 @@ function App() {
             visibleProducts={visibleProducts}
             selectedVariants={selectedVariants}
             added={added}
+            localModel={localMode ? localModel : undefined}
             onSearchInput={(value) => {
               setSearchInput(value);
               if (!value.trim() && route.query) goToCollection({ query: "" });

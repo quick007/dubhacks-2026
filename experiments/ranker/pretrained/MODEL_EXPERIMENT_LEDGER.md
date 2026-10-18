@@ -321,3 +321,48 @@ exact checkpoint reload and original-archive learned parity;24 fixed width6 arms
 including10 complete first3 fields; no serving target/template/fallback or2-card
 substitution. Copy-stage endpoints include fresh root and validation/serialization,
 exclude ranking and UI/browser paint. Native execution is queued at this receipt.
+
+
+## Integrated local demo checkpoint (2026-10-18; supersedes queued work above)
+
+The 320-update actual-store copy v2 fit completed all gates/updates/24 evaluation
+arms. Checkpoint SHA256
+56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8.
+Strict new-adapter payload acceptance is 2/8 first3 and 1/8 full6; the independent
+contextual audit is 6/8 first3 and 6/8 full6. These are different endpoints.
+All927 frozen tensors, cache and checkpoint reload controls pass.
+
+Broader v4 ranking was completed and not promoted: semantic14/21 hit1,10/21
+full target-prefix sets,1/8 pairs; six explicit-avoidance failures. Training
+data lacks several positive+negative/multi-need combinations. V3 remains the
+demo ranking candidate, with its known12/16 replay top1 and16/16 top6.
+
+The actual-query hybrid v2 benchmark completed: strict1/6 first3,0/6 full6,
+zero joint strict useful first3. Query-to-unrelated-product copy leakage and
+malformed price strings were independently identified. Preserve these failed
+results. Optional wider-copy/960-step continuation candidates are prepared and
+CPU-tested but have NOT run. User priority is the usable integrated demo.
+
+Opt-in React integration and a resident localhost service now exist. Default
+storefront styling, catalog, gallery and cart remain intact. Learned v3 query
+encoding orders all eligible16 products; selected top6 get fresh native v2
+copy, progressively first3 then full6. Shopper text affects ranking; generation
+uses selected public facts and a neutral browsing request. This is explicit
+provenance, not a claim of shopper-conditioned copy wording. The prospective
+practical screen withholds individual unsafe fields; unchanged strict v2
+judgments are also archived. There are no generated-template/teacher fallbacks.
+Public catalog execution is exactly equal to the training export, with only
+reviewed optional ProductCard rendering bytes excepted by a versioned manifest.
+
+First smoke run:9 requests,7 full-six. Warm resident width10 medians are
+215.343ms rank,5169.288ms first3 and5751.707ms full6, HTTP receipt to serialized
+events; browser paint/images/startup excluded. Seven full-six payloads accept
+132/140 fields and withhold8. Bottle->bottle and bedside light->lamp, but
+notebook->pouch is a real ranking miss. Exact Trail mug under$20 returns empty;
+waterproof jacket returns one actual eligible card with4/4 fresh fields.
+Chrome visibly rendered the streamed bottle and notebook results. Old source
+model hashes927 and checkpoint remain unchanged after graceful shutdown. Peak
+MLX6,519,340,896B under7GiB guard. Read store_demo_results/v1 and final demo
+report for the later browser instrumentation measurement and launch state.
+No conversion lift, unseen generalization, learned image selection, or
+ranking-only full-page latency is claimed.

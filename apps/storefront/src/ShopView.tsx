@@ -4,6 +4,7 @@ import type { Product, VariantConfig } from "./config";
 import type { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { ProductCard } from "./ProductCard";
+import { localModelStatus, type LocalModelState } from "./local-model";
 
 const EXAMPLE_SEARCHES = [
   "Rain jacket for campus",
@@ -21,6 +22,7 @@ export function ShopView({
   visibleProducts,
   selectedVariants,
   added,
+  localModel,
   onSearchInput,
   onSearchSubmit,
   onExampleSearch,
@@ -37,6 +39,7 @@ export function ShopView({
   visibleProducts: Product[];
   selectedVariants: Partial<Record<Product["id"], string>>;
   added: string;
+  localModel?: LocalModelState;
   onSearchInput: (value: string) => void;
   onSearchSubmit: () => void;
   onExampleSearch: (query: string) => void;
@@ -46,7 +49,10 @@ export function ShopView({
   onAdd: (product: Product, variantId: string, colorName: string) => void;
 }) {
   const collection = COLLECTIONS.find((item) => item.id === collectionId) ?? COLLECTIONS[0];
-  const heading = collection.id === "all" ? experience.collection : collection.label;
+  const heading = collection.id === "all"
+    ? localModel?.copy?.sections[0]?.heading ?? experience.collection
+    : collection.label;
+  const localCopy = new Map(localModel?.copy?.sections.flatMap((section) => section.cards).map((card) => [card.productId, card]));
   return (
     <>
       <section className="hero">
@@ -106,7 +112,7 @@ export function ShopView({
           <div>
             <h2>{heading}</h2>
             <p className="search-status" role="status">
-              {query &&
+              {localModel ? localModelStatus(localModel) : query &&
                 (experience.matched
                   ? `Suggestions for “${query}”${experience.reason ? ` — ordered for ${experience.reason}` : ""}`
                   : `No close matches for “${query}”. Browse the collection below.`)}
@@ -124,7 +130,8 @@ export function ShopView({
               key={product.id}
               product={product}
               context={experience.context}
-              variantId={selectedVariants[product.id]}
+              variantId={selectedVariants[product.id] ?? localModel?.rank?.variants[product.id]}
+              localCopy={localCopy.get(product.id)}
               onVariantChange={(variantId) => onVariantChange(product.id, variantId)}
               onAdd={(variantId, colorName) => onAdd(product, variantId, colorName)}
             />

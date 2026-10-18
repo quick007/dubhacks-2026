@@ -4,21 +4,25 @@ import type { Product } from "./config";
 import type { ImageContext } from "./images";
 import { ProductGallery } from "./ProductGallery";
 import { PRODUCT_VARIANTS, getProductVariant } from "./variants";
+import type { LocalCopyCard } from "./local-model";
 
 export function ProductCard({
   product,
   context,
   variantId,
+  localCopy,
   onVariantChange,
   onAdd,
 }: {
   product: Product;
   context: ImageContext;
   variantId?: string;
+  localCopy?: LocalCopyCard;
   onVariantChange: (variantId: string) => void;
   onAdd: (variantId: string, colorName: string) => void;
 }) {
   const variant = getProductVariant(product.id, variantId);
+  const freshCopy = localCopy?.variantId === variant.id ? localCopy : undefined;
   return (
     <article className="product">
       <ProductGallery
@@ -28,9 +32,14 @@ export function ProductCard({
         variant={variant}
       />
       <div className="product-heading">
-        <h3>{product.name}</h3>
+        <h3>{freshCopy?.title ?? product.name}</h3>
         <span>${product.price}</span>
       </div>
+      {freshCopy?.title && freshCopy.title !== product.name && (
+        <p className="search-status">{product.name}</p>
+      )}
+      {freshCopy?.badge && <p className="search-status">{freshCopy.badge}</p>}
+      {freshCopy?.bodyCopy && <p className="search-status">{freshCopy.bodyCopy}</p>}
       <div className="product-colors" role="group" aria-label={`${product.name} colors`}>
         {PRODUCT_VARIANTS[product.id].map((option) => (
           <button

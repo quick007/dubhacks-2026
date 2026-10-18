@@ -52,7 +52,7 @@ def exact_name_order(request, products, guarded):
 
 
 class StoreRankSession:
-    def __init__(self, backbone, run_directory):
+    def __init__(self, backbone, run_directory, *, source_validator=assert_current_sources):
         self.bb=backbone;self.run=Path(run_directory);self.report=json.loads((self.run/'report.json').read_text())
         if self.report['status']!='completed' or self.report['nativeForwards']!=64:
             raise ValueError('Completed actual-store rank checkpoint required')
@@ -62,7 +62,8 @@ class StoreRankSession:
         if hashlib.sha256((self.run/'packet.json').read_bytes()).hexdigest()!=self.report['packetSha256']:
             raise ValueError('Native rank packet changed')
         assert_model_files(self.packet['model']['modelPath'],self.provenance)
-        self.snapshot=load_snapshot();assert_current_sources(self.snapshot['receipt'])
+        self.source_validator=source_validator
+        self.snapshot=load_snapshot();self.source_validator(self.snapshot['receipt'])
         self.products=self.snapshot['inputs']['products']
         self.catalog_rows=[r for r in self.packet['records'] if r['role']=='catalog']
         if len(self.catalog_rows)!=16:raise ValueError('Exact16 catalog feature membership required')
@@ -77,7 +78,7 @@ class StoreRankSession:
         catalog verification, scoring, hard guards, exact-name policy, variant
         binding and serialized six-card decision payload. No generated copy.
         """
-        started=time.perf_counter();validate_request(request);assert_current_sources(self.snapshot['receipt'])
+        started=time.perf_counter();validate_request(request);self.source_validator(self.snapshot['receipt'])
         text=request_text(request);tokens=self.bb.tokenizer.encode(text,add_special_tokens=False)
         if not 0<len(tokens)<=512:raise ValueError('Whole public query must fit512tokens; no truncation')
         active=self.bb.model.layers[-1].mlp.down_proj
@@ -104,6 +105,6 @@ class StoreRankSession:
             'imageColorPolicy':'first declared satisfying color; first declared image, deterministic and untrained',
             'stock':None,'sizes':None,'delivery':'cart-subtotal policy excluded from item budget',
             'scope':'model-side learned rank/action binding; no generated copy, browser paint or live UI integration'}
-        assert_current_sources(self.snapshot['receipt']);encoded=canonical(result).encode()
+        self.source_validator(self.snapshot['receipt']);encoded=canonical(result).encode()
         return {**result,'payloadSha256':hashlib.sha256(encoded).hexdigest(),'payloadBytes':len(encoded),
                 'freshRankToSerializedActionsMs':(time.perf_counter()-started)*1000}
