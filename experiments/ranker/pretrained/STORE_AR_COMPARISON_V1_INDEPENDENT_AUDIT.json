@@ -1,0 +1,2868 @@
+{
+  "version": "store-ar-comparison-independent-qualitative.v1",
+  "method": "Exhaustive offline model judgment of all120 raw fields, all36 selected card bindings and serialized accepted/withheld fields; not a formal validator, human study, shopper conversion measurement or regraded benchmark. CPU numeric/binding assertions supplement qualitative reading.",
+  "runPath": "data/ranker/pretrained/store-ar-comparison-v1-attempt-1",
+  "resultsSha256": "2221956fd3b93221aa1b858af35962e0b7d9bd56113a04659a458df2be3be269",
+  "catalogPath": "experiments/ranker/pretrained/store_catalog_v1/model_inputs.json",
+  "catalogSha256": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+  "fixedDenominator": {
+    "cases": 3,
+    "timedArms": 6,
+    "fieldsPerArm": 20,
+    "rawFields": 120,
+    "selectedCardBindings": 36,
+    "warmupsScored": 0
+  },
+  "summary": {
+    "A": {
+      "timedArms": 3,
+      "top1Relevant": 3,
+      "frozenPracticalFields": 30,
+      "frozenStrictFields": 30,
+      "fieldDenominator": 60,
+      "contextualUnqualifiedFields": 56,
+      "rawCoreTitleBodyFirst3UsableArms": 3,
+      "rawCoreTitleBodyFull6UsableArms": 3,
+      "qualitativeClasses": {
+        "misleading-section-scope": 2,
+        "source-compatible-or-harmless-framing": 56,
+        "unsupported-subjective-benefit": 1,
+        "unsupported-subjective-texture": 1
+      }
+    },
+    "B": {
+      "timedArms": 3,
+      "top1Relevant": 2,
+      "frozenPracticalFields": 54,
+      "frozenStrictFields": 50,
+      "fieldDenominator": 60,
+      "contextualUnqualifiedFields": 54,
+      "rawCoreTitleBodyFirst3UsableArms": 0,
+      "rawCoreTitleBodyFull6UsableArms": 0,
+      "qualitativeClasses": {
+        "source-compatible-or-harmless-framing": 54,
+        "unfinished-body": 3,
+        "ambiguous-item-versus-collection-price": 3
+      }
+    }
+  },
+  "independentAssertions": {
+    "catalog_card_bindings": 36,
+    "title_identity_color_matches": 36,
+    "badge_color_matches": 36,
+    "numeric_body_prices_match": 33,
+    "body_identity_color_matches": 36
+  },
+  "scopeLimitations": [
+    "Three previously used public development demo queries; not unseen generalization.",
+    "No budget/hard-constraint case is included; all36 cards are hard-eligible without a budget, not evidence of budget/stock/size reliability.",
+    "A frozen base one native AR decision+JSON stream versus B trained rank head and adapted20independent field streams on common resident backbone: adapter, prompt, selection and generation architecture differ.",
+    "B generation is structurally source-only neutral; A sees actual query and neutral-copy instruction in same prompt. A water/light headings show request-conditioned category leakage.",
+    "Frozen practical/strict gates and all six null usable-readiness values preserved; word-price finding does not retrospectively promote A or establish useful speedup.",
+    "Images are deterministic existing gallery bindings; no pixel inspection or image-generation quality claim.",
+    "Generic styles, capitalization, repeated field format and neutral heading repetition alone are not false facts."
+  ],
+  "arms": [
+    {
+      "caseId": "demo-water-six",
+      "arm": "A",
+      "query": "a bottle for drinking water",
+      "status": "completed-attempt",
+      "sourcePath": "data/ranker/pretrained/store-ar-comparison-v1-attempt-1/ar-demo-water-six/result.json",
+      "sourceSha256": "7db49b329b6ca08f581b581e77191911eee8f7c72fad10e164b7fa54785fa5d9",
+      "top1MatchesRequestedPublicFunction": true,
+      "expectedPublicFunctionProductIndex": 4,
+      "selectedProducts": [
+        {
+          "index": 4,
+          "name": "Everyday steel bottle",
+          "color": "Graphite",
+          "price": 36
+        },
+        {
+          "index": 0,
+          "name": "Trail mug",
+          "color": "Sage",
+          "price": 24
+        },
+        {
+          "index": 14,
+          "name": "Zip essentials pouch",
+          "color": "Ochre",
+          "price": 26
+        },
+        {
+          "index": 3,
+          "name": "Everywhere rain jacket",
+          "color": "Forest",
+          "price": 128
+        },
+        {
+          "index": 9,
+          "name": "Everyday over-ear headphones",
+          "color": "Navy",
+          "price": 89
+        },
+        {
+          "index": 10,
+          "name": "Everyday canvas sneakers",
+          "color": "Off-white",
+          "price": 96
+        }
+      ],
+      "expectedProductInFirst3": true,
+      "expectedProductInFull6": true,
+      "frozenFirst3": {
+        "practicalAccepted": 6,
+        "strictAccepted": 6,
+        "required": 10,
+        "usableReadyMs": null
+      },
+      "frozenFull6": {
+        "practicalAccepted": 12,
+        "strictAccepted": 12,
+        "required": 20,
+        "usableReadyMs": null
+      },
+      "contextualCoreTitleBodyUsableFirst3": true,
+      "contextualCoreTitleBodyUsableFull6": true,
+      "fields": [
+        {
+          "field": "S1",
+          "rawText": "Essential Daily Hydration",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unsupported-product-or-service-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "heading-outside-generic-grammar"
+          ],
+          "qualitativeClass": "misleading-section-scope",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Hydration heading covers a canvas organizer pouch as its third card; public category does not support drinking use.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T1",
+          "rawText": "Everyday steel bottle in Graphite",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "B1",
+          "rawText": "Graphite color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "C1",
+          "rawText": "Everyday steel bottle in Graphite costs 36 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 36.0,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "T2",
+          "rawText": "Trail mug in Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "B2",
+          "rawText": "Sage color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "C2",
+          "rawText": "Trail mug in Sage costs 24 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 24.0,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "T3",
+          "rawText": "Zip essentials pouch in Ochre",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "B3",
+          "rawText": "Ochre color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "C3",
+          "rawText": "Zip essentials pouch in Ochre costs 26 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 26.0,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "S2",
+          "rawText": "Versatile Store Selections",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "heading-outside-generic-grammar"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T4",
+          "rawText": "Everywhere rain jacket in Forest",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/3",
+            "name": "Everywhere rain jacket",
+            "selectedColor": "Forest",
+            "itemPrice": 128,
+            "category": "Waterproof hooded shell"
+          }
+        },
+        {
+          "field": "B4",
+          "rawText": "Forest color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/3",
+            "name": "Everywhere rain jacket",
+            "selectedColor": "Forest",
+            "itemPrice": 128,
+            "category": "Waterproof hooded shell"
+          }
+        },
+        {
+          "field": "C4",
+          "rawText": "Everywhere rain jacket in Forest costs 128 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 128.0,
+          "source": {
+            "catalogJsonPointer": "/products/3",
+            "name": "Everywhere rain jacket",
+            "selectedColor": "Forest",
+            "itemPrice": 128,
+            "category": "Waterproof hooded shell"
+          }
+        },
+        {
+          "field": "T5",
+          "rawText": "Everyday over-ear headphones in Navy",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "B5",
+          "rawText": "Navy color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "C5",
+          "rawText": "Everyday over-ear headphones in Navy costs 89 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 89.0,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "T6",
+          "rawText": "Everyday canvas sneakers in Off-white",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/10",
+            "name": "Everyday canvas sneakers",
+            "selectedColor": "Off-white",
+            "itemPrice": 96,
+            "category": "Canvas low-top sneakers"
+          }
+        },
+        {
+          "field": "B6",
+          "rawText": "Off-white color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/10",
+            "name": "Everyday canvas sneakers",
+            "selectedColor": "Off-white",
+            "itemPrice": 96,
+            "category": "Canvas low-top sneakers"
+          }
+        },
+        {
+          "field": "C6",
+          "rawText": "Everyday canvas sneakers in Off-white costs 96 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 96.0,
+          "source": {
+            "catalogJsonPointer": "/products/10",
+            "name": "Everyday canvas sneakers",
+            "selectedColor": "Off-white",
+            "itemPrice": 96,
+            "category": "Canvas low-top sneakers"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "demo-water-six",
+      "arm": "B",
+      "query": "a bottle for drinking water",
+      "status": "completed",
+      "sourcePath": "data/ranker/pretrained/store-ar-comparison-v1-attempt-1/hybrid/requests/878c00f2-599c-4a3a-bc59-8d472823dd98/receipt.json",
+      "sourceSha256": "a9c027d7502d6e385b0a1a17b366402eeca735146cffc3ce454b725197da6f1e",
+      "top1MatchesRequestedPublicFunction": true,
+      "expectedPublicFunctionProductIndex": 4,
+      "selectedProducts": [
+        {
+          "index": 4,
+          "name": "Everyday steel bottle",
+          "color": "Graphite",
+          "price": 36
+        },
+        {
+          "index": 0,
+          "name": "Trail mug",
+          "color": "Sage",
+          "price": 24
+        },
+        {
+          "index": 8,
+          "name": "Steel lunch box",
+          "color": "Olive band",
+          "price": 32
+        },
+        {
+          "index": 1,
+          "name": "Everyday daypack",
+          "color": "Sand",
+          "price": 68
+        },
+        {
+          "index": 9,
+          "name": "Everyday over-ear headphones",
+          "color": "Navy",
+          "price": 89
+        },
+        {
+          "index": 7,
+          "name": "Portable table light",
+          "color": "Ivory",
+          "price": 64
+        }
+      ],
+      "expectedProductInFirst3": true,
+      "expectedProductInFull6": true,
+      "frozenFirst3": {
+        "practicalAccepted": 9,
+        "strictAccepted": 9,
+        "required": 10,
+        "usableReadyMs": null
+      },
+      "frozenFull6": {
+        "practicalAccepted": 18,
+        "strictAccepted": 17,
+        "required": 20,
+        "usableReadyMs": null
+      },
+      "contextualCoreTitleBodyUsableFirst3": false,
+      "contextualCoreTitleBodyUsableFull6": false,
+      "fields": [
+        {
+          "field": "S1",
+          "rawText": "Your selected collection",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T1",
+          "rawText": "Everyday steel bottle selected in Graphite",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "B1",
+          "rawText": "In Graphite",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "C1",
+          "rawText": "Everyday steel bottle is shown in Graphite at $36.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 36.0,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "T2",
+          "rawText": "Trail mug in Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "B2",
+          "rawText": "In Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "C2",
+          "rawText": "Trail mug in Sage is listed at $24.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 24.0,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "T3",
+          "rawText": "Steel lunch box with Olive band selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "B3",
+          "rawText": "Olive band selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "C3",
+          "rawText": "Steel lunch box with Olive band selected",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unfinished-body"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-one-finished-sentence-or-length",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "unfinished-body",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Truthful identity/color caption, not a finished body sentence. Missing body price alone would not be essential with structured item price, but completeness fails.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "S2",
+          "rawText": "Your selected collection",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T4",
+          "rawText": "Everyday daypack selected in Sand",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/1",
+            "name": "Everyday daypack",
+            "selectedColor": "Sand",
+            "itemPrice": 68,
+            "category": "Pack a smaller plan"
+          }
+        },
+        {
+          "field": "B4",
+          "rawText": "In Sand",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/1",
+            "name": "Everyday daypack",
+            "selectedColor": "Sand",
+            "itemPrice": 68,
+            "category": "Pack a smaller plan"
+          }
+        },
+        {
+          "field": "C4",
+          "rawText": "Everyday daypack is shown in Sand at $68.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 68.0,
+          "source": {
+            "catalogJsonPointer": "/products/1",
+            "name": "Everyday daypack",
+            "selectedColor": "Sand",
+            "itemPrice": 68,
+            "category": "Pack a smaller plan"
+          }
+        },
+        {
+          "field": "T5",
+          "rawText": "Everyday over-ear headphones shown in Navy",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "B5",
+          "rawText": "Navy selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "C5",
+          "rawText": "Everyday over-ear headphones shown in Navy at $89.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": false,
+          "strictReasons": [
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 89.0,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "T6",
+          "rawText": "Portable table light in Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "B6",
+          "rawText": "In Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "C6",
+          "rawText": "This collection of Portable table light in Ivory has an item price of $64.00.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "ambiguous-collection-item-price-scope"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "ambiguous-item-versus-collection-price",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Numerical amount matches the single item, but collection wording obscures whether it buys multiple items; appropriately withheld.",
+          "numericBodyPrice": 64.0,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "demo-light-six",
+      "arm": "B",
+      "query": "a light for my bedside table",
+      "status": "completed",
+      "sourcePath": "data/ranker/pretrained/store-ar-comparison-v1-attempt-1/hybrid/requests/ae0d3b05-006f-4351-865e-145c5cec2824/receipt.json",
+      "sourceSha256": "fea98ba986bd3a6307fe8ea5c5dca7786f101721f03a0285c16e7b3ddd188762",
+      "top1MatchesRequestedPublicFunction": true,
+      "expectedPublicFunctionProductIndex": 7,
+      "selectedProducts": [
+        {
+          "index": 7,
+          "name": "Portable table light",
+          "color": "Ivory",
+          "price": 64
+        },
+        {
+          "index": 0,
+          "name": "Trail mug",
+          "color": "Sage",
+          "price": 24
+        },
+        {
+          "index": 15,
+          "name": "Everywhere cotton towel",
+          "color": "Sage stripe",
+          "price": 28
+        },
+        {
+          "index": 5,
+          "name": "Market canvas tote",
+          "color": "Olive",
+          "price": 42
+        },
+        {
+          "index": 8,
+          "name": "Steel lunch box",
+          "color": "Olive band",
+          "price": 32
+        },
+        {
+          "index": 9,
+          "name": "Everyday over-ear headphones",
+          "color": "Navy",
+          "price": 89
+        }
+      ],
+      "expectedProductInFirst3": true,
+      "expectedProductInFull6": true,
+      "frozenFirst3": {
+        "practicalAccepted": 9,
+        "strictAccepted": 9,
+        "required": 10,
+        "usableReadyMs": null
+      },
+      "frozenFull6": {
+        "practicalAccepted": 18,
+        "strictAccepted": 16,
+        "required": 20,
+        "usableReadyMs": null
+      },
+      "contextualCoreTitleBodyUsableFirst3": false,
+      "contextualCoreTitleBodyUsableFull6": false,
+      "fields": [
+        {
+          "field": "S1",
+          "rawText": "Your selected collection",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T1",
+          "rawText": "Portable table light in Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "B1",
+          "rawText": "In Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "C1",
+          "rawText": "This collection of Portable table light in Ivory has an item price of $64.00.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "ambiguous-collection-item-price-scope"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "ambiguous-item-versus-collection-price",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Numerical amount matches the single item, but collection wording obscures whether it buys multiple items; appropriately withheld.",
+          "numericBodyPrice": 64.0,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "T2",
+          "rawText": "Trail mug in Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "B2",
+          "rawText": "In Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "C2",
+          "rawText": "Trail mug in Sage is listed at $24.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 24.0,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "T3",
+          "rawText": "Everywhere cotton towel in Sage stripe",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/15",
+            "name": "Everywhere cotton towel",
+            "selectedColor": "Sage stripe",
+            "itemPrice": 28,
+            "category": "Striped cotton towel"
+          }
+        },
+        {
+          "field": "B3",
+          "rawText": "Sage stripe selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/15",
+            "name": "Everywhere cotton towel",
+            "selectedColor": "Sage stripe",
+            "itemPrice": 28,
+            "category": "Striped cotton towel"
+          }
+        },
+        {
+          "field": "C3",
+          "rawText": "Everywhere cotton towel in Sage stripe is listed at $28.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 28.0,
+          "source": {
+            "catalogJsonPointer": "/products/15",
+            "name": "Everywhere cotton towel",
+            "selectedColor": "Sage stripe",
+            "itemPrice": 28,
+            "category": "Striped cotton towel"
+          }
+        },
+        {
+          "field": "S2",
+          "rawText": "Your selected collection",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T4",
+          "rawText": "Market canvas tote shown in Olive",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/5",
+            "name": "Market canvas tote",
+            "selectedColor": "Olive",
+            "itemPrice": 42,
+            "category": "Cotton canvas carryall"
+          }
+        },
+        {
+          "field": "B4",
+          "rawText": "In Olive",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/5",
+            "name": "Market canvas tote",
+            "selectedColor": "Olive",
+            "itemPrice": 42,
+            "category": "Cotton canvas carryall"
+          }
+        },
+        {
+          "field": "C4",
+          "rawText": "Market canvas tote shown in Olive",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unfinished-body"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-one-finished-sentence-or-length",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "unfinished-body",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Truthful identity/color caption, not a finished body sentence. Missing body price alone would not be essential with structured item price, but completeness fails.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/5",
+            "name": "Market canvas tote",
+            "selectedColor": "Olive",
+            "itemPrice": 42,
+            "category": "Cotton canvas carryall"
+          }
+        },
+        {
+          "field": "T5",
+          "rawText": "Steel lunch box with Olive band selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "B5",
+          "rawText": "Olive band selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "C5",
+          "rawText": "Steel lunch box with Olive band is listed at $32.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": false,
+          "strictReasons": [
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 32.0,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "T6",
+          "rawText": "Everyday over-ear headphones shown in Navy",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "B6",
+          "rawText": "Navy selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "C6",
+          "rawText": "Everyday over-ear headphones shown in Navy at $89.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": false,
+          "strictReasons": [
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 89.0,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "demo-light-six",
+      "arm": "A",
+      "query": "a light for my bedside table",
+      "status": "completed-attempt",
+      "sourcePath": "data/ranker/pretrained/store-ar-comparison-v1-attempt-1/ar-demo-light-six/result.json",
+      "sourceSha256": "9aa32dc5e037b3bf721e203d59ce97210af546b88d32a77a5d990698c14b5777",
+      "top1MatchesRequestedPublicFunction": true,
+      "expectedPublicFunctionProductIndex": 7,
+      "selectedProducts": [
+        {
+          "index": 7,
+          "name": "Portable table light",
+          "color": "Ivory",
+          "price": 64
+        },
+        {
+          "index": 14,
+          "name": "Zip essentials pouch",
+          "color": "Ochre",
+          "price": 26
+        },
+        {
+          "index": 15,
+          "name": "Everywhere cotton towel",
+          "color": "Sage stripe",
+          "price": 28
+        },
+        {
+          "index": 0,
+          "name": "Trail mug",
+          "color": "Sage",
+          "price": 24
+        },
+        {
+          "index": 2,
+          "name": "Pocket field notes",
+          "color": "Terracotta",
+          "price": 12
+        },
+        {
+          "index": 4,
+          "name": "Everyday steel bottle",
+          "color": "Graphite",
+          "price": 36
+        }
+      ],
+      "expectedProductInFirst3": true,
+      "expectedProductInFull6": true,
+      "frozenFirst3": {
+        "practicalAccepted": 6,
+        "strictAccepted": 6,
+        "required": 10,
+        "usableReadyMs": null
+      },
+      "frozenFull6": {
+        "practicalAccepted": 12,
+        "strictAccepted": 12,
+        "required": 20,
+        "usableReadyMs": null
+      },
+      "contextualCoreTitleBodyUsableFirst3": true,
+      "contextualCoreTitleBodyUsableFull6": true,
+      "fields": [
+        {
+          "field": "S1",
+          "rawText": "Bedside Lighting Selection",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "heading-outside-generic-grammar"
+          ],
+          "qualitativeClass": "misleading-section-scope",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Lighting heading covers a canvas organizer pouch and a cotton towel as second/third cards.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T1",
+          "rawText": "Portable table light in Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "B1",
+          "rawText": "Ivory color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "C1",
+          "rawText": "Portable table light in Ivory costs 64 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 64.0,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "T2",
+          "rawText": "Zip essentials pouch in Ochre",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "B2",
+          "rawText": "Ochre color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "C2",
+          "rawText": "Zip essentials pouch in Ochre costs 26 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 26.0,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "T3",
+          "rawText": "Everywhere cotton towel in Sage stripe",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/15",
+            "name": "Everywhere cotton towel",
+            "selectedColor": "Sage stripe",
+            "itemPrice": 28,
+            "category": "Striped cotton towel"
+          }
+        },
+        {
+          "field": "B3",
+          "rawText": "Sage stripe color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/15",
+            "name": "Everywhere cotton towel",
+            "selectedColor": "Sage stripe",
+            "itemPrice": 28,
+            "category": "Striped cotton towel"
+          }
+        },
+        {
+          "field": "C3",
+          "rawText": "Everywhere cotton towel in Sage stripe costs 28 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 28.0,
+          "source": {
+            "catalogJsonPointer": "/products/15",
+            "name": "Everywhere cotton towel",
+            "selectedColor": "Sage stripe",
+            "itemPrice": 28,
+            "category": "Striped cotton towel"
+          }
+        },
+        {
+          "field": "S2",
+          "rawText": "General Store Collection",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "heading-outside-generic-grammar"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T4",
+          "rawText": "Trail mug in Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "B4",
+          "rawText": "Sage color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "C4",
+          "rawText": "Trail mug in Sage costs 24 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 24.0,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "T5",
+          "rawText": "Pocket field notes in Terracotta",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/2",
+            "name": "Pocket field notes",
+            "selectedColor": "Terracotta",
+            "itemPrice": 12,
+            "category": "Keep a good thought"
+          }
+        },
+        {
+          "field": "B5",
+          "rawText": "Terracotta color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/2",
+            "name": "Pocket field notes",
+            "selectedColor": "Terracotta",
+            "itemPrice": 12,
+            "category": "Keep a good thought"
+          }
+        },
+        {
+          "field": "C5",
+          "rawText": "Pocket field notes in Terracotta costs 12 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 12.0,
+          "source": {
+            "catalogJsonPointer": "/products/2",
+            "name": "Pocket field notes",
+            "selectedColor": "Terracotta",
+            "itemPrice": 12,
+            "category": "Keep a good thought"
+          }
+        },
+        {
+          "field": "T6",
+          "rawText": "Everyday steel bottle in Graphite",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "B6",
+          "rawText": "Graphite color",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "C6",
+          "rawText": "Everyday steel bottle in Graphite costs 36 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 36.0,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "demo-notebook-six",
+      "arm": "A",
+      "query": "a notebook for quick notes",
+      "status": "completed-attempt",
+      "sourcePath": "data/ranker/pretrained/store-ar-comparison-v1-attempt-1/ar-demo-notebook-six/result.json",
+      "sourceSha256": "0b0f90b091aeba711b8a507575793c3de2b0b2011f34705cb5e055e6a5cb1238",
+      "top1MatchesRequestedPublicFunction": true,
+      "expectedPublicFunctionProductIndex": 2,
+      "selectedProducts": [
+        {
+          "index": 2,
+          "name": "Pocket field notes",
+          "color": "Terracotta",
+          "price": 12
+        },
+        {
+          "index": 9,
+          "name": "Everyday over-ear headphones",
+          "color": "Navy",
+          "price": 89
+        },
+        {
+          "index": 4,
+          "name": "Everyday steel bottle",
+          "color": "Graphite",
+          "price": 36
+        },
+        {
+          "index": 7,
+          "name": "Portable table light",
+          "color": "Ivory",
+          "price": 64
+        },
+        {
+          "index": 6,
+          "name": "Woven everyday throw",
+          "color": "Rust",
+          "price": 58
+        },
+        {
+          "index": 14,
+          "name": "Zip essentials pouch",
+          "color": "Ochre",
+          "price": 26
+        }
+      ],
+      "expectedProductInFirst3": true,
+      "expectedProductInFull6": true,
+      "frozenFirst3": {
+        "practicalAccepted": 3,
+        "strictAccepted": 3,
+        "required": 10,
+        "usableReadyMs": null
+      },
+      "frozenFull6": {
+        "practicalAccepted": 6,
+        "strictAccepted": 6,
+        "required": 20,
+        "usableReadyMs": null
+      },
+      "contextualCoreTitleBodyUsableFirst3": true,
+      "contextualCoreTitleBodyUsableFull6": true,
+      "fields": [
+        {
+          "field": "S1",
+          "rawText": "Essential Daily Carriers",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "heading-outside-generic-grammar"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T1",
+          "rawText": "Pocket field notes in Terracotta",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/2",
+            "name": "Pocket field notes",
+            "selectedColor": "Terracotta",
+            "itemPrice": 12,
+            "category": "Keep a good thought"
+          }
+        },
+        {
+          "field": "B1",
+          "rawText": "Terracotta compact",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "badge-outside-bound-color-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/2",
+            "name": "Pocket field notes",
+            "selectedColor": "Terracotta",
+            "itemPrice": 12,
+            "category": "Keep a good thought"
+          }
+        },
+        {
+          "field": "C1",
+          "rawText": "Pocket field notes in Terracotta costs 12 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 12.0,
+          "source": {
+            "catalogJsonPointer": "/products/2",
+            "name": "Pocket field notes",
+            "selectedColor": "Terracotta",
+            "itemPrice": 12,
+            "category": "Keep a good thought"
+          }
+        },
+        {
+          "field": "T2",
+          "rawText": "Everyday over-ear headphones in Navy",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "B2",
+          "rawText": "Navy audio comfort",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "badge-outside-bound-color-relations"
+          ],
+          "qualitativeClass": "unsupported-subjective-benefit",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Audio is supported by headphones/searchTerms; comfort is plausible for cushioned headphones but no comfort evidence or measurement is supplied. Not proven false.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "C2",
+          "rawText": "Everyday over-ear headphones in Navy costs 89 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 89.0,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "T3",
+          "rawText": "Everyday steel bottle in Graphite",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "B3",
+          "rawText": "Graphite hydration",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unsupported-product-or-service-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "badge-outside-bound-color-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "C3",
+          "rawText": "Everyday steel bottle in Graphite costs 36 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 36.0,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "S2",
+          "rawText": "Cozy Home Essentials",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "heading-outside-generic-grammar"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T4",
+          "rawText": "Portable table light in Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "B4",
+          "rawText": "Ivory reading glow",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unsupported-product-or-service-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "badge-outside-bound-color-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "C4",
+          "rawText": "Portable table light in Ivory costs 64 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 64.0,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "T5",
+          "rawText": "Woven everyday throw in Rust",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/6",
+            "name": "Woven everyday throw",
+            "selectedColor": "Rust",
+            "itemPrice": 58,
+            "category": "Cotton throw blanket"
+          }
+        },
+        {
+          "field": "B5",
+          "rawText": "Rust cozy texture",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "badge-outside-bound-color-relations"
+          ],
+          "qualitativeClass": "unsupported-subjective-texture",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Cozy appears in public searchTerms for the cotton throw; tactile cozy texture is an added subjective claim, not independently verified. Not proven false.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/6",
+            "name": "Woven everyday throw",
+            "selectedColor": "Rust",
+            "itemPrice": 58,
+            "category": "Cotton throw blanket"
+          }
+        },
+        {
+          "field": "C5",
+          "rawText": "Woven everyday throw in Rust costs 58 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 58.0,
+          "source": {
+            "catalogJsonPointer": "/products/6",
+            "name": "Woven everyday throw",
+            "selectedColor": "Rust",
+            "itemPrice": 58,
+            "category": "Cotton throw blanket"
+          }
+        },
+        {
+          "field": "T6",
+          "rawText": "Zip essentials pouch in Ochre",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "B6",
+          "rawText": "Ochre organizer",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "badge-outside-bound-color-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "C6",
+          "rawText": "Zip essentials pouch in Ochre costs 26 dollars.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unbound-numeric-or-price-claim",
+            "unverified-claim-language"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 26.0,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "demo-notebook-six",
+      "arm": "B",
+      "query": "a notebook for quick notes",
+      "status": "completed",
+      "sourcePath": "data/ranker/pretrained/store-ar-comparison-v1-attempt-1/hybrid/requests/0f68403e-5ded-47c4-b08b-40b7af761c00/receipt.json",
+      "sourceSha256": "f2cd49d3c3142e40608d85e28ebd708075d222886ad1a3c6ab7a4ef9bf3b11f0",
+      "top1MatchesRequestedPublicFunction": false,
+      "expectedPublicFunctionProductIndex": 2,
+      "selectedProducts": [
+        {
+          "index": 14,
+          "name": "Zip essentials pouch",
+          "color": "Ochre",
+          "price": 26
+        },
+        {
+          "index": 7,
+          "name": "Portable table light",
+          "color": "Ivory",
+          "price": 64
+        },
+        {
+          "index": 8,
+          "name": "Steel lunch box",
+          "color": "Olive band",
+          "price": 32
+        },
+        {
+          "index": 4,
+          "name": "Everyday steel bottle",
+          "color": "Graphite",
+          "price": 36
+        },
+        {
+          "index": 9,
+          "name": "Everyday over-ear headphones",
+          "color": "Navy",
+          "price": 89
+        },
+        {
+          "index": 0,
+          "name": "Trail mug",
+          "color": "Sage",
+          "price": 24
+        }
+      ],
+      "expectedProductInFirst3": false,
+      "expectedProductInFull6": false,
+      "frozenFirst3": {
+        "practicalAccepted": 8,
+        "strictAccepted": 8,
+        "required": 10,
+        "usableReadyMs": null
+      },
+      "frozenFull6": {
+        "practicalAccepted": 18,
+        "strictAccepted": 17,
+        "required": 20,
+        "usableReadyMs": null
+      },
+      "contextualCoreTitleBodyUsableFirst3": false,
+      "contextualCoreTitleBodyUsableFull6": false,
+      "fields": [
+        {
+          "field": "S1",
+          "rawText": "Your selected collection",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T1",
+          "rawText": "In Ochre, Zip essentials pouch",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "B1",
+          "rawText": "In Ochre",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "C1",
+          "rawText": "In Ochre, this Zip essentials pouch has an item price of $26.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 26.0,
+          "source": {
+            "catalogJsonPointer": "/products/14",
+            "name": "Zip essentials pouch",
+            "selectedColor": "Ochre",
+            "itemPrice": 26,
+            "category": "Canvas organizer pouch"
+          }
+        },
+        {
+          "field": "T2",
+          "rawText": "Portable table light in Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "B2",
+          "rawText": "In Ivory",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "C2",
+          "rawText": "This collection of Portable table light in Ivory has an item price of $64.00.",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "ambiguous-collection-item-price-scope"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "ambiguous-item-versus-collection-price",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Numerical amount matches the single item, but collection wording obscures whether it buys multiple items; appropriately withheld.",
+          "numericBodyPrice": 64.0,
+          "source": {
+            "catalogJsonPointer": "/products/7",
+            "name": "Portable table light",
+            "selectedColor": "Ivory",
+            "itemPrice": 64,
+            "category": "Cordless table lamp"
+          }
+        },
+        {
+          "field": "T3",
+          "rawText": "Steel lunch box with Olive band selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "B3",
+          "rawText": "Olive band selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "C3",
+          "rawText": "Steel lunch box with Olive band selected",
+          "practicalAccepted": false,
+          "practicalReasons": [
+            "unfinished-body"
+          ],
+          "strictAccepted": false,
+          "strictReasons": [
+            "exact-item-price-required-once",
+            "copy-one-finished-sentence-or-length",
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "unfinished-body",
+          "unqualifiedContextualUsable": false,
+          "judgment": "Truthful identity/color caption, not a finished body sentence. Missing body price alone would not be essential with structured item price, but completeness fails.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/8",
+            "name": "Steel lunch box",
+            "selectedColor": "Olive band",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid"
+          }
+        },
+        {
+          "field": "S2",
+          "rawText": "Your selected collection",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": null
+        },
+        {
+          "field": "T4",
+          "rawText": "Everyday steel bottle selected in Graphite",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "B4",
+          "rawText": "In Graphite",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "C4",
+          "rawText": "Everyday steel bottle is shown in Graphite at $36.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 36.0,
+          "source": {
+            "catalogJsonPointer": "/products/4",
+            "name": "Everyday steel bottle",
+            "selectedColor": "Graphite",
+            "itemPrice": 36,
+            "category": "Stainless steel bottle"
+          }
+        },
+        {
+          "field": "T5",
+          "rawText": "Everyday over-ear headphones shown in Navy",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "B5",
+          "rawText": "Navy selected",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "C5",
+          "rawText": "Everyday over-ear headphones shown in Navy at $89.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": false,
+          "strictReasons": [
+            "copy-outside-bound-color-item-price-relations"
+          ],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 89.0,
+          "source": {
+            "catalogJsonPointer": "/products/9",
+            "name": "Everyday over-ear headphones",
+            "selectedColor": "Navy",
+            "itemPrice": 89,
+            "category": "Cushioned over-ear headphones"
+          }
+        },
+        {
+          "field": "T6",
+          "rawText": "Trail mug in Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "B6",
+          "rawText": "In Sage",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": null,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        },
+        {
+          "field": "C6",
+          "rawText": "Trail mug in Sage is listed at $24.00.",
+          "practicalAccepted": true,
+          "practicalReasons": [],
+          "strictAccepted": true,
+          "strictReasons": [],
+          "qualitativeClass": "source-compatible-or-harmless-framing",
+          "unqualifiedContextualUsable": true,
+          "judgment": "Exact identity/color/price relation, ordinary product function supported by public name/category/search terms, or nonfactual generic framing.",
+          "numericBodyPrice": 24.0,
+          "source": {
+            "catalogJsonPointer": "/products/0",
+            "name": "Trail mug",
+            "selectedColor": "Sage",
+            "itemPrice": 24,
+            "category": "For the slow mornings"
+          }
+        }
+      ]
+    }
+  ]
+}

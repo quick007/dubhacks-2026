@@ -366,3 +366,31 @@ MLX6,519,340,896B under7GiB guard. Read store_demo_results/v1 and final demo
 report for the later browser instrumentation measurement and launch state.
 No conversion lift, unseen generalization, learned image selection, or
 ranking-only full-page latency is claimed.
+
+
+## Completed native comparison and restored serving checkpoint (2026-10-18)
+
+Supersedes the earlier NOTRUN/pending-manager status above. The human cleared
+the opaque sidebar item; the authorized native comparison ran successfully.
+No current approval blocker exists. Read STORE_AR_COMPARISON_V1_RESULTS.md and
+the independent audit; all native results, controls and source snapshots are
+preserved in store_ar_comparison_results/v1, with originals left under data/.
+
+Three queries, AB/BA/AB, six cards20fresh fields: conventional median first3/full6
+attempt11.350/21.199s, hybrid5.555/5.937s. Both frozen usable proxies0/3. A's18
+correct numerical bodyprices written dollars were falsely rejected by gates;
+independent raw title/body judgment is3/3A,0/3B, without changing observed
+readiness. Top1 relevance3/3A,2/3B; B misses notebook and withholds ambiguous or
+unfinished bodies.3.57x full-attempt ratio is not a fully useful page speedup.
+All927frozen hashes+adapter unchanged at shutdown; peak6,592,642,354B.
+
+Service restored PID81217, output data/ranker/pretrained/store-demo-v5-post-comparison-1;
+healthready zeroqueue927tensors, storefront4312HTTP200. Previous v4 lifetime
+gracefully stopped with integrityreceipt; v3 disconnected without shutdown
+receipt, preserved honestly. Shopper task01a14d29-68ba-71a3-b36b-3be096ea4020 owns
+all new runner/packet/results files and received timing release. It implemented
+real Sol screenshot adapter through bundled official CLI/existing login;
+smokes pending at this checkpoint. Model task must not stage its files.
+Tiger Data task01a14d35-a146-72b4-9cb9-11b0ed52d022 owns async experiment-results
+DB adapter/routes, not serving, store DB or presentation UI; interfaces shared.
+No credentials inspected or transmitted.

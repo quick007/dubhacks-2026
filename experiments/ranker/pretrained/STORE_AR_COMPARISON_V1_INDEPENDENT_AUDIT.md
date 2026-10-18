@@ -1,0 +1,34 @@
+# Native AR versus hybrid: independent quality audit
+
+All six timed arms completed. The conventional AR model selected the requested product first for **3/3 queries**; the hybrid did so for **2/3**, missing the notebook. The conventional model's 18 body sentences have correct identity, color and numerical item prices. All 18 were withheld because the frozen screens reject prices written as “36 dollars.” This is a gate-format false rejection, not evidence that those prices are false.
+
+This is an exhaustive offline model judgment of **120 raw fields and 36 selected card bindings**, with CPU assertions against the [public catalog](store_catalog_v1/model_inputs.json). It is not a human study, conversion measurement, replacement validator or retrospective benchmark promotion. Warmups are unscored. The [JSON evidence](STORE_AR_COMPARISON_V1_INDEPENDENT_AUDIT.json) contains every raw field, source pointer, judgment, frozen gate decision and receipt hash. Native sources are under `data/ranker/pretrained/store-ar-comparison-v1-attempt-1/`.
+
+| Query and arm | Top product | Frozen practical first3 / full6 | Frozen strict first3 / full6 |
+| --- | --- | --- | --- |
+| Water, conventional A | Steel bottle: relevant | 6/10; 12/20 | 6/10; 12/20 |
+| Water, hybrid B | Steel bottle: relevant | 9/10; 18/20 | 9/10; 17/20 |
+| Light, conventional A | Table light: relevant | 6/10; 12/20 | 6/10; 12/20 |
+| Light, hybrid B | Table light: relevant | 9/10; 18/20 | 9/10; 16/20 |
+| Notebook, conventional A | Pocket field notes: relevant | 3/10; 6/20 | 3/10; 6/20 |
+| Notebook, hybrid B | Organizer pouch: miss | 8/10; 18/20 | 8/10; 17/20 |
+
+Frozen all-field acceptance and usable readiness remain **0/3 first3 and 0/3 full6 for each arm**; all six first3/full6 usable timestamps remain null. Do not turn attempted-completion latency into a useful-copy speedup. These are three previously used development queries, not unseen generalization.
+
+## What the raw text says
+
+Conventional A has **56/60 fields usable without a factual qualification** under this contextual judgment. All 18 titles, 18 complete body sentences and 18 selected-color mentions in badges match their bound products. For example, water C1 says “Everyday steel bottle in Graphite costs 36 dollars.” The catalog declares that bottle, Graphite and $36. All 18 body prices independently compare equal numerically; no identity/color/price contradiction was found. The repeated sentence pattern is dull but complete, not a repetition loop.
+
+Two headings misdescribe their groups: “Essential Daily Hydration” includes a canvas organizer pouch, and “Bedside Lighting Selection” includes a pouch and cotton towel. Those products have no declared drinking or lighting function. Both headings are withheld. The notebook badges “Navy audio comfort” and “Rust cozy texture” add subjective benefit/texture claims: cushioned headphones and a cotton throw with public `cozy` search text make them plausible, but do not verify comfort or tactile quality. They are withheld and counted conservatively outside the 56 unqualified fields; they are **not proven false**. “Terracotta compact” is a reasonable qualitative reading of *Pocket* field notes, without a size measurement; “Graphite hydration,” “Ivory reading glow” and “Ochre organizer” have ordinary functional support in public names/categories/search terms, although all exceed this pilot's selected-color-only badge instruction. Generic “General Store Collection,” capitalization and subjective collection framing are not harmful product facts.
+
+Hybrid B has **54/60 contextually usable raw fields**. Its other six bodies are withheld: three instances of “This collection of Portable table light in Ivory has an item price of $64.00.” use the correct numerical amount but blur single-item versus collection pricing; two “Steel lunch box with Olive band selected” bodies and one “Market canvas tote shown in Olive” body stop as captions. Those captions are factually compatible, but unfinished as the requested body sentence. Missing a repeated price alone is not necessarily shopper-essential because the structured card already supplies price. Three headphone bodies such as “Everyday over-ear headphones shown in Navy at $89.00.” are readable factual captions despite the omitted auxiliary and narrow strict-grammar rejection. No accepted hybrid field contained a new unsupported benefit or wrong identity/color/price in this review. Both repeated neutral headings are harmless.
+
+Across both arms, all **36 titles and 36 bodies** retain the correct name/color; all **36 badges** retain the selected color; all **33 bodies that state a price** state the correct numerical amount. The remaining three bodies omit price and end as captions. These checks do not prove general English factuality.
+
+## Useful content versus the frozen proxy
+
+Ignoring optional heading/badge abstention, conventional raw titles and finished bodies could serve all cards in **3/3 first3 and 3/3 full6** payloads under this offline judgment. The actual serialized payload still withholds every body: those raw judgments are not observed readiness or permission to regrade the run. Hybrid has a withheld unfinished or ambiguous body in every first3 and full6 payload, so **0/3** have the complete requested title/body set. Its accepted partial content remains useful alongside structured names, prices and images. Neither arm has all 20 raw fields without a qualitative concern. Below-first choices are mostly broad store fill, not six strong alternatives for each narrow need. In the hybrid notebook case, the actual notebook is absent from both first3 and full6; correct factual copy cannot repair that ranking miss.
+
+A is frozen-base ordinary AR producing one JSON stream with six product decisions and 20 copy fields. B combines a trained ranking head with adapted generation of 20 independent fields on the resident backbone. B copy sees neutral selected public facts; A sees the shopper query and a neutral-copy instruction together. A's hydration/lighting headings show that the instruction does not structurally isolate query-conditioned wording. Adapter, prompt, product choices, emitted tokens and execution differ, so this is a comparison of these two systems, not an isolated causal batching experiment. No private persona truth was supplied. Images are deterministic gallery bindings; no pixels were audited. These queries contain no budgets or hard constraints, so this run adds no budget, stock or size evidence.
+
+Preserve the frozen receipts and gates. A future currency parser should recognize correct numeric dollar wording, with wrong-price controls, in a separately versioned prospective run. The present result supports an attempted-latency comparison plus the relevance and copy findings above; it does not establish a faster fully useful storefront or shopper conversion.

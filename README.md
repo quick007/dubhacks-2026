@@ -91,9 +91,13 @@ readiness. The [native smoke summary](experiments/ranker/pretrained/store_demo_r
 and [qualitative audit](experiments/ranker/pretrained/STORE_DEMO_V1_QUALITATIVE_AUDIT.md)
 preserve failures, including a notebook query that ranked the organizer first.
 
-A conventional autoregressive LLM comparison has a CPU preparation driver.
-The paired native comparison has not run, so there is no measured
-LLM speedup ratio.
+The [matched native comparison](experiments/ranker/pretrained/STORE_AR_COMPARISON_V1_RESULTS.md)
+completed three six-card queries per system. Median full attempts took 21.20
+seconds for conventional autoregressive generation and 5.94 seconds for the
+hybrid. Both failed the frozen complete-copy readiness proxy. An independent
+audit found valid conventional dollar wording falsely rejected, plus real
+hybrid copy and ranking failures; the 3.57× attempt ratio is not a measured
+useful-page speedup.
 
 ## Independent shopper evaluation
 

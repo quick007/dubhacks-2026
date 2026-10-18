@@ -13,6 +13,7 @@ catalogs and contracts that differ from the live 16-product store.
 | Prepare or aggregate independent shopper evidence | [Shopper CLI](../apps/runner/SHOPPER_EVAL.md), [session contract](../apps/runner/SHOPPER_CONTRACT_V1.md) |
 | Inspect the fixed 10-pair scenarios | [Shopper packet](../experiments/ranker/pretrained/store_shopper_eval_v1/README.md) |
 | Read the exploratory Chrome pair | [Smoke evidence](../experiments/ranker/pretrained/store_shopper_eval_smoke_v1/README.md) |
+| Compare native conventional and hybrid execution | [Matched results](../experiments/ranker/pretrained/STORE_AR_COMPARISON_V1_RESULTS.md), [independent quality audit](../experiments/ranker/pretrained/STORE_AR_COMPARISON_V1_INDEPENDENT_AUDIT.md) |
 | Check copy and budget disclosure coverage | [Transparency audit](../experiments/ranker/pretrained/STORE_TRANSPARENCY_AUDIT_V1.md) |
 | Follow the longer-term product direction | [Vision](../VISION.md) |
 | Find earlier results, proposals or design plans | [Historical index](archive/README.md) |
