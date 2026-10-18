@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "authored-tiger-train-purchase-contrasts.v2",
+  "dataFilesRead": [
+    {
+      "path": "data/authored-history-tiger-train-v1/receipt.json",
+      "sha256": "ba1e335da3014e24f90886b3444f25a0780c9cca275eab60448f714de6956d6b",
+      "purpose": "Verify actual Tiger readback and exact TRAIN-only projection provenance"
+    },
+    {
+      "path": "data/authored-history-tiger-train-v1/profiles.train.public.json",
+      "sha256": "32588aa231532443f9d954f17c2e2cb3c1ff01859ac55666ba332d453513b973",
+      "purpose": "Only exact160TRAIN public rows, not full200 export"
+    },
+    {
+      "path": "experiments/ranker/pretrained/synthetic_history_v1/labels.train.json",
+      "sha256": "1b1ae769cb162bcb0deee76ea938ac619fbd7a94ee3ef39d7544d5d2491e8ccb",
+      "purpose": "Only original160TRAIN judgments"
+    },
+    {
+      "path": "experiments/ranker/pretrained/synthetic_history_v1/catalog-binding.json",
+      "sha256": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450",
+      "purpose": "Only public16products/48variants factual bindings"
+    }
+  ],
+  "excludedReads": [
+    "full200Tiger public export",
+    "40heldout public profiles/labels",
+    "new32evaluation",
+    "private/history-only diagnostic probes",
+    "authored scenario recipe"
+  ]
+}

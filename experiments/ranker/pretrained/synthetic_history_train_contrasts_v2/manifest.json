@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "authored-tiger-train-purchase-contrasts.v2",
+  "provenance": {
+    "kind": "agent-authored-synthetic-training-transform",
+    "parentDatasetVersion": "agent-authored-shopping-history.v1",
+    "source": "verified Tiger TRAIN-only projection plus original TRAIN labels",
+    "browserObserved": false,
+    "humanConversionClaim": false,
+    "realCustomerData": false,
+    "outcomeClaim": "Counterfactual relevance supervision, not an observed click/cart/purchase outcome",
+    "selectionPolicy": "One deterministic counterpart for each original TRAIN session, no sampling or evaluation-dependent selection"
+  },
+  "files": {
+    "profiles.contrasts.train.public.json": "dc686b7e3e2b4b5a55fb0a475be61c9a4866c08f56a37edece8363ca06efad5f",
+    "profiles.train.public.json": "88e202b7225b5e3d9686a798ec418cbe9df785c8b24b09581e925016e934df1b",
+    "labels.contrasts.train.json": "bda3cc75118313f6b4eca7484829e0a5d39f4ee29cd3b34a548b52e0bfe89072",
+    "labels.train.json": "c4f7dc7c7ebb2d2ba5d9fbd85a0692b62f60d02694b14c85f93b321bd2507562",
+    "pair-links.json": "9c6e6c077bd1d0caa36eaa2c2e16fd229c7ac1a75b121e9a867fc6714caf35c3",
+    "split.train.json": "49f4fffbe369f293f775529ff3721e2f1089e537609a5793c01866efcd419180",
+    "TRAIN_PUBLIC_FROZEN.json": "85c0686e5f88cd0902787790fcab63825d073fbb240c3a78bf71ad2e1a35fb27",
+    "SOURCE_ACCESS_LOG.json": "77608b3e3e49a509963ccd9c412be9d3098c374615a3c7ddb683db005cb99b66",
+    "TIGER_TRAIN_PROJECTION_RECEIPT.json": "ba1e335da3014e24f90886b3444f25a0780c9cca275eab60448f714de6956d6b",
+    "audit.json": "d8e3787f9f5a9c1f4eda0c2b4b2017296729a5e00b0dc393e1627291478b6b39"
+  },
+  "sourceInputs": {
+    "data/authored-history-tiger-train-v1/receipt.json": "ba1e335da3014e24f90886b3444f25a0780c9cca275eab60448f714de6956d6b",
+    "data/authored-history-tiger-train-v1/profiles.train.public.json": "32588aa231532443f9d954f17c2e2cb3c1ff01859ac55666ba332d453513b973",
+    "experiments/ranker/pretrained/synthetic_history_v1/labels.train.json": "1b1ae769cb162bcb0deee76ea938ac619fbd7a94ee3ef39d7544d5d2491e8ccb",
+    "experiments/ranker/pretrained/synthetic_history_v1/catalog-binding.json": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450"
+  },
+  "sourceSha256": {
+    "scripts/build-synthetic-history-train-contrasts-v2.ts": "25f09898d0b2d9d4025d869d514ade0abb07ebf67d30aefd2713e148223f84a2",
+    "packages/contracts/src/synthetic-history-v1.ts": "12d9975018cd0e4abbf30c856744ea3b2d98ee191a78e33e07bc2edc07cfb5a3"
+  },
+  "originalFrozenV1ManifestSha256": "f717829925121e35470635f08a4baf508ac1f46c287f38a0657b93debb10b27d",
+  "nativeFeaturePolicy": "New public contexts require their own verified Qwen feature keys. Never relabel/reuse an old context vector for a changed purchase. Original catalog feature cache is unchanged.",
+  "persistencePolicy": "Explicit training transform of verified Tiger-exported TRAIN inputs. Counterfactual rows themselves have not been persisted/read back as a new Tiger report.",
+  "audit": {
+    "originalTrainRows": 160,
+    "authoredContrastRows": 160,
+    "combinedTrainRows": 320,
+    "originalTrainGroups": 80,
+    "combinedTrainGroups": 80,
+    "addedHeldoutGroups": 0,
+    "changedPurchaseByProduct": {
+      "blanket": 16,
+      "bottle": 8,
+      "duffel": 8,
+      "headphones": 8,
+      "jacket": 8,
+      "lamp": 16,
+      "lunchbox": 16,
+      "mug": 8,
+      "notebook": 8,
+      "organizer": 16,
+      "pack": 8,
+      "sneakers": 8,
+      "sunglasses": 8,
+      "sweatshirt": 8,
+      "tote": 8,
+      "towel": 8
+    },
+    "promotedExistingPositiveByProduct": {
+      "blanket": 24,
+      "bottle": 24,
+      "duffel": 8,
+      "lamp": 8,
+      "lunchbox": 8,
+      "notebook": 32,
+      "organizer": 32,
+      "pack": 8,
+      "sunglasses": 8,
+      "tote": 16,
+      "towel": 8
+    },
+    "twoOrMorePositiveContrastRows": 160,
+    "constraintsDropped": 0,
+    "exactNonHistoryContextPreservedRows": 160,
+    "exactlyOnePurchaseEventChangedRows": 160,
+    "trainOnlyInputFilesRead": [
+      "data/authored-history-tiger-train-v1/receipt.json",
+      "data/authored-history-tiger-train-v1/profiles.train.public.json",
+      "experiments/ranker/pretrained/synthetic_history_v1/labels.train.json",
+      "experiments/ranker/pretrained/synthetic_history_v1/catalog-binding.json"
+    ],
+    "heldoutOrProbeFilesReadByGenerator": false,
+    "sourceLabelConditionedPurchaseSelection": true,
+    "originalProfilesAndLabelsUnmodified": true,
+    "scope": "Learns an authored ownership novelty intervention already represented in TRAIN; no new human, behavior-category or heldout generalization claim"
+  }
+}
