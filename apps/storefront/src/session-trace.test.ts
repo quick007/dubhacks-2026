@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { readFileSync } from "node:fs";
-import { createTraceBuffer, sanitizeReplay, TRACE_LIMITS, TRACE_RECORD_OPTIONS } from "./session-trace";
+import { createTraceBuffer, sanitizeReplay, canonicalReplayAsset, TRACE_LIMITS, TRACE_RECORD_OPTIONS } from "./session-trace";
 import { demoTraceEnabled, traceEvent, traceProducts } from "./session-trace-bridge";
 
 test("disabled bridge is inert and never imports recorder, storage or observers", () => {
@@ -76,4 +76,12 @@ test("readiness recognizes every existing copy-source kind while excluding arbit
     buffer.readiness({ name: "fieldwork.local-model.complete.after-paint-opportunity", duration: 10, detail: { copySource: { kind } } });
   }
   assert.deepEqual(buffer.export()?.events.map((event) => event.data.copySource), ["fresh-native", "fresh-parallel-head", "generated-earlier", "mixed-native-cache", "no-generation", null]);
+});
+
+test("responsive replay images map only to known original fixtures", () => {
+  assert.equal(canonicalReplayAsset("/products/optimized/responsive/mug-colors.jpg.w384.webp"), "/products/mug-colors.jpg");
+  assert.equal(canonicalReplayAsset("http://localhost/products/optimized/mug-colors.jpg.webp"), "/products/mug-colors.jpg");
+  assert.equal(canonicalReplayAsset("/products/optimized/responsive/unknown-private.jpg.w384.webp"), "");
+  assert.equal(canonicalReplayAsset("/products/optimized/responsive/mug-colors.jpg.w384.webp?email=private"), "");
+  assert.equal(canonicalReplayAsset("/products/optimized/responsive/mug-colors.jpg.w123.webp"), "");
 });

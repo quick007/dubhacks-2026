@@ -1,5 +1,6 @@
 import { PRODUCTS } from "./config";
 import { PRODUCT_VARIANTS } from "./variants";
+import { PRODUCT_IMAGES } from "./images";
 import type { TraceAction, TraceContext, TraceFields } from "./session-trace-bridge";
 
 export const TRACE_LIMITS = { durationMs: 5 * 60_000, retentionMs: 15 * 60_000, bytes: 4 * 1024 * 1024, replayEvents: 2000, shoppingEvents: 500 } as const;
@@ -23,9 +24,21 @@ const ids = new Set<string>(PRODUCTS.map((product) => product.id));
 const variants = new Map<string, Set<string>>(Object.entries(PRODUCT_VARIANTS).map(([id, items]) => [id, new Set(items.map((item) => item.id))]));
 const actions = new Set(["search", "selection", "cart-add", "cart-clear", "checkout-success"]);
 const mask = (text: string) => text.replace(/\S/g, "*");
-const safeAsset = (value: string) => {
-  try { const url = new URL(value, "http://local.invalid"); return /^\/products\/[a-z0-9-]+\.(jpg|png|webp)$/.test(url.pathname) && !url.search && !url.hash ? url.pathname : ""; } catch { return ""; }
-};
+const replayAssets = new Set<string>([
+  ...Object.values(PRODUCT_IMAGES).flat().map((image) => image.src),
+  ...Object.values(PRODUCT_VARIANTS).flat().flatMap((variant) => variant.image ? [variant.image.src] : []),
+]);
+/** Replay references the known original fixture, independent of delivery derivatives. */
+export function canonicalReplayAsset(value: string) {
+  try {
+    const url = new URL(value, "http://local.invalid");
+    if (url.search || url.hash) return "";
+    if (replayAssets.has(url.pathname)) return url.pathname;
+    const derivative = /^\/products\/optimized\/(?:responsive\/)?([a-z0-9-]+\.(?:jpg|png))(?:\.w(?:192|384|768|1152|1536))?\.webp$/.exec(url.pathname);
+    const original = derivative ? `/products/${derivative[1]}` : "";
+    return replayAssets.has(original) ? original : "";
+  } catch { return ""; }
+}
 /** Defense in depth: strip all arbitrary attributes/URLs, including URL hashes,
  * document titles, aria text, data-* mirrors, and any query reflected into DOM.
  * Replay retains layout/images; readable shopping identity lives in typed events. */
@@ -36,7 +49,7 @@ function attributes(value: unknown) {
     if (typeof item !== "string" && typeof item !== "number") continue;
     if (["class", "width", "height", "rr_width", "rr_height", "rr_scrollLeft", "rr_scrollTop"].includes(key)) result[key] = item;
     if (key === "style") result[key] = String(item).replace(/url\([^)]*\)/gi, "none");
-    if (key === "src") { const src = safeAsset(String(item)); if (src) result[key] = src; }
+    if (key === "src") { const src = canonicalReplayAsset(String(item)); if (src) result[key] = src; }
     if (key === "_cssText") result[key] = String(item).replace(/url\([^)]*\)/gi, "none");
   }
   return result;
