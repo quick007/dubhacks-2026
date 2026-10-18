@@ -1,0 +1,36 @@
+{
+  "version": "independent-persona-qwen-eval.v2",
+  "authoredBeforeNativeFit": true,
+  "fixedCandidateRecipe": {
+    "train": "160 original TRAIN plus160 generic TRAIN-only ownership contrasts; same80TRAIN groups",
+    "publicContextRepresentation": "fresh frozenQwen4096; query/budget/hard requirements/public background/colors/observed item text+relative ages; no IDs/gold",
+    "catalogRepresentation": "original verified frozenQwen4096 known16 catalog",
+    "rankWidth": 64,
+    "colorWidth": 32,
+    "colorCandidateHashDimensions": 256,
+    "learnedOwnership": "one shared candidate-purchased indicator coefficient initialized0; no fixed owned mask",
+    "steps": 250,
+    "optimizer": "AdamW",
+    "learningRate": 0.003,
+    "weightDecay": 0.0001,
+    "seed": 20261018,
+    "loss": "graded product crossentropy plus0.5 graded variant crossentropy",
+    "checkpoint": "final fixed step only"
+  },
+  "evaluationDesign": "16 independent authored scenarios, two matched purchase-history variants each; primary and secondary catalog IDs form a permutation so each product is highest-grade twice",
+  "primaryMetric": "highest-grade top1 across32; report both-sides-correct per16pairs, raw learned vs hardguarded ranks separately",
+  "agreedRootGateBeforeOutcomes": {
+    "novelRelevantTop1AtLeast": 24,
+    "highestGradeTop1AtLeast": 20,
+    "acceptablePositiveInTop3AtLeast": 28,
+    "hardConstraintVariantOrFactViolationsAtMost": 0,
+    "knownDevHistoryPairOwnedDemotionsAtLeast": 8,
+    "knownDevHistoryPairNovelRelevantAfterAtLeast": 8,
+    "tenDemoManualCoherenceRequired": true,
+    "bobThrowInFirstThreeRequired": true
+  },
+  "scope": "Authored known16 catalog and TRAIN-seen ownership-contrast mechanism, new public wording/combinations. No unseen human/causal task or real behavior claim.",
+  "goldIsolation": "Do not parse labels.private.json or this authoring source before checkpoint and all32 predictions frozen. Public encoding uses public.json request fields only.",
+  "catalogBindingSha256": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450",
+  "authoringSourceSha256": "6669ca2ac11030311261ae8531b0fcbb326ef9b35b9a7152686237b2bff273ad"
+}

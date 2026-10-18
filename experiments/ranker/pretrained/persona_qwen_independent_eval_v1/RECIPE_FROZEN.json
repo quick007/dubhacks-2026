@@ -1,0 +1,32 @@
+{
+  "version": "independent-persona-qwen-eval.v1",
+  "authoredBeforeNativeFit": true,
+  "fixedCandidateRecipe": {
+    "train": "160 original TRAIN plus160 generic TRAIN-only ownership contrasts; same80TRAIN groups",
+    "publicContextRepresentation": "fresh frozenQwen4096; query/budget/hard requirements/public background/colors/observed item text+relative ages; no IDs/gold",
+    "catalogRepresentation": "original verified frozenQwen4096 known16 catalog",
+    "rankWidth": 64,
+    "colorWidth": 32,
+    "colorCandidateHashDimensions": 256,
+    "learnedOwnership": "one shared candidate-purchased indicator coefficient initialized0; no fixed owned mask",
+    "steps": 250,
+    "optimizer": "AdamW",
+    "learningRate": 0.003,
+    "weightDecay": 0.0001,
+    "seed": 20261018,
+    "loss": "graded product crossentropy plus0.5 graded variant crossentropy",
+    "checkpoint": "final fixed step only"
+  },
+  "evaluationDesign": "16 independent authored scenarios, two matched purchase-history variants each; primary and secondary catalog IDs form a permutation so each product is highest-grade twice",
+  "primaryMetric": "highest-grade top1 across32; report both-sides-correct per16pairs, raw learned vs hardguarded ranks separately",
+  "proposedBeforeOutcomesGate": {
+    "highestGradeTop1AtLeast": 24,
+    "bothPairSidesHighestGradeAtLeast": 12,
+    "newlyOwnedTop1AtMost": 0,
+    "hardConstraintOrFactViolationsAtMost": 0
+  },
+  "scope": "Authored known16 catalog and TRAIN-seen ownership-contrast mechanism, new public wording/combinations. No unseen human/causal task or real behavior claim.",
+  "goldIsolation": "Do not parse labels.private.json or this authoring source before checkpoint and all32 predictions frozen. Public encoding uses public.json request fields only.",
+  "catalogBindingSha256": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450",
+  "authoringSourceSha256": "fa8b99413d5f180c4a2993e593199842d0ffc171830d5a57626aedc577266af9"
+}
