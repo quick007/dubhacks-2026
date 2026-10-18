@@ -205,7 +205,7 @@ def evaluate_full(raw, finish_reason, value, snapshot):
 
 
 def run_resident_case(bb, value, snapshot, output_directory, *, mode='frozen-base', adapter=None,
-                      source_validator=None, cancelled=lambda: False):
+                      source_validator=None, cancelled=lambda: False, request_started=None):
     """Later authorized caller owns native-owner.lock and resident stream/thread.
 
     No model load, service interruption or GPU orchestration occurs here. The
@@ -225,7 +225,8 @@ def run_resident_case(bb, value, snapshot, output_directory, *, mode='frozen-bas
         'scope': TIMING_SCOPE, 'syntheticSourceCatalog': True,
         'modelRevision': bb.revision,
         'copyConditioning': 'actual request selects products; same neutral request instructs all copy, but a single stream sees both and this separation is a prompt instruction rather than hybrid structural isolation'}
-    started = time.perf_counter(); generator = None
+    started = time.perf_counter() if request_started is None else request_started
+    generator = None
     def save():
         (out / 'result.json').write_text(json.dumps(receipt, indent=2, allow_nan=False) + '\n')
         (out / 'raw-output.txt').write_text(receipt['rawText'])
