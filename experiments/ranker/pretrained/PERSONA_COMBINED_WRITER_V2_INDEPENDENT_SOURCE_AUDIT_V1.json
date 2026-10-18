@@ -1,0 +1,32 @@
+{
+  "version": "persona-combined-writer-v2-independent-source-audit.v1",
+  "createdUTC": "2026-10-18T11:24:37.057529+00:00",
+  "status": "pass",
+  "sourceSha256": {
+    "store_persona_combined_predictions_v1.py": "0d861a9e7e5541e1acab781d3473c2b03f5f75ab35d817435843eefed68ca52c",
+    "store_persona_combined_predictions_v2.py": "414f6c439304535d50bf6c914769202544813b6f27808461d2a641e90427c262",
+    "test_store_persona_combined_v2.py": "bddf0685fdd379a29560463a9eb0bc557f7973dd544af15298bb2f494c19705c",
+    "test_persona_combined_writer_v2_independent.py": "973444a66a5d0f6ebebffbd7db8dbb8bffd3ceaf4c10ef6c32c6a2af4c12ceab",
+    "audit_persona_combined_query_replay_v1.py": "085e265e6093d3cdcc040d1509b06c7e2475b53de7a1b7798fba525239790de6",
+    "audit_persona_choice_combined_v1.py": "cac3469c0eb67cfe86b796f8760035e52d14412d5f46e98ae1f01ce1fbf2106d"
+  },
+  "diff": "V2version/docstring and rawSourceScores16 deepcopy of originalJSON; float32cast/blend/order unchanged",
+  "independentBridgeTests": {
+    "rowsPerModel": 344,
+    "models": 4,
+    "all1376RowsCheckedByFrozenSupplement": true,
+    "exactNonFloat32PythonJSONFractionsPreservedAfterSerialization": true,
+    "rawProducerInputsNotMutated": true,
+    "float32BlendedScoresAndOrderUnchanged": true,
+    "combinedTestsPassed": 5
+  },
+  "fixtureCorrection": "First independent fixture used Python-double v5scores; actual v5 outputs are float32. Corrected only fakequerybranch to actualfloat32 protocol; originalrawpriors retain Python fractions. Production/frozen auditor sources untouched.",
+  "queryPlanV2Unchanged": true,
+  "frozenSupplementSourceUnchanged": true,
+  "frozenQualityAdjudicatorSourceUnchanged": true,
+  "nativeCalls": 0,
+  "optimizerUpdates": 0,
+  "actualCandidateOutputsRead": false,
+  "privateQualityLabelsRead": false,
+  "remaining": "Actual saved source/math replay and quality/serving acceptance pending."
+}
