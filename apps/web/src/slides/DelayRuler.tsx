@@ -72,8 +72,8 @@ export function DelayRuler() {
         ))}
       </div>
       <figcaption className="text-sm text-muted">
-        <span className="font-semibold text-ink">Figure 2.</span> Ranking request time, excluding copy, images and rendering;
-        linear scale. Shaded spans show the cited studies' delays.
+        <span className="font-semibold text-ink">Figure 2.</span> Local warm backend / hosted ranking client.
+        Linear scale; shaded spans show the cited studies' delays.
       </figcaption>
     </figure>
   );

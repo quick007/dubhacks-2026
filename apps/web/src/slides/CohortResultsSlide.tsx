@@ -12,10 +12,9 @@ export function CohortResultsSlide({ result }: { result: PresentationResults }) 
   const before = result.data.metrics.arms.generic.revenue.revenuePerAssignedSessionCents;
   const after = result.data.metrics.arms["local-model"].revenue.revenuePerAssignedSessionCents;
   const scenario = illustrativeScenario(result.reportId, result.sha256, before, after);
-  const evidence = `/api/experiment-results/presentation?reportId=${encodeURIComponent(result.reportId)}&source=tiger`;
   return (
     <SlideFrame title={scenario ? "Illustrative scenario" : "Observed synthetic value per session"}
-      lead={scenario ? "Cross-experiment assumption · not measured net revenue" : "Synthetic experiment"}>
+      lead={scenario ? undefined : "Synthetic experiment"}>
       {scenario ? (
         <div className="grid items-center gap-5 sm:grid-cols-[1fr_auto_1fr_auto_1fr]">
           <div>
@@ -43,10 +42,6 @@ export function CohortResultsSlide({ result }: { result: PresentationResults }) 
         <p>Frozen v5 synthetic: {money(before)} → {money(after)} per session</p>
         {scenario && <p>Assumption: {scenario.incrementalMs} ms × Bing’s 0.6% / 100 ms</p>}
       </div>
-      <p className="mt-6 text-sm text-muted">
-        {scenario && "One $96 generic decision timeout drives the observed difference. "}
-        <a className="underline underline-offset-4" href={evidence} target="_blank" rel="noreferrer">Full measured evidence</a>
-      </p>
     </SlideFrame>
   );
 }

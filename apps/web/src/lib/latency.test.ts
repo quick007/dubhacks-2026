@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { latencySeries, linearAxisTicks, linearScale, llmRun, median, medianInterval } from "./latency";
+import currentWarm from "../fieldwork/current-warm-speed.json";
 
 void test("scatter axis includes every raw request, interval endpoint and client floor", () => {
   const series = latencySeries();
@@ -50,8 +51,17 @@ void test("the median's interval holds the median and stays inside the sample", 
   assert.deepEqual(medianInterval(values), [low, high]);
 });
 
-void test("every series times the same requests, and LLM counts match their ranks", () => {
-  for (const series of latencySeries()) assert.equal(series.ms.length, series.cases);
+void test("each differently scoped series preserves its own measured count and request labels", () => {
+  for (const series of latencySeries()) {
+    assert.equal(series.ms.length, series.cases);
+    assert.equal(series.requests.length, series.cases);
+  }
+  const local = latencySeries()[0];
+  assert.deepEqual(local.ms, currentWarm.rawMs);
+  assert.equal(local.cases, 10);
+  assert.equal(local.topOne, null);
+  assert.equal(median(local.ms), currentWarm.medianMs);
+  assert.ok(local.requests.every((row) => row.label.startsWith("Browse the store · ")));
   for (const model of llmRun.models) {
     assert.equal(
       model.requests.filter((request) => request.valid && request.rank === 1).length,

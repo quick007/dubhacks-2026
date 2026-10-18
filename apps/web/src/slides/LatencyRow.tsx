@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { median, medianInterval, seconds, type Series } from "../lib/latency";
-import { modelRun } from "../lib/model";
 import { cn } from "../lib/utils";
 
 /** Vertical offsets in px, so the 16 dots in a row overlap less. */
@@ -15,7 +14,7 @@ export function LatencyRow({ series, x }: { series: Series; x: (ms: number) => n
   const mid = median(series.ms);
   const [low, high] = medianInterval(series.ms);
   const tone = series.ours ? "bg-cobalt" : "bg-graphite";
-  const hovered = active === undefined ? undefined : modelRun.requests[active];
+  const hovered = active === undefined ? undefined : series.requests[active];
   return (
     <div className="relative h-24" onPointerLeave={() => setActive(undefined)}>
       <div className="absolute inset-x-0 top-1/2 h-px bg-line" />
@@ -27,9 +26,9 @@ export function LatencyRow({ series, x }: { series: Series; x: (ms: number) => n
       )}
       {series.ms.map((ms, index) => (
         <button
-          key={modelRun.requests[index].caseId}
+          key={series.requests[index].id}
           type="button"
-          aria-label={`${modelRun.requests[index].request} ${seconds(ms)}`}
+          aria-label={`${series.requests[index].label} ${seconds(ms)}`}
           onPointerEnter={() => setActive(index)}
           onFocus={() => setActive(index)}
           onBlur={() => setActive(undefined)}
@@ -74,7 +73,7 @@ export function LatencyRow({ series, x }: { series: Series; x: (ms: number) => n
           className="pointer-events-none absolute bottom-full z-10 mb-1 w-64 -translate-x-1/2 rounded-md bg-ink px-3 py-2 text-sm text-fog shadow-lg"
           style={{ left: `${x(series.ms[active])}%` }}
         >
-          <p className="leading-snug">{hovered.request}</p>
+          <p className="leading-snug">{hovered.label}</p>
           <p className="mt-1 tabular-nums text-fog/75">{seconds(series.ms[active])}</p>
         </div>
       )}

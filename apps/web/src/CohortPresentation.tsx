@@ -31,10 +31,10 @@ export function CohortPresentation({ reportId }: { reportId: string }) {
     { id: "inputs", label: "Shopper context", render: () => <ShopperContextSlide /> },
     { id: "stakes", label: "Why speed matters", render: () => <StakesSlide /> },
     { id: "results", label: "Observed shopper results", render: () => <CohortResultsSlide result={result} /> },
-    { id: "model", label: "The model", render: () => <ModelSlide /> },
+    { id: "model", label: "Model architecture", render: () => <ModelSlide /> },
     { id: "speed", label: "Ranking comparison", render: () => <SpeedSlide /> },
     { id: "flywheel", label: "The learning loop", render: () => <FlywheelSlide /> },
     { id: "trust", label: "Trust and responsibility", render: () => <TrustSlide /> },
-    { id: "disclaimer", label: "Disclaimers", render: () => <DisclaimerSlide /> },
+    { id: "disclaimer", label: "Disclaimers", render: () => <DisclaimerSlide reportId={result.reportId} /> },
   ]} />;
 }

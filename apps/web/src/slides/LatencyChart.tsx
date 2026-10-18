@@ -11,7 +11,7 @@ import {
 import { cn } from "../lib/utils";
 import { LatencyRow } from "./LatencyRow";
 
-/** Per-request ranking time for each method, with medians and 95% intervals. */
+/** Per-request time within each explicitly labeled workload, with median intervals. */
 export function LatencyChart({ series }: { series: Series[] }) {
   const ticks = linearAxisTicks(series.flatMap((item) => [
     ...item.ms, ...(item.floorMs === undefined ? [] : [item.floorMs]),
@@ -87,7 +87,7 @@ export function LatencyChart({ series }: { series: Series[] }) {
         </p>
       </div>
       <table className="sr-only">
-        <caption>Time to rank 16 products, per method</caption>
+        <caption>Current warm six-card backend and earlier hosted ranking-client timings</caption>
         <thead>
           <tr>
             <th>Method</th>

@@ -1,9 +1,10 @@
 import llm from "../fieldwork/llm-run.json";
+import currentWarm from "../fieldwork/current-warm-speed.json";
 import { modelRun } from "./model";
 
 /**
- * Hosted LLMs timed on the same 16 ranking requests as the local model, by
- * scripts/benchmark-llm-ranking.mjs. Every number on the speed slide comes from here.
+ * The current local warm six-card workload and earlier hosted ranking workloads
+ * have distinct request sets and timing scopes. No matched speedup ratio is derived.
  */
 export const llmRun = llm;
 
@@ -15,8 +16,9 @@ export interface Series {
   ms: number[];
   /** Median of a trivial "reply ok" turn through the same client, when measured. */
   floorMs?: number;
-  topOne: number;
+  topOne: number | null;
   cases: number;
+  requests: { id: string; label: string }[];
 }
 
 const names: Record<string, string> = {
@@ -28,22 +30,24 @@ export function latencySeries(): Series[] {
   return [
     {
       id: "ours",
-      label: "Earlier local model",
-      detail: "Qwen3.5-9B features, trained head, laptop",
+      label: "Current local · warm backend",
+      detail: "Six-card personalization",
       ours: true,
-      ms: modelRun.requests.map((request) => request.latencyMs),
-      topOne: modelRun.arms.learned.topOne,
-      cases: modelRun.cases,
+      ms: currentWarm.rawMs,
+      topOne: null,
+      cases: currentWarm.fixedDenominator,
+      requests: currentWarm.rows.map((row) => ({ id: row.requestId, label: `Browse the store · ${row.person}` })),
     },
     ...llmRun.models.map((model) => ({
       id: model.model,
       label: names[model.model] ?? model.model,
-      detail: `${model.effort} reasoning, hosted`,
+      detail: "Hosted rank · client",
       ours: false,
       ms: model.requests.map((request) => request.turnMs),
       floorMs: model.floorTurnMs.median,
       topOne: model.topOne,
       cases: model.cases,
+      requests: modelRun.requests.map((request) => ({ id: request.caseId, label: request.request })),
     })),
   ];
 }
