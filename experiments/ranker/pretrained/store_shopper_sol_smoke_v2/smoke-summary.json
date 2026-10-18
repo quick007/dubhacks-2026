@@ -1,0 +1,194 @@
+{
+  "version": "synthetic-paired-shopper-smoke.v2",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "comparativeLiftClaim": false,
+  "agent": "official Codex CLI gpt-6.1-sol, low reasoning; existing CLI-managed login",
+  "status": "both-simulated-checkouts-independently-verified",
+  "casesAttempted": 1,
+  "sessionsAttempted": 2,
+  "remainingUnattempted": 18,
+  "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+  "serviceContext": "Existing warm native service width10; model owner released exclusive timing window before execution. Startup is outside these shopper sessions.",
+  "rows": [
+    {
+      "arm": "generic",
+      "status": "completed",
+      "elapsedMs": 72553.355291,
+      "actions": 12,
+      "choice": {
+        "originalName": "Everyday steel bottle",
+        "selectedColor": "Graphite",
+        "catalogPrice": 36,
+        "quantity": 1,
+        "productId": "bottle",
+        "variantId": "bottle-graphite",
+        "observationSource": "independent-dom",
+        "sourceStepIds": [
+          "shopper-pair-02-generic-step-3",
+          "shopper-pair-02-generic-step-10"
+        ],
+        "evidenceArtifactIds": [
+          "shopper-pair-02-generic-screenshot-png",
+          "shopper-pair-02-generic-trace-zip",
+          "shopper-pair-02-generic-browser-observations-json"
+        ]
+      },
+      "protocol": {
+        "passed": true,
+        "deviations": []
+      },
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": true,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": true
+      },
+      "artifacts": [
+        {
+          "artifactId": "shopper-pair-02-generic-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-generic-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-generic-browser-observations-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "model": {
+        "status": "not-enabled",
+        "readiness": []
+      },
+      "fallback": {
+        "used": false,
+        "kind": "none",
+        "reason": null
+      }
+    },
+    {
+      "arm": "local-model",
+      "status": "completed",
+      "elapsedMs": 44816.56704099999,
+      "actions": 8,
+      "choice": {
+        "originalName": "Everyday steel bottle",
+        "selectedColor": "Graphite",
+        "catalogPrice": 36,
+        "quantity": 1,
+        "productId": "bottle",
+        "variantId": "bottle-graphite",
+        "observationSource": "independent-dom",
+        "sourceStepIds": [
+          "shopper-pair-02-local-model-step-3",
+          "shopper-pair-02-local-model-step-6"
+        ],
+        "evidenceArtifactIds": [
+          "shopper-pair-02-local-model-screenshot-png",
+          "shopper-pair-02-local-model-trace-zip",
+          "shopper-pair-02-local-model-browser-observations-json"
+        ]
+      },
+      "protocol": {
+        "passed": true,
+        "deviations": []
+      },
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": true,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": true
+      },
+      "artifacts": [
+        {
+          "artifactId": "shopper-pair-02-local-model-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-local-model-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "model": {
+        "status": "complete",
+        "readiness": [
+          {
+            "name": "fieldwork.local-model.rank.after-paint-opportunity",
+            "stage": "rank",
+            "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+            "startTimeMs": 7094.099999904633,
+            "durationMs": 233.30000007152557,
+            "capturedAtElapsedMs": 7967.043082999997,
+            "acceptedFields": null,
+            "withheldFields": null,
+            "requiredFields": null,
+            "source": "data-local-model-readiness",
+            "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+            "scope": "after-paint-opportunity",
+            "physicalPaintMeasured": false,
+            "imageTransferMeasured": false
+          },
+          {
+            "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+            "stage": "firstThree",
+            "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+            "startTimeMs": 7094.099999904633,
+            "durationMs": 5450.700000047684,
+            "capturedAtElapsedMs": 13980.736124999996,
+            "acceptedFields": 10,
+            "withheldFields": 0,
+            "requiredFields": 10,
+            "source": "data-local-model-readiness",
+            "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+            "scope": "after-paint-opportunity",
+            "physicalPaintMeasured": false,
+            "imageTransferMeasured": false
+          },
+          {
+            "name": "fieldwork.local-model.complete.after-paint-opportunity",
+            "stage": "complete",
+            "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+            "startTimeMs": 7094.099999904633,
+            "durationMs": 6384,
+            "capturedAtElapsedMs": 19729.992207999996,
+            "acceptedFields": 19,
+            "withheldFields": 1,
+            "requiredFields": 20,
+            "source": "data-local-model-readiness",
+            "artifactId": "shopper-pair-02-local-model-browser-observations-json",
+            "scope": "after-paint-opportunity",
+            "physicalPaintMeasured": false,
+            "imageTransferMeasured": false
+          }
+        ]
+      },
+      "fallback": {
+        "used": false,
+        "kind": "none",
+        "reason": null
+      }
+    }
+  ],
+  "limitations": [
+    "One hand-authored development pair; no human conversion or causal personalization lift.",
+    "First failed pair remains separately preserved under store_shopper_sol_smoke_v1.",
+    "Local readiness is a React commit plus two-frame paint opportunity; physical paint/image transfer are unmeasured.",
+    "Large trace.zip archives and duplicate per-action screenshots remain local, with actual hashes/byte lengths in session receipts."
+  ]
+}

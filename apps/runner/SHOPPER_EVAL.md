@@ -121,6 +121,13 @@ does not confirm a completed cloud write. Retry the same snapshot with its same
 ID; use a new ID when evidence changes. Export requires the separate results API
 to be running and is never invoked automatically by the shopper runner.
 
+The real Sol smoke at `experiments/ranker/pretrained/store_shopper_sol_smoke_v2`
+records two independently verified simulated checkouts: generic 12 steps/72.553 s,
+local-model 8 steps/44.817 s. Both selected one qualifying $36 Graphite bottle.
+The earlier repeated-add timeout pair remains in `store_shopper_sol_smoke_v1`.
+Only one development pair has run successfully; eighteen formal roster slots
+remain unattempted. These observations establish the harness, not comparative lift.
+
 CPU checks (fixture sidecars are not browser execution evidence):
 
 ```sh

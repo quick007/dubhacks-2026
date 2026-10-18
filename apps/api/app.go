@@ -13,6 +13,7 @@ import (
 	"os"
 	"path/filepath"
 	"storefront/api/internal/contracts"
+	"storefront/api/internal/experimentresults"
 	"storefront/api/internal/scenario"
 	"strings"
 	"sync"
@@ -43,6 +44,7 @@ type AppOptions struct {
 }
 type App struct {
 	store       *Store
+	results     *experimentresults.Service
 	queue       *JobQueue
 	mux         *http.ServeMux
 	releaseLock func()
@@ -85,12 +87,27 @@ func NewApp(options AppOptions) (*App, error) {
 		release()
 		return nil, err
 	}
-	app := &App{store: store, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario), mux: http.NewServeMux(), releaseLock: release}
+	var resultsRepo experimentresults.Repository
+	if dsn := os.Getenv("TIGER_DATABASE_URL"); dsn != "" {
+		resultsRepo, err = experimentresults.NewPostgres(dsn)
+		if err != nil {
+			store.db.Close()
+			release()
+			return nil, err
+		}
+	}
+	results, err := experimentresults.New(filepath.Join(dataDir, "experiment-results"), resultsRepo)
+	if err != nil {
+		store.db.Close()
+		release()
+		return nil, err
+	}
+	app := &App{store: store, results: results, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario), mux: http.NewServeMux(), releaseLock: release}
 	app.routes()
 	return app, nil
 }
 func (a *App) Close() {
-	a.closeOnce.Do(func() { a.queue.close(); a.store.db.Close(); a.releaseLock() })
+	a.closeOnce.Do(func() { a.queue.close(); a.results.Close(); a.store.db.Close(); a.releaseLock() })
 }
 func (a *App) ServeHTTP(w http.ResponseWriter, r *http.Request) { a.mux.ServeHTTP(w, r) }
 func jsonResponse(w http.ResponseWriter, status int, body any) {
@@ -103,6 +120,7 @@ func jsonError(w http.ResponseWriter, status int, err error) {
 	jsonResponse(w, status, map[string]string{"error": err.Error()})
 }
 func (a *App) routes() {
+	a.results.Register(a.mux)
 	a.mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) { jsonResponse(w, 200, map[string]bool{"ok": true}) })
 	a.mux.HandleFunc("GET /api/catalog", func(w http.ResponseWriter, r *http.Request) {
 		catalog, err := a.store.catalog()
