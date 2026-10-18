@@ -1,0 +1,211 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-09",
+  "arm": "local-model",
+  "run": {
+    "id": "shopper-pair-09-local-model",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-09",
+    "personaSplit": "development",
+    "seed": 2026101809
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "2ec71797-a6c0-4d35-95b0-6d039338f9bf",
+    "contextId": "db6a8b73-48a3-4754-80a0-720d490cdb08",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-09-local-model-screenshot-png",
+      "shopper-pair-09-local-model-trace-zip",
+      "shopper-pair-09-local-model-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T04:47:59.083Z",
+  "elapsedMs": 12532.153374999994,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-09-local-model-step-0",
+        "runId": "shopper-pair-09-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T04:48:00.020Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 936.468125000014,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-09-local-model-step-1",
+        "runId": "shopper-pair-09-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T04:48:06.209Z",
+        "kind": "action",
+        "message": "Trail mug under $24"
+      },
+      "elapsedMs": 7125.380584000028,
+      "action": {
+        "type": "search",
+        "query": "Trail mug under $24"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-09-local-model-step-2",
+        "runId": "shopper-pair-09-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T04:48:11.615Z",
+        "kind": "action",
+        "message": "The public query returned 0 eligible products. No visible Trail mug with an item price strictly below $24 could be verified, so I decline without ordering."
+      },
+      "elapsedMs": 12532.150874999934,
+      "action": {
+        "type": "abandon",
+        "target": "The public query returned 0 eligible products. No visible Trail mug with an item price strictly below $24 could be verified, so I decline without ordering."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-09-local-model-screenshot-png",
+        "runId": "shopper-pair-09-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:48:12.280Z"
+      },
+      "status": "captured",
+      "sha256": "43e71184db3baac2fc79bd4095507d3bc4f21f3082059aeaf58e96b6757d06d3",
+      "bytes": 57209,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-09-local-model-trace-zip",
+        "runId": "shopper-pair-09-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:48:12.280Z"
+      },
+      "status": "captured",
+      "sha256": "019ef44cf96a15f615d21e1309a0fb0a50f1533300d5a7434e5f8759c7ddce06",
+      "bytes": 22834612,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-09-local-model-browser-observations-json",
+        "runId": "shopper-pair-09-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:48:12.280Z"
+      },
+      "status": "captured",
+      "sha256": "7f51fc884907b898e1880ee079a27c1a3d388dea8c78e991c4bf9c2413941099",
+      "bytes": 20203,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-09-local-model-screenshot-png",
+          "shopper-pair-09-local-model-trace-zip",
+          "shopper-pair-09-local-model-browser-observations-json"
+        ]
+      },
+      {
+        "needId": "exact-name",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-09-local-model-screenshot-png",
+          "shopper-pair-09-local-model-trace-zip",
+          "shopper-pair-09-local-model-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "ed53ab14-ba6d-4466-99b8-383d27d4717e",
+        "startTimeMs": 6698.699999928474,
+        "durationMs": 213.5,
+        "capturedAtElapsedMs": 7346.714874999947,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-09-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "ed53ab14-ba6d-4466-99b8-383d27d4717e",
+        "startTimeMs": 6698.699999928474,
+        "durationMs": 213.70000004768372,
+        "capturedAtElapsedMs": 7346.715124999988,
+        "acceptedFields": 0,
+        "withheldFields": 0,
+        "requiredFields": 0,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-09-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
