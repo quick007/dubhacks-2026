@@ -1,0 +1,123 @@
+{
+  "version": "main-storefront-acceptance.v2",
+  "synthetic": true,
+  "realPurchase": false,
+  "startedAt": "2026-10-18T12:46:20.072Z",
+  "checks": [
+    {
+      "name": "generic catalog renders all16 products",
+      "passed": true
+    },
+    {
+      "name": "generic mode has no persona switcher",
+      "passed": true
+    },
+    {
+      "name": "search preserves real bottle identity",
+      "passed": true
+    },
+    {
+      "name": "cart contains one source-priced bottle",
+      "passed": true
+    },
+    {
+      "name": "actual local checkout accepted202",
+      "passed": true
+    },
+    {
+      "name": "visible confirmation is bound to real receipt",
+      "passed": true
+    },
+    {
+      "name": "independent fresh server read matches receipt",
+      "passed": true
+    },
+    {
+      "name": "source amount and fake-order boundary preserved",
+      "passed": true
+    },
+    {
+      "name": "return navigation works",
+      "passed": true
+    },
+    {
+      "name": "generic flow sends zero model requests",
+      "passed": true
+    },
+    {
+      "name": "no browser application errors",
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "modelRequests": [],
+  "checkoutResponses": [
+    {
+      "url": "http://127.0.0.1:4312/api/demo-checkout",
+      "status": 202
+    }
+  ],
+  "source": {
+    "file": "apps/storefront/src/main.tsx",
+    "sha256": "b8ab479d7723ab9f665c974f12fc4afcad220cec03ad0f695344026c6aa70183"
+  },
+  "post": {
+    "duplicate": false,
+    "receipt": {
+      "schema": "fieldwork.demo-checkout-receipt.v1",
+      "checkoutId": "42464017-a62c-46fa-b6c6-b2a037ae377e",
+      "receiptId": "demo-f6fcf20de31dc9089af2fa4210b31189",
+      "createdAt": "2026-10-18T12:46:22.099522Z",
+      "items": [
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "quantity": 1,
+          "unitPrice": 36,
+          "lineTotal": 36
+        }
+      ],
+      "subtotal": 36,
+      "shipping": {
+        "status": "hidden",
+        "cost": null
+      },
+      "total": 36,
+      "realPurchase": false
+    }
+  },
+  "visible": {
+    "checkoutId": "42464017-a62c-46fa-b6c6-b2a037ae377e",
+    "receiptId": "demo-f6fcf20de31dc9089af2fa4210b31189"
+  },
+  "freshGet": {
+    "status": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "42464017-a62c-46fa-b6c6-b2a037ae377e",
+        "receiptId": "demo-f6fcf20de31dc9089af2fa4210b31189",
+        "createdAt": "2026-10-18T12:46:22.099522Z",
+        "items": [
+          {
+            "productId": "bottle",
+            "variantId": "bottle-graphite",
+            "quantity": 1,
+            "unitPrice": 36,
+            "lineTotal": 36
+          }
+        ],
+        "subtotal": 36,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 36,
+        "realPurchase": false
+      }
+    }
+  },
+  "returnUrl": "http://127.0.0.1:4312/#collection?q=bottle",
+  "finishedAt": "2026-10-18T12:46:22.445Z",
+  "passed": true
+}

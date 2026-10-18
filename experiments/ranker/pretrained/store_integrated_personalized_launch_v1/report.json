@@ -1,0 +1,97 @@
+{
+  "version": "main-personalized-launch-acceptance.v1",
+  "synthetic": true,
+  "qualityGatePassed": false,
+  "modelPromotion": false,
+  "acceptedProfile": false,
+  "command": "pnpm dev:personalized:demo",
+  "mainCheckoutRuntime": true,
+  "root": "/Users/lukas/Documents/Projects/dubhacks-2026",
+  "sourceEvidence": {
+    "ready.json": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/personalized-development/2026-10-18T12-49-00.469Z-a7029cc3-a651-4aaf-bb26-43b958823b11/ready.json",
+      "sha256": "28f4b8ad757b0cde9b5799f683ab9dbfab108cd4232e771b8b9e03fffe3d2bc3",
+      "value": {
+        "url": "http://127.0.0.1:4313",
+        "native": 8767,
+        "checkout": {
+          "port": 4331,
+          "reused": true,
+          "origin": "http://127.0.0.1:4331"
+        },
+        "at": "2026-10-18T12:49:19.546Z"
+      }
+    },
+    "launcher-shutdown.json": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/personalized-development/2026-10-18T12-49-00.469Z-a7029cc3-a651-4aaf-bb26-43b958823b11/launcher-shutdown.json",
+      "sha256": "fe6d64c7cea08a76d1f605c807a274c46f0b1b0608af08c43bec39a273bd96e8",
+      "value": {
+        "at": "2026-10-18T12:54:48.541Z",
+        "children": [
+          {
+            "name": "native",
+            "pid": 82756,
+            "code": 0,
+            "signal": null,
+            "forced": false,
+            "exited": true
+          },
+          {
+            "name": "storefront",
+            "pid": 83106,
+            "code": null,
+            "signal": "SIGTERM",
+            "forced": false,
+            "exited": true
+          }
+        ],
+        "nativeIntegrityClaim": "See native/shutdown.json; launcher exit alone is not model-integrity proof."
+      }
+    },
+    "native/shutdown.json": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/personalized-development/2026-10-18T12-49-00.469Z-a7029cc3-a651-4aaf-bb26-43b958823b11/native/shutdown.json",
+      "sha256": "afb4019ec7e55894b9d75c363292393f294c5619fdd99053a0a4d7f0ec48677c",
+      "value": {
+        "frozen927HashesUnchanged": true,
+        "copyCheckpointUnchanged": true,
+        "memory": {
+          "mlxActiveBytes": 5038565898,
+          "mlxPeakBytes": 5529454642,
+          "mlxCacheBytes": 133189150,
+          "processBudgetBytes": 7516192768
+        },
+        "candidateAssetsUnchanged": true,
+        "imageServingSourcesUnchanged": true,
+        "v5ServingExportUnchanged": true,
+        "v5HeadCheckpointUnchanged": true,
+        "servingExportSha256": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703",
+        "headCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+        "rankAdapterRestoredToCopy": true,
+        "rankAdapterAndPublicCacheUnchanged": true,
+        "learnedVariantAndQueryIntentAssetsUnchanged": true,
+        "adapterEngineSourcesUnchanged": true
+      }
+    }
+  },
+  "actualRequest": {
+    "sourcePath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/personalized-development/2026-10-18T12-49-00.469Z-a7029cc3-a651-4aaf-bb26-43b958823b11/main-http-smoke.json",
+    "sha256": "6d31af7777d45be6d2950647f39269229d269526d16ef89e44f250a6daebd8ac",
+    "eventTypes": [
+      "rank",
+      "firstThree",
+      "complete"
+    ],
+    "selectedProductIds": [
+      "blanket",
+      "sweatshirt",
+      "organizer",
+      "notebook",
+      "lunchbox",
+      "sunglasses"
+    ],
+    "elapsedMs": 630.2613749867305,
+    "freshQueryForwardCalls": 1,
+    "queryFeatureCacheHit": false
+  },
+  "scope": "Actual main-owned launcher startup, public HTTP request and graceful cleanup; no browser readiness or relevance quality claim."
+}

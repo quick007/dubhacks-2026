@@ -100,7 +100,7 @@ root. Choose a new output directory for each service lifetime:
 
 Wait for `GET http://127.0.0.1:8766/health` to report `ready: true`, then open
 <http://shop.dubhacks.localhost:1356/?model=local>. For a standalone shop,
-`pnpm --filter @storefront/storefront dev --host 127.0.0.1 --port 4312` makes
+`PORT=4312 pnpm --filter @storefront/storefront dev` makes
 the standalone address explicit; open
 <http://127.0.0.1:4312/?model=local>. Ordinary browsing remains available without
 the model parameter. See the [service guide](experiments/ranker/pretrained/STORE_DEMO_SERVICE.md)
@@ -127,9 +127,27 @@ not part of the Git repository.
 On the configured machine, `pnpm dev:personalized:demo` starts this explicitly
 non-promoted development demo at <http://127.0.0.1:4313>. It requires the copied
 local artifact bundle and preserved review evidence listed in the
-[development entry guide](scripts/dev-personalized-development.md). It refuses
+[preencoded development entry guide](scripts/dev-personalized-preencoded.md). It refuses
 busy model/UI ports, uses the local simulated checkout, and stops only its own
 children on Ctrl+C. No weights, credentials or paid service are fetched.
+`pnpm dev:personalized:uncached` preserves the earlier development path.
+
+The [measured warm-profile run](experiments/ranker/pretrained/PERSONA_WARM_BROWSER_V1_INDEPENDENT_AUDIT.md)
+encoded ten public browsing contexts once in 5.12 seconds before readiness.
+Every request then performed a fresh Qwen query forward, fresh ranking projection
+and fresh copy predictions. Ten loaded, pre-scrolled profile switches reached
+three fully visible factual cards with decoded images in 335.4 ms median;
+six-card copy and decoded images completed in 350.8 ms median (416.6 ms p95).
+The service generated 20 fields; the current UI renders 19 strings. Six decoded
+cards do not mean six simultaneously visible cards, and the initial hero leaves
+card copy below the fold. These are resident development measurements, excluding
+startup and physical paint, with the failed-quality adapter above.
+
+Both context caches include the query. A new typed `work bag` query took
+3.315 seconds for six-card completion; its reload took 1.538 seconds. That query
+path still exceeds the low-hundreds target. No response words or completed
+rankings were cached. Query-independent profile encoding is a separate serving
+experiment, not a property of this measured path.
 
 The parallel head is a fully supervised catalog demo: all 48 product/color
 bindings and three short writing styles were trained. It predicts word/EOS
