@@ -85,6 +85,15 @@ substituting one. Each screenshot decision runs with `--ignore-user-config`,
 Shell, apps and delegation are disabled; evaluator data never enters the prompt.
 No authentication token is read or copied by this harness.
 
+With the storefront and local model service ready, run a fresh two-session smoke
+or omit `--limit 2` for all twenty sessions. Use a new output directory each time:
+
+```sh
+node --import tsx apps/runner/src/shopper-runner.ts run \
+  --packet experiments/ranker/pretrained/store_shopper_eval_v1 \
+  --out /tmp/shopper-sol-new-smoke --seed 11 --limit 2
+```
+
 Alternatively, `--agent /absolute/installed/adapter` with optional
 `--agent-args-json '["argument"]'` starts an external adapter process for each
 session. It receives JSON lines with the private assignment, a viewport
@@ -125,8 +134,42 @@ The real Sol smoke at `experiments/ranker/pretrained/store_shopper_sol_smoke_v2`
 records two independently verified simulated checkouts: generic 12 steps/72.553 s,
 local-model 8 steps/44.817 s. Both selected one qualifying $36 Graphite bottle.
 The earlier repeated-add timeout pair remains in `store_shopper_sol_smoke_v1`.
-Only one development pair has run successfully; eighteen formal roster slots
-remain unattempted. These observations establish the harness, not comparative lift.
+The full development suite is saved in `store_shopper_sol_full_v1`: twenty actual
+attempt receipts, including the two unchanged successful smoke receipts. The
+remaining eighteen slots ran in the original seeded order with the same six
+implementation hashes, viewport, model and budgets. Generic achieved eight of
+ten verified expected outcomes (six simulated checkouts and two correct
+abstentions); local-model achieved seven (five checkouts and two correct
+abstentions). Both arms incorrectly abstained on the waterproof-jacket case.
+Generic recorded one timeout. Local-model recorded one timeout and one browser
+interruption after the Mac connection dropped. These attempts were preserved
+without retries. Seventeen slots meet the full protocol; all twenty remain in
+the fixed denominator. These are synthetic development observations and do not
+establish human conversion lift.
+
+`aggregate.json` is the unchanged raw aggregate. `aggregate-audited.json` and
+`independent-audit.json` verify every receipt, available artifact hash, isolated
+browser identity, frozen implementation/packet hash and independent outcome.
+`summary.json` separates purchases from correct abstentions and summarizes
+steps, preferences and measured runtime. The interrupted attempt's 349 ms
+observation span cannot prove total runtime or budget compliance; the audit
+marks its budget unverified and excludes it from total-runtime statistics.
+All nineteen available trace archives passed ZIP integrity checks. Large trace
+archives and duplicate observation images remain local; normalized observations,
+final screenshots and artifact hashes are committed. One interrupted trace is
+honestly missing. One local-model session recorded fallback use.
+
+The result-only audit can be invoked once after a completed suite has saved all
+twenty receipts. It never starts browsers or requests a model, and refuses to
+overwrite its outputs:
+
+```sh
+node --import tsx experiments/ranker/pretrained/store_shopper_sol_full_v1/audit-final.mts
+```
+
+The full-suite snapshot has not been exported. The earlier smoke v1/v2 immutable
+snapshots were separately approved and exported by the database owner. A new
+full-suite export requires its own report ID and authorization for that payload.
 
 CPU checks (fixture sidecars are not browser execution evidence):
 

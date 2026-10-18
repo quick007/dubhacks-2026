@@ -1,0 +1,302 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-03",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-03-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-03",
+    "personaSplit": "development",
+    "seed": 2026101803
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "2c8c4384-588b-400a-9a4d-663de2cb9781",
+    "contextId": "723b7fa7-a680-454d-b163-78b5b6de3e7f",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-03-generic-screenshot-png",
+      "shopper-pair-03-generic-trace-zip",
+      "shopper-pair-03-generic-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T04:51:28.051Z",
+  "elapsedMs": 57883.822999999975,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-0",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 0,
+        "at": "2026-10-18T04:51:29.006Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 954.7461659999099,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-1",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 1,
+        "at": "2026-10-18T04:51:35.487Z",
+        "kind": "action",
+        "message": "a light for my bedside table up to $70"
+      },
+      "elapsedMs": 7435.574040999985,
+      "action": {
+        "type": "search",
+        "query": "a light for my bedside table up to $70"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-2",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 2,
+        "at": "2026-10-18T04:51:41.821Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 13769.326415999909,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-3",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 3,
+        "at": "2026-10-18T04:51:48.922Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 20870.462040999904,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "lamp",
+        "variantId": "lamp-ivory"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-4",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 4,
+        "at": "2026-10-18T04:51:55.839Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 27787.716999999946,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-5",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 5,
+        "at": "2026-10-18T04:52:01.400Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 33348.96987499995,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-6",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 6,
+        "at": "2026-10-18T04:52:07.473Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 39421.10458299995,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-7",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 7,
+        "at": "2026-10-18T04:52:14.959Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 46907.85091599997,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-8",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 8,
+        "at": "2026-10-18T04:52:20.980Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 52928.41841599997,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-03-generic-step-9",
+        "runId": "shopper-pair-03-generic",
+        "sequence": 9,
+        "at": "2026-10-18T04:52:25.936Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 57883.82079099992,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-03-generic-screenshot-png",
+        "runId": "shopper-pair-03-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:52:26.749Z"
+      },
+      "status": "captured",
+      "sha256": "b0d3c421b1b9192665726fd63b12805810ec534467c13eba8c0f6ce9d6dd6d4f",
+      "bytes": 32497,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-03-generic-trace-zip",
+        "runId": "shopper-pair-03-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:52:26.749Z"
+      },
+      "status": "captured",
+      "sha256": "cc81f33e6522bc99f9434800392963a68c47aa97efbd11723064794906b29c10",
+      "bytes": 31581045,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-03-generic-browser-observations-json",
+        "runId": "shopper-pair-03-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:52:26.749Z"
+      },
+      "status": "captured",
+      "sha256": "562c84ccef7929d136225eba1ded7623cef4bcbd7317ac428a4f61d5c9e23da3",
+      "bytes": 58416,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Portable table light",
+    "selectedColor": "Ivory",
+    "catalogPrice": 64,
+    "quantity": 1,
+    "productId": "lamp",
+    "variantId": "lamp-ivory",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "shopper-pair-03-generic-step-3",
+      "shopper-pair-03-generic-step-8"
+    ],
+    "evidenceArtifactIds": [
+      "shopper-pair-03-generic-screenshot-png",
+      "shopper-pair-03-generic-trace-zip",
+      "shopper-pair-03-generic-browser-observations-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "64",
+        "evidenceArtifactIds": [
+          "shopper-pair-03-generic-screenshot-png",
+          "shopper-pair-03-generic-trace-zip",
+          "shopper-pair-03-generic-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "met",
+        "observed": "[\"table-light\"]",
+        "evidenceArtifactIds": [
+          "shopper-pair-03-generic-screenshot-png",
+          "shopper-pair-03-generic-trace-zip",
+          "shopper-pair-03-generic-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

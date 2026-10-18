@@ -1,0 +1,642 @@
+{
+  "version": "shopper-synthetic-suite-summary.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "humanLiftClaim": false,
+  "fixedCases": 10,
+  "fixedSessions": 20,
+  "originalAggregateSha256": "6e50b83219006b781f8f09e1a00dcb778e191e3ce8985410b0830560953b343a",
+  "auditedAggregateSha256": "1627692633af8232b985a2809bc438a39a659f9914bc1d98c53d90b95b1553a1",
+  "arms": {
+    "generic": {
+      "fixedDenominator": 10,
+      "recorded": 10,
+      "primaryExpectedOutcome": {
+        "observed": 8,
+        "verifiedFormal": 8,
+        "verifiedFormalRate": 0.8,
+        "definition": "Independent acceptable product/variant plus simulated checkout for satisfiable cases; correct abstention for known-empty or unverifiable cases"
+      },
+      "checkout": {
+        "fakeOrdersConfirmed": 6,
+        "reportedCompleted": 6,
+        "formalCompleted": 6
+      },
+      "outcomes": {
+        "completed": 6,
+        "abandoned": 3,
+        "constraint-failure": 0,
+        "technical-failure": 0,
+        "timeout": 1
+      },
+      "expectedOutcomeNotMet": 2,
+      "abstentions": 3,
+      "budgetViolations": 1,
+      "budgetUnverified": 0,
+      "preferences": {
+        "met": 5,
+        "known": 5,
+        "total": 8,
+        "perRun": [
+          {
+            "runId": "shopper-pair-01-generic",
+            "met": 0,
+            "known": 0,
+            "total": 0
+          },
+          {
+            "runId": "shopper-pair-02-generic",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-03-generic",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-04-generic",
+            "met": 0,
+            "known": 0,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-05-generic",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-06-generic",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-07-generic",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-08-generic",
+            "met": 0,
+            "known": 0,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-09-generic",
+            "met": 0,
+            "known": 0,
+            "total": 0
+          },
+          {
+            "runId": "shopper-pair-10-generic",
+            "met": 0,
+            "known": 0,
+            "total": 1
+          }
+        ]
+      },
+      "steps": {
+        "count": 10,
+        "total": 70,
+        "minimum": 3,
+        "maximum": 12,
+        "mean": 7,
+        "median": 7.5,
+        "scope": "Recorded normalized shopper steps including navigation; partial receipts do not imply unobserved actions"
+      },
+      "measuredTotalElapsedMs": {
+        "count": 10,
+        "total": 513157.91258400003,
+        "minimum": 12814.846334000002,
+        "maximum": 120000.046333,
+        "mean": 51315.7912584,
+        "median": 48735.00141699999,
+        "perRun": [
+          {
+            "runId": "shopper-pair-01-generic",
+            "elapsedMs": 33183.68333300005
+          },
+          {
+            "runId": "shopper-pair-02-generic",
+            "elapsedMs": 72553.355291
+          },
+          {
+            "runId": "shopper-pair-03-generic",
+            "elapsedMs": 57883.822999999975
+          },
+          {
+            "runId": "shopper-pair-04-generic",
+            "elapsedMs": 120000.046333
+          },
+          {
+            "runId": "shopper-pair-05-generic",
+            "elapsedMs": 49983.745167000045
+          },
+          {
+            "runId": "shopper-pair-06-generic",
+            "elapsedMs": 41977.589542
+          },
+          {
+            "runId": "shopper-pair-07-generic",
+            "elapsedMs": 47844.25583399998
+          },
+          {
+            "runId": "shopper-pair-08-generic",
+            "elapsedMs": 49625.747
+          },
+          {
+            "runId": "shopper-pair-09-generic",
+            "elapsedMs": 12814.846334000002
+          },
+          {
+            "runId": "shopper-pair-10-generic",
+            "elapsedMs": 27290.82075000007
+          }
+        ],
+        "excludedRuns": [],
+        "scope": "Measured monotonic total attempts only; excludes estimates, partial spans, missing starts, upper bounds, cleanup and scoring"
+      },
+      "readiness": {
+        "rank": {
+          "count": 0,
+          "total": 0,
+          "minimum": null,
+          "maximum": null,
+          "mean": null,
+          "median": null,
+          "samples": [],
+          "scope": "Browser-native after-paint opportunity entries; excludes physical paint, image transfer and isolated GPU benchmarks"
+        },
+        "firstThree": {
+          "count": 0,
+          "total": 0,
+          "minimum": null,
+          "maximum": null,
+          "mean": null,
+          "median": null,
+          "samples": [],
+          "scope": "Browser-native after-paint opportunity entries; excludes physical paint, image transfer and isolated GPU benchmarks"
+        },
+        "complete": {
+          "count": 0,
+          "total": 0,
+          "minimum": null,
+          "maximum": null,
+          "mean": null,
+          "median": null,
+          "samples": [],
+          "scope": "Browser-native after-paint opportunity entries; excludes physical paint, image transfer and isolated GPU benchmarks"
+        }
+      }
+    },
+    "local-model": {
+      "fixedDenominator": 10,
+      "recorded": 10,
+      "primaryExpectedOutcome": {
+        "observed": 7,
+        "verifiedFormal": 7,
+        "verifiedFormalRate": 0.7,
+        "definition": "Independent acceptable product/variant plus simulated checkout for satisfiable cases; correct abstention for known-empty or unverifiable cases"
+      },
+      "checkout": {
+        "fakeOrdersConfirmed": 5,
+        "reportedCompleted": 5,
+        "formalCompleted": 5
+      },
+      "outcomes": {
+        "completed": 5,
+        "abandoned": 3,
+        "constraint-failure": 0,
+        "technical-failure": 1,
+        "timeout": 1
+      },
+      "expectedOutcomeNotMet": 3,
+      "abstentions": 3,
+      "budgetViolations": 1,
+      "budgetUnverified": 1,
+      "preferences": {
+        "met": 5,
+        "known": 5,
+        "total": 8,
+        "perRun": [
+          {
+            "runId": "shopper-pair-01-local-model",
+            "met": 0,
+            "known": 0,
+            "total": 0
+          },
+          {
+            "runId": "shopper-pair-02-local-model",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-03-local-model",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-04-local-model",
+            "met": 0,
+            "known": 0,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-05-local-model",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-06-local-model",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-07-local-model",
+            "met": 1,
+            "known": 1,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-08-local-model",
+            "met": 0,
+            "known": 0,
+            "total": 1
+          },
+          {
+            "runId": "shopper-pair-09-local-model",
+            "met": 0,
+            "known": 0,
+            "total": 0
+          },
+          {
+            "runId": "shopper-pair-10-local-model",
+            "met": 0,
+            "known": 0,
+            "total": 1
+          }
+        ]
+      },
+      "steps": {
+        "count": 10,
+        "total": 91,
+        "minimum": 1,
+        "maximum": 19,
+        "mean": 9.1,
+        "median": 8.5,
+        "scope": "Recorded normalized shopper steps including navigation; partial receipts do not imply unobserved actions"
+      },
+      "measuredTotalElapsedMs": {
+        "count": 9,
+        "total": 533227.897957,
+        "minimum": 12532.153374999994,
+        "maximum": 120002.277459,
+        "mean": 59247.54421744444,
+        "median": 51171.56675000001,
+        "perRun": [
+          {
+            "runId": "shopper-pair-01-local-model",
+            "elapsedMs": 105921.08741700003
+          },
+          {
+            "runId": "shopper-pair-02-local-model",
+            "elapsedMs": 44816.56704099999
+          },
+          {
+            "runId": "shopper-pair-03-local-model",
+            "elapsedMs": 120002.277459
+          },
+          {
+            "runId": "shopper-pair-05-local-model",
+            "elapsedMs": 58926.17404100002
+          },
+          {
+            "runId": "shopper-pair-06-local-model",
+            "elapsedMs": 44710.14083299998
+          },
+          {
+            "runId": "shopper-pair-07-local-model",
+            "elapsedMs": 51171.56675000001
+          },
+          {
+            "runId": "shopper-pair-08-local-model",
+            "elapsedMs": 63629.79620800001
+          },
+          {
+            "runId": "shopper-pair-09-local-model",
+            "elapsedMs": 12532.153374999994
+          },
+          {
+            "runId": "shopper-pair-10-local-model",
+            "elapsedMs": 31518.13483300002
+          }
+        ],
+        "excludedRuns": [
+          "shopper-pair-04-local-model"
+        ],
+        "scope": "Measured monotonic total attempts only; excludes estimates, partial spans, missing starts, upper bounds, cleanup and scoring"
+      },
+      "readiness": {
+        "rank": {
+          "count": 10,
+          "total": 2303.5,
+          "minimum": 213.5,
+          "maximum": 249.39999997615814,
+          "mean": 230.35,
+          "median": 232.60000002384186,
+          "samples": [
+            {
+              "runId": "shopper-pair-01-local-model",
+              "requestId": "0aa80289-77a8-4448-9821-fa9e05bf91c5",
+              "durationMs": 232.09999990463257,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-02-local-model",
+              "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+              "durationMs": 233.30000007152557,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-03-local-model",
+              "requestId": "31a1f727-3f86-4305-9296-841adcb11be5",
+              "durationMs": 232.70000004768372,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-05-local-model",
+              "requestId": "a723f019-67c0-4708-92b1-7ccc1d404b91",
+              "durationMs": 215.69999992847443,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-06-local-model",
+              "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+              "durationMs": 232.5,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-07-local-model",
+              "requestId": "151f27b7-b979-44f7-b0a3-45d179e3daf5",
+              "durationMs": 218.89999997615814,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-08-local-model",
+              "requestId": "6f27fe9b-d988-48f7-a7d9-ad7a4e33939b",
+              "durationMs": 249.39999997615814,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-09-local-model",
+              "requestId": "ed53ab14-ba6d-4466-99b8-383d27d4717e",
+              "durationMs": 213.5,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-10-local-model",
+              "requestId": "2ff32d2e-3cd8-4619-bf81-e616c80b5ff4",
+              "durationMs": 233.30000007152557,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-10-local-model",
+              "requestId": "5af82fb6-831e-43e8-b9ad-d64d58202513",
+              "durationMs": 242.10000002384186,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "artifactVerified": true
+            }
+          ],
+          "scope": "Browser-native after-paint opportunity entries; excludes physical paint, image transfer and isolated GPU benchmarks"
+        },
+        "firstThree": {
+          "count": 8,
+          "total": 33961.59999990463,
+          "minimum": 2183.399999976158,
+          "maximum": 5450.700000047684,
+          "mean": 4245.199999988079,
+          "median": 4896.449999988079,
+          "samples": [
+            {
+              "runId": "shopper-pair-01-local-model",
+              "requestId": "0aa80289-77a8-4448-9821-fa9e05bf91c5",
+              "durationMs": 5333.199999928474,
+              "acceptedFields": 8,
+              "withheldFields": 2,
+              "requiredFields": 10,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-02-local-model",
+              "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+              "durationMs": 5450.700000047684,
+              "acceptedFields": 10,
+              "withheldFields": 0,
+              "requiredFields": 10,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-03-local-model",
+              "requestId": "31a1f727-3f86-4305-9296-841adcb11be5",
+              "durationMs": 5001,
+              "acceptedFields": 8,
+              "withheldFields": 2,
+              "requiredFields": 10,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-05-local-model",
+              "requestId": "a723f019-67c0-4708-92b1-7ccc1d404b91",
+              "durationMs": 3767.2999999523163,
+              "acceptedFields": 10,
+              "withheldFields": 0,
+              "requiredFields": 10,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-06-local-model",
+              "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+              "durationMs": 2433.100000023842,
+              "acceptedFields": 7,
+              "withheldFields": 0,
+              "requiredFields": 7,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-07-local-model",
+              "requestId": "151f27b7-b979-44f7-b0a3-45d179e3daf5",
+              "durationMs": 4933.899999976158,
+              "acceptedFields": 10,
+              "withheldFields": 0,
+              "requiredFields": 10,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-08-local-model",
+              "requestId": "6f27fe9b-d988-48f7-a7d9-ad7a4e33939b",
+              "durationMs": 2183.399999976158,
+              "acceptedFields": 4,
+              "withheldFields": 0,
+              "requiredFields": 4,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-10-local-model",
+              "requestId": "5af82fb6-831e-43e8-b9ad-d64d58202513",
+              "durationMs": 4859,
+              "acceptedFields": 8,
+              "withheldFields": 2,
+              "requiredFields": 10,
+              "artifactVerified": true
+            }
+          ],
+          "scope": "Browser-native after-paint opportunity entries; excludes physical paint, image transfer and isolated GPU benchmarks"
+        },
+        "complete": {
+          "count": 10,
+          "total": 37257.300000190735,
+          "minimum": 213.70000004768372,
+          "maximum": 6384,
+          "mean": 3725.7300000190735,
+          "median": 4583.899999976158,
+          "samples": [
+            {
+              "runId": "shopper-pair-01-local-model",
+              "requestId": "0aa80289-77a8-4448-9821-fa9e05bf91c5",
+              "durationMs": 5683,
+              "acceptedFields": 18,
+              "withheldFields": 2,
+              "requiredFields": 20,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-02-local-model",
+              "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+              "durationMs": 6384,
+              "acceptedFields": 19,
+              "withheldFields": 1,
+              "requiredFields": 20,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-03-local-model",
+              "requestId": "31a1f727-3f86-4305-9296-841adcb11be5",
+              "durationMs": 5334.100000023842,
+              "acceptedFields": 17,
+              "withheldFields": 3,
+              "requiredFields": 20,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-05-local-model",
+              "requestId": "a723f019-67c0-4708-92b1-7ccc1d404b91",
+              "durationMs": 3833.899999976158,
+              "acceptedFields": 14,
+              "withheldFields": 0,
+              "requiredFields": 14,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-06-local-model",
+              "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+              "durationMs": 2499.8000000715256,
+              "acceptedFields": 7,
+              "withheldFields": 0,
+              "requiredFields": 7,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-07-local-model",
+              "requestId": "151f27b7-b979-44f7-b0a3-45d179e3daf5",
+              "durationMs": 5333.899999976158,
+              "acceptedFields": 18,
+              "withheldFields": 2,
+              "requiredFields": 20,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-08-local-model",
+              "requestId": "6f27fe9b-d988-48f7-a7d9-ad7a4e33939b",
+              "durationMs": 2266.600000023842,
+              "acceptedFields": 4,
+              "withheldFields": 0,
+              "requiredFields": 4,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-09-local-model",
+              "requestId": "ed53ab14-ba6d-4466-99b8-383d27d4717e",
+              "durationMs": 213.70000004768372,
+              "acceptedFields": 0,
+              "withheldFields": 0,
+              "requiredFields": 0,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-10-local-model",
+              "requestId": "2ff32d2e-3cd8-4619-bf81-e616c80b5ff4",
+              "durationMs": 233.39999997615814,
+              "acceptedFields": 0,
+              "withheldFields": 0,
+              "requiredFields": 0,
+              "artifactVerified": true
+            },
+            {
+              "runId": "shopper-pair-10-local-model",
+              "requestId": "5af82fb6-831e-43e8-b9ad-d64d58202513",
+              "durationMs": 5474.900000095367,
+              "acceptedFields": 17,
+              "withheldFields": 3,
+              "requiredFields": 20,
+              "artifactVerified": true
+            }
+          ],
+          "scope": "Browser-native after-paint opportunity entries; excludes physical paint, image transfer and isolated GPU benchmarks"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic shopper-agent development evidence, not human conversion lift or unseen generalization",
+    "A verified saved artifact establishes bytes, not independent proof of every browser claim",
+    "Unknown-runtime attempts remain in the fixed denominator and outside comparable total-latency statistics"
+  ]
+}
