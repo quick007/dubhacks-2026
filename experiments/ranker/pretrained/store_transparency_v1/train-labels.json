@@ -1,0 +1,120 @@
+[
+  {
+    "caseId": "transparency-train-00",
+    "namedProductEligible": true,
+    "exactIdentityAbstention": false,
+    "requestRejected": false,
+    "expectedErrorContains": null,
+    "targetExplanation": "Trail mug costs $24 as an item, so it fits the inclusive $24 ceiling. Budget eligibility and the exact-name rule are deterministic.",
+    "support": {
+      "catalogProductIndex": 0,
+      "name": "Trail mug",
+      "itemPrice": 24
+    },
+    "decisionSource": "deterministic hard guard and exact-name policy; not learned budget reasoning"
+  },
+  {
+    "caseId": "transparency-train-01",
+    "namedProductEligible": false,
+    "exactIdentityAbstention": true,
+    "requestRejected": false,
+    "expectedErrorContains": null,
+    "targetExplanation": "Under $24 excludes an item priced exactly $24. The named mug cannot be returned, so abstain instead of substituting another product.",
+    "support": {
+      "catalogProductIndex": 0,
+      "name": "Trail mug",
+      "itemPrice": 24
+    },
+    "decisionSource": "deterministic hard guard and exact-name policy; not learned budget reasoning"
+  },
+  {
+    "caseId": "transparency-train-02",
+    "namedProductEligible": null,
+    "exactIdentityAbstention": null,
+    "requestRejected": true,
+    "expectedErrorContains": "Delivered-cost",
+    "targetExplanation": "An item price does not establish delivered cost. This request is unsupported until delivery cost is known.",
+    "support": {
+      "catalogProductIndex": 0,
+      "name": "Trail mug",
+      "itemPrice": 24
+    },
+    "decisionSource": "deterministic hard guard and exact-name policy; not learned budget reasoning"
+  },
+  {
+    "caseId": "transparency-train-03",
+    "claimStatus": "supported",
+    "shouldWithhold": false,
+    "targetExplanation": "Name, selected color and $24 item price are declared public facts. This says nothing about delivery or availability.",
+    "support": {
+      "catalogProductIndex": 0,
+      "fields": [
+        "name",
+        "itemPrice",
+        "colorVariants.0.colorName"
+      ]
+    }
+  },
+  {
+    "caseId": "transparency-train-04",
+    "claimStatus": "unsupported-performance",
+    "shouldWithhold": true,
+    "targetExplanation": "The public facts do not establish temperature retention or a 12-hour duration. Withhold this generated claim rather than infer it from the mug name.",
+    "support": {
+      "catalogProductIndex": 0,
+      "unknownClaims": [
+        "temperature retention",
+        "duration"
+      ]
+    }
+  },
+  {
+    "caseId": "transparency-train-05",
+    "claimStatus": "ambiguous-collection-price-scope",
+    "shouldWithhold": true,
+    "targetExplanation": "The name, color and amount match one item, but collection of can imply multiple items or a bundle. Do not show an unproven collection-price claim.",
+    "support": {
+      "catalogProductIndex": 7,
+      "fields": [
+        "name",
+        "itemPrice",
+        "colorVariants.0.colorName"
+      ],
+      "unknownClaims": [
+        "bundle or collection quantity"
+      ]
+    }
+  },
+  {
+    "caseId": "transparency-train-06",
+    "claimStatus": "supported",
+    "shouldWithhold": false,
+    "targetExplanation": "Distinguish learned ordering and fresh fact-conditioned generation from deterministic guards, catalog prices and the existing gallery. No hidden persona was used.",
+    "support": {
+      "sourceFunctions": [
+        "store_demo_engine.ranking_input",
+        "store_demo_engine.demo_layout",
+        "store_demo_engine.guarded_order",
+        "store_demo_engine.public_sections"
+      ]
+    }
+  },
+  {
+    "caseId": "transparency-train-07",
+    "claimStatus": "false-operational-attribution",
+    "shouldWithhold": true,
+    "mismatchedOperations": [
+      "budgetGuardsLearned",
+      "imageSelectionLearned",
+      "displayedItemPriceGenerated"
+    ],
+    "targetExplanation": "Hard budget checks are deterministic, images use the existing gallery policy, and displayed item prices are catalog metadata. Do not attribute those operations to learned generation.",
+    "support": {
+      "sourceFunctions": [
+        "store_demo_engine.guarded_order",
+        "store_demo_engine.public_sections"
+      ],
+      "frontendEvidence": "ProductCard renders product.price"
+    }
+  }
+]

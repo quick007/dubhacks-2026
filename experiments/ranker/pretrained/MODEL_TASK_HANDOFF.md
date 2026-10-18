@@ -184,3 +184,38 @@ MLX6,519,340,896B under7GiB guard. Read store_demo_results/v1 and final demo
 report for the later browser instrumentation measurement and launch state.
 No conversion lift, unseen generalization, learned image selection, or
 ranking-only full-page latency is claimed.
+
+
+## Final demo and evaluation preparation checkpoint
+
+Main987685c pushed; opt-in Chrome storefront is live at
+http://127.0.0.1:4312/?model=local with service8766, current output
+data/ranker/pretrained/store-demo-v3. Do not launch another native GPU owner
+while it holds native-owner.lock. Three measured warm browser scenarios:
+rank opportunity276.9/342.6/291.2ms; first3opportunity5572.5/5000.3/5571.4ms;
+full6opportunity6152.2/5733.5/5940.5ms. Paint opportunity is DOM commit+two
+frames, not images or physical paint. Each full6accepts18/20 native fields;
+all5latest hybrid attempts fail accepted-title+body-per-card proxy. Metadata
+cards/cart still function; no full-useful-fresh-page latency claim.
+
+User explicitly says full personalized-content latency is the performance
+target. Width10independent field batching is live, not20 serial strings.
+Median fresh neutral root529.5ms; combinedfork/suffix/prefill/decode loop
+5074.8ms; copywhole5637.6ms. Root hash constant, notyetcached. Detailed split
+currentlyunknown; newprofilecandidate measures it without changingalgorithm.
+Larger tuning reservedforlater; integration+evaluationloop immediate.
+
+Conventional singleAR comparator5publiccases tokenpreflighted,14CPUtests;
+initialnativecomparison NOTRUN. Pendingmanager0190482d6a3340a9a61b094f52da8621:1
+reported byparent withoutexactcommand/target/reason; noinspectiontoolavailable.
+Parentread_thread lookup returnedno turns. Clarificationrequested asynchronously;
+do notbypassapendingaction. CPU/browserframeworkwork continues independently.
+
+Currentdashboard10personas/20runs are scripted six-jacketmock, notactualstore
+Chromeagents. ReallegacyPlaywright onlyclicksfirstAddtocart/fakecheckout and
+blocks8766; itdoesnot scorepreferences. Newstandalonecontract+10actualstore
+casepacket+prepare/validateCLI beingbuiltcompatiblywithoutlegacy/UIedits.
+A fork-none independentChrome genericshopper pair02 hasbeenlaunched withonly
+publicquery/privatehumanneeds,nogoldIDs; preserveactualresultsandfixed20run
+denominator. No realpurchases. Richmerchantprofilecontextnotyetwired; current
+localhook sendsqueryonlyplusserviceoptionaltypedguards,neverhiddenpersonatruth.

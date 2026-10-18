@@ -1,0 +1,278 @@
+[
+  {
+    "caseId": "transparency-train-00",
+    "split": "train",
+    "task": "public-budget-decision",
+    "publicInput": {
+      "request": {
+        "query": "Trail mug",
+        "itemBudget": 24
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "budgetSemantics": "item price only; typed ceiling inclusive; under/below exclusive; delivered total unsupported"
+    }
+  },
+  {
+    "caseId": "transparency-train-01",
+    "split": "train",
+    "task": "public-budget-decision",
+    "publicInput": {
+      "request": {
+        "query": "Trail mug under $24"
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "budgetSemantics": "item price only; typed ceiling inclusive; under/below exclusive; delivered total unsupported"
+    }
+  },
+  {
+    "caseId": "transparency-train-02",
+    "split": "train",
+    "task": "public-budget-decision",
+    "publicInput": {
+      "request": {
+        "query": "Trail mug delivered under $25"
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "budgetSemantics": "item price only; typed ceiling inclusive; under/below exclusive; delivered total unsupported"
+    }
+  },
+  {
+    "caseId": "transparency-train-03",
+    "split": "train",
+    "task": "grounded-copy-claim",
+    "publicInput": {
+      "request": {
+        "query": "Show the mug."
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "field": "C1",
+      "candidateCopy": "Trail mug in Sage is listed at $24.00."
+    }
+  },
+  {
+    "caseId": "transparency-train-04",
+    "split": "train",
+    "task": "grounded-copy-claim",
+    "publicInput": {
+      "request": {
+        "query": "Show the mug."
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "field": "C1",
+      "candidateCopy": "Trail mug in Sage keeps drinks hot for 12 hours."
+    }
+  },
+  {
+    "caseId": "transparency-train-05",
+    "split": "train",
+    "task": "grounded-copy-claim",
+    "publicInput": {
+      "request": {
+        "query": "Show the light."
+      },
+      "productFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "field": "C1",
+      "candidateCopy": "This collection of Portable table light in Ivory has an item price of $64.00."
+    }
+  },
+  {
+    "caseId": "transparency-train-06",
+    "split": "train",
+    "task": "pipeline-disclosure",
+    "publicInput": {
+      "request": {
+        "query": "a bottle for drinking water"
+      },
+      "operationFacts": {
+        "queryAffectsLearnedRank": true,
+        "queryConditionsCopyWording": false,
+        "copyUsesSelectedPublicFacts": true,
+        "budgetGuardsLearned": false,
+        "exactNameOverrideLearned": false,
+        "imageSelectionLearned": false,
+        "displayedItemPriceGenerated": false,
+        "hiddenPersonaInputUsed": false,
+        "withheldNativeTextReplacedWithGeneratedFallback": false
+      },
+      "candidateClaim": "The public query changes learned product order. Budget and exact-name rules are deterministic. Fresh copy uses selected public facts and a neutral request; gallery images and item prices come from the catalog.",
+      "claimedOperations": {
+        "queryAffectsLearnedRank": true,
+        "queryConditionsCopyWording": false,
+        "copyUsesSelectedPublicFacts": true,
+        "budgetGuardsLearned": false,
+        "exactNameOverrideLearned": false,
+        "imageSelectionLearned": false,
+        "displayedItemPriceGenerated": false,
+        "hiddenPersonaInputUsed": false,
+        "withheldNativeTextReplacedWithGeneratedFallback": false
+      }
+    }
+  },
+  {
+    "caseId": "transparency-train-07",
+    "split": "train",
+    "task": "pipeline-disclosure",
+    "publicInput": {
+      "request": {
+        "query": "items under $30"
+      },
+      "operationFacts": {
+        "queryAffectsLearnedRank": true,
+        "queryConditionsCopyWording": false,
+        "copyUsesSelectedPublicFacts": true,
+        "budgetGuardsLearned": false,
+        "exactNameOverrideLearned": false,
+        "imageSelectionLearned": false,
+        "displayedItemPriceGenerated": false,
+        "hiddenPersonaInputUsed": false,
+        "withheldNativeTextReplacedWithGeneratedFallback": false
+      },
+      "candidateClaim": "The model learned which items fit the budget, chose the gallery photos, and generated every displayed price.",
+      "claimedOperations": {
+        "queryAffectsLearnedRank": true,
+        "queryConditionsCopyWording": false,
+        "copyUsesSelectedPublicFacts": true,
+        "budgetGuardsLearned": true,
+        "exactNameOverrideLearned": false,
+        "imageSelectionLearned": true,
+        "displayedItemPriceGenerated": true,
+        "hiddenPersonaInputUsed": false,
+        "withheldNativeTextReplacedWithGeneratedFallback": false
+      }
+    }
+  },
+  {
+    "caseId": "transparency-eval-00",
+    "split": "eval",
+    "task": "public-budget-decision",
+    "publicInput": {
+      "request": {
+        "query": "Trail mug up to $23.99"
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "budgetSemantics": "item price only; typed ceiling inclusive; under/below exclusive; delivered total unsupported"
+    }
+  },
+  {
+    "caseId": "transparency-eval-01",
+    "split": "eval",
+    "task": "grounded-copy-claim",
+    "publicInput": {
+      "request": {
+        "query": "Show the mug."
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "field": "C1",
+      "candidateCopy": "Trail mug in Sage has free shipping."
+    }
+  },
+  {
+    "caseId": "transparency-eval-02",
+    "split": "eval",
+    "task": "pipeline-disclosure",
+    "publicInput": {
+      "request": {
+        "query": "a light for my bedside table"
+      },
+      "operationFacts": {
+        "queryAffectsLearnedRank": true,
+        "queryConditionsCopyWording": false,
+        "copyUsesSelectedPublicFacts": true,
+        "budgetGuardsLearned": false,
+        "exactNameOverrideLearned": false,
+        "imageSelectionLearned": false,
+        "displayedItemPriceGenerated": false,
+        "hiddenPersonaInputUsed": false,
+        "withheldNativeTextReplacedWithGeneratedFallback": false
+      },
+      "candidateClaim": "Your shopper query guides the wording of each generated title and badge.",
+      "claimedOperations": {
+        "queryAffectsLearnedRank": true,
+        "queryConditionsCopyWording": true,
+        "copyUsesSelectedPublicFacts": true,
+        "budgetGuardsLearned": false,
+        "exactNameOverrideLearned": false,
+        "imageSelectionLearned": false,
+        "displayedItemPriceGenerated": false,
+        "hiddenPersonaInputUsed": false,
+        "withheldNativeTextReplacedWithGeneratedFallback": false
+      }
+    }
+  },
+  {
+    "caseId": "transparency-eval-03",
+    "split": "eval",
+    "task": "native-metadata-distinction",
+    "publicInput": {
+      "request": {
+        "query": "Trail mug"
+      },
+      "productFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "displayObservation": {
+        "originalName": "Trail mug",
+        "itemPrice": 24,
+        "selectedColor": "Sage",
+        "acceptedNativeTitle": null,
+        "acceptedNativeBadge": null,
+        "acceptedNativeBody": null
+      },
+      "candidateClaim": "The visible original name and $24 item price are catalog metadata. No accepted native title is available.",
+      "operationFacts": {
+        "queryAffectsLearnedRank": true,
+        "queryConditionsCopyWording": false,
+        "copyUsesSelectedPublicFacts": true,
+        "budgetGuardsLearned": false,
+        "exactNameOverrideLearned": false,
+        "imageSelectionLearned": false,
+        "displayedItemPriceGenerated": false,
+        "hiddenPersonaInputUsed": false,
+        "withheldNativeTextReplacedWithGeneratedFallback": false
+      }
+    }
+  }
+]

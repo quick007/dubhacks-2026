@@ -1,0 +1,63 @@
+[
+  {
+    "caseId": "transparency-eval-00",
+    "namedProductEligible": false,
+    "exactIdentityAbstention": true,
+    "requestRejected": false,
+    "expectedErrorContains": null,
+    "targetExplanation": "The mug item price is $24, exceeding the inclusive $23.99 ceiling. Return no alternative for this exact-name request.",
+    "support": {
+      "catalogProductIndex": 0,
+      "name": "Trail mug",
+      "itemPrice": 24
+    },
+    "decisionSource": "deterministic hard guard and exact-name policy; not learned budget reasoning"
+  },
+  {
+    "caseId": "transparency-eval-01",
+    "claimStatus": "unsupported-delivery",
+    "shouldWithhold": true,
+    "targetExplanation": "The mug price and color do not establish free shipping. No delivery promise should be generated from these facts.",
+    "support": {
+      "catalogProductIndex": 0,
+      "unknownClaims": [
+        "per-item free delivery"
+      ]
+    }
+  },
+  {
+    "caseId": "transparency-eval-02",
+    "claimStatus": "false-operational-attribution",
+    "shouldWithhold": true,
+    "mismatchedOperations": [
+      "queryConditionsCopyWording"
+    ],
+    "targetExplanation": "The shopper query influences ranking. The copy path receives selected public facts and a neutral browsing request, so its wording is not conditioned on the shopper query.",
+    "support": {
+      "sourceFunctions": [
+        "store_demo_engine.ranking_input",
+        "store_demo_engine.demo_layout"
+      ],
+      "constant": "NEUTRAL_COPY_REQUEST"
+    }
+  },
+  {
+    "caseId": "transparency-eval-03",
+    "claimStatus": "supported",
+    "shouldWithhold": false,
+    "nativeFieldsActuallyPresent": [],
+    "catalogFieldsVisible": [
+      "originalName",
+      "itemPrice",
+      "selectedColor"
+    ],
+    "targetExplanation": "Withholding native text does not make the existing name or price freshly generated. Keep that distinction visible and do not insert a claimed native fallback.",
+    "support": {
+      "catalogProductIndex": 0,
+      "sourceFunctions": [
+        "store_demo_engine.public_sections"
+      ],
+      "frontendEvidence": "ProductCard uses freshCopy?.title ?? product.name and product.price"
+    }
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "version": "public-store-transparency.v1",
+  "counts": {
+    "train": 8,
+    "evaluation": 4
+  },
+  "synthetic": true,
+  "sealedEvaluation": false,
+  "trainingPerformed": false,
+  "nativeExecution": false,
+  "tokenizationPerformed": false,
+  "use": "Future offline transparency/grounded-claim supervision and CPU evaluation only; not consumed by current model or demo service.",
+  "inputBoundary": "Only publicInput is predictive; caseId, split, labels, support and target explanations remain external. No hidden persona or outcome labels.",
+  "catalogSource": "store_catalog_v1/model_inputs.json",
+  "catalogSha256": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+  "files": {
+    "evaluation-labels.json": "b1cd451fc80809d2f3880873da326bcc01e545445fff545ec92c314d8048f9c5",
+    "public-cases.json": "a5bea2dc4664299935d1f1cd65e67eb964f1e50b924b6b1a13594d06da5385e4",
+    "train-labels.json": "cebb16b88c700457c7456c1eba0e7fb4321b2a2be8befb2cd6ce430e335e0e00"
+  },
+  "limitations": [
+    "Hand-authored small synthetic packet; not model quality or independent human evidence.",
+    "Budget labels are deterministic contract truth, not a claim that the ranker learned budget reasoning.",
+    "Unsupported physical claims mean absent evidence, not proven false physical product properties.",
+    "Disclosure targets describe the current agreed pipeline, not necessarily all text currently shown by the frontend."
+  ]
+}

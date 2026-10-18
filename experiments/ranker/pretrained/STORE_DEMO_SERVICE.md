@@ -8,9 +8,12 @@ and section heading natively. There is no template or teacher-text fallback.
 After the reviewed frontend integration manifest is frozen, run from repo root:
 
 ```sh
-.tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.store_demo_service --width 10
+.tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.store_demo_service --width 10 --output data/ranker/pretrained/store-demo-new-session
 ```
 
+Choose a new output directory for each service lifetime to preserve startup/shutdown receipts.
+The currently verified lifetime uses `data/ranker/pretrained/store-demo-v3`.
+Open `http://127.0.0.1:4312/?model=local` with the existing storefront dev server running.
 The service binds `127.0.0.1:8766`. One dedicated thread owns the native worker
 lock for the process lifetime. Native requests run serially. Width 10 is the
 default; explicit width 6 or 20 is supported. Active and peak allocations must
@@ -90,3 +93,12 @@ CPU/HTTP contract checks (fake worker; no native model load):
 ```sh
 .tools/pretrained-venv/bin/python -B -m unittest experiments.ranker.pretrained.test_store_demo_engine -v
 ```
+
+Browser instrumentation records request effect entry to React DOM commit plus
+two animation frames. Read the last12 completed standard User Timing measures
+from `html[data-local-model-readiness]`. These are after-paint opportunities,
+not physical screen paint, image readiness or proof of viewport visibility.
+The detail includes server field counts and native timing. Full copy completion
+can contain withheld null fields; do not describe it as all20 generated fields
+being acceptable. `engineInitializationMs` includes engine verification/load/
+hashing but excludes process imports and lock wait; it is not an OS-cold metric.
