@@ -1,0 +1,1755 @@
+{
+  "status": "passed read-only independent CPU audit",
+  "atUtc": "2026-10-18T01:33:24.895320+00:00",
+  "executionCommit": "5ca10cbfaae1e6fd848c9bf622c7a1dbbfc36f41",
+  "runDirectory": "data/ranker/pretrained/generalization-v2-attempt-1",
+  "reportSha256": "08d59e632d1c423675cb6a3502a93daef83a24a533a0a9ba5a4604517456d90d",
+  "dataFreezeSha256": "0795ac1495802010422e9358793d904f49f9e4f9311fdab3158175d6c4508140",
+  "packetSha256": "fc09197c54017c2b950f04939c7225a4ea6f766153ca852f1afff525e0dfc332",
+  "headFreezeSha256": "35001c7065271896cbb1a85d1866cf995c20ff97354cedee7d0ae55583608a8e",
+  "rawFeaturesFreezeSha256": "5a22a4a21b1aea5293c12e264bb0c4778b8919c721f3aa73b9c0624215994f6a",
+  "checks": {
+    "rawFeatureArtifacts": 192,
+    "exactB1WholeForwardReceipts": 192,
+    "sealedDataAndReceiptFiles": 384,
+    "distinctRawKeys": 174,
+    "verifiedActualFitSteps": 320,
+    "fitArms": 4,
+    "checkpointReloads": 6,
+    "exactSavedCaseScoreVectors": 630,
+    "learnedAndControlCaseScoreVectors": 504,
+    "nonlearnedOracleCaseScoreVectors": 126,
+    "exactRoleProbabilityScalars": 52920,
+    "exactPublicTeacherLabels": 63,
+    "exactAtomDiagnosticBlocks": 60,
+    "independentPerAtomConfusionChecks": 420,
+    "trainMeansTargetsAndParameterDeltasRecomputed": true,
+    "heldoutMembersExcludedFromMeansAndTraining": true,
+    "sameFocusedCrossSplitTextAndExactEmbeddingPairs": 25,
+    "allCurrentSourceHashesMatch": true,
+    "newCPUContractTestsPreviouslyPassed": 7,
+    "nativeOrFitOperationsInThisAudit": 0
+  },
+  "fitChecks": {
+    "full-fusion": {
+      "steps": 80,
+      "lossBefore": 1.3913195133209229,
+      "lossAfter": 0.01545049250125885,
+      "gradientAndParameterDeltaExact": true,
+      "trainPredictionReloadExactReceipt": true
+    },
+    "full-prior": {
+      "steps": 80,
+      "lossBefore": 0.6955154538154602,
+      "lossAfter": 0.007161508779972792,
+      "gradientAndParameterDeltaExact": true,
+      "trainPredictionReloadExactReceipt": true
+    },
+    "focused-fusion": {
+      "steps": 80,
+      "lossBefore": 1.381251573562622,
+      "lossAfter": 0.006674204953014851,
+      "gradientAndParameterDeltaExact": true,
+      "trainPredictionReloadExactReceipt": true
+    },
+    "focused-prior": {
+      "steps": 80,
+      "lossBefore": 0.6909441351890564,
+      "lossAfter": 0.0035763124469667673,
+      "gradientAndParameterDeltaExact": true,
+      "trainPredictionReloadExactReceipt": true
+    }
+  },
+  "parameterCounts": {
+    "full-fusion": 57358,
+    "full-prior": 28679,
+    "full-random": 57358,
+    "focused-fusion": 57358,
+    "focused-prior": 28679,
+    "focused-random": 57358
+  },
+  "quality": {
+    "full": {
+      "train": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 6,
+          "meanNdcg3": 0.4162978796058986,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 3,
+          "meanNdcg3": 0.21006070494523452,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 6,
+          "meanNdcg3": 0.5432911244260661,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 6,
+          "pairChoiceChanges": 119,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 5
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 8,
+          "meanNdcg3": 0.6552446465962708,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 4,
+          "pairChoiceChanges": 56,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 4
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 2
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 3,
+          "meanNdcg3": 0.4401325360327033,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 1
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 11,
+          "meanNdcg3": 0.5588467031538633,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 4
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 4,
+          "meanNdcg3": 0.4492232373909797,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 56,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 94,
+          "pairChoiceChanges": 94,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 7,
+          "meanNdcg3": 0.6214269523700209,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 9,
+          "pairChoiceChanges": 76,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 4
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 2
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 10,
+          "meanNdcg3": 0.7224639565125577,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 2,
+          "meanNdcg3": 0.4876955194855086,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 1
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 5,
+          "meanNdcg3": 0.5947335751887177,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 6,
+          "pairChoiceChanges": 72,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 2
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 115,
+          "pairChoiceChanges": 115,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      }
+    },
+    "focused": {
+      "train": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 6,
+          "meanNdcg3": 0.4162978796058986,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 3,
+          "meanNdcg3": 0.20968533755752208,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 9,
+          "meanNdcg3": 0.5144306543281297,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 15,
+          "pairChoiceChanges": 123,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 6
+            },
+            "2": {
+              "requests": 7,
+              "correct": 3
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 94,
+          "pairChoiceChanges": 94,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 11,
+          "meanNdcg3": 0.7289181086345968,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 4
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 7,
+          "meanNdcg3": 0.32710790949661733,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 9,
+          "meanNdcg3": 0.5799955987113978,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 1,
+          "pairChoiceChanges": 70,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 94,
+          "pairChoiceChanges": 94,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 115,
+          "pairChoiceChanges": 115,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 10,
+          "meanNdcg3": 0.7224639565125577,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 4,
+          "meanNdcg3": 0.4343504933935735,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 11,
+          "meanNdcg3": 0.6263031984612002,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 23,
+          "pairChoiceChanges": 76,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 6
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 115,
+          "pairChoiceChanges": 115,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      }
+    }
+  },
+  "atomMicro": {
+    "full": {
+      "train": {
+        "fusion": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "prior": {
+          "query": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 42,
+            "precision": null,
+            "recall": 0.0
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "random": {
+          "query": {
+            "tp": 19,
+            "fp": 52,
+            "fn": 23,
+            "precision": 0.2676056338028169,
+            "recall": 0.4523809523809524
+          },
+          "catalog": {
+            "tp": 19,
+            "fp": 48,
+            "fn": 23,
+            "precision": 0.2835820895522388,
+            "recall": 0.4523809523809524
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "tp": 15,
+            "fp": 27,
+            "fn": 27,
+            "precision": 0.35714285714285715,
+            "recall": 0.35714285714285715
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "query": {
+            "tp": 34,
+            "fp": 23,
+            "fn": 8,
+            "precision": 0.5964912280701754,
+            "recall": 0.8095238095238095
+          },
+          "catalog": {
+            "tp": 9,
+            "fp": 7,
+            "fn": 3,
+            "precision": 0.5625,
+            "recall": 0.75
+          }
+        },
+        "prior": {
+          "query": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 42,
+            "precision": null,
+            "recall": 0.0
+          },
+          "catalog": {
+            "tp": 9,
+            "fp": 7,
+            "fn": 3,
+            "precision": 0.5625,
+            "recall": 0.75
+          }
+        },
+        "random": {
+          "query": {
+            "tp": 17,
+            "fp": 42,
+            "fn": 25,
+            "precision": 0.288135593220339,
+            "recall": 0.40476190476190477
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 20,
+            "fn": 0,
+            "precision": 0.375,
+            "recall": 1.0
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "tp": 14,
+            "fp": 43,
+            "fn": 28,
+            "precision": 0.24561403508771928,
+            "recall": 0.3333333333333333
+          },
+          "catalog": {
+            "tp": 9,
+            "fp": 7,
+            "fn": 3,
+            "precision": 0.5625,
+            "recall": 0.75
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "query": {
+            "tp": 25,
+            "fp": 30,
+            "fn": 17,
+            "precision": 0.45454545454545453,
+            "recall": 0.5952380952380952
+          },
+          "catalog": {
+            "tp": 7,
+            "fp": 5,
+            "fn": 5,
+            "precision": 0.5833333333333334,
+            "recall": 0.5833333333333334
+          }
+        },
+        "prior": {
+          "query": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 42,
+            "precision": null,
+            "recall": 0.0
+          },
+          "catalog": {
+            "tp": 7,
+            "fp": 5,
+            "fn": 5,
+            "precision": 0.5833333333333334,
+            "recall": 0.5833333333333334
+          }
+        },
+        "random": {
+          "query": {
+            "tp": 16,
+            "fp": 49,
+            "fn": 26,
+            "precision": 0.24615384615384617,
+            "recall": 0.38095238095238093
+          },
+          "catalog": {
+            "tp": 7,
+            "fp": 18,
+            "fn": 5,
+            "precision": 0.28,
+            "recall": 0.5833333333333334
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "tp": 18,
+            "fp": 37,
+            "fn": 24,
+            "precision": 0.32727272727272727,
+            "recall": 0.42857142857142855
+          },
+          "catalog": {
+            "tp": 7,
+            "fp": 5,
+            "fn": 5,
+            "precision": 0.5833333333333334,
+            "recall": 0.5833333333333334
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      }
+    },
+    "focused": {
+      "train": {
+        "fusion": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "prior": {
+          "query": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 42,
+            "precision": null,
+            "recall": 0.0
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "random": {
+          "query": {
+            "tp": 25,
+            "fp": 52,
+            "fn": 17,
+            "precision": 0.3246753246753247,
+            "recall": 0.5952380952380952
+          },
+          "catalog": {
+            "tp": 25,
+            "fp": 49,
+            "fn": 17,
+            "precision": 0.33783783783783783,
+            "recall": 0.5952380952380952
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "tp": 15,
+            "fp": 27,
+            "fn": 27,
+            "precision": 0.35714285714285715,
+            "recall": 0.35714285714285715
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "query": {
+            "tp": 42,
+            "fp": 3,
+            "fn": 0,
+            "precision": 0.9333333333333333,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "prior": {
+          "query": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 42,
+            "precision": null,
+            "recall": 0.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "random": {
+          "query": {
+            "tp": 26,
+            "fp": 51,
+            "fn": 16,
+            "precision": 0.33766233766233766,
+            "recall": 0.6190476190476191
+          },
+          "catalog": {
+            "tp": 10,
+            "fp": 15,
+            "fn": 2,
+            "precision": 0.4,
+            "recall": 0.8333333333333334
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "tp": 9,
+            "fp": 36,
+            "fn": 33,
+            "precision": 0.2,
+            "recall": 0.21428571428571427
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "query": {
+            "tp": 42,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.9767441860465116,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.9230769230769231,
+            "recall": 1.0
+          }
+        },
+        "prior": {
+          "query": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 42,
+            "precision": null,
+            "recall": 0.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.9230769230769231,
+            "recall": 1.0
+          }
+        },
+        "random": {
+          "query": {
+            "tp": 19,
+            "fp": 53,
+            "fn": 23,
+            "precision": 0.2638888888888889,
+            "recall": 0.4523809523809524
+          },
+          "catalog": {
+            "tp": 8,
+            "fp": 14,
+            "fn": 4,
+            "precision": 0.36363636363636365,
+            "recall": 0.6666666666666666
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "tp": 16,
+            "fp": 27,
+            "fn": 26,
+            "precision": 0.37209302325581395,
+            "recall": 0.38095238095238093
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.9230769230769231,
+            "recall": 1.0
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "tp": 42,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "catalog": {
+            "tp": 12,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      }
+    }
+  },
+  "encoderTextOverlap": {
+    "full": {
+      "catalog": {
+        "train/validation": 0,
+        "train/test": 0,
+        "validation/test": 0
+      },
+      "request": {
+        "train/validation": 0,
+        "train/test": 0,
+        "validation/test": 0
+      }
+    },
+    "focused": {
+      "catalog": {
+        "train/validation": 2,
+        "train/test": 2,
+        "validation/test": 0
+      },
+      "request": {
+        "train/validation": 7,
+        "train/test": 7,
+        "validation/test": 7
+      }
+    }
+  },
+  "identicalFocusedTextEmbeddingChecks": [
+    {
+      "mode": "focused",
+      "role": "catalog",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "0c9c15128750a8bda864a82d12cecfa16c95c3c9c2e799dc0a02f59a3da10200",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "catalog",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "9d4e9a8adf1c37ea56db574616afee0ab3851d5d566672e32ca107984c948002",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "catalog",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "ac4add5031571a2bb0b31a8257295c7dcc478f4a7b1c9cbad83dea8af3396c7f",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "catalog",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "0214b6587c44aea3be9c19140ce20dce235ed9d0c288e59c4d3d9a40f92b1fb8",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "1b9ba4a9069688801b0b459cb22bc93d5a61b622544d32fef3151508ebf42b51",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "e81ce80083e132bde3b12ea9fdeae89dc6b0b873164ae7c82fe48b0d86ddaf49",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "e2bab246c2dab7d2be8f1d34a533946f404262c14048e28031ec4bde6b4c2ab2",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "3bb33f356740a39f0194efd2a3ae37df8f14518e54cbe90959523626d157e5ba",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "c2dfbb5a3be51a7c9964fc6d6a52c566e0c70067e4eebe479bb27cd2b0b65222",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "c38bd43d7e4f22a67df3268939f04aa119c84e7e07af84c8a1268ce5d7f4a33f",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "textSha256": "40db2e53ef9d3c79ab781eb9ff184bd52fe40a02b550f24aae7b502aae8bbb07",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "1b9ba4a9069688801b0b459cb22bc93d5a61b622544d32fef3151508ebf42b51",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "e81ce80083e132bde3b12ea9fdeae89dc6b0b873164ae7c82fe48b0d86ddaf49",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "e2bab246c2dab7d2be8f1d34a533946f404262c14048e28031ec4bde6b4c2ab2",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "3bb33f356740a39f0194efd2a3ae37df8f14518e54cbe90959523626d157e5ba",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "c2dfbb5a3be51a7c9964fc6d6a52c566e0c70067e4eebe479bb27cd2b0b65222",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "c38bd43d7e4f22a67df3268939f04aa119c84e7e07af84c8a1268ce5d7f4a33f",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "train",
+        "test"
+      ],
+      "textSha256": "40db2e53ef9d3c79ab781eb9ff184bd52fe40a02b550f24aae7b502aae8bbb07",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "textSha256": "1b9ba4a9069688801b0b459cb22bc93d5a61b622544d32fef3151508ebf42b51",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "textSha256": "e81ce80083e132bde3b12ea9fdeae89dc6b0b873164ae7c82fe48b0d86ddaf49",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "textSha256": "e2bab246c2dab7d2be8f1d34a533946f404262c14048e28031ec4bde6b4c2ab2",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "textSha256": "3bb33f356740a39f0194efd2a3ae37df8f14518e54cbe90959523626d157e5ba",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "textSha256": "c2dfbb5a3be51a7c9964fc6d6a52c566e0c70067e4eebe479bb27cd2b0b65222",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "textSha256": "c38bd43d7e4f22a67df3268939f04aa119c84e7e07af84c8a1268ce5d7f4a33f",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    },
+    {
+      "mode": "focused",
+      "role": "request",
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "textSha256": "40db2e53ef9d3c79ab781eb9ff184bd52fe40a02b550f24aae7b502aae8bbb07",
+      "maxAbsoluteEmbeddingDifference": 0.0
+    }
+  ],
+  "coverage": {
+    "train": {
+      "queryRows": 21,
+      "catalogRows": 21,
+      "queryCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "catalogCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "queryAtomCountsByCardinality": {
+        "1": {
+          "compact": 1,
+          "durable": 1,
+          "laptop-sleeve": 1,
+          "lightweight": 1,
+          "organizer": 1,
+          "roomy": 1,
+          "water-resistant": 1
+        },
+        "2": {
+          "compact": 2,
+          "durable": 2,
+          "laptop-sleeve": 2,
+          "lightweight": 2,
+          "organizer": 2,
+          "roomy": 2,
+          "water-resistant": 2
+        },
+        "3": {
+          "compact": 3,
+          "durable": 3,
+          "laptop-sleeve": 3,
+          "lightweight": 3,
+          "organizer": 3,
+          "roomy": 3,
+          "water-resistant": 3
+        }
+      },
+      "catalogAtomCounts": {
+        "compact": 6,
+        "durable": 6,
+        "laptop-sleeve": 6,
+        "lightweight": 6,
+        "organizer": 6,
+        "roomy": 6,
+        "water-resistant": 6
+      },
+      "disjointBestSetPairs": 126
+    },
+    "validation": {
+      "queryRows": 21,
+      "catalogRows": 6,
+      "queryCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "catalogCardinalityCounts": {
+        "1": 2,
+        "2": 2,
+        "3": 2
+      },
+      "queryAtomCountsByCardinality": {
+        "1": {
+          "compact": 1,
+          "durable": 1,
+          "laptop-sleeve": 1,
+          "lightweight": 1,
+          "organizer": 1,
+          "roomy": 1,
+          "water-resistant": 1
+        },
+        "2": {
+          "compact": 2,
+          "durable": 2,
+          "laptop-sleeve": 2,
+          "lightweight": 2,
+          "organizer": 2,
+          "roomy": 2,
+          "water-resistant": 2
+        },
+        "3": {
+          "compact": 3,
+          "durable": 3,
+          "laptop-sleeve": 3,
+          "lightweight": 3,
+          "organizer": 3,
+          "roomy": 3,
+          "water-resistant": 3
+        }
+      },
+      "catalogAtomCounts": {
+        "compact": 4,
+        "durable": 1,
+        "laptop-sleeve": 1,
+        "lightweight": 3,
+        "organizer": 1,
+        "roomy": 1,
+        "water-resistant": 1
+      },
+      "disjointBestSetPairs": 94
+    },
+    "test": {
+      "queryRows": 21,
+      "catalogRows": 6,
+      "queryCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "catalogCardinalityCounts": {
+        "1": 2,
+        "2": 2,
+        "3": 2
+      },
+      "queryAtomCountsByCardinality": {
+        "1": {
+          "compact": 1,
+          "durable": 1,
+          "laptop-sleeve": 1,
+          "lightweight": 1,
+          "organizer": 1,
+          "roomy": 1,
+          "water-resistant": 1
+        },
+        "2": {
+          "compact": 2,
+          "durable": 2,
+          "laptop-sleeve": 2,
+          "lightweight": 2,
+          "organizer": 2,
+          "roomy": 2,
+          "water-resistant": 2
+        },
+        "3": {
+          "compact": 3,
+          "durable": 3,
+          "laptop-sleeve": 3,
+          "lightweight": 3,
+          "organizer": 3,
+          "roomy": 3,
+          "water-resistant": 3
+        }
+      },
+      "catalogAtomCounts": {
+        "compact": 3,
+        "durable": 2,
+        "laptop-sleeve": 1,
+        "lightweight": 1,
+        "organizer": 3,
+        "roomy": 1,
+        "water-resistant": 1
+      },
+      "disjointBestSetPairs": 115
+    }
+  },
+  "nativeQueryLatencies": {
+    "full": {
+      "train": {
+        "count": 21,
+        "medianNativeQueryEncodeMs": 183.8389579206705,
+        "minimumMs": 175.69575004745275,
+        "maximumMs": 203.1643750378862
+      },
+      "validation": {
+        "count": 21,
+        "medianNativeQueryEncodeMs": 182.01729201246053,
+        "minimumMs": 177.94787499587983,
+        "maximumMs": 191.73449999652803
+      },
+      "test": {
+        "count": 21,
+        "medianNativeQueryEncodeMs": 180.8037090813741,
+        "minimumMs": 177.781792008318,
+        "maximumMs": 188.64262499846518
+      }
+    },
+    "focused": {
+      "train": {
+        "count": 21,
+        "medianNativeQueryEncodeMs": 125.74983295053244,
+        "minimumMs": 114.3728329334408,
+        "maximumMs": 134.2174579622224
+      },
+      "validation": {
+        "count": 21,
+        "medianNativeQueryEncodeMs": 124.65200002770871,
+        "minimumMs": 116.44179199356586,
+        "maximumMs": 136.33391703478992
+      },
+      "test": {
+        "count": 21,
+        "medianNativeQueryEncodeMs": 124.99016604851931,
+        "minimumMs": 113.82183304522187,
+        "maximumMs": 137.26883300114423
+      }
+    }
+  },
+  "phaseSeconds": {
+    "nativeModelLoadSeconds": 3.009472707984969,
+    "nativeLifecycleSecondsIncludingLoad": 33.669376541045494,
+    "nativeEncodingPersistenceSeconds": 30.659903833060525,
+    "cpuFitFreezeSeconds": 0.12460837501566857,
+    "cpuEvaluationAuditSeconds": 0.2809833340579644,
+    "wallSecondsIncludingStartup": 37.04063408297952
+  },
+  "nativeMemory": {
+    "maxObservedActiveBytes": 4465912330,
+    "maxObservedPeakBytes": 4706802514,
+    "maxObservedPeakGiB": 4.383551435545087,
+    "fixedNativeGuardBytes": 6442450944
+  },
+  "interpretation": "On this bounded typed seven-atom backpack task, focused public facts transfer across held-out pair/triple compositions and nuisance identities while full text remains weak. Focused singletons reuse actual encoder texts/embeddings, so singleton success is nuisance invariance, not unseen semantic transfer. No jacket or complete-page result follows.",
+  "limitations": [
+    "Synthetic backpack seven-atom role-decoding experiment, distinct from teammate jacket domain.",
+    "Focused singleton inputs overlap across split identities; this tests nuisance invariance, not unseen singleton semantics.",
+    "Pair/triple signatures are held out; no all-attribute-combination or real-user/conversion claim.",
+    "Catalog6 held-out candidates; no12/24 grid, image, copy, grouping or complete-page evidence.",
+    "Known price/stock/requirements guards remain deterministic outside factor inputs; all base cases are eligible.",
+    "Full/focused comparison shares supervision/schedule but jointly repairs data coverage relative to old runs; old-run gains cannot isolate either correction.",
+    "Pair counts94/115 reuse21queries and are correlated; they are not94/115independent trials.",
+    "The new packet is now inspected; no future untouched-test claim.",
+    "Per-query encode latency is native encoding only, not full request/copy/render readiness.",
+    "Freeze boundary evidence is source/tests/receipts, not a syscall trace."
+  ]
+}

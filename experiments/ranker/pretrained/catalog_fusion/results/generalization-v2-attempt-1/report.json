@@ -1,0 +1,5521 @@
+{
+  "status": "completed",
+  "version": "public-atom-generalization-v2",
+  "execution": {
+    "atUtc": "2026-10-18T01:30:45.993271+00:00",
+    "commit": "5ca10cbfaae1e6fd848c9bf622c7a1dbbfc36f41",
+    "relevantSourceStatus": [],
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "torch": "2.14.1",
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2",
+      "tokenizers": "0.23.3",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2"
+    },
+    "argv": [
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/generalization_v2.py",
+      "run",
+      "--packet",
+      "experiments/ranker/pretrained/catalog_fusion/generalization_v2/prepare/packet.json",
+      "--reviewed-packet-sha256",
+      "fc09197c54017c2b950f04939c7225a4ea6f766153ca852f1afff525e0dfc332",
+      "--reviewed-data-sha256",
+      "0795ac1495802010422e9358793d904f49f9e4f9311fdab3158175d6c4508140",
+      "--native-owner",
+      "root",
+      "--confirm-serialized",
+      "--out",
+      "data/ranker/pretrained/generalization-v2-attempt-1"
+    ],
+    "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+  },
+  "packetSha256": "fc09197c54017c2b950f04939c7225a4ea6f766153ca852f1afff525e0dfc332",
+  "dataFreezeSha256": "0795ac1495802010422e9358793d904f49f9e4f9311fdab3158175d6c4508140",
+  "fixedNativeForwards": 192,
+  "nativeForwards": 192,
+  "nativeModelLoadSeconds": 3.009472707984969,
+  "nativeLifecycleSecondsIncludingLoad": 33.669376541045494,
+  "nativeEncodingPersistenceSeconds": 30.659903833060525,
+  "nativeMemoryAfterExtraction": {
+    "mlxActiveBytes": 4465912330,
+    "mlxPeakBytes": 4706802514,
+    "mlxCacheBytes": 133708794,
+    "processBudgetBytes": 6442450944
+  },
+  "actualNativeEncodeTimingByRepresentationSplitRole": {
+    "full": {
+      "train": {
+        "catalog": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 4276.741330977529,
+          "minimumMs": 186.8091250071302,
+          "medianMs": 190.9846659982577,
+          "maximumMs": 421.61212500650436
+        },
+        "request": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 3928.613372030668,
+          "minimumMs": 175.69575004745275,
+          "medianMs": 183.8389579206705,
+          "maximumMs": 203.1643750378862
+        }
+      },
+      "validation": {
+        "catalog": {
+          "forwards": 6,
+          "nativeEncodeSumMs": 1121.4028740068898,
+          "minimumMs": 178.45725000370294,
+          "medianMs": 182.64585349243134,
+          "maximumMs": 200.45512507203966
+        },
+        "request": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 3824.087086250074,
+          "minimumMs": 177.94787499587983,
+          "medianMs": 182.01729201246053,
+          "maximumMs": 191.73449999652803
+        }
+      },
+      "test": {
+        "catalog": {
+          "forwards": 6,
+          "nativeEncodeSumMs": 1089.9912910535932,
+          "minimumMs": 178.8767910329625,
+          "medianMs": 180.6185210007243,
+          "maximumMs": 187.55458295345306
+        },
+        "request": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 3804.6640856191516,
+          "minimumMs": 177.781792008318,
+          "medianMs": 180.8037090813741,
+          "maximumMs": 188.64262499846518
+        }
+      }
+    },
+    "focused": {
+      "train": {
+        "catalog": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 2701.7350828973576,
+          "minimumMs": 113.08429099153727,
+          "medianMs": 125.13316597323865,
+          "maximumMs": 210.56437492370605
+        },
+        "request": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 2622.5859987316653,
+          "minimumMs": 114.3728329334408,
+          "medianMs": 125.74983295053244,
+          "maximumMs": 134.2174579622224
+        }
+      },
+      "validation": {
+        "catalog": {
+          "forwards": 6,
+          "nativeEncodeSumMs": 753.3017077948898,
+          "minimumMs": 119.18733303900808,
+          "medianMs": 123.08999942615628,
+          "maximumMs": 135.93150000087917
+        },
+        "request": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 2640.5059180688113,
+          "minimumMs": 116.44179199356586,
+          "medianMs": 124.65200002770871,
+          "maximumMs": 136.33391703478992
+        }
+      },
+      "test": {
+        "catalog": {
+          "forwards": 6,
+          "nativeEncodeSumMs": 744.0087090944871,
+          "minimumMs": 121.31208297796547,
+          "medianMs": 122.68350058002397,
+          "maximumMs": 131.1682079685852
+        },
+        "request": {
+          "forwards": 21,
+          "nativeEncodeSumMs": 2629.371080198325,
+          "minimumMs": 113.82183304522187,
+          "medianMs": 124.99016604851931,
+          "maximumMs": 137.26883300114423
+        }
+      }
+    }
+  },
+  "cpuFitFreezeSeconds": 0.12460837501566857,
+  "cpuEvaluationAuditSeconds": 0.2809833340579644,
+  "wallSecondsIncludingStartup": 37.04063408297952,
+  "encoderTextOverlap": {
+    "full": {
+      "catalog": {
+        "train/validation": 0,
+        "train/test": 0,
+        "validation/test": 0
+      },
+      "request": {
+        "train/validation": 0,
+        "train/test": 0,
+        "validation/test": 0
+      }
+    },
+    "focused": {
+      "catalog": {
+        "train/validation": 2,
+        "train/test": 2,
+        "validation/test": 0
+      },
+      "request": {
+        "train/validation": 7,
+        "train/test": 7,
+        "validation/test": 7
+      }
+    }
+  },
+  "coverage": {
+    "train": {
+      "queryRows": 21,
+      "catalogRows": 21,
+      "queryCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "catalogCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "queryAtomCountsByCardinality": {
+        "1": {
+          "compact": 1,
+          "durable": 1,
+          "laptop-sleeve": 1,
+          "lightweight": 1,
+          "organizer": 1,
+          "roomy": 1,
+          "water-resistant": 1
+        },
+        "2": {
+          "compact": 2,
+          "durable": 2,
+          "laptop-sleeve": 2,
+          "lightweight": 2,
+          "organizer": 2,
+          "roomy": 2,
+          "water-resistant": 2
+        },
+        "3": {
+          "compact": 3,
+          "durable": 3,
+          "laptop-sleeve": 3,
+          "lightweight": 3,
+          "organizer": 3,
+          "roomy": 3,
+          "water-resistant": 3
+        }
+      },
+      "catalogAtomCounts": {
+        "compact": 6,
+        "durable": 6,
+        "laptop-sleeve": 6,
+        "lightweight": 6,
+        "organizer": 6,
+        "roomy": 6,
+        "water-resistant": 6
+      },
+      "disjointBestSetPairs": 126
+    },
+    "validation": {
+      "queryRows": 21,
+      "catalogRows": 6,
+      "queryCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "catalogCardinalityCounts": {
+        "1": 2,
+        "2": 2,
+        "3": 2
+      },
+      "queryAtomCountsByCardinality": {
+        "1": {
+          "compact": 1,
+          "durable": 1,
+          "laptop-sleeve": 1,
+          "lightweight": 1,
+          "organizer": 1,
+          "roomy": 1,
+          "water-resistant": 1
+        },
+        "2": {
+          "compact": 2,
+          "durable": 2,
+          "laptop-sleeve": 2,
+          "lightweight": 2,
+          "organizer": 2,
+          "roomy": 2,
+          "water-resistant": 2
+        },
+        "3": {
+          "compact": 3,
+          "durable": 3,
+          "laptop-sleeve": 3,
+          "lightweight": 3,
+          "organizer": 3,
+          "roomy": 3,
+          "water-resistant": 3
+        }
+      },
+      "catalogAtomCounts": {
+        "compact": 4,
+        "durable": 1,
+        "laptop-sleeve": 1,
+        "lightweight": 3,
+        "organizer": 1,
+        "roomy": 1,
+        "water-resistant": 1
+      },
+      "disjointBestSetPairs": 94
+    },
+    "test": {
+      "queryRows": 21,
+      "catalogRows": 6,
+      "queryCardinalityCounts": {
+        "1": 7,
+        "2": 7,
+        "3": 7
+      },
+      "catalogCardinalityCounts": {
+        "1": 2,
+        "2": 2,
+        "3": 2
+      },
+      "queryAtomCountsByCardinality": {
+        "1": {
+          "compact": 1,
+          "durable": 1,
+          "laptop-sleeve": 1,
+          "lightweight": 1,
+          "organizer": 1,
+          "roomy": 1,
+          "water-resistant": 1
+        },
+        "2": {
+          "compact": 2,
+          "durable": 2,
+          "laptop-sleeve": 2,
+          "lightweight": 2,
+          "organizer": 2,
+          "roomy": 2,
+          "water-resistant": 2
+        },
+        "3": {
+          "compact": 3,
+          "durable": 3,
+          "laptop-sleeve": 3,
+          "lightweight": 3,
+          "organizer": 3,
+          "roomy": 3,
+          "water-resistant": 3
+        }
+      },
+      "catalogAtomCounts": {
+        "compact": 3,
+        "durable": 2,
+        "laptop-sleeve": 1,
+        "lightweight": 1,
+        "organizer": 3,
+        "roomy": 1,
+        "water-resistant": 1
+      },
+      "disjointBestSetPairs": 115
+    }
+  },
+  "fit": {
+    "seed": 728,
+    "steps": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "cpuThreads": 1,
+    "epsilon": 1e-08,
+    "maxSecondsPerArm": 60,
+    "objective": "mean TRAIN query BCE + mean unique TRAIN product BCE, equal role weights"
+  },
+  "heads": {
+    "full-fusion": {
+      "file": "full-fusion.pt",
+      "sha256": "2198049fb599d1aab09e1dc4921c6460eae2c8a2879ab9b331753b41039ef4a5",
+      "metadata": {
+        "version": "public-atom-generalization-v2",
+        "mode": "full",
+        "vocabulary": [
+          "compact",
+          "durable",
+          "laptop-sleeve",
+          "lightweight",
+          "organizer",
+          "roomy",
+          "water-resistant"
+        ],
+        "schedule": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "cpuThreads": 1,
+          "epsilon": 1e-08,
+          "maxSecondsPerArm": 60,
+          "objective": "mean TRAIN query BCE + mean unique TRAIN product BCE, equal role weights"
+        },
+        "queryMembers": [
+          "gv2-request-15f20b3a24e983ea2d",
+          "gv2-request-1b8a7b1c33611dbdcf",
+          "gv2-request-2b5fa8c60726197465",
+          "gv2-request-3457e8370bccd310c9",
+          "gv2-request-3edeab5500ffc4cc6d",
+          "gv2-request-46c43ad9c4ebeb923a",
+          "gv2-request-48e0fe840b4485f8af",
+          "gv2-request-4fa6f85393d5a35756",
+          "gv2-request-58279395f0bce111d0",
+          "gv2-request-6e71aa128982ff23ac",
+          "gv2-request-6ee2b99ea6040b610f",
+          "gv2-request-8e428fa3a59b63eeaf",
+          "gv2-request-93c5cab9d49155a29c",
+          "gv2-request-a5b921eb5f0a5ed04d",
+          "gv2-request-b0b960b85e773407d8",
+          "gv2-request-bba9ad369b2b63c3ed",
+          "gv2-request-c0c8ffed8c09982fe1",
+          "gv2-request-c78ce911b0b7f51397",
+          "gv2-request-eee460e8000650f316",
+          "gv2-request-fa2ea05a1cc2190a0e",
+          "gv2-request-fd6bc1aadd8b7643ce"
+        ],
+        "catalogMembers": [
+          "gv2-product-1e7d97886ba2b6b2b5",
+          "gv2-product-24180a9f6e9d8e20a2",
+          "gv2-product-4235cc491b34b777c0",
+          "gv2-product-47280f1aee283cf575",
+          "gv2-product-55b1dbe80d4b06d0b9",
+          "gv2-product-60dac82bc754ef75dc",
+          "gv2-product-6a239e74da3dd5ac28",
+          "gv2-product-71263b759e1b745f58",
+          "gv2-product-77df9234a349d8fed3",
+          "gv2-product-86d93361ea3c0e4c6a",
+          "gv2-product-873fa502750ff1cfc5",
+          "gv2-product-8d23f0022450c8cd6b",
+          "gv2-product-b65a91a38475a6bb9c",
+          "gv2-product-b8aaea4231c3cccedc",
+          "gv2-product-ba808e079476c69d11",
+          "gv2-product-c4e14109e6352d0d30",
+          "gv2-product-d807c72a61710b6bfc",
+          "gv2-product-dafd81b114911a49cf",
+          "gv2-product-dc9f6b15163a3e404a",
+          "gv2-product-ec075e24da8c44a600",
+          "gv2-product-fceb0bfff57c0e4223"
+        ],
+        "meanSha256": {
+          "query": "bd3a76677f1ec10477cfd13395ab806ca774de715ebbe092ab2bd922db02c754",
+          "catalog": "8baf89215c8295fdff17775ece8ce3431614489691b1e18ddd21837d43809b2e"
+        },
+        "rawTrainSha256": {
+          "query": "d22a0a129450a9655366edee174b5e89b8dc2bb81bcc2bfdac5d15aea34afe75",
+          "catalog": "c6a15e0efe02c369386149a723d76d6459cece49e381d1f7aa5f6a675095ae90"
+        },
+        "publicTrainTargetSha256": {
+          "query": "42acfc125041c1d4b309aa281216e7d798faafb0df1d2fdf029055a7c772d08e",
+          "catalog": "b3b8c0139fb3f31c3639ac3817122c83ddb4a3c48199c64394a6782c01840bbc"
+        },
+        "queryFrequency": [
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096
+        ],
+        "usesPrivateRankingTargets": false
+      },
+      "steps": 80,
+      "lossBefore": 1.3913195133209229,
+      "lossAfter": 0.01545049250125885,
+      "parameterAbsoluteChange": {
+        "query_weight": 15359.38671875,
+        "query_bias": 7.294038772583008,
+        "catalog_weight": 15556.970703125,
+        "catalog_bias": 6.92420768737793
+      },
+      "trainableParameters": 57358,
+      "seconds": 0.03173729102127254,
+      "exactTrainingPredictionReload": true
+    },
+    "full-prior": {
+      "file": "full-prior.pt",
+      "sha256": "c966296029dc2d43773dace10a71bbc57af3e21765fa0c5e8c9080c5b5aeb695",
+      "metadata": {
+        "version": "public-atom-generalization-v2",
+        "mode": "full",
+        "vocabulary": [
+          "compact",
+          "durable",
+          "laptop-sleeve",
+          "lightweight",
+          "organizer",
+          "roomy",
+          "water-resistant"
+        ],
+        "schedule": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "cpuThreads": 1,
+          "epsilon": 1e-08,
+          "maxSecondsPerArm": 60,
+          "objective": "mean TRAIN query BCE + mean unique TRAIN product BCE, equal role weights"
+        },
+        "queryMembers": [
+          "gv2-request-15f20b3a24e983ea2d",
+          "gv2-request-1b8a7b1c33611dbdcf",
+          "gv2-request-2b5fa8c60726197465",
+          "gv2-request-3457e8370bccd310c9",
+          "gv2-request-3edeab5500ffc4cc6d",
+          "gv2-request-46c43ad9c4ebeb923a",
+          "gv2-request-48e0fe840b4485f8af",
+          "gv2-request-4fa6f85393d5a35756",
+          "gv2-request-58279395f0bce111d0",
+          "gv2-request-6e71aa128982ff23ac",
+          "gv2-request-6ee2b99ea6040b610f",
+          "gv2-request-8e428fa3a59b63eeaf",
+          "gv2-request-93c5cab9d49155a29c",
+          "gv2-request-a5b921eb5f0a5ed04d",
+          "gv2-request-b0b960b85e773407d8",
+          "gv2-request-bba9ad369b2b63c3ed",
+          "gv2-request-c0c8ffed8c09982fe1",
+          "gv2-request-c78ce911b0b7f51397",
+          "gv2-request-eee460e8000650f316",
+          "gv2-request-fa2ea05a1cc2190a0e",
+          "gv2-request-fd6bc1aadd8b7643ce"
+        ],
+        "catalogMembers": [
+          "gv2-product-1e7d97886ba2b6b2b5",
+          "gv2-product-24180a9f6e9d8e20a2",
+          "gv2-product-4235cc491b34b777c0",
+          "gv2-product-47280f1aee283cf575",
+          "gv2-product-55b1dbe80d4b06d0b9",
+          "gv2-product-60dac82bc754ef75dc",
+          "gv2-product-6a239e74da3dd5ac28",
+          "gv2-product-71263b759e1b745f58",
+          "gv2-product-77df9234a349d8fed3",
+          "gv2-product-86d93361ea3c0e4c6a",
+          "gv2-product-873fa502750ff1cfc5",
+          "gv2-product-8d23f0022450c8cd6b",
+          "gv2-product-b65a91a38475a6bb9c",
+          "gv2-product-b8aaea4231c3cccedc",
+          "gv2-product-ba808e079476c69d11",
+          "gv2-product-c4e14109e6352d0d30",
+          "gv2-product-d807c72a61710b6bfc",
+          "gv2-product-dafd81b114911a49cf",
+          "gv2-product-dc9f6b15163a3e404a",
+          "gv2-product-ec075e24da8c44a600",
+          "gv2-product-fceb0bfff57c0e4223"
+        ],
+        "meanSha256": {
+          "query": "bd3a76677f1ec10477cfd13395ab806ca774de715ebbe092ab2bd922db02c754",
+          "catalog": "8baf89215c8295fdff17775ece8ce3431614489691b1e18ddd21837d43809b2e"
+        },
+        "rawTrainSha256": {
+          "query": "d22a0a129450a9655366edee174b5e89b8dc2bb81bcc2bfdac5d15aea34afe75",
+          "catalog": "c6a15e0efe02c369386149a723d76d6459cece49e381d1f7aa5f6a675095ae90"
+        },
+        "publicTrainTargetSha256": {
+          "query": "42acfc125041c1d4b309aa281216e7d798faafb0df1d2fdf029055a7c772d08e",
+          "catalog": "b3b8c0139fb3f31c3639ac3817122c83ddb4a3c48199c64394a6782c01840bbc"
+        },
+        "queryFrequency": [
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096
+        ],
+        "usesPrivateRankingTargets": false
+      },
+      "steps": 80,
+      "lossBefore": 0.6955154538154602,
+      "lossAfter": 0.007161508779972792,
+      "parameterAbsoluteChange": {
+        "query_weight": 0.0,
+        "query_bias": 0.0,
+        "catalog_weight": 15556.970703125,
+        "catalog_bias": 6.92420768737793
+      },
+      "trainableParameters": 28679,
+      "seconds": 0.021833542035892606,
+      "exactTrainingPredictionReload": true
+    },
+    "full-random": {
+      "file": "full-random.pt",
+      "sha256": "fd3f238251ffb1cefa15b6114c3e72b906eb03ce5027b72707f00c0862070f63",
+      "metadata": {
+        "version": "public-atom-generalization-v2",
+        "mode": "full",
+        "vocabulary": [
+          "compact",
+          "durable",
+          "laptop-sleeve",
+          "lightweight",
+          "organizer",
+          "roomy",
+          "water-resistant"
+        ],
+        "schedule": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "cpuThreads": 1,
+          "epsilon": 1e-08,
+          "maxSecondsPerArm": 60,
+          "objective": "mean TRAIN query BCE + mean unique TRAIN product BCE, equal role weights"
+        },
+        "queryMembers": [
+          "gv2-request-15f20b3a24e983ea2d",
+          "gv2-request-1b8a7b1c33611dbdcf",
+          "gv2-request-2b5fa8c60726197465",
+          "gv2-request-3457e8370bccd310c9",
+          "gv2-request-3edeab5500ffc4cc6d",
+          "gv2-request-46c43ad9c4ebeb923a",
+          "gv2-request-48e0fe840b4485f8af",
+          "gv2-request-4fa6f85393d5a35756",
+          "gv2-request-58279395f0bce111d0",
+          "gv2-request-6e71aa128982ff23ac",
+          "gv2-request-6ee2b99ea6040b610f",
+          "gv2-request-8e428fa3a59b63eeaf",
+          "gv2-request-93c5cab9d49155a29c",
+          "gv2-request-a5b921eb5f0a5ed04d",
+          "gv2-request-b0b960b85e773407d8",
+          "gv2-request-bba9ad369b2b63c3ed",
+          "gv2-request-c0c8ffed8c09982fe1",
+          "gv2-request-c78ce911b0b7f51397",
+          "gv2-request-eee460e8000650f316",
+          "gv2-request-fa2ea05a1cc2190a0e",
+          "gv2-request-fd6bc1aadd8b7643ce"
+        ],
+        "catalogMembers": [
+          "gv2-product-1e7d97886ba2b6b2b5",
+          "gv2-product-24180a9f6e9d8e20a2",
+          "gv2-product-4235cc491b34b777c0",
+          "gv2-product-47280f1aee283cf575",
+          "gv2-product-55b1dbe80d4b06d0b9",
+          "gv2-product-60dac82bc754ef75dc",
+          "gv2-product-6a239e74da3dd5ac28",
+          "gv2-product-71263b759e1b745f58",
+          "gv2-product-77df9234a349d8fed3",
+          "gv2-product-86d93361ea3c0e4c6a",
+          "gv2-product-873fa502750ff1cfc5",
+          "gv2-product-8d23f0022450c8cd6b",
+          "gv2-product-b65a91a38475a6bb9c",
+          "gv2-product-b8aaea4231c3cccedc",
+          "gv2-product-ba808e079476c69d11",
+          "gv2-product-c4e14109e6352d0d30",
+          "gv2-product-d807c72a61710b6bfc",
+          "gv2-product-dafd81b114911a49cf",
+          "gv2-product-dc9f6b15163a3e404a",
+          "gv2-product-ec075e24da8c44a600",
+          "gv2-product-fceb0bfff57c0e4223"
+        ],
+        "meanSha256": {
+          "query": "bd3a76677f1ec10477cfd13395ab806ca774de715ebbe092ab2bd922db02c754",
+          "catalog": "8baf89215c8295fdff17775ece8ce3431614489691b1e18ddd21837d43809b2e"
+        },
+        "rawTrainSha256": {
+          "query": "d22a0a129450a9655366edee174b5e89b8dc2bb81bcc2bfdac5d15aea34afe75",
+          "catalog": "c6a15e0efe02c369386149a723d76d6459cece49e381d1f7aa5f6a675095ae90"
+        },
+        "publicTrainTargetSha256": {
+          "query": "42acfc125041c1d4b309aa281216e7d798faafb0df1d2fdf029055a7c772d08e",
+          "catalog": "b3b8c0139fb3f31c3639ac3817122c83ddb4a3c48199c64394a6782c01840bbc"
+        },
+        "queryFrequency": [
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096
+        ],
+        "usesPrivateRankingTargets": false
+      },
+      "trained": false
+    },
+    "focused-fusion": {
+      "file": "focused-fusion.pt",
+      "sha256": "c1adca343738d5d00f606587bdb03c5bb15f08c8e97751d3858e4fd621a50bd3",
+      "metadata": {
+        "version": "public-atom-generalization-v2",
+        "mode": "focused",
+        "vocabulary": [
+          "compact",
+          "durable",
+          "laptop-sleeve",
+          "lightweight",
+          "organizer",
+          "roomy",
+          "water-resistant"
+        ],
+        "schedule": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "cpuThreads": 1,
+          "epsilon": 1e-08,
+          "maxSecondsPerArm": 60,
+          "objective": "mean TRAIN query BCE + mean unique TRAIN product BCE, equal role weights"
+        },
+        "queryMembers": [
+          "gv2-request-15f20b3a24e983ea2d",
+          "gv2-request-1b8a7b1c33611dbdcf",
+          "gv2-request-2b5fa8c60726197465",
+          "gv2-request-3457e8370bccd310c9",
+          "gv2-request-3edeab5500ffc4cc6d",
+          "gv2-request-46c43ad9c4ebeb923a",
+          "gv2-request-48e0fe840b4485f8af",
+          "gv2-request-4fa6f85393d5a35756",
+          "gv2-request-58279395f0bce111d0",
+          "gv2-request-6e71aa128982ff23ac",
+          "gv2-request-6ee2b99ea6040b610f",
+          "gv2-request-8e428fa3a59b63eeaf",
+          "gv2-request-93c5cab9d49155a29c",
+          "gv2-request-a5b921eb5f0a5ed04d",
+          "gv2-request-b0b960b85e773407d8",
+          "gv2-request-bba9ad369b2b63c3ed",
+          "gv2-request-c0c8ffed8c09982fe1",
+          "gv2-request-c78ce911b0b7f51397",
+          "gv2-request-eee460e8000650f316",
+          "gv2-request-fa2ea05a1cc2190a0e",
+          "gv2-request-fd6bc1aadd8b7643ce"
+        ],
+        "catalogMembers": [
+          "gv2-product-1e7d97886ba2b6b2b5",
+          "gv2-product-24180a9f6e9d8e20a2",
+          "gv2-product-4235cc491b34b777c0",
+          "gv2-product-47280f1aee283cf575",
+          "gv2-product-55b1dbe80d4b06d0b9",
+          "gv2-product-60dac82bc754ef75dc",
+          "gv2-product-6a239e74da3dd5ac28",
+          "gv2-product-71263b759e1b745f58",
+          "gv2-product-77df9234a349d8fed3",
+          "gv2-product-86d93361ea3c0e4c6a",
+          "gv2-product-873fa502750ff1cfc5",
+          "gv2-product-8d23f0022450c8cd6b",
+          "gv2-product-b65a91a38475a6bb9c",
+          "gv2-product-b8aaea4231c3cccedc",
+          "gv2-product-ba808e079476c69d11",
+          "gv2-product-c4e14109e6352d0d30",
+          "gv2-product-d807c72a61710b6bfc",
+          "gv2-product-dafd81b114911a49cf",
+          "gv2-product-dc9f6b15163a3e404a",
+          "gv2-product-ec075e24da8c44a600",
+          "gv2-product-fceb0bfff57c0e4223"
+        ],
+        "meanSha256": {
+          "query": "4e8aab6c162be7f3dafc9bff1a71d99d374e51b44d9f3eade0868f4df1ce456a",
+          "catalog": "b5efaf9301d13f63f058cd58fe237e9b5a68d3fe4d1f56c877ec40c16e492966"
+        },
+        "rawTrainSha256": {
+          "query": "1e56eab307dbf89c11cb7a9c0f91c192424dd56d00961dbced0d95fc369f8ddb",
+          "catalog": "c87f0df41ab162d48da77f3996badb3a12cfbc4aab12d60f8ce57155c61a4d71"
+        },
+        "publicTrainTargetSha256": {
+          "query": "42acfc125041c1d4b309aa281216e7d798faafb0df1d2fdf029055a7c772d08e",
+          "catalog": "b3b8c0139fb3f31c3639ac3817122c83ddb4a3c48199c64394a6782c01840bbc"
+        },
+        "queryFrequency": [
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096
+        ],
+        "usesPrivateRankingTargets": false
+      },
+      "steps": 80,
+      "lossBefore": 1.381251573562622,
+      "lossAfter": 0.006674204953014851,
+      "parameterAbsoluteChange": {
+        "query_weight": 12704.4287109375,
+        "query_bias": 5.221869945526123,
+        "catalog_weight": 13103.92578125,
+        "catalog_bias": 5.392626762390137
+      },
+      "trainableParameters": 57358,
+      "seconds": 0.027389041963033378,
+      "exactTrainingPredictionReload": true
+    },
+    "focused-prior": {
+      "file": "focused-prior.pt",
+      "sha256": "1e437afe97173cb0be3ed1de75f063b06ff34d71724c7ce4e7667456cde18d7a",
+      "metadata": {
+        "version": "public-atom-generalization-v2",
+        "mode": "focused",
+        "vocabulary": [
+          "compact",
+          "durable",
+          "laptop-sleeve",
+          "lightweight",
+          "organizer",
+          "roomy",
+          "water-resistant"
+        ],
+        "schedule": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "cpuThreads": 1,
+          "epsilon": 1e-08,
+          "maxSecondsPerArm": 60,
+          "objective": "mean TRAIN query BCE + mean unique TRAIN product BCE, equal role weights"
+        },
+        "queryMembers": [
+          "gv2-request-15f20b3a24e983ea2d",
+          "gv2-request-1b8a7b1c33611dbdcf",
+          "gv2-request-2b5fa8c60726197465",
+          "gv2-request-3457e8370bccd310c9",
+          "gv2-request-3edeab5500ffc4cc6d",
+          "gv2-request-46c43ad9c4ebeb923a",
+          "gv2-request-48e0fe840b4485f8af",
+          "gv2-request-4fa6f85393d5a35756",
+          "gv2-request-58279395f0bce111d0",
+          "gv2-request-6e71aa128982ff23ac",
+          "gv2-request-6ee2b99ea6040b610f",
+          "gv2-request-8e428fa3a59b63eeaf",
+          "gv2-request-93c5cab9d49155a29c",
+          "gv2-request-a5b921eb5f0a5ed04d",
+          "gv2-request-b0b960b85e773407d8",
+          "gv2-request-bba9ad369b2b63c3ed",
+          "gv2-request-c0c8ffed8c09982fe1",
+          "gv2-request-c78ce911b0b7f51397",
+          "gv2-request-eee460e8000650f316",
+          "gv2-request-fa2ea05a1cc2190a0e",
+          "gv2-request-fd6bc1aadd8b7643ce"
+        ],
+        "catalogMembers": [
+          "gv2-product-1e7d97886ba2b6b2b5",
+          "gv2-product-24180a9f6e9d8e20a2",
+          "gv2-product-4235cc491b34b777c0",
+          "gv2-product-47280f1aee283cf575",
+          "gv2-product-55b1dbe80d4b06d0b9",
+          "gv2-product-60dac82bc754ef75dc",
+          "gv2-product-6a239e74da3dd5ac28",
+          "gv2-product-71263b759e1b745f58",
+          "gv2-product-77df9234a349d8fed3",
+          "gv2-product-86d93361ea3c0e4c6a",
+          "gv2-product-873fa502750ff1cfc5",
+          "gv2-product-8d23f0022450c8cd6b",
+          "gv2-product-b65a91a38475a6bb9c",
+          "gv2-product-b8aaea4231c3cccedc",
+          "gv2-product-ba808e079476c69d11",
+          "gv2-product-c4e14109e6352d0d30",
+          "gv2-product-d807c72a61710b6bfc",
+          "gv2-product-dafd81b114911a49cf",
+          "gv2-product-dc9f6b15163a3e404a",
+          "gv2-product-ec075e24da8c44a600",
+          "gv2-product-fceb0bfff57c0e4223"
+        ],
+        "meanSha256": {
+          "query": "4e8aab6c162be7f3dafc9bff1a71d99d374e51b44d9f3eade0868f4df1ce456a",
+          "catalog": "b5efaf9301d13f63f058cd58fe237e9b5a68d3fe4d1f56c877ec40c16e492966"
+        },
+        "rawTrainSha256": {
+          "query": "1e56eab307dbf89c11cb7a9c0f91c192424dd56d00961dbced0d95fc369f8ddb",
+          "catalog": "c87f0df41ab162d48da77f3996badb3a12cfbc4aab12d60f8ce57155c61a4d71"
+        },
+        "publicTrainTargetSha256": {
+          "query": "42acfc125041c1d4b309aa281216e7d798faafb0df1d2fdf029055a7c772d08e",
+          "catalog": "b3b8c0139fb3f31c3639ac3817122c83ddb4a3c48199c64394a6782c01840bbc"
+        },
+        "queryFrequency": [
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096
+        ],
+        "usesPrivateRankingTargets": false
+      },
+      "steps": 80,
+      "lossBefore": 0.6909441351890564,
+      "lossAfter": 0.0035763124469667673,
+      "parameterAbsoluteChange": {
+        "query_weight": 0.0,
+        "query_bias": 0.0,
+        "catalog_weight": 13103.92578125,
+        "catalog_bias": 5.392626762390137
+      },
+      "trainableParameters": 28679,
+      "seconds": 0.020483957952819765,
+      "exactTrainingPredictionReload": true
+    },
+    "focused-random": {
+      "file": "focused-random.pt",
+      "sha256": "8c11c8fc414cd4a2b34b6ceba5cb7acc59ae752427d1395ab5b661aa7b8291e8",
+      "metadata": {
+        "version": "public-atom-generalization-v2",
+        "mode": "focused",
+        "vocabulary": [
+          "compact",
+          "durable",
+          "laptop-sleeve",
+          "lightweight",
+          "organizer",
+          "roomy",
+          "water-resistant"
+        ],
+        "schedule": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "cpuThreads": 1,
+          "epsilon": 1e-08,
+          "maxSecondsPerArm": 60,
+          "objective": "mean TRAIN query BCE + mean unique TRAIN product BCE, equal role weights"
+        },
+        "queryMembers": [
+          "gv2-request-15f20b3a24e983ea2d",
+          "gv2-request-1b8a7b1c33611dbdcf",
+          "gv2-request-2b5fa8c60726197465",
+          "gv2-request-3457e8370bccd310c9",
+          "gv2-request-3edeab5500ffc4cc6d",
+          "gv2-request-46c43ad9c4ebeb923a",
+          "gv2-request-48e0fe840b4485f8af",
+          "gv2-request-4fa6f85393d5a35756",
+          "gv2-request-58279395f0bce111d0",
+          "gv2-request-6e71aa128982ff23ac",
+          "gv2-request-6ee2b99ea6040b610f",
+          "gv2-request-8e428fa3a59b63eeaf",
+          "gv2-request-93c5cab9d49155a29c",
+          "gv2-request-a5b921eb5f0a5ed04d",
+          "gv2-request-b0b960b85e773407d8",
+          "gv2-request-bba9ad369b2b63c3ed",
+          "gv2-request-c0c8ffed8c09982fe1",
+          "gv2-request-c78ce911b0b7f51397",
+          "gv2-request-eee460e8000650f316",
+          "gv2-request-fa2ea05a1cc2190a0e",
+          "gv2-request-fd6bc1aadd8b7643ce"
+        ],
+        "catalogMembers": [
+          "gv2-product-1e7d97886ba2b6b2b5",
+          "gv2-product-24180a9f6e9d8e20a2",
+          "gv2-product-4235cc491b34b777c0",
+          "gv2-product-47280f1aee283cf575",
+          "gv2-product-55b1dbe80d4b06d0b9",
+          "gv2-product-60dac82bc754ef75dc",
+          "gv2-product-6a239e74da3dd5ac28",
+          "gv2-product-71263b759e1b745f58",
+          "gv2-product-77df9234a349d8fed3",
+          "gv2-product-86d93361ea3c0e4c6a",
+          "gv2-product-873fa502750ff1cfc5",
+          "gv2-product-8d23f0022450c8cd6b",
+          "gv2-product-b65a91a38475a6bb9c",
+          "gv2-product-b8aaea4231c3cccedc",
+          "gv2-product-ba808e079476c69d11",
+          "gv2-product-c4e14109e6352d0d30",
+          "gv2-product-d807c72a61710b6bfc",
+          "gv2-product-dafd81b114911a49cf",
+          "gv2-product-dc9f6b15163a3e404a",
+          "gv2-product-ec075e24da8c44a600",
+          "gv2-product-fceb0bfff57c0e4223"
+        ],
+        "meanSha256": {
+          "query": "4e8aab6c162be7f3dafc9bff1a71d99d374e51b44d9f3eade0868f4df1ce456a",
+          "catalog": "b5efaf9301d13f63f058cd58fe237e9b5a68d3fe4d1f56c877ec40c16e492966"
+        },
+        "rawTrainSha256": {
+          "query": "1e56eab307dbf89c11cb7a9c0f91c192424dd56d00961dbced0d95fc369f8ddb",
+          "catalog": "c87f0df41ab162d48da77f3996badb3a12cfbc4aab12d60f8ce57155c61a4d71"
+        },
+        "publicTrainTargetSha256": {
+          "query": "42acfc125041c1d4b309aa281216e7d798faafb0df1d2fdf029055a7c772d08e",
+          "catalog": "b3b8c0139fb3f31c3639ac3817122c83ddb4a3c48199c64394a6782c01840bbc"
+        },
+        "queryFrequency": [
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096,
+          0.2857142984867096
+        ],
+        "usesPrivateRankingTargets": false
+      },
+      "trained": false
+    }
+  },
+  "quality": {
+    "full": {
+      "train": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 6,
+          "meanNdcg3": 0.4162978796058986,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 3,
+          "meanNdcg3": 0.21006070494523452,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 6,
+          "meanNdcg3": 0.5432911244260661,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 6,
+          "pairChoiceChanges": 119,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 5
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 8,
+          "meanNdcg3": 0.6552446465962708,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 4,
+          "pairChoiceChanges": 56,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 4
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 2
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 3,
+          "meanNdcg3": 0.4401325360327033,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 1
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 11,
+          "meanNdcg3": 0.5588467031538633,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 4
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 4,
+          "meanNdcg3": 0.4492232373909797,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 56,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 94,
+          "pairChoiceChanges": 94,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 7,
+          "meanNdcg3": 0.6214269523700209,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 9,
+          "pairChoiceChanges": 76,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 4
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 2
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 10,
+          "meanNdcg3": 0.7224639565125577,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 2,
+          "meanNdcg3": 0.4876955194855086,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 1
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 5,
+          "meanNdcg3": 0.5947335751887177,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 6,
+          "pairChoiceChanges": 72,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 2
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 115,
+          "pairChoiceChanges": 115,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      }
+    },
+    "focused": {
+      "train": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 6,
+          "meanNdcg3": 0.4162978796058986,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 3,
+          "meanNdcg3": 0.20968533755752208,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 9,
+          "meanNdcg3": 0.5144306543281297,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 15,
+          "pairChoiceChanges": 123,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 6
+            },
+            "2": {
+              "requests": 7,
+              "correct": 3
+            },
+            "3": {
+              "requests": 7,
+              "correct": 0
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 126,
+          "pairBothCorrect": 126,
+          "pairChoiceChanges": 126,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 94,
+          "pairChoiceChanges": 94,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 11,
+          "meanNdcg3": 0.7289181086345968,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 4
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 7,
+          "meanNdcg3": 0.32710790949661733,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 2
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 9,
+          "meanNdcg3": 0.5799955987113978,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 1,
+          "pairChoiceChanges": 70,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 94,
+          "pairBothCorrect": 94,
+          "pairChoiceChanges": 94,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 115,
+          "pairChoiceChanges": 115,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        },
+        "prior": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 10,
+          "meanNdcg3": 0.7224639565125577,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 3
+            },
+            "2": {
+              "requests": 7,
+              "correct": 4
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "random": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 4,
+          "meanNdcg3": 0.4343504933935735,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 0,
+          "pairChoiceChanges": 0,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 1
+            },
+            "3": {
+              "requests": 7,
+              "correct": 1
+            }
+          }
+        },
+        "permuted-query": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 11,
+          "meanNdcg3": 0.6263031984612002,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 23,
+          "pairChoiceChanges": 76,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 2
+            },
+            "2": {
+              "requests": 7,
+              "correct": 6
+            },
+            "3": {
+              "requests": 7,
+              "correct": 3
+            }
+          }
+        },
+        "public-oracle": {
+          "fixedRequests": 21,
+          "bestSetCorrect": 21,
+          "meanNdcg3": 1.0,
+          "disjointBestSetPairs": 115,
+          "pairBothCorrect": 115,
+          "pairChoiceChanges": 115,
+          "byPreferenceCardinality": {
+            "1": {
+              "requests": 7,
+              "correct": 7
+            },
+            "2": {
+              "requests": 7,
+              "correct": 7
+            },
+            "3": {
+              "requests": 7,
+              "correct": 7
+            }
+          }
+        }
+      }
+    }
+  },
+  "atomDiagnostics": {
+    "full": {
+      "train": {
+        "fusion": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "prior": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 42,
+              "precision": null,
+              "recall": 0.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 1
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "random": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 19,
+              "fp": 52,
+              "fn": 23,
+              "precision": 0.2676056338028169,
+              "recall": 0.4523809523809524
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 10,
+                "fn": 3,
+                "precision": 0.23076923076923078,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 8,
+                "fn": 4,
+                "precision": 0.2,
+                "recall": 0.3333333333333333
+              },
+              "laptop-sleeve": {
+                "tp": 4,
+                "fp": 5,
+                "fn": 2,
+                "precision": 0.4444444444444444,
+                "recall": 0.6666666666666666
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 6,
+                "fn": 3,
+                "precision": 0.3333333333333333,
+                "recall": 0.5
+              },
+              "organizer": {
+                "tp": 4,
+                "fp": 4,
+                "fn": 2,
+                "precision": 0.5,
+                "recall": 0.6666666666666666
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 10,
+                "fn": 5,
+                "precision": 0.09090909090909091,
+                "recall": 0.16666666666666666
+              },
+              "water-resistant": {
+                "tp": 2,
+                "fp": 9,
+                "fn": 4,
+                "precision": 0.18181818181818182,
+                "recall": 0.3333333333333333
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 19,
+              "fp": 48,
+              "fn": 23,
+              "precision": 0.2835820895522388,
+              "recall": 0.4523809523809524
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 2,
+                "fp": 6,
+                "fn": 4,
+                "precision": 0.25,
+                "recall": 0.3333333333333333
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 8,
+                "fn": 4,
+                "precision": 0.2,
+                "recall": 0.3333333333333333
+              },
+              "laptop-sleeve": {
+                "tp": 4,
+                "fp": 8,
+                "fn": 2,
+                "precision": 0.3333333333333333,
+                "recall": 0.6666666666666666
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 8,
+                "fn": 5,
+                "precision": 0.1111111111111111,
+                "recall": 0.16666666666666666
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 6,
+                "fn": 5,
+                "precision": 0.14285714285714285,
+                "recall": 0.16666666666666666
+              },
+              "roomy": {
+                "tp": 5,
+                "fp": 6,
+                "fn": 1,
+                "precision": 0.45454545454545453,
+                "recall": 0.8333333333333334
+              },
+              "water-resistant": {
+                "tp": 4,
+                "fp": 6,
+                "fn": 2,
+                "precision": 0.4,
+                "recall": 0.6666666666666666
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 15,
+              "fp": 27,
+              "fn": 27,
+              "precision": 0.35714285714285715,
+              "recall": 0.35714285714285715
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 5,
+                "fn": 5,
+                "precision": 0.16666666666666666,
+                "recall": 0.16666666666666666
+              },
+              "laptop-sleeve": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "roomy": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 5,
+                "fn": 5,
+                "precision": 0.16666666666666666,
+                "recall": 0.16666666666666666
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 34,
+              "fp": 23,
+              "fn": 8,
+              "precision": 0.5964912280701754,
+              "recall": 0.8095238095238095
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 13,
+                "fn": 0,
+                "precision": 0.3157894736842105,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 5,
+                "fp": 0,
+                "fn": 1,
+                "precision": 1.0,
+                "recall": 0.8333333333333334
+              },
+              "roomy": {
+                "tp": 5,
+                "fp": 6,
+                "fn": 1,
+                "precision": 0.45454545454545453,
+                "recall": 0.8333333333333334
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 4,
+                "fn": 0,
+                "precision": 0.6,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 9,
+              "fp": 7,
+              "fn": 3,
+              "precision": 0.5625,
+              "recall": 0.75
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.6666666666666666,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 2,
+                "fp": 3,
+                "fn": 1,
+                "precision": 0.4,
+                "recall": 0.6666666666666666
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "prior": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 42,
+              "precision": null,
+              "recall": 0.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 1
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 9,
+              "fp": 7,
+              "fn": 3,
+              "precision": 0.5625,
+              "recall": 0.75
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.6666666666666666,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 2,
+                "fp": 3,
+                "fn": 1,
+                "precision": 0.4,
+                "recall": 0.6666666666666666
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "random": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 17,
+              "fp": 42,
+              "fn": 25,
+              "precision": 0.288135593220339,
+              "recall": 0.40476190476190477
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 10,
+                "fn": 2,
+                "precision": 0.2857142857142857,
+                "recall": 0.6666666666666666
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 15,
+                "fn": 0,
+                "precision": 0.2857142857142857,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 5,
+                "precision": 1.0,
+                "recall": 0.16666666666666666
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 15,
+                "fn": 0,
+                "precision": 0.2857142857142857,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 20,
+              "fn": 0,
+              "precision": 0.375,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.8,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 3,
+                "fn": 0,
+                "precision": 0.25,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 4,
+                "fn": 0,
+                "precision": 0.2,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.6,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 5,
+                "fn": 0,
+                "precision": 0.16666666666666666,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 4,
+                "fn": 0,
+                "precision": 0.2,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 14,
+              "fp": 43,
+              "fn": 28,
+              "precision": 0.24561403508771928,
+              "recall": 0.3333333333333333
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 13,
+                "fn": 0,
+                "precision": 0.3157894736842105,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 6,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 5,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 3,
+                "fp": 8,
+                "fn": 3,
+                "precision": 0.2727272727272727,
+                "recall": 0.5
+              },
+              "water-resistant": {
+                "tp": 2,
+                "fp": 8,
+                "fn": 4,
+                "precision": 0.2,
+                "recall": 0.3333333333333333
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 9,
+              "fp": 7,
+              "fn": 3,
+              "precision": 0.5625,
+              "recall": 0.75
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.6666666666666666,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 2,
+                "fp": 3,
+                "fn": 1,
+                "precision": 0.4,
+                "recall": 0.6666666666666666
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 1,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 25,
+              "fp": 30,
+              "fn": 17,
+              "precision": 0.45454545454545453,
+              "recall": 0.5952380952380952
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 3,
+                "fn": 0,
+                "precision": 0.6666666666666666,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 8,
+                "fn": 0,
+                "precision": 0.42857142857142855,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 11,
+                "fn": 0,
+                "precision": 0.35294117647058826,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 7,
+                "fn": 0,
+                "precision": 0.46153846153846156,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 5,
+                "precision": 1.0,
+                "recall": 0.16666666666666666
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 7,
+              "fp": 5,
+              "fn": 5,
+              "precision": 0.5833333333333334,
+              "recall": 0.5833333333333334
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 2,
+                "precision": 0.5,
+                "recall": 0.3333333333333333
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 1,
+                "precision": 0.3333333333333333,
+                "recall": 0.5
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 2,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "prior": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 42,
+              "precision": null,
+              "recall": 0.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 1
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 7,
+              "fp": 5,
+              "fn": 5,
+              "precision": 0.5833333333333334,
+              "recall": 0.5833333333333334
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 2,
+                "precision": 0.5,
+                "recall": 0.3333333333333333
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 1,
+                "precision": 0.3333333333333333,
+                "recall": 0.5
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 2,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "random": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 16,
+              "fp": 49,
+              "fn": 26,
+              "precision": 0.24615384615384617,
+              "recall": 0.38095238095238093
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 10,
+                "fn": 3,
+                "precision": 0.23076923076923078,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 6,
+                "fn": 5,
+                "precision": 0.14285714285714285,
+                "recall": 0.16666666666666666
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 15,
+                "fn": 0,
+                "precision": 0.2857142857142857,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 8,
+                "fn": 3,
+                "precision": 0.2727272727272727,
+                "recall": 0.5
+              },
+              "organizer": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 4,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 10,
+                "fn": 5,
+                "precision": 0.09090909090909091,
+                "recall": 0.16666666666666666
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 7,
+              "fp": 18,
+              "fn": 5,
+              "precision": 0.28,
+              "recall": 0.5833333333333334
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 2,
+                "precision": 0.5,
+                "recall": 0.3333333333333333
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.6666666666666666,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 5,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 3,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 2,
+                "fp": 2,
+                "fn": 1,
+                "precision": 0.5,
+                "recall": 0.6666666666666666
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 4,
+                "fn": 0,
+                "precision": 0.2,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.3333333333333333,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 18,
+              "fp": 37,
+              "fn": 24,
+              "precision": 0.32727272727272727,
+              "recall": 0.42857142857142855
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 3,
+                "fp": 6,
+                "fn": 3,
+                "precision": 0.3333333333333333,
+                "recall": 0.5
+              },
+              "laptop-sleeve": {
+                "tp": 5,
+                "fp": 9,
+                "fn": 1,
+                "precision": 0.35714285714285715,
+                "recall": 0.8333333333333334
+              },
+              "lightweight": {
+                "tp": 5,
+                "fp": 12,
+                "fn": 1,
+                "precision": 0.29411764705882354,
+                "recall": 0.8333333333333334
+              },
+              "organizer": {
+                "tp": 5,
+                "fp": 8,
+                "fn": 1,
+                "precision": 0.38461538461538464,
+                "recall": 0.8333333333333334
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 1,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 7,
+              "fp": 5,
+              "fn": 5,
+              "precision": 0.5833333333333334,
+              "recall": 0.5833333333333334
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 2,
+                "precision": 0.5,
+                "recall": 0.3333333333333333
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 1,
+                "precision": 0.3333333333333333,
+                "recall": 0.5
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 2,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 5
+          }
+        }
+      }
+    },
+    "focused": {
+      "train": {
+        "fusion": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "prior": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 42,
+              "precision": null,
+              "recall": 0.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 1
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "random": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 25,
+              "fp": 52,
+              "fn": 17,
+              "precision": 0.3246753246753247,
+              "recall": 0.5952380952380952
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 9,
+                "fn": 3,
+                "precision": 0.25,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 3,
+                "fp": 7,
+                "fn": 3,
+                "precision": 0.3,
+                "recall": 0.5
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 5,
+                "fn": 0,
+                "precision": 0.5454545454545454,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 8,
+                "fn": 3,
+                "precision": 0.2727272727272727,
+                "recall": 0.5
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 7,
+                "fn": 3,
+                "precision": 0.3,
+                "recall": 0.5
+              },
+              "roomy": {
+                "tp": 3,
+                "fp": 8,
+                "fn": 3,
+                "precision": 0.2727272727272727,
+                "recall": 0.5
+              },
+              "water-resistant": {
+                "tp": 4,
+                "fp": 8,
+                "fn": 2,
+                "precision": 0.3333333333333333,
+                "recall": 0.6666666666666666
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 25,
+              "fp": 49,
+              "fn": 17,
+              "precision": 0.33783783783783783,
+              "recall": 0.5952380952380952
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 4,
+                "fn": 2,
+                "precision": 0.5,
+                "recall": 0.6666666666666666
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 9,
+                "fn": 5,
+                "precision": 0.1,
+                "recall": 0.16666666666666666
+              },
+              "laptop-sleeve": {
+                "tp": 3,
+                "fp": 9,
+                "fn": 3,
+                "precision": 0.25,
+                "recall": 0.5
+              },
+              "lightweight": {
+                "tp": 4,
+                "fp": 7,
+                "fn": 2,
+                "precision": 0.36363636363636365,
+                "recall": 0.6666666666666666
+              },
+              "organizer": {
+                "tp": 2,
+                "fp": 9,
+                "fn": 4,
+                "precision": 0.18181818181818182,
+                "recall": 0.3333333333333333
+              },
+              "roomy": {
+                "tp": 5,
+                "fp": 6,
+                "fn": 1,
+                "precision": 0.45454545454545453,
+                "recall": 0.8333333333333334
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 5,
+                "fn": 0,
+                "precision": 0.5454545454545454,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 15,
+              "fp": 27,
+              "fn": 27,
+              "precision": 0.35714285714285715,
+              "recall": 0.35714285714285715
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 5,
+                "fn": 5,
+                "precision": 0.16666666666666666,
+                "recall": 0.16666666666666666
+              },
+              "laptop-sleeve": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "roomy": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 5,
+                "fn": 5,
+                "precision": 0.16666666666666666,
+                "recall": 0.16666666666666666
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          }
+        }
+      },
+      "validation": {
+        "fusion": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 3,
+              "fn": 0,
+              "precision": 0.9333333333333333,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.8571428571428571,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.75,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "prior": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 42,
+              "precision": null,
+              "recall": 0.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 1
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "random": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 26,
+              "fp": 51,
+              "fn": 16,
+              "precision": 0.33766233766233766,
+              "recall": 0.6190476190476191
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 8,
+                "fn": 3,
+                "precision": 0.2727272727272727,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 3,
+                "fp": 9,
+                "fn": 3,
+                "precision": 0.25,
+                "recall": 0.5
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 5,
+                "fn": 0,
+                "precision": 0.5454545454545454,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 4,
+                "fp": 9,
+                "fn": 2,
+                "precision": 0.3076923076923077,
+                "recall": 0.6666666666666666
+              },
+              "organizer": {
+                "tp": 4,
+                "fp": 4,
+                "fn": 2,
+                "precision": 0.5,
+                "recall": 0.6666666666666666
+              },
+              "roomy": {
+                "tp": 2,
+                "fp": 7,
+                "fn": 4,
+                "precision": 0.2222222222222222,
+                "recall": 0.3333333333333333
+              },
+              "water-resistant": {
+                "tp": 4,
+                "fp": 9,
+                "fn": 2,
+                "precision": 0.3076923076923077,
+                "recall": 0.6666666666666666
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 10,
+              "fp": 15,
+              "fn": 2,
+              "precision": 0.4,
+              "recall": 0.8333333333333334
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.8,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 3,
+                "fn": 0,
+                "precision": 0.25,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 3,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.75,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 3,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 3,
+                "fn": 0,
+                "precision": 0.25,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 9,
+              "fp": 36,
+              "fn": 33,
+              "precision": 0.2,
+              "recall": 0.21428571428571427
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 5,
+                "fn": 4,
+                "precision": 0.2857142857142857,
+                "recall": 0.3333333333333333
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 6,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 2,
+                "fp": 6,
+                "fn": 4,
+                "precision": 0.25,
+                "recall": 0.3333333333333333
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 5,
+                "fn": 5,
+                "precision": 0.16666666666666666,
+                "recall": 0.16666666666666666
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 5,
+                "fn": 5,
+                "precision": 0.16666666666666666,
+                "recall": 0.16666666666666666
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 6,
+                "fn": 6,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        }
+      },
+      "test": {
+        "fusion": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9767441860465116,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.8571428571428571,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9230769230769231,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "prior": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 42,
+              "precision": null,
+              "recall": 0.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "lightweight": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "organizer": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 0,
+                "fp": 0,
+                "fn": 6,
+                "precision": null,
+                "recall": 0.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 1
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9230769230769231,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "random": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 19,
+              "fp": 53,
+              "fn": 23,
+              "precision": 0.2638888888888889,
+              "recall": 0.4523809523809524
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 4,
+                "fp": 6,
+                "fn": 2,
+                "precision": 0.4,
+                "recall": 0.6666666666666666
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 8,
+                "fn": 4,
+                "precision": 0.2,
+                "recall": 0.3333333333333333
+              },
+              "laptop-sleeve": {
+                "tp": 5,
+                "fp": 6,
+                "fn": 1,
+                "precision": 0.45454545454545453,
+                "recall": 0.8333333333333334
+              },
+              "lightweight": {
+                "tp": 2,
+                "fp": 9,
+                "fn": 4,
+                "precision": 0.18181818181818182,
+                "recall": 0.3333333333333333
+              },
+              "organizer": {
+                "tp": 1,
+                "fp": 6,
+                "fn": 5,
+                "precision": 0.14285714285714285,
+                "recall": 0.16666666666666666
+              },
+              "roomy": {
+                "tp": 2,
+                "fp": 8,
+                "fn": 4,
+                "precision": 0.2,
+                "recall": 0.3333333333333333
+              },
+              "water-resistant": {
+                "tp": 3,
+                "fp": 10,
+                "fn": 3,
+                "precision": 0.23076923076923078,
+                "recall": 0.5
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 8,
+              "fp": 14,
+              "fn": 4,
+              "precision": 0.36363636363636365,
+              "recall": 0.6666666666666666
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.75,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 0,
+                "fp": 3,
+                "fn": 2,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.3333333333333333,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 2,
+                "fn": 0,
+                "precision": 0.3333333333333333,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 2,
+                "fp": 2,
+                "fn": 1,
+                "precision": 0.5,
+                "recall": 0.6666666666666666
+              },
+              "roomy": {
+                "tp": 0,
+                "fp": 3,
+                "fn": 1,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "permuted-query": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 16,
+              "fp": 27,
+              "fn": 26,
+              "precision": 0.37209302325581395,
+              "recall": 0.38095238095238093
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 3,
+                "fn": 3,
+                "precision": 0.5,
+                "recall": 0.5
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "laptop-sleeve": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "lightweight": {
+                "tp": 3,
+                "fp": 4,
+                "fn": 3,
+                "precision": 0.42857142857142855,
+                "recall": 0.5
+              },
+              "organizer": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "roomy": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              },
+              "water-resistant": {
+                "tp": 2,
+                "fp": 4,
+                "fn": 4,
+                "precision": 0.3333333333333333,
+                "recall": 0.3333333333333333
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.9230769230769231,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 1,
+                "fn": 0,
+                "precision": 0.5,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 6
+          }
+        },
+        "public-oracle": {
+          "query": {
+            "threshold": 0.5,
+            "rows": 21,
+            "micro": {
+              "tp": 42,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 6,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 7
+          },
+          "catalog": {
+            "threshold": 0.5,
+            "rows": 6,
+            "micro": {
+              "tp": 12,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0
+            },
+            "perAtom": {
+              "compact": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "durable": {
+                "tp": 2,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "laptop-sleeve": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "lightweight": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "organizer": {
+                "tp": 3,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "roomy": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              },
+              "water-resistant": {
+                "tp": 1,
+                "fp": 0,
+                "fn": 0,
+                "precision": 1.0,
+                "recall": 1.0
+              }
+            },
+            "predictedProbabilityMatrixRank": 5
+          }
+        }
+      }
+    }
+  },
+  "privateRankingLabelsOpenedAfterAllHeadFreezes": true,
+  "meansFromTrainOnly": true,
+  "generatesCopy": false,
+  "imageModel": "not evaluated; no dummy variants",
+  "limitations": [
+    "Synthetic backpack seven-atom role-decoding experiment, distinct from teammate jacket domain.",
+    "Focused singleton inputs overlap across split identities; this tests nuisance invariance, not unseen singleton semantics.",
+    "Pair/triple signatures are held out; no all-attribute-combination or real-user/conversion claim.",
+    "Catalog6 held-out candidates; no12/24 grid, image, copy, grouping or complete-page evidence.",
+    "Known price/stock/requirements guards remain deterministic outside factor inputs; all base cases are eligible.",
+    "Full/focused comparison shares supervision/schedule but jointly repairs data coverage relative to old runs; old-run gains cannot isolate either correction."
+  ]
+}
