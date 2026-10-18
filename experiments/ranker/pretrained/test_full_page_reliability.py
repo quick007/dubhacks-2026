@@ -30,11 +30,11 @@ class ReliabilityTests(unittest.TestCase):
         self.assertIn('badge allowed=NONE ONLY',text)
         self.assertIn('title=identity only, no personal preference claim',text)
     def test_original_factual_and_novelty_guards_unchanged(self):
-        raw='S1: Everyday travel choices\nT1: Your compact travel companion\nB1: NONE'
+        raw='S1: Everyday travel choices\nT1: Your compact travel pack\nB1: NONE'
         result,quality=validate_generated(raw,'stop',self.plan,self.request,self.catalog)
         self.assertTrue(quality['allFieldsFulfilled'])
         self.assertEqual(result['sections'][0]['products'][0]['title']['source'],'generated')
-        for changed in [raw.replace('Everyday travel choices','Waterproof travel choices'),raw.replace('Your compact travel companion','Compact pack')]:
+        for changed in [raw.replace('Everyday travel choices','Waterproof travel choices'),raw.replace('Your compact travel pack','Compact pack'),raw.replace('Your compact travel pack','Your compact travel companion')]:
             self.assertFalse(validate_generated(changed,'stop',self.plan,self.request,self.catalog)[1]['allFieldsFulfilled'])
 
 if __name__=='__main__':unittest.main()

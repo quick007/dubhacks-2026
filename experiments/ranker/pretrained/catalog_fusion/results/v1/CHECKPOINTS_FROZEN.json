@@ -1,0 +1,37 @@
+{
+  "frozenAtUtc": "2026-10-18T00:13:13.333181+00:00",
+  "config": {
+    "seed": 728,
+    "rank": 4,
+    "dimension": 4096,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "cpuThreads": 1,
+    "maxSecondsPerArm": 60,
+    "selection": "fixed attempt; no validation/test outcome selection"
+  },
+  "evidenceSource": "native-frozen-qwen",
+  "trainHashes": {
+    "public/train.jsonl": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+    "labels/train.jsonl": "63401d6e306e9f5fa3b14588f758979ff5f5d99be6354826e61432603751a726"
+  },
+  "checkpoints": {
+    "fusion": {
+      "file": "fusion.pt",
+      "sha256": "3f699f6d837390e9dcfc6078ef63ec71a24a209024e38f76a2990b04893fde93",
+      "trained": true
+    },
+    "prior": {
+      "file": "prior.pt",
+      "sha256": "7807a79575e687c8f3d44f9d6af5c0191faf6fb73c322d871706353eb5389dd1",
+      "trained": true
+    },
+    "random": {
+      "file": "random.pt",
+      "sha256": "b8a2daba69bbd8fde14c8f71e097e6228950e3e7dad834df9329910b20aa7b14",
+      "trained": false
+    }
+  },
+  "heldoutLabelsOpenedBeforeFreeze": false
+}

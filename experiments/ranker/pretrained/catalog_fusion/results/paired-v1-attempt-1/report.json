@@ -1,0 +1,1551 @@
+{
+  "status": "completed",
+  "execution": {
+    "atUtc": "2026-10-18T00:27:34.570987+00:00",
+    "commit": "fd8fcf86bcdc01b5b87d77de92494a4c381a6c11",
+    "relevantSourceStatus": [
+      " M experiments/ranker/pretrained/catalog_fusion/README.md",
+      "?? experiments/ranker/pretrained/catalog_fusion/paired_v1_preflight/"
+    ],
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "torch": "2.14.1",
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2",
+      "tokenizers": "0.23.3",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2"
+    },
+    "argv": [
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_runner.py",
+      "--out",
+      "data/ranker/pretrained/catalog-user-fusion-paired-v1-attempt-1",
+      "--reviewed-freeze-sha256",
+      "1e7238f090c21c83dc2715f5b402dc8b9c84cfe9b30e334d4efdae11fdbbed54"
+    ],
+    "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+  },
+  "config": {
+    "representation": "catalog-user-fusion-v1",
+    "pairedTeacherVersion": "catalog-public-counterfactual-v1",
+    "reviewedDataFreezeSha256": "1e7238f090c21c83dc2715f5b402dc8b9c84cfe9b30e334d4efdae11fdbbed54",
+    "fit": {
+      "seed": 728,
+      "rank": 4,
+      "dimension": 4096,
+      "epochs": 80,
+      "learningRate": 0.03,
+      "weightDecay": 0.001,
+      "cpuThreads": 1,
+      "maxSecondsPerArm": 60,
+      "selection": "fixed attempt; no validation/test outcome selection"
+    },
+    "limits": {
+      "memoryGiB": 6,
+      "maxTokens": 512,
+      "pilotSeconds": 120,
+      "trainingExtractionSeconds": 600,
+      "totalExtractionWorkSeconds": 900
+    },
+    "execution": {
+      "atUtc": "2026-10-18T00:27:34.570987+00:00",
+      "commit": "fd8fcf86bcdc01b5b87d77de92494a4c381a6c11",
+      "relevantSourceStatus": [
+        " M experiments/ranker/pretrained/catalog_fusion/README.md",
+        "?? experiments/ranker/pretrained/catalog_fusion/paired_v1_preflight/"
+      ],
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "packages": {
+        "torch": "2.14.1",
+        "mlx": "0.32.4",
+        "mlx-lm": "0.32.2",
+        "tokenizers": "0.23.3",
+        "numpy": "2.5.4",
+        "psutil": "7.2.2"
+      },
+      "argv": [
+        "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_runner.py",
+        "--out",
+        "data/ranker/pretrained/catalog-user-fusion-paired-v1-attempt-1",
+        "--reviewed-freeze-sha256",
+        "1e7238f090c21c83dc2715f5b402dc8b9c84cfe9b30e334d4efdae11fdbbed54"
+      ],
+      "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+    },
+    "sourceHashes": {
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/__init__.py": "9ddde600627078efed2fdd0c808d9d94b5a43294864c9799457bd7614f552d81",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/audit_run.py": "9de6ea9d27b5e5a7f95aedc49a3e7da282c4c1bdbed3205b7ff24ae92ed645ad",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/evaluate.py": "7fca20ccddafa4780a42df489e7226bc81abc11d55bdc2e8cf65b5403b52c3b5",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/fit_runner.py": "3e5312b85112f45350a5892e4f29b04337c32cce59787a469f7469059da44f55",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_contract.py": "347f99e00ce9364a02155b3b2c7fb7558d15a113dedc0d0ae1aba685b02647f4",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_data.py": "bf8baf40da87a8fa758a9bd9f9020ebe729cf652d291a7cfe5e43b8774478ed6",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_runner.py": "99f7f6efdfad9a103f9cec2a341a18e473ba9ddffece730b22387d40329fe3ff",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/parity_probe.py": "96480d17c77eae536dcf38e8f6fe03cde444d370568c4498c87bf91188d82d29",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py": "79b87e6a55f621be111489a1200bebf025f2f4de315168d97d49bdfb37e0aca3",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/scorer.py": "6f05a92f2054e079a2b1a8a27ef958bdea2ac14ec180c0fda9d1aecfbc3c6fbb",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_catalog_fusion.py": "6f04e348a7d7eb25c4c1a96ff43e0a8e0f1a3a368e5acb9473cbc81bd2961a1d",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_paired.py": "d4529aa17ca8ade0a8443aebdadcc8989f3719dbf91a4913d3f840614170eda8",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_preflight.py": "c6147eeb18b326547fc6d9244fbd5f98e15045e7697d8680bff39b0e90eab195",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_runner.py": "02b997cfceb2d1869af5bc37e246fa37112e249c5addd5dfe80e78d5f22551b8",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/training.py": "e3e3a910cb6c019257f58834348019012ea046c803390a145572ea28b6124cd7",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/boundary.py": "a36c54e1b682cb6940e51b9544b6a3d83e236e2dc9bebd04a805cd5040a23a1e"
+    },
+    "trainHashes": {
+      "public/train.jsonl": "20399e755e9d35c1122a1f85c99bf7907f6e6c694615b6d27eadb6588d477747",
+      "labels/train.jsonl": "aeb374605e6930bc9ca26a22133397a780ea63133346f47603fc700448e68cd2"
+    },
+    "evidenceSource": "native-frozen-qwen",
+    "nativeCatalogForwardsAllowed": 0,
+    "nativeQueryForwardsAllowed": 48,
+    "generatesCopy": false
+  },
+  "evidenceSource": "native-frozen-qwen",
+  "generatesCopy": false,
+  "catalogReuse": {
+    "verifiedEntries": 168,
+    "readOnly": true,
+    "nativeForwards": 0,
+    "sourceReportSha256": "64b68a1302abba6829b378a45d758530b85f19d9169548675b20a26f2318c98d"
+  },
+  "fits": {
+    "fusion": {
+      "arm": "fusion",
+      "config": {
+        "seed": 728,
+        "rank": 4,
+        "dimension": 4096,
+        "epochs": 80,
+        "learningRate": 0.03,
+        "weightDecay": 0.001,
+        "cpuThreads": 1,
+        "maxSecondsPerArm": 60,
+        "selection": "fixed attempt; no validation/test outcome selection"
+      },
+      "trained": true,
+      "architectureParameters": 32786,
+      "trainableParameters": 32786,
+      "requests": 28,
+      "lossBefore": 2.079357862472534,
+      "lossAfter": 1.4206963777542114,
+      "firstGradientL2": {
+        "U": 8.463258564006537e-05,
+        "V": 0.003509678179398179,
+        "prior": 0.0011412699241191149,
+        "interaction": 5.201748354011215e-05,
+        "bias": 1.210719347000122e-08
+      },
+      "parameterAbsoluteChange": {
+        "U": 4069.293212890625,
+        "V": 10831.630859375,
+        "prior": 6.051379203796387,
+        "interaction": 5.693098068237305,
+        "bias": 0.1477007418870926
+      },
+      "predictionAbsoluteChange": 905.930871963501,
+      "seconds": 0.48770658299326897,
+      "checkpoint": "fusion.pt",
+      "sha256": "6cd1ab656a65c82fdbe631ccb5389ba82f0dfcf1f14677eae43fe7558e64ba26",
+      "exactTrainingPredictionReload": true
+    },
+    "prior": {
+      "arm": "prior",
+      "config": {
+        "seed": 728,
+        "rank": 4,
+        "dimension": 4096,
+        "epochs": 80,
+        "learningRate": 0.03,
+        "weightDecay": 0.001,
+        "cpuThreads": 1,
+        "maxSecondsPerArm": 60,
+        "selection": "fixed attempt; no validation/test outcome selection"
+      },
+      "trained": true,
+      "architectureParameters": 32786,
+      "trainableParameters": 16394,
+      "requests": 28,
+      "lossBefore": 2.0793588161468506,
+      "lossAfter": 1.446183204650879,
+      "firstGradientL2": {
+        "V": 0.0035473171155899763,
+        "prior": 0.0011412525782361627,
+        "bias": 3.0719530030864917e-08
+      },
+      "parameterAbsoluteChange": {
+        "U": 0.0,
+        "V": 13204.6435546875,
+        "prior": 7.21975040435791,
+        "interaction": 0.0,
+        "bias": 0.5328669548034668
+      },
+      "predictionAbsoluteChange": 757.7217025756836,
+      "seconds": 0.4419436660828069,
+      "checkpoint": "prior.pt",
+      "sha256": "89ca679aa373336c42d293067ea85867ddadde91475fef0c6bc84bfcdf3b7a05",
+      "exactTrainingPredictionReload": true
+    }
+  },
+  "phases": {
+    "train": {
+      "queryForwards": 28,
+      "catalogForwards": 0,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4677131636,
+        "mlxCacheBytes": 134260304,
+        "processBudgetBytes": 6442450944
+      },
+      "modelLoadSeconds": 2.9239734169095755,
+      "phaseWallSeconds": 7.94624170800671
+    },
+    "validation": {
+      "queryForwards": 8,
+      "catalogForwards": 0,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4677575636,
+        "mlxCacheBytes": 133717852,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "test": {
+      "queryForwards": 12,
+      "catalogForwards": 0,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4677575636,
+        "mlxCacheBytes": 134411996,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "heldoutLifecycle": {
+      "modelLoadSeconds": 1.213262667064555,
+      "phaseWallSeconds": 4.771970208035782,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4677575636,
+        "mlxCacheBytes": 134411996,
+        "processBudgetBytes": 6442450944
+      }
+    }
+  },
+  "nativeQueryForwards": 48,
+  "quality": {
+    "train": {
+      "random": {
+        "requests": 28,
+        "objectiveLossNoUpdate": 2.079357862472534,
+        "raw": {
+          "bestProductAccuracy": 0.21428571428571427,
+          "ndcgAt3": 0.5374085010204165,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 13,
+            "utilitySum": 54,
+            "regretSum": 30,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4642857142857143,
+            "meanUtility": 1.9285714285714286,
+            "meanRegret": 1.0714285714285714
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 13,
+            "utilitySum": 54,
+            "regretSum": 30,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4642857142857143,
+            "meanUtility": 1.9285714285714286,
+            "meanRegret": 1.0714285714285714
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 55,
+            "utilitySum": 222,
+            "regretSum": 114,
+            "incompatible": 0,
+            "informativeAccuracy": 0.49107142857142855,
+            "meanUtility": 1.9821428571428572,
+            "meanRegret": 1.0178571428571428
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.21428571428571427,
+          "ndcgAt3": 0.5374085010204165,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 13,
+            "utilitySum": 54,
+            "regretSum": 30,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4642857142857143,
+            "meanUtility": 1.9285714285714286,
+            "meanRegret": 1.0714285714285714
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 13,
+            "utilitySum": 54,
+            "regretSum": 30,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4642857142857143,
+            "meanUtility": 1.9285714285714286,
+            "meanRegret": 1.0714285714285714
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 55,
+            "utilitySum": 222,
+            "regretSum": 114,
+            "incompatible": 0,
+            "informativeAccuracy": 0.49107142857142855,
+            "meanUtility": 1.9821428571428572,
+            "meanRegret": 1.0178571428571428
+          }
+        },
+        "rawTopTies": 0
+      },
+      "prior": {
+        "requests": 28,
+        "objectiveLossNoUpdate": 1.446183204650879,
+        "raw": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.8154648767857288,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 56,
+            "utilitySum": 224,
+            "regretSum": 112,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.8154648767857288,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 56,
+            "utilitySum": 224,
+            "regretSum": 112,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "fusion": {
+        "requests": 28,
+        "objectiveLossNoUpdate": 1.4206963777542114,
+        "raw": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.8154648767857288,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 56,
+            "utilitySum": 224,
+            "regretSum": 112,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.8154648767857288,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 56,
+            "utilitySum": 224,
+            "regretSum": 112,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "permuted-query": {
+        "requests": 28,
+        "objectiveLossNoUpdate": 1.4206963777542114,
+        "raw": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.8154648767857288,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 56,
+            "utilitySum": 224,
+            "regretSum": 112,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.8154648767857288,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 28,
+            "informative": 28,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 28,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 112,
+            "informative": 112,
+            "informativeCorrect": 56,
+            "utilitySum": 224,
+            "regretSum": 112,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      }
+    },
+    "validation": {
+      "random": {
+        "requests": 8,
+        "objectiveLossNoUpdate": 2.0793871879577637,
+        "raw": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.5708497669571443,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.5708497669571443,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "prior": {
+        "requests": 8,
+        "objectiveLossNoUpdate": 2.8815059661865234,
+        "raw": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.6086033392946499,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.6086033392946499,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "fusion": {
+        "requests": 8,
+        "objectiveLossNoUpdate": 3.988894462585449,
+        "raw": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.6086033392946499,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.6086033392946499,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "permuted-query": {
+        "requests": 8,
+        "objectiveLossNoUpdate": 3.988894462585449,
+        "raw": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.6086033392946499,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.25,
+          "ndcgAt3": 0.6086033392946499,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 8,
+            "informative": 8,
+            "informativeCorrect": 4,
+            "utilitySum": 16,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 32,
+            "informative": 32,
+            "informativeCorrect": 16,
+            "utilitySum": 64,
+            "regretSum": 32,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      }
+    },
+    "test": {
+      "random": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 2.079768419265747,
+        "raw": {
+          "bestProductAccuracy": 0.0,
+          "ndcgAt3": 0.5044265459712914,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.0,
+          "ndcgAt3": 0.5044265459712914,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "prior": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 2.7970807552337646,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6011028155992543,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6011028155992543,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "fusion": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 3.344942808151245,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6131226711603699,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6131226711603699,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "permuted-query": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 3.344942808151245,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6131226711603699,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6131226711603699,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 12,
+            "informativeCorrect": 6,
+            "utilitySum": 24,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 48,
+            "informativeCorrect": 24,
+            "utilitySum": 96,
+            "regretSum": 48,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          }
+        },
+        "rawTopTies": 0
+      }
+    }
+  },
+  "counterfactualPairs": {
+    "train": {
+      "random": {
+        "raw": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 1,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 1,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "prior": {
+        "raw": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "fusion": {
+        "raw": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "permuted-query": {
+        "raw": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 14,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 14,
+          "imagePairSelectedProductStable": 14,
+          "allCandidateImagePairs": 56,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      }
+    },
+    "validation": {
+      "random": {
+        "raw": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "prior": {
+        "raw": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "fusion": {
+        "raw": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "permuted-query": {
+        "raw": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 4,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 4,
+          "imagePairSelectedProductStable": 4,
+          "allCandidateImagePairs": 16,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      }
+    },
+    "test": {
+      "random": {
+        "raw": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "prior": {
+        "raw": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "fusion": {
+        "raw": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      },
+      "permuted-query": {
+        "raw": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        },
+        "guarded": {
+          "productPairs": 6,
+          "productPairBothCorrect": 0,
+          "productChoiceChanges": 0,
+          "imagePairs": 6,
+          "imagePairSelectedProductStable": 6,
+          "allCandidateImagePairs": 24,
+          "allCandidateImagePairBothCorrect": 0,
+          "allCandidateImageChoiceChanges": 0,
+          "oracleProductImagePairBothCorrect": 0,
+          "selectedProductImagePairBothCorrect": 0
+        }
+      }
+    }
+  },
+  "wallSeconds": 14.270930042024702,
+  "limitations": [
+    "Public-fact teacher task, not latent preference or human utility ground truth.",
+    "Uses old train/validation/test catalog partitions; old test outcomes already inspected/replayed.",
+    "Fresh request/family holdouts are not an untouched catalog test or a sealed independent evaluation.",
+    "All old catalog bytes must pass provenance/key/checksum verification before vector reuse.",
+    "No fresh copy or full-grid quality claim.",
+    "Public-fact teacher behavior is a controlled learning test, not human utility.",
+    "New request combinations overlap some previously inspected old public contexts; catalog is replayed."
+  ]
+}

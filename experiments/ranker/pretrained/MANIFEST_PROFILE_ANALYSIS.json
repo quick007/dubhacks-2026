@@ -1,0 +1,100 @@
+{
+  "sourceReportSha256": "4a5786ee4790a2ad25d07054ce81bc860f1775945259cfa2435223e65b888f83",
+  "records": [
+    {
+      "cards": 1,
+      "baselineEndToEndMs": 3739.6714999340475,
+      "profileEndToEndMs": 3658.40570803266,
+      "profileMinusBaselineMs": -81.26579190138727,
+      "nativeGenerationPartition": {
+        "setupBeforeFirstProgressMs": 56.02591694332659,
+        "suffixPrefillMs": 408.9950000634417,
+        "lastPromptTokenAndLookaheadMs": 85.51875001285225,
+        "afterPromptProgressMs": 1182.6982499333099
+      },
+      "lastTextToNativeCompletionMs": 41.59849998541176,
+      "nativePartitionReconciles": true,
+      "stagesReconcile": true,
+      "exactRawTokens": true,
+      "textTokensExcludingEOS": 29,
+      "sampledStepsIncludingEOS": 30,
+      "quality": {
+        "rejections": [],
+        "allFieldsFulfilled": true,
+        "newTitleCount": 1,
+        "generatedBadgeCount": 1,
+        "generatedHeadingCount": 1,
+        "titleObservedAlignmentRate": 1.0,
+        "titleObservedAlignmentEvaluatedCards": 1,
+        "correctNone": null
+      }
+    },
+    {
+      "cards": 3,
+      "baselineEndToEndMs": 5189.972124993801,
+      "profileEndToEndMs": 5258.102707914077,
+      "profileMinusBaselineMs": 68.13058292027563,
+      "nativeGenerationPartition": {
+        "setupBeforeFirstProgressMs": 62.40062497090548,
+        "suffixPrefillMs": 575.5607500905171,
+        "lastPromptTokenAndLookaheadMs": 78.67504190653563,
+        "afterPromptProgressMs": 2615.8489580266178
+      },
+      "lastTextToNativeCompletionMs": 39.578791009262204,
+      "nativePartitionReconciles": true,
+      "stagesReconcile": true,
+      "exactRawTokens": true,
+      "textTokensExcludingEOS": 65,
+      "sampledStepsIncludingEOS": 66,
+      "quality": {
+        "rejections": [],
+        "allFieldsFulfilled": true,
+        "newTitleCount": 3,
+        "generatedBadgeCount": 3,
+        "generatedHeadingCount": 1,
+        "titleObservedAlignmentRate": 1.0,
+        "titleObservedAlignmentEvaluatedCards": 3,
+        "correctNone": null
+      }
+    },
+    {
+      "cards": 6,
+      "baselineEndToEndMs": 8190.476999967359,
+      "profileEndToEndMs": 8667.489791987464,
+      "profileMinusBaselineMs": 477.0127920201048,
+      "nativeGenerationPartition": {
+        "setupBeforeFirstProgressMs": 31.84175002388656,
+        "suffixPrefillMs": 847.5919580087066,
+        "lastPromptTokenAndLookaheadMs": 80.22445801179856,
+        "afterPromptProgressMs": 5774.172334000468
+      },
+      "lastTextToNativeCompletionMs": 44.65795902069658,
+      "nativePartitionReconciles": true,
+      "stagesReconcile": true,
+      "exactRawTokens": true,
+      "textTokensExcludingEOS": 139,
+      "sampledStepsIncludingEOS": 140,
+      "quality": {
+        "rejections": [
+          "S1:unsupported-or-missing-heading",
+          "S2:unsupported-or-missing-heading"
+        ],
+        "allFieldsFulfilled": false,
+        "newTitleCount": 6,
+        "generatedBadgeCount": 4,
+        "generatedHeadingCount": 0,
+        "titleObservedAlignmentRate": 1.0,
+        "titleObservedAlignmentEvaluatedCards": 4,
+        "correctNone": true
+      }
+    }
+  ],
+  "completedArms": 6,
+  "pairChecksPassed": true,
+  "notes": [
+    "Setup before first native progress callback is additive; final EOS tail is nested in post-prompt time.",
+    "Baseline constructs evidence_capsule and additional metadata omitted in profile; totals are not pure observer overhead.",
+    "One pair per inspected case; no statistically established new latency improvement.",
+    "Profile source intentionally remains identical to executed SHA. Failure-path partial-event and cleanup robustness limitations are disclosed in report."
+  ]
+}

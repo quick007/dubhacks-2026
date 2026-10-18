@@ -1,0 +1,398 @@
+{
+  "version": "catalog-public-counterfactual-v1",
+  "status": "frozen-data-only; no feature extraction or fitting",
+  "teacher": {
+    "product": "unique maximum unweighted overlap of public stated positive tags and public product tags; all candidates eligible",
+    "presentation": "3 for requested exact compatible presentationStyle, 1 for other compatible style; both styles valid",
+    "usesPrivateTruth": false,
+    "usesOldRelevanceOrImageLabels": false,
+    "idTieBreaking": false
+  },
+  "sourceCatalogSha256": "4780ccaafd6be8398b39e95222dfd23ef17f6c51892ae9397982458a0644419d",
+  "catalogUnchanged": true,
+  "sourcePublicHashes": {
+    "train": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+    "validation": "2d2f2c82bbc19baeea95b6e7d476afa4265148a2a22e29f4fa6af2edd215c780",
+    "test": "f4af5b9f19737857741b51876e1f447c680cba3ba6b983697f5c975a4ec1ecfb"
+  },
+  "generatorSha256": "bf8baf40da87a8fa758a9bd9f9020ebe729cf652d291a7cfe5e43b8774478ed6",
+  "files": {
+    "catalog.json": "4780ccaafd6be8398b39e95222dfd23ef17f6c51892ae9397982458a0644419d",
+    "paired-controls.json": "aac0d43b99091888a4de7a381618da51afd7aa71a4b9e2e50acaa53900353868",
+    "public/train.jsonl": "20399e755e9d35c1122a1f85c99bf7907f6e6c694615b6d27eadb6588d477747",
+    "public/validation.jsonl": "3a2e1f5680c0c0a62cb483d9a5182a6c6f8c197b338fc99802592acf63391fc1",
+    "public/test.jsonl": "e6e0a35415fee289c72e8d1eb82f600fa90cb8a8562a976169614b88880c43cc",
+    "labels/train.jsonl": "aeb374605e6930bc9ca26a22133397a780ea63133346f47603fc700448e68cd2",
+    "labels/validation.jsonl": "cc6bc9969b0c9a8955e4a0ad86edb73aa6301abdade2ccc5110a4462e6813552",
+    "labels/test.jsonl": "e02bc83d17d79db8c34c5ab9cabc17d5f7172698a629d80264a8af4e8302a653"
+  },
+  "splits": {
+    "train": {
+      "requests": 28,
+      "pairFamilies": 7,
+      "productPairs": 14,
+      "imagePairs": 14,
+      "candidateProductsUsed": 21,
+      "allowedOldSplitProducts": 48,
+      "bestPositionCounts": {
+        "0": 8,
+        "1": 6,
+        "3": 8,
+        "2": 6
+      }
+    },
+    "validation": {
+      "requests": 8,
+      "pairFamilies": 2,
+      "productPairs": 4,
+      "imagePairs": 4,
+      "candidateProductsUsed": 5,
+      "allowedOldSplitProducts": 12,
+      "bestPositionCounts": {
+        "0": 4,
+        "1": 2,
+        "3": 2
+      }
+    },
+    "test": {
+      "requests": 12,
+      "pairFamilies": 3,
+      "productPairs": 6,
+      "imagePairs": 6,
+      "candidateProductsUsed": 10,
+      "allowedOldSplitProducts": 24,
+      "bestPositionCounts": {
+        "0": 4,
+        "1": 2,
+        "3": 4,
+        "2": 2
+      }
+    }
+  },
+  "positiveTrainingAtomQueryCounts": {
+    "compact": 4,
+    "durable": 4,
+    "laptop-sleeve": 4,
+    "lightweight": 4,
+    "organizer": 4,
+    "roomy": 4,
+    "water-resistant": 4
+  },
+  "preferenceStyleSignatures": {
+    "train": [
+      [
+        [
+          "compact"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "compact"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "durable"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "durable"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "laptop-sleeve"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "laptop-sleeve"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "lightweight"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "lightweight"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "organizer"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "organizer"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "roomy"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "roomy"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "water-resistant"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "water-resistant"
+        ],
+        [
+          "in-use-view"
+        ]
+      ]
+    ],
+    "validation": [
+      [
+        [
+          "compact",
+          "lightweight"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "compact",
+          "lightweight"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "durable",
+          "roomy"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "durable",
+          "roomy"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "laptop-sleeve",
+          "organizer"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "laptop-sleeve",
+          "organizer"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "roomy",
+          "water-resistant"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "roomy",
+          "water-resistant"
+        ],
+        [
+          "in-use-view"
+        ]
+      ]
+    ],
+    "test": [
+      [
+        [
+          "compact",
+          "durable"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "compact",
+          "durable"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "compact",
+          "water-resistant"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "compact",
+          "water-resistant"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "durable",
+          "organizer"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "durable",
+          "organizer"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "laptop-sleeve",
+          "roomy"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "laptop-sleeve",
+          "roomy"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "lightweight",
+          "roomy"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "lightweight",
+          "roomy"
+        ],
+        [
+          "in-use-view"
+        ]
+      ],
+      [
+        [
+          "organizer",
+          "water-resistant"
+        ],
+        [
+          "detail-view"
+        ]
+      ],
+      [
+        [
+          "organizer",
+          "water-resistant"
+        ],
+        [
+          "in-use-view"
+        ]
+      ]
+    ]
+  },
+  "newQuerySignatureOccurrencesAlsoInOldPublic": {
+    "train": 0,
+    "validation": 5,
+    "test": 7
+  },
+  "crossSplitProductMembershipDisjoint": true,
+  "crossSplitFamilyMembershipDisjoint": true,
+  "crossSplitPreferenceStyleSignaturesDisjoint": true,
+  "nativeQueryForwardsRequired": 48,
+  "nativeCatalogForwardsRequired": 0,
+  "reviewRequiredBeforeFit": true,
+  "limitations": [
+    "Public-fact teacher task, not latent preference or human utility ground truth.",
+    "Uses old train/validation/test catalog partitions; old test outcomes already inspected/replayed.",
+    "Fresh request/family holdouts are not an untouched catalog test or a sealed independent evaluation.",
+    "All old catalog bytes must pass provenance/key/checksum verification before vector reuse."
+  ]
+}

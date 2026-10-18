@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-17T22:36:32.038944+00:00",
+  "classification": "Repository experimental allocator guard; not an observed OS hard constraint or demonstrated user-imposed cap",
+  "originCommit": "14543740d8559c5f63d759009dc5f64bb6dce4cd",
+  "originCommitSubject": "Add pinned Qwen3.5 decision-head workflow and native MLX checks",
+  "codeSources": [
+    "experiments/ranker/pretrained/backbone.py:10 memory_gib=6",
+    "experiments/ranker/pretrained/backbone.py:30 mx.set_memory_limit",
+    "experiments/ranker/pretrained/cli.py --memory-gib default6",
+    "experiments/ranker/pretrained/README.md:46 process allocator budget, not OS hard guarantee"
+  ],
+  "originalEnforcement": "Active allocation at checkpoints; available-memory guard6GiB before loading,512MiB during work;128MiB allocator cache",
+  "peakGateIntroducedByCommit": "8ea8057dfc4da3a702f69225b45cb55f63b7112b",
+  "userAndEnvironmentEvidence": "Visible AGENTS/environment instructions define no separate six-GiB machine quota. Parent states substantial local work on24GB machine is authorized and has no user-imposed6GiB record. Commit authorship does not establish who chose the guard.",
+  "currentExperimentPolicy": "Keep six-GiB setting unchanged for matched256-prefill controls; preserve every prior excursion. Any future guard change must be explicit and separately labeled, with current machine pressure reported.",
+  "machineSnapshotBeforeV3": {
+    "recordedAtUtc": "2026-10-17T22:33:14.491227+00:00",
+    "virtualMemory": {
+      "total": 25769803776,
+      "available": 10621747200,
+      "percent": 58.8,
+      "used": 7700873216,
+      "free": 3339976704,
+      "active": 4081876992,
+      "inactive": 6994067456,
+      "wired": 3618996224
+    },
+    "swapMemory": {
+      "total": 6442450944,
+      "used": 4876140544,
+      "free": 1566310400,
+      "percent": 75.7,
+      "sin": 4076655984640,
+      "sout": 2911354880
+    },
+    "physicalMemory": {
+      "exitCode": 0,
+      "stdout": "25769803776",
+      "stderr": ""
+    },
+    "pressure": {
+      "exitCode": 0,
+      "stdout": "1",
+      "stderr": ""
+    },
+    "swap": {
+      "exitCode": 0,
+      "stdout": "vm.swapusage: total = 6144.00M  used = 4650.25M  free = 1493.75M  (encrypted)",
+      "stderr": ""
+    }
+  },
+  "caveats": [
+    "Available RAM is time-varying; macOS reclaimable/cache accounting differs from completely free pages.",
+    "Existing swap usage is not itself current memory pressure; report pressure and available bytes together.",
+    "Process RSS and MLX allocations overlap and must not be added. Allocator limits detect/encourage bounds rather than guarantee a hard ceiling."
+  ],
+  "explicitScaleSupplement": {
+    "guardBytes": 7516192768,
+    "automaticWithinRunIncrease": false,
+    "selection": "Both fixed3/6-card scale cases; own2-case denominator; separate outputs preserve failed12-case6GiB run",
+    "preflightAvailableBytes": 10977345536,
+    "observedPeakBytes": 6940200480,
+    "report": "PARALLEL_SEMANTIC_SCALE_7G_RESULTS.json",
+    "rationale": "No separate user/environment6GiB quota found; parent authorizes substantial local work; explicit change announced after24GiBmachine returned to11.10GBavailable/pressure1."
+  },
+  "finalSystemMemorySnapshot": {
+    "recordedAtUtc": "2026-10-17T22:48:45.561118+00:00",
+    "virtualMemory": {
+      "total": 25769803776,
+      "available": 11460149248,
+      "percent": 55.5,
+      "used": 8092024832,
+      "free": 5696946176,
+      "active": 4591714304,
+      "inactive": 5735825408,
+      "wired": 3500310528
+    },
+    "swapMemory": {
+      "total": 7516192768,
+      "used": 6210453504,
+      "free": 1305739264,
+      "percent": 82.6,
+      "sin": 4118884286464,
+      "sout": 2975498240
+    },
+    "pressureIndicator": "1"
+  }
+}

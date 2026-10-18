@@ -1,0 +1,1618 @@
+{
+  "status": "completed",
+  "representation": "catalog-user-fusion-v1",
+  "execution": {
+    "atUtc": "2026-10-18T00:12:39.374923+00:00",
+    "commit": "e9fb4afc11e489220c747f5f7d03f9d10754a3b6",
+    "relevantSourceStatus": [],
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "torch": "2.14.1",
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2",
+      "tokenizers": "0.23.3",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2"
+    },
+    "argv": [
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py",
+      "--out",
+      "data/ranker/pretrained/catalog-user-fusion-v1-attempt-1"
+    ],
+    "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+  },
+  "evidenceSource": "native-frozen-qwen",
+  "generatesCopy": false,
+  "config": {
+    "representation": "catalog-user-fusion-v1",
+    "evidenceSource": "native-frozen-qwen",
+    "execution": {
+      "atUtc": "2026-10-18T00:12:39.374923+00:00",
+      "commit": "e9fb4afc11e489220c747f5f7d03f9d10754a3b6",
+      "relevantSourceStatus": [],
+      "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+      "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "packages": {
+        "torch": "2.14.1",
+        "mlx": "0.32.4",
+        "mlx-lm": "0.32.2",
+        "tokenizers": "0.23.3",
+        "numpy": "2.5.4",
+        "psutil": "7.2.2"
+      },
+      "argv": [
+        "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py",
+        "--out",
+        "data/ranker/pretrained/catalog-user-fusion-v1-attempt-1"
+      ],
+      "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+    },
+    "fit": {
+      "seed": 728,
+      "rank": 4,
+      "dimension": 4096,
+      "epochs": 80,
+      "learningRate": 0.03,
+      "weightDecay": 0.001,
+      "cpuThreads": 1,
+      "maxSecondsPerArm": 60,
+      "selection": "fixed attempt; no validation/test outcome selection"
+    },
+    "limits": {
+      "memoryGiB": 6,
+      "maxTokens": 512,
+      "pilotSeconds": 120,
+      "trainingExtractionSeconds": 600,
+      "totalExtractionWorkSeconds": 900
+    },
+    "inputHashes": {
+      "catalog.json": "4780ccaafd6be8398b39e95222dfd23ef17f6c51892ae9397982458a0644419d",
+      "public/train.jsonl": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+      "public/validation.jsonl": "2d2f2c82bbc19baeea95b6e7d476afa4265148a2a22e29f4fa6af2edd215c780",
+      "public/test.jsonl": "f4af5b9f19737857741b51876e1f447c680cba3ba6b983697f5c975a4ec1ecfb",
+      "public/diagnostics.jsonl": "b116f59db6589e6f6642fce4812b73749b26e84c23628cd81f5b52edc06c3f30"
+    },
+    "trainHashes": {
+      "public/train.jsonl": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+      "labels/train.jsonl": "63401d6e306e9f5fa3b14588f758979ff5f5d99be6354826e61432603751a726"
+    },
+    "sourceHashes": {
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/__init__.py": "9ddde600627078efed2fdd0c808d9d94b5a43294864c9799457bd7614f552d81",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/evaluate.py": "7fca20ccddafa4780a42df489e7226bc81abc11d55bdc2e8cf65b5403b52c3b5",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/fit_runner.py": "3e5312b85112f45350a5892e4f29b04337c32cce59787a469f7469059da44f55",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py": "79b87e6a55f621be111489a1200bebf025f2f4de315168d97d49bdfb37e0aca3",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runtime.py": "3a78696a20c347cb4273d0705485a07e3a364b8ab9ecab1281cce43a9a945fa1",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/scorer.py": "6f05a92f2054e079a2b1a8a27ef958bdea2ac14ec180c0fda9d1aecfbc3c6fbb",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_catalog_fusion.py": "6f04e348a7d7eb25c4c1a96ff43e0a8e0f1a3a368e5acb9473cbc81bd2961a1d",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_preflight.py": "c6147eeb18b326547fc6d9244fbd5f98e15045e7697d8680bff39b0e90eab195",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_runner.py": "1875213c30c92030f018482fb7af1700702f2d6b3c29c75491d0b5f70185c9f0",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/training.py": "e3e3a910cb6c019257f58834348019012ea046c803390a145572ea28b6124cd7",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/boundary.py": "a36c54e1b682cb6940e51b9544b6a3d83e236e2dc9bebd04a805cd5040a23a1e"
+    },
+    "generatesCopy": false,
+    "freshQueryRequired": true,
+    "featureRepresentationDiffersFromJointReadouts": true
+  },
+  "fits": {
+    "fusion": {
+      "arm": "fusion",
+      "config": {
+        "seed": 728,
+        "rank": 4,
+        "dimension": 4096,
+        "epochs": 80,
+        "learningRate": 0.03,
+        "weightDecay": 0.001,
+        "cpuThreads": 1,
+        "maxSecondsPerArm": 60,
+        "selection": "fixed attempt; no validation/test outcome selection"
+      },
+      "trained": true,
+      "architectureParameters": 32786,
+      "trainableParameters": 32786,
+      "requests": 24,
+      "lossBefore": 2.079669952392578,
+      "lossAfter": 0.02612372860312462,
+      "firstGradientL2": {
+        "U": 0.0002750410058069974,
+        "V": 0.007165531162172556,
+        "prior": 0.0031234214548021555,
+        "interaction": 0.00010245676821796224,
+        "bias": 5.890201215663637e-09
+      },
+      "parameterAbsoluteChange": {
+        "U": 5382.95263671875,
+        "V": 11790.5400390625,
+        "prior": 10.728475570678711,
+        "interaction": 12.24899673461914,
+        "bias": 0.45652827620506287
+      },
+      "predictionAbsoluteChange": 1198.9622421264648,
+      "seconds": 0.44231116701848805,
+      "checkpoint": "fusion.pt",
+      "sha256": "3f699f6d837390e9dcfc6078ef63ec71a24a209024e38f76a2990b04893fde93",
+      "exactTrainingPredictionReload": true
+    },
+    "prior": {
+      "arm": "prior",
+      "config": {
+        "seed": 728,
+        "rank": 4,
+        "dimension": 4096,
+        "epochs": 80,
+        "learningRate": 0.03,
+        "weightDecay": 0.001,
+        "cpuThreads": 1,
+        "maxSecondsPerArm": 60,
+        "selection": "fixed attempt; no validation/test outcome selection"
+      },
+      "trained": true,
+      "architectureParameters": 32786,
+      "trainableParameters": 16394,
+      "requests": 24,
+      "lossBefore": 2.079660654067993,
+      "lossAfter": 0.11449120938777924,
+      "firstGradientL2": {
+        "V": 0.007279295939952135,
+        "prior": 0.003123044967651367,
+        "bias": 1.343172506551582e-08
+      },
+      "parameterAbsoluteChange": {
+        "U": 0.0,
+        "V": 14276.044921875,
+        "prior": 16.371074676513672,
+        "interaction": 0.0,
+        "bias": 0.3714059591293335
+      },
+      "predictionAbsoluteChange": 940.6670150756836,
+      "seconds": 0.44186216592788696,
+      "checkpoint": "prior.pt",
+      "sha256": "7807a79575e687c8f3d44f9d6af5c0191faf6fb73c322d871706353eb5389dd1",
+      "exactTrainingPredictionReload": true
+    }
+  },
+  "phases": {
+    "train": {
+      "forwards": 120,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4809720344,
+        "mlxCacheBytes": 132878216,
+        "processBudgetBytes": 6442450944
+      },
+      "modelLoadSeconds": 2.58211154199671,
+      "phaseWallSeconds": 32.94215024996083
+    },
+    "validation": {
+      "forwards": 30,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4809720344,
+        "mlxCacheBytes": 134652604,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "test": {
+      "forwards": 60,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4809720344,
+        "mlxCacheBytes": 133728132,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "diagnostics": {
+      "forwards": 6,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4809720344,
+        "mlxCacheBytes": 134708844,
+        "processBudgetBytes": 6442450944
+      }
+    },
+    "heldoutLifecycle": {
+      "modelLoadSeconds": 1.5514029170153663,
+      "phaseWallSeconds": 25.86674333398696,
+      "memory": {
+        "mlxActiveBytes": 4465912330,
+        "mlxPeakBytes": 4809720344,
+        "mlxCacheBytes": 134708844,
+        "processBudgetBytes": 6442450944
+      }
+    }
+  },
+  "nativeForwards": 216,
+  "evaluationTargets": {
+    "validation": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/datasets/v2/labels/validation.jsonl",
+      "sha256": "49f253bd71febb224b099f8ab2523512321461b322fd44a4d5da903ae29957d9",
+      "checkpointFreezeVerified": true,
+      "fields": [
+        "recordId",
+        "bestProductId",
+        "relevance",
+        "presentationScores",
+        "diagnosticPairId"
+      ]
+    },
+    "test": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/datasets/v2/private/truth.jsonl",
+      "sha256": "c26c516b1ed2d7ee984e379bee081be2c03a6cb926170efeb5e7b2527504cfa7",
+      "checkpointFreezeVerified": true,
+      "fields": [
+        "recordId",
+        "bestProductId",
+        "relevance",
+        "presentationScores",
+        "diagnosticPairId"
+      ]
+    },
+    "diagnostics": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/datasets/v2/private/diagnostic-truth.jsonl",
+      "sha256": "25e04b373ff3aa5ffb241c50b6969bf93bb1b89365e69fc9e3e0bca6843adca3",
+      "checkpointFreezeVerified": true,
+      "fields": [
+        "recordId",
+        "bestProductId",
+        "relevance",
+        "presentationScores",
+        "diagnosticPairId"
+      ]
+    }
+  },
+  "quality": {
+    "train": {
+      "random": {
+        "requests": 24,
+        "objectiveLossNoUpdate": 2.079669952392578,
+        "raw": {
+          "bestProductAccuracy": 0.08333333333333333,
+          "ndcgAt3": 0.5029448814441924,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 10,
+            "utilitySum": 46,
+            "regretSum": 22,
+            "incompatible": 2,
+            "informativeAccuracy": 0.5555555555555556,
+            "meanUtility": 1.9166666666666667,
+            "meanRegret": 0.9166666666666666
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 13,
+            "informativeCorrect": 9,
+            "utilitySum": 35,
+            "regretSum": 11,
+            "incompatible": 1,
+            "informativeAccuracy": 0.6923076923076923,
+            "meanUtility": 1.4583333333333333,
+            "meanRegret": 0.4583333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 33,
+            "utilitySum": 143,
+            "regretSum": 55,
+            "incompatible": 5,
+            "informativeAccuracy": 0.6111111111111112,
+            "meanUtility": 1.4895833333333333,
+            "meanRegret": 0.5729166666666666
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.125,
+          "ndcgAt3": 0.6773165869180326,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 10,
+            "utilitySum": 52,
+            "regretSum": 16,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5555555555555556,
+            "meanUtility": 2.1666666666666665,
+            "meanRegret": 0.6666666666666666
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 12,
+            "utilitySum": 51,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.75,
+            "meanUtility": 2.125,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 33,
+            "utilitySum": 156,
+            "regretSum": 42,
+            "incompatible": 0,
+            "informativeAccuracy": 0.6111111111111112,
+            "meanUtility": 1.625,
+            "meanRegret": 0.4375
+          }
+        },
+        "rawTopTies": 0
+      },
+      "prior": {
+        "requests": 24,
+        "objectiveLossNoUpdate": 0.11449120938777924,
+        "raw": {
+          "bestProductAccuracy": 1.0,
+          "ndcgAt3": 0.9387747985591876,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 66,
+            "regretSum": 2,
+            "incompatible": 2,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.75,
+            "meanRegret": 0.08333333333333333
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 66,
+            "regretSum": 2,
+            "incompatible": 2,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.75,
+            "meanRegret": 0.08333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 54,
+            "utilitySum": 192,
+            "regretSum": 6,
+            "incompatible": 9,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.0,
+            "meanRegret": 0.0625
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 1.0,
+          "ndcgAt3": 0.9708141684786807,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 68,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.8333333333333335,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 68,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.8333333333333335,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 54,
+            "utilitySum": 198,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.0625,
+            "meanRegret": 0.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "fusion": {
+        "requests": 24,
+        "objectiveLossNoUpdate": 0.02612372860312462,
+        "raw": {
+          "bestProductAccuracy": 1.0,
+          "ndcgAt3": 0.9387747985591876,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 64,
+            "regretSum": 4,
+            "incompatible": 2,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.6666666666666665,
+            "meanRegret": 0.16666666666666666
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 64,
+            "regretSum": 4,
+            "incompatible": 2,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.6666666666666665,
+            "meanRegret": 0.16666666666666666
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 54,
+            "utilitySum": 190,
+            "regretSum": 8,
+            "incompatible": 8,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 1.9791666666666667,
+            "meanRegret": 0.08333333333333333
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 1.0,
+          "ndcgAt3": 0.9708141684786807,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 68,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.8333333333333335,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 18,
+            "utilitySum": 68,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.8333333333333335,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 54,
+            "utilitySum": 198,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.0625,
+            "meanRegret": 0.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "permuted-query": {
+        "requests": 24,
+        "objectiveLossNoUpdate": 0.5692854523658752,
+        "raw": {
+          "bestProductAccuracy": 1.0,
+          "ndcgAt3": 0.9387747985591876,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 12,
+            "incompatible": 2,
+            "informativeAccuracy": 0.7777777777777778,
+            "meanUtility": 2.3333333333333335,
+            "meanRegret": 0.5
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 14,
+            "utilitySum": 56,
+            "regretSum": 12,
+            "incompatible": 2,
+            "informativeAccuracy": 0.7777777777777778,
+            "meanUtility": 2.3333333333333335,
+            "meanRegret": 0.5
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 39,
+            "utilitySum": 151,
+            "regretSum": 47,
+            "incompatible": 10,
+            "informativeAccuracy": 0.7222222222222222,
+            "meanUtility": 1.5729166666666667,
+            "meanRegret": 0.4895833333333333
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 1.0,
+          "ndcgAt3": 0.9708141684786807,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 14,
+            "utilitySum": 60,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.7777777777777778,
+            "meanUtility": 2.5,
+            "meanRegret": 0.3333333333333333
+          },
+          "selectedPresentation": {
+            "available": 24,
+            "informative": 18,
+            "informativeCorrect": 14,
+            "utilitySum": 60,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.7777777777777778,
+            "meanUtility": 2.5,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 96,
+            "informative": 54,
+            "informativeCorrect": 39,
+            "utilitySum": 168,
+            "regretSum": 30,
+            "incompatible": 0,
+            "informativeAccuracy": 0.7222222222222222,
+            "meanUtility": 1.75,
+            "meanRegret": 0.3125
+          }
+        },
+        "rawTopTies": 0
+      }
+    },
+    "validation": {
+      "random": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 2.0781021118164062,
+        "raw": {
+          "bestProductAccuracy": 0.6666666666666666,
+          "ndcgAt3": 0.7701963082107035,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 4,
+            "utilitySum": 14,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.8,
+            "meanUtility": 2.3333333333333335,
+            "meanRegret": 0.3333333333333333
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 3,
+            "informativeCorrect": 2,
+            "utilitySum": 8,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.6666666666666666,
+            "meanUtility": 1.3333333333333333,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 12,
+            "utilitySum": 42,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.75,
+            "meanUtility": 1.75,
+            "meanRegret": 0.3333333333333333
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.8333333333333334,
+          "ndcgAt3": 0.8804516907408404,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 4,
+            "utilitySum": 14,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.8,
+            "meanUtility": 2.3333333333333335,
+            "meanRegret": 0.3333333333333333
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 4,
+            "informativeCorrect": 3,
+            "utilitySum": 11,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.75,
+            "meanUtility": 1.8333333333333333,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 12,
+            "utilitySum": 42,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.75,
+            "meanUtility": 1.75,
+            "meanRegret": 0.3333333333333333
+          }
+        },
+        "rawTopTies": 0
+      },
+      "prior": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 5.621004104614258,
+        "raw": {
+          "bestProductAccuracy": 0.0,
+          "ndcgAt3": 0.461738078860969,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 2,
+            "utilitySum": 10,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4,
+            "meanUtility": 1.6666666666666667,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 4,
+            "informativeCorrect": 2,
+            "utilitySum": 8,
+            "regretSum": 4,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 1.3333333333333333,
+            "meanRegret": 0.6666666666666666
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 8,
+            "utilitySum": 34,
+            "regretSum": 16,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 1.4166666666666667,
+            "meanRegret": 0.6666666666666666
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.5796232490393287,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 2,
+            "utilitySum": 10,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4,
+            "meanUtility": 1.6666666666666667,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 4,
+            "informativeCorrect": 2,
+            "utilitySum": 9,
+            "regretSum": 4,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 1.5,
+            "meanRegret": 0.6666666666666666
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 8,
+            "utilitySum": 34,
+            "regretSum": 16,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 1.4166666666666667,
+            "meanRegret": 0.6666666666666666
+          }
+        },
+        "rawTopTies": 0
+      },
+      "fusion": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 6.890700340270996,
+        "raw": {
+          "bestProductAccuracy": 0.0,
+          "ndcgAt3": 0.461738078860969,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 2,
+            "utilitySum": 10,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4,
+            "meanUtility": 1.6666666666666667,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 4,
+            "informativeCorrect": 3,
+            "utilitySum": 10,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.75,
+            "meanUtility": 1.6666666666666667,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 8,
+            "utilitySum": 34,
+            "regretSum": 16,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 1.4166666666666667,
+            "meanRegret": 0.6666666666666666
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.5796232490393287,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 2,
+            "utilitySum": 10,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.4,
+            "meanUtility": 1.6666666666666667,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 4,
+            "informativeCorrect": 3,
+            "utilitySum": 11,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.75,
+            "meanUtility": 1.8333333333333333,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 8,
+            "utilitySum": 34,
+            "regretSum": 16,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 1.4166666666666667,
+            "meanRegret": 0.6666666666666666
+          }
+        },
+        "rawTopTies": 0
+      },
+      "permuted-query": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 5.790685176849365,
+        "raw": {
+          "bestProductAccuracy": 0.0,
+          "ndcgAt3": 0.461738078860969,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 5,
+            "utilitySum": 16,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.6666666666666665,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 4,
+            "informativeCorrect": 4,
+            "utilitySum": 12,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.0,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 15,
+            "utilitySum": 48,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.9375,
+            "meanUtility": 2.0,
+            "meanRegret": 0.08333333333333333
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.5796232490393287,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 5,
+            "informativeCorrect": 5,
+            "utilitySum": 16,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.6666666666666665,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 4,
+            "informativeCorrect": 4,
+            "utilitySum": 13,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.1666666666666665,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 16,
+            "informativeCorrect": 15,
+            "utilitySum": 48,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.9375,
+            "meanUtility": 2.0,
+            "meanRegret": 0.08333333333333333
+          }
+        },
+        "rawTopTies": 0
+      }
+    },
+    "test": {
+      "random": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 2.0790367126464844,
+        "raw": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.8901601545741525,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 1,
+            "utilitySum": 13,
+            "regretSum": 15,
+            "incompatible": 1,
+            "informativeAccuracy": 0.125,
+            "meanUtility": 1.0833333333333333,
+            "meanRegret": 1.25
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 1,
+            "utilitySum": 13,
+            "regretSum": 15,
+            "incompatible": 1,
+            "informativeAccuracy": 0.125,
+            "meanUtility": 1.0833333333333333,
+            "meanRegret": 1.25
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 1,
+            "utilitySum": 31,
+            "regretSum": 45,
+            "incompatible": 2,
+            "informativeAccuracy": 0.043478260869565216,
+            "meanUtility": 0.6458333333333334,
+            "meanRegret": 0.9375
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.5,
+          "ndcgAt3": 0.9060019035998031,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 1,
+            "utilitySum": 14,
+            "regretSum": 14,
+            "incompatible": 0,
+            "informativeAccuracy": 0.125,
+            "meanUtility": 1.1666666666666667,
+            "meanRegret": 1.1666666666666667
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 1,
+            "utilitySum": 14,
+            "regretSum": 14,
+            "incompatible": 0,
+            "informativeAccuracy": 0.125,
+            "meanUtility": 1.1666666666666667,
+            "meanRegret": 1.1666666666666667
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 1,
+            "utilitySum": 32,
+            "regretSum": 44,
+            "incompatible": 0,
+            "informativeAccuracy": 0.043478260869565216,
+            "meanUtility": 0.6666666666666666,
+            "meanRegret": 0.9166666666666666
+          }
+        },
+        "rawTopTies": 0
+      },
+      "prior": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 5.90517520904541,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.550596213390543,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 2,
+            "utilitySum": 14,
+            "regretSum": 14,
+            "incompatible": 2,
+            "informativeAccuracy": 0.25,
+            "meanUtility": 1.1666666666666667,
+            "meanRegret": 1.1666666666666667
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 5,
+            "informativeCorrect": 0,
+            "utilitySum": 6,
+            "regretSum": 10,
+            "incompatible": 0,
+            "informativeAccuracy": 0.0,
+            "meanUtility": 0.5,
+            "meanRegret": 0.8333333333333334
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 4,
+            "utilitySum": 36,
+            "regretSum": 40,
+            "incompatible": 3,
+            "informativeAccuracy": 0.17391304347826086,
+            "meanUtility": 0.75,
+            "meanRegret": 0.8333333333333334
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.4166666666666667,
+          "ndcgAt3": 0.6933368255781359,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 2,
+            "utilitySum": 16,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.25,
+            "meanUtility": 1.3333333333333333,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 6,
+            "informativeCorrect": 1,
+            "utilitySum": 11,
+            "regretSum": 10,
+            "incompatible": 0,
+            "informativeAccuracy": 0.16666666666666666,
+            "meanUtility": 0.9166666666666666,
+            "meanRegret": 0.8333333333333334
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 4,
+            "utilitySum": 38,
+            "regretSum": 38,
+            "incompatible": 0,
+            "informativeAccuracy": 0.17391304347826086,
+            "meanUtility": 0.7916666666666666,
+            "meanRegret": 0.7916666666666666
+          }
+        },
+        "rawTopTies": 0
+      },
+      "fusion": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 6.44620418548584,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.5683403213483096,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 5,
+            "utilitySum": 19,
+            "regretSum": 9,
+            "incompatible": 3,
+            "informativeAccuracy": 0.625,
+            "meanUtility": 1.5833333333333333,
+            "meanRegret": 0.75
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 5,
+            "informativeCorrect": 2,
+            "utilitySum": 10,
+            "regretSum": 6,
+            "incompatible": 2,
+            "informativeAccuracy": 0.4,
+            "meanUtility": 0.8333333333333334,
+            "meanRegret": 0.5
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 12,
+            "utilitySum": 50,
+            "regretSum": 26,
+            "incompatible": 11,
+            "informativeAccuracy": 0.5217391304347826,
+            "meanUtility": 1.0416666666666667,
+            "meanRegret": 0.5416666666666666
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.4166666666666667,
+          "ndcgAt3": 0.7110809335359024,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 5,
+            "utilitySum": 22,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.625,
+            "meanUtility": 1.8333333333333333,
+            "meanRegret": 0.5
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 6,
+            "informativeCorrect": 3,
+            "utilitySum": 15,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 1.25,
+            "meanRegret": 0.5
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 12,
+            "utilitySum": 54,
+            "regretSum": 22,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5217391304347826,
+            "meanUtility": 1.125,
+            "meanRegret": 0.4583333333333333
+          }
+        },
+        "rawTopTies": 0
+      },
+      "permuted-query": {
+        "requests": 12,
+        "objectiveLossNoUpdate": 6.905515670776367,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.5683403213483096,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 5,
+            "utilitySum": 19,
+            "regretSum": 9,
+            "incompatible": 3,
+            "informativeAccuracy": 0.625,
+            "meanUtility": 1.5833333333333333,
+            "meanRegret": 0.75
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 5,
+            "informativeCorrect": 3,
+            "utilitySum": 12,
+            "regretSum": 4,
+            "incompatible": 3,
+            "informativeAccuracy": 0.6,
+            "meanUtility": 1.0,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 13,
+            "utilitySum": 52,
+            "regretSum": 24,
+            "incompatible": 12,
+            "informativeAccuracy": 0.5652173913043478,
+            "meanUtility": 1.0833333333333333,
+            "meanRegret": 0.5
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.4166666666666667,
+          "ndcgAt3": 0.7110809335359024,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 12,
+            "informative": 8,
+            "informativeCorrect": 5,
+            "utilitySum": 22,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.625,
+            "meanUtility": 1.8333333333333333,
+            "meanRegret": 0.5
+          },
+          "selectedPresentation": {
+            "available": 12,
+            "informative": 6,
+            "informativeCorrect": 4,
+            "utilitySum": 17,
+            "regretSum": 4,
+            "incompatible": 0,
+            "informativeAccuracy": 0.6666666666666666,
+            "meanUtility": 1.4166666666666667,
+            "meanRegret": 0.3333333333333333
+          },
+          "allCandidatePresentation": {
+            "available": 48,
+            "informative": 23,
+            "informativeCorrect": 13,
+            "utilitySum": 56,
+            "regretSum": 20,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5652173913043478,
+            "meanUtility": 1.1666666666666667,
+            "meanRegret": 0.4166666666666667
+          }
+        },
+        "rawTopTies": 0
+      }
+    },
+    "diagnostics": {
+      "random": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 2.0784912109375,
+        "raw": {
+          "bestProductAccuracy": 0.3333333333333333,
+          "ndcgAt3": 0.6442760953443886,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 5,
+            "utilitySum": 16,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.8333333333333334,
+            "meanUtility": 2.6666666666666665,
+            "meanRegret": 0.3333333333333333
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 4,
+            "utilitySum": 14,
+            "regretSum": 4,
+            "incompatible": 0,
+            "informativeAccuracy": 0.6666666666666666,
+            "meanUtility": 2.3333333333333335,
+            "meanRegret": 0.6666666666666666
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 18,
+            "utilitySum": 58,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.8181818181818182,
+            "meanUtility": 2.4166666666666665,
+            "meanRegret": 0.3333333333333333
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.3333333333333333,
+          "ndcgAt3": 0.7245454539044779,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 5,
+            "utilitySum": 16,
+            "regretSum": 2,
+            "incompatible": 0,
+            "informativeAccuracy": 0.8333333333333334,
+            "meanUtility": 2.6666666666666665,
+            "meanRegret": 0.3333333333333333
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 4,
+            "utilitySum": 14,
+            "regretSum": 4,
+            "incompatible": 0,
+            "informativeAccuracy": 0.6666666666666666,
+            "meanUtility": 2.3333333333333335,
+            "meanRegret": 0.6666666666666666
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 18,
+            "utilitySum": 58,
+            "regretSum": 8,
+            "incompatible": 0,
+            "informativeAccuracy": 0.8181818181818182,
+            "meanUtility": 2.4166666666666665,
+            "meanRegret": 0.3333333333333333
+          }
+        },
+        "rawTopTies": 0
+      },
+      "prior": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 4.338828086853027,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6320201962514126,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 3,
+            "utilitySum": 12,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 16,
+            "utilitySum": 54,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.7272727272727273,
+            "meanUtility": 2.25,
+            "meanRegret": 0.5
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.702996628082479,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 3,
+            "utilitySum": 12,
+            "regretSum": 6,
+            "incompatible": 0,
+            "informativeAccuracy": 0.5,
+            "meanUtility": 2.0,
+            "meanRegret": 1.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 16,
+            "utilitySum": 54,
+            "regretSum": 12,
+            "incompatible": 0,
+            "informativeAccuracy": 0.7272727272727273,
+            "meanUtility": 2.25,
+            "meanRegret": 0.5
+          }
+        },
+        "rawTopTies": 0
+      },
+      "fusion": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 4.545421600341797,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6320201962514126,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 22,
+            "utilitySum": 66,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.75,
+            "meanRegret": 0.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.702996628082479,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 22,
+            "utilitySum": 66,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.75,
+            "meanRegret": 0.0
+          }
+        },
+        "rawTopTies": 0
+      },
+      "permuted-query": {
+        "requests": 6,
+        "objectiveLossNoUpdate": 4.545420169830322,
+        "raw": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.6320201962514126,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 22,
+            "utilitySum": 66,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.75,
+            "meanRegret": 0.0
+          }
+        },
+        "guarded": {
+          "bestProductAccuracy": 0.16666666666666666,
+          "ndcgAt3": 0.702996628082479,
+          "abstain": 0.0,
+          "oraclePresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "selectedPresentation": {
+            "available": 6,
+            "informative": 6,
+            "informativeCorrect": 6,
+            "utilitySum": 18,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 3.0,
+            "meanRegret": 0.0
+          },
+          "allCandidatePresentation": {
+            "available": 24,
+            "informative": 22,
+            "informativeCorrect": 22,
+            "utilitySum": 66,
+            "regretSum": 0,
+            "incompatible": 0,
+            "informativeAccuracy": 1.0,
+            "meanUtility": 2.75,
+            "meanRegret": 0.0
+          }
+        },
+        "rawTopTies": 0
+      }
+    }
+  },
+  "cacheObservations": {
+    "train:cold": {
+      "requests": 12,
+      "meanObservedPipelineMs": 2326.6235625972818
+    },
+    "train:warm": {
+      "requests": 12,
+      "meanObservedPipelineMs": 202.62938880478032
+    },
+    "validation:cold": {
+      "requests": 3,
+      "meanObservedPipelineMs": 2363.5128610379375
+    },
+    "validation:warm": {
+      "requests": 3,
+      "meanObservedPipelineMs": 191.77227769978344
+    },
+    "test:cold": {
+      "requests": 6,
+      "meanObservedPipelineMs": 2374.9449374930314
+    },
+    "test:warm": {
+      "requests": 6,
+      "meanObservedPipelineMs": 209.34513199608773
+    },
+    "diagnostics:warm": {
+      "requests": 6,
+      "meanObservedPipelineMs": 178.92878465742493
+    }
+  },
+  "wallSecondsIncludingHashLoadFitEvaluation": 62.62342974997591,
+  "jointReference": {
+    "status": "not reencoded in this runner; keep existing corrected joint evidence separate",
+    "checkpoint": "data/ranker/pretrained/evidence-plan-v1/heads.pt"
+  },
+  "limitations": [
+    "Synthetic fixture, replay held-out outcomes; no human lift or untouched-test claim.",
+    "At most four candidates: assembly probes are not labeled twelve-/twenty-four-card quality.",
+    "No copy generation, no complete storefront claim; image features are text descriptors.",
+    "Catalog cold/mixed/warm traces may be different requests, not a matched speedup experiment.",
+    "Saved vector bytes are checked exactly; matched fresh-vs-cached native extraction parity is not measured.",
+    "Epoch caps are fixed; no fit retries or outcome-driven hyperparameter selection."
+  ]
+}

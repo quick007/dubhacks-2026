@@ -1,0 +1,49 @@
+{
+  "representation": "catalog-user-fusion-role-centered-v1",
+  "statisticsSha256": "fb00e986642aac467a60286d4ca1a6ceebaef9ac048587341be0810ce621bc53",
+  "config": {
+    "seed": 728,
+    "rank": 4,
+    "dimension": 4096,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "cpuThreads": 1,
+    "maxSecondsPerArm": 60,
+    "selection": "fixed attempt; no validation/test outcome selection"
+  },
+  "conditioning": {
+    "version": "catalog-user-fusion-role-centered-v1",
+    "epsilon": 1e-08,
+    "queryMeanMembership": "exact paired TRAIN query rows, each once",
+    "catalogMeanMembership": "unique paired TRAIN candidate variant members, each once",
+    "accumulation": "float64 mean cast to float32",
+    "inferenceDtype": "float32",
+    "transform": "(x - trainRoleMean) / max(l2(x - trainRoleMean), epsilon)",
+    "architecture": "unchanged rank4 tanh fusion, 32786 trainable parameters",
+    "selection": "one fixed conditioning ablation; no learning-rate search or held-out tuning"
+  },
+  "trainHashes": {
+    "public/train.jsonl": "20399e755e9d35c1122a1f85c99bf7907f6e6c694615b6d27eadb6588d477747",
+    "labels/train.jsonl": "aeb374605e6930bc9ca26a22133397a780ea63133346f47603fc700448e68cd2"
+  },
+  "checkpoints": {
+    "fusion": {
+      "file": "fusion.pt",
+      "sha256": "e292b8e1ae0498774f7e1eee8f2a765e42be0743df57dcc45d6afe480682c582",
+      "trained": true
+    },
+    "prior": {
+      "file": "prior.pt",
+      "sha256": "fbc76a714bf1ec5bdf0992de3bf6221ff758343450ce059be0fa8ac6580f4534",
+      "trained": true
+    },
+    "random": {
+      "file": "random.pt",
+      "sha256": "79b8eb94a4e10e3cc466378feb2a5ceba770753c81fd5f429284f43d1e3d5e7e",
+      "trained": false
+    }
+  },
+  "frozenAtUtc": "2026-10-18T00:38:10.623763+00:00",
+  "heldoutLabelsOpenedBeforeFreeze": false
+}

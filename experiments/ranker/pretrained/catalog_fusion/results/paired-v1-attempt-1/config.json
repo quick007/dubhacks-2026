@@ -1,0 +1,80 @@
+{
+  "representation": "catalog-user-fusion-v1",
+  "pairedTeacherVersion": "catalog-public-counterfactual-v1",
+  "reviewedDataFreezeSha256": "1e7238f090c21c83dc2715f5b402dc8b9c84cfe9b30e334d4efdae11fdbbed54",
+  "fit": {
+    "seed": 728,
+    "rank": 4,
+    "dimension": 4096,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "cpuThreads": 1,
+    "maxSecondsPerArm": 60,
+    "selection": "fixed attempt; no validation/test outcome selection"
+  },
+  "limits": {
+    "memoryGiB": 6,
+    "maxTokens": 512,
+    "pilotSeconds": 120,
+    "trainingExtractionSeconds": 600,
+    "totalExtractionWorkSeconds": 900
+  },
+  "execution": {
+    "atUtc": "2026-10-18T00:27:34.570987+00:00",
+    "commit": "fd8fcf86bcdc01b5b87d77de92494a4c381a6c11",
+    "relevantSourceStatus": [
+      " M experiments/ranker/pretrained/catalog_fusion/README.md",
+      "?? experiments/ranker/pretrained/catalog_fusion/paired_v1_preflight/"
+    ],
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "torch": "2.14.1",
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2",
+      "tokenizers": "0.23.3",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2"
+    },
+    "argv": [
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_runner.py",
+      "--out",
+      "data/ranker/pretrained/catalog-user-fusion-paired-v1-attempt-1",
+      "--reviewed-freeze-sha256",
+      "1e7238f090c21c83dc2715f5b402dc8b9c84cfe9b30e334d4efdae11fdbbed54"
+    ],
+    "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+  },
+  "sourceHashes": {
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/__init__.py": "9ddde600627078efed2fdd0c808d9d94b5a43294864c9799457bd7614f552d81",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/audit_run.py": "9de6ea9d27b5e5a7f95aedc49a3e7da282c4c1bdbed3205b7ff24ae92ed645ad",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/evaluate.py": "7fca20ccddafa4780a42df489e7226bc81abc11d55bdc2e8cf65b5403b52c3b5",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/fit_runner.py": "3e5312b85112f45350a5892e4f29b04337c32cce59787a469f7469059da44f55",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_contract.py": "347f99e00ce9364a02155b3b2c7fb7558d15a113dedc0d0ae1aba685b02647f4",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_data.py": "bf8baf40da87a8fa758a9bd9f9020ebe729cf652d291a7cfe5e43b8774478ed6",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/paired_runner.py": "99f7f6efdfad9a103f9cec2a341a18e473ba9ddffece730b22387d40329fe3ff",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/parity_probe.py": "96480d17c77eae536dcf38e8f6fe03cde444d370568c4498c87bf91188d82d29",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py": "79b87e6a55f621be111489a1200bebf025f2f4de315168d97d49bdfb37e0aca3",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/scorer.py": "6f05a92f2054e079a2b1a8a27ef958bdea2ac14ec180c0fda9d1aecfbc3c6fbb",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_catalog_fusion.py": "6f04e348a7d7eb25c4c1a96ff43e0a8e0f1a3a368e5acb9473cbc81bd2961a1d",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_paired.py": "d4529aa17ca8ade0a8443aebdadcc8989f3719dbf91a4913d3f840614170eda8",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_preflight.py": "c6147eeb18b326547fc6d9244fbd5f98e15045e7697d8680bff39b0e90eab195",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_runner.py": "02b997cfceb2d1869af5bc37e246fa37112e249c5addd5dfe80e78d5f22551b8",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/training.py": "e3e3a910cb6c019257f58834348019012ea046c803390a145572ea28b6124cd7",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/boundary.py": "a36c54e1b682cb6940e51b9544b6a3d83e236e2dc9bebd04a805cd5040a23a1e"
+  },
+  "trainHashes": {
+    "public/train.jsonl": "20399e755e9d35c1122a1f85c99bf7907f6e6c694615b6d27eadb6588d477747",
+    "labels/train.jsonl": "aeb374605e6930bc9ca26a22133397a780ea63133346f47603fc700448e68cd2"
+  },
+  "evidenceSource": "native-frozen-qwen",
+  "nativeCatalogForwardsAllowed": 0,
+  "nativeQueryForwardsAllowed": 48,
+  "generatesCopy": false
+}

@@ -17,7 +17,7 @@ from .boundary import decisions, input_rows
 from .backbone import ParallelHeads
 from .cli import heuristic, private_metrics
 from .fusion import (encode_shared_prefix, native_decode, observable_request,
-                     load_trained_heads, factual_lexicon, _field_claim_errors, _normalized, GENERIC_WORDS)
+                     load_trained_heads, factual_lexicon, _field_claim_errors, _normalized, GENERIC_WORDS, identity_errors)
 from .page_plan import make_page_plan, validate_page_plan, history_reasons, fact_id
 from .routing import RouteHead, ROUTES, teacher_route, summary
 
@@ -201,10 +201,12 @@ def validate_generated(raw,finish,plan,request,catalog):
         title=parsed.get(f'T{i}');badge=parsed.get(f'B{i}')
         approved={_normalized(v['title']) for v in product['presentationVariants']}|{_normalized(product['title'])}
         mention=lambda text:any(re.search(r'\b'+re.escape(_normalized(tag))+r'\b',_normalized(text or '')) for tag in support)
-        ok=accept(title,product) and _normalized(title) not in approved and (not support or mention(title))
+        identity=identity_errors(title or '',product,catalog)
+        ok=accept(title,product) and not identity and _normalized(title) not in approved and (not support or mention(title))
         card['title']={'text':title if ok else None,'source':'generated' if ok else 'rejected'}
         if support:alignment.append(bool(ok and mention(title)))
         if not ok:rejections.append(f'T{i}:unsupported-missing-nonnovel-or-unresponsive-title')
+        rejections.extend(f'T{i}:'+error for error in identity)
         if not support:
             badge_none_checks.append(badge=='NONE' and global_ok)
             card['badge']={'text':None,'source':'none'}

@@ -1,0 +1,4326 @@
+{
+  "schemaVersion": 1,
+  "status": "CPU-tokenizer-preflight-passed",
+  "modelCalls": 0,
+  "nativeExecution": false,
+  "layoutVersion": "first-section-card-branch-copy-v1",
+  "datasetManifestSha256": "84fb2ea0ebe091ba4a524a3f3545eb86fcd2acd75cefd8f7e03669a65f47ed04",
+  "dataSha256": {
+    "cases.train.jsonl": "4b1485b3a450e9ffa9d558ae7d009ce8acbbd253cd2a39376dda79641377c2ee",
+    "cases.dev.jsonl": "d0b47e81b3e826b71f2b68d13aab899eb6e0146918fa275f3861c35d35666145",
+    "cases.test.jsonl": "a5fbfdb025345ab5d036e57dcbfe471f2f834cbcdaa601ce2758c8c9b0d972d7",
+    "fields.train.jsonl": "08355b501069c7b084a1d3383e48d221c2def4d493979714a8573bfaa329a996",
+    "fields.dev.jsonl": "810424296ddc61ba495e3570c09f3479ebc5c0854759a32bca67b7607bac31b0",
+    "fields.test.jsonl": "05332b75c9b7cf9ba8167fd8645058eba38692b380d1a2f723f5ea32e02b5890",
+    "projected_pairs.jsonl": "9c4f852ca0295efb11e3d06933889be5e81d0e4f2cd77fe32c5ac1df89118311",
+    "AUDIT.json": "0c3cb6547824600260236ab0a426f43d99e08dd4e485ccc266560b2d545619fc"
+  },
+  "sources": {
+    "above_fold_copy/layout.py": "7f5f27b03bf6255dab9dc40917a1bf66e148872151817209eedc9db3fd54a43f",
+    "above_fold_copy/data.py": "9ed060785bf323d43e00ef99aa97fef119b60844af8e3a510989c8fc798aad28",
+    "above_fold_copy/benchmark.py": "90997b6e9138c47752b5553d90daf39c86f1ae668c4b8b0d15e0f1c29cf482ee",
+    "above_fold.py": "371a2c9d7f9977a172bcfe5e2877ba57fd490f3c4c1c75c5ca93cf01fb5a8595",
+    "ABOVE_FOLD_WORKLOAD.json": "901b3abaf832a92ca3f4bf46ec41685bc0bb23fb2b1e12ec6b9f4d1964afdb51",
+    "branch_local_copy.py": "2fdee8ee4c224163c1ea9adbbebea764aa112abe416df99558ef42b1a6b691ea",
+    "parallel_decode.py": "7c2049fa82c03f17a4ff6973ba1c0d80b329039782df973a1df22ab045dd338b",
+    "shared_evidence_experiment.py": "2f02403b87fe64658b28de947ee7d1b928f471398cd666b5dfc607742a4e59a3",
+    "scheduler_identity_experiment.py": "f9b993f82e14c0a874194db5dbed25c97e61c21f302ac57c1b66980967cd0f92",
+    "fusion.py": "217abdd3134fc1ee53cfa545c118c1596c05dde010bf0d47382124140c9948e6",
+    "evidence_plan.py": "01e3e96b8f230d7802da445c1e5c6da0503ac7fbef1efe529c93ef10b9c0ca1a",
+    "page_plan.py": "65e9579323ddecb7099bf2c6264e9108cc789e6cf870971aedaf251d28bd3fe2",
+    "semantic_copy_feature_fit.py": "f94f6dccb3ec228a7e018cc0069467c012a12a2ef58140d75a0540c4c3b88c87",
+    "semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "semantic_copy_tokens.py": "1da9b33f036b28b46ffb71ceb45f696c60f9dff0541511379c58e74a2d7835b1",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "boundary.py": "a36c54e1b682cb6940e51b9544b6a3d83e236e2dc9bebd04a805cd5040a23a1e"
+  },
+  "tokenizerSha256": {
+    "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+    "tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  },
+  "runtime": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.32.2"
+  },
+  "cases": [
+    {
+      "split": "dev",
+      "caseId": "copy-pair-fresh-313c2f0ff5511f99",
+      "request": {
+        "asOf": "2026-10-01T12:00:00Z",
+        "candidateProductIds": [
+          "pair-fresh-p-d0832cf7f2452508",
+          "pair-fresh-p-727eec23a2c6aef8",
+          "pair-fresh-p-da667959efc4c9c3",
+          "pair-fresh-p-a668d59b5549f595",
+          "pair-fresh-p-6d1ddb5a965b2114",
+          "pair-fresh-p-551bf8ca6efde679"
+        ],
+        "context": {
+          "presentationPreferences": [
+            "in-use-view"
+          ],
+          "presentationSurface": "compact-card",
+          "statedBudget": 200,
+          "statedPreferences": [
+            "adjustable",
+            "foldable"
+          ],
+          "statedRequirements": [],
+          "task": "Choose daypacks for everyday travel with adjustable and foldable details."
+        },
+        "history": [],
+        "presentationCompatibility": {
+          "pair-fresh-p-551bf8ca6efde679": {
+            "pair-fresh-v-30ce2684d8955da0": true,
+            "pair-fresh-v-e3c881ca48304a74": true
+          },
+          "pair-fresh-p-6d1ddb5a965b2114": {
+            "pair-fresh-v-01895657d1fb7c5d": true,
+            "pair-fresh-v-fa89f279a34a7b04": true
+          },
+          "pair-fresh-p-727eec23a2c6aef8": {
+            "pair-fresh-v-c1c78dbfd787a512": true,
+            "pair-fresh-v-f97a5a062b6de3b5": true
+          },
+          "pair-fresh-p-a668d59b5549f595": {
+            "pair-fresh-v-ccc264afeb4115b7": true,
+            "pair-fresh-v-ea0c4a4fa2b705c3": true
+          },
+          "pair-fresh-p-d0832cf7f2452508": {
+            "pair-fresh-v-4589e3c72a5752bb": true,
+            "pair-fresh-v-8b6f2e8d9ff4f884": true
+          },
+          "pair-fresh-p-da667959efc4c9c3": {
+            "pair-fresh-v-22de377687e8db4c": true,
+            "pair-fresh-v-e00ef8a2029526f7": true
+          }
+        },
+        "recordId": "copy-pair-fresh-313c2f0ff5511f99"
+      },
+      "catalog": {
+        "pair-fresh-p-551bf8ca6efde679": {
+          "category": "backpacks",
+          "description": "21-litre daypack; compressible, structured, ventilated.",
+          "id": "pair-fresh-p-551bf8ca6efde679",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "21L",
+                "compressible",
+                "structured",
+                "ventilated"
+              ],
+              "id": "pair-fresh-v-30ce2684d8955da0",
+              "imageDescription": "Text description of Walimar 21L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-30ce2684d8955da0",
+              "presentationStyle": "detail-view",
+              "title": "Walimar 21L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "21L",
+                "compressible",
+                "structured",
+                "ventilated"
+              ],
+              "id": "pair-fresh-v-e3c881ca48304a74",
+              "imageDescription": "Text description of Walimar 21L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-e3c881ca48304a74",
+              "presentationStyle": "in-use-view",
+              "title": "Walimar 21L Daypack \u2014 compressible"
+            }
+          ],
+          "price": 79,
+          "shippingCost": 5,
+          "tags": [
+            "compressible",
+            "structured",
+            "ventilated"
+          ],
+          "title": "Walimar 21L Daypack"
+        },
+        "pair-fresh-p-6d1ddb5a965b2114": {
+          "category": "backpacks",
+          "description": "14-litre daypack; organizer, roomy, structured.",
+          "id": "pair-fresh-p-6d1ddb5a965b2114",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "14L",
+                "organizer",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-01895657d1fb7c5d",
+              "imageDescription": "Text description of Tavuris 14L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-01895657d1fb7c5d",
+              "presentationStyle": "detail-view",
+              "title": "Tavuris 14L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "14L",
+                "organizer",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-fa89f279a34a7b04",
+              "imageDescription": "Text description of Tavuris 14L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-fa89f279a34a7b04",
+              "presentationStyle": "in-use-view",
+              "title": "Tavuris 14L Daypack \u2014 organizer"
+            }
+          ],
+          "price": 73,
+          "shippingCost": 5,
+          "tags": [
+            "organizer",
+            "roomy",
+            "structured"
+          ],
+          "title": "Tavuris 14L Daypack"
+        },
+        "pair-fresh-p-727eec23a2c6aef8": {
+          "category": "backpacks",
+          "description": "20-litre daypack; adjustable, compressible, reflective.",
+          "id": "pair-fresh-p-727eec23a2c6aef8",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "20L",
+                "adjustable",
+                "compressible",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-c1c78dbfd787a512",
+              "imageDescription": "Text description of Qorilan 20L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-c1c78dbfd787a512",
+              "presentationStyle": "detail-view",
+              "title": "Qorilan 20L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "20L",
+                "adjustable",
+                "compressible",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-f97a5a062b6de3b5",
+              "imageDescription": "Text description of Qorilan 20L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-f97a5a062b6de3b5",
+              "presentationStyle": "in-use-view",
+              "title": "Qorilan 20L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 55,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "compressible",
+            "reflective"
+          ],
+          "title": "Qorilan 20L Daypack"
+        },
+        "pair-fresh-p-a668d59b5549f595": {
+          "category": "backpacks",
+          "description": "34-litre daypack; expandable, foldable, reflective.",
+          "id": "pair-fresh-p-a668d59b5549f595",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "34L",
+                "expandable",
+                "foldable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-ccc264afeb4115b7",
+              "imageDescription": "Text description of Zelinor 34L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-ccc264afeb4115b7",
+              "presentationStyle": "detail-view",
+              "title": "Zelinor 34L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "34L",
+                "expandable",
+                "foldable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-ea0c4a4fa2b705c3",
+              "imageDescription": "Text description of Zelinor 34L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-ea0c4a4fa2b705c3",
+              "presentationStyle": "in-use-view",
+              "title": "Zelinor 34L Daypack \u2014 expandable"
+            }
+          ],
+          "price": 67,
+          "shippingCost": 5,
+          "tags": [
+            "expandable",
+            "foldable",
+            "reflective"
+          ],
+          "title": "Zelinor 34L Daypack"
+        },
+        "pair-fresh-p-d0832cf7f2452508": {
+          "category": "backpacks",
+          "description": "13-litre daypack; adjustable, lightweight, padded.",
+          "id": "pair-fresh-p-d0832cf7f2452508",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "13L",
+                "adjustable",
+                "lightweight",
+                "padded"
+              ],
+              "id": "pair-fresh-v-4589e3c72a5752bb",
+              "imageDescription": "Text description of Walinor 13L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-4589e3c72a5752bb",
+              "presentationStyle": "detail-view",
+              "title": "Walinor 13L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "13L",
+                "adjustable",
+                "lightweight",
+                "padded"
+              ],
+              "id": "pair-fresh-v-8b6f2e8d9ff4f884",
+              "imageDescription": "Text description of Walinor 13L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-8b6f2e8d9ff4f884",
+              "presentationStyle": "in-use-view",
+              "title": "Walinor 13L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 49,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "lightweight",
+            "padded"
+          ],
+          "title": "Walinor 13L Daypack"
+        },
+        "pair-fresh-p-da667959efc4c9c3": {
+          "category": "backpacks",
+          "description": "27-litre daypack; adjustable, compact, compressible.",
+          "id": "pair-fresh-p-da667959efc4c9c3",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "27L",
+                "adjustable",
+                "compact",
+                "compressible"
+              ],
+              "id": "pair-fresh-v-22de377687e8db4c",
+              "imageDescription": "Text description of Zeliris 27L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-22de377687e8db4c",
+              "presentationStyle": "detail-view",
+              "title": "Zeliris 27L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "27L",
+                "adjustable",
+                "compact",
+                "compressible"
+              ],
+              "id": "pair-fresh-v-e00ef8a2029526f7",
+              "imageDescription": "Text description of Zeliris 27L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-e00ef8a2029526f7",
+              "presentationStyle": "in-use-view",
+              "title": "Zeliris 27L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 61,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "compact",
+            "compressible"
+          ],
+          "title": "Zeliris 27L Daypack"
+        }
+      },
+      "plan": {
+        "duplicatePolicy": "forbid",
+        "method": {
+          "evidence": "deterministic observable projection; not a learned evidence planner",
+          "headingsAndTitles": "pending actual same-backbone generation",
+          "selectionAndOrder": "frozen synthetic fixture order; no learned ranking quality claim",
+          "structure": "fixed max-three-card grouping; not a trained layout policy"
+        },
+        "recordId": "copy-pair-fresh-313c2f0ff5511f99",
+        "requestedCardCount": 6,
+        "schemaVersion": "page-plan.v1",
+        "sectionOrder": [
+          "section-1",
+          "section-2"
+        ],
+        "sections": [
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-d0832cf7f2452508",
+              "pair-fresh-p-727eec23a2c6aef8",
+              "pair-fresh-p-da667959efc4c9c3"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-d0832cf7f2452508:tag:adjustable"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-8b6f2e8d9ff4f884",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-d0832cf7f2452508",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-727eec23a2c6aef8:tag:adjustable"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-f97a5a062b6de3b5",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-727eec23a2c6aef8",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-da667959efc4c9c3:tag:adjustable"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-e00ef8a2029526f7",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-da667959efc4c9c3",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-1",
+            "type": "recommendations"
+          },
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-a668d59b5549f595",
+              "pair-fresh-p-6d1ddb5a965b2114",
+              "pair-fresh-p-551bf8ca6efde679"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-a668d59b5549f595:tag:foldable"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-ea0c4a4fa2b705c3",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-a668d59b5549f595",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-fa89f279a34a7b04",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-6d1ddb5a965b2114",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-e3c881ca48304a74",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-551bf8ca6efde679",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-2",
+            "type": "alternatives"
+          }
+        ],
+        "shortfall": 0,
+        "synthetic": true
+      },
+      "inventory": {
+        "rootTokens": 369,
+        "rootTokenSha256": "158ba0fc0e79b4a7427878db980138c19b0c351304dc71ec8c99136eb5a5905d",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 601,
+            "fullPromptTokens": 970,
+            "fullPromptSha256": "d740df032f4a0115f127dd65ff8bfe704c8e41653126389fc671372d9d5f473c"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 225,
+            "fullPromptTokens": 594,
+            "fullPromptSha256": "5e5d066adae513b1a9c29537d9066057a0832d41c7003b6c20f3e36396378105"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 225,
+            "fullPromptTokens": 594,
+            "fullPromptSha256": "f33258468c09acda8153ef5c54073aac94e0ce6ac556dfeeb1f4c3558ad2faf9"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "3b51ae8233abea27bc3345fa5115bf410091de1b8f10c25f78d3a765287100e8"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "6d5fa7337ad3e768f6b396f27f55feeb74d742d0585fad05dfb0ac5bb7eaab09"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 224,
+            "fullPromptTokens": 593,
+            "fullPromptSha256": "8182d944d14b99153600d03a95e84dc6ee6da3fbf3930c83807fe6d9c8ef70d4"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 224,
+            "fullPromptTokens": 593,
+            "fullPromptSha256": "15195230bd3fae46eca2d446412f03d52b9d88f0ee82f25ba2889722110b2885"
+          },
+          {
+            "rowId": "copy-1",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 225,
+            "fullPromptTokens": 594,
+            "fullPromptSha256": "913a8aa4a0c9dbcbb66d6fdd5eb158621d3b7ec577805e79e1ec6e3773457b0f"
+          },
+          {
+            "rowId": "copy-2",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "3609bb9244992ef16d710f6263f443e0c921f4e1b20b55b98237deb72b93bb03"
+          },
+          {
+            "rowId": "copy-3",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 224,
+            "fullPromptTokens": 593,
+            "fullPromptSha256": "a813a2206ac7be7625da1902404b90064b4c80149e6a32da367e761a66419f42"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 2626,
+        "totalRootAndAllRowSuffixTokens": 2995,
+        "cardFactCacheReuseImplemented": false,
+        "layoutVersion": "first-section-card-branch-copy-v1",
+        "requiredRows": [
+          "S1",
+          "T1",
+          "B1",
+          "T2",
+          "B2",
+          "T3",
+          "B3",
+          "C1",
+          "C2",
+          "C3"
+        ]
+      },
+      "universalTagsFirstSection": [
+        "adjustable"
+      ],
+      "teacherTokenFitOnly": [
+        {
+          "field": "S1",
+          "sampledTargetTokensIncludingEOS": 5,
+          "promptTokens": 970,
+          "fullTeacherTokens": 975,
+          "promptSha256": "d740df032f4a0115f127dd65ff8bfe704c8e41653126389fc671372d9d5f473c",
+          "modelInputSha256": "254098d69c769fb2084a79a19a75aed6163609b9f501d287ff9c87c02f748c67"
+        },
+        {
+          "field": "T1",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 594,
+          "fullTeacherTokens": 607,
+          "promptSha256": "5e5d066adae513b1a9c29537d9066057a0832d41c7003b6c20f3e36396378105",
+          "modelInputSha256": "4ebd9c2c39437b421011cc850a0de077188ca51b1b57e8b32c5b4281b0f654c4"
+        },
+        {
+          "field": "B1",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 594,
+          "fullTeacherTokens": 598,
+          "promptSha256": "f33258468c09acda8153ef5c54073aac94e0ce6ac556dfeeb1f4c3558ad2faf9",
+          "modelInputSha256": "2f59d08450bddb471746e0ff591fa0180371be965a89c2c636ec4280e42cb58a"
+        },
+        {
+          "field": "T2",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 595,
+          "fullTeacherTokens": 608,
+          "promptSha256": "3b51ae8233abea27bc3345fa5115bf410091de1b8f10c25f78d3a765287100e8",
+          "modelInputSha256": "14c644caea4d825aa68f770aee29295616279aee30ea0b4fe72b5f760fbbfa87"
+        },
+        {
+          "field": "B2",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 595,
+          "fullTeacherTokens": 599,
+          "promptSha256": "6d5fa7337ad3e768f6b396f27f55feeb74d742d0585fad05dfb0ac5bb7eaab09",
+          "modelInputSha256": "c04a1c56917e5745156b99e06af0cb3042ddb0a3d73f1990bf352f68f6a343ed"
+        },
+        {
+          "field": "T3",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 593,
+          "fullTeacherTokens": 606,
+          "promptSha256": "8182d944d14b99153600d03a95e84dc6ee6da3fbf3930c83807fe6d9c8ef70d4",
+          "modelInputSha256": "01d1406f8f8b0ec516997880ccb3078fdce2250c6e687a3a6d22d357c8f307ce"
+        },
+        {
+          "field": "B3",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 593,
+          "fullTeacherTokens": 597,
+          "promptSha256": "15195230bd3fae46eca2d446412f03d52b9d88f0ee82f25ba2889722110b2885",
+          "modelInputSha256": "abdaa678edbef8f5b2b5ae0044bab0e98ca602d2e904e7adaf373f45cdb5f718"
+        },
+        {
+          "field": "C1",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 594,
+          "fullTeacherTokens": 603,
+          "promptSha256": "913a8aa4a0c9dbcbb66d6fdd5eb158621d3b7ec577805e79e1ec6e3773457b0f",
+          "modelInputSha256": "99337c65b1adf3ec650a5ffe67e446ad797a39caed24fc43202216cce4a8b9df"
+        },
+        {
+          "field": "C2",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 595,
+          "fullTeacherTokens": 604,
+          "promptSha256": "3609bb9244992ef16d710f6263f443e0c921f4e1b20b55b98237deb72b93bb03",
+          "modelInputSha256": "5ffc33f587875cc42c4cbd7be0ba8881f83b075e59a0f633b9da9f590bab4e4b"
+        },
+        {
+          "field": "C3",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 593,
+          "fullTeacherTokens": 602,
+          "promptSha256": "a813a2206ac7be7625da1902404b90064b4c80149e6a32da367e761a66419f42",
+          "modelInputSha256": "a76c721cab5a7f22f93e4c6142ceef7b38f976de68f27e909a8d54c7d0df13b7"
+        }
+      ],
+      "parentSplitCasesPreviouslyInspectedDuringDataPreparation": true
+    },
+    {
+      "split": "dev",
+      "caseId": "copy-pair-fresh-970546a93dcd488a",
+      "request": {
+        "asOf": "2026-10-01T12:00:00Z",
+        "candidateProductIds": [
+          "pair-fresh-p-f2756e6e01377b45",
+          "pair-fresh-p-7ba339d9559c2a49",
+          "pair-fresh-p-4b1f818ec0716190",
+          "pair-fresh-p-ce2912f53c2bf55a",
+          "pair-fresh-p-57a613213c6984e4",
+          "pair-fresh-p-fc232f17fb84f620"
+        ],
+        "context": {
+          "presentationPreferences": [
+            "detail-view"
+          ],
+          "presentationSurface": "compact-card",
+          "statedBudget": 200,
+          "statedPreferences": [
+            "structured",
+            "rolltop"
+          ],
+          "statedRequirements": [],
+          "task": "Choose daypacks for everyday travel with structured and rolltop details."
+        },
+        "history": [],
+        "presentationCompatibility": {
+          "pair-fresh-p-4b1f818ec0716190": {
+            "pair-fresh-v-716a3491b3755017": true,
+            "pair-fresh-v-96be4a1a130823bc": true
+          },
+          "pair-fresh-p-57a613213c6984e4": {
+            "pair-fresh-v-133af74a55f745dd": true,
+            "pair-fresh-v-9c37523bc6f46af5": true
+          },
+          "pair-fresh-p-7ba339d9559c2a49": {
+            "pair-fresh-v-5cbd71b493ec5e38": true,
+            "pair-fresh-v-da639776dd4c05b7": true
+          },
+          "pair-fresh-p-ce2912f53c2bf55a": {
+            "pair-fresh-v-1a6b945558694c27": true,
+            "pair-fresh-v-5748e8131adb106f": true
+          },
+          "pair-fresh-p-f2756e6e01377b45": {
+            "pair-fresh-v-274ba1fe40173496": true,
+            "pair-fresh-v-9d6a2a4bf261ad9b": true
+          },
+          "pair-fresh-p-fc232f17fb84f620": {
+            "pair-fresh-v-a642a55d6a1deee2": true,
+            "pair-fresh-v-a6b93bedaaffbaba": true
+          }
+        },
+        "recordId": "copy-pair-fresh-970546a93dcd488a"
+      },
+      "catalog": {
+        "pair-fresh-p-4b1f818ec0716190": {
+          "category": "backpacks",
+          "description": "15-litre daypack; adjustable, roomy, water-resistant.",
+          "id": "pair-fresh-p-4b1f818ec0716190",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "15L",
+                "adjustable",
+                "roomy",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-96be4a1a130823bc",
+              "imageDescription": "Text description of Qorinor 15L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-96be4a1a130823bc",
+              "presentationStyle": "detail-view",
+              "title": "Qorinor 15L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "15L",
+                "adjustable",
+                "roomy",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-716a3491b3755017",
+              "imageDescription": "Text description of Qorinor 15L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-716a3491b3755017",
+              "presentationStyle": "in-use-view",
+              "title": "Qorinor 15L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 61,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "roomy",
+            "water-resistant"
+          ],
+          "title": "Qorinor 15L Daypack"
+        },
+        "pair-fresh-p-57a613213c6984e4": {
+          "category": "backpacks",
+          "description": "29-litre daypack; expandable, quilted, rolltop.",
+          "id": "pair-fresh-p-57a613213c6984e4",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "29L",
+                "expandable",
+                "quilted",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-133af74a55f745dd",
+              "imageDescription": "Text description of Nerilan 29L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-133af74a55f745dd",
+              "presentationStyle": "detail-view",
+              "title": "Nerilan 29L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "29L",
+                "expandable",
+                "quilted",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-9c37523bc6f46af5",
+              "imageDescription": "Text description of Nerilan 29L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-9c37523bc6f46af5",
+              "presentationStyle": "in-use-view",
+              "title": "Nerilan 29L Daypack \u2014 expandable"
+            }
+          ],
+          "price": 73,
+          "shippingCost": 5,
+          "tags": [
+            "expandable",
+            "quilted",
+            "rolltop"
+          ],
+          "title": "Nerilan 29L Daypack"
+        },
+        "pair-fresh-p-7ba339d9559c2a49": {
+          "category": "backpacks",
+          "description": "35-litre daypack; organizer, packable, rolltop.",
+          "id": "pair-fresh-p-7ba339d9559c2a49",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "35L",
+                "organizer",
+                "packable",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-5cbd71b493ec5e38",
+              "imageDescription": "Text description of Vesulan 35L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-5cbd71b493ec5e38",
+              "presentationStyle": "detail-view",
+              "title": "Vesulan 35L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "35L",
+                "organizer",
+                "packable",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-da639776dd4c05b7",
+              "imageDescription": "Text description of Vesulan 35L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-da639776dd4c05b7",
+              "presentationStyle": "in-use-view",
+              "title": "Vesulan 35L Daypack \u2014 organizer"
+            }
+          ],
+          "price": 55,
+          "shippingCost": 5,
+          "tags": [
+            "organizer",
+            "packable",
+            "rolltop"
+          ],
+          "title": "Vesulan 35L Daypack"
+        },
+        "pair-fresh-p-ce2912f53c2bf55a": {
+          "category": "backpacks",
+          "description": "22-litre daypack; organizer, quilted, structured.",
+          "id": "pair-fresh-p-ce2912f53c2bf55a",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "22L",
+                "organizer",
+                "quilted",
+                "structured"
+              ],
+              "id": "pair-fresh-v-5748e8131adb106f",
+              "imageDescription": "Text description of Nerinor 22L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-5748e8131adb106f",
+              "presentationStyle": "detail-view",
+              "title": "Nerinor 22L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "22L",
+                "organizer",
+                "quilted",
+                "structured"
+              ],
+              "id": "pair-fresh-v-1a6b945558694c27",
+              "imageDescription": "Text description of Nerinor 22L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-1a6b945558694c27",
+              "presentationStyle": "in-use-view",
+              "title": "Nerinor 22L Daypack \u2014 organizer"
+            }
+          ],
+          "price": 67,
+          "shippingCost": 5,
+          "tags": [
+            "organizer",
+            "quilted",
+            "structured"
+          ],
+          "title": "Nerinor 22L Daypack"
+        },
+        "pair-fresh-p-f2756e6e01377b45": {
+          "category": "backpacks",
+          "description": "28-litre daypack; compact, roomy, structured.",
+          "id": "pair-fresh-p-f2756e6e01377b45",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "28L",
+                "compact",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-9d6a2a4bf261ad9b",
+              "imageDescription": "Text description of Neridor 28L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-9d6a2a4bf261ad9b",
+              "presentationStyle": "detail-view",
+              "title": "Neridor 28L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "28L",
+                "compact",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-274ba1fe40173496",
+              "imageDescription": "Text description of Neridor 28L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-274ba1fe40173496",
+              "presentationStyle": "in-use-view",
+              "title": "Neridor 28L Daypack \u2014 compact"
+            }
+          ],
+          "price": 49,
+          "shippingCost": 5,
+          "tags": [
+            "compact",
+            "roomy",
+            "structured"
+          ],
+          "title": "Neridor 28L Daypack"
+        },
+        "pair-fresh-p-fc232f17fb84f620": {
+          "category": "backpacks",
+          "description": "36-litre daypack; reflective, ventilated, water-resistant.",
+          "id": "pair-fresh-p-fc232f17fb84f620",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "36L",
+                "reflective",
+                "ventilated",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-a6b93bedaaffbaba",
+              "imageDescription": "Text description of Vesunor 36L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-a6b93bedaaffbaba",
+              "presentationStyle": "detail-view",
+              "title": "Vesunor 36L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "36L",
+                "reflective",
+                "ventilated",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-a642a55d6a1deee2",
+              "imageDescription": "Text description of Vesunor 36L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-a642a55d6a1deee2",
+              "presentationStyle": "in-use-view",
+              "title": "Vesunor 36L Daypack \u2014 reflective"
+            }
+          ],
+          "price": 79,
+          "shippingCost": 5,
+          "tags": [
+            "reflective",
+            "ventilated",
+            "water-resistant"
+          ],
+          "title": "Vesunor 36L Daypack"
+        }
+      },
+      "plan": {
+        "duplicatePolicy": "forbid",
+        "method": {
+          "evidence": "deterministic observable projection; not a learned evidence planner",
+          "headingsAndTitles": "pending actual same-backbone generation",
+          "selectionAndOrder": "frozen synthetic fixture order; no learned ranking quality claim",
+          "structure": "fixed max-three-card grouping; not a trained layout policy"
+        },
+        "recordId": "copy-pair-fresh-970546a93dcd488a",
+        "requestedCardCount": 6,
+        "schemaVersion": "page-plan.v1",
+        "sectionOrder": [
+          "section-1",
+          "section-2"
+        ],
+        "sections": [
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-f2756e6e01377b45",
+              "pair-fresh-p-7ba339d9559c2a49",
+              "pair-fresh-p-4b1f818ec0716190"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-f2756e6e01377b45:tag:structured"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-9d6a2a4bf261ad9b",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-f2756e6e01377b45",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-7ba339d9559c2a49:tag:rolltop"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-5cbd71b493ec5e38",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-7ba339d9559c2a49",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-96be4a1a130823bc",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-4b1f818ec0716190",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-1",
+            "type": "recommendations"
+          },
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-ce2912f53c2bf55a",
+              "pair-fresh-p-57a613213c6984e4",
+              "pair-fresh-p-fc232f17fb84f620"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-ce2912f53c2bf55a:tag:structured"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-5748e8131adb106f",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-ce2912f53c2bf55a",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-57a613213c6984e4:tag:rolltop"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-133af74a55f745dd",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-57a613213c6984e4",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-a6b93bedaaffbaba",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-fc232f17fb84f620",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-2",
+            "type": "alternatives"
+          }
+        ],
+        "shortfall": 0,
+        "synthetic": true
+      },
+      "inventory": {
+        "rootTokens": 367,
+        "rootTokenSha256": "62e1bac8ceada4c141d88e1dd245d1cdc99ef868848555a3cc30aa0618f1861e",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 584,
+            "fullPromptTokens": 951,
+            "fullPromptSha256": "2451f2620e5e3549c3dc2d7120aeb917183302f736bc078fdace5829e80b2b94"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 216,
+            "fullPromptTokens": 583,
+            "fullPromptSha256": "f8b3e6f7de9cc1dcb224b0b8b5d9cc93da161371ec23d5c11c589ac1f7bdab4a"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 216,
+            "fullPromptTokens": 583,
+            "fullPromptSha256": "b914832d1d22ed76ea60b0632b7538dcd349573ea4d037fbfedb6ea305135aad"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 222,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "79642e24de20ed5dc83c3c8c141c9594bf08c3a55b7dc193839e0d9329627bbf"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 222,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "5cf818ca0a17b2101a296797b3fce04f40d35da1f04603cbd1b949b695cc1344"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 222,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "2c4ba8015355030365cd4bdae92583400324d5e77bd37742635164ecb3d1668c"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 222,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "bc8edb4c3bf752941d58c7a6d419829b2099e6c18030ee366934c87e599295d8"
+          },
+          {
+            "rowId": "copy-1",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 216,
+            "fullPromptTokens": 583,
+            "fullPromptSha256": "449b993ed2dc2e3703391ddc4c0bf87c7eb74322bf5b9bccdb9d445c63a975bc"
+          },
+          {
+            "rowId": "copy-2",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 222,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "75647a16461baf900cec9ba7060912bb12f63a0fef1464baed38d8d6fa4b38fe"
+          },
+          {
+            "rowId": "copy-3",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 222,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "1d866b729dc6dc529a059638aa3efe784a16cfe99b5032538a242f1588830246"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 2564,
+        "totalRootAndAllRowSuffixTokens": 2931,
+        "cardFactCacheReuseImplemented": false,
+        "layoutVersion": "first-section-card-branch-copy-v1",
+        "requiredRows": [
+          "S1",
+          "T1",
+          "B1",
+          "T2",
+          "B2",
+          "T3",
+          "B3",
+          "C1",
+          "C2",
+          "C3"
+        ]
+      },
+      "universalTagsFirstSection": [],
+      "teacherTokenFitOnly": [
+        {
+          "field": "S1",
+          "sampledTargetTokensIncludingEOS": 5,
+          "promptTokens": 951,
+          "fullTeacherTokens": 956,
+          "promptSha256": "2451f2620e5e3549c3dc2d7120aeb917183302f736bc078fdace5829e80b2b94",
+          "modelInputSha256": "1e5101d5fcbb9068669ff4fda5b624b20b9e5b32ce5e8157c56dd43c86f9d43e"
+        },
+        {
+          "field": "T1",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 583,
+          "fullTeacherTokens": 596,
+          "promptSha256": "f8b3e6f7de9cc1dcb224b0b8b5d9cc93da161371ec23d5c11c589ac1f7bdab4a",
+          "modelInputSha256": "45626d7c7db4d6e0a3860c8262738cc2a963580e95dbff6cc63ba6bfc004855a"
+        },
+        {
+          "field": "B1",
+          "sampledTargetTokensIncludingEOS": 3,
+          "promptTokens": 583,
+          "fullTeacherTokens": 586,
+          "promptSha256": "b914832d1d22ed76ea60b0632b7538dcd349573ea4d037fbfedb6ea305135aad",
+          "modelInputSha256": "76f88ed63f8b812426319a720a922f2417327c2e0d894f364388e883b1d3314c"
+        },
+        {
+          "field": "T2",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 589,
+          "fullTeacherTokens": 603,
+          "promptSha256": "79642e24de20ed5dc83c3c8c141c9594bf08c3a55b7dc193839e0d9329627bbf",
+          "modelInputSha256": "e2315573fcf9bf5210021a3b21aaded62b96395f8ecd47f1699f36630fed112a"
+        },
+        {
+          "field": "B2",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 589,
+          "fullTeacherTokens": 593,
+          "promptSha256": "5cf818ca0a17b2101a296797b3fce04f40d35da1f04603cbd1b949b695cc1344",
+          "modelInputSha256": "738ffeee132b0ca57f7a8b24ea9034916486fd86f11c7d24bf1911db0bb6f907"
+        },
+        {
+          "field": "T3",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 589,
+          "fullTeacherTokens": 603,
+          "promptSha256": "2c4ba8015355030365cd4bdae92583400324d5e77bd37742635164ecb3d1668c",
+          "modelInputSha256": "13ed8adb6e97c41a21419cb70dddb332beba58e04b1a4f9e254fa979c500b430"
+        },
+        {
+          "field": "B3",
+          "sampledTargetTokensIncludingEOS": 2,
+          "promptTokens": 589,
+          "fullTeacherTokens": 591,
+          "promptSha256": "bc8edb4c3bf752941d58c7a6d419829b2099e6c18030ee366934c87e599295d8",
+          "modelInputSha256": "80c965d2e8e4cefd16a188374c2930b957e937fb5c412fd7d5b947aa0bfc085a"
+        },
+        {
+          "field": "C1",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 583,
+          "fullTeacherTokens": 592,
+          "promptSha256": "449b993ed2dc2e3703391ddc4c0bf87c7eb74322bf5b9bccdb9d445c63a975bc",
+          "modelInputSha256": "d87e94649c15e07652b3ca36fe741a8c16e3b5c275b4f3749892b9afeb1592be"
+        },
+        {
+          "field": "C2",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 589,
+          "fullTeacherTokens": 599,
+          "promptSha256": "75647a16461baf900cec9ba7060912bb12f63a0fef1464baed38d8d6fa4b38fe",
+          "modelInputSha256": "0036ebda68d0dd331cc6bf1a21b169afaa35a7e4ceb5773703f4b83eec5b150e"
+        },
+        {
+          "field": "C3",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 589,
+          "fullTeacherTokens": 598,
+          "promptSha256": "1d866b729dc6dc529a059638aa3efe784a16cfe99b5032538a242f1588830246",
+          "modelInputSha256": "7c18c7929d34e3d0eefb9b26423f4ed1629bf8ec5578f269350b3095e9f08297"
+        }
+      ],
+      "parentSplitCasesPreviouslyInspectedDuringDataPreparation": true
+    },
+    {
+      "split": "dev",
+      "caseId": "copy-pair-fresh-39144ed39ecdd690",
+      "request": {
+        "asOf": "2026-10-01T12:00:00Z",
+        "candidateProductIds": [
+          "pair-fresh-p-4b83787b8fbe8f22",
+          "pair-fresh-p-bb93793715f667ca",
+          "pair-fresh-p-58e4b0fc1a68abcd",
+          "pair-fresh-p-d8af42ddce7da3e6",
+          "pair-fresh-p-fe780b3259564d2a",
+          "pair-fresh-p-c2f43cd6197b33c9"
+        ],
+        "context": {
+          "presentationPreferences": [
+            "in-use-view"
+          ],
+          "presentationSurface": "compact-card",
+          "statedBudget": 200,
+          "statedPreferences": [
+            "compressible",
+            "reflective"
+          ],
+          "statedRequirements": [],
+          "task": "Choose daypacks for everyday travel with compressible and reflective details."
+        },
+        "history": [],
+        "presentationCompatibility": {
+          "pair-fresh-p-4b83787b8fbe8f22": {
+            "pair-fresh-v-54ad0466a937ce49": true,
+            "pair-fresh-v-a40a674dc3099df9": true
+          },
+          "pair-fresh-p-58e4b0fc1a68abcd": {
+            "pair-fresh-v-0d83841bc29c24fa": true,
+            "pair-fresh-v-da926c0e30ea2035": true
+          },
+          "pair-fresh-p-bb93793715f667ca": {
+            "pair-fresh-v-0fee31fdfbfe9db1": true,
+            "pair-fresh-v-5eb7162e46ea22f2": true
+          },
+          "pair-fresh-p-c2f43cd6197b33c9": {
+            "pair-fresh-v-6833ecd1e0d99dcc": true,
+            "pair-fresh-v-73ef05802cb9c566": true
+          },
+          "pair-fresh-p-d8af42ddce7da3e6": {
+            "pair-fresh-v-17cdee7e8a1cd2e3": true,
+            "pair-fresh-v-4151fb33966a3e9e": true
+          },
+          "pair-fresh-p-fe780b3259564d2a": {
+            "pair-fresh-v-8d7ee38e186cd9ae": true,
+            "pair-fresh-v-c28b401bf8c39166": true
+          }
+        },
+        "recordId": "copy-pair-fresh-39144ed39ecdd690"
+      },
+      "catalog": {
+        "pair-fresh-p-4b83787b8fbe8f22": {
+          "category": "backpacks",
+          "description": "16-litre daypack; compressible, organizer, structured.",
+          "id": "pair-fresh-p-4b83787b8fbe8f22",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "16L",
+                "compressible",
+                "organizer",
+                "structured"
+              ],
+              "id": "pair-fresh-v-a40a674dc3099df9",
+              "imageDescription": "Text description of Vesuris 16L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-a40a674dc3099df9",
+              "presentationStyle": "detail-view",
+              "title": "Vesuris 16L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "16L",
+                "compressible",
+                "organizer",
+                "structured"
+              ],
+              "id": "pair-fresh-v-54ad0466a937ce49",
+              "imageDescription": "Text description of Vesuris 16L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-54ad0466a937ce49",
+              "presentationStyle": "in-use-view",
+              "title": "Vesuris 16L Daypack \u2014 compressible"
+            }
+          ],
+          "price": 49,
+          "shippingCost": 5,
+          "tags": [
+            "compressible",
+            "organizer",
+            "structured"
+          ],
+          "title": "Vesuris 16L Daypack"
+        },
+        "pair-fresh-p-58e4b0fc1a68abcd": {
+          "category": "backpacks",
+          "description": "30-litre daypack; organizer, packable, structured.",
+          "id": "pair-fresh-p-58e4b0fc1a68abcd",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "30L",
+                "organizer",
+                "packable",
+                "structured"
+              ],
+              "id": "pair-fresh-v-da926c0e30ea2035",
+              "imageDescription": "Text description of Neriris 30L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-da926c0e30ea2035",
+              "presentationStyle": "detail-view",
+              "title": "Neriris 30L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "30L",
+                "organizer",
+                "packable",
+                "structured"
+              ],
+              "id": "pair-fresh-v-0d83841bc29c24fa",
+              "imageDescription": "Text description of Neriris 30L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-0d83841bc29c24fa",
+              "presentationStyle": "in-use-view",
+              "title": "Neriris 30L Daypack \u2014 organizer"
+            }
+          ],
+          "price": 61,
+          "shippingCost": 5,
+          "tags": [
+            "organizer",
+            "packable",
+            "structured"
+          ],
+          "title": "Neriris 30L Daypack"
+        },
+        "pair-fresh-p-bb93793715f667ca": {
+          "category": "backpacks",
+          "description": "23-litre daypack; organizer, padded, quilted.",
+          "id": "pair-fresh-p-bb93793715f667ca",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "23L",
+                "organizer",
+                "padded",
+                "quilted"
+              ],
+              "id": "pair-fresh-v-5eb7162e46ea22f2",
+              "imageDescription": "Text description of Tavulan 23L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-5eb7162e46ea22f2",
+              "presentationStyle": "detail-view",
+              "title": "Tavulan 23L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "23L",
+                "organizer",
+                "padded",
+                "quilted"
+              ],
+              "id": "pair-fresh-v-0fee31fdfbfe9db1",
+              "imageDescription": "Text description of Tavulan 23L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-0fee31fdfbfe9db1",
+              "presentationStyle": "in-use-view",
+              "title": "Tavulan 23L Daypack \u2014 organizer"
+            }
+          ],
+          "price": 55,
+          "shippingCost": 5,
+          "tags": [
+            "organizer",
+            "padded",
+            "quilted"
+          ],
+          "title": "Tavulan 23L Daypack"
+        },
+        "pair-fresh-p-c2f43cd6197b33c9": {
+          "category": "backpacks",
+          "description": "24-litre daypack; expandable, reflective, rolltop.",
+          "id": "pair-fresh-p-c2f43cd6197b33c9",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "24L",
+                "expandable",
+                "reflective",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-73ef05802cb9c566",
+              "imageDescription": "Text description of Vesumar 24L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-73ef05802cb9c566",
+              "presentationStyle": "detail-view",
+              "title": "Vesumar 24L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "24L",
+                "expandable",
+                "reflective",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-6833ecd1e0d99dcc",
+              "imageDescription": "Text description of Vesumar 24L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-6833ecd1e0d99dcc",
+              "presentationStyle": "in-use-view",
+              "title": "Vesumar 24L Daypack \u2014 expandable"
+            }
+          ],
+          "price": 79,
+          "shippingCost": 5,
+          "tags": [
+            "expandable",
+            "reflective",
+            "rolltop"
+          ],
+          "title": "Vesumar 24L Daypack"
+        },
+        "pair-fresh-p-d8af42ddce7da3e6": {
+          "category": "backpacks",
+          "description": "37-litre daypack; compact, reflective, water-resistant.",
+          "id": "pair-fresh-p-d8af42ddce7da3e6",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "37L",
+                "compact",
+                "reflective",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-4151fb33966a3e9e",
+              "imageDescription": "Text description of Tavudor 37L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-4151fb33966a3e9e",
+              "presentationStyle": "detail-view",
+              "title": "Tavudor 37L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "37L",
+                "compact",
+                "reflective",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-17cdee7e8a1cd2e3",
+              "imageDescription": "Text description of Tavudor 37L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-17cdee7e8a1cd2e3",
+              "presentationStyle": "in-use-view",
+              "title": "Tavudor 37L Daypack \u2014 compact"
+            }
+          ],
+          "price": 67,
+          "shippingCost": 5,
+          "tags": [
+            "compact",
+            "reflective",
+            "water-resistant"
+          ],
+          "title": "Tavudor 37L Daypack"
+        },
+        "pair-fresh-p-fe780b3259564d2a": {
+          "category": "backpacks",
+          "description": "17-litre daypack; compact, durable, reflective.",
+          "id": "pair-fresh-p-fe780b3259564d2a",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "17L",
+                "compact",
+                "durable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-c28b401bf8c39166",
+              "imageDescription": "Text description of Waliven 17L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-c28b401bf8c39166",
+              "presentationStyle": "detail-view",
+              "title": "Waliven 17L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "17L",
+                "compact",
+                "durable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-8d7ee38e186cd9ae",
+              "imageDescription": "Text description of Waliven 17L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-8d7ee38e186cd9ae",
+              "presentationStyle": "in-use-view",
+              "title": "Waliven 17L Daypack \u2014 compact"
+            }
+          ],
+          "price": 73,
+          "shippingCost": 5,
+          "tags": [
+            "compact",
+            "durable",
+            "reflective"
+          ],
+          "title": "Waliven 17L Daypack"
+        }
+      },
+      "plan": {
+        "duplicatePolicy": "forbid",
+        "method": {
+          "evidence": "deterministic observable projection; not a learned evidence planner",
+          "headingsAndTitles": "pending actual same-backbone generation",
+          "selectionAndOrder": "frozen synthetic fixture order; no learned ranking quality claim",
+          "structure": "fixed max-three-card grouping; not a trained layout policy"
+        },
+        "recordId": "copy-pair-fresh-39144ed39ecdd690",
+        "requestedCardCount": 6,
+        "schemaVersion": "page-plan.v1",
+        "sectionOrder": [
+          "section-1",
+          "section-2"
+        ],
+        "sections": [
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-4b83787b8fbe8f22",
+              "pair-fresh-p-bb93793715f667ca",
+              "pair-fresh-p-58e4b0fc1a68abcd"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-4b83787b8fbe8f22:tag:compressible"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-54ad0466a937ce49",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-4b83787b8fbe8f22",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-0fee31fdfbfe9db1",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-bb93793715f667ca",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-0d83841bc29c24fa",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-58e4b0fc1a68abcd",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-1",
+            "type": "recommendations"
+          },
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-d8af42ddce7da3e6",
+              "pair-fresh-p-fe780b3259564d2a",
+              "pair-fresh-p-c2f43cd6197b33c9"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-d8af42ddce7da3e6:tag:reflective"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-17cdee7e8a1cd2e3",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-d8af42ddce7da3e6",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-fe780b3259564d2a:tag:reflective"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-8d7ee38e186cd9ae",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-fe780b3259564d2a",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-c2f43cd6197b33c9:tag:reflective"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-6833ecd1e0d99dcc",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-c2f43cd6197b33c9",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-2",
+            "type": "alternatives"
+          }
+        ],
+        "shortfall": 0,
+        "synthetic": true
+      },
+      "inventory": {
+        "rootTokens": 369,
+        "rootTokenSha256": "b381da92bce245e6c8eedb554766381e07fa16fb9438749a52a8d85a9a70038e",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 600,
+            "fullPromptTokens": 969,
+            "fullPromptSha256": "e5c557e812e3e680d712079ae8fa41430780db01b7fe7aff827ff7e38af04412"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "a624ab1e2e67eab3db3302e8a5bc9dfcd7415fdbc4a01720e7ff087f608a7712"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "1276624ec4e43160e17697a098310785c8bd0d9b32f3ea666a1694fd871d9bd2"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "4b1cc5a62856314b69224417915862c4faa1cade70bde7106fb8fe4aa9ae5f99"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "60e75d345ea96daa69b6ee25f1a86415b0943f82a37ed2e0db932d5968f0aaa2"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 222,
+            "fullPromptTokens": 591,
+            "fullPromptSha256": "9548ac96481371744f0f51d378a0246961c9b966ac594c8e5a61a15fd183acde"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 222,
+            "fullPromptTokens": 591,
+            "fullPromptSha256": "d84716778c5c3512810a5f717d15b5d0dec86c24cecef23c2f8cc6660e36dc5a"
+          },
+          {
+            "rowId": "copy-1",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "af37f1b70b23431a3f6b57aeafdbb9e5cf92da06875b19f4611fe90a4ef64460"
+          },
+          {
+            "rowId": "copy-2",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 226,
+            "fullPromptTokens": 595,
+            "fullPromptSha256": "2c00dcb418e8eed329e5c361bef122927f81f8af5712031aa626f477d1040ce0"
+          },
+          {
+            "rowId": "copy-3",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 222,
+            "fullPromptTokens": 591,
+            "fullPromptSha256": "9a8effef8a5147faf31858d7a7a5755b2b24704725a1e782ad8401ac00f94fd1"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 2622,
+        "totalRootAndAllRowSuffixTokens": 2991,
+        "cardFactCacheReuseImplemented": false,
+        "layoutVersion": "first-section-card-branch-copy-v1",
+        "requiredRows": [
+          "S1",
+          "T1",
+          "B1",
+          "T2",
+          "B2",
+          "T3",
+          "B3",
+          "C1",
+          "C2",
+          "C3"
+        ]
+      },
+      "universalTagsFirstSection": [
+        "organizer"
+      ],
+      "teacherTokenFitOnly": [
+        {
+          "field": "S1",
+          "sampledTargetTokensIncludingEOS": 5,
+          "promptTokens": 969,
+          "fullTeacherTokens": 974,
+          "promptSha256": "e5c557e812e3e680d712079ae8fa41430780db01b7fe7aff827ff7e38af04412",
+          "modelInputSha256": "8c80db3478e2a5d20075f4371c91f1211325b2048784e2a2d189b8855f5c7650"
+        },
+        {
+          "field": "T1",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 595,
+          "fullTeacherTokens": 609,
+          "promptSha256": "a624ab1e2e67eab3db3302e8a5bc9dfcd7415fdbc4a01720e7ff087f608a7712",
+          "modelInputSha256": "e82c2aa63b2c2f7b206505d2d5097f42395df178d93c4abb3b23f240cf89a7dd"
+        },
+        {
+          "field": "B1",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 595,
+          "fullTeacherTokens": 599,
+          "promptSha256": "1276624ec4e43160e17697a098310785c8bd0d9b32f3ea666a1694fd871d9bd2",
+          "modelInputSha256": "4f62674d930e31016935f18c7666360a16cd4d0bcdf00d9f203db2011dd4a34a"
+        },
+        {
+          "field": "T2",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 595,
+          "fullTeacherTokens": 608,
+          "promptSha256": "4b1cc5a62856314b69224417915862c4faa1cade70bde7106fb8fe4aa9ae5f99",
+          "modelInputSha256": "78950e9025e72cadefcedaf08545658921be9fc0b3f764ad45e61ec1e3cb70fc"
+        },
+        {
+          "field": "B2",
+          "sampledTargetTokensIncludingEOS": 2,
+          "promptTokens": 595,
+          "fullTeacherTokens": 597,
+          "promptSha256": "60e75d345ea96daa69b6ee25f1a86415b0943f82a37ed2e0db932d5968f0aaa2",
+          "modelInputSha256": "c2384b8abd10e2389444e828417edf0b096bee70e88682be39b3ac78cf1ec9d2"
+        },
+        {
+          "field": "T3",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 591,
+          "fullTeacherTokens": 604,
+          "promptSha256": "9548ac96481371744f0f51d378a0246961c9b966ac594c8e5a61a15fd183acde",
+          "modelInputSha256": "9839f330c9845ef9d27ffeb55f69eadc1062d6b42aba11d58a66b7264ad0e453"
+        },
+        {
+          "field": "B3",
+          "sampledTargetTokensIncludingEOS": 2,
+          "promptTokens": 591,
+          "fullTeacherTokens": 593,
+          "promptSha256": "d84716778c5c3512810a5f717d15b5d0dec86c24cecef23c2f8cc6660e36dc5a",
+          "modelInputSha256": "4e6450de87a044dfb468b024f2321fc9fc0cfd06d8ed45f771f600e8133c9202"
+        },
+        {
+          "field": "C1",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 595,
+          "fullTeacherTokens": 605,
+          "promptSha256": "af37f1b70b23431a3f6b57aeafdbb9e5cf92da06875b19f4611fe90a4ef64460",
+          "modelInputSha256": "b399c1fcf0fae354052664cb9261fa2a7a3fb777fb9d18a2781fc2780181a242"
+        },
+        {
+          "field": "C2",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 595,
+          "fullTeacherTokens": 604,
+          "promptSha256": "2c00dcb418e8eed329e5c361bef122927f81f8af5712031aa626f477d1040ce0",
+          "modelInputSha256": "ba56f9c8d1b5b7057af4782bd310e4a8d1de7b1c5a208ec8239a0e53964b6f1a"
+        },
+        {
+          "field": "C3",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 591,
+          "fullTeacherTokens": 600,
+          "promptSha256": "9a8effef8a5147faf31858d7a7a5755b2b24704725a1e782ad8401ac00f94fd1",
+          "modelInputSha256": "4f6f4e9fb1c88d679e7132074037075f95f2f7745ea797690cc8210892fd323b"
+        }
+      ],
+      "parentSplitCasesPreviouslyInspectedDuringDataPreparation": true
+    },
+    {
+      "split": "test",
+      "caseId": "copy-pair-fresh-c72607d5470d7797",
+      "request": {
+        "asOf": "2026-10-01T12:00:00Z",
+        "candidateProductIds": [
+          "pair-fresh-p-b2785be1534dd503",
+          "pair-fresh-p-4f86b908b7dc144c",
+          "pair-fresh-p-e0729bfe4ff53202",
+          "pair-fresh-p-c07881148f1578d7",
+          "pair-fresh-p-8061fba1b8f78d52",
+          "pair-fresh-p-561aaf1b2e19fdab"
+        ],
+        "context": {
+          "presentationPreferences": [
+            "detail-view"
+          ],
+          "presentationSurface": "compact-card",
+          "statedBudget": 200,
+          "statedPreferences": [
+            "roomy",
+            "padded"
+          ],
+          "statedRequirements": [],
+          "task": "Choose daypacks for everyday travel with roomy and padded details."
+        },
+        "history": [],
+        "presentationCompatibility": {
+          "pair-fresh-p-4f86b908b7dc144c": {
+            "pair-fresh-v-11205f38fd916a91": true,
+            "pair-fresh-v-463485df30d3156d": true
+          },
+          "pair-fresh-p-561aaf1b2e19fdab": {
+            "pair-fresh-v-50c92054841111cf": true,
+            "pair-fresh-v-d7c81a492969508e": true
+          },
+          "pair-fresh-p-8061fba1b8f78d52": {
+            "pair-fresh-v-64cb366b02ebe725": true,
+            "pair-fresh-v-884b2cc9b67b0a46": true
+          },
+          "pair-fresh-p-b2785be1534dd503": {
+            "pair-fresh-v-0b548e57d4584145": true,
+            "pair-fresh-v-0c58461a59e64b4a": true
+          },
+          "pair-fresh-p-c07881148f1578d7": {
+            "pair-fresh-v-54abc948522ec982": true,
+            "pair-fresh-v-656efb6c2bd241c2": true
+          },
+          "pair-fresh-p-e0729bfe4ff53202": {
+            "pair-fresh-v-9fee3cd3f814804d": true,
+            "pair-fresh-v-c5552bf5125da765": true
+          }
+        },
+        "recordId": "copy-pair-fresh-c72607d5470d7797"
+      },
+      "catalog": {
+        "pair-fresh-p-4f86b908b7dc144c": {
+          "category": "backpacks",
+          "description": "38-litre daypack; compressible, roomy, structured.",
+          "id": "pair-fresh-p-4f86b908b7dc144c",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "38L",
+                "compressible",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-463485df30d3156d",
+              "imageDescription": "Text description of Nerimar 38L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-463485df30d3156d",
+              "presentationStyle": "detail-view",
+              "title": "Nerimar 38L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "38L",
+                "compressible",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-11205f38fd916a91",
+              "imageDescription": "Text description of Nerimar 38L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-11205f38fd916a91",
+              "presentationStyle": "in-use-view",
+              "title": "Nerimar 38L Daypack \u2014 compressible"
+            }
+          ],
+          "price": 55,
+          "shippingCost": 5,
+          "tags": [
+            "compressible",
+            "roomy",
+            "structured"
+          ],
+          "title": "Nerimar 38L Daypack"
+        },
+        "pair-fresh-p-561aaf1b2e19fdab": {
+          "category": "backpacks",
+          "description": "39-litre daypack; packable, reflective, rolltop.",
+          "id": "pair-fresh-p-561aaf1b2e19fdab",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "39L",
+                "packable",
+                "reflective",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-50c92054841111cf",
+              "imageDescription": "Text description of Vesuven 39L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-50c92054841111cf",
+              "presentationStyle": "detail-view",
+              "title": "Vesuven 39L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "39L",
+                "packable",
+                "reflective",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-d7c81a492969508e",
+              "imageDescription": "Text description of Vesuven 39L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-d7c81a492969508e",
+              "presentationStyle": "in-use-view",
+              "title": "Vesuven 39L Daypack \u2014 packable"
+            }
+          ],
+          "price": 79,
+          "shippingCost": 5,
+          "tags": [
+            "packable",
+            "reflective",
+            "rolltop"
+          ],
+          "title": "Vesuven 39L Daypack"
+        },
+        "pair-fresh-p-8061fba1b8f78d52": {
+          "category": "backpacks",
+          "description": "32-litre daypack; adjustable, expandable, reflective.",
+          "id": "pair-fresh-p-8061fba1b8f78d52",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "32L",
+                "adjustable",
+                "expandable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-64cb366b02ebe725",
+              "imageDescription": "Text description of Walilan 32L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-64cb366b02ebe725",
+              "presentationStyle": "detail-view",
+              "title": "Walilan 32L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "32L",
+                "adjustable",
+                "expandable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-884b2cc9b67b0a46",
+              "imageDescription": "Text description of Walilan 32L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-884b2cc9b67b0a46",
+              "presentationStyle": "in-use-view",
+              "title": "Walilan 32L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 73,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "expandable",
+            "reflective"
+          ],
+          "title": "Walilan 32L Daypack"
+        },
+        "pair-fresh-p-b2785be1534dd503": {
+          "category": "backpacks",
+          "description": "31-litre daypack; compact, durable, roomy.",
+          "id": "pair-fresh-p-b2785be1534dd503",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "31L",
+                "compact",
+                "durable",
+                "roomy"
+              ],
+              "id": "pair-fresh-v-0b548e57d4584145",
+              "imageDescription": "Text description of Zelilan 31L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-0b548e57d4584145",
+              "presentationStyle": "detail-view",
+              "title": "Zelilan 31L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "31L",
+                "compact",
+                "durable",
+                "roomy"
+              ],
+              "id": "pair-fresh-v-0c58461a59e64b4a",
+              "imageDescription": "Text description of Zelilan 31L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-0c58461a59e64b4a",
+              "presentationStyle": "in-use-view",
+              "title": "Zelilan 31L Daypack \u2014 compact"
+            }
+          ],
+          "price": 49,
+          "shippingCost": 5,
+          "tags": [
+            "compact",
+            "durable",
+            "roomy"
+          ],
+          "title": "Zelilan 31L Daypack"
+        },
+        "pair-fresh-p-c07881148f1578d7": {
+          "category": "backpacks",
+          "description": "25-litre daypack; compact, packable, padded.",
+          "id": "pair-fresh-p-c07881148f1578d7",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "25L",
+                "compact",
+                "packable",
+                "padded"
+              ],
+              "id": "pair-fresh-v-656efb6c2bd241c2",
+              "imageDescription": "Text description of Waliris 25L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-656efb6c2bd241c2",
+              "presentationStyle": "detail-view",
+              "title": "Waliris 25L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "25L",
+                "compact",
+                "packable",
+                "padded"
+              ],
+              "id": "pair-fresh-v-54abc948522ec982",
+              "imageDescription": "Text description of Waliris 25L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-54abc948522ec982",
+              "presentationStyle": "in-use-view",
+              "title": "Waliris 25L Daypack \u2014 compact"
+            }
+          ],
+          "price": 67,
+          "shippingCost": 5,
+          "tags": [
+            "compact",
+            "packable",
+            "padded"
+          ],
+          "title": "Waliris 25L Daypack"
+        },
+        "pair-fresh-p-e0729bfe4ff53202": {
+          "category": "backpacks",
+          "description": "18-litre daypack; adjustable, roomy, structured.",
+          "id": "pair-fresh-p-e0729bfe4ff53202",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "18L",
+                "adjustable",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-c5552bf5125da765",
+              "imageDescription": "Text description of Tavumar 18L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-c5552bf5125da765",
+              "presentationStyle": "detail-view",
+              "title": "Tavumar 18L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "18L",
+                "adjustable",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-9fee3cd3f814804d",
+              "imageDescription": "Text description of Tavumar 18L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-9fee3cd3f814804d",
+              "presentationStyle": "in-use-view",
+              "title": "Tavumar 18L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 61,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "roomy",
+            "structured"
+          ],
+          "title": "Tavumar 18L Daypack"
+        }
+      },
+      "plan": {
+        "duplicatePolicy": "forbid",
+        "method": {
+          "evidence": "deterministic observable projection; not a learned evidence planner",
+          "headingsAndTitles": "pending actual same-backbone generation",
+          "selectionAndOrder": "frozen synthetic fixture order; no learned ranking quality claim",
+          "structure": "fixed max-three-card grouping; not a trained layout policy"
+        },
+        "recordId": "copy-pair-fresh-c72607d5470d7797",
+        "requestedCardCount": 6,
+        "schemaVersion": "page-plan.v1",
+        "sectionOrder": [
+          "section-1",
+          "section-2"
+        ],
+        "sections": [
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-b2785be1534dd503",
+              "pair-fresh-p-4f86b908b7dc144c",
+              "pair-fresh-p-e0729bfe4ff53202"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-b2785be1534dd503:tag:roomy"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-0b548e57d4584145",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-b2785be1534dd503",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-4f86b908b7dc144c:tag:roomy"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-463485df30d3156d",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-4f86b908b7dc144c",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-e0729bfe4ff53202:tag:roomy"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-c5552bf5125da765",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-e0729bfe4ff53202",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-1",
+            "type": "recommendations"
+          },
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-c07881148f1578d7",
+              "pair-fresh-p-8061fba1b8f78d52",
+              "pair-fresh-p-561aaf1b2e19fdab"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-c07881148f1578d7:tag:padded"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-656efb6c2bd241c2",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-c07881148f1578d7",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-64cb366b02ebe725",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-8061fba1b8f78d52",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-50c92054841111cf",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-561aaf1b2e19fdab",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-2",
+            "type": "alternatives"
+          }
+        ],
+        "shortfall": 0,
+        "synthetic": true
+      },
+      "inventory": {
+        "rootTokens": 368,
+        "rootTokenSha256": "0c975487f33bee53a275e9c54b6c96a5acf0daeb4cdff8b875487808f8f2aeae",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 585,
+            "fullPromptTokens": 953,
+            "fullPromptSha256": "8159ef0dd1adc676320d6924118d4b346da99607e7c7ee8b6a472af41f146dc0"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 219,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "2fd8b64862f8cb7b81fb2d02ccfcfc78512b7436c548d4657af74410592b73c7"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 219,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "2d623dad704d75c18d6cdd0eaf84dd4e1ee454a42fcc283537d945290e5ed1e8"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 221,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "dc7e39d68d6db2ab718aaa38e4f4e14b7e35e9570851c06d57bd6ac352095dd0"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 221,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "4076979610baac13d1e02b606d1fedab5019b6e67113a6fa637daab9cee7f41e"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 219,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "d69063e8f3521058531e40325552dcc001039b87c57bd0063c179381cedba75c"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 219,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "2f1e7d126431bcf7833395085da8ac4bb7fb87018e67f5775057b6fb4ae6eb30"
+          },
+          {
+            "rowId": "copy-1",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 219,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "bf71309ca9424dc48c887ac472c3b8105f1e358810a86523561d759f533b2576"
+          },
+          {
+            "rowId": "copy-2",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 221,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "7e272d55a134c398d0942b86375ef2f182259f105415ede4af66b06e26738c63"
+          },
+          {
+            "rowId": "copy-3",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 219,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "f65f0912e323988b455583beba5d02301e729c573a2f8b6113d7dbcf40ed8848"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 2562,
+        "totalRootAndAllRowSuffixTokens": 2930,
+        "cardFactCacheReuseImplemented": false,
+        "layoutVersion": "first-section-card-branch-copy-v1",
+        "requiredRows": [
+          "S1",
+          "T1",
+          "B1",
+          "T2",
+          "B2",
+          "T3",
+          "B3",
+          "C1",
+          "C2",
+          "C3"
+        ]
+      },
+      "universalTagsFirstSection": [
+        "roomy"
+      ],
+      "teacherTokenFitOnly": [
+        {
+          "field": "S1",
+          "sampledTargetTokensIncludingEOS": 5,
+          "promptTokens": 953,
+          "fullTeacherTokens": 958,
+          "promptSha256": "8159ef0dd1adc676320d6924118d4b346da99607e7c7ee8b6a472af41f146dc0",
+          "modelInputSha256": "ec5897f340f1cadf949892e085f59d68129bd1022e1f0f27c058c027dcac0986"
+        },
+        {
+          "field": "T1",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 587,
+          "fullTeacherTokens": 601,
+          "promptSha256": "2fd8b64862f8cb7b81fb2d02ccfcfc78512b7436c548d4657af74410592b73c7",
+          "modelInputSha256": "61a5cebeeaef94501c5683d953cb48e21339c1d54ef17211840724a81256d382"
+        },
+        {
+          "field": "B1",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 587,
+          "fullTeacherTokens": 591,
+          "promptSha256": "2d623dad704d75c18d6cdd0eaf84dd4e1ee454a42fcc283537d945290e5ed1e8",
+          "modelInputSha256": "4495b86ea6864181be44a58321aa7942263897e496aa1d54608be26145f64f69"
+        },
+        {
+          "field": "T2",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 589,
+          "fullTeacherTokens": 603,
+          "promptSha256": "dc7e39d68d6db2ab718aaa38e4f4e14b7e35e9570851c06d57bd6ac352095dd0",
+          "modelInputSha256": "cc217d8abb1104fa20a52900797e42412ccad17e0a468abb96d43637c7f6bff0"
+        },
+        {
+          "field": "B2",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 589,
+          "fullTeacherTokens": 593,
+          "promptSha256": "4076979610baac13d1e02b606d1fedab5019b6e67113a6fa637daab9cee7f41e",
+          "modelInputSha256": "3bfe848a6576e91413d3612098b00aabf0921c80e709b08b8f7d222e24540a8f"
+        },
+        {
+          "field": "T3",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 587,
+          "fullTeacherTokens": 601,
+          "promptSha256": "d69063e8f3521058531e40325552dcc001039b87c57bd0063c179381cedba75c",
+          "modelInputSha256": "8614e2fc5b7194c889127bfca8480efff0e4305ad4dd7c2f46dd4d8a69ddd0ab"
+        },
+        {
+          "field": "B3",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 587,
+          "fullTeacherTokens": 591,
+          "promptSha256": "2f1e7d126431bcf7833395085da8ac4bb7fb87018e67f5775057b6fb4ae6eb30",
+          "modelInputSha256": "b1d8d4bf566ecef535183eec9667a1fa7b00f4e53d42bc23ac65d9b4d162725b"
+        },
+        {
+          "field": "C1",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 587,
+          "fullTeacherTokens": 597,
+          "promptSha256": "bf71309ca9424dc48c887ac472c3b8105f1e358810a86523561d759f533b2576",
+          "modelInputSha256": "533bb6ea2caa82a28bbf2b12f9e8a0b19e81dec8db549a5b783cc0ce62903495"
+        },
+        {
+          "field": "C2",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 589,
+          "fullTeacherTokens": 599,
+          "promptSha256": "7e272d55a134c398d0942b86375ef2f182259f105415ede4af66b06e26738c63",
+          "modelInputSha256": "bbffe570d464cf797076af475634aadf001c4d44d0394cbdcedb5d72241b273c"
+        },
+        {
+          "field": "C3",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 587,
+          "fullTeacherTokens": 597,
+          "promptSha256": "f65f0912e323988b455583beba5d02301e729c573a2f8b6113d7dbcf40ed8848",
+          "modelInputSha256": "54c6c0897ab2f5563411e41e360f359c95ade017c9c14029198648a05aefcfe5"
+        }
+      ],
+      "parentSplitCasesPreviouslyInspectedDuringDataPreparation": true
+    },
+    {
+      "split": "test",
+      "caseId": "copy-pair-fresh-aa14cc65832e88f1",
+      "request": {
+        "asOf": "2026-10-01T12:00:00Z",
+        "candidateProductIds": [
+          "pair-fresh-p-8efcbae4388b06af",
+          "pair-fresh-p-14f7550b98de15f1",
+          "pair-fresh-p-e2b1f667d918f93d",
+          "pair-fresh-p-e523c41ae2f96156",
+          "pair-fresh-p-443eaaf5991d018f",
+          "pair-fresh-p-2c569d702eee7f9e"
+        ],
+        "context": {
+          "presentationPreferences": [
+            "in-use-view"
+          ],
+          "presentationSurface": "compact-card",
+          "statedBudget": 200,
+          "statedPreferences": [
+            "ventilated",
+            "water-resistant"
+          ],
+          "statedRequirements": [],
+          "task": "Choose daypacks for everyday travel with ventilated and water-resistant details."
+        },
+        "history": [],
+        "presentationCompatibility": {
+          "pair-fresh-p-14f7550b98de15f1": {
+            "pair-fresh-v-346ad9ad8b72a64f": true,
+            "pair-fresh-v-d4fa87687b14ded0": true
+          },
+          "pair-fresh-p-2c569d702eee7f9e": {
+            "pair-fresh-v-8169dace52efe22f": true,
+            "pair-fresh-v-e3f2c88d2ea2bef2": true
+          },
+          "pair-fresh-p-443eaaf5991d018f": {
+            "pair-fresh-v-e6224bf3c78c25f9": true,
+            "pair-fresh-v-f284255cde76cb4f": true
+          },
+          "pair-fresh-p-8efcbae4388b06af": {
+            "pair-fresh-v-93fcf02d2c8841b5": true,
+            "pair-fresh-v-db4e7c7bb0ee701a": true
+          },
+          "pair-fresh-p-e2b1f667d918f93d": {
+            "pair-fresh-v-2a3e3d511c4316e2": true,
+            "pair-fresh-v-6884a4f6e67a9a9d": true
+          },
+          "pair-fresh-p-e523c41ae2f96156": {
+            "pair-fresh-v-478003a9734f2a54": true,
+            "pair-fresh-v-b26c21c14da17392": true
+          }
+        },
+        "recordId": "copy-pair-fresh-aa14cc65832e88f1"
+      },
+      "catalog": {
+        "pair-fresh-p-14f7550b98de15f1": {
+          "category": "backpacks",
+          "description": "26-litre daypack; lightweight, mesh, water-resistant.",
+          "id": "pair-fresh-p-14f7550b98de15f1",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "26L",
+                "lightweight",
+                "mesh",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-346ad9ad8b72a64f",
+              "imageDescription": "Text description of Zelimar 26L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-346ad9ad8b72a64f",
+              "presentationStyle": "detail-view",
+              "title": "Zelimar 26L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "26L",
+                "lightweight",
+                "mesh",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-d4fa87687b14ded0",
+              "imageDescription": "Text description of Zelimar 26L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-d4fa87687b14ded0",
+              "presentationStyle": "in-use-view",
+              "title": "Zelimar 26L Daypack \u2014 lightweight"
+            }
+          ],
+          "price": 55,
+          "shippingCost": 5,
+          "tags": [
+            "lightweight",
+            "mesh",
+            "water-resistant"
+          ],
+          "title": "Zelimar 26L Daypack"
+        },
+        "pair-fresh-p-2c569d702eee7f9e": {
+          "category": "backpacks",
+          "description": "27-litre daypack; packable, roomy, structured.",
+          "id": "pair-fresh-p-2c569d702eee7f9e",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "27L",
+                "packable",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-8169dace52efe22f",
+              "imageDescription": "Text description of Tavuven 27L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-8169dace52efe22f",
+              "presentationStyle": "detail-view",
+              "title": "Tavuven 27L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "27L",
+                "packable",
+                "roomy",
+                "structured"
+              ],
+              "id": "pair-fresh-v-e3f2c88d2ea2bef2",
+              "imageDescription": "Text description of Tavuven 27L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-e3f2c88d2ea2bef2",
+              "presentationStyle": "in-use-view",
+              "title": "Tavuven 27L Daypack \u2014 packable"
+            }
+          ],
+          "price": 79,
+          "shippingCost": 5,
+          "tags": [
+            "packable",
+            "roomy",
+            "structured"
+          ],
+          "title": "Tavuven 27L Daypack"
+        },
+        "pair-fresh-p-443eaaf5991d018f": {
+          "category": "backpacks",
+          "description": "20-litre daypack; padded, quilted, water-resistant.",
+          "id": "pair-fresh-p-443eaaf5991d018f",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "20L",
+                "padded",
+                "quilted",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-f284255cde76cb4f",
+              "imageDescription": "Text description of Qorimar 20L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-f284255cde76cb4f",
+              "presentationStyle": "detail-view",
+              "title": "Qorimar 20L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "20L",
+                "padded",
+                "quilted",
+                "water-resistant"
+              ],
+              "id": "pair-fresh-v-e6224bf3c78c25f9",
+              "imageDescription": "Text description of Qorimar 20L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-e6224bf3c78c25f9",
+              "presentationStyle": "in-use-view",
+              "title": "Qorimar 20L Daypack \u2014 padded"
+            }
+          ],
+          "price": 73,
+          "shippingCost": 5,
+          "tags": [
+            "padded",
+            "quilted",
+            "water-resistant"
+          ],
+          "title": "Qorimar 20L Daypack"
+        },
+        "pair-fresh-p-8efcbae4388b06af": {
+          "category": "backpacks",
+          "description": "19-litre daypack; compact, mesh, ventilated.",
+          "id": "pair-fresh-p-8efcbae4388b06af",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "19L",
+                "compact",
+                "mesh",
+                "ventilated"
+              ],
+              "id": "pair-fresh-v-db4e7c7bb0ee701a",
+              "imageDescription": "Text description of Qoriven 19L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-db4e7c7bb0ee701a",
+              "presentationStyle": "detail-view",
+              "title": "Qoriven 19L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "19L",
+                "compact",
+                "mesh",
+                "ventilated"
+              ],
+              "id": "pair-fresh-v-93fcf02d2c8841b5",
+              "imageDescription": "Text description of Qoriven 19L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-93fcf02d2c8841b5",
+              "presentationStyle": "in-use-view",
+              "title": "Qoriven 19L Daypack \u2014 compact"
+            }
+          ],
+          "price": 49,
+          "shippingCost": 5,
+          "tags": [
+            "compact",
+            "mesh",
+            "ventilated"
+          ],
+          "title": "Qoriven 19L Daypack"
+        },
+        "pair-fresh-p-e2b1f667d918f93d": {
+          "category": "backpacks",
+          "description": "33-litre daypack; adjustable, compact, organizer.",
+          "id": "pair-fresh-p-e2b1f667d918f93d",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "33L",
+                "adjustable",
+                "compact",
+                "organizer"
+              ],
+              "id": "pair-fresh-v-2a3e3d511c4316e2",
+              "imageDescription": "Text description of Vesudor 33L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-2a3e3d511c4316e2",
+              "presentationStyle": "detail-view",
+              "title": "Vesudor 33L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "33L",
+                "adjustable",
+                "compact",
+                "organizer"
+              ],
+              "id": "pair-fresh-v-6884a4f6e67a9a9d",
+              "imageDescription": "Text description of Vesudor 33L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-6884a4f6e67a9a9d",
+              "presentationStyle": "in-use-view",
+              "title": "Vesudor 33L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 61,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "compact",
+            "organizer"
+          ],
+          "title": "Vesudor 33L Daypack"
+        },
+        "pair-fresh-p-e523c41ae2f96156": {
+          "category": "backpacks",
+          "description": "13-litre daypack; foldable, padded, ventilated.",
+          "id": "pair-fresh-p-e523c41ae2f96156",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "13L",
+                "foldable",
+                "padded",
+                "ventilated"
+              ],
+              "id": "pair-fresh-v-478003a9734f2a54",
+              "imageDescription": "Text description of Qoriris 13L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-478003a9734f2a54",
+              "presentationStyle": "detail-view",
+              "title": "Qoriris 13L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "13L",
+                "foldable",
+                "padded",
+                "ventilated"
+              ],
+              "id": "pair-fresh-v-b26c21c14da17392",
+              "imageDescription": "Text description of Qoriris 13L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-b26c21c14da17392",
+              "presentationStyle": "in-use-view",
+              "title": "Qoriris 13L Daypack \u2014 foldable"
+            }
+          ],
+          "price": 67,
+          "shippingCost": 5,
+          "tags": [
+            "foldable",
+            "padded",
+            "ventilated"
+          ],
+          "title": "Qoriris 13L Daypack"
+        }
+      },
+      "plan": {
+        "duplicatePolicy": "forbid",
+        "method": {
+          "evidence": "deterministic observable projection; not a learned evidence planner",
+          "headingsAndTitles": "pending actual same-backbone generation",
+          "selectionAndOrder": "frozen synthetic fixture order; no learned ranking quality claim",
+          "structure": "fixed max-three-card grouping; not a trained layout policy"
+        },
+        "recordId": "copy-pair-fresh-aa14cc65832e88f1",
+        "requestedCardCount": 6,
+        "schemaVersion": "page-plan.v1",
+        "sectionOrder": [
+          "section-1",
+          "section-2"
+        ],
+        "sections": [
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-8efcbae4388b06af",
+              "pair-fresh-p-14f7550b98de15f1",
+              "pair-fresh-p-e2b1f667d918f93d"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-8efcbae4388b06af:tag:ventilated"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-93fcf02d2c8841b5",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-8efcbae4388b06af",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-14f7550b98de15f1:tag:water-resistant"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-d4fa87687b14ded0",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-14f7550b98de15f1",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-6884a4f6e67a9a9d",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-e2b1f667d918f93d",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-1",
+            "type": "recommendations"
+          },
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-e523c41ae2f96156",
+              "pair-fresh-p-443eaaf5991d018f",
+              "pair-fresh-p-2c569d702eee7f9e"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-e523c41ae2f96156:tag:ventilated"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-b26c21c14da17392",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-e523c41ae2f96156",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-443eaaf5991d018f:tag:water-resistant"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-e6224bf3c78c25f9",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-443eaaf5991d018f",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-e3f2c88d2ea2bef2",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-2c569d702eee7f9e",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-2",
+            "type": "alternatives"
+          }
+        ],
+        "shortfall": 0,
+        "synthetic": true
+      },
+      "inventory": {
+        "rootTokens": 370,
+        "rootTokenSha256": "2600422e92a3821583407df640c45a62a7dd2b8a891656ea87faae392d3204a2",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 593,
+            "fullPromptTokens": 963,
+            "fullPromptSha256": "7c17ea2976a40ecb6b46979f087184131e2dcd0d480fc2a96ab197e1db0e64de"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 222,
+            "fullPromptTokens": 592,
+            "fullPromptSha256": "19778b06f3f35acafeb630c3250554f6a411b034e53c678c6495b05c92c29c15"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 222,
+            "fullPromptTokens": 592,
+            "fullPromptSha256": "c4647f6a44611dad446c65f181854c52311a0221ab302193283624eab7046694"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 224,
+            "fullPromptTokens": 594,
+            "fullPromptSha256": "688738762f8ef89fbd5fc340ab17e951077d4c6a25aa60d096534938a2faa2b4"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 224,
+            "fullPromptTokens": 594,
+            "fullPromptSha256": "03151954f22efd642ec02b536f6d6dd59123afa3a826f30d39d9a351646e2505"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 223,
+            "fullPromptTokens": 593,
+            "fullPromptSha256": "4a48a8af427e2bcbbfd0a63525c3f32441d43db5b7c7fa8026871b10f3607202"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 223,
+            "fullPromptTokens": 593,
+            "fullPromptSha256": "b77b4182f8735bd02646dad9d88731985e8eaf5eef579c9a57cc4c5796a01d02"
+          },
+          {
+            "rowId": "copy-1",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 222,
+            "fullPromptTokens": 592,
+            "fullPromptSha256": "83d909be4470b2da01fdb94f24ee2b902ec39d8e327de2dbae40bc45e0083afe"
+          },
+          {
+            "rowId": "copy-2",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 224,
+            "fullPromptTokens": 594,
+            "fullPromptSha256": "49ad26ee63b9450c631b1b71dc0c755d271dfd719fd979b30346e397ecaa9180"
+          },
+          {
+            "rowId": "copy-3",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 223,
+            "fullPromptTokens": 593,
+            "fullPromptSha256": "5bc3a7529ae03fd2954c2c623cec4118f4aec9d3f57b8c7860e6fb3538a3c766"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 2600,
+        "totalRootAndAllRowSuffixTokens": 2970,
+        "cardFactCacheReuseImplemented": false,
+        "layoutVersion": "first-section-card-branch-copy-v1",
+        "requiredRows": [
+          "S1",
+          "T1",
+          "B1",
+          "T2",
+          "B2",
+          "T3",
+          "B3",
+          "C1",
+          "C2",
+          "C3"
+        ]
+      },
+      "universalTagsFirstSection": [],
+      "teacherTokenFitOnly": [
+        {
+          "field": "S1",
+          "sampledTargetTokensIncludingEOS": 5,
+          "promptTokens": 963,
+          "fullTeacherTokens": 968,
+          "promptSha256": "7c17ea2976a40ecb6b46979f087184131e2dcd0d480fc2a96ab197e1db0e64de",
+          "modelInputSha256": "6039545b50bfd5011116dab456e1e9817bff27b8233a5c4d3a1fe7b9a2e743ca"
+        },
+        {
+          "field": "T1",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 592,
+          "fullTeacherTokens": 606,
+          "promptSha256": "19778b06f3f35acafeb630c3250554f6a411b034e53c678c6495b05c92c29c15",
+          "modelInputSha256": "8ba8b92d03de4e326dd1096783e3cb00bb4ae8dc7ea7450c44bfa066ea27fefa"
+        },
+        {
+          "field": "B1",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 592,
+          "fullTeacherTokens": 596,
+          "promptSha256": "c4647f6a44611dad446c65f181854c52311a0221ab302193283624eab7046694",
+          "modelInputSha256": "146c295581d2fd2fd1dabbf8fe1c2a4ea94b487f9af5f9068affe6996d1d752d"
+        },
+        {
+          "field": "T2",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 594,
+          "fullTeacherTokens": 608,
+          "promptSha256": "688738762f8ef89fbd5fc340ab17e951077d4c6a25aa60d096534938a2faa2b4",
+          "modelInputSha256": "dc4b273ae382c9f238cba7587727d30e90df1f24d1f73a28f8dd21abbb4582b8"
+        },
+        {
+          "field": "B2",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 594,
+          "fullTeacherTokens": 598,
+          "promptSha256": "03151954f22efd642ec02b536f6d6dd59123afa3a826f30d39d9a351646e2505",
+          "modelInputSha256": "72d01c2ddca6d83aea77301886d73c5662a075a043b7fbad8778c24fc47e05fe"
+        },
+        {
+          "field": "T3",
+          "sampledTargetTokensIncludingEOS": 14,
+          "promptTokens": 593,
+          "fullTeacherTokens": 607,
+          "promptSha256": "4a48a8af427e2bcbbfd0a63525c3f32441d43db5b7c7fa8026871b10f3607202",
+          "modelInputSha256": "40f90d3cd84e04d1ac83cc8fc5633ecec8d1ca9e4b0633d1b53a0b92414716a0"
+        },
+        {
+          "field": "B3",
+          "sampledTargetTokensIncludingEOS": 2,
+          "promptTokens": 593,
+          "fullTeacherTokens": 595,
+          "promptSha256": "b77b4182f8735bd02646dad9d88731985e8eaf5eef579c9a57cc4c5796a01d02",
+          "modelInputSha256": "2ea12c9632daba5ce72a5b6a730d9878b5ca5cdd208c81c5c783da224a5e0e5b"
+        },
+        {
+          "field": "C1",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 592,
+          "fullTeacherTokens": 602,
+          "promptSha256": "83d909be4470b2da01fdb94f24ee2b902ec39d8e327de2dbae40bc45e0083afe",
+          "modelInputSha256": "2e2ab2bba8953e8f80f8a90b8da1e09534247f3ba6b328c512dceed6486ab6c1"
+        },
+        {
+          "field": "C2",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 594,
+          "fullTeacherTokens": 604,
+          "promptSha256": "49ad26ee63b9450c631b1b71dc0c755d271dfd719fd979b30346e397ecaa9180",
+          "modelInputSha256": "b0fc648d92b82f7b432b43e8a357f65a1f5e835d3e5c0791346c7d8255ace3a1"
+        },
+        {
+          "field": "C3",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 593,
+          "fullTeacherTokens": 602,
+          "promptSha256": "5bc3a7529ae03fd2954c2c623cec4118f4aec9d3f57b8c7860e6fb3538a3c766",
+          "modelInputSha256": "f7b154a7aeb387326ba5922949c29299c991321792aafcaadf12c6472872cc60"
+        }
+      ],
+      "parentSplitCasesPreviouslyInspectedDuringDataPreparation": true
+    },
+    {
+      "split": "test",
+      "caseId": "copy-pair-fresh-a7b04267c0f2341c",
+      "request": {
+        "asOf": "2026-10-01T12:00:00Z",
+        "candidateProductIds": [
+          "pair-fresh-p-6fc4c89c7c5c2723",
+          "pair-fresh-p-a66407c644dcd77d",
+          "pair-fresh-p-c95f863fa626314d",
+          "pair-fresh-p-191ad79d01ff7caa",
+          "pair-fresh-p-e7db5ff140fefda3",
+          "pair-fresh-p-26e16f94befaf429"
+        ],
+        "context": {
+          "presentationPreferences": [
+            "detail-view"
+          ],
+          "presentationSurface": "compact-card",
+          "statedBudget": 200,
+          "statedPreferences": [
+            "rolltop",
+            "quilted"
+          ],
+          "statedRequirements": [],
+          "task": "Choose daypacks for everyday travel with rolltop and quilted details."
+        },
+        "history": [],
+        "presentationCompatibility": {
+          "pair-fresh-p-191ad79d01ff7caa": {
+            "pair-fresh-v-91c5135cf2e33d0e": true,
+            "pair-fresh-v-9c8fb1c72f403f5a": true
+          },
+          "pair-fresh-p-26e16f94befaf429": {
+            "pair-fresh-v-69bf153bc1b86359": true,
+            "pair-fresh-v-ad192d3bbf19675f": true
+          },
+          "pair-fresh-p-6fc4c89c7c5c2723": {
+            "pair-fresh-v-5446ee84e947b83b": true,
+            "pair-fresh-v-69021bb11ab33b87": true
+          },
+          "pair-fresh-p-a66407c644dcd77d": {
+            "pair-fresh-v-701000029c2d720d": true,
+            "pair-fresh-v-f97bc46527ae33c5": true
+          },
+          "pair-fresh-p-c95f863fa626314d": {
+            "pair-fresh-v-babbb48ad3cb7a15": true,
+            "pair-fresh-v-d3d494188c3bf2a7": true
+          },
+          "pair-fresh-p-e7db5ff140fefda3": {
+            "pair-fresh-v-01bad3968a24cde3": true,
+            "pair-fresh-v-858251f0cd1d4f1b": true
+          }
+        },
+        "recordId": "copy-pair-fresh-a7b04267c0f2341c"
+      },
+      "catalog": {
+        "pair-fresh-p-191ad79d01ff7caa": {
+          "category": "backpacks",
+          "description": "28-litre daypack; compressible, quilted, reflective.",
+          "id": "pair-fresh-p-191ad79d01ff7caa",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "28L",
+                "compressible",
+                "quilted",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-91c5135cf2e33d0e",
+              "imageDescription": "Text description of Zeliven 28L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-91c5135cf2e33d0e",
+              "presentationStyle": "detail-view",
+              "title": "Zeliven 28L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "28L",
+                "compressible",
+                "quilted",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-9c8fb1c72f403f5a",
+              "imageDescription": "Text description of Zeliven 28L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-9c8fb1c72f403f5a",
+              "presentationStyle": "in-use-view",
+              "title": "Zeliven 28L Daypack \u2014 compressible"
+            }
+          ],
+          "price": 67,
+          "shippingCost": 5,
+          "tags": [
+            "compressible",
+            "quilted",
+            "reflective"
+          ],
+          "title": "Zeliven 28L Daypack"
+        },
+        "pair-fresh-p-26e16f94befaf429": {
+          "category": "backpacks",
+          "description": "15-litre daypack; expandable, quilted, reflective.",
+          "id": "pair-fresh-p-26e16f94befaf429",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "15L",
+                "expandable",
+                "quilted",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-ad192d3bbf19675f",
+              "imageDescription": "Text description of Walidor 15L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-ad192d3bbf19675f",
+              "presentationStyle": "detail-view",
+              "title": "Walidor 15L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "15L",
+                "expandable",
+                "quilted",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-69bf153bc1b86359",
+              "imageDescription": "Text description of Walidor 15L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-69bf153bc1b86359",
+              "presentationStyle": "in-use-view",
+              "title": "Walidor 15L Daypack \u2014 expandable"
+            }
+          ],
+          "price": 79,
+          "shippingCost": 5,
+          "tags": [
+            "expandable",
+            "quilted",
+            "reflective"
+          ],
+          "title": "Walidor 15L Daypack"
+        },
+        "pair-fresh-p-6fc4c89c7c5c2723": {
+          "category": "backpacks",
+          "description": "34-litre daypack; foldable, packable, rolltop.",
+          "id": "pair-fresh-p-6fc4c89c7c5c2723",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "34L",
+                "foldable",
+                "packable",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-69021bb11ab33b87",
+              "imageDescription": "Text description of Tavunor 34L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-69021bb11ab33b87",
+              "presentationStyle": "detail-view",
+              "title": "Tavunor 34L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "34L",
+                "foldable",
+                "packable",
+                "rolltop"
+              ],
+              "id": "pair-fresh-v-5446ee84e947b83b",
+              "imageDescription": "Text description of Tavunor 34L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-5446ee84e947b83b",
+              "presentationStyle": "in-use-view",
+              "title": "Tavunor 34L Daypack \u2014 foldable"
+            }
+          ],
+          "price": 49,
+          "shippingCost": 5,
+          "tags": [
+            "foldable",
+            "packable",
+            "rolltop"
+          ],
+          "title": "Tavunor 34L Daypack"
+        },
+        "pair-fresh-p-a66407c644dcd77d": {
+          "category": "backpacks",
+          "description": "14-litre daypack; lightweight, mesh, packable.",
+          "id": "pair-fresh-p-a66407c644dcd77d",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "14L",
+                "lightweight",
+                "mesh",
+                "packable"
+              ],
+              "id": "pair-fresh-v-f97bc46527ae33c5",
+              "imageDescription": "Text description of Zelidor 14L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-f97bc46527ae33c5",
+              "presentationStyle": "detail-view",
+              "title": "Zelidor 14L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "14L",
+                "lightweight",
+                "mesh",
+                "packable"
+              ],
+              "id": "pair-fresh-v-701000029c2d720d",
+              "imageDescription": "Text description of Zelidor 14L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-701000029c2d720d",
+              "presentationStyle": "in-use-view",
+              "title": "Zelidor 14L Daypack \u2014 lightweight"
+            }
+          ],
+          "price": 55,
+          "shippingCost": 5,
+          "tags": [
+            "lightweight",
+            "mesh",
+            "packable"
+          ],
+          "title": "Zelidor 14L Daypack"
+        },
+        "pair-fresh-p-c95f863fa626314d": {
+          "category": "backpacks",
+          "description": "21-litre daypack; adjustable, packable, reflective.",
+          "id": "pair-fresh-p-c95f863fa626314d",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "21L",
+                "adjustable",
+                "packable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-d3d494188c3bf2a7",
+              "imageDescription": "Text description of Neriven 21L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-d3d494188c3bf2a7",
+              "presentationStyle": "detail-view",
+              "title": "Neriven 21L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "21L",
+                "adjustable",
+                "packable",
+                "reflective"
+              ],
+              "id": "pair-fresh-v-babbb48ad3cb7a15",
+              "imageDescription": "Text description of Neriven 21L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-babbb48ad3cb7a15",
+              "presentationStyle": "in-use-view",
+              "title": "Neriven 21L Daypack \u2014 adjustable"
+            }
+          ],
+          "price": 61,
+          "shippingCost": 5,
+          "tags": [
+            "adjustable",
+            "packable",
+            "reflective"
+          ],
+          "title": "Neriven 21L Daypack"
+        },
+        "pair-fresh-p-e7db5ff140fefda3": {
+          "category": "backpacks",
+          "description": "35-litre daypack; foldable, padded, quilted.",
+          "id": "pair-fresh-p-e7db5ff140fefda3",
+          "inStock": true,
+          "presentationVariants": [
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "35L",
+                "foldable",
+                "padded",
+                "quilted"
+              ],
+              "id": "pair-fresh-v-858251f0cd1d4f1b",
+              "imageDescription": "Text description of Qoridor 35L Daypack with its listed catalog facts in detail-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-858251f0cd1d4f1b",
+              "presentationStyle": "detail-view",
+              "title": "Qoridor 35L Daypack"
+            },
+            {
+              "compatibleSurfaces": [
+                "compact-card",
+                "detail-panel"
+              ],
+              "facts": [
+                "35L",
+                "foldable",
+                "padded",
+                "quilted"
+              ],
+              "id": "pair-fresh-v-01bad3968a24cde3",
+              "imageDescription": "Text description of Qoridor 35L Daypack with its listed catalog facts in in-use-view.",
+              "imageKey": "synthetic-copy-pairs/pair-fresh-v-01bad3968a24cde3",
+              "presentationStyle": "in-use-view",
+              "title": "Qoridor 35L Daypack \u2014 foldable"
+            }
+          ],
+          "price": 73,
+          "shippingCost": 5,
+          "tags": [
+            "foldable",
+            "padded",
+            "quilted"
+          ],
+          "title": "Qoridor 35L Daypack"
+        }
+      },
+      "plan": {
+        "duplicatePolicy": "forbid",
+        "method": {
+          "evidence": "deterministic observable projection; not a learned evidence planner",
+          "headingsAndTitles": "pending actual same-backbone generation",
+          "selectionAndOrder": "frozen synthetic fixture order; no learned ranking quality claim",
+          "structure": "fixed max-three-card grouping; not a trained layout policy"
+        },
+        "recordId": "copy-pair-fresh-a7b04267c0f2341c",
+        "requestedCardCount": 6,
+        "schemaVersion": "page-plan.v1",
+        "sectionOrder": [
+          "section-1",
+          "section-2"
+        ],
+        "sections": [
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-6fc4c89c7c5c2723",
+              "pair-fresh-p-a66407c644dcd77d",
+              "pair-fresh-p-c95f863fa626314d"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-6fc4c89c7c5c2723:tag:rolltop"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-69021bb11ab33b87",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-6fc4c89c7c5c2723",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-f97bc46527ae33c5",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-a66407c644dcd77d",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [],
+                "badge": {
+                  "source": "none",
+                  "text": null
+                },
+                "badgeDecision": "NONE",
+                "imageCaptionId": "pair-fresh-v-d3d494188c3bf2a7",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-c95f863fa626314d",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-1",
+            "type": "recommendations"
+          },
+          {
+            "copy": {
+              "source": "none",
+              "text": null
+            },
+            "heading": {
+              "source": "pending",
+              "text": null
+            },
+            "productOrder": [
+              "pair-fresh-p-191ad79d01ff7caa",
+              "pair-fresh-p-e7db5ff140fefda3",
+              "pair-fresh-p-26e16f94befaf429"
+            ],
+            "products": [
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-191ad79d01ff7caa:tag:quilted"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-91c5135cf2e33d0e",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-191ad79d01ff7caa",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-e7db5ff140fefda3:tag:quilted"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-858251f0cd1d4f1b",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-e7db5ff140fefda3",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              },
+              {
+                "approvedFactIds": [
+                  "fact:pair-fresh-p-26e16f94befaf429:tag:quilted"
+                ],
+                "badge": {
+                  "source": "pending",
+                  "text": null
+                },
+                "badgeDecision": "GENERATE",
+                "imageCaptionId": "pair-fresh-v-ad192d3bbf19675f",
+                "observedHistoryReasonIds": [],
+                "productId": "pair-fresh-p-26e16f94befaf429",
+                "title": {
+                  "source": "pending",
+                  "text": null
+                }
+              }
+            ],
+            "sectionId": "section-2",
+            "type": "alternatives"
+          }
+        ],
+        "shortfall": 0,
+        "synthetic": true
+      },
+      "inventory": {
+        "rootTokens": 370,
+        "rootTokenSha256": "ba55a7338c20d357fe515cca03368d5fd3304bab63d5b5e8591d8097db61ae8d",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 588,
+            "fullPromptTokens": 958,
+            "fullPromptSha256": "05cf88a470dd6149c420c793aaeada67c34bfa89be5b1b2dc2a0862a29ce175e"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 226,
+            "fullPromptTokens": 596,
+            "fullPromptSha256": "6de6a08f21e9d053e752bb029829d49c052c5993da1955642d0191b59eb62462"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 226,
+            "fullPromptTokens": 596,
+            "fullPromptSha256": "e567fc80814f6cb345883cb097684a39fa8d55043dcdc1ddb0d86e53f4a332da"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 217,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "b400ffc89ae2a98a43340ca991a401ae2a28a8734165194783ef1123c4de04a4"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 217,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "dbc977abc0f14bfb49419b69e256f1532eac91d33d96c8dd4650dc447e5f226a"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 219,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "368dbe3be474217acff0aae30da9a37d19b0e84153e657732bb5e7f96b5a84ba"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 219,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "3b0f905aae1b6330199ce1c4821fdec7fd0cd31fc266eff2fe1999c423bba316"
+          },
+          {
+            "rowId": "copy-1",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 226,
+            "fullPromptTokens": 596,
+            "fullPromptSha256": "7a524b9268c78ca26ca2433a884397fea650737ea81e22242d426711b668e928"
+          },
+          {
+            "rowId": "copy-2",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 217,
+            "fullPromptTokens": 587,
+            "fullPromptSha256": "afb348224c3813e3e24345ae49bd63f27dce4f7449d4ebf5ea802e63aa1f9f75"
+          },
+          {
+            "rowId": "copy-3",
+            "kind": "copy",
+            "maxTokens": 32,
+            "suffixTokens": 219,
+            "fullPromptTokens": 589,
+            "fullPromptSha256": "8bb6f32418a5330bcf0987b73cdf882803688939ac029c94a3cacb7574aa625f"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 2574,
+        "totalRootAndAllRowSuffixTokens": 2944,
+        "cardFactCacheReuseImplemented": false,
+        "layoutVersion": "first-section-card-branch-copy-v1",
+        "requiredRows": [
+          "S1",
+          "T1",
+          "B1",
+          "T2",
+          "B2",
+          "T3",
+          "B3",
+          "C1",
+          "C2",
+          "C3"
+        ]
+      },
+      "universalTagsFirstSection": [
+        "packable"
+      ],
+      "teacherTokenFitOnly": [
+        {
+          "field": "S1",
+          "sampledTargetTokensIncludingEOS": 5,
+          "promptTokens": 958,
+          "fullTeacherTokens": 963,
+          "promptSha256": "05cf88a470dd6149c420c793aaeada67c34bfa89be5b1b2dc2a0862a29ce175e",
+          "modelInputSha256": "da7286ff1f9c053089f51b6678e542b0447eedf62bf3b140b269fc71a14f5805"
+        },
+        {
+          "field": "T1",
+          "sampledTargetTokensIncludingEOS": 15,
+          "promptTokens": 596,
+          "fullTeacherTokens": 611,
+          "promptSha256": "6de6a08f21e9d053e752bb029829d49c052c5993da1955642d0191b59eb62462",
+          "modelInputSha256": "042ba4482183297433d307e9927b75c323d50b3a659ed205780947c0f6c626cf"
+        },
+        {
+          "field": "B1",
+          "sampledTargetTokensIncludingEOS": 4,
+          "promptTokens": 596,
+          "fullTeacherTokens": 600,
+          "promptSha256": "e567fc80814f6cb345883cb097684a39fa8d55043dcdc1ddb0d86e53f4a332da",
+          "modelInputSha256": "6e0af7c7273b1ecbe63d2fdf37e153e4779567bd80f89e65ae61e7a36690daae"
+        },
+        {
+          "field": "T2",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 587,
+          "fullTeacherTokens": 600,
+          "promptSha256": "b400ffc89ae2a98a43340ca991a401ae2a28a8734165194783ef1123c4de04a4",
+          "modelInputSha256": "43b265df9672650c3f1e445a869e600954e206538bba0572e12ac62a3db03a4f"
+        },
+        {
+          "field": "B2",
+          "sampledTargetTokensIncludingEOS": 2,
+          "promptTokens": 587,
+          "fullTeacherTokens": 589,
+          "promptSha256": "dbc977abc0f14bfb49419b69e256f1532eac91d33d96c8dd4650dc447e5f226a",
+          "modelInputSha256": "86578f13712e7ede966cb0de9db67ca56dd78c9b5575c0058b8ccc120115a648"
+        },
+        {
+          "field": "T3",
+          "sampledTargetTokensIncludingEOS": 13,
+          "promptTokens": 589,
+          "fullTeacherTokens": 602,
+          "promptSha256": "368dbe3be474217acff0aae30da9a37d19b0e84153e657732bb5e7f96b5a84ba",
+          "modelInputSha256": "53166ec487bd6c1b381e7c4bfe210bed7b96c350e77bf395ced0fa7c49f49287"
+        },
+        {
+          "field": "B3",
+          "sampledTargetTokensIncludingEOS": 2,
+          "promptTokens": 589,
+          "fullTeacherTokens": 591,
+          "promptSha256": "3b0f905aae1b6330199ce1c4821fdec7fd0cd31fc266eff2fe1999c423bba316",
+          "modelInputSha256": "62f0ab84ae12c25b4099e746bac8e2f6e2b42bd30bd747ae4f6c9a75ad05421d"
+        },
+        {
+          "field": "C1",
+          "sampledTargetTokensIncludingEOS": 10,
+          "promptTokens": 596,
+          "fullTeacherTokens": 606,
+          "promptSha256": "7a524b9268c78ca26ca2433a884397fea650737ea81e22242d426711b668e928",
+          "modelInputSha256": "1116e6823ce3fc2a3484434d218228999f1d8a7a84034c28f5660568010e37c6"
+        },
+        {
+          "field": "C2",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 587,
+          "fullTeacherTokens": 596,
+          "promptSha256": "afb348224c3813e3e24345ae49bd63f27dce4f7449d4ebf5ea802e63aa1f9f75",
+          "modelInputSha256": "c5bf9a562b82203bd2e067ad14335ada220d79623c1314f8ff3d5dc5ef4946b6"
+        },
+        {
+          "field": "C3",
+          "sampledTargetTokensIncludingEOS": 9,
+          "promptTokens": 589,
+          "fullTeacherTokens": 598,
+          "promptSha256": "8bb6f32418a5330bcf0987b73cdf882803688939ac029c94a3cacb7574aa625f",
+          "modelInputSha256": "2d8d1e184a9d336f91925a5ec59e1f51d40acc499048eae259059c6e33399ce5"
+        }
+      ],
+      "parentSplitCasesPreviouslyInspectedDuringDataPreparation": true
+    }
+  ],
+  "fixedCases": 6,
+  "widths": [
+    1,
+    3,
+    6
+  ],
+  "modelModes": [
+    "frozen",
+    "paired-STB-adapter"
+  ],
+  "fixedArms": 36,
+  "requiredFields": [
+    "S1",
+    "T1",
+    "B1",
+    "T2",
+    "B2",
+    "T3",
+    "B3",
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "totalCapPerView": 208,
+  "trainingCorpusPreflightRows": 360,
+  "maximumTrainingTeacherContext": 969,
+  "controls": {
+    "caseId": "copy-pair-fresh-313c2f0ff5511f99",
+    "widths": [
+      1,
+      3,
+      6
+    ],
+    "passes": [
+      "fork",
+      "independent",
+      "repeat"
+    ],
+    "actualLaneFields": {
+      "1": [
+        "C1"
+      ],
+      "3": [
+        "S1",
+        "T1",
+        "C1"
+      ],
+      "6": [
+        "S1",
+        "T1",
+        "B1",
+        "C1",
+        "T2",
+        "C2"
+      ]
+    },
+    "capPerControlRow": 7,
+    "modelModes": [
+      "frozen",
+      "paired-STB-adapter"
+    ],
+    "diagnosticOnlyNotQualityDenominator": true
+  },
+  "limits": [
+    "Copy-stage endpoint only; no ranking, UI paint, conversion or full-page speedup claim.",
+    "Same ten fields and caps at all widths; cross-width numerical wording differences are compared semantically.",
+    "Matched-width fork/rebuild/repeat tokens/distributions must be exact; mismatch aborts before timing arms.",
+    "Paired-STB adapter received no C training; this experiment tests transfer, not the new C supervision fit.",
+    "All parent cases inspected in data preparation; six fixed denominators, not new sealed holdouts."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "arm": "prior",
+  "representation": "catalog-user-fusion-role-centered-v1",
+  "config": {
+    "seed": 728,
+    "rank": 4,
+    "dimension": 4096,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "cpuThreads": 1,
+    "maxSecondsPerArm": 60,
+    "selection": "fixed attempt; no validation/test outcome selection"
+  },
+  "statisticsSha256": "fb00e986642aac467a60286d4ca1a6ceebaef9ac048587341be0810ce621bc53",
+  "trained": true,
+  "trainableParameters": 16394,
+  "lossBefore": 2.079127788543701,
+  "lossAfter": 1.4034136533737183,
+  "firstGradientL2": {
+    "V": 0.027793437242507935,
+    "prior": 0.008785044774413109,
+    "bias": 2.6669020769531926e-08
+  },
+  "parameterAbsoluteChange": {
+    "U": 0.0,
+    "V": 7078.41064453125,
+    "prior": 5.15572452545166,
+    "interaction": 0.0,
+    "bias": 0.331548810005188
+  },
+  "predictionAbsoluteChange": 965.3921585083008,
+  "seconds": 0.6427558329887688,
+  "sha256": "fbc76a714bf1ec5bdf0992de3bf6221ff758343450ce059be0fa8ac6580f4534",
+  "exactTrainingPredictionReload": true,
+  "finalActivations": {
+    "query": {
+      "saturationFractionAbsAtLeast0.99": 0.0,
+      "acrossRowVarianceSum": 0.009761952795088291,
+      "distinctProjectedRows": 28
+    },
+    "catalog": {
+      "saturationFractionAbsAtLeast0.99": 0.2678571343421936,
+      "acrossRowVarianceSum": 2.9419939517974854,
+      "distinctProjectedRows": 42
+    }
+  }
+}

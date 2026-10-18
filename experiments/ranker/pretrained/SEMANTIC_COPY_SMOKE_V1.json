@@ -1,0 +1,47 @@
+{
+  "status": "blocked",
+  "config": {
+    "seed": 19074,
+    "rank": 4,
+    "scale": 20.0,
+    "learningRate": 0.0001,
+    "epochs": 2,
+    "batchSize": 1,
+    "memoryGiB": 7,
+    "prefillStep": 256,
+    "maximumContext": 4096,
+    "target": "language_model.model.layers.31.mlp.down_proj",
+    "selection": "final fixed step; no dev/test checkpoint selection",
+    "trainingMode": "frozen upstream eval; exact cached final-MLP inputs; target-only CE"
+  },
+  "sourceSha256": "59399de7d4a1d2cf6fc33e9e87c01382822d684cdd7af24a2dd0ab1dea66ff1b",
+  "dataManifestSha256": "b9846faa469b4733c3f45d044ece581589f90832346df884c158fab6bf14bb7e",
+  "frozenBase": true,
+  "trainedHeadsUnchanged": true,
+  "controls": {},
+  "extraction": [],
+  "steps": [],
+  "arms": [],
+  "wallMs": 5892.518792068586,
+  "loadMs": 1766.4240410085768,
+  "trainableParameters": [
+    [
+      "language_model.model.layers.31.mlp.down_proj.lora_a",
+      49152
+    ],
+    [
+      "language_model.model.layers.31.mlp.down_proj.lora_b",
+      16384
+    ]
+  ],
+  "blocker": {
+    "type": "ValueError",
+    "message": "Shared observable prefix requires 1547 tokens; cap is 1536. Refusing truncation."
+  },
+  "memory": {
+    "mlxActiveBytes": 5038303760,
+    "mlxPeakBytes": 5101611528,
+    "mlxCacheBytes": 70316852,
+    "processBudgetBytes": 7516192768
+  }
+}

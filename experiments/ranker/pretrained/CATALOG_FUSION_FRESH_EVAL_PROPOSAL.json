@@ -1,0 +1,146 @@
+{
+  "status": "data/config frozen; root review required before new native extraction",
+  "dataset": "experiments/ranker/pretrained/catalog_fusion/fresh_eval_v1",
+  "freezeSha256": "39e3f0073a2a32da6b94dfd18d943ee76eeef9ccb0af181ceebd2c9ed37d5da9",
+  "generator": {
+    "path": "experiments/ranker/pretrained/catalog_fusion/fresh_eval_data.py",
+    "sha256": "9e1194ea652769de6f57aa768c1b093344ed75cc7453a173097e34ee02c32f80"
+  },
+  "files": {
+    "catalog.json": "66f2bc2f325a796afd352667847be6b11423bc7af09b786bc703fcf280db981b",
+    "public/requests.jsonl": "03f1aa7bc05975abc74905d0569995fb76174b3af789e2ee2d115224be00cf7a",
+    "private/truth.jsonl": "320f4cf341ca73a7562bad4e45f58f448aa0adde13a9b3be2fef2e769e4d1541",
+    "private/controls.json": "2d30680f67ba0bc48e24396f8074f704aa8a54a39f36d02bbbd2ea9bce0cc62e"
+  },
+  "sourceCheckpoints": {
+    "semanticRun": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/catalog-user-semantic-factors-v1-attempt-1",
+    "freezeSha256": "84784ac88b33d714345f1a2467e1acf2e36a2459b8cb37ed8b2ff335a9a74940",
+    "checkpoints": {
+      "fusion": {
+        "file": "fusion.pt",
+        "sha256": "6bb9e7a8e43243a92b83db8d0939e29eb682fe9fc6c3dfe2186635d400182944",
+        "trained": true
+      },
+      "prior": {
+        "file": "prior.pt",
+        "sha256": "e647c304bd2616ee277ad3972fd188d4bf8375c81d5967567c8a8ab136671722",
+        "trained": true
+      },
+      "random": {
+        "file": "random.pt",
+        "sha256": "c836f91608761cd0d9c6812b41f5fd865faa9522944425310e9960920167ad06",
+        "trained": false
+      }
+    },
+    "image": {
+      "file": "centered-image.pt",
+      "sha256": "e292b8e1ae0498774f7e1eee8f2a765e42be0743df57dcc45d6afe480682c582",
+      "source": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/catalog-user-fusion-centered-v1-attempt-1/fusion.pt",
+      "sourceFreezeSha256": "4df0a8c8ecc71715fedae409dd00596ea9cfa55167c3716966809bf95c576066"
+    },
+    "statisticsSha256": "fb00e986642aac467a60286d4ca1a6ceebaef9ac048587341be0810ce621bc53"
+  },
+  "dataOnlyChecks": {
+    "newSkuIdsTitlesAndCatalogEncoderTextsDisjointFromOldCatalog": true,
+    "newCatalogProducts": 36,
+    "catalogTagSignatureSizes": {
+      "pairs": 21,
+      "triples": 15
+    },
+    "uniqueFreshPreferenceTriples": 12,
+    "preferenceSetOverlapWithAllOldV2AndPairedPublicSplits": 0,
+    "requestEncoderTextOverlapWithAllOldV2AndPairedPublicSplits": 0,
+    "requests": 24,
+    "familyCount": 6,
+    "productPairs": 12,
+    "imagePairs": 12,
+    "eligibleCounts": [
+      27,
+      33
+    ],
+    "teacherTargetsRecomputedExactly": true,
+    "fullCandidateVariantCount": 72,
+    "oracleScoreFixtureGridFulfillment12And24ForEveryRequest": true,
+    "prefixAndFullRosterRetainedInBothGridSizes": true,
+    "allMandatoryViewBestPositionCounts": {
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 2,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 2,
+      "22": 2,
+      "23": 2,
+      "24": 2,
+      "25": 2,
+      "26": 2,
+      "27": 2,
+      "28": 2,
+      "29": 2,
+      "30": 2,
+      "31": 2,
+      "32": 2,
+      "33": 2,
+      "34": 2,
+      "35": 2
+    },
+    "publicVerificationDoesNotReadPrivateTargets": true,
+    "featuresOrPredictionsProduced": false,
+    "nativeForwardsProduced": 0,
+    "fitsProduced": 0
+  },
+  "requiredNativeWork": {
+    "catalog": 72,
+    "query": 24,
+    "total": 96,
+    "mustSerializeAfter": "root copy-fit and learned-probe jobs",
+    "preflight": "verify exact B1 whole text/token hashes and no truncation under512; fixed native6GiB active AND observed peak guard",
+    "reuse": "no old catalog or query vector matches; only learned weights/train means reused; new raw keys must bind exact new texts"
+  },
+  "evaluationMatrix": {
+    "arms": 5,
+    "requests": 24,
+    "rosterViews": 3,
+    "requestedGridSizes": [
+      12,
+      24
+    ],
+    "gridAssembliesPerArm": 144,
+    "allCandidateRowsPerScore": 72,
+    "notes": "Raw ranks evaluated separately; guarded grid fulfillment is a head/assembly component, not complete-page evidence."
+  },
+  "tests": {
+    "newDataTests": 6,
+    "allCatalogFusionTests": 43,
+    "allCatalogFusionSeconds": 3.976,
+    "result": "passed"
+  },
+  "unchangedExistingWorkload": {
+    "path": "experiments/ranker/pretrained/FULL_GRID_WORKLOAD.json",
+    "sha256": "c8f4e5c07fb74ffd0d3deba2f8e71aedff9d5a133e8f41ee52fa804316f71ef4",
+    "editedByThisLane": false
+  },
+  "limitations": [
+    "New synthetic SKUs/wording/compositions, seven-atom public teacher only; no real-user or conversion evidence.",
+    "Sealed from training and model-output adjustment; generator and root reviewer can see public facts/teacher labels.",
+    "Head/grid component only; no complete page, learned sections/copy or above-fold/full-storefront result.",
+    "Nonempty requirements cannot fulfill24 on this catalog; separate explicit CPU guard shortfall probes.",
+    "No features, fitting, model prediction, native timing or quality result produced by this freeze."
+  ]
+}

@@ -7,9 +7,11 @@
     "dev": "vp dev",
     "build": "tsc --noEmit && vp build",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test src/config.test.ts"
+    "test": "node --import tsx --test \"src/*.test.ts\""
   },
   "dependencies": {
+    "@hugeicons/core-free-icons": "^4.3.5",
+    "@hugeicons/react": "^1.1.10",
     "@storefront/contracts": "workspace:*",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"

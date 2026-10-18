@@ -1,0 +1,137 @@
+{
+  "status": "blocked",
+  "config": {
+    "seed": 19074,
+    "rank": 4,
+    "scale": 20.0,
+    "learningRate": 0.0001,
+    "epochs": 2,
+    "batchSize": 1,
+    "memoryGiB": 7,
+    "prefillStep": 256,
+    "maximumContext": 4096,
+    "maximumRankingPrefix": 1792,
+    "target": "language_model.model.layers.31.mlp.down_proj",
+    "selection": "final fixed step; no dev/test checkpoint selection",
+    "trainingMode": "frozen upstream eval; exact cached final-MLP inputs; target-only CE"
+  },
+  "sourceSha256": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+  "dataManifestSha256": "b9846faa469b4733c3f45d044ece581589f90832346df884c158fab6bf14bb7e",
+  "frozenBase": true,
+  "trainedHeadsUnchanged": true,
+  "executionCommit": "62f674961e2382851519d6d5fc4b2bd0631b7eb3",
+  "runtime": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.32.2",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "transformers": "5.20.1"
+  },
+  "inputHashesVerified": {
+    "cases.train.jsonl": "1515b46d18ac75fd79c62f544d06698ec0c675c3c6868a4bfa25c7ce5694ed77",
+    "cases.dev.jsonl": "732bec767d5155da61ced587789572533a9aa6abd9cb7846209a9b534a195955",
+    "cases.test.jsonl": "93413db55345169a4ea1c1cf6e0dc18deba47da01b6bcb9eb829941c94fcaddf",
+    "fields.train.jsonl": "9a7b708411e581b1ceb1dcb126410a18d2bd00b6516e450cc2d045958bccfd36",
+    "fields.dev.jsonl": "ffc2a8aebeaa78d8e5409ceb229c8c9a650c38b5324719729bac01a48de50ea1",
+    "fields.test.jsonl": "df9aa23b8c3af94ed774db336a24cfd97f4096ebfc014110380cb926a3dc316a"
+  },
+  "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "tokenizerSha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+  "controls": {
+    "directFeatureEquivalence": {
+      "nonzeroB": true,
+      "directLoss": 2.796349287033081,
+      "featureLoss": 2.8168084621429443,
+      "gradients": [
+        {
+          "name": "lora_a",
+          "maxAbsDifference": 0.0003461870364844799,
+          "exact": false
+        },
+        {
+          "name": "lora_b",
+          "maxAbsDifference": 0.009264126420021057,
+          "exact": false
+        }
+      ]
+    }
+  },
+  "extraction": [
+    {
+      "caseId": "copy-43a759a1ad17bae9",
+      "rowId": "heading-1",
+      "kind": "heading",
+      "targetTokens": 4,
+      "featureDtypes": {
+        "x": "mlx.core.bfloat16",
+        "h": "mlx.core.bfloat16",
+        "y": "mlx.core.bfloat16"
+      },
+      "featureShapes": {
+        "x": [
+          1,
+          39,
+          12288
+        ],
+        "h": [
+          1,
+          39,
+          4096
+        ],
+        "y": [
+          1,
+          39,
+          4096
+        ]
+      },
+      "predictionStart": 2225,
+      "supervisedTokenCount": 4,
+      "teacherInputTokens": 2229,
+      "fullTokens": 2230,
+      "stopTokenId": 248046,
+      "stopToken": "<|im_end|>",
+      "eosReceipt": {
+        "eosTokenIds": [
+          248046
+        ],
+        "eosTokenId": [
+          248046
+        ],
+        "acceptedEosTokenIds": [
+          248046
+        ],
+        "stopDeclaredBy": [
+          "eos_token_ids",
+          "eos_token_id"
+        ]
+      },
+      "promptSha256": "9d62a40c1d31493df408c03b9ac4df1377525ec5458ec9c50ffdc1b01a015f1f",
+      "modelInputSha256": "9b1c6a369ecca218b6f354ec17d09f3b5dfffea9bd74c2c67634b49e3f00be49",
+      "promptTokenCount": 2226
+    }
+  ],
+  "steps": [],
+  "arms": [],
+  "wallMs": 9207.997041987255,
+  "loadMs": 1531.0615829657763,
+  "trainableParameters": [
+    [
+      "language_model.model.layers.31.mlp.down_proj.lora_a",
+      49152
+    ],
+    [
+      "language_model.model.layers.31.mlp.down_proj.lora_b",
+      16384
+    ]
+  ],
+  "blocker": {
+    "type": "AssertionError",
+    "message": "Direct/features loss or gradient mismatch"
+  },
+  "memory": {
+    "mlxActiveBytes": 5276690970,
+    "mlxPeakBytes": 6331533946,
+    "mlxCacheBytes": 133893744,
+    "processBudgetBytes": 7516192768
+  }
+}

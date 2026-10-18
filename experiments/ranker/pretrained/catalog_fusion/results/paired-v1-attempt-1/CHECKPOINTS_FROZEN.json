@@ -1,0 +1,37 @@
+{
+  "frozenAtUtc": "2026-10-18T00:27:43.598130+00:00",
+  "config": {
+    "seed": 728,
+    "rank": 4,
+    "dimension": 4096,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "cpuThreads": 1,
+    "maxSecondsPerArm": 60,
+    "selection": "fixed attempt; no validation/test outcome selection"
+  },
+  "evidenceSource": "native-frozen-qwen",
+  "trainHashes": {
+    "public/train.jsonl": "20399e755e9d35c1122a1f85c99bf7907f6e6c694615b6d27eadb6588d477747",
+    "labels/train.jsonl": "aeb374605e6930bc9ca26a22133397a780ea63133346f47603fc700448e68cd2"
+  },
+  "checkpoints": {
+    "fusion": {
+      "file": "fusion.pt",
+      "sha256": "6cd1ab656a65c82fdbe631ccb5389ba82f0dfcf1f14677eae43fe7558e64ba26",
+      "trained": true
+    },
+    "prior": {
+      "file": "prior.pt",
+      "sha256": "89ca679aa373336c42d293067ea85867ddadde91475fef0c6bc84bfcdf3b7a05",
+      "trained": true
+    },
+    "random": {
+      "file": "random.pt",
+      "sha256": "b8a2daba69bbd8fde14c8f71e097e6228950e3e7dad834df9329910b20aa7b14",
+      "trained": false
+    }
+  },
+  "heldoutLabelsOpenedBeforeFreeze": false
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "workloadVersion": "first-section-payload.v1",
+  "frozenBeforeNative": true,
+  "nativeExecution": false,
+  "modelCalls": 0,
+  "logicalScope": {
+    "sections": 1,
+    "orderedCards": 3,
+    "retainFullPageObjective": true,
+    "actualViewportOrBrowserPaintMeasured": false
+  },
+  "requiredGeneratedRows": [
+    "S1",
+    "T1",
+    "B1",
+    "T2",
+    "B2",
+    "T3",
+    "B3",
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "caps": {
+    "S": 16,
+    "T": 24,
+    "B": 8,
+    "C": 32
+  },
+  "totalScopedOutputCap": 208,
+  "bodyCopyRequired": true,
+  "bodyCopyEvidence": "apps/storefront/src/main.tsx renders product.category marketing text at line75, not merely an image/title/price card. C rows are required for its proposed fresh-copy replacement.",
+  "sectionIntroPolicy": "Existing static intro retained as visible metadata; any future personalized intro needs an additional generated row/version.",
+  "staticVisibleMetadata": {
+    "sectionIntro": "A few of our favorites.",
+    "addToCartLabel": "Add to cart"
+  },
+  "requiredPerCardPayloadMetadata": [
+    "productId",
+    "imageCaptionId",
+    "imageKey",
+    "originalName",
+    "price",
+    "shippingCost",
+    "catalogCategory"
+  ],
+  "requiredPerCardGeneratedValues": [
+    "title",
+    "bodyCopy",
+    "badge (null only for actual NONE)"
+  ],
+  "exactNameQueryPolicy": "Always return catalog originalName visibly; explicit complete catalog names in public task and optional trusted resolved product IDs must be present. Ambiguous/partial name resolution is not implemented.",
+  "titlePolicy": "Current factuality/identity/novelty/support mandatory; displaying originalName does not relax generated-title identity. A subtitle-bound title policy must be a separate prospective version.",
+  "timing": {
+    "metric": "copyStagePayloadReadyMs",
+    "rowClock": "completedMs relative native decode wall_start",
+    "formulaLowerBound": "measured planningPrefixMs + max(completedMs of ALL ten required rows)",
+    "finalReceipt": "validatedAndSerializedAtMs >= lowerBound and metadataReadyAtMs, bound to completed payload SHA256",
+    "withoutFinalReceipt": "payload-ready unavailable; last-required-token lower bound only",
+    "firstTokenIsViewCompletion": false,
+    "rankingIncluded": false,
+    "browserAssetDecodeAndPaintIncluded": false
+  },
+  "existingIntegrationLimits": [
+    "Current PagePlanV1 has no per-card body-copy field; STB decoder codec does not accept C labels. This is an additive model-only benchmark contract, not an API or UI change.",
+    "Existing 14-row runs omit C1/C2/C3 and cannot qualify as this complete payload.",
+    "Native decode_rows currently decodes text only after all rows finish; EOS completion is not actual scoped payload availability.",
+    "Current storefront renders CSS ProductArt and is not wired to model-selected imageKeys; no real image/render readiness claim.",
+    "The first three-card collection scope is logical and fixed, not a claim that all cards fit the current viewport beneath the hero.",
+    "Full-page validation remains unchanged. Below-fold failure cannot invalidate a separately completed valid scoped payload.",
+    "No conversion, revenue or human preference lift is established; synthetic correctness and latency are proxies."
+  ],
+  "inspectedSourceSha256": {
+    "apps/storefront/src/main.tsx": "97f1cdd14d72ce7b10308f2926e02e652435c81882c8336a10f470d5ea1f1e89",
+    "apps/storefront/src/config.ts": "e06ff1ea73f04f987777f7fb67353e1ff3d438699e63dfc9cb6a28e4d1c20a32",
+    "apps/storefront/src/styles.css": "51437062c399f073e6bdfdb6e05a1d28332e36536c6415b0149ae38c255c9ad1",
+    "packages/contracts/src/index.ts": "b939855abf7e62e28aaf4571e5ccecd010633c4b3552cd130eb10bdb43eabdd1",
+    "apps/api/internal/contracts/types.go": "7a03eb5f69f1d18e933118f795084e746fbfa50e83b4b7dd7a3b919d5f34bf2e",
+    "apps/api/internal/model/model.go": "272c5409679715da32ac24065a6d99feebbcec3dd829fdb89d2c2c1125584ee1",
+    "apps/api/internal/recommendation/recommendation.go": "24f55c57c67ec8264af462982147ad3ab174815cc3e7e6afd5cae912604fb6fc",
+    "experiments/ranker/pretrained/page-plan.v1.ts": "c09f7e3df2e1b379951063d71852989de74d10f02159581f1e6e0a880f66ddaa",
+    "experiments/ranker/pretrained/page_plan.py": "65e9579323ddecb7099bf2c6264e9108cc789e6cf870971aedaf251d28bd3fe2",
+    "experiments/ranker/pretrained/fusion.py": "217abdd3134fc1ee53cfa545c118c1596c05dde010bf0d47382124140c9948e6"
+  }
+}

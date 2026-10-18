@@ -1,0 +1,2649 @@
+{
+  "schemaVersion": 1,
+  "status": "cpu-preflight-passed",
+  "CPUOnly": true,
+  "nativeExecution": false,
+  "modelCalls": 0,
+  "layoutVersion": "observable-root-card-and-three-member-section-v1",
+  "sourceSha256": {
+    "branch_local_copy.py": "2fdee8ee4c224163c1ea9adbbebea764aa112abe416df99558ef42b1a6b691ea",
+    "test_branch_local_copy.py": "d41308d8e64674fa675724b4f2e5037c6d0290437f7c5d83be57a79fe568e533"
+  },
+  "validatorSha256": "01e3e96b8f230d7802da445c1e5c6da0503ac7fbef1efe529c93ef10b9c0ca1a",
+  "valueCodecSha256": "53c7a72f44285ebc501adad47832b0a079b07298042b1585417fcfdb4680dcc1",
+  "priorResultsSha256": "7daf4890f0d514aa892a044d09d611e0b104791c96a2bed5ff13a00824491387",
+  "caseFilesSha256": {
+    "cases.dev.jsonl": "732bec767d5155da61ced587789572533a9aa6abd9cb7846209a9b534a195955",
+    "cases.test.jsonl": "93413db55345169a4ea1c1cf6e0dc18deba47da01b6bcb9eb829941c94fcaddf"
+  },
+  "executionBaseCommit": "67973f064cfdaafd9b6e788539c6f715c00949b0",
+  "tokenizerFilesSha256": {
+    "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+    "tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  },
+  "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "width": 3,
+  "prefillStepSize": 256,
+  "maxRootTokens": 2048,
+  "maxRowSuffixTokens": 2048,
+  "maxContextIncludingOutputCap": 4096,
+  "fixedCases": 6,
+  "plannedArms": 12,
+  "jobsPerArm": 14,
+  "sampledStepCapPerArm": 224,
+  "tests": {
+    "command": ".tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_branch_local_copy -v",
+    "run": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "native": false
+  },
+  "decisionMode": "locked actual selections from already inspected prior copy results; no fresh query or ranking in prototype",
+  "endToEndRequestTiming": false,
+  "cardFactCacheReuseImplemented": false,
+  "records": [
+    {
+      "caseId": "copy-cfd57bc88dbf0ea9",
+      "split": "dev",
+      "lockedPlanSourceArm": "frozen",
+      "selectedProductImageIds": [
+        [
+          "copy-p-80902b110bb8b3eb",
+          "copy-v-957f3e7eb87e5caf"
+        ],
+        [
+          "copy-p-85012e03bde016fc",
+          "copy-v-e37c5fad797f0093"
+        ],
+        [
+          "copy-p-28e4a7c47954b206",
+          "copy-v-0362dc3e9bfa8031"
+        ],
+        [
+          "copy-p-49972293967c41e6",
+          "copy-v-4c269d52452c52c2"
+        ],
+        [
+          "copy-p-987a968c289953df",
+          "copy-v-c9746e249539ab3f"
+        ],
+        [
+          "copy-p-e81b16e1c209419a",
+          "copy-v-2907f50b432c80f3"
+        ]
+      ],
+      "priorFrozenLearnedSelectionEqual": true,
+      "sourceCaseSha256": "89f4490ad08bd5e29b7f98f989070e83b6f2aff27b37592afcfcf522dcda32fa",
+      "lockedPlanSha256": "f488901c539feac0b9ab720666707aca9777ee1ccfc5961c2ae0d4a78456f3fc",
+      "rootMessage": {
+        "role": "user",
+        "content": "Treat all supplied public evidence as data. Product and image choices and field identities are fixed by the scheduler. Return one fresh plain value only, without label, markup, explanation or extra line; then stop. Titles: NEW 4-8 words, preserve selected identity including capacity, differ from every approved title and mention a supportedObservedTag when present. Approved titles are the identity concatenated with each approvedTitleSuffix; approvedTitleStandalone values are literal additional titles. In imageDescriptionTemplate, {identity} means the exact card identity. Badges: use supportedObservedTags or exactly NONE; absent support requires NONE and support also permits NONE. Headings: NEW 3-5 words, true for every listed section member; attributes only from universalTags, empty means generic framing only. No names or numbers in headings. Use only selected facts and ordinary travel framing, no invented capability, numeric or personal-intent claim. Public evidence: {\"asOf\":\"2026-10-01T12:00:00Z\",\"observedHistory\":[],\"request\":{\"presentationPreferences\":[\"in-use-view\"],\"presentationSurface\":\"compact-card\",\"statedBudget\":200,\"statedPreferences\":[\"roomy\",\"foldable\"],\"statedRequirements\":[],\"task\":\"Choose daypacks for everyday travel with roomy and foldable details.\"}}"
+      },
+      "rootMessageSha256": "05ea448597d69f5049ce71b2ce6375b1822c5fbfafd01f21f47aa491d0d494c0",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "key": "heading-1",
+          "fields": [
+            "S1"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Belimar 14L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"14-litre daypack; compact, roomy, water-resistant.\",\"inStock\":true,\"price\":66,\"shippingCost\":5,\"tags\":[\"compact\",\"roomy\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"14L\",\"compact\",\"roomy\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"roomy\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Kelamar 21L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"21-litre daypack; compressible, durable, roomy.\",\"inStock\":true,\"price\":73,\"shippingCost\":5,\"tags\":[\"compressible\",\"durable\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"21L\",\"compressible\",\"durable\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"roomy\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — mesh\"],\"identity\":\"Faloven 36L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"36-litre daypack; mesh, quilted, rolltop.\",\"inStock\":true,\"price\":59,\"shippingCost\":5,\"tags\":[\"mesh\",\"quilted\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"36L\",\"mesh\",\"quilted\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}],\"sections\":[{\"cardIndices\":[1,2,3],\"index\":1,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 1 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "heading-2",
+          "key": "heading-2",
+          "fields": [
+            "S2"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — packable\"],\"identity\":\"Darovia 28L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"28-litre daypack; packable, reflective, roomy.\",\"inStock\":true,\"price\":80,\"shippingCost\":5,\"tags\":[\"packable\",\"reflective\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"28L\",\"packable\",\"reflective\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"roomy\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Pavidor 29L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"29-litre daypack; compact, compressible, organizer.\",\"inStock\":true,\"price\":52,\"shippingCost\":5,\"tags\":[\"compact\",\"compressible\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"29L\",\"compact\",\"compressible\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Renimar 22L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"22-litre daypack; compact, padded, quilted.\",\"inStock\":true,\"price\":45,\"shippingCost\":5,\"tags\":[\"compact\",\"padded\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"22L\",\"compact\",\"padded\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}],\"sections\":[{\"cardIndices\":[4,5,6],\"index\":2,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 2 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-1",
+          "key": "title-1",
+          "fields": [
+            "T1"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Belimar 14L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"14-litre daypack; compact, roomy, water-resistant.\",\"inStock\":true,\"price\":66,\"shippingCost\":5,\"tags\":[\"compact\",\"roomy\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"14L\",\"compact\",\"roomy\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"roomy\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 1 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-1",
+          "key": "badge-1",
+          "fields": [
+            "B1"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Belimar 14L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"14-litre daypack; compact, roomy, water-resistant.\",\"inStock\":true,\"price\":66,\"shippingCost\":5,\"tags\":[\"compact\",\"roomy\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"14L\",\"compact\",\"roomy\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"roomy\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 1 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-2",
+          "key": "title-2",
+          "fields": [
+            "T2"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Kelamar 21L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"21-litre daypack; compressible, durable, roomy.\",\"inStock\":true,\"price\":73,\"shippingCost\":5,\"tags\":[\"compressible\",\"durable\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"21L\",\"compressible\",\"durable\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"roomy\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 2 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-2",
+          "key": "badge-2",
+          "fields": [
+            "B2"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Kelamar 21L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"21-litre daypack; compressible, durable, roomy.\",\"inStock\":true,\"price\":73,\"shippingCost\":5,\"tags\":[\"compressible\",\"durable\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"21L\",\"compressible\",\"durable\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"roomy\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 2 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-3",
+          "key": "title-3",
+          "fields": [
+            "T3"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — mesh\"],\"identity\":\"Faloven 36L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"36-litre daypack; mesh, quilted, rolltop.\",\"inStock\":true,\"price\":59,\"shippingCost\":5,\"tags\":[\"mesh\",\"quilted\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"36L\",\"mesh\",\"quilted\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 3 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-3",
+          "key": "badge-3",
+          "fields": [
+            "B3"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — mesh\"],\"identity\":\"Faloven 36L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"36-litre daypack; mesh, quilted, rolltop.\",\"inStock\":true,\"price\":59,\"shippingCost\":5,\"tags\":[\"mesh\",\"quilted\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"36L\",\"mesh\",\"quilted\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 3 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-4",
+          "key": "title-4",
+          "fields": [
+            "T4"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — packable\"],\"identity\":\"Darovia 28L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"28-litre daypack; packable, reflective, roomy.\",\"inStock\":true,\"price\":80,\"shippingCost\":5,\"tags\":[\"packable\",\"reflective\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"28L\",\"packable\",\"reflective\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"roomy\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 4 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-4",
+          "key": "badge-4",
+          "fields": [
+            "B4"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — packable\"],\"identity\":\"Darovia 28L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"28-litre daypack; packable, reflective, roomy.\",\"inStock\":true,\"price\":80,\"shippingCost\":5,\"tags\":[\"packable\",\"reflective\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"28L\",\"packable\",\"reflective\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"roomy\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 4 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-5",
+          "key": "title-5",
+          "fields": [
+            "T5"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Pavidor 29L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"29-litre daypack; compact, compressible, organizer.\",\"inStock\":true,\"price\":52,\"shippingCost\":5,\"tags\":[\"compact\",\"compressible\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"29L\",\"compact\",\"compressible\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 5 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-5",
+          "key": "badge-5",
+          "fields": [
+            "B5"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Pavidor 29L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"29-litre daypack; compact, compressible, organizer.\",\"inStock\":true,\"price\":52,\"shippingCost\":5,\"tags\":[\"compact\",\"compressible\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"29L\",\"compact\",\"compressible\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 5 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-6",
+          "key": "title-6",
+          "fields": [
+            "T6"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Renimar 22L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"22-litre daypack; compact, padded, quilted.\",\"inStock\":true,\"price\":45,\"shippingCost\":5,\"tags\":[\"compact\",\"padded\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"22L\",\"compact\",\"padded\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 6 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-6",
+          "key": "badge-6",
+          "fields": [
+            "B6"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Renimar 22L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"22-litre daypack; compact, padded, quilted.\",\"inStock\":true,\"price\":45,\"shippingCost\":5,\"tags\":[\"compact\",\"padded\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"22L\",\"compact\",\"padded\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 6 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        }
+      ],
+      "publicEvidenceSha256": "89a789a48e8157d9079c38763049df2a5715891d9fb849abd87584af6a031179",
+      "inputInventory": {
+        "rootTokens": 280,
+        "rootTokenSha256": "968153b133d02947665da994f7b688a07ec2637f7b823536374f6b50de3b5d6a",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 547,
+            "fullPromptTokens": 827,
+            "fullPromptSha256": "2c46e92e945e2d1116d670e68d7b407fff4dbb0c309f8b660447c887c684095d"
+          },
+          {
+            "rowId": "heading-2",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 544,
+            "fullPromptTokens": 824,
+            "fullPromptSha256": "db36dba4c531c4a01e73bb2469669915356144a0cea2e3d5390ddccc7849283c"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 210,
+            "fullPromptTokens": 490,
+            "fullPromptSha256": "56f399149f3fbea0399d900c752bd65deccb94d0628a7a7a30a66effd42e38d8"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 210,
+            "fullPromptTokens": 490,
+            "fullPromptSha256": "b776acb56e3f66fc9122bda18ec5305f1a1707a80fee2be297225064bd07e8a5"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 208,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "43cdb26362643cdb680c79931f418afc1ebd450b431ee3f516ab146033fd0eb1"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 208,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "b72bb2f5be002e434760255259105840416eee4fd431aeacf4a136506e38452b"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 205,
+            "fullPromptTokens": 485,
+            "fullPromptSha256": "c9d73da292a9cfe26d9c31b338a52fc84075a738f27a5eb6171e922e4d0f1e6c"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 205,
+            "fullPromptTokens": 485,
+            "fullPromptSha256": "dd8212c07c84cdcd75b6b2bd03f2b7c88e6c2d1606c07a0dfb86e60828ce969d"
+          },
+          {
+            "rowId": "title-4",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 208,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "0ebbc590471748fc233dfd9ff913edefcfd8de5d15c4bc9c584032a0518a395a"
+          },
+          {
+            "rowId": "badge-4",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 208,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "6d2551c9d96987f87df0490238f1b9b6b58142693f5916fa1c90f2a36cf72f9b"
+          },
+          {
+            "rowId": "title-5",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 203,
+            "fullPromptTokens": 483,
+            "fullPromptSha256": "28b25b776989350bab8193caf9a128120610cc9ea2c9f58ca2f0a47b57e4551a"
+          },
+          {
+            "rowId": "badge-5",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 203,
+            "fullPromptTokens": 483,
+            "fullPromptSha256": "0c2715690e9285421cc565f4e264781cfe98c6e956dbb7d36de00f28aa20cc6d"
+          },
+          {
+            "rowId": "title-6",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 209,
+            "fullPromptTokens": 489,
+            "fullPromptSha256": "db36a69311fe04adf4be09081b93cb6769a1365caa689fc0a15fa15f2710d3d3"
+          },
+          {
+            "rowId": "badge-6",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 209,
+            "fullPromptTokens": 489,
+            "fullPromptSha256": "ad9b63dda30b01ac8fb284319d1d1a5dcfd34341d351feae5360c7686d261d02"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 3577,
+        "totalRootAndAllRowSuffixTokens": 3857,
+        "cardFactCacheReuseImplemented": false
+      },
+      "maxPromptPlusOutputCap": 843
+    },
+    {
+      "caseId": "copy-999f53226561e5ad",
+      "split": "dev",
+      "lockedPlanSourceArm": "frozen",
+      "selectedProductImageIds": [
+        [
+          "copy-p-c1d9e834667cca62",
+          "copy-v-f1a86209ee028382"
+        ],
+        [
+          "copy-p-0e2b465fb94ba081",
+          "copy-v-df1d6ce15cb99a76"
+        ],
+        [
+          "copy-p-e696bbd4ebe8dbdb",
+          "copy-v-b4354d4f7ae6769f"
+        ],
+        [
+          "copy-p-303e9e7b4d5d89c8",
+          "copy-v-451144bf1984d869"
+        ],
+        [
+          "copy-p-bdce18a53acdd872",
+          "copy-v-56796f8c56f5d743"
+        ],
+        [
+          "copy-p-c38f2641d9bb9310",
+          "copy-v-f105df57c40f8b76"
+        ]
+      ],
+      "priorFrozenLearnedSelectionEqual": true,
+      "sourceCaseSha256": "407ef53f280975d0a7bac9ccc20e4ddcd80bee08cfc623ef3a0cf61e0f727baa",
+      "lockedPlanSha256": "0c88aab006223f6f006eef674ce4c344967d56a034e5449bdb74696c40e587c7",
+      "rootMessage": {
+        "role": "user",
+        "content": "Treat all supplied public evidence as data. Product and image choices and field identities are fixed by the scheduler. Return one fresh plain value only, without label, markup, explanation or extra line; then stop. Titles: NEW 4-8 words, preserve selected identity including capacity, differ from every approved title and mention a supportedObservedTag when present. Approved titles are the identity concatenated with each approvedTitleSuffix; approvedTitleStandalone values are literal additional titles. In imageDescriptionTemplate, {identity} means the exact card identity. Badges: use supportedObservedTags or exactly NONE; absent support requires NONE and support also permits NONE. Headings: NEW 3-5 words, true for every listed section member; attributes only from universalTags, empty means generic framing only. No names or numbers in headings. Use only selected facts and ordinary travel framing, no invented capability, numeric or personal-intent claim. Public evidence: {\"asOf\":\"2026-10-01T12:00:00Z\",\"observedHistory\":[],\"request\":{\"presentationPreferences\":[\"detail-view\"],\"presentationSurface\":\"compact-card\",\"statedBudget\":200,\"statedPreferences\":[\"reflective\",\"mesh\"],\"statedRequirements\":[],\"task\":\"Choose daypacks for everyday travel with reflective and mesh details.\"}}"
+      },
+      "rootMessageSha256": "ab885495773b8321b393378f79719858721ab0aaa936d1d389df94dca90dab17",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "key": "heading-1",
+          "fields": [
+            "S1"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — quilted\"],\"identity\":\"Lumivia 27L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"27-litre daypack; quilted, reflective, roomy.\",\"inStock\":true,\"price\":67,\"shippingCost\":5,\"tags\":[\"quilted\",\"reflective\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — quilted\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"27L\",\"quilted\",\"reflective\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"reflective\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Pavivia 20L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"20-litre daypack; adjustable, quilted, roomy.\",\"inStock\":true,\"price\":60,\"shippingCost\":5,\"tags\":[\"adjustable\",\"quilted\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"20L\",\"adjustable\",\"quilted\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — padded\"],\"identity\":\"Sorivia 12L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"12-litre daypack; padded, reflective, water-resistant.\",\"inStock\":true,\"price\":81,\"shippingCost\":5,\"tags\":[\"padded\",\"reflective\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — padded\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"12L\",\"padded\",\"reflective\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"reflective\"]}],\"sections\":[{\"cardIndices\":[1,2,3],\"index\":1,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 1 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "heading-2",
+          "key": "heading-2",
+          "fields": [
+            "S2"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Ivolen 34L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"34-litre daypack; durable, expandable, packable.\",\"inStock\":true,\"price\":74,\"shippingCost\":5,\"tags\":[\"durable\",\"expandable\",\"packable\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"34L\",\"durable\",\"expandable\",\"packable\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Gavidor 35L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"35-litre daypack; adjustable, roomy, ventilated.\",\"inStock\":true,\"price\":46,\"shippingCost\":5,\"tags\":[\"adjustable\",\"roomy\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"35L\",\"adjustable\",\"roomy\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — lightweight\"],\"identity\":\"Kelaren 13L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"13-litre daypack; lightweight, reflective, rolltop.\",\"inStock\":true,\"price\":53,\"shippingCost\":5,\"tags\":[\"lightweight\",\"reflective\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"13L\",\"lightweight\",\"reflective\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"reflective\"]}],\"sections\":[{\"cardIndices\":[4,5,6],\"index\":2,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 2 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-1",
+          "key": "title-1",
+          "fields": [
+            "T1"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — quilted\"],\"identity\":\"Lumivia 27L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"27-litre daypack; quilted, reflective, roomy.\",\"inStock\":true,\"price\":67,\"shippingCost\":5,\"tags\":[\"quilted\",\"reflective\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — quilted\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"27L\",\"quilted\",\"reflective\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"reflective\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 1 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-1",
+          "key": "badge-1",
+          "fields": [
+            "B1"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — quilted\"],\"identity\":\"Lumivia 27L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"27-litre daypack; quilted, reflective, roomy.\",\"inStock\":true,\"price\":67,\"shippingCost\":5,\"tags\":[\"quilted\",\"reflective\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — quilted\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"27L\",\"quilted\",\"reflective\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"reflective\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 1 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-2",
+          "key": "title-2",
+          "fields": [
+            "T2"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Pavivia 20L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"20-litre daypack; adjustable, quilted, roomy.\",\"inStock\":true,\"price\":60,\"shippingCost\":5,\"tags\":[\"adjustable\",\"quilted\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"20L\",\"adjustable\",\"quilted\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 2 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-2",
+          "key": "badge-2",
+          "fields": [
+            "B2"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Pavivia 20L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"20-litre daypack; adjustable, quilted, roomy.\",\"inStock\":true,\"price\":60,\"shippingCost\":5,\"tags\":[\"adjustable\",\"quilted\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"20L\",\"adjustable\",\"quilted\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 2 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-3",
+          "key": "title-3",
+          "fields": [
+            "T3"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — padded\"],\"identity\":\"Sorivia 12L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"12-litre daypack; padded, reflective, water-resistant.\",\"inStock\":true,\"price\":81,\"shippingCost\":5,\"tags\":[\"padded\",\"reflective\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — padded\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"12L\",\"padded\",\"reflective\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"reflective\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 3 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-3",
+          "key": "badge-3",
+          "fields": [
+            "B3"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — padded\"],\"identity\":\"Sorivia 12L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"12-litre daypack; padded, reflective, water-resistant.\",\"inStock\":true,\"price\":81,\"shippingCost\":5,\"tags\":[\"padded\",\"reflective\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — padded\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"12L\",\"padded\",\"reflective\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"reflective\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 3 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-4",
+          "key": "title-4",
+          "fields": [
+            "T4"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Ivolen 34L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"34-litre daypack; durable, expandable, packable.\",\"inStock\":true,\"price\":74,\"shippingCost\":5,\"tags\":[\"durable\",\"expandable\",\"packable\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"34L\",\"durable\",\"expandable\",\"packable\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 4 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-4",
+          "key": "badge-4",
+          "fields": [
+            "B4"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Ivolen 34L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"34-litre daypack; durable, expandable, packable.\",\"inStock\":true,\"price\":74,\"shippingCost\":5,\"tags\":[\"durable\",\"expandable\",\"packable\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"34L\",\"durable\",\"expandable\",\"packable\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 4 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-5",
+          "key": "title-5",
+          "fields": [
+            "T5"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Gavidor 35L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"35-litre daypack; adjustable, roomy, ventilated.\",\"inStock\":true,\"price\":46,\"shippingCost\":5,\"tags\":[\"adjustable\",\"roomy\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"35L\",\"adjustable\",\"roomy\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 5 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-5",
+          "key": "badge-5",
+          "fields": [
+            "B5"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Gavidor 35L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"35-litre daypack; adjustable, roomy, ventilated.\",\"inStock\":true,\"price\":46,\"shippingCost\":5,\"tags\":[\"adjustable\",\"roomy\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"35L\",\"adjustable\",\"roomy\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 5 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-6",
+          "key": "title-6",
+          "fields": [
+            "T6"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — lightweight\"],\"identity\":\"Kelaren 13L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"13-litre daypack; lightweight, reflective, rolltop.\",\"inStock\":true,\"price\":53,\"shippingCost\":5,\"tags\":[\"lightweight\",\"reflective\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"13L\",\"lightweight\",\"reflective\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"reflective\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 6 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-6",
+          "key": "badge-6",
+          "fields": [
+            "B6"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — lightweight\"],\"identity\":\"Kelaren 13L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"13-litre daypack; lightweight, reflective, rolltop.\",\"inStock\":true,\"price\":53,\"shippingCost\":5,\"tags\":[\"lightweight\",\"reflective\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"13L\",\"lightweight\",\"reflective\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"reflective\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 6 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        }
+      ],
+      "publicEvidenceSha256": "39028c5c3af17bf96acf378550bb16017d9d0d031918a521ef3fdc57504d0da1",
+      "inputInventory": {
+        "rootTokens": 276,
+        "rootTokenSha256": "1c7376690b896d7abc497f5086457222cc31ce2a8d3a0f764f9a35f0624d4e96",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 565,
+            "fullPromptTokens": 841,
+            "fullPromptSha256": "2901fb8b8a797442c2887a0c4e83443561600ebdf122f50500144fed1645728c"
+          },
+          {
+            "rowId": "heading-2",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 547,
+            "fullPromptTokens": 823,
+            "fullPromptSha256": "55f29fdf2cb6df0915d9f7d071e6a8a718a462f0cb72075f66e18a6b4aff4a42"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 217,
+            "fullPromptTokens": 493,
+            "fullPromptSha256": "f21e4d0aa6ea536c991316287282f1264bab3c8f7bc5fbf9e24fb05a72ba6044"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 217,
+            "fullPromptTokens": 493,
+            "fullPromptSha256": "56330a3d5e9a11f9a12569a9637af91326670644e2fb1f4215ff3c049f5e11bc"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 213,
+            "fullPromptTokens": 489,
+            "fullPromptSha256": "14661a8dcfc2700019fd85d388b18f6d4efcb9653f5a49b3bed0053861f54594"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 213,
+            "fullPromptTokens": 489,
+            "fullPromptSha256": "4268ad3f890e446ab99da9d5ebce9e1e2af446d65813a59f53cedd1abb5ca35b"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 211,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "65314cd8fc39e171bc574632a8db641bf4a94d28d4cbf80d315a21c11f6eb125"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 211,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "6fdc7cdb7e2ea12ab379bcd7759c4677cf81ff7ea01b9f845bc7ea92915e1c30"
+          },
+          {
+            "rowId": "title-4",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 206,
+            "fullPromptTokens": 482,
+            "fullPromptSha256": "5ba09e45eeeac1f0e9b1a6826235d90a009adcde1e38fdde3da67ea39ea40dee"
+          },
+          {
+            "rowId": "badge-4",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 206,
+            "fullPromptTokens": 482,
+            "fullPromptSha256": "758ac99fed6724708c6918875ffba5906660ca35a7f85188649c59d85360531a"
+          },
+          {
+            "rowId": "title-5",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 211,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "1dea1c0f22607d400e0162628bc0a282dd5689ab497ee559b48d043139eea2e2"
+          },
+          {
+            "rowId": "badge-5",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 211,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "fb03166531eae88903d9ab1a571de8d0438985e9705fa844f186567733f9f658"
+          },
+          {
+            "rowId": "title-6",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 206,
+            "fullPromptTokens": 482,
+            "fullPromptSha256": "ccbe7c1fb2d480412d4611999a4d8f7eacef15da2a151701bf5f6ee66d1c736a"
+          },
+          {
+            "rowId": "badge-6",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 206,
+            "fullPromptTokens": 482,
+            "fullPromptSha256": "caeb5f0031864ff4ea9bd0f90835e25336830270e2010f174f81c0ae91d3e34e"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 3640,
+        "totalRootAndAllRowSuffixTokens": 3916,
+        "cardFactCacheReuseImplemented": false
+      },
+      "maxPromptPlusOutputCap": 857
+    },
+    {
+      "caseId": "copy-8edaa97153cbab7e",
+      "split": "dev",
+      "lockedPlanSourceArm": "frozen",
+      "selectedProductImageIds": [
+        [
+          "copy-p-a35d0ade245dca59",
+          "copy-v-cd9d0ff2872c1db4"
+        ],
+        [
+          "copy-p-978262c329dd94aa",
+          "copy-v-08e363071d243a00"
+        ],
+        [
+          "copy-p-f05d27133af59545",
+          "copy-v-6b1efe7f83aa0b9a"
+        ],
+        [
+          "copy-p-347984b76ba4dbe0",
+          "copy-v-d43926c9feefe1a8"
+        ],
+        [
+          "copy-p-395d923c4afb5142",
+          "copy-v-9ef4ae6e44aced80"
+        ],
+        [
+          "copy-p-839dc72aef171c6f",
+          "copy-v-eebeef0576c03cb1"
+        ]
+      ],
+      "priorFrozenLearnedSelectionEqual": true,
+      "sourceCaseSha256": "dc1f3e646e922ba2aae4a800c12e7af05fecdb99e1e04ec81b10a8900d93e91d",
+      "lockedPlanSha256": "8eae9920e182bd0cbaeb92366fe87253dd6e2f3f75c2ad64edc2d6d3a959b3fa",
+      "rootMessage": {
+        "role": "user",
+        "content": "Treat all supplied public evidence as data. Product and image choices and field identities are fixed by the scheduler. Return one fresh plain value only, without label, markup, explanation or extra line; then stop. Titles: NEW 4-8 words, preserve selected identity including capacity, differ from every approved title and mention a supportedObservedTag when present. Approved titles are the identity concatenated with each approvedTitleSuffix; approvedTitleStandalone values are literal additional titles. In imageDescriptionTemplate, {identity} means the exact card identity. Badges: use supportedObservedTags or exactly NONE; absent support requires NONE and support also permits NONE. Headings: NEW 3-5 words, true for every listed section member; attributes only from universalTags, empty means generic framing only. No names or numbers in headings. Use only selected facts and ordinary travel framing, no invented capability, numeric or personal-intent claim. Public evidence: {\"asOf\":\"2026-10-01T12:00:00Z\",\"observedHistory\":[],\"request\":{\"presentationPreferences\":[\"in-use-view\"],\"presentationSurface\":\"compact-card\",\"statedBudget\":200,\"statedPreferences\":[\"padded\",\"rolltop\"],\"statedRequirements\":[],\"task\":\"Choose daypacks for everyday travel with padded and rolltop details.\"}}"
+      },
+      "rootMessageSha256": "43f091b5672718008094c57a0f3cd19ab77865eeb7b8446f8b14993f75c3acab",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "key": "heading-1",
+          "fields": [
+            "S1"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Lumilis 11L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"11-litre daypack; durable, structured, water-resistant.\",\"inStock\":true,\"price\":68,\"shippingCost\":5,\"tags\":[\"durable\",\"structured\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"11L\",\"durable\",\"structured\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Renilan 25L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"25-litre daypack; durable, lightweight, water-resistant.\",\"inStock\":true,\"price\":82,\"shippingCost\":5,\"tags\":[\"durable\",\"lightweight\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"25L\",\"durable\",\"lightweight\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Merimar 18L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"18-litre daypack; compact, durable, quilted.\",\"inStock\":true,\"price\":75,\"shippingCost\":5,\"tags\":[\"compact\",\"durable\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"18L\",\"compact\",\"durable\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}],\"sections\":[{\"cardIndices\":[1,2,3],\"index\":1,\"universalTags\":[\"durable\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 1 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "heading-2",
+          "key": "heading-2",
+          "fields": [
+            "S2"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — packable\"],\"identity\":\"Ivoren 19L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"19-litre daypack; packable, padded, water-resistant.\",\"inStock\":true,\"price\":47,\"shippingCost\":5,\"tags\":[\"packable\",\"padded\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — packable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"19L\",\"packable\",\"padded\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"padded\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Jorimar 26L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"26-litre daypack; adjustable, expandable, padded.\",\"inStock\":true,\"price\":54,\"shippingCost\":5,\"tags\":[\"adjustable\",\"expandable\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"26L\",\"adjustable\",\"expandable\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"padded\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Cerimar 33L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"33-litre daypack; adjustable, packable, padded.\",\"inStock\":true,\"price\":61,\"shippingCost\":5,\"tags\":[\"adjustable\",\"packable\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"33L\",\"adjustable\",\"packable\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"padded\"]}],\"sections\":[{\"cardIndices\":[4,5,6],\"index\":2,\"universalTags\":[\"padded\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 2 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-1",
+          "key": "title-1",
+          "fields": [
+            "T1"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Lumilis 11L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"11-litre daypack; durable, structured, water-resistant.\",\"inStock\":true,\"price\":68,\"shippingCost\":5,\"tags\":[\"durable\",\"structured\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"11L\",\"durable\",\"structured\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 1 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-1",
+          "key": "badge-1",
+          "fields": [
+            "B1"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Lumilis 11L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"11-litre daypack; durable, structured, water-resistant.\",\"inStock\":true,\"price\":68,\"shippingCost\":5,\"tags\":[\"durable\",\"structured\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"11L\",\"durable\",\"structured\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 1 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-2",
+          "key": "title-2",
+          "fields": [
+            "T2"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Renilan 25L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"25-litre daypack; durable, lightweight, water-resistant.\",\"inStock\":true,\"price\":82,\"shippingCost\":5,\"tags\":[\"durable\",\"lightweight\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"25L\",\"durable\",\"lightweight\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 2 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-2",
+          "key": "badge-2",
+          "fields": [
+            "B2"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Renilan 25L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"25-litre daypack; durable, lightweight, water-resistant.\",\"inStock\":true,\"price\":82,\"shippingCost\":5,\"tags\":[\"durable\",\"lightweight\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"25L\",\"durable\",\"lightweight\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 2 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-3",
+          "key": "title-3",
+          "fields": [
+            "T3"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Merimar 18L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"18-litre daypack; compact, durable, quilted.\",\"inStock\":true,\"price\":75,\"shippingCost\":5,\"tags\":[\"compact\",\"durable\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"18L\",\"compact\",\"durable\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 3 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-3",
+          "key": "badge-3",
+          "fields": [
+            "B3"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Merimar 18L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"18-litre daypack; compact, durable, quilted.\",\"inStock\":true,\"price\":75,\"shippingCost\":5,\"tags\":[\"compact\",\"durable\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"18L\",\"compact\",\"durable\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 3 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-4",
+          "key": "title-4",
+          "fields": [
+            "T4"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — packable\"],\"identity\":\"Ivoren 19L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"19-litre daypack; packable, padded, water-resistant.\",\"inStock\":true,\"price\":47,\"shippingCost\":5,\"tags\":[\"packable\",\"padded\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — packable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"19L\",\"packable\",\"padded\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"padded\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 4 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-4",
+          "key": "badge-4",
+          "fields": [
+            "B4"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — packable\"],\"identity\":\"Ivoren 19L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"19-litre daypack; packable, padded, water-resistant.\",\"inStock\":true,\"price\":47,\"shippingCost\":5,\"tags\":[\"packable\",\"padded\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — packable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"19L\",\"packable\",\"padded\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"padded\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 4 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-5",
+          "key": "title-5",
+          "fields": [
+            "T5"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Jorimar 26L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"26-litre daypack; adjustable, expandable, padded.\",\"inStock\":true,\"price\":54,\"shippingCost\":5,\"tags\":[\"adjustable\",\"expandable\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"26L\",\"adjustable\",\"expandable\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"padded\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 5 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-5",
+          "key": "badge-5",
+          "fields": [
+            "B5"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Jorimar 26L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"26-litre daypack; adjustable, expandable, padded.\",\"inStock\":true,\"price\":54,\"shippingCost\":5,\"tags\":[\"adjustable\",\"expandable\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"26L\",\"adjustable\",\"expandable\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"padded\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 5 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-6",
+          "key": "title-6",
+          "fields": [
+            "T6"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Cerimar 33L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"33-litre daypack; adjustable, packable, padded.\",\"inStock\":true,\"price\":61,\"shippingCost\":5,\"tags\":[\"adjustable\",\"packable\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"33L\",\"adjustable\",\"packable\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"padded\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 6 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-6",
+          "key": "badge-6",
+          "fields": [
+            "B6"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Cerimar 33L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"33-litre daypack; adjustable, packable, padded.\",\"inStock\":true,\"price\":61,\"shippingCost\":5,\"tags\":[\"adjustable\",\"packable\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"33L\",\"adjustable\",\"packable\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"padded\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 6 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        }
+      ],
+      "publicEvidenceSha256": "e34de536d24152c39aea8dcbbae6cbc9cd6a10c310a362f0d79928ce4f08115e",
+      "inputInventory": {
+        "rootTokens": 279,
+        "rootTokenSha256": "7ae39ced684e767699a219cb0f91cd7391d44eaadb8d802ba34d5df7c5478d86",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 547,
+            "fullPromptTokens": 826,
+            "fullPromptSha256": "dda7229fa0546a8d0d0df098c2b62261d3e8fce43e6f578d17d190ff70a68c2e"
+          },
+          {
+            "rowId": "heading-2",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 559,
+            "fullPromptTokens": 838,
+            "fullPromptSha256": "6b4b5195ec702b3c41b6faf964d735caeadb2267e82b4a816388af97c0cfef4d"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 208,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "8275b6f489e47a38568046f08c53af8d49fecdcf765b130898301c82b898d48a"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 208,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "582f939665f1778c931416360dca4a11b96a8968c023b014798e2f04712c5d0d"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 209,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "e7a7c4c0bd9aca323785033a29cdd13bc5e5ccc46aa31c4b3ef833364d8e7722"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 209,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "40feac957cbb465c721a01ff864cc2a7ae246f15f27bc3bbf86de55a5408d2ec"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 204,
+            "fullPromptTokens": 483,
+            "fullPromptSha256": "2424777b26022765b7435860a809006c98d9f785e9618e705dee35d28a2eed67"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 204,
+            "fullPromptTokens": 483,
+            "fullPromptSha256": "90a417d5ddf9659616a5ee599b4d90428c782640a652ed913ef85ca83e0f0e03"
+          },
+          {
+            "rowId": "title-4",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 215,
+            "fullPromptTokens": 494,
+            "fullPromptSha256": "7b21809748fba5f0eb1c376888ce2e58c6991634a4cf446ece2469e5aa2d67f0"
+          },
+          {
+            "rowId": "badge-4",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 215,
+            "fullPromptTokens": 494,
+            "fullPromptSha256": "cd4477fc63d5cf4d4058544cf42a14663f57bf147a685fd9c1ae775f5a47a11c"
+          },
+          {
+            "rowId": "title-5",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 212,
+            "fullPromptTokens": 491,
+            "fullPromptSha256": "0aee0753f1f3ef9863fcfddad635c8629ab3a889356ea697c0694b5642e17aa9"
+          },
+          {
+            "rowId": "badge-5",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 212,
+            "fullPromptTokens": 491,
+            "fullPromptSha256": "306eb888f7b6963144c4685952a0eac08eb18c6f29c47c1375578b6036e6c3d3"
+          },
+          {
+            "rowId": "title-6",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 206,
+            "fullPromptTokens": 485,
+            "fullPromptSha256": "854cd398e6d0af7128fe601a82faae3b9738094ce71d96d4438aefe5658427dc"
+          },
+          {
+            "rowId": "badge-6",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 206,
+            "fullPromptTokens": 485,
+            "fullPromptSha256": "ba7d7875171c0397ba02fd9247f03a802d1ac7584cf60783060191603abbf04f"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 3614,
+        "totalRootAndAllRowSuffixTokens": 3893,
+        "cardFactCacheReuseImplemented": false
+      },
+      "maxPromptPlusOutputCap": 854
+    },
+    {
+      "caseId": "copy-acc8677838207254",
+      "split": "test",
+      "lockedPlanSourceArm": "frozen",
+      "selectedProductImageIds": [
+        [
+          "copy-p-564bf3c0048c9938",
+          "copy-v-c0cc8f7516483bb0"
+        ],
+        [
+          "copy-p-bb9e12bd0af44fa5",
+          "copy-v-1ab2f356a328f0df"
+        ],
+        [
+          "copy-p-ab738f255a5c2bed",
+          "copy-v-9b3852e2d664f9b6"
+        ],
+        [
+          "copy-p-c951791438b83ea9",
+          "copy-v-65ed8cb8fb0b60e9"
+        ],
+        [
+          "copy-p-777daf95f6a1e4f3",
+          "copy-v-411ab2ce324dbb7b"
+        ],
+        [
+          "copy-p-458e6afa08fe3d59",
+          "copy-v-678c2ee60f0af341"
+        ]
+      ],
+      "priorFrozenLearnedSelectionEqual": true,
+      "sourceCaseSha256": "a1e7d2c0bc607db9e6ee414c3346c4ce2ce15a103305287a6d7e3e78bbc1ac03",
+      "lockedPlanSha256": "0551bfca3ee906b97affaaab0f5de256b1edea2ff58a24d36a87ccd1a9d57a98",
+      "rootMessage": {
+        "role": "user",
+        "content": "Treat all supplied public evidence as data. Product and image choices and field identities are fixed by the scheduler. Return one fresh plain value only, without label, markup, explanation or extra line; then stop. Titles: NEW 4-8 words, preserve selected identity including capacity, differ from every approved title and mention a supportedObservedTag when present. Approved titles are the identity concatenated with each approvedTitleSuffix; approvedTitleStandalone values are literal additional titles. In imageDescriptionTemplate, {identity} means the exact card identity. Badges: use supportedObservedTags or exactly NONE; absent support requires NONE and support also permits NONE. Headings: NEW 3-5 words, true for every listed section member; attributes only from universalTags, empty means generic framing only. No names or numbers in headings. Use only selected facts and ordinary travel framing, no invented capability, numeric or personal-intent claim. Public evidence: {\"asOf\":\"2026-10-01T12:00:00Z\",\"observedHistory\":[],\"request\":{\"presentationPreferences\":[\"detail-view\"],\"presentationSurface\":\"compact-card\",\"statedBudget\":200,\"statedPreferences\":[\"compact\",\"structured\"],\"statedRequirements\":[],\"task\":\"Choose daypacks for everyday travel with compact and structured details.\"}}"
+      },
+      "rootMessageSha256": "dc7b2fe1483594f517dc54a86921e51a45e5988ce47c7767f55a3528073686ce",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "key": "heading-1",
+          "fields": [
+            "S1"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Herilis 24L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"24-litre daypack; compact, foldable, ventilated.\",\"inStock\":true,\"price\":66,\"shippingCost\":5,\"tags\":[\"compact\",\"foldable\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"24L\",\"compact\",\"foldable\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"compact\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Evidor 38L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"38-litre daypack; compact, durable, organizer.\",\"inStock\":true,\"price\":80,\"shippingCost\":5,\"tags\":[\"compact\",\"durable\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"38L\",\"compact\",\"durable\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"compact\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Soriren 31L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"31-litre daypack; compact, mesh, packable.\",\"inStock\":true,\"price\":73,\"shippingCost\":5,\"tags\":[\"compact\",\"mesh\",\"packable\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"31L\",\"compact\",\"mesh\",\"packable\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"compact\"]}],\"sections\":[{\"cardIndices\":[1,2,3],\"index\":1,\"universalTags\":[\"compact\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 1 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "heading-2",
+          "key": "heading-2",
+          "fields": [
+            "S2"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — expandable\"],\"identity\":\"Joridor 17L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"17-litre daypack; expandable, padded, quilted.\",\"inStock\":true,\"price\":59,\"shippingCost\":5,\"tags\":[\"expandable\",\"padded\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"17L\",\"expandable\",\"padded\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Cerilis 39L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"39-litre daypack; durable, rolltop, water-resistant.\",\"inStock\":true,\"price\":52,\"shippingCost\":5,\"tags\":[\"durable\",\"rolltop\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"39L\",\"durable\",\"rolltop\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Olilen 32L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"32-litre daypack; durable, quilted, roomy.\",\"inStock\":true,\"price\":45,\"shippingCost\":5,\"tags\":[\"durable\",\"quilted\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"32L\",\"durable\",\"quilted\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}],\"sections\":[{\"cardIndices\":[4,5,6],\"index\":2,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 2 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-1",
+          "key": "title-1",
+          "fields": [
+            "T1"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Herilis 24L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"24-litre daypack; compact, foldable, ventilated.\",\"inStock\":true,\"price\":66,\"shippingCost\":5,\"tags\":[\"compact\",\"foldable\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"24L\",\"compact\",\"foldable\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"compact\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 1 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-1",
+          "key": "badge-1",
+          "fields": [
+            "B1"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Herilis 24L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"24-litre daypack; compact, foldable, ventilated.\",\"inStock\":true,\"price\":66,\"shippingCost\":5,\"tags\":[\"compact\",\"foldable\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compact\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"24L\",\"compact\",\"foldable\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"compact\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 1 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-2",
+          "key": "title-2",
+          "fields": [
+            "T2"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Evidor 38L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"38-litre daypack; compact, durable, organizer.\",\"inStock\":true,\"price\":80,\"shippingCost\":5,\"tags\":[\"compact\",\"durable\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"38L\",\"compact\",\"durable\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"compact\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 2 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-2",
+          "key": "badge-2",
+          "fields": [
+            "B2"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Evidor 38L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"38-litre daypack; compact, durable, organizer.\",\"inStock\":true,\"price\":80,\"shippingCost\":5,\"tags\":[\"compact\",\"durable\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"38L\",\"compact\",\"durable\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"compact\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 2 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-3",
+          "key": "title-3",
+          "fields": [
+            "T3"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Soriren 31L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"31-litre daypack; compact, mesh, packable.\",\"inStock\":true,\"price\":73,\"shippingCost\":5,\"tags\":[\"compact\",\"mesh\",\"packable\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"31L\",\"compact\",\"mesh\",\"packable\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"compact\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 3 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-3",
+          "key": "badge-3",
+          "fields": [
+            "B3"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compact\"],\"identity\":\"Soriren 31L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"31-litre daypack; compact, mesh, packable.\",\"inStock\":true,\"price\":73,\"shippingCost\":5,\"tags\":[\"compact\",\"mesh\",\"packable\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"31L\",\"compact\",\"mesh\",\"packable\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"compact\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 3 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-4",
+          "key": "title-4",
+          "fields": [
+            "T4"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — expandable\"],\"identity\":\"Joridor 17L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"17-litre daypack; expandable, padded, quilted.\",\"inStock\":true,\"price\":59,\"shippingCost\":5,\"tags\":[\"expandable\",\"padded\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"17L\",\"expandable\",\"padded\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 4 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-4",
+          "key": "badge-4",
+          "fields": [
+            "B4"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — expandable\"],\"identity\":\"Joridor 17L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"17-litre daypack; expandable, padded, quilted.\",\"inStock\":true,\"price\":59,\"shippingCost\":5,\"tags\":[\"expandable\",\"padded\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"17L\",\"expandable\",\"padded\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 4 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-5",
+          "key": "title-5",
+          "fields": [
+            "T5"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Cerilis 39L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"39-litre daypack; durable, rolltop, water-resistant.\",\"inStock\":true,\"price\":52,\"shippingCost\":5,\"tags\":[\"durable\",\"rolltop\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"39L\",\"durable\",\"rolltop\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 5 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-5",
+          "key": "badge-5",
+          "fields": [
+            "B5"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Cerilis 39L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"39-litre daypack; durable, rolltop, water-resistant.\",\"inStock\":true,\"price\":52,\"shippingCost\":5,\"tags\":[\"durable\",\"rolltop\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"39L\",\"durable\",\"rolltop\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 5 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-6",
+          "key": "title-6",
+          "fields": [
+            "T6"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Olilen 32L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"32-litre daypack; durable, quilted, roomy.\",\"inStock\":true,\"price\":45,\"shippingCost\":5,\"tags\":[\"durable\",\"quilted\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"32L\",\"durable\",\"quilted\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 6 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-6",
+          "key": "badge-6",
+          "fields": [
+            "B6"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Olilen 32L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"32-litre daypack; durable, quilted, roomy.\",\"inStock\":true,\"price\":45,\"shippingCost\":5,\"tags\":[\"durable\",\"quilted\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"32L\",\"durable\",\"quilted\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 6 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        }
+      ],
+      "publicEvidenceSha256": "c05f03d10d2c1e5430fe20e25b99afc417f4245d417207fc70b6f9fbdc8eab87",
+      "inputInventory": {
+        "rootTokens": 275,
+        "rootTokenSha256": "bc5865e9b490f60ef41bd43ddc1d2100b878f41887054319b748bbf0ac672dfc",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 538,
+            "fullPromptTokens": 813,
+            "fullPromptSha256": "61f2afee0ce7add9310527b8261f77d886f9bb72ba7f8fd8a9c394f48d908546"
+          },
+          {
+            "rowId": "heading-2",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 550,
+            "fullPromptTokens": 825,
+            "fullPromptSha256": "ce1468627305a79eafd166aba3f7e0057cfd5abd2d19bde0bf67e995fc59e542"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 209,
+            "fullPromptTokens": 484,
+            "fullPromptSha256": "b290ee55ed92b3c4b6a734a4e6d2cb4920b1254a6f6ee24f673d012245f906f7"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 209,
+            "fullPromptTokens": 484,
+            "fullPromptSha256": "6dd3f9581571c20386232c25b360a8a174f0dffc5ac2266ff7df2ce54850e267"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 203,
+            "fullPromptTokens": 478,
+            "fullPromptSha256": "52ccb2ea64150eb1ab3c48f35c2686fd8b45cc0960da9a6cd985e51d0915b4ba"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 203,
+            "fullPromptTokens": 478,
+            "fullPromptSha256": "63ae2738da20410592edd628db7c442bfdf870dd4120223afab9be245754af35"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 201,
+            "fullPromptTokens": 476,
+            "fullPromptSha256": "45b9b5788a09eaf4bb60db62a2bbcd3fd531f022660188d0705a80022782a3c7"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 201,
+            "fullPromptTokens": 476,
+            "fullPromptSha256": "cec399b04d6019bf677c67d4d8d80c2e8c20973cde9a040cffd46a6d1b671c31"
+          },
+          {
+            "rowId": "title-4",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 209,
+            "fullPromptTokens": 484,
+            "fullPromptSha256": "457ed24d0936619bae01f8ffe35f897ae956dda5c35dffbc7cbbc2d5e76713f2"
+          },
+          {
+            "rowId": "badge-4",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 209,
+            "fullPromptTokens": 484,
+            "fullPromptSha256": "5a4bdb70364f97dcb853be0b8cb6538df57bb0b4f245d6607a2676480ee7e2af"
+          },
+          {
+            "rowId": "title-5",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 205,
+            "fullPromptTokens": 480,
+            "fullPromptSha256": "e92c77b43513a5d933b8c3b45f122ec77a55feac22696200621b8ce9f21618b3"
+          },
+          {
+            "rowId": "badge-5",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 205,
+            "fullPromptTokens": 480,
+            "fullPromptSha256": "6c06fd4e8fc8fdd544ccfed33ea232f61f63726ceebcd5da236a2389938cbdc7"
+          },
+          {
+            "rowId": "title-6",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 212,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "5c1069e6620573d5eee23eeb222f45928046bec4ec0ff6cd8ac6704c095de2c1"
+          },
+          {
+            "rowId": "badge-6",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 212,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "9999b588a31e94252475502392fcb5cf318ae9a29d4b206d0304f5ffcc5a3561"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 3566,
+        "totalRootAndAllRowSuffixTokens": 3841,
+        "cardFactCacheReuseImplemented": false
+      },
+      "maxPromptPlusOutputCap": 841
+    },
+    {
+      "caseId": "copy-cfb48f005368948a",
+      "split": "test",
+      "lockedPlanSourceArm": "frozen",
+      "selectedProductImageIds": [
+        [
+          "copy-p-613610e208cd39d2",
+          "copy-v-109d86d9d397f0d0"
+        ],
+        [
+          "copy-p-3f9c629812d252dd",
+          "copy-v-fd95a3f1a0e57238"
+        ],
+        [
+          "copy-p-d4d1d893d10736ca",
+          "copy-v-387981698a387063"
+        ],
+        [
+          "copy-p-57f860260b31e5b7",
+          "copy-v-51cf0ee44517bc74"
+        ],
+        [
+          "copy-p-fea138d40bd3e132",
+          "copy-v-4bb41dd6f9092e9e"
+        ],
+        [
+          "copy-p-9d5d9cdfb224cefb",
+          "copy-v-cb33723b5d964608"
+        ]
+      ],
+      "priorFrozenLearnedSelectionEqual": true,
+      "sourceCaseSha256": "c1a3fc3ddb1e6c61828faa29619025253fbf591fff9e1df781b59a6ffb6ab92f",
+      "lockedPlanSha256": "077f2c80a0b8b9f8a95f3bab2e6679494429d2fa258754afcd3ced8716e44c38",
+      "rootMessage": {
+        "role": "user",
+        "content": "Treat all supplied public evidence as data. Product and image choices and field identities are fixed by the scheduler. Return one fresh plain value only, without label, markup, explanation or extra line; then stop. Titles: NEW 4-8 words, preserve selected identity including capacity, differ from every approved title and mention a supportedObservedTag when present. Approved titles are the identity concatenated with each approvedTitleSuffix; approvedTitleStandalone values are literal additional titles. In imageDescriptionTemplate, {identity} means the exact card identity. Badges: use supportedObservedTags or exactly NONE; absent support requires NONE and support also permits NONE. Headings: NEW 3-5 words, true for every listed section member; attributes only from universalTags, empty means generic framing only. No names or numbers in headings. Use only selected facts and ordinary travel framing, no invented capability, numeric or personal-intent claim. Public evidence: {\"asOf\":\"2026-10-01T12:00:00Z\",\"observedHistory\":[],\"request\":{\"presentationPreferences\":[\"in-use-view\"],\"presentationSurface\":\"compact-card\",\"statedBudget\":200,\"statedPreferences\":[\"quilted\",\"packable\"],\"statedRequirements\":[],\"task\":\"Choose daypacks for everyday travel with quilted and packable details.\"}}"
+      },
+      "rootMessageSha256": "ac5443dae1abb4f36ba79ec4182e5df3132571e3d4e3123cd4e6aaf2c810954c",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "key": "heading-1",
+          "fields": [
+            "S1"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Lumimar 37L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"37-litre daypack; durable, organizer, quilted.\",\"inStock\":true,\"price\":67,\"shippingCost\":5,\"tags\":[\"durable\",\"organizer\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"37L\",\"durable\",\"organizer\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"quilted\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Herilan 22L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"22-litre daypack; adjustable, durable, structured.\",\"inStock\":true,\"price\":81,\"shippingCost\":5,\"tags\":[\"adjustable\",\"durable\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"22L\",\"adjustable\",\"durable\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — lightweight\"],\"identity\":\"Avevia 16L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"16-litre daypack; lightweight, quilted, structured.\",\"inStock\":true,\"price\":46,\"shippingCost\":5,\"tags\":[\"lightweight\",\"quilted\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"16L\",\"lightweight\",\"quilted\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"quilted\"]}],\"sections\":[{\"cardIndices\":[1,2,3],\"index\":1,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 1 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "heading-2",
+          "key": "heading-2",
+          "fields": [
+            "S2"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — organizer\"],\"identity\":\"Herimar 15L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"15-litre daypack; organizer, quilted, ventilated.\",\"inStock\":true,\"price\":74,\"shippingCost\":5,\"tags\":[\"organizer\",\"quilted\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — organizer\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"15L\",\"organizer\",\"quilted\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"quilted\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Olimar 30L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"30-litre daypack; adjustable, ventilated, water-resistant.\",\"inStock\":true,\"price\":60,\"shippingCost\":5,\"tags\":[\"adjustable\",\"ventilated\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"30L\",\"adjustable\",\"ventilated\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Heriven 23L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"23-litre daypack; durable, expandable, rolltop.\",\"inStock\":true,\"price\":53,\"shippingCost\":5,\"tags\":[\"durable\",\"expandable\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"23L\",\"durable\",\"expandable\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}],\"sections\":[{\"cardIndices\":[4,5,6],\"index\":2,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 2 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-1",
+          "key": "title-1",
+          "fields": [
+            "T1"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Lumimar 37L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"37-litre daypack; durable, organizer, quilted.\",\"inStock\":true,\"price\":67,\"shippingCost\":5,\"tags\":[\"durable\",\"organizer\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"37L\",\"durable\",\"organizer\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"quilted\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 1 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-1",
+          "key": "badge-1",
+          "fields": [
+            "B1"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Lumimar 37L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"37-litre daypack; durable, organizer, quilted.\",\"inStock\":true,\"price\":67,\"shippingCost\":5,\"tags\":[\"durable\",\"organizer\",\"quilted\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"37L\",\"durable\",\"organizer\",\"quilted\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"quilted\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 1 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-2",
+          "key": "title-2",
+          "fields": [
+            "T2"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Herilan 22L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"22-litre daypack; adjustable, durable, structured.\",\"inStock\":true,\"price\":81,\"shippingCost\":5,\"tags\":[\"adjustable\",\"durable\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"22L\",\"adjustable\",\"durable\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 2 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-2",
+          "key": "badge-2",
+          "fields": [
+            "B2"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Herilan 22L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"22-litre daypack; adjustable, durable, structured.\",\"inStock\":true,\"price\":81,\"shippingCost\":5,\"tags\":[\"adjustable\",\"durable\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — adjustable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"22L\",\"adjustable\",\"durable\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 2 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-3",
+          "key": "title-3",
+          "fields": [
+            "T3"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — lightweight\"],\"identity\":\"Avevia 16L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"16-litre daypack; lightweight, quilted, structured.\",\"inStock\":true,\"price\":46,\"shippingCost\":5,\"tags\":[\"lightweight\",\"quilted\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"16L\",\"lightweight\",\"quilted\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"quilted\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 3 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-3",
+          "key": "badge-3",
+          "fields": [
+            "B3"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — lightweight\"],\"identity\":\"Avevia 16L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"16-litre daypack; lightweight, quilted, structured.\",\"inStock\":true,\"price\":46,\"shippingCost\":5,\"tags\":[\"lightweight\",\"quilted\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"16L\",\"lightweight\",\"quilted\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"quilted\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 3 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-4",
+          "key": "title-4",
+          "fields": [
+            "T4"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — organizer\"],\"identity\":\"Herimar 15L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"15-litre daypack; organizer, quilted, ventilated.\",\"inStock\":true,\"price\":74,\"shippingCost\":5,\"tags\":[\"organizer\",\"quilted\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — organizer\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"15L\",\"organizer\",\"quilted\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"quilted\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 4 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-4",
+          "key": "badge-4",
+          "fields": [
+            "B4"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — organizer\"],\"identity\":\"Herimar 15L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"15-litre daypack; organizer, quilted, ventilated.\",\"inStock\":true,\"price\":74,\"shippingCost\":5,\"tags\":[\"organizer\",\"quilted\",\"ventilated\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — organizer\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"15L\",\"organizer\",\"quilted\",\"ventilated\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"quilted\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 4 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-5",
+          "key": "title-5",
+          "fields": [
+            "T5"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Olimar 30L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"30-litre daypack; adjustable, ventilated, water-resistant.\",\"inStock\":true,\"price\":60,\"shippingCost\":5,\"tags\":[\"adjustable\",\"ventilated\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"30L\",\"adjustable\",\"ventilated\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 5 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-5",
+          "key": "badge-5",
+          "fields": [
+            "B5"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Olimar 30L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"30-litre daypack; adjustable, ventilated, water-resistant.\",\"inStock\":true,\"price\":60,\"shippingCost\":5,\"tags\":[\"adjustable\",\"ventilated\",\"water-resistant\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"30L\",\"adjustable\",\"ventilated\",\"water-resistant\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 5 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-6",
+          "key": "title-6",
+          "fields": [
+            "T6"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Heriven 23L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"23-litre daypack; durable, expandable, rolltop.\",\"inStock\":true,\"price\":53,\"shippingCost\":5,\"tags\":[\"durable\",\"expandable\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"23L\",\"durable\",\"expandable\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 6 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-6",
+          "key": "badge-6",
+          "fields": [
+            "B6"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Heriven 23L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"23-litre daypack; durable, expandable, rolltop.\",\"inStock\":true,\"price\":53,\"shippingCost\":5,\"tags\":[\"durable\",\"expandable\",\"rolltop\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"23L\",\"durable\",\"expandable\",\"rolltop\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 6 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        }
+      ],
+      "publicEvidenceSha256": "e235419b3a6f7f8b1326b6360e85ee9905a297bd43a5e36d3619c60dbc5e8312",
+      "inputInventory": {
+        "rootTokens": 281,
+        "rootTokenSha256": "f79fde29e3017cc5e680425b51d5e8cb6afa2ed809e7363ce2a9d87e3750a5e6",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 553,
+            "fullPromptTokens": 834,
+            "fullPromptSha256": "9321c59ec181397f26db0f26090f5b27a79345a4cb5ece9ff6730d830fbeabf9"
+          },
+          {
+            "rowId": "heading-2",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 555,
+            "fullPromptTokens": 836,
+            "fullPromptSha256": "7e51b12e530c36396fe9cd48e743d82a331286aa73b7a8ba251ddcee59a0ea4a"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 215,
+            "fullPromptTokens": 496,
+            "fullPromptSha256": "1c05d9c963819039fdcb3487b91b0ad73b6661c14140e3ea394843c27009e495"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 215,
+            "fullPromptTokens": 496,
+            "fullPromptSha256": "1d46dc643e793af1b912273d813b17c8bb26e5bbdc7f881d646791691f4aede7"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 206,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "e018a9c1b30615426007309f8286fbbfaceab898271b55e3bc1f98819e197936"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 206,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "cbeeda56f68efb8797d4250cdb7015c43ad3a7d6637b8c468ec12c5ec9793c21"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 208,
+            "fullPromptTokens": 489,
+            "fullPromptSha256": "c03f784328ed05ef47f9ac66616a582149b5bbd39e4f39a74e91f974535aa92c"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 208,
+            "fullPromptTokens": 489,
+            "fullPromptSha256": "7ee0a823b57c7ad8c898bcde4ae82b9817a3bcea390e1155a30cb49e61958176"
+          },
+          {
+            "rowId": "title-4",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 215,
+            "fullPromptTokens": 496,
+            "fullPromptSha256": "7f34d7516c85bef751dbf0de6ee8bd46ab2c422eef2ab1f81b62e141fc7e68c3"
+          },
+          {
+            "rowId": "badge-4",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 215,
+            "fullPromptTokens": 496,
+            "fullPromptSha256": "b67e26b068280e7a4b669cb9d3f2b98bcdb3e1ba7a9bc9571061d64696848dd8"
+          },
+          {
+            "rowId": "title-5",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 206,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "5fe3e0d5d7989002b6ec9a5c83b5b588e57f9a8fbd001774fac7bcadf9e87bf3"
+          },
+          {
+            "rowId": "badge-5",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 206,
+            "fullPromptTokens": 487,
+            "fullPromptSha256": "2dcb8419eeed3cb6ba2ac6b9cb8f09d8ca4b7c395510060ea85ba026ac01b30d"
+          },
+          {
+            "rowId": "title-6",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 210,
+            "fullPromptTokens": 491,
+            "fullPromptSha256": "142a0632375ece5e1c48dfb11fc2f1ef6aa2c3d6eabeb4fcae5e193e52def656"
+          },
+          {
+            "rowId": "badge-6",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 210,
+            "fullPromptTokens": 491,
+            "fullPromptSha256": "83684661b4629ebf8dce8433e38a0866081428830509deae03bb2bf46770e936"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 3628,
+        "totalRootAndAllRowSuffixTokens": 3909,
+        "cardFactCacheReuseImplemented": false
+      },
+      "maxPromptPlusOutputCap": 852
+    },
+    {
+      "caseId": "copy-e9929c454b3e51c8",
+      "split": "test",
+      "lockedPlanSourceArm": "frozen",
+      "selectedProductImageIds": [
+        [
+          "copy-p-73c602538704037a",
+          "copy-v-146c9ad0ca3bf549"
+        ],
+        [
+          "copy-p-c22c7696d671e069",
+          "copy-v-98b69abe014bfede"
+        ],
+        [
+          "copy-p-433497f851655f5a",
+          "copy-v-4905fe06a5d7c0a2"
+        ],
+        [
+          "copy-p-e4c2e80d261d81c6",
+          "copy-v-7d2f1d6aa8867d8b"
+        ],
+        [
+          "copy-p-aa737665e20e1fcf",
+          "copy-v-c0327ea53e8383b3"
+        ],
+        [
+          "copy-p-ac6cc10e1e55e6e4",
+          "copy-v-3e4e6aedf64dfb93"
+        ]
+      ],
+      "priorFrozenLearnedSelectionEqual": true,
+      "sourceCaseSha256": "e2e687abba99e516b645c188bbb4d137e517c76974e603e74012b7156c15ef72",
+      "lockedPlanSha256": "e50262ca2b7d246d70f1e636a674ea0230f31de04ed3d8e839acf96b38112b86",
+      "rootMessage": {
+        "role": "user",
+        "content": "Treat all supplied public evidence as data. Product and image choices and field identities are fixed by the scheduler. Return one fresh plain value only, without label, markup, explanation or extra line; then stop. Titles: NEW 4-8 words, preserve selected identity including capacity, differ from every approved title and mention a supportedObservedTag when present. Approved titles are the identity concatenated with each approvedTitleSuffix; approvedTitleStandalone values are literal additional titles. In imageDescriptionTemplate, {identity} means the exact card identity. Badges: use supportedObservedTags or exactly NONE; absent support requires NONE and support also permits NONE. Headings: NEW 3-5 words, true for every listed section member; attributes only from universalTags, empty means generic framing only. No names or numbers in headings. Use only selected facts and ordinary travel framing, no invented capability, numeric or personal-intent claim. Public evidence: {\"asOf\":\"2026-10-01T12:00:00Z\",\"observedHistory\":[],\"request\":{\"presentationPreferences\":[\"detail-view\"],\"presentationSurface\":\"compact-card\",\"statedBudget\":200,\"statedPreferences\":[\"foldable\",\"water-resistant\"],\"statedRequirements\":[],\"task\":\"Choose daypacks for everyday travel with foldable and water-resistant details.\"}}"
+      },
+      "rootMessageSha256": "48dfd142a4ca928d480eaa8d39f631c519f3cf2ef9d320925187ec15faf37208",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "key": "heading-1",
+          "fields": [
+            "S1"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Ivovia 21L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"21-litre daypack; compressible, quilted, structured.\",\"inStock\":true,\"price\":68,\"shippingCost\":5,\"tags\":[\"compressible\",\"quilted\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compressible\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"21L\",\"compressible\",\"quilted\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — foldable\"],\"identity\":\"Darodor 14L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"14-litre daypack; foldable, rolltop, roomy.\",\"inStock\":true,\"price\":61,\"shippingCost\":5,\"tags\":[\"foldable\",\"rolltop\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"14L\",\"foldable\",\"rolltop\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"foldable\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Kelador 28L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"28-litre daypack; adjustable, compressible, padded.\",\"inStock\":true,\"price\":75,\"shippingCost\":5,\"tags\":[\"adjustable\",\"compressible\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"28L\",\"adjustable\",\"compressible\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}],\"sections\":[{\"cardIndices\":[1,2,3],\"index\":1,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 1 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "heading-2",
+          "key": "heading-2",
+          "fields": [
+            "S2"
+          ],
+          "kind": "heading",
+          "maxTokens": 16,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Evivia 36L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"36-litre daypack; adjustable, foldable, reflective.\",\"inStock\":true,\"price\":54,\"shippingCost\":5,\"tags\":[\"adjustable\",\"foldable\",\"reflective\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"36L\",\"adjustable\",\"foldable\",\"reflective\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"foldable\"]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Navodor 35L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"35-litre daypack; compressible, mesh, organizer.\",\"inStock\":true,\"price\":82,\"shippingCost\":5,\"tags\":[\"compressible\",\"mesh\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compressible\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"35L\",\"compressible\",\"mesh\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]},{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Jorilis 29L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"29-litre daypack; durable, foldable, lightweight.\",\"inStock\":true,\"price\":47,\"shippingCost\":5,\"tags\":[\"durable\",\"foldable\",\"lightweight\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"29L\",\"durable\",\"foldable\",\"lightweight\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"foldable\"]}],\"sections\":[{\"cardIndices\":[4,5,6],\"index\":2,\"universalTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh heading value for section 2 using its public evidence and heading rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-1",
+          "key": "title-1",
+          "fields": [
+            "T1"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Ivovia 21L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"21-litre daypack; compressible, quilted, structured.\",\"inStock\":true,\"price\":68,\"shippingCost\":5,\"tags\":[\"compressible\",\"quilted\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compressible\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"21L\",\"compressible\",\"quilted\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 1 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-1",
+          "key": "badge-1",
+          "fields": [
+            "B1"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Ivovia 21L Daypack\",\"index\":1,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"21-litre daypack; compressible, quilted, structured.\",\"inStock\":true,\"price\":68,\"shippingCost\":5,\"tags\":[\"compressible\",\"quilted\",\"structured\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compressible\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"21L\",\"compressible\",\"quilted\",\"structured\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 1 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-2",
+          "key": "title-2",
+          "fields": [
+            "T2"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — foldable\"],\"identity\":\"Darodor 14L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"14-litre daypack; foldable, rolltop, roomy.\",\"inStock\":true,\"price\":61,\"shippingCost\":5,\"tags\":[\"foldable\",\"rolltop\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"14L\",\"foldable\",\"rolltop\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"foldable\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 2 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-2",
+          "key": "badge-2",
+          "fields": [
+            "B2"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — foldable\"],\"identity\":\"Darodor 14L Daypack\",\"index\":2,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"14-litre daypack; foldable, rolltop, roomy.\",\"inStock\":true,\"price\":61,\"shippingCost\":5,\"tags\":[\"foldable\",\"rolltop\",\"roomy\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"14L\",\"foldable\",\"rolltop\",\"roomy\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"foldable\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 2 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-3",
+          "key": "title-3",
+          "fields": [
+            "T3"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Kelador 28L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"28-litre daypack; adjustable, compressible, padded.\",\"inStock\":true,\"price\":75,\"shippingCost\":5,\"tags\":[\"adjustable\",\"compressible\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"28L\",\"adjustable\",\"compressible\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 3 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-3",
+          "key": "badge-3",
+          "fields": [
+            "B3"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Kelador 28L Daypack\",\"index\":3,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"28-litre daypack; adjustable, compressible, padded.\",\"inStock\":true,\"price\":75,\"shippingCost\":5,\"tags\":[\"adjustable\",\"compressible\",\"padded\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"28L\",\"adjustable\",\"compressible\",\"padded\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 3 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-4",
+          "key": "title-4",
+          "fields": [
+            "T4"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Evivia 36L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"36-litre daypack; adjustable, foldable, reflective.\",\"inStock\":true,\"price\":54,\"shippingCost\":5,\"tags\":[\"adjustable\",\"foldable\",\"reflective\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"36L\",\"adjustable\",\"foldable\",\"reflective\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"foldable\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 4 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-4",
+          "key": "badge-4",
+          "fields": [
+            "B4"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — adjustable\"],\"identity\":\"Evivia 36L Daypack\",\"index\":4,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"36-litre daypack; adjustable, foldable, reflective.\",\"inStock\":true,\"price\":54,\"shippingCost\":5,\"tags\":[\"adjustable\",\"foldable\",\"reflective\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\"\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"36L\",\"adjustable\",\"foldable\",\"reflective\"],\"imageDescriptionTemplate\":\"Text description of {identity} in detail-view with its listed catalog facts.\",\"presentationStyle\":\"detail-view\"},\"supportedObservedTags\":[\"foldable\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 4 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-5",
+          "key": "title-5",
+          "fields": [
+            "T5"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Navodor 35L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"35-litre daypack; compressible, mesh, organizer.\",\"inStock\":true,\"price\":82,\"shippingCost\":5,\"tags\":[\"compressible\",\"mesh\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compressible\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"35L\",\"compressible\",\"mesh\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 5 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-5",
+          "key": "badge-5",
+          "fields": [
+            "B5"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — compressible\"],\"identity\":\"Navodor 35L Daypack\",\"index\":5,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"35-litre daypack; compressible, mesh, organizer.\",\"inStock\":true,\"price\":82,\"shippingCost\":5,\"tags\":[\"compressible\",\"mesh\",\"organizer\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — compressible\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"35L\",\"compressible\",\"mesh\",\"organizer\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 5 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "title-6",
+          "key": "title-6",
+          "fields": [
+            "T6"
+          ],
+          "kind": "title",
+          "maxTokens": 24,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Jorilis 29L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"29-litre daypack; durable, foldable, lightweight.\",\"inStock\":true,\"price\":47,\"shippingCost\":5,\"tags\":[\"durable\",\"foldable\",\"lightweight\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"29L\",\"durable\",\"foldable\",\"lightweight\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"foldable\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh title value for card 6 using its public evidence and title rules. End after this one line."
+            }
+          ]
+        },
+        {
+          "rowId": "badge-6",
+          "key": "badge-6",
+          "fields": [
+            "B6"
+          ],
+          "kind": "badge",
+          "maxTokens": 8,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Public bound evidence: {\"cards\":[{\"approvedTitleStandalone\":[],\"approvedTitleSuffixes\":[\"\",\" — durable\"],\"identity\":\"Jorilis 29L Daypack\",\"index\":6,\"productFacts\":{\"category\":\"backpacks\",\"description\":\"29-litre daypack; durable, foldable, lightweight.\",\"inStock\":true,\"price\":47,\"shippingCost\":5,\"tags\":[\"durable\",\"foldable\",\"lightweight\"]},\"selectedApprovedTitleStandalone\":null,\"selectedApprovedTitleSuffix\":\" — durable\",\"selectedImage\":{\"compatibleSurfaces\":[\"compact-card\",\"detail-panel\"],\"facts\":[\"29L\",\"durable\",\"foldable\",\"lightweight\"],\"imageDescriptionTemplate\":\"Text description of {identity} in in-use-view with its listed catalog facts.\",\"presentationStyle\":\"in-use-view\"},\"supportedObservedTags\":[\"foldable\"]}]}"
+            },
+            {
+              "role": "user",
+              "content": "Write only the fresh badge value for card 6 using its public evidence and badge rules. End after this one line."
+            }
+          ]
+        }
+      ],
+      "publicEvidenceSha256": "e438a86fddc862d54616e24e5f20787eee7a4d25a4b1cbf8a50d647f1aa961ea",
+      "inputInventory": {
+        "rootTokens": 279,
+        "rootTokenSha256": "a8b550b48810fffbab4a0acfe8abfc8d4e41481ca2a6bba24b0d9cc74442b7aa",
+        "rows": [
+          {
+            "rowId": "heading-1",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 550,
+            "fullPromptTokens": 829,
+            "fullPromptSha256": "7ffe3d168d16250bba4fe76be8540a45d3fa7ff2e2a8fc99c7e37430870b6c55"
+          },
+          {
+            "rowId": "heading-2",
+            "kind": "heading",
+            "maxTokens": 16,
+            "suffixTokens": 551,
+            "fullPromptTokens": 830,
+            "fullPromptSha256": "aeaba1be3e38bba923b13fa016e9236dd7644079fd19255bd1442e4f73224577"
+          },
+          {
+            "rowId": "title-1",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 213,
+            "fullPromptTokens": 492,
+            "fullPromptSha256": "e2239aa85589500a03f675c5dcfa25bfdb20a8250059550ac3cbf25b6eb47fa9"
+          },
+          {
+            "rowId": "badge-1",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 213,
+            "fullPromptTokens": 492,
+            "fullPromptSha256": "17d27f91d6593e8476df4bddffac9c287f92a0a660815eac8b5fb5200f8f5596"
+          },
+          {
+            "rowId": "title-2",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 209,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "6fb9ed1287e08343701414ff2d814004aa726c472884f9bb3ee0c9adffbf71df"
+          },
+          {
+            "rowId": "badge-2",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 209,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "b8c6d6e844687a0ac77282cfd9a99245b5f32e8767b61235dc6a87a939e9aa1c"
+          },
+          {
+            "rowId": "title-3",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 204,
+            "fullPromptTokens": 483,
+            "fullPromptSha256": "926f6b0b41b4de282464619abbd5d52638431ca02d1211d0003cc1910f5ec67b"
+          },
+          {
+            "rowId": "badge-3",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 204,
+            "fullPromptTokens": 483,
+            "fullPromptSha256": "77c175464785538d37f5d3a5d063a994e2d8d65626223993ec4e4f503518e024"
+          },
+          {
+            "rowId": "title-4",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 206,
+            "fullPromptTokens": 485,
+            "fullPromptSha256": "642c21cff0edd78e7d61ae843a8a9ecc8855285487f13ef410247286181ab88c"
+          },
+          {
+            "rowId": "badge-4",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 206,
+            "fullPromptTokens": 485,
+            "fullPromptSha256": "0a38d8584fceb2a148b8869467f77bed0707f77e7347d975faa4b6747a361cf5"
+          },
+          {
+            "rowId": "title-5",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 209,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "ebe8332705238eb3832a1330e5a2847f79da8640887967b45d51a3ff87b98b08"
+          },
+          {
+            "rowId": "badge-5",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 209,
+            "fullPromptTokens": 488,
+            "fullPromptSha256": "50efbf0a00c75a57329ddaff1de2292b461784e517852bdb28996cfe7ab6a2d2"
+          },
+          {
+            "rowId": "title-6",
+            "kind": "title",
+            "maxTokens": 24,
+            "suffixTokens": 212,
+            "fullPromptTokens": 491,
+            "fullPromptSha256": "fc4ee821a8383b37afc921105efc562785f6e6e95845c632699e9e9bc81bbea6"
+          },
+          {
+            "rowId": "badge-6",
+            "kind": "badge",
+            "maxTokens": 8,
+            "suffixTokens": 212,
+            "fullPromptTokens": 491,
+            "fullPromptSha256": "cb508b691d44afef811dc474e52401229c2f87052bd6ec8aa1e42ef6d406d615"
+          }
+        ],
+        "totalRepeatedFactAndFieldSuffixTokens": 3607,
+        "totalRootAndAllRowSuffixTokens": 3886,
+        "cardFactCacheReuseImplemented": false
+      },
+      "maxPromptPlusOutputCap": 846
+    }
+  ],
+  "summary": {
+    "rootTokensMin": 275,
+    "rootTokensMax": 281,
+    "largestRowSuffixTokens": 565,
+    "largestPromptPlusOutputCap": 857,
+    "totalRootAndAllRowSuffixTokens": [
+      3857,
+      3916,
+      3893,
+      3841,
+      3909,
+      3886
+    ]
+  },
+  "limitations": [
+    "Already inspected six-card dev/test cases are paired replay evidence, not new sealed holdouts.",
+    "No native cache correctness, memory, generated quality or speed is established by tokenizer/stub checks.",
+    "Global-evidence-trained adapter is reused under an explicitly changed branch-local copy representation.",
+    "Card facts repeat in title and badge row suffixes; no prepared-card-fact cache reuse is implemented.",
+    "No complete twelve/twentyfour-card execution is authorized by this six-card CPU prototype."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-17T22:30:25.166932+00:00",
+  "functionalControlsStatus": "completed",
+  "memoryComplianceStatus": "failed-peak-budget",
+  "controlArms": 18,
+  "totalRawSampledResponses": 252,
+  "fixedBudgetBytes": 6442450944,
+  "observedPeakBytes": 6475156144,
+  "excessBytes": 32705200,
+  "excessMiB": 31.190109252929688,
+  "firstRecordedPeakExcursionArm": "w3-full-r0",
+  "summedDiagnosticArmWallMs": 58989.00908220094,
+  "artifactWallClockIntervalMs": 65092.27418899536,
+  "artifactWallClockMethod": "Stage-two recordedAtUtc before backbone construction to final probe.json filesystem mtime; includes startup/common prefill/persistence, excludes Python imports before recordedAtUtc. Not a monotonic process timer or speed benchmark.",
+  "semanticComparison": {
+    "status": "blocked-before-model-load",
+    "executedArms": 0,
+    "fixedCases": 12,
+    "gateError": "Native controls exceeded fixed six-GiB peak budget: 6475156144 > 6442450944; stop heavyweight comparison",
+    "preflightWallMs": 0.08670799434185028,
+    "action": "parallel_semantic_benchmark across manifest/sequential/native widths 2/3/6",
+    "reason": "Stop on actual fixed-budget excursion; no allowance increase or alternate launch."
+  },
+  "functionalFindings": {
+    "forkAndIndependentCompletePrefixesExactlyEqual": true,
+    "pristineCompleteSourceUnchanged": true,
+    "allRawLogitAlignmentsExact": true,
+    "allRepeatedRawDistributionsExactlyEqual": true
+  },
+  "evidence": {
+    "data/ranker/pretrained/native-batch-diagnosis-v2/probe.json": "9bf6ccfb616544339a9802377b3877cb41419f12b2dd41cf65475009531ed334",
+    "data/ranker/pretrained/native-batch-diagnosis-v2/position6-arrays.npz": "78789a09f5e8d27fadb9ea10c4b99368c05ba17a1d31a80484547dc3d8736238",
+    "experiments/ranker/pretrained/native_batch_diagnosis.py": "bd81e79266e8c6d2ce831dcad22fdf1f5907a78caed4d5d403910699353ab961",
+    "experiments/ranker/pretrained/parallel_semantic_benchmark.py": "f4584fe54af1a2bd706192f5d2fc29c9754e4126ba0f2be37967bf9ff5116216"
+  },
+  "limitations": [
+    "Functional agreement does not identify kernels versus shared native merge/position handling.",
+    "All eighteen arms finished before this post-run peak audit; original active-only boundary checks did not detect the transient peak.",
+    "The configured allocator limit is not a hard allocation ceiling. The separate proposed runner detects recorded peaks and cannot prevent all transients.",
+    "Original v1 evidence, strict token mismatch, validator and rejected page outputs remain unchanged.",
+    "No new complete-page quality/latency comparison was executed."
+  ]
+}
