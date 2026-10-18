@@ -32,11 +32,14 @@ def run(args):
     from .evidence_plan import REVISION,load_corrected
     if args.out.exists():raise ValueError('Preserve existing result directory')
     if psutil.virtual_memory().available<7*2**30:raise MemoryError('Less than declared7GiB available')
-    manifest=json.loads((DATA/'manifest.json').read_text())
+    data=args.dataset
+    config={**CONFIG,'epochs':args.epochs,'dataset':str(data),
+        'updateOrder':f'fixed case order; seeded row shuffle within each case, {args.epochs} passes per case'}
+    manifest=json.loads((data/'manifest.json').read_text())
     for name,sha in manifest['fileSha256'].items():
-        if digest(DATA/name)!=sha:raise ValueError('Frozen payload changed: '+name)
+        if digest(data/name)!=sha:raise ValueError('Frozen payload changed: '+name)
     args.out.mkdir(parents=True);start=time.perf_counter()
-    report={'status':'started','config':CONFIG,'executionCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+    report={'status':'started','config':config,'executionCommit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         'sourceSha256':digest(Path(__file__)),'helperSourceSha256':digest(ROOT/'semantic_copy_training.py'),
         'inputHashesVerified':manifest['fileSha256'],'runtime':{n:version(n) for n in ('mlx','mlx-lm','torch','numpy')},
         'modelRevision':REVISION,'tokenizerSha256':digest(MODEL/'tokenizer.json'),
@@ -57,9 +60,10 @@ def run(args):
         if len(trainable)!=2 or sum(v.size for v in trainable.values())!=65536 or any(not k.endswith(('lora_a','lora_b')) for k in trainable):raise AssertionError('Wrong trainable roster')
         report['trainableParameters']={k:int(v.size) for k,v in trainable.items()};save()
         optimizer=optim.Adam(learning_rate=CONFIG['learningRate']);rng=np.random.default_rng(CONFIG['seed'])
-        fields=records(DATA/'fields.train.jsonl');cases=records(DATA/'cases.train.jsonl')
+        fields=records(data/'fields.train.jsonl');cases=records(data/'cases.train.jsonl')
         expected_fields={f'S{i}' for i in (1,2)}|{f'{kind}{i}' for kind in ('T','B') for i in range(1,7)}
-        if len(cases)!=12 or len(fields)!=168:raise AssertionError('Wrong frozen training denominator')
+        if not cases or len({c['caseId'] for c in cases})!=len(cases) or len(fields)!=14*len(cases):raise AssertionError('Wrong frozen training denominator')
+        report['expectedTrainingCases']=len(cases);report['expectedTrainingSteps']=1 if args.smoke else len(fields)*args.epochs
         for case in cases:
             rows=[f for f in fields if f['caseId']==case['caseId']]
             if len(rows)!=14 or {f['field'] for f in rows}!=expected_fields:raise AssertionError('Wrong training field membership')
@@ -101,7 +105,7 @@ def run(args):
                 native_rows.append({'rowId':f['rowId'],'kind':f['kind'],'targetTokens':len(c['targets']),
                     **{k:v for k,v in c.items() if k not in ('inputs','targets','promptTokens')}})
             initial={k:np.array(v) for k,v in tree_flatten(adapter.trainable_parameters())}
-            for epoch in range(1 if args.smoke else CONFIG['epochs']):
+            for epoch in range(1 if args.smoke else args.epochs):
                 for idx in rng.permutation(len(rows)):
                     idx=int(idx);step_start=time.perf_counter();loss,grads=grad_fn(state,contracts[idx]);mx.eval(loss,grads)
                     flat=dict(tree_flatten(grads))
@@ -147,7 +151,7 @@ def run(args):
             scheduler.values_layout=layout;fusion.encode_shared_prefix=base_rank
             try:
                 for split in ('dev','test'):
-                    for index,case in enumerate(records(DATA/f'cases.{split}.jsonl')):
+                    for index,case in enumerate(records(data/f'cases.{split}.jsonl')):
                         for arm in (('learned','frozen') if index%2 else ('frozen','learned')):
                             begin=time.perf_counter()
                             with disabled(model,adapter) if arm=='frozen' else null_context():result=scheduler.value_arm(bb,heads,case)
@@ -157,7 +161,7 @@ def run(args):
                             print(json.dumps({'split':split,'caseId':case['caseId'],'arm':arm,'quality':result['quality'],'fullMs':result['externalFullCompletionMs']}),flush=True);save()
                             gc.collect();mx.clear_cache()
             finally:scheduler.values_layout=old_layout;fusion.encode_shared_prefix=old_encode
-        if len(report['steps'])!=(1 if args.smoke else 336):raise AssertionError('Incomplete fixed training step count')
+        if len(report['steps'])!=report['expectedTrainingSteps']:raise AssertionError('Incomplete fixed training step count')
         report['status']='smoke-passed' if args.smoke else 'completed';report['memory']=bb.runtime_memory();save()
         print(json.dumps({'status':report['status'],'steps':len(report['steps']),'firstProbeBefore':report['firstTrainingProbeBefore'],'firstProbeAfter':report['firstTrainingProbeAfter'],'memory':report['memory']}),flush=True)
     except Exception as exc:
@@ -167,7 +171,8 @@ def run(args):
 
 
 def main():
-    p=argparse.ArgumentParser(__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--smoke',action='store_true');run(p.parse_args())
+    p=argparse.ArgumentParser(__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--smoke',action='store_true')
+    p.add_argument('--dataset',type=Path,default=DATA);p.add_argument('--epochs',type=int,choices=(1,2),default=2);run(p.parse_args())
 
 
 if __name__=='__main__':main()
