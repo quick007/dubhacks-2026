@@ -196,7 +196,7 @@ export async function aggregateShopperResults(packetDirectory: string, sessionsD
     status: "unattempted", formalStatus: "unattempted", errors: [] })));
   const report: { version: string; status: string; fixedCases: number; fixedSessions: number; packetSources: Record<string, string>;
     setupErrors: string[]; rows: SessionRow[]; [key: string]: unknown } = {
-    version: "shopper-evidence-aggregate.v1", status: "partial", fixedCases: 10, fixedSessions: 20,
+    version: "shopper-evidence-aggregate.v1", synthetic: true, status: "partial", fixedCases: 10, fixedSessions: 20,
     packetSources: packet.sources, setupErrors: [], rows, browserDispatched: false, modelCalled: false,
     humanConversionClaim: false, unseenGeneralizationClaim: false, physicalPaintClaim: false,
     limitations: ["Synthetic development smoke with fixed20 denominator; sidecar validation cannot reconstruct unrecorded actions.",

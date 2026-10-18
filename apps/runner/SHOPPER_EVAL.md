@@ -106,6 +106,21 @@ adapter for a real shopper. The opt-in
 it makes no shopper choices, model requests or checkout attempts. Coordinate
 with the model owner before running any local-model arm.
 
+After aggregation, an optional separate command posts an immutable snapshot to
+the local results API. It runs outside shopper timing and never reads database
+credentials or contacts the cloud database directly:
+
+```sh
+node --import tsx apps/runner/src/shopper-export.ts \
+  --report /tmp/new-run/aggregate.json --report-id shopper-smoke-attempt-1
+```
+
+The endpoint is fixed to `http://127.0.0.1:4311/api/experiment-results`. A `202`
+receipt confirms the local durable archive and asynchronous cloud handling; it
+does not confirm a completed cloud write. Retry the same snapshot with its same
+ID; use a new ID when evidence changes. Export requires the separate results API
+to be running and is never invoked automatically by the shopper runner.
+
 CPU checks (fixture sidecars are not browser execution evidence):
 
 ```sh
