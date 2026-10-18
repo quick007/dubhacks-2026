@@ -1,0 +1,91 @@
+{
+  "version": "actual-store-function-v4-cpu-preparation-audit.v1",
+  "createdAtUtc": "2026-10-18T03:05:04.474889+00:00",
+  "status": "ready-for-root-review-and-native-queue",
+  "preflightSha256": "b6f34b339b8662677b1a48ee28530f4e57465c43d7b0c8ac8d7635ea6ad33df2",
+  "sourceHashes": {
+    "store_function_adaptation_v4.py": "3a8c48c1f7ce3cd51d47c502f2d414d20d850cc4d1caf4aab211882cac7a10d6",
+    "test_store_function_adaptation_v4.py": "da5a754efb48473fa38ad33df53f02572fb7223435f9620d8851728585fdca01",
+    "store_function_data_v4.py": "6d9afd347215b9b3ec85faf42e02929d00b3ac5e9261c413ecef27469d1e5380",
+    "test_store_function_data_v4.py": "9ec50bde769332748148ece2d00410df458b79e7f7821fafade06ee40afce57d",
+    "store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+    "store_model_bridge.py": "91124b1793bf9960761547f0feb4c1e8609593bd70f4f7abf3c1b97c40c38eaf",
+    "catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "catalog_fusion/generalization_v2.py": "a4802adbac9eaff3dddc5ef2ec1859c981392f881b1516f90141f7f192dc604c",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc"
+  },
+  "dataFreezeSha256": "1e7f6997ede308d20af137241743546135955f7570242662cc2f899829e06f26",
+  "config": {
+    "seed": 728,
+    "steps": 80,
+    "priorSteps": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "epsilon": 1e-08,
+    "threads": 1,
+    "memoryGiB": 6,
+    "maxTokens": 512,
+    "nativeForwards": 104,
+    "trainFeatures": 80,
+    "evaluationCases": 24,
+    "maxLifecycleSeconds": 180,
+    "dimensions": 4096,
+    "classes": 16,
+    "parameters": 131104,
+    "semanticThreshold": 0.5,
+    "maxResults": 6,
+    "permutedQueryOffsetTrain": 17,
+    "permutedQueryOffsetEvaluation": 1,
+    "permutationClaim": "fixed counterfactual shuffle, not guaranteed disjoint semantic targets; evaluation labels not consulted",
+    "objective": "equal role mean: flat TRAIN desired-function BCE + catalog identity CE",
+    "priorObjective": "flat TRAIN desired-function BCE for query-independent 16 logits",
+    "unrequestedPolicy": "zero is case-specific unrequested, not universally irrelevant; no negative reweighting",
+    "exactNamePolicy": "whole current query is original name, or find/show [me] [the item named] original name; optional please/quotes/punctuation; no incidental mention"
+  },
+  "preparedRows": 104,
+  "trainFeatureRows": 80,
+  "evaluationFeatureRows": 24,
+  "tokenRange": [
+    45,
+    120
+  ],
+  "evaluationLabelsParsedDuringPreparation": false,
+  "nativeForwardsExecuted": 0,
+  "optimizerUpdatesExecuted": 0,
+  "cpuTests": {
+    "passed": 22,
+    "seconds": 16.764,
+    "command": ".tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_store_function_adaptation_v4 experiments.ranker.pretrained.test_store_function_data_v4",
+    "fakeVectorsAreNativeEvidence": false
+  },
+  "validatedContracts": [
+    "Independent query sigmoid16 versus catalog softmax16; two 4096-to16 affine projections total131104parameters.",
+    "TRAIN-only means and semantic desired multi-hot labels; eligibility never replaces semantic desired labels.",
+    "Exactly80TRAIN features before fixed80learned+80prior updates and checkpoint reload, then24fresh endpoints.",
+    "Complete mocked CPU run verified104unique artificial feature rows,208artifact hashes,24payload hashes/replay,24durableendpointJSONLrecords.",
+    "Instrumented file reads prove evaluation-labels.json is parsed exactly once after PREDICTIONS_FROZEN in the complete mocked run.",
+    "Preparation/verification/postprocessing/cleanup failures produce receipts with fixed104/64/24and80+80denominators.",
+    "Timeout immediately after a returned forward preserves completedNativeForwards1andserializedFeatures0.",
+    "Exact-name policy recognizes complete original-name queries and anchored find/show forms; negation/incidental/multiple-name mentions do not route.",
+    "Exact-name override remains subject to budget/unknownstock/unknownsize guards and is evaluated separately.",
+    "Fixed0.5threshold, no padding, raw16rank and unthresholded top6 retained; all4controls and full-set metrics freeze before evaluator labels.",
+    "FixedTRAINoffset17/EVALoffset1counterfactual shuffle chosen without EVALlabels; semantic disjointness not guaranteed."
+  ],
+  "limitations": [
+    "CPU preparation and artificial-vector tests establish code contracts only; no native learned quality or measured model latency.",
+    "Threshold0.5is predeclared and uncalibrated; keep semantic strict and deterministic exact-policy results separate.",
+    "FlatBCE0labels mean case-specific unrequested functions, not universally irrelevant products; no added avoidance reweighting.",
+    "Fewer returned products are explicit shortfalls and cannot be used to claim complete storefront speed.",
+    "All16identities/functions areTRAIN-seen; author-visible synthetic evaluation is not sealed.",
+    "No generatedcopy,imagechoice,browserrendering,above-foldreadinessorfullcompletionmeasurement.",
+    "Native lifecycle deadline is cooperative and cannot interrupt a hung call."
+  ],
+  "remainingActions": [
+    "Root must review and commit source/tests/frozen preflight before launching.",
+    "Root alone launches one native run under the shared native-owner.lock after existing copy work releases the GPU.",
+    "Audit actual outputs, quality/control tallies, shortfalls and latency after run; no automatic promotion."
+  ],
+  "blockers": []
+}

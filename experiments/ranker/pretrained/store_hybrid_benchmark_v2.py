@@ -64,6 +64,9 @@ def run(rank_run,copy_run,public_path,out):
                 'attemptFullSixMs':[a['fullSixReceipt']['validatedAndSerializedAtMs'] for a in done],
                 'validFirstThreeMs':[a['firstThreeReceipt']['validatedAndSerializedAtMs'] for a in done if a['firstThreeReceipt']['valid']],
                 'validFullSixMs':[a['fullSixReceipt']['validatedAndSerializedAtMs'] for a in done if a['fullSixReceipt']['valid']]}
+            if 'quality' in report:
+                report['summary']['usefulFirstThreeProxy']=sum(x['usefulFirstThreeProxy'] for x in report['quality'].values())
+                report['summary']['usefulFullSixProxy']=sum(x['usefulFullSixProxy'] for x in report['quality'].values())
             (out/'results.json').write_text(json.dumps(report,indent=2,allow_nan=False)+'\n')
         save()
         try:
@@ -109,6 +112,20 @@ def run(rank_run,copy_run,public_path,out):
                         requestScope='fresh observed request -> native query encoding -> learned rank -> real actions -> fresh native copy -> complete validated serialized payload; browser paint excluded')
                 save();gc.collect();mx.clear_cache()
                 print(canonical({'event':'hybrid-case','caseId':case['caseId'],'firstValid':arm['firstThreeReceipt']['valid'],'fullValid':arm['fullSixReceipt']['valid']}),flush=True)
+            # External labels are scored after all timed requests; they never
+            # enter rank features, selection, prompts or generation fields.
+            report['quality']={}
+            for arm in arms:
+                reference=rank_report['results']['evaluation']['learned']['cases'][arm['caseId']]
+                target=reference['targetProductIndex'];order=arm['ranking']['productIndices']
+                first_valid=arm['firstThreeReceipt']['valid'];full_valid=arm['fullSixReceipt']['valid']
+                report['quality'][arm['caseId']]={'targetProductIndex':target,'topOneCorrect':order[0]==target,
+                    'targetInFirstThree':target in order[:3],'targetInFullSix':target in order,
+                    'usefulFirstThreeProxy':bool(first_valid and target in order[:3]),
+                    'usefulFullSixProxy':bool(full_valid and target in order),
+                    'strictTopOneAndFirstThreeValid':bool(first_valid and order[0]==target),
+                    'strictTopOneAndFullSixValid':bool(full_valid and order[0]==target),
+                    'scope':'posthoc manual public-function target retrieval plus complete copy gate; no human usefulness/conversion claim'}
             after={k.replace('.31.mlp.down_proj.linear.','.31.mlp.down_proj.'):v for k,v in parameter_hashes(bb.model.language_model).items()}
             if before!=after or len(before)!=927 or digest(checkpoint)!=report['copyCheckpointSha256']:raise ValueError('Frozen base or copy checkpoint changed')
             assert_source_fresh(fit['preflight'],Path('experiments/ranker/pretrained/store_copy_v2'))
