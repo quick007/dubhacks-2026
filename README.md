@@ -1,84 +1,139 @@
 # Storefront Lab
 
-A local DubHacks scaffold for testing a demo storefront with synthetic shopper personas. Baseline and structured variants share a fixed experiment, disjoint development/held-out personas, and a recorded seed. Everything runs without API keys.
+A local DubHacks demo for adapting a storefront to a shopper's public request.
+The React shop has 16 fixture products, color/gallery controls and a fake
+checkout. An optional local Qwen path learns product ordering and generates
+fresh titles, badges, headings and short copy from selected catalog facts.
 
-See [VISION.md](VISION.md) for the product direction, demo workflow, evaluation methodology, and team workstreams.
+The dashboard also runs synthetic comparisons through a Go API. Its mock
+scores, the scripted checkout smoke test and independent shopper-agent evidence
+are separate results. All purchases are fake; no human conversion lift has been
+established.
 
-Local model work is separate from the app: see the [synthetic ranking baseline](experiments/ranker/README.md) and [pretrained decision-head experiment](experiments/ranker/pretrained/README.md) for commands, data boundaries, and measured limitations.
+## Run the default demo
 
-**All results are synthetic.** Mock scores are deterministic rule outputs. Browser runs exercise a fake local checkout. Neither demonstrates human behavior or proven conversion lift.
-
-## Run locally
-
-Use Node 24.11+ in the 24.x line, or Node 26+ (tested: 26.9), pnpm 12.5.1, and Go 1.24+ (tested: 1.27.2). SQLite uses the small `go-sqlite3` driver and requires CGO plus a C compiler; this Mac already has Apple clang. No database server is needed. The Go helper uses `.tools/go/bin/go` when available, then system `go`, or the explicit `STOREFRONT_GO_BINARY` override. A checksum-verified official Go toolchain was installed only under this project’s ignored `.tools/` directory.
+Use Node 24.11+ in the 24.x line or Node 26+, pnpm 12.5.1, and Go 1.24+ with
+CGO and a C compiler. The Go helper prefers `.tools/go/bin/go` when present,
+then system Go; `STOREFRONT_GO_BINARY` overrides it. SQLite needs no database
+server. The default demo requires no model weights or API key.
 
 ```sh
 pnpm install
-pnpm exec playwright install chromium
 pnpm seed
 pnpm dev
 ```
 
-Open **http://dubhacks.localhost:1356** and click **Run mock comparison**. The dashboard polls for queued/running/completed runs and displays separate development and held-out comparisons. Inspect each run's steps, failure reasons, result artifact, and evidence-linked proposals. **Run browser smoke** runs one real Playwright path through the local demo shop, saving a trace and screenshot. No API key is used by either adapter.
+| App | Address |
+|---|---|
+| React dashboard | <http://dubhacks.localhost:1356> |
+| Go API | <http://api.dubhacks.localhost:1356> |
+| React storefront | <http://shop.dubhacks.localhost:1356> |
 
-| Service                                                    | Address                             |
-| ---------------------------------------------------------- | ----------------------------------- |
-| Dashboard, Vite+ + React + Tailwind + shadcn/ui primitives | http://dubhacks.localhost:1356      |
-| Go net/http API                                            | http://api.dubhacks.localhost:1356  |
-| Local demo shop                                            | http://shop.dubhacks.localhost:1356 |
+`pnpm dev` owns a loopback-only Portless proxy on port 1356 and the three app
+processes. Ctrl-C stops them. It requires no sudo, certificate installation or
+hosts-file change. Seed before starting the API; its data lock prevents
+concurrent mutation. Local metadata and artifacts live in ignored `data/`.
 
-`pnpm dev` starts [Portless](https://github.com/vercel-labs/portless) in **plain HTTP on unprivileged port 1356**, then starts the three named apps with dynamically assigned backend ports. All listeners bind only to loopback. The launcher owns the proxy and app processes and stops them on Ctrl-C. It refuses an occupied proxy port and never force-takes a route or kills another project. The shop accepts only demo interactions; its order button creates no purchase and collects no payment information.
+In the dashboard, open **All sessions** and choose **Run a round** to queue
+the deterministic mock comparisons. The separate legacy Playwright adapter
+exercises a scripted fake checkout and requires
+`pnpm exec playwright install chromium`. Its first-item purchase script does
+not represent an independent shopper choosing a suitable product.
 
-The project uses isolated state in ignored `.cache/portless/`. The launcher explicitly disables TLS, LAN mode, hosts-file syncing and network sharing, and never installs an OS service or runs certificate trust commands. It leaves the existing proxy on 1355 and global `~/.portless` state alone. No sudo, trusted CA, `/etc/hosts` edit or global Portless installation is needed. Use Chrome, Edge or Firefox, whose built-in `.localhost` resolution works without hosts changes; Safari can depend on system DNS.
+## Enable the local model
 
-Stable names live in `portless.json`; shared URLs and proxy port live in `packages/contracts/src/local.ts`. Both Vite+ apps honor `PORT` and bind `127.0.0.1`; the Go API also reads and validates `PORT` while keeping loopback binding. Vite allows the named hosts and sends HMR WebSockets through the named proxy. Dashboard `/api` requests use the named API route through loopback with the correct `Host` header, avoiding macOS Node DNS failures and proxy loops. The browser runner permits only the named demo-shop origin.
+The verified native environment uses Apple silicon, Python 3.14.7, MLX 0.32.4
+and MLX-LM 0.32.2. One frozen Qwen3.5-9B four-bit backbone supplies features to
+a trained ranking head and runs an adapted decoder for copy. The resident
+service handles requests serially on `127.0.0.1:8766`.
 
-## Verify and reset
+This optional path requires the existing local environment, pinned Qwen weights
+and completed serving checkpoints. They are not supplied by a fresh Git clone:
+
+| Local prerequisite | Location |
+|---|---|
+| Python environment | `.tools/pretrained-venv/` |
+| Pinned model snapshot | `.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/` |
+| Actual-store ranking run | `data/ranker/pretrained/actual-store-function-v3-attempt-1/` |
+| Copy adapter run | `data/ranker/pretrained/actual-store-copy-fit-v2-attempt-1/` |
+
+With those artifacts available, start one resident worker from the repository
+root. Choose a new output directory for each service lifetime:
 
 ```sh
-pnpm typecheck          # standard TypeScript tsc + Go vet
-pnpm typecheck:tsc-ts   # requested vercel-labs/tsc-ts compiler, separate check
-pnpm check              # Vite+ formatting, lint and its own type checking
+.tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.store_demo_service \
+  --width 10 --output data/ranker/pretrained/store-demo-new-session
+```
+
+Wait for `GET http://127.0.0.1:8766/health` to report `ready: true`, then open
+<http://shop.dubhacks.localhost:1356/?model=local>. For a standalone shop,
+`pnpm --filter @storefront/storefront dev --host 127.0.0.1 --port 4312` makes
+the standalone address explicit; open
+<http://127.0.0.1:4312/?model=local>. Ordinary browsing remains available without
+the model parameter. See the [service guide](experiments/ranker/pretrained/STORE_DEMO_SERVICE.md)
+for artifact checks, constraints and request/receipt formats.
+
+The shopper query affects ranking. Copy receives selected public facts and a
+neutral browsing request. Item budgets, exact-name rules and supported hard
+constraints use deterministic guards. Images use the existing storefront
+gallery; image selection and hidden-persona inference are not learned here.
+Stock and sizes remain unknown. Unsafe or unfinished generated fields are
+withheld, while catalog names and prices remain available.
+
+## Measured status
+
+Warm six-card smoke requests recorded ordering around 0.2 seconds and fresh
+copy payloads around 5 to 6 seconds. Ordering latency excludes copy; serialized
+copy completion can include withheld fields. These are local inspected smoke
+results, with startup separate from request timing. Browser instrumentation
+records DOM commit plus two animation frames, not physical paint or image
+readiness. The [native smoke summary](experiments/ranker/pretrained/store_demo_results/v1/summary.json)
+and [qualitative audit](experiments/ranker/pretrained/STORE_DEMO_V1_QUALITATIVE_AUDIT.md)
+preserve failures, including a notebook query that ranked the organizer first.
+
+A conventional autoregressive LLM comparison has a CPU preparation driver.
+The paired native comparison has not run, so there is no measured
+LLM speedup ratio.
+
+## Independent shopper evaluation
+
+The [ten-pair packet](experiments/ranker/pretrained/store_shopper_eval_v1/README.md)
+separates public recommender observations, private shopper needs and evaluator
+gold. It fixes five AB and five BA orders, 24 actions and 120 seconds per arm.
+The CPU-only [prepare/aggregate CLI](apps/runner/SHOPPER_EVAL.md) does not launch
+browsers or models and never supplies gold answers to a shopper assignment.
+
+One actual Chrome bottle-shopping pair completed exploratory fake checkouts.
+Viewport, timing and durable-evidence deviations keep it outside the formal
+benchmark. All 20 formal slots remain unattempted. See the
+[smoke evidence](experiments/ranker/pretrained/store_shopper_eval_smoke_v1/README.md)
+and [session contract](apps/runner/SHOPPER_CONTRACT_V1.md) for the recorded limits.
+The contract and CLI have CPU tests; fixture sidecars do not count as browser
+execution or conversion evidence.
+
+## Development and architecture
+
+| Area | Responsibility |
+|---|---|
+| `apps/storefront/` | Client-rendered shop, deterministic generic search, optional streamed local-model results, fake cart/checkout |
+| `apps/web/` | Dashboard, comparisons and run/artifact inspection |
+| `apps/api/` | Go HTTP API, bounded queue, SQLite metadata, mock evaluation and structured proposals |
+| `apps/runner/` | Legacy scripted Playwright adapter plus separate shopper evidence contracts/CLI |
+| `packages/contracts/` | Shared v1 schemas and local service addresses |
+| `experiments/ranker/pretrained/` | Native model experiments, resident service, frozen data, audits and receipts |
+
+```sh
+pnpm typecheck
 pnpm test
 pnpm build
-pnpm test:smoke
+node --import tsx --test apps/runner/src/shopper-contract.test.ts apps/runner/src/shopper-eval-cli.test.ts
 ```
 
-The small test suite checks shared schemas, runner protocol, storefront settings, and the Go API mock lifecycle/persistence. `pnpm typecheck:tsc-ts` invokes the published `tsc-ts` package; it is distinct from Vite+’s built-in TypeScript Go checks. Standard TypeScript checks remain available too. Playwright starts all three services itself and checks the named dashboard comparison, fake checkout, API browser trace/artifact path, and real CSS hot updates through both frontend HMR WebSockets. Node request checks use loopback transport plus the named `Host` header, while browser navigation uses the named URLs. Stop `pnpm dev` before `pnpm test:smoke`, since tests use the same project proxy port. Browser installation is only needed for browser runs and smoke tests; mock runs require no browser binary.
+`pnpm test` includes the runner's source test files. The direct Node command
+focuses on the shopper contract and CLI. `pnpm test:smoke` starts its own named
+services and needs the Playwright browser; stop `pnpm dev` before running it.
 
-```sh
-pnpm seed       # idempotent initial catalog; preserves runs
-pnpm reset      # clears local demo metadata/artifacts and reseeds
-```
-
-Stop the API before seed/reset; the API data lock prevents concurrent mutation. The default metadata and artifacts live in `data/` at the workspace root and are gitignored. `STOREFRONT_DATA_DIR` overrides the data root; relative values resolve from the API's working directory. Reset deletes only the app-owned database filenames and artifacts in that selected root. Smoke tests use a fresh `data/smoke/<timestamp>-<pid>/` directory for each invocation. Test isolation for API unit tests uses temporary directories.
-
-Open a downloaded trace with `pnpm exec playwright show-trace /path/to/trace.zip`. Browser and mock artifacts are saved locally. Server restarts mark interrupted in-process jobs failed; the queue does not resume work. This is a single-process prototype.
-
-## Teammate ownership and frozen interfaces
-
-`packages/contracts/src/index.ts` is **v1 of the shared boundary**. Coordinate any contract or endpoint changes before editing it. It exports Zod schemas and types for `Persona`, `Experiment`, `Variant`, `Run`, `StepEvent`, `Artifact`, `EvaluationResult`, `ProposedChange`, catalog, requests, and comparison rows. API route documentation is at the bottom of that file.
-
-| Owner area                | Files and responsibility                                                                                                                   |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Dashboard                 | `apps/web/`: polling, run inspection, comparison; consume contracts                                                                        |
-| Orchestration/persistence | `apps/api/app.go`, `queue.go`, `store.go`: validated HTTP, bounded queue, SQLite and artifact metadata                                     |
-| Runner                    | `apps/api/internal/runner/`: Go `Adapter`, deterministic mock, JSON subprocess adapter; `apps/runner/`: TypeScript Playwright browser path |
-| Evaluator                 | `apps/api/internal/evaluator/`: Go evaluator interface, explicit synthetic scores                                                          |
-| Optimizer                 | `apps/api/internal/optimizer/`: Go optimizer interface, evidence-linked structured config proposals from development runs                  |
-| Recommendations           | `apps/api/internal/recommendation/`: Go recommendation interface, ranking stub using explicitly supplied persona history                   |
-| Model integration         | `apps/api/internal/model/`: Go model interface, no-network mock; future API provider belongs on server only                                |
-| Demo shop                 | `apps/storefront/`: allowed config query parameters and stable fake-checkout roles                                                         |
-| Shared contracts          | `packages/contracts/`: schema owner, coordinate before edits                                                                               |
-
-The Go API invokes the TypeScript browser runner only when needed, sending one JSON request on stdin and receiving one JSON result on stdout. This is a child process, not another long-running service. See `apps/runner/README.md` for the protocol. The runner, evaluator, optimizer, recommendation, and model adapters are intentionally small boundaries for teammates. The recommendation stub can rank supplied items/history; the scaffold does not implement a user-history ingestion service or a learned recommendation model. The browser path is a smoke check, not a general-purpose autonomous shopper.
-
-Run snapshots record immutable random 128-bit IDs, experiment/baseline/variant IDs, persona and split, config, seed, adapter, and contract version. The API exposes no mutation of those snapshots. Only status, steps, artifacts, and evaluation advance. Results are grouped by variant and persona split; optimizer suggestions use development evidence only. Held-out results are never fed to the optimizer. Comparison rows aggregate completed mock runs; reruns add observations rather than replacing them. Scripted browser smoke runs stay separate from mock comparisons because they use a different task policy.
-
-Variants are validated config (`headline`, `showShipping`, `recommendationOrder`), never generated code. There is no endpoint for arbitrary URLs, script execution, deployment, authentication, cloud storage, checkout submissions, or model credentials. `.env.example` reserves a future server-side model boundary; it is optional and requires no secret. No deployment, Docker, Redis, or external database is needed.
-
-## Toolchain and repository handoff
-
-Both frontends use [Vite+](https://viteplus.dev/guide) 1.3.0 through the local `vp` CLI for dev/build and shared checks. The scaffold was migrated with the official `vp migrate` workflow. [tsc-ts](https://github.com/vercel-labs/tsc-ts) is pinned separately to its published package and invoked by `pnpm typecheck:tsc-ts`; it is not an alias for Vite+’s checker. No global Vite+ installation is required. Go source is formatted with gofmt and checked with Go vet/tests. Go dependencies are recorded in `apps/api/go.mod` and `go.sum`; JS dependencies use the pnpm lockfile.
-
-Project checkout: `/Users/lukas/Documents/Projects/dubhacks-2026`, with origin `https://github.com/quick007/dubhacks-2026.git`. The checkout contained only `.git` with a clean status immediately before integration. Source, configuration, documentation, and lockfiles were added without overwriting existing files; `.git` was preserved. Dependencies and a workspace-local Go toolchain were installed fresh here. No database, artifact, secret, dependency directory, or generated build output was copied from the checkpoint. The initial scaffold was built in a temporary Codex task workspace, then integrated here for team contribution. After verification and a confirmed push, the duplicate task scaffold is removed; useful local browser evidence is preserved under ignored `data/checkpoint-evidence/`. This checkout is the project source of truth.
+Start with the [documentation guide](docs/README.md). The [project vision](VISION.md)
+describes the broader goal; some implementation-status sections predate the
+current integration. Historical experiment reports stay at their original
+paths, indexed in [docs/archive](docs/archive/README.md).
