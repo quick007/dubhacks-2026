@@ -1,0 +1,365 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v4-04",
+  "arm": "local-model",
+  "run": {
+    "id": "holdout-v4-04-local-model",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v4-04",
+    "personaSplit": "held-out",
+    "seed": 2026102204
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "84dbdf64-83c6-4138-a2c9-cc6991ff8187",
+    "contextId": "aa598460-1721-4258-b8ed-312435293791",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v4-04-local-model-screenshot-png",
+      "holdout-v4-04-local-model-trace-zip",
+      "holdout-v4-04-local-model-browser-observations-json",
+      "holdout-v4-04-local-model-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T09:46:46.255Z",
+  "elapsedMs": 39900.278500000015,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-0",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T09:46:47.224Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 969.7462920001708,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-1",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T09:46:51.835Z",
+        "kind": "action",
+        "message": "a reusable drinking bottle for my bag, at most $36"
+      },
+      "elapsedMs": 5580.478041999973,
+      "action": {
+        "type": "search",
+        "query": "a reusable drinking bottle for my bag, at most $36"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-2",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T09:46:56.352Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 10096.829584000167,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-3",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T09:47:01.579Z",
+        "kind": "action",
+        "message": "Everyday steel bottle color: Steel blue"
+      },
+      "elapsedMs": 15324.533292000182,
+      "action": {
+        "type": "inspect",
+        "target": "Everyday steel bottle color: Steel blue"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-4",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 4,
+        "at": "2026-10-18T09:47:05.805Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 19550.562000000384,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-steel-blue"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-5",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 5,
+        "at": "2026-10-18T09:47:11.135Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 24880.05766700022,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-6",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 6,
+        "at": "2026-10-18T09:47:16.621Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 30366.03583399998,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-7",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 7,
+        "at": "2026-10-18T09:47:22.025Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 35770.198250000365,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-local-model-step-8",
+        "runId": "holdout-v4-04-local-model",
+        "sequence": 8,
+        "at": "2026-10-18T09:47:26.155Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 39900.27287500026,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v4-04-local-model-screenshot-png",
+        "runId": "holdout-v4-04-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:47:26.624Z"
+      },
+      "status": "captured",
+      "sha256": "3cebcda2b4ac96be86ebff12aa30a676cfb28447767a3c8141fad838fe0aec5d",
+      "bytes": 32725,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-04-local-model-trace-zip",
+        "runId": "holdout-v4-04-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:47:26.624Z"
+      },
+      "status": "captured",
+      "sha256": "e05ac5e5246b5b39826e30ba4f1318da573b1e58f5d141a2a8956298834507d2",
+      "bytes": 10170102,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-04-local-model-browser-observations-json",
+        "runId": "holdout-v4-04-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:47:26.624Z"
+      },
+      "status": "captured",
+      "sha256": "f44e519190193a459c712bc4941c462c68a28900b4af18291ecd6da77ac3e9e2",
+      "bytes": 117092,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-04-local-model-checkout-receipt-json",
+        "runId": "holdout-v4-04-local-model",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:47:26.628Z"
+      },
+      "status": "captured",
+      "sha256": "f4f8870382996030f840a2a6d1fde1f00e9127680d5f99410c657d1ab535e827",
+      "bytes": 2126,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday steel bottle",
+    "selectedColor": "Steel blue",
+    "catalogPrice": 36,
+    "quantity": 1,
+    "productId": "bottle",
+    "variantId": "bottle-steel-blue",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v4-04-local-model-step-4",
+      "holdout-v4-04-local-model-step-7"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v4-04-local-model-screenshot-png",
+      "holdout-v4-04-local-model-trace-zip",
+      "holdout-v4-04-local-model-browser-observations-json",
+      "holdout-v4-04-local-model-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"drinking-water bottle\"]",
+        "evidenceArtifactIds": [
+          "holdout-v4-04-local-model-screenshot-png",
+          "holdout-v4-04-local-model-trace-zip",
+          "holdout-v4-04-local-model-browser-observations-json",
+          "holdout-v4-04-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "36",
+        "evidenceArtifactIds": [
+          "holdout-v4-04-local-model-screenshot-png",
+          "holdout-v4-04-local-model-trace-zip",
+          "holdout-v4-04-local-model-browser-observations-json",
+          "holdout-v4-04-local-model-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Steel blue\"",
+        "evidenceArtifactIds": [
+          "holdout-v4-04-local-model-screenshot-png",
+          "holdout-v4-04-local-model-trace-zip",
+          "holdout-v4-04-local-model-browser-observations-json",
+          "holdout-v4-04-local-model-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "bbf9b21e-73a1-47cc-ae43-90de5b6c49a6",
+        "startTimeMs": 5104.200000047684,
+        "durationMs": 296.89999997615814,
+        "capturedAtElapsedMs": 10427.626209000126,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v4-04-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "bbf9b21e-73a1-47cc-ae43-90de5b6c49a6",
+        "startTimeMs": 5104.200000047684,
+        "durationMs": 297,
+        "capturedAtElapsedMs": 10427.6265420001,
+        "acceptedFields": 10,
+        "withheldFields": 0,
+        "requiredFields": 10,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v4-04-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "bbf9b21e-73a1-47cc-ae43-90de5b6c49a6",
+        "startTimeMs": 5104.200000047684,
+        "durationMs": 297,
+        "capturedAtElapsedMs": 10427.626583999954,
+        "acceptedFields": 20,
+        "withheldFields": 0,
+        "requiredFields": 20,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v4-04-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

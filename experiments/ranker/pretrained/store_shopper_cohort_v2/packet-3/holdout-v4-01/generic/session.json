@@ -1,0 +1,301 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v4-01",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v4-01-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v4-01",
+    "personaSplit": "held-out",
+    "seed": 2026102201
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "dd0e9dd5-2a7e-49ce-aabd-d44938dbad8a",
+    "contextId": "2f77fa0e-3dd7-4506-9df1-3219874147d7",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v4-01-generic-screenshot-png",
+      "holdout-v4-01-generic-trace-zip",
+      "holdout-v4-01-generic-browser-observations-json",
+      "holdout-v4-01-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:50:27.716Z",
+  "elapsedMs": 34409.2671670001,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-0",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:50:28.702Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 986.4865419999696,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-1",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:50:33.528Z",
+        "kind": "action",
+        "message": "canvas low-top shoes for a casual clothing collection, at most $99"
+      },
+      "elapsedMs": 5812.449791999999,
+      "action": {
+        "type": "search",
+        "query": "canvas low-top shoes for a casual clothing collection, at most $99"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-2",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:50:38.234Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 10518.343708000146,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-3",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:50:43.241Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 15525.116667000111,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "sneakers",
+        "variantId": "sneakers-off-white"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-4",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:50:48.969Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 21253.09833299974,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-5",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:50:53.186Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 25470.307541999966,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-6",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:50:57.907Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 30190.614541999996,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-01-generic-step-7",
+        "runId": "holdout-v4-01-generic",
+        "sequence": 7,
+        "at": "2026-10-18T09:51:02.125Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 34409.26458299998,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v4-01-generic-screenshot-png",
+        "runId": "holdout-v4-01-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:51:02.559Z"
+      },
+      "status": "captured",
+      "sha256": "d5832b851c94cf5677fa883e9f0facad61f1ba20c1b21bed4e6411a59e525110",
+      "bytes": 32577,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-01-generic-trace-zip",
+        "runId": "holdout-v4-01-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:51:02.559Z"
+      },
+      "status": "captured",
+      "sha256": "efd1825e2530af55709b07fdbe70e318259eb2859570c136cfa4896bb6dd6c38",
+      "bytes": 9106853,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-01-generic-browser-observations-json",
+        "runId": "holdout-v4-01-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:51:02.559Z"
+      },
+      "status": "captured",
+      "sha256": "cc70a443e9f71ae36d6d66ea75869be5cc5b715a9df542379471498e1b62f1de",
+      "bytes": 44876,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-01-generic-checkout-receipt-json",
+        "runId": "holdout-v4-01-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:51:02.563Z"
+      },
+      "status": "captured",
+      "sha256": "1c6c236954e80e1f352d5c9db11fcd147b0e77419d17dc779be5bc047205ef0a",
+      "bytes": 2135,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday canvas sneakers",
+    "selectedColor": "Off-white",
+    "catalogPrice": 96,
+    "quantity": 1,
+    "productId": "sneakers",
+    "variantId": "sneakers-off-white",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v4-01-generic-step-3",
+      "holdout-v4-01-generic-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v4-01-generic-screenshot-png",
+      "holdout-v4-01-generic-trace-zip",
+      "holdout-v4-01-generic-browser-observations-json",
+      "holdout-v4-01-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"footwear\"]",
+        "evidenceArtifactIds": [
+          "holdout-v4-01-generic-screenshot-png",
+          "holdout-v4-01-generic-trace-zip",
+          "holdout-v4-01-generic-browser-observations-json",
+          "holdout-v4-01-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "96",
+        "evidenceArtifactIds": [
+          "holdout-v4-01-generic-screenshot-png",
+          "holdout-v4-01-generic-trace-zip",
+          "holdout-v4-01-generic-browser-observations-json",
+          "holdout-v4-01-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Off-white\"",
+        "evidenceArtifactIds": [
+          "holdout-v4-01-generic-screenshot-png",
+          "holdout-v4-01-generic-trace-zip",
+          "holdout-v4-01-generic-browser-observations-json",
+          "holdout-v4-01-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

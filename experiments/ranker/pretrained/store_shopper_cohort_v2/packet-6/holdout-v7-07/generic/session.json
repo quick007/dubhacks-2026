@@ -1,0 +1,301 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v7-07",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v7-07-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v7-07",
+    "personaSplit": "held-out",
+    "seed": 2026102507
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "ed39c5af-3254-4dc4-9b0a-807205ab5e9c",
+    "contextId": "5269b3be-aa49-4e02-8c04-9d5a7129bf19",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v7-07-generic-screenshot-png",
+      "holdout-v7-07-generic-trace-zip",
+      "holdout-v7-07-generic-browser-observations-json",
+      "holdout-v7-07-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:51:02.901Z",
+  "elapsedMs": 35255.668791999575,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-0",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:51:03.834Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 933.4197079995647,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-1",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:51:08.467Z",
+        "kind": "action",
+        "message": "a cotton crewneck top for relaxed evenings, at most $76"
+      },
+      "elapsedMs": 5566.162624999881,
+      "action": {
+        "type": "search",
+        "query": "a cotton crewneck top for relaxed evenings, at most $76"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-2",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:51:13.883Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 10981.713332999963,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-3",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:51:18.574Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 15672.795374999754,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "sweatshirt",
+        "variantId": "sweatshirt-oatmeal"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-4",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:51:23.687Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 20785.587874999736,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-5",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:51:29.107Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 26206.248999999836,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-6",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:51:33.922Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 31021.363874999806,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-07-generic-step-7",
+        "runId": "holdout-v7-07-generic",
+        "sequence": 7,
+        "at": "2026-10-18T09:51:38.157Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 35255.661124999635,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v7-07-generic-screenshot-png",
+        "runId": "holdout-v7-07-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:51:38.586Z"
+      },
+      "status": "captured",
+      "sha256": "4ad777e7722884aba48ca7e001d334cac859de0785650cfa4106a792348cd186",
+      "bytes": 33106,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-07-generic-trace-zip",
+        "runId": "holdout-v7-07-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:51:38.586Z"
+      },
+      "status": "captured",
+      "sha256": "f75f2c1222d0a16dc77c201645605f2f58108e8c896b480fba9034c23d68b5cf",
+      "bytes": 9323224,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-07-generic-browser-observations-json",
+        "runId": "holdout-v7-07-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:51:38.586Z"
+      },
+      "status": "captured",
+      "sha256": "96621ca9ae08d5009a3897156479c873aecc3c7fdff4b6d7680618698538a9e8",
+      "bytes": 44523,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-07-generic-checkout-receipt-json",
+        "runId": "holdout-v7-07-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:51:38.590Z"
+      },
+      "status": "captured",
+      "sha256": "4cdbdb11b7e199bfaaeaf956805310315b19512fd55237468b06bb3dff0d75fe",
+      "bytes": 2141,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Soft cotton crewneck",
+    "selectedColor": "Oatmeal",
+    "catalogPrice": 72,
+    "quantity": 1,
+    "productId": "sweatshirt",
+    "variantId": "sweatshirt-oatmeal",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v7-07-generic-step-3",
+      "holdout-v7-07-generic-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v7-07-generic-screenshot-png",
+      "holdout-v7-07-generic-trace-zip",
+      "holdout-v7-07-generic-browser-observations-json",
+      "holdout-v7-07-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"crewneck top\"]",
+        "evidenceArtifactIds": [
+          "holdout-v7-07-generic-screenshot-png",
+          "holdout-v7-07-generic-trace-zip",
+          "holdout-v7-07-generic-browser-observations-json",
+          "holdout-v7-07-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "72",
+        "evidenceArtifactIds": [
+          "holdout-v7-07-generic-screenshot-png",
+          "holdout-v7-07-generic-trace-zip",
+          "holdout-v7-07-generic-browser-observations-json",
+          "holdout-v7-07-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Oatmeal\"",
+        "evidenceArtifactIds": [
+          "holdout-v7-07-generic-screenshot-png",
+          "holdout-v7-07-generic-trace-zip",
+          "holdout-v7-07-generic-browser-observations-json",
+          "holdout-v7-07-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

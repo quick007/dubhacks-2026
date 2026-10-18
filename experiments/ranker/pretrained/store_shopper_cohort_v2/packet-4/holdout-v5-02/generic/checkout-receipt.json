@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "3fd51bb3-2a76-479b-ac3b-805e29f47a4d",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "organizer",
+          "variantId": "organizer-ochre",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "3fd51bb3-2a76-479b-ac3b-805e29f47a4d",
+        "receiptId": "demo-7eb09423a79db0dd84687b60052775e8",
+        "createdAt": "2026-10-18T09:42:52.911007Z",
+        "items": [
+          {
+            "productId": "organizer",
+            "variantId": "organizer-ochre",
+            "quantity": 1,
+            "unitPrice": 26,
+            "lineTotal": 26
+          }
+        ],
+        "subtotal": 26,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 26,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/3fd51bb3-2a76-479b-ac3b-805e29f47a4d",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "3fd51bb3-2a76-479b-ac3b-805e29f47a4d",
+        "receiptId": "demo-7eb09423a79db0dd84687b60052775e8",
+        "createdAt": "2026-10-18T09:42:52.911007Z",
+        "items": [
+          {
+            "productId": "organizer",
+            "variantId": "organizer-ochre",
+            "quantity": 1,
+            "unitPrice": 26,
+            "lineTotal": 26
+          }
+        ],
+        "subtotal": 26,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 26,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "3fd51bb3-2a76-479b-ac3b-805e29f47a4d",
+    "receiptId": "demo-7eb09423a79db0dd84687b60052775e8"
+  },
+  "errors": []
+}

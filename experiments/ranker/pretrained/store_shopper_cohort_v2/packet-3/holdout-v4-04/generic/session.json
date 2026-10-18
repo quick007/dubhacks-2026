@@ -1,0 +1,286 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v4-04",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v4-04-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v4-04",
+    "personaSplit": "held-out",
+    "seed": 2026102204
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "95c8b9fe-d11e-4318-96c3-b4672ea1fe11",
+    "contextId": "f0c098ff-d6bd-4b6f-82a8-c17334ecca02",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v4-04-generic-screenshot-png",
+      "holdout-v4-04-generic-trace-zip",
+      "holdout-v4-04-generic-browser-observations-json",
+      "holdout-v4-04-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:46:17.314Z",
+  "elapsedMs": 28348.91483400017,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v4-04-generic-step-0",
+        "runId": "holdout-v4-04-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:46:18.273Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 959.3715840000659,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-generic-step-1",
+        "runId": "holdout-v4-04-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:46:23.060Z",
+        "kind": "action",
+        "message": "a reusable drinking bottle for my bag, at most $36"
+      },
+      "elapsedMs": 5746.0678750001825,
+      "action": {
+        "type": "search",
+        "query": "a reusable drinking bottle for my bag, at most $36"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-generic-step-2",
+        "runId": "holdout-v4-04-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:46:27.647Z",
+        "kind": "action",
+        "message": "Everyday steel bottle color: Steel blue"
+      },
+      "elapsedMs": 10333.775041999761,
+      "action": {
+        "type": "inspect",
+        "target": "Everyday steel bottle color: Steel blue"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-generic-step-3",
+        "runId": "holdout-v4-04-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:46:31.845Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 14530.905125000048,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-steel-blue"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-generic-step-4",
+        "runId": "holdout-v4-04-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:46:36.957Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 19643.698334000073,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-generic-step-5",
+        "runId": "holdout-v4-04-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:46:41.681Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 24367.557459000032,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-04-generic-step-6",
+        "runId": "holdout-v4-04-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:46:45.663Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 28348.907833999954,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v4-04-generic-screenshot-png",
+        "runId": "holdout-v4-04-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:46:46.055Z"
+      },
+      "status": "captured",
+      "sha256": "3cebcda2b4ac96be86ebff12aa30a676cfb28447767a3c8141fad838fe0aec5d",
+      "bytes": 32725,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-04-generic-trace-zip",
+        "runId": "holdout-v4-04-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:46:46.055Z"
+      },
+      "status": "captured",
+      "sha256": "59cafcbb7939d01deecc80366ec0610c4d6e32352066778a6e9ec9794ec73ae4",
+      "bytes": 6803486,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-04-generic-browser-observations-json",
+        "runId": "holdout-v4-04-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:46:46.055Z"
+      },
+      "status": "captured",
+      "sha256": "cbd9583c2c29feafeafd93af3c130f8cab40f9631694ab99738735fb27ea69c7",
+      "bytes": 32499,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-04-generic-checkout-receipt-json",
+        "runId": "holdout-v4-04-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:46:46.058Z"
+      },
+      "status": "captured",
+      "sha256": "2be82765db8935d429e97189be304861510f406ce2b074bbeba36b1a5fb0dfd7",
+      "bytes": 2126,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday steel bottle",
+    "selectedColor": "Steel blue",
+    "catalogPrice": 36,
+    "quantity": 1,
+    "productId": "bottle",
+    "variantId": "bottle-steel-blue",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v4-04-generic-step-3",
+      "holdout-v4-04-generic-step-5"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v4-04-generic-screenshot-png",
+      "holdout-v4-04-generic-trace-zip",
+      "holdout-v4-04-generic-browser-observations-json",
+      "holdout-v4-04-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"drinking-water bottle\"]",
+        "evidenceArtifactIds": [
+          "holdout-v4-04-generic-screenshot-png",
+          "holdout-v4-04-generic-trace-zip",
+          "holdout-v4-04-generic-browser-observations-json",
+          "holdout-v4-04-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "36",
+        "evidenceArtifactIds": [
+          "holdout-v4-04-generic-screenshot-png",
+          "holdout-v4-04-generic-trace-zip",
+          "holdout-v4-04-generic-browser-observations-json",
+          "holdout-v4-04-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Steel blue\"",
+        "evidenceArtifactIds": [
+          "holdout-v4-04-generic-screenshot-png",
+          "holdout-v4-04-generic-trace-zip",
+          "holdout-v4-04-generic-browser-observations-json",
+          "holdout-v4-04-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v7-08",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v7-08-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v7-08",
+    "personaSplit": "held-out",
+    "seed": 2026102508
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "16bbec89-4f9a-4768-9e24-a358e019fba4",
+    "contextId": "3ac8a097-370c-4b8b-83ed-cccec401c147",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v7-08-generic-screenshot-png",
+      "holdout-v7-08-generic-trace-zip",
+      "holdout-v7-08-generic-browser-observations-json",
+      "holdout-v7-08-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:47:26.959Z",
+  "elapsedMs": 38414.719333000015,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-0",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:47:27.894Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 935.874749999959,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-1",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:47:32.911Z",
+        "kind": "action",
+        "message": "a throw blanket to drape over a couch, at most $62"
+      },
+      "elapsedMs": 5952.790333000012,
+      "action": {
+        "type": "search",
+        "query": "a throw blanket to drape over a couch, at most $62"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-2",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:47:37.348Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 10389.34004099993,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-3",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:47:42.725Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 15766.38112499984,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "blanket",
+        "variantId": "blanket-rust"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-4",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:47:48.537Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 21577.972790999804,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-5",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:47:55.193Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 28234.049124999903,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-6",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:48:00.682Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 33723.533125000075,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-08-generic-step-7",
+        "runId": "holdout-v7-08-generic",
+        "sequence": 7,
+        "at": "2026-10-18T09:48:05.374Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 38414.711624999996,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v7-08-generic-screenshot-png",
+        "runId": "holdout-v7-08-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:48:05.808Z"
+      },
+      "status": "captured",
+      "sha256": "c8a45b439178a8d2db7ec3002873b57f6a86a13c5125963a0e42a880e0df3a65",
+      "bytes": 33197,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-08-generic-trace-zip",
+        "runId": "holdout-v7-08-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:48:05.808Z"
+      },
+      "status": "captured",
+      "sha256": "99481d1b249235c4fc0dcf64f361fabb8632ada0b4fa9c2cab81734cd4f693dc",
+      "bytes": 9249468,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-08-generic-browser-observations-json",
+        "runId": "holdout-v7-08-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:48:05.808Z"
+      },
+      "status": "captured",
+      "sha256": "65e8d274736770d8f7bfa9d3845bafa521629e779e16d62bd1321025864662c0",
+      "bytes": 44422,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-08-generic-checkout-receipt-json",
+        "runId": "holdout-v7-08-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:48:05.812Z"
+      },
+      "status": "captured",
+      "sha256": "64037fcdbf729fd4cc894f60dcac92a472c29a8fef37b482e55fd756b4379c6e",
+      "bytes": 2114,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Woven everyday throw",
+    "selectedColor": "Rust",
+    "catalogPrice": 58,
+    "quantity": 1,
+    "productId": "blanket",
+    "variantId": "blanket-rust",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v7-08-generic-step-3",
+      "holdout-v7-08-generic-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v7-08-generic-screenshot-png",
+      "holdout-v7-08-generic-trace-zip",
+      "holdout-v7-08-generic-browser-observations-json",
+      "holdout-v7-08-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"sofa-throw\"]",
+        "evidenceArtifactIds": [
+          "holdout-v7-08-generic-screenshot-png",
+          "holdout-v7-08-generic-trace-zip",
+          "holdout-v7-08-generic-browser-observations-json",
+          "holdout-v7-08-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "58",
+        "evidenceArtifactIds": [
+          "holdout-v7-08-generic-screenshot-png",
+          "holdout-v7-08-generic-trace-zip",
+          "holdout-v7-08-generic-browser-observations-json",
+          "holdout-v7-08-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Rust\"",
+        "evidenceArtifactIds": [
+          "holdout-v7-08-generic-screenshot-png",
+          "holdout-v7-08-generic-trace-zip",
+          "holdout-v7-08-generic-browser-observations-json",
+          "holdout-v7-08-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

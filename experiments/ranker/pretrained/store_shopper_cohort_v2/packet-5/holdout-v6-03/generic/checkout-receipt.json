@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "b62443fd-1bdb-4a2f-80ed-14e5747c8ec0",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "duffel",
+          "variantId": "duffel-olive",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "b62443fd-1bdb-4a2f-80ed-14e5747c8ec0",
+        "receiptId": "demo-e1d77b744bb985e59c4530a40c2c6bb5",
+        "createdAt": "2026-10-18T09:41:10.405789Z",
+        "items": [
+          {
+            "productId": "duffel",
+            "variantId": "duffel-olive",
+            "quantity": 1,
+            "unitPrice": 84,
+            "lineTotal": 84
+          }
+        ],
+        "subtotal": 84,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 84,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/b62443fd-1bdb-4a2f-80ed-14e5747c8ec0",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "b62443fd-1bdb-4a2f-80ed-14e5747c8ec0",
+        "receiptId": "demo-e1d77b744bb985e59c4530a40c2c6bb5",
+        "createdAt": "2026-10-18T09:41:10.405789Z",
+        "items": [
+          {
+            "productId": "duffel",
+            "variantId": "duffel-olive",
+            "quantity": 1,
+            "unitPrice": 84,
+            "lineTotal": 84
+          }
+        ],
+        "subtotal": 84,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 84,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "b62443fd-1bdb-4a2f-80ed-14e5747c8ec0",
+    "receiptId": "demo-e1d77b744bb985e59c4530a40c2c6bb5"
+  },
+  "errors": []
+}

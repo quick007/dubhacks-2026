@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "c7e3802e-fdd5-4932-882f-164a05643fc7",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-oatmeal",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "c7e3802e-fdd5-4932-882f-164a05643fc7",
+        "receiptId": "demo-0f78b63d4820fc477f9737425ac3501a",
+        "createdAt": "2026-10-18T09:52:11.887087Z",
+        "items": [
+          {
+            "productId": "sweatshirt",
+            "variantId": "sweatshirt-oatmeal",
+            "quantity": 1,
+            "unitPrice": 72,
+            "lineTotal": 72
+          }
+        ],
+        "subtotal": 72,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 72,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/c7e3802e-fdd5-4932-882f-164a05643fc7",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "c7e3802e-fdd5-4932-882f-164a05643fc7",
+        "receiptId": "demo-0f78b63d4820fc477f9737425ac3501a",
+        "createdAt": "2026-10-18T09:52:11.887087Z",
+        "items": [
+          {
+            "productId": "sweatshirt",
+            "variantId": "sweatshirt-oatmeal",
+            "quantity": 1,
+            "unitPrice": 72,
+            "lineTotal": 72
+          }
+        ],
+        "subtotal": 72,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 72,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "c7e3802e-fdd5-4932-882f-164a05643fc7",
+    "receiptId": "demo-0f78b63d4820fc477f9737425ac3501a"
+  },
+  "errors": []
+}
