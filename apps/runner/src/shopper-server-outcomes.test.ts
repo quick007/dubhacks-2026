@@ -49,10 +49,11 @@ test("indexes all assigned rows and confirms only matching durable local receipt
   const f = await fixture(t), result = await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock });
   assert.equal(result.schema, "shopper-server-outcomes.v1"); assert.equal(result.rows.length, 2);
   assert.equal(result.rows[0].serverConfirmed, true); assert.deepEqual(result.rows[0].errors, []);
+  assert.equal(result.rows[0].visibleCheckoutConfirmed, true);
   assert.deepEqual(result.rows[0].readback, { httpStatus: 200, identical: true });
   assert.equal(result.rows[0].artifact?.sha256, sha(await readFile(f.artifactPath)));
   assert.equal(result.reports[0].sha256, sha(await readFile(f.reportPath)));
-  assert.equal(result.rows[1].serverConfirmed, false); assert.equal(result.rows[1].receipt, null);
+  assert.equal(result.rows[1].serverConfirmed, false); assert.equal(result.rows[1].visibleCheckoutConfirmed, false); assert.equal(result.rows[1].receipt, null);
   assert.equal(f.calls.length, 1); assert.equal(f.calls[0].init?.method, "GET"); assert.equal(f.calls[0].init?.redirect, "error");
   assert.equal(f.calls[0].url, `http://127.0.0.1:4312/api/demo-checkout/${UUID}`);
   await assert.rejects(generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock }), /EEXIST/);
@@ -66,7 +67,41 @@ test("receipt confirmation does not depend on agent status or independent gold s
 test("no-order evidence preserves abstention with no technical error or network call", async (t) => {
   const f = await fixture(t, (e, s) => { e.post = null; e.get = null; e.confirmation = { visible: false, checkoutId: null, receiptId: null }; s.choice = null; s.status = "abandoned"; });
   const row = (await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock })).rows[0];
-  assert.equal(row.serverConfirmed, false); assert.ok(row.artifact); assert.deepEqual(row.errors, []); assert.equal(f.calls.length, 0);
+  assert.equal(row.serverConfirmed, false); assert.equal(row.visibleCheckoutConfirmed, false); assert.ok(row.artifact); assert.deepEqual(row.errors, []); assert.equal(f.calls.length, 0);
+});
+
+test("durable accepted order survives missing DOM confirmation and a render timeout", async (t) => {
+  const f = await fixture(t, (e, s) => { e.confirmation = { visible: false, checkoutId: null, receiptId: null };
+    e.errors = ["Confirmation render timed out"]; s.status = "timeout"; });
+  const row = (await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock })).rows[0];
+  assert.equal(row.serverConfirmed, true); assert.equal(row.visibleCheckoutConfirmed, false);
+  assert.deepEqual(row.errors, ["Confirmation render timed out"]); assert.equal(row.receipt?.subtotal, 36);
+  assert.deepEqual(row.readback, { httpStatus: 200, identical: true }); assert.equal(f.calls.length, 1);
+});
+
+test("matching visible IDs plus recorded UI errors do not claim valid visible completion", async (t) => {
+  const f = await fixture(t, (e) => { e.errors = ["UI render exception"]; });
+  const row = (await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock })).rows[0];
+  assert.equal(row.serverConfirmed, true); assert.equal(row.visibleCheckoutConfirmed, false); assert.deepEqual(row.errors, ["UI render exception"]);
+});
+
+test("missing DOM confirmation alone does not negate a durable server order", async (t) => {
+  const f = await fixture(t, (e) => { e.confirmation = { visible: false, checkoutId: null, receiptId: null }; });
+  const row = (await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock })).rows[0];
+  assert.equal(row.serverConfirmed, true); assert.equal(row.visibleCheckoutConfirmed, false); assert.deepEqual(row.errors, []);
+});
+
+test("mismatching visible IDs are recorded without negating the durable order", async (t) => {
+  const f = await fixture(t, (e) => { e.confirmation.receiptId = "demo-" + "b".repeat(32); });
+  const row = (await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock })).rows[0];
+  assert.equal(row.serverConfirmed, true); assert.equal(row.visibleCheckoutConfirmed, false);
+  assert.match(row.errors[0], /Visible confirmation IDs differ/); assert.equal(f.calls.length, 1);
+});
+
+test("malformed DOM confirmation is separate from verified server existence", async (t) => {
+  const f = await fixture(t, (e) => { e.confirmation = null; });
+  const row = (await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock })).rows[0];
+  assert.equal(row.serverConfirmed, true); assert.equal(row.visibleCheckoutConfirmed, false); assert.match(row.errors[0], /confirmation: object required/);
 });
 
 test("hidden shipping retains unknown delivery cost without inventing revenue", async (t) => {
@@ -82,8 +117,6 @@ const invalidCases: [string, (e: Obj, s: Obj, r: Obj) => void, RegExp][] = [
   ["different captured GET", (e) => { e.get.body.receipt.total = 99; }, /POST\/GET receipts differ/],
   ["different request item", (e) => { e.post.request.items[0].productId = "wrong"; }, /Request\/receipt items differ/],
   ["client price injection", (e) => { e.post.request.items[0].unitPrice = 1; }, /unexpected or missing fields/],
-  ["DOM receipt mismatch", (e) => { e.confirmation.receiptId = "demo-" + "b".repeat(32); }, /Visible confirmation/],
-  ["DOM not visible", (e) => { e.confirmation.visible = false; }, /Visible confirmation/],
   ["price mismatch", (e) => { e.post.body.receipt.items[0].unitPrice = 1; }, /price\/subtotal/],
   ["quantity mismatch", (e) => { e.post.body.receipt.items[0].quantity = 2; }, /identity\/quantity/],
   ["shipping wrong", (e) => { e.post.body.receipt.shipping.cost = 0; }, /Shipping cost/],
@@ -93,12 +126,11 @@ const invalidCases: [string, (e: Obj, s: Obj, r: Obj) => void, RegExp][] = [
   ["external readback", (e) => { e.get.url = `http://127.0.0.1:4331/api/demo-checkout/${UUID}`; }, /assigned storefront/],
   ["readback query", (e) => { e.get.url += "?extra=1"; }, /assigned storefront/],
   ["readback credentials", (e) => { e.get.url = e.get.url.replace("http://", "http://user:pass@"); }, /assigned storefront/],
-  ["recorded error", (e) => { e.errors = ["capture failure"]; }, /contains errors/],
   ["real purchase", (e) => { e.post.body.receipt.realPurchase = true; }, /synthetic demo/],
 ];
 for (const [name, mutate, expected] of invalidCases) test(`rejects ${name} before durable request`, async (t) => {
   const f = await fixture(t, mutate), row = (await generateServerOutcomes([f.reportPath], f.outputPath, { fetch: f.mock })).rows[0];
-  assert.equal(row.serverConfirmed, false); assert.equal(row.receipt, null); assert.match(row.errors.join(" "), expected); assert.equal(f.calls.length, 0);
+  assert.equal(row.serverConfirmed, false); assert.equal(row.visibleCheckoutConfirmed, false); assert.equal(row.receipt, null); assert.match(row.errors.join(" "), expected); assert.equal(f.calls.length, 0);
 });
 
 test("checks actual artifact digest and byte length", async (t) => {

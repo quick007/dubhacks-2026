@@ -1,6 +1,6 @@
 /** Fixed-roster, sequential multi-packet execution. Only the real session executor dispatches shoppers. */
 import { createHash } from "node:crypto";
-import { appendFile, lstat, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { appendFile, lstat, mkdir, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { ChromeShopperBrowser } from "./shopper-chrome.js";
@@ -10,6 +10,21 @@ import { executeShopperSession, pairedExecutionOrder, type SessionDependencies }
 import { buildShopperAssignment, validateShopperCatalog, validateShopperSession, type ShopperArm } from "./shopper-contract.js";
 
 const SOURCE_DIRECTORY = path.dirname(fileURLToPath(import.meta.url));
+const WORKSPACE = path.resolve(SOURCE_DIRECTORY, "../../..");
+export const REQUIRED_RUNTIME_SOURCES = [
+  "apps/storefront/src/main.tsx", "apps/storefront/src/CartView.tsx", "apps/storefront/src/demo-checkout-client.ts",
+  "apps/storefront/vite.config.ts", "apps/storefront/src/styles.css", "apps/storefront/src/personalization.ts",
+  "apps/api/internal/democheckout/checkout.go", "apps/api/internal/democheckout/catalog.json", "apps/api/cmd/demo-checkout-server/main.go",
+] as const;
+const RUNTIME_ORIGINS = { storefront: "http://127.0.0.1:4312", checkout: "http://127.0.0.1:4331", model: "http://127.0.0.1:8766" } as const;
+type Scalar = string | number | boolean | null;
+type RuntimeIdentity = { pid: number; origin: string };
+export type FrozenRuntimeSnapshot = {
+  schema: "shopper-frozen-runtime-snapshot.v1"; ready: true; synthetic: true;
+  sourceHashes: Record<string, string>; modelOwnerReceipt: { path: string; sha256: string };
+  runtime: { storefront: RuntimeIdentity; checkout: RuntimeIdentity; model: RuntimeIdentity & { healthIdentity: Record<string, Scalar> } };
+};
+type SnapshotBuildTestHooks = { testOnlyWorkspaceRoot: string };
 const PLAN_NAME = "cohort-plan.json";
 const errorText = (error: unknown) => error instanceof Error ? error.message : String(error);
 const sha = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex");
@@ -30,12 +45,73 @@ export type CohortPlan = {
   version: "shopper-fixed-cohort.v1"; synthetic: true; humanConversionClaim: false; createdAt: string;
   fixedPairs: 60; fixedSessions: 120; seed: number; pilotPairs: number; deadline: string;
   baseUrl: string; model: string; requestedCodexBinary: string | null;
-  snapshot: { file: string; sha256: string }; packets: FrozenPacket[]; implementationSources: Record<string, string>;
+  snapshot: { file: string; sha256: string }; frozenRuntime: FrozenRuntimeSnapshot; runtimeWorkspace: string;
+  packets: FrozenPacket[]; implementationSources: Record<string, string>;
   schedule: CohortSlot[]; catalogSnapshotSha256: string;
   budget: { maxActions: 24; maxWallSeconds: 120 };
   settings: { concurrency: 1; viewport: { width: 1280; height: 960 }; independentChromeProcess: true; independentStorageContext: true; quantity: 1; effort: "low" };
   pilotPolicy: string; deadlinePolicy: string; comparisonScope: string;
 };
+
+function object(value: unknown, label: string): Record<string, unknown> {
+  requireValue(value && typeof value === "object" && !Array.isArray(value), `${label} must be an object`);
+  return value as Record<string, unknown>;
+}
+
+/** Resolves real paths too: a contained symlink cannot disclose or pin an outside-workspace file. */
+async function containedRuntimeFile(workspace: string, name: string) {
+  requireValue(typeof name === "string" && name.length > 0 && !path.isAbsolute(name) && !name.includes("\\")
+    && name.split("/").every((part) => part !== "" && part !== "." && part !== ".."), `Workspace-relative runtime source required: ${name}`);
+  const root = await realpath(workspace), file = await realpath(path.resolve(root, name));
+  requireValue(file.startsWith(root + path.sep), `Runtime source escapes workspace: ${name}`);
+  requireValue((await lstat(file)).isFile(), `Runtime source must be a regular file: ${name}`);
+  return file;
+}
+
+export async function validateRuntimeSnapshot(value: unknown, workspace = WORKSPACE): Promise<FrozenRuntimeSnapshot> {
+  const snapshot = object(value, "Snapshot receipt");
+  requireValue(snapshot.schema === "shopper-frozen-runtime-snapshot.v1" && snapshot.ready === true && snapshot.synthetic === true,
+    "Ready synthetic shopper-frozen-runtime-snapshot.v1 required");
+  const hashes = object(snapshot.sourceHashes, "Snapshot sourceHashes");
+  requireValue(REQUIRED_RUNTIME_SOURCES.every((name) => typeof hashes[name] === "string"), "Mandatory UI/checkout source hashes are missing");
+  for (const [name, expected] of Object.entries(hashes)) {
+    requireValue(typeof expected === "string" && /^[a-f0-9]{64}$/.test(expected), `Valid SHA-256 required for runtime source: ${name}`);
+    requireValue(sha(await readFile(await containedRuntimeFile(workspace, name))) === expected, `Frozen runtime source changed: ${name}`);
+  }
+  const owner = object(snapshot.modelOwnerReceipt, "modelOwnerReceipt");
+  requireValue(typeof owner.path === "string" && typeof owner.sha256 === "string" && /^[a-f0-9]{64}$/.test(owner.sha256), "Model owner receipt path and SHA-256 required");
+  requireValue(sha(await readFile(await containedRuntimeFile(workspace, owner.path))) === owner.sha256, "Frozen model owner receipt changed");
+  const runtime = object(snapshot.runtime, "runtime");
+  requireValue(Object.keys(runtime).sort().join(",") === "checkout,model,storefront", "Only the three fixed local runtime identities are allowed");
+  for (const [name, origin] of Object.entries(RUNTIME_ORIGINS)) {
+    const identity = object(runtime[name], `${name} identity`);
+    requireValue(Number.isSafeInteger(identity.pid) && Number(identity.pid) > 0, `Positive integer ${name} PID required`);
+    requireValue(identity.origin === origin, `Exact ${name} origin required: ${origin}`);
+  }
+  const model = object(runtime.model, "model identity"), health = object(model.healthIdentity, "model healthIdentity");
+  requireValue(Object.keys(health).length > 0 && Object.entries(health).every(([key, item]) => /^[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*$/.test(key)
+    && !key.split(".").some((part) => ["__proto__", "prototype", "constructor"].includes(part))
+    && (item === null || typeof item === "string" || typeof item === "boolean" || (typeof item === "number" && Number.isFinite(item)))),
+    "Model healthIdentity requires stable scalar keys (dotted paths supported)");
+  return snapshot as unknown as FrozenRuntimeSnapshot;
+}
+
+/** Read-only identity checks only, against the exact fixed local model origin. */
+export async function verifyRuntimeIdentity(snapshot: FrozenRuntimeSnapshot) {
+  for (const [name, identity] of Object.entries(snapshot.runtime)) {
+    try { process.kill(identity.pid, 0); } catch (error) { throw new Error(`Frozen ${name} PID ${identity.pid} is not accessible/alive: ${errorText(error)}`); }
+  }
+  const response = await fetch(`${snapshot.runtime.model.origin}/health`, { redirect: "error", signal: AbortSignal.timeout(5000) });
+  requireValue(response.ok, `Frozen model health request failed: HTTP ${response.status}`);
+  const body = object(await response.json(), "Model health response");
+  for (const [key, expected] of Object.entries(snapshot.runtime.model.healthIdentity)) {
+    let actual: unknown = body;
+    for (const part of key.split(".")) actual = actual && typeof actual === "object" && Object.hasOwn(actual, part) ? (actual as Record<string, unknown>)[part] : undefined;
+    requireValue(actual === expected, `Frozen model health identity changed: ${key}`);
+  }
+  return { checkedAt: new Date().toISOString(), pids: Object.fromEntries(Object.entries(snapshot.runtime).map(([key, value]) => [key, value.pid])),
+    modelHealthIdentity: snapshot.runtime.model.healthIdentity };
+}
 
 async function fileHashes(directory: string, prefix = ""): Promise<Record<string, string>> {
   const result: Record<string, string> = {};
@@ -74,13 +150,13 @@ export function cohortExecutionOrder(packets: Packet[], seed: number, pilotPairs
 }
 
 /** This is a CPU-only preflight. No model metadata, browser or external service is contacted. */
-export async function buildCohortPlan(options: CohortOptions): Promise<CohortPlan> {
+export async function buildCohortPlan(options: CohortOptions, testHooks?: SnapshotBuildTestHooks): Promise<CohortPlan> {
   requireValue(options.packets.length === 6 && new Set(options.packets.map((file) => path.resolve(file))).size === 6, "Six distinct packet directories required");
   const deadlineMs = Date.parse(options.deadline);
   requireValue(Number.isFinite(deadlineMs) && /(?:Z|[+-]\d\d:\d\d)$/.test(options.deadline), "Deadline must be an ISO time with an explicit timezone");
   const snapshotFile = path.resolve(options.snapshot), snapshotBytes = await readFile(snapshotFile);
-  const snapshot = JSON.parse(snapshotBytes.toString("utf8"));
-  requireValue(snapshot && typeof snapshot === "object" && !Array.isArray(snapshot), "Snapshot receipt must be a JSON object");
+  const runtimeWorkspace = await realpath(testHooks?.testOnlyWorkspaceRoot ?? WORKSPACE);
+  const snapshot = await validateRuntimeSnapshot(JSON.parse(snapshotBytes.toString("utf8")), runtimeWorkspace);
   const packets: FrozenPacket[] = [], loaded: Packet[] = [], catalogs: string[] = [];
   let commonBaseUrl = options.baseUrl;
   for (const [index, inputDirectory] of options.packets.entries()) {
@@ -99,6 +175,7 @@ export async function buildCohortPlan(options: CohortOptions): Promise<CohortPla
     commonBaseUrl ??= packet.defaultBaseUrl;
     if (!options.baseUrl) requireValue(packet.defaultBaseUrl === commonBaseUrl, "Packets must share a base URL unless one explicit common override is supplied");
     buildShopperAssignment(packet.cases[0], "generic", commonBaseUrl);
+    requireValue(new URL(commonBaseUrl).origin === RUNTIME_ORIGINS.storefront, "Cohort storefront must use the frozen 4312 origin");
     packets.push({ directory, key: `packet-${index + 1}`, files }); loaded.push(packet);
   }
   requireValue(new Set(catalogs).size === 1, "Identical catalog, variants and prices required across all packets");
@@ -106,7 +183,7 @@ export async function buildCohortPlan(options: CohortOptions): Promise<CohortPla
   return { version: "shopper-fixed-cohort.v1", synthetic: true, humanConversionClaim: false, createdAt: new Date().toISOString(),
     fixedPairs: 60, fixedSessions: 120, seed: options.seed, pilotPairs: options.pilotPairs, deadline: new Date(deadlineMs).toISOString(),
     baseUrl: commonBaseUrl!, model: options.model ?? "gpt-6.1-sol", requestedCodexBinary: options.codexBinary ? path.resolve(options.codexBinary) : null,
-    snapshot: { file: snapshotFile, sha256: sha(snapshotBytes) }, packets, implementationSources: await implementationHashes(),
+    snapshot: { file: snapshotFile, sha256: sha(snapshotBytes) }, frozenRuntime: snapshot, runtimeWorkspace, packets, implementationSources: await implementationHashes(),
     schedule, catalogSnapshotSha256: JSON.parse(catalogs[0]).sha256, budget: { maxActions: 24, maxWallSeconds: 120 },
     settings: { concurrency: 1, viewport: { width: 1280, height: 960 }, independentChromeProcess: true, independentStorageContext: true, quantity: 1, effort: "low" },
     pilotPolicy: "The first prespecified pairs are a runtime feasibility pilot under unchanged settings. No outcome-based resizing or retuning. Pilot and remaining cohort are separately identifiable; all 120 assigned slots remain in reporting.",
@@ -114,8 +191,8 @@ export async function buildCohortPlan(options: CohortOptions): Promise<CohortPla
     comparisonScope: "Combined personalized experience (ranking, copy and latency), fixed catalog/UI/checkout and agent settings; synthetic outcomes only" };
 }
 
-export async function createCohortPlan(options: CohortOptions) {
-  const plan = await buildCohortPlan(options);
+export async function createCohortPlan(options: CohortOptions, testHooks?: SnapshotBuildTestHooks) {
+  const plan = await buildCohortPlan(options, testHooks);
   await mkdir(options.out); // Exclusive ownership, including plan-only invocations.
   await writeJson(path.join(options.out, PLAN_NAME), plan);
   await writeFile(path.join(options.out, ".gitignore"), "**/trace.zip\n**/observation-*.png\n**/browser.jsonl\n", { flag: "wx" });
@@ -124,6 +201,7 @@ export async function createCohortPlan(options: CohortOptions) {
 
 export async function verifyCohortPins(plan: CohortPlan) {
   requireValue(sha(await readFile(plan.snapshot.file)) === plan.snapshot.sha256, "Frozen model snapshot receipt changed");
+  requireValue(canonical(await validateRuntimeSnapshot(JSON.parse(await readFile(plan.snapshot.file, "utf8")), plan.runtimeWorkspace)) === canonical(plan.frozenRuntime), "Frozen runtime identity differs from plan");
   requireValue(canonical(await implementationHashes()) === canonical(plan.implementationSources), "Frozen shopper implementation changed");
   for (const packet of plan.packets) requireValue(canonical(await fileHashes(packet.directory)) === canonical(packet.files), `Frozen packet files changed: ${packet.key}`);
 }
@@ -153,6 +231,7 @@ export async function inspectCohortAttempts(plan: CohortPlan, out: string) {
 type RunHooks = {
   dependencies: SessionDependencies; now?: () => Date; shouldStop?: () => boolean;
   execute?: typeof executeShopperSession; aggregate?: typeof aggregateShopperResults;
+  testOnlySkipRuntimeIdentity?: boolean;
 };
 
 /** Test hooks inject CPU fixtures only; the CLI always supplies the installed Chrome/Codex dependencies. */
@@ -169,12 +248,13 @@ export async function dispatchCohort(plan: CohortPlan, out: string, hooks: RunHo
   const sigint = () => stop("SIGINT"), sigterm = () => stop("SIGTERM");
   process.on("SIGINT", sigint); process.on("SIGTERM", sigterm);
   const log = (value: unknown) => appendFile(path.join(out, "dispatch.jsonl"), JSON.stringify(value) + "\n");
-  const checkpoint = async (packetIndex: number, name: string) => {
+  const checkpoint = async (packetIndex: number, name: string, final = false) => {
     const packet = plan.packets[packetIndex], directory = path.join(out, packet.key);
     await mkdir(path.join(directory, "aggregates"), { recursive: true });
-    const result = await aggregate(packet.directory, directory, path.join(directory, "aggregates", `${name}.json`));
+    const relativeFile = final ? `${packet.key}/${name}.json` : `${packet.key}/aggregates/${name}.json`;
+    const result = await aggregate(packet.directory, directory, path.join(out, relativeFile));
     requireValue(result.setupErrors.length === 0, `Aggregation blocked for ${packet.key}: ${result.setupErrors.join("; ")}`);
-    return { file: `${packet.key}/aggregates/${name}.json`, status: result.status,
+    return { file: relativeFile, status: result.status,
       recorded: result.rows.filter((row) => row.status === "recorded").length,
       invalidSidecars: result.rows.filter((row) => row.status === "invalid-sidecar").length };
   };
@@ -190,6 +270,10 @@ export async function dispatchCohort(plan: CohortPlan, out: string, hooks: RunHo
         if (signal || hooks.shouldStop?.()) { stopReason = signal ?? "requested-stop"; break; }
         if (now().getTime() >= Date.parse(plan.deadline)) { stopReason = "deadline"; break; }
         await verifyCohortPins(plan);
+        if (!hooks.testOnlySkipRuntimeIdentity) await log({ type: "runtime-identity", ...await verifyRuntimeIdentity(plan.frozenRuntime), runId: slot.runId });
+        // Source hashing and the bounded health request can cross a stop/deadline boundary.
+        if (signal || hooks.shouldStop?.()) { stopReason = signal ?? "requested-stop"; break; }
+        if (now().getTime() >= Date.parse(plan.deadline)) { stopReason = "deadline"; break; }
         const packet = packets[slot.packetIndex], c = packet.cases.find((item) => item.caseId === slot.caseId)!;
         await log({ type: "start", at: now().toISOString(), ...slot });
         launched++; pairLaunched = true;
@@ -199,6 +283,7 @@ export async function dispatchCohort(plan: CohortPlan, out: string, hooks: RunHo
           await log({ type: "finish", at: now().toISOString(), ...slot, status: session.status,
             steps: session.steps.length, elapsedMs: session.elapsedMs, protocolPassed: session.protocol.passed });
           completed.set(slot.runId, sha(await readFile(path.join(out, slot.packetKey, slot.caseId, slot.arm, "session.json"))));
+          await verifyCohortPins(plan);
         } catch (error) {
           await log({ type: "unfinished-or-invalid-receipt", at: now().toISOString(), ...slot, error: errorText(error) });
           throw new Error(`Stopped after ${slot.runId}: ${errorText(error)}. Evidence retained; no retry or receipt invented.`);
@@ -219,7 +304,7 @@ export async function dispatchCohort(plan: CohortPlan, out: string, hooks: RunHo
         `Preserved session receipt changed during dispatch: ${slot.runId}`);
     }
     const aggregates = [];
-    for (let index = 0; index < 6; index++) aggregates.push(await checkpoint(index, `final-${invocation}`));
+    for (let index = 0; index < 6; index++) aggregates.push(await checkpoint(index, `final-${invocation}`, true));
     const metadata = { version: "shopper-cohort-dispatch.v1", synthetic: true, humanConversionClaim: false,
       invocation, at: now().toISOString(), fixedPairs: 60, fixedSessions: 120, launchedThisInvocation: launched,
       recordedReceipts: completed.size, unattempted: 120 - completed.size, stopReason,

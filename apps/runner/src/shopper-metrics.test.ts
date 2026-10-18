@@ -29,7 +29,7 @@ function fixture(count = 2, prefix = "case") {
 function armMetrics(report: ReturnType<typeof analyzeShopperMetrics>, arm: "generic" | "local-model") { return report.arms[arm]; }
 function serverFixture(report: ReturnType<typeof fixture>) {
   return Object.fromEntries(report.rows.map((row) => [row.expectedRunId, { artifactHashVerified: true, row: {
-    runId: row.expectedRunId, caseId: row.caseId, arm: row.arm, serverConfirmed: true, errors: [],
+    runId: row.expectedRunId, caseId: row.caseId, arm: row.arm, serverConfirmed: true, visibleCheckoutConfirmed: true, errors: [] as string[],
     readback: { httpStatus: 200, identical: true }, receipt: { schema: "fieldwork.demo-checkout-receipt.v1",
       checkoutId: `checkout-${row.expectedRunId}`, receiptId: `receipt-${row.expectedRunId}`, createdAt: "2026-10-18T00:00:00Z",
       items: [{ productId: "bottle", variantId: "bottle-blue", quantity: 1, unitPrice: 12.34, lineTotal: 12.34 }], subtotal: 12.34,
@@ -215,6 +215,7 @@ void test("server policy gates purchases and separately retains confirmed revenu
   assert.equal(result.arms.generic.allServerConfirmedOrders.merchandiseRevenuePerAssignedSessionCents, 1234);
   assert.equal(result.arms["local-model"].verifiedPurchases, 1);
   serverOutcomes[report.rows[1].expectedRunId].row.serverConfirmed = false;
+  serverOutcomes[report.rows[1].expectedRunId].row.visibleCheckoutConfirmed = false;
   const unconfirmed = analyzeShopperMetrics(report, { serverOutcomes, replicates: 1000 });
   assert.equal(unconfirmed.arms["local-model"].observedFakeCheckouts, 1);
   assert.equal(unconfirmed.arms["local-model"].verifiedPurchases, 0);
@@ -275,13 +276,32 @@ void test("server policy preserves justified abstention without requiring an ord
     row.session.choice = null; row.session.fakeOrderConfirmed = false; row.session.status = row.outcome = "abandoned";
     row.evaluator.acceptableSelection = false; row.evaluator.allHardConstraintsMet = false;
     serverOutcomes[row.expectedRunId] = { artifactHashVerified: false, row: { runId: row.expectedRunId,
-      caseId: row.caseId, arm: row.arm, serverConfirmed: false, receipt: null, artifact: null, readback: null, errors: [] } };
+      caseId: row.caseId, arm: row.arm, serverConfirmed: false, visibleCheckoutConfirmed: false, receipt: null, artifact: null, readback: null, errors: [] } };
   }
   const result = analyzeShopperMetrics(report, { serverOutcomes, caseEligibility: { "case-0": "known-empty" }, replicates: 1000 });
   assert.equal(result.arms.generic.intentCorrectSuccess.numerator, 1);
   assert.equal(result.arms.generic.abstentions.verifiedExpected, 1);
   assert.equal(result.arms.generic.verifiedPurchases, 0);
   assert.equal(result.arms.generic.allServerConfirmedOrders.count, 0);
+});
+
+void test("durable accepted order survives failed UI as server revenue but never valid-purchase conversion", () => {
+  const report = fixture(1), serverOutcomes = serverFixture(report), row = report.rows[0];
+  row.session.status = row.outcome = "technical-failure"; row.session.fakeOrderConfirmed = false;
+  row.session.protocol = { passed: false, deviations: ["UI confirmation failed after demo order accepted"] };
+  row.formalStatus = "unattempted";
+  serverOutcomes[row.expectedRunId].row.visibleCheckoutConfirmed = false;
+  serverOutcomes[row.expectedRunId].row.errors = ["UI confirmation did not render"];
+  const result = analyzeShopperMetrics(report, { serverOutcomes, replicates: 1000 }), arm = result.arms.generic;
+  assert.equal(result.pairs[0].generic.serverConfirmed, true);
+  assert.equal(result.pairs[0].generic.visibleCheckoutConfirmed, false);
+  assert.equal(arm.allServerConfirmedOrders.count, 1);
+  assert.equal(arm.allServerConfirmedOrders.merchandiseRevenuePerAssignedSessionCents, 1234);
+  assert.equal(arm.verifiedPurchases, 0); assert.equal(arm.syntheticConversion.rate, 0); assert.equal(arm.revenue.totalCents, 0);
+  assert.equal(arm.intentCorrectSuccess.numerator, 0);
+  assert.equal(arm.purchaseExclusions["visible-checkout-unconfirmed"], 1);
+  serverOutcomes[row.expectedRunId].row.receipt.items[0].unitPrice = 999;
+  assert.throws(() => analyzeShopperMetrics(report, { serverOutcomes }), /price differs/);
 });
 
 void test("CLI server index binds report roster and verifies actual artifact hash before granting purchase credit", async () => {
@@ -307,6 +327,31 @@ void test("CLI server index binds report roster and verifies actual artifact has
     const args = ["--report", source, "--server-outcomes", indexPath, "--out", output];
     assert.equal((await shopperMetricsMain(args)).arms.generic.verifiedPurchases, 1);
     const evidencePath = evidenceFiles[0].path, evidenceBytes = evidenceFiles[0].bytes;
+    const failedUI = JSON.parse(evidenceBytes);
+    failedUI.confirmation = { visible: false, checkoutId: null, receiptId: null }; failedUI.errors = ["Demo order accepted; UI confirmation failed to render"];
+    const failedUIBytes = JSON.stringify(failedUI); await writeFile(evidencePath, failedUIBytes);
+    index.rows[0].visibleCheckoutConfirmed = false; index.rows[0].errors = failedUI.errors;
+    index.rows[0].artifact.sha256 = createHash("sha256").update(failedUIBytes).digest("hex"); index.rows[0].artifact.bytes = Buffer.byteLength(failedUIBytes);
+    await writeFile(indexPath, JSON.stringify(index));
+    const failedUIResult = await shopperMetricsMain([...args.slice(0, -1), path.join(directory, "failed-ui.json")]);
+    assert.equal(failedUIResult.arms.generic.verifiedPurchases, 0);
+    assert.equal(failedUIResult.arms.generic.syntheticConversion.rate, 0);
+    assert.equal(failedUIResult.arms.generic.allServerConfirmedOrders.count, 1);
+    assert.equal(failedUIResult.arms.generic.allServerConfirmedOrders.withoutVisibleCheckoutConfirmation, 1);
+    assert.equal(failedUIResult.arms.generic.allServerConfirmedOrders.merchandiseRevenuePerAssignedSessionCents, 1234);
+    failedUI.confirmation = null;
+    const nullConfirmationBytes = JSON.stringify(failedUI); await writeFile(evidencePath, nullConfirmationBytes);
+    index.rows[0].artifact.sha256 = createHash("sha256").update(nullConfirmationBytes).digest("hex");
+    index.rows[0].artifact.bytes = Buffer.byteLength(nullConfirmationBytes); await writeFile(indexPath, JSON.stringify(index));
+    const nullConfirmationResult = await shopperMetricsMain([...args.slice(0, -1), path.join(directory, "null-confirmation.json")]);
+    assert.equal(nullConfirmationResult.arms.generic.allServerConfirmedOrders.count, 1);
+    assert.equal(nullConfirmationResult.arms.generic.allServerConfirmedOrders.merchandiseRevenuePerAssignedSessionCents, 1234);
+    assert.equal(nullConfirmationResult.arms.generic.allServerConfirmedOrders.withoutVisibleCheckoutConfirmation, 1);
+    assert.equal(nullConfirmationResult.arms.generic.verifiedPurchases, 0);
+    assert.equal(nullConfirmationResult.arms.generic.syntheticConversion.rate, 0);
+    index.rows[0].visibleCheckoutConfirmed = true; index.rows[0].errors = [];
+    index.rows[0].artifact.sha256 = createHash("sha256").update(evidenceBytes).digest("hex"); index.rows[0].artifact.bytes = Buffer.byteLength(evidenceBytes);
+    await writeFile(indexPath, JSON.stringify(index));
     await writeFile(evidencePath, `${evidenceBytes} `);
     await assert.rejects(shopperMetricsMain([...args.slice(0, -1), path.join(directory, "other.json")]), /byte count differs/);
     await writeFile(evidencePath, evidenceBytes);

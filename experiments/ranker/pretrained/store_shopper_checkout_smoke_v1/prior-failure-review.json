@@ -1,0 +1,56 @@
+{
+  "schema": "shopper-prior-development-failure-review.v2",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "sourceSuite": "experiments/ranker/pretrained/store_shopper_sol_full_v1",
+  "preservePriorResults": true,
+  "notPooledWithNewCohort": true,
+  "findings": [
+    {
+      "caseId": "shopper-pair-03",
+      "arm": "local-model",
+      "classification": "timeout",
+      "status": "timeout",
+      "sidecarSha256": "9d6b155da8f27b64cfdd09c52d492337bcd24a94228489fae84c48842f9fdeed",
+      "finding": "After selecting a qualifying lamp, later decisions repeatedly alternated scroll directions without reaching the cart; no checkout was confirmed."
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "arm": "generic",
+      "classification": "timeout",
+      "status": "timeout",
+      "sidecarSha256": "a20a1bf01b5c5c8dcd821fbd7256a4fe3f0f43c18154e20001d340d531095281",
+      "finding": "Only navigation, assigned search and one scroll completed. A later decision remained unfinished until the wall budget expired; no root cause is inferred."
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "arm": "local-model",
+      "classification": "interruption",
+      "status": "technical-failure",
+      "sidecarSha256": "187b8062beb1d82795dcaec467b576acbf8497e1aca47f2529405e0165321a72",
+      "finding": "Browser navigation and an empty-cart observation were recorded before transport interruption. No order, total-runtime clock or trace was available."
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "arm": "generic",
+      "classification": "incorrect-abstention",
+      "status": "abandoned",
+      "sidecarSha256": "35486523e3e92792648fac3b6533e1f7060c5edf6b134cc8a2d09d52b00c4b21",
+      "finding": "The scorer knew a waterproof fact, but visible product information did not explicitly state that fact; the shopper declined."
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "arm": "local-model",
+      "classification": "incorrect-abstention",
+      "status": "abandoned",
+      "sidecarSha256": "ccc65e9ea966c761dbf7cbc4e200a244a2e70932ce9346810fbb94688352e219",
+      "finding": "The scorer knew a waterproof fact, but visible product information did not explicitly state that fact; the shopper declined."
+    }
+  ],
+  "prospectiveChangesBeforeNewFreeze": [
+    "Add observed scroll geometry to both shoppers; no product answer or privileged navigation action.",
+    "Choose purchase-feasible hard facts from visible product identity/price; retain unavailable facts as negative cases.",
+    "Require shared catalog-validated server checkout receipts, captured POST/GET and matching DOM confirmation.",
+    "Freeze all60 scenarios and settings before first five-pair runtime pilot; do not resize by outcomes."
+  ]
+}

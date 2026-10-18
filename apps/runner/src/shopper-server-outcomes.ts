@@ -8,7 +8,7 @@ import { SHOPPER_ALLOWED_ORIGINS, type ShopperArm } from "./shopper-contract.js"
 
 type Obj = Record<string, unknown>;
 type Artifact = { path: string; sha256: string; bytes: number };
-export type ServerOutcomeRow = { runId: string; caseId: string; arm: ShopperArm; serverConfirmed: boolean;
+export type ServerOutcomeRow = { runId: string; caseId: string; arm: ShopperArm; serverConfirmed: boolean; visibleCheckoutConfirmed: boolean;
   receipt: Obj | null; artifact: Artifact | null; readback: { httpStatus: 200; identical: true } | null; errors: string[] };
 export type ServerOutcomesIndex = { schema: "shopper-server-outcomes.v1"; synthetic: true; humanConversionClaim: false;
   reports: { path: string; sha256: string }[]; rows: ServerOutcomeRow[] };
@@ -74,7 +74,7 @@ function verifyReceipt(value: unknown, choice: Obj): Obj {
 
 async function verifyRow(input: Obj, root: string, catalogSha: unknown, options: ServerOutcomesOptions): Promise<ServerOutcomeRow> {
   const row: ServerOutcomeRow = { runId: text(input.expectedRunId, "expectedRunId"), caseId: text(input.caseId, "caseId"), arm: input.arm as ShopperArm,
-    serverConfirmed: false, receipt: null, artifact: null, readback: null, errors: [] };
+    serverConfirmed: false, visibleCheckoutConfirmed: false, receipt: null, artifact: null, readback: null, errors: [] };
   requireValue(["generic", "local-model"].includes(row.arm), "Unknown assigned arm");
   requireValue(["recorded", "unattempted", "invalid-sidecar"].includes(String(input.status)), "Unknown assignment status");
   if (input.status !== "recorded") { if (input.status === "invalid-sidecar") row.errors.push("Assigned session sidecar is invalid"); return row; }
@@ -98,7 +98,8 @@ async function verifyRow(input: Obj, root: string, catalogSha: unknown, options:
     row.artifact = { path: artifactPath, sha256: captured.sha256, bytes: data.bytes.length };
     const evidence = exact(data.value, ["schema", "synthetic", "post", "get", "confirmation", "errors"], "checkout evidence");
     requireValue(evidence.schema === "shopper-demo-checkout-evidence.v1" && evidence.synthetic === true, "Versioned synthetic checkout evidence required");
-    const errors = array(evidence.errors, "checkout errors"); requireValue(errors.every((item) => typeof item === "string") && errors.length === 0, "Checkout evidence contains errors");
+    const errors = array(evidence.errors, "checkout errors"); requireValue(errors.every((item) => typeof item === "string"), "Checkout evidence errors must be strings");
+    row.errors.push(...errors as string[]);
     if (evidence.post === null && evidence.get === null) {
       const confirmation = exact(evidence.confirmation, ["visible", "checkoutId", "receiptId"], "confirmation");
       requireValue(confirmation.visible === false && confirmation.checkoutId === null && confirmation.receiptId === null,
@@ -119,8 +120,14 @@ async function verifyRow(input: Obj, root: string, catalogSha: unknown, options:
     const requestItem = exact(requestItems[0], ["productId", "variantId", "quantity"], "request item");
     requireValue(isDeepStrictEqual(requestItem, { productId: receiptItem.productId, variantId: receiptItem.variantId, quantity: receiptItem.quantity }), "Request/receipt items differ");
     requireValue(request.shippingVisible === (object(receipt.shipping, "shipping").status !== "hidden"), "Request/receipt shipping visibility differs");
-    const confirmation = exact(evidence.confirmation, ["visible", "checkoutId", "receiptId"], "confirmation");
-    requireValue(confirmation.visible === true && confirmation.checkoutId === receipt.checkoutId && confirmation.receiptId === receipt.receiptId, "Visible confirmation IDs differ from receipt");
+    let visibleCheckoutConfirmed = false;
+    try {
+      const confirmation = exact(evidence.confirmation, ["visible", "checkoutId", "receiptId"], "confirmation");
+      requireValue(typeof confirmation.visible === "boolean", "Visible confirmation state must be boolean");
+      const matchingIds = confirmation.checkoutId === receipt.checkoutId && confirmation.receiptId === receipt.receiptId;
+      if (confirmation.visible) requireValue(matchingIds, "Visible confirmation IDs differ from receipt");
+      visibleCheckoutConfirmed = confirmation.visible && matchingIds && errors.length === 0;
+    } catch (error) { row.errors.push(error instanceof Error ? error.message : String(error)); }
     const entry = new URL(text(session.entryUrl, "entryUrl"));
     requireValue(SHOPPER_ALLOWED_ORIGINS.some((origin) => origin === entry.origin) && !entry.username && !entry.password, "Assigned storefront origin is not allowlisted");
     endpoint(post.url, entry.origin, "/api/demo-checkout");
@@ -130,7 +137,7 @@ async function verifyRow(input: Obj, root: string, catalogSha: unknown, options:
     const body = await response.text(); requireValue(Buffer.byteLength(body) <= LIMIT, "Durable receipt response exceeds size limit");
     const readback = exact(JSON.parse(body), ["receipt"], "durable GET body");
     requireValue(isDeepStrictEqual(readback.receipt, receipt), "Durable GET receipt differs from captured receipt");
-    row.serverConfirmed = true; row.receipt = receipt; row.readback = { httpStatus: 200, identical: true };
+    row.serverConfirmed = true; row.visibleCheckoutConfirmed = visibleCheckoutConfirmed; row.receipt = receipt; row.readback = { httpStatus: 200, identical: true };
   } catch (error) { row.errors.push(error instanceof Error ? error.message : String(error)); }
   return row;
 }

@@ -60,7 +60,7 @@ type Row = { caseId: string; arm: ShopperArm; runId: string; status: string; out
   observedCheckout: boolean; purchase: boolean; revenueCents: number; exclusions: string[];
   preference: Preference | null; purchasedPreferenceCredit: number; abstained: boolean; correctAbstention: boolean;
   interrupted: boolean; observedSteps: number | null; comparableSteps: number | null; elapsedMs: number | null;
-  timingPrecision: string | null; serverConfirmed: boolean; serverMerchandiseRevenueCents: number; serverShippingCents: number | null;
+  timingPrecision: string | null; serverConfirmed: boolean; visibleCheckoutConfirmed: boolean; serverMerchandiseRevenueCents: number; serverShippingCents: number | null;
   readiness: { stage: string; requestId: string; durationMs: number }[] };
 
 function moneyCents(value: unknown, label: string) {
@@ -70,7 +70,9 @@ function moneyCents(value: unknown, label: string) {
 function serverReceipt(evidence: ServerEvidence, row: Row, choice: Obj | null) {
   const item = evidence.row;
   requireValue(item.runId === row.runId && item.caseId === row.caseId && item.arm === row.arm, "Server outcome identity mismatch");
-  const confirmed = bool(item.serverConfirmed, "serverConfirmed"); strings(item.errors, "server errors");
+  const confirmed = bool(item.serverConfirmed, "serverConfirmed"), visible = bool(item.visibleCheckoutConfirmed, "visibleCheckoutConfirmed");
+  strings(item.errors, "server errors");
+  requireValue(!visible || confirmed, "Visible checkout confirmation requires a server-confirmed order");
   if (!confirmed) return null;
   requireValue(evidence.artifactHashVerified && choice, "Server confirmation requires verified receipt artifact and catalog-bound choice");
   const receipt = object(item.receipt, "server receipt"), readback = object(item.readback, "readback");
@@ -97,7 +99,7 @@ function serverReceipt(evidence: ServerEvidence, row: Row, choice: Obj | null) {
     requireValue(status !== "free" || shippingCents === 0, "Free shipping must have an observed zero charge");
     requireValue(moneyCents(receipt.total, "receipt total") === subtotal + shippingCents, "Receipt total differs from subtotal plus shipping");
   }
-  return { subtotal, shippingCents };
+  return { subtotal, shippingCents, visible };
 }
 
 function verifyServerArtifactContent(input: unknown, indexed: Obj, assigned: Obj) {
@@ -105,13 +107,17 @@ function verifyServerArtifactContent(input: unknown, indexed: Obj, assigned: Obj
   requireValue(evidence.schema === "shopper-demo-checkout-evidence.v1" && evidence.synthetic === true, "Versioned synthetic checkout evidence required");
   strings(evidence.errors, "checkout evidence errors");
   if (indexed.serverConfirmed !== true) return;
-  const post = object(evidence.post, "POST evidence"), get = object(evidence.get, "GET evidence"), confirmation = object(evidence.confirmation, "visible confirmation");
+  const post = object(evidence.post, "POST evidence"), get = object(evidence.get, "GET evidence");
   const receipt = object(indexed.receipt, "indexed receipt"), postBody = object(post.body, "POST body"), getBody = object(get.body, "GET body");
   requireValue(post.httpStatus === 202 && get.httpStatus === 200 && typeof postBody.duplicate === "boolean", "Actual successful POST202 and GET200 required");
   requireValue(isDeepStrictEqual(postBody.receipt, receipt) && isDeepStrictEqual(getBody.receipt, receipt), "Hashed POST/GET receipt bodies differ from indexed receipt");
-  requireValue(confirmation.visible === true && confirmation.checkoutId === receipt.checkoutId && confirmation.receiptId === receipt.receiptId,
-    "Visible confirmation does not match server receipt IDs");
-  requireValue((evidence.errors as unknown[]).length === 0, "Confirmed checkout evidence contains errors");
+  if (indexed.visibleCheckoutConfirmed === true) {
+    const confirmation = object(evidence.confirmation, "visible confirmation");
+    bool(confirmation.visible, "captured confirmation.visible");
+    requireValue(confirmation.visible === true && confirmation.checkoutId === receipt.checkoutId && confirmation.receiptId === receipt.receiptId,
+      "Visible confirmation does not match server receipt IDs");
+    requireValue((evidence.errors as unknown[]).length === 0, "Visible checkout confirmation evidence contains errors");
+  }
   const session = object(assigned.session, "assigned session"), entry = new URL(text(session.entryUrl, "session entryUrl"));
   requireValue(entry.protocol === "http:" && ["127.0.0.1", "localhost", "[::1]"].includes(entry.hostname) && !entry.username && !entry.password, "Local storefront origin required");
   for (const [action, requestPath] of [[post, "/api/demo-checkout"], [get, `/api/demo-checkout/${encodeURIComponent(text(receipt.checkoutId, "checkoutId"))}`]] as const) {
@@ -138,7 +144,7 @@ function parseRow(value: unknown, catalogSha: unknown, serverOutcomes?: Record<s
   const result: Row = { caseId, arm: row.arm as ShopperArm, runId, status: String(row.status), outcome: null,
     observedCheckout: false, purchase: false, revenueCents: 0, exclusions: [], preference: null, purchasedPreferenceCredit: 0,
     abstained: false, correctAbstention: false, interrupted: false, observedSteps: null, comparableSteps: null,
-    elapsedMs: null, timingPrecision: null, serverConfirmed: false, serverMerchandiseRevenueCents: 0, serverShippingCents: null, readiness: [] };
+    elapsedMs: null, timingPrecision: null, serverConfirmed: false, visibleCheckoutConfirmed: false, serverMerchandiseRevenueCents: 0, serverShippingCents: null, readiness: [] };
   if (row.status !== "recorded") {
     if (serverOutcomes) { const server = serverOutcomes[runId]; requireValue(server && server.row.serverConfirmed === false, "Unrecorded slot cannot claim server receipt without independently bound choice"); }
     result.exclusions.push(String(row.status)); return result;
@@ -191,14 +197,15 @@ function parseRow(value: unknown, catalogSha: unknown, serverOutcomes?: Record<s
   if (serverOutcomes) {
     const evidence = serverOutcomes[runId]; requireValue(evidence, "Server outcomes must retain every assigned run");
     const confirmed = serverReceipt(evidence, result, choice);
-    if (confirmed) { result.serverConfirmed = true; result.serverMerchandiseRevenueCents = confirmed.subtotal; result.serverShippingCents = confirmed.shippingCents; }
+    if (confirmed) { result.serverConfirmed = true; result.visibleCheckoutConfirmed = confirmed.visible;
+      result.serverMerchandiseRevenueCents = confirmed.subtotal; result.serverShippingCents = confirmed.shippingCents; }
   }
   const requirements: [string, boolean][] = [["no-observed-checkout", result.observedCheckout], ["not-completed", session.status === "completed"],
     ["not-formal", formal], ["budget-unverified-or-exceeded", budgetKnown], ["evidence-unverified", allEvidence],
     ["choice-not-independent-dom", choice?.observationSource === "independent-dom"], ["choice-evidence-unverified", choiceEvidence],
     ["catalog-binding-unverified", linkedCatalog && verification.independentOfShopperAgent === true], ["unacceptable-gold-selection", acceptable && expected],
     ["hard-constraints-unmet-or-unknown", hardMet && hard.met === hard.total], ["invalid-unit-price-or-quantity", priceValid],
-    ...(serverOutcomes ? [["server-receipt-unconfirmed", result.serverConfirmed] as [string, boolean]] : [])];
+    ...(serverOutcomes ? [["server-receipt-unconfirmed", result.serverConfirmed], ["visible-checkout-unconfirmed", result.visibleCheckoutConfirmed]] as [string, boolean][] : [])];
   result.exclusions = requirements.filter(([, met]) => !met).map(([label]) => label);
   result.purchase = result.exclusions.length === 0; result.revenueCents = result.purchase ? cents : 0;
   if (result.purchase && result.preference.total) result.purchasedPreferenceCredit = result.preference.met / result.preference.total;
@@ -230,6 +237,8 @@ function summarize(rows: Row[], assigned: number, serverEvaluated: boolean) {
     revenue: { currency: "USD", quantityPerPurchase: 1, totalCents: sum(rows.map((r) => r.revenueCents)),
       revenuePerAssignedSessionCents: sum(rows.map((r) => r.revenueCents)) / assigned, nonpurchaseSessions: assigned - purchases.length },
     allServerConfirmedOrders: { evaluated: serverEvaluated, count: rows.filter((r) => r.serverConfirmed).length,
+      visibleCheckoutConfirmations: confirmed.filter((r) => r.visibleCheckoutConfirmed).length,
+      withoutVisibleCheckoutConfirmation: confirmed.filter((r) => !r.visibleCheckoutConfirmed).length,
       assigned, rate: serverEvaluated ? rows.filter((r) => r.serverConfirmed).length / assigned : null,
       interval95: serverEvaluated ? wilson95(rows.filter((r) => r.serverConfirmed).length, assigned) : null,
       merchandiseSubtotalCents: sum(rows.map((r) => r.serverMerchandiseRevenueCents)),
@@ -295,7 +304,7 @@ export function analyzeShopperMetrics(input: unknown, options: MetricsOptions = 
     currency: "USD", sourceEvidenceReverified: false, sourceVersion: report.version,
     prespecifiedEligibility: options.caseEligibility ? Object.fromEntries(["satisfiable", "known-empty", "unverifiable-required-fact"].map((status) => [status, caseIds.filter((id) => options.caseEligibility![id] === status).length])) : null,
     primaryOutcome: "Intent-correct success: verified valid fake checkout or independently justified and evidenced abstention",
-    checkoutEvidencePolicy: options.serverOutcomes ? "Server-confirmed fake order plus independent-DOM, catalog/gold, constraints, protocol and budget gates; receipt artifacts hashed and GET readback verified"
+    checkoutEvidencePolicy: options.serverOutcomes ? "Server-confirmed fake order and visible checkout confirmation plus independent-DOM, catalog/gold, constraints, protocol and budget gates; receipt artifacts hashed and GET readback verified. All-server revenue retains accepted orders even when UI confirmation fails."
       : "Legacy independent-DOM receipt evidence; server order confirmation is not established by this report",
     arms: Object.fromEntries(ARMS.map((arm) => {
       const selected = rows.filter((r) => r.arm === arm), feasible = selected.filter((r) => options.caseEligibility?.[r.caseId] === "satisfiable");
@@ -399,7 +408,8 @@ export async function shopperMetricsMain(args: string[]) {
     for (const row of indexedRows) {
       const runId = text(row.runId, "server runId");
       requireValue(!Object.hasOwn(serverOutcomes, runId) && assignedRows.some((r) => r.expectedRunId === runId && r.caseId === row.caseId && r.arm === row.arm), "Duplicate or mismatched server run identity");
-      const confirmed = bool(row.serverConfirmed, "serverConfirmed"); strings(row.errors, "server errors");
+      const confirmed = bool(row.serverConfirmed, "serverConfirmed"), visible = bool(row.visibleCheckoutConfirmed, "visibleCheckoutConfirmed");
+      requireValue(!visible || confirmed, "Visible checkout confirmation requires a server-confirmed order"); strings(row.errors, "server errors");
       let artifactHashVerified = false;
       if (row.artifact !== null) {
         const artifact = object(row.artifact, "server artifact"), artifactPath = text(artifact.path, "server artifact path");
