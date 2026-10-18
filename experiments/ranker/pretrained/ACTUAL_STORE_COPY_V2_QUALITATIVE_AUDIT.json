@@ -1,0 +1,3729 @@
+{
+  "schemaVersion": "actual-store-copy-v2-offline-qualitative-audit.v1",
+  "status": "completed-exhaustive-offline-review",
+  "date": "2026-10-18",
+  "method": "LLM reviewer read every decoded new-store output against its bound facts and structured payload. Contextual human-equivalent judgment; not an independent human study, formal validator, generated-output repair or conversion evaluation.",
+  "sources": {
+    "nativeResultsPath": "data/ranker/pretrained/actual-store-copy-fit-v2-attempt-1/results.json",
+    "nativeResultsSha256": "f995a3ad9e6184ccd907b67a231de220f764d204ff914483a7a878efc8efe8ae",
+    "evaluationCasesPath": "experiments/ranker/pretrained/store_copy_v2/cases.eval.jsonl",
+    "evaluationCasesSha256": "b78a0bd88d50a553e0d2a2ffbdd0ff6c71c6295c934f7fda2bc257cfcf84c33e",
+    "manifestPath": "experiments/ranker/pretrained/store_copy_v2/manifest.json",
+    "manifestSha256": "0491d1347f493f58a21a48ae762251b1e6056280ac0d97e3d7accce15703ffa2"
+  },
+  "rubric": [
+    "A direct wrong name/color/price or unsupported benefit is a substantive factual failure. No observed direct contradiction was found.",
+    "Missing essential/incoherent generated text fails qualitative usability; correct structured metadata does not make the title In usable.",
+    "Readable product captions, reordered factual relations, price omission with exact structured price, harmless inflection and title punctuation may be useful despite narrow pilot grammar rejection.",
+    "A more precise unproven component claim is set aside for verification even when plausible. Cushioned earcups is not asserted proven false.",
+    "Operational rate requires every required generated field to be usable as shown, with original metadata, without any repair. No ranking/image/personalization quality inference."
+  ],
+  "summary": {
+    "allNewStoreFieldsReviewed": 160,
+    "sampling": "exhaustive: all8 new-store evaluation arms,20 fields each; frozen/failed-daypack texts not qualitatively reviewed",
+    "fieldCategories": {
+      "usable_factual_inside_pilot_grammar": 132,
+      "usable_factual_outside_pilot_grammar": 24,
+      "unusable_generated_text": 3,
+      "unsupported_specific_detail_needs_verification": 1
+    },
+    "byKind": {
+      "heading": {
+        "denominator": 16,
+        "strictAccepted": 16,
+        "qualitativelyUsableWithMetadata": 16
+      },
+      "title": {
+        "denominator": 48,
+        "strictAccepted": 43,
+        "qualitativelyUsableWithMetadata": 47
+      },
+      "badge": {
+        "denominator": 48,
+        "strictAccepted": 48,
+        "qualitativelyUsableWithMetadata": 48
+      },
+      "copy": {
+        "denominator": 48,
+        "strictAccepted": 25,
+        "qualitativelyUsableWithMetadata": 45
+      }
+    },
+    "directContradictoryFactsFound": 0,
+    "unsupportedSpecificDetailsNeedingVerification": 1,
+    "unusableGeneratedTextFields": 3,
+    "strictFirstThreeValid": 2,
+    "strictFullSixValid": 1,
+    "payloadDenominator": 8,
+    "offlineAllRequiredFirstThreeTextUsableWithMetadata": 6,
+    "offlineAllRequiredFullSixTextUsableWithMetadata": 6,
+    "bodyPriceOmissions": 4,
+    "usableBodyPriceOmissionsWithBoundPriceMetadata": 2,
+    "unusableRepetitiousBodyPriceOmissions": 2,
+    "exactStructuredCardBindingsChecked": 48,
+    "nativeFinishReasons": {
+      "stop": 160
+    },
+    "uniqueHeadings": 5,
+    "recordedAttemptMediansMs": {
+      "firstThree": 5668.831312505063,
+      "fullSix": 6835.717833484523
+    },
+    "timingInterpretation": "Recorded original serialized copy-stage attempt times only. Offline usability is not strict accepted-result latency, browser paint, ranking+copy latency or a changed benchmark."
+  },
+  "strictBenchmarkSummaryUnchanged": {
+    "frozen": {
+      "fixedCases": 8,
+      "completed": 8,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstThreeReadyMs": [
+        4892.501165973954,
+        4408.7604159722105,
+        5003.794500022195,
+        4821.321833995171,
+        5012.009875033982,
+        5012.237709015608,
+        5062.199749983847,
+        5071.460000006482
+      ],
+      "validFirstThreeReadyMs": [],
+      "attemptFullSixReadyMs": [
+        6033.11720804777,
+        5503.434416023083,
+        5894.547750009224,
+        6297.708166996017,
+        6372.403500019573,
+        6301.855916972272,
+        6310.5633748928085,
+        6151.6161661129445
+      ],
+      "validFullSixReadyMs": [],
+      "rankingQualityClaim": false,
+      "browserPaintMeasured": false
+    },
+    "failed-daypack": {
+      "fixedCases": 8,
+      "completed": 8,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstThreeReadyMs": [
+        4460.536458995193,
+        4963.9201670652255,
+        5391.586792073213,
+        4303.930040914565,
+        5101.493875030428,
+        4659.545750007965,
+        4865.890291985124,
+        4729.290707968175
+      ],
+      "validFirstThreeReadyMs": [],
+      "attemptFullSixReadyMs": [
+        6414.88179191947,
+        6666.741833090782,
+        6387.135250028223,
+        6066.071915905923,
+        6951.4032090082765,
+        6680.981624987908,
+        7218.236625078134,
+        6724.297457956709
+      ],
+      "validFullSixReadyMs": [],
+      "rankingQualityClaim": false,
+      "browserPaintMeasured": false
+    },
+    "new-store": {
+      "fixedCases": 8,
+      "completed": 8,
+      "validThreeCardResults": 2,
+      "validThreeCardRateFixedDenominator": 0.25,
+      "validSixCardResults": 1,
+      "validSixCardRateFixedDenominator": 0.125,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstThreeReadyMs": [
+        4684.151499997824,
+        5584.162667044438,
+        5754.762207972817,
+        4763.3591670310125,
+        5788.275624974631,
+        6145.56833403185,
+        5577.008458087221,
+        5753.499957965687
+      ],
+      "validFirstThreeReadyMs": [
+        5788.275624974631,
+        5577.008458087221
+      ],
+      "attemptFullSixReadyMs": [
+        6141.567290993407,
+        6178.562041954137,
+        6983.839291031472,
+        6399.617166956887,
+        6961.765874992125,
+        7417.737917043269,
+        6709.669791976921,
+        7025.8882499765605
+      ],
+      "validFullSixReadyMs": [
+        6709.669791976921
+      ],
+      "rankingQualityClaim": false,
+      "browserPaintMeasured": false
+    }
+  },
+  "cases": [
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "I would like to look over a few things from this shop."
+      },
+      "sourceArmIndex": 2,
+      "strictFirstThreeValid": false,
+      "strictFullSixValid": false,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": false,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": false,
+      "offlineExcludedFields": [
+        "C3"
+      ],
+      "strictRejectedFields": [
+        "C2",
+        "T3",
+        "C3",
+        "C6"
+      ],
+      "recordedAttemptFirstThreeMs": 4684.151499997824,
+      "recordedAttemptFullSixMs": 6141.567290993407
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "Bring the chosen merchandise into one easy view."
+      },
+      "sourceArmIndex": 5,
+      "strictFirstThreeValid": false,
+      "strictFullSixValid": false,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": true,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": true,
+      "offlineExcludedFields": [],
+      "strictRejectedFields": [
+        "C2",
+        "C5",
+        "C6"
+      ],
+      "recordedAttemptFirstThreeMs": 5584.162667044438,
+      "recordedAttemptFullSixMs": 6178.562041954137
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "Display this assortment so I can read through it."
+      },
+      "sourceArmIndex": 8,
+      "strictFirstThreeValid": false,
+      "strictFullSixValid": false,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": true,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": true,
+      "offlineExcludedFields": [],
+      "strictRejectedFields": [
+        "C3",
+        "C6"
+      ],
+      "recordedAttemptFirstThreeMs": 5754.762207972817,
+      "recordedAttemptFullSixMs": 6983.839291031472
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "Lay out the items picked for this visit."
+      },
+      "sourceArmIndex": 11,
+      "strictFirstThreeValid": false,
+      "strictFullSixValid": false,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": true,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": true,
+      "offlineExcludedFields": [],
+      "strictRejectedFields": [
+        "C1",
+        "C3",
+        "C4",
+        "C5",
+        "C6"
+      ],
+      "recordedAttemptFirstThreeMs": 4763.3591670310125,
+      "recordedAttemptFullSixMs": 6399.617166956887
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "Can I see a short overview of the chosen goods?"
+      },
+      "sourceArmIndex": 14,
+      "strictFirstThreeValid": true,
+      "strictFullSixValid": false,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": true,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": true,
+      "offlineExcludedFields": [],
+      "strictRejectedFields": [
+        "C4"
+      ],
+      "recordedAttemptFirstThreeMs": 5788.275624974631,
+      "recordedAttemptFullSixMs": 6961.765874992125
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "Show me what is included in this assortment."
+      },
+      "sourceArmIndex": 17,
+      "strictFirstThreeValid": false,
+      "strictFullSixValid": false,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": false,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": false,
+      "offlineExcludedFields": [
+        "C1",
+        "T2",
+        "C5"
+      ],
+      "strictRejectedFields": [
+        "C1",
+        "T2",
+        "C2",
+        "T4",
+        "C4",
+        "T5",
+        "C5",
+        "C6"
+      ],
+      "recordedAttemptFirstThreeMs": 6145.56833403185,
+      "recordedAttemptFullSixMs": 7417.737917043269
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "I want a readable view of the items under consideration."
+      },
+      "sourceArmIndex": 20,
+      "strictFirstThreeValid": true,
+      "strictFullSixValid": true,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": true,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": true,
+      "offlineExcludedFields": [],
+      "strictRejectedFields": [],
+      "recordedAttemptFirstThreeMs": 5577.008458087221,
+      "recordedAttemptFullSixMs": 6709.669791976921
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "request": {
+        "hardRequirements": [],
+        "itemBudget": null,
+        "preferences": [],
+        "query": "Collect these shop items into a browsing view."
+      },
+      "sourceArmIndex": 23,
+      "strictFirstThreeValid": false,
+      "strictFullSixValid": false,
+      "offlineAllRequiredFirstThreeTextUsableWithMetadata": true,
+      "offlineAllRequiredFullSixTextUsableWithMetadata": true,
+      "offlineExcludedFields": [],
+      "strictRejectedFields": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "T6"
+      ],
+      "recordedAttemptFirstThreeMs": 5753.499957965687,
+      "recordedAttemptFullSixMs": 7025.8882499765605
+    }
+  ],
+  "fields": [
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "S1",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/0",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "T1",
+      "kind": "title",
+      "text": "Everywhere rain jacket selected in Forest",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/1",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "B1",
+      "kind": "badge",
+      "text": "Forest selected",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/2",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "C1",
+      "kind": "copy",
+      "text": "Everywhere rain jacket is shown in Forest with an item price of $128.00.",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/3",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "T2",
+      "kind": "title",
+      "text": "Steel lunch box with Rust band selected",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/4",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "B2",
+      "kind": "badge",
+      "text": "Rust band selected",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/5",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "C2",
+      "kind": "copy",
+      "text": "Steel lunch box with selected Rust band has an item price of $32.00.",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, selected Rust band and $32 item price; ordinary with-selected relation is outside pilot grammar.",
+      "sourceJsonPointer": "/arms/2/rawRows/6",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "T3",
+      "kind": "title",
+      "text": "Everyday round sunglasses with selected Black",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "title-outside-bound-color-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name and Black selection; ordinary title framing, slightly awkward word order.",
+      "sourceJsonPointer": "/arms/2/rawRows/7",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "B3",
+      "kind": "badge",
+      "text": "In Black",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/8",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "C3",
+      "kind": "copy",
+      "text": "Everyday round sunglasses with selected Black selected",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "unusable_generated_text",
+      "generatedTextUsableWithBoundMetadata": false,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Repeated selected and unfinished body fragment. Color/name are correct; price omission alone is not the reason for unusability.",
+      "sourceJsonPointer": "/arms/2/rawRows/9",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "S2",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/10",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "T4",
+      "kind": "title",
+      "text": "Pocket field notes with Olive selected",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/11",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "B4",
+      "kind": "badge",
+      "text": "In Olive",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/12",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "C4",
+      "kind": "copy",
+      "text": "In Olive, Pocket field notes has an item price of $12.00.",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/13",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "T5",
+      "kind": "title",
+      "text": "Portable table light with Slate blue selected",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/14",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "B5",
+      "kind": "badge",
+      "text": "In Slate blue",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/15",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "C5",
+      "kind": "copy",
+      "text": "This Portable table light is shown in Slate blue with an item price of $64.00.",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/16",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "T6",
+      "kind": "title",
+      "text": "Weekender duffel in Charcoal",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/17",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "B6",
+      "kind": "badge",
+      "text": "In Charcoal",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/2/rawRows/18",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-00",
+      "field": "C6",
+      "kind": "copy",
+      "text": "This Weekender duffel is listed at $84.00 with a Charcoal selected color.",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Charcoal and $84. Selected color wording is clumsy but intelligible and factual.",
+      "sourceJsonPointer": "/arms/2/rawRows/19",
+      "strictSourceJsonPointer": "/arms/2/fullSix/validation/fields/19"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "S1",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/0",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "T1",
+      "kind": "title",
+      "text": "Everyday daypack selected in Slate blue",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/1",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "B1",
+      "kind": "badge",
+      "text": "In Slate blue",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/2",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "C1",
+      "kind": "copy",
+      "text": "Everyday daypack is shown in Slate blue at $68.00.",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/3",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "T2",
+      "kind": "title",
+      "text": "Woven everyday throw with Rust selected",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/4",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "B2",
+      "kind": "badge",
+      "text": "In Rust",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/5",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "C2",
+      "kind": "copy",
+      "text": "This Woven everyday throw is selected in Rust for your collection at $58.00.",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Rust and $58; for your collection is harmless browsing framing under locked selections.",
+      "sourceJsonPointer": "/arms/5/rawRows/6",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "T3",
+      "kind": "title",
+      "text": "Soft cotton crewneck in Forest",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/7",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "B3",
+      "kind": "badge",
+      "text": "Forest selected",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/8",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "C3",
+      "kind": "copy",
+      "text": "In Forest, this Soft cotton crewneck has an item price of $72.00.",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/9",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "S2",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/10",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "T4",
+      "kind": "title",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/11",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "B4",
+      "kind": "badge",
+      "text": "In Sage",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/12",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "C4",
+      "kind": "copy",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/13",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "T5",
+      "kind": "title",
+      "text": "Market canvas tote shown in Navy",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/14",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "B5",
+      "kind": "badge",
+      "text": "Navy selected",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/15",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "C5",
+      "kind": "copy",
+      "text": "Market canvas tote shown in Navy",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name and Navy; readable caption-style noun phrase, duplicates its title. Missing price/period violates contract but price and identity already appear in metadata.",
+      "sourceJsonPointer": "/arms/5/rawRows/16",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "T6",
+      "kind": "title",
+      "text": "Everyday canvas sneakers with Charcoal selected",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/17",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "B6",
+      "kind": "badge",
+      "text": "In Charcoal",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/5/rawRows/18",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-01",
+      "field": "C6",
+      "kind": "copy",
+      "text": "Everyday canvas sneakers shown in Charcoal at $96.00.",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Charcoal and $96; readable caption-style body with omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/5/rawRows/19",
+      "strictSourceJsonPointer": "/arms/5/fullSix/validation/fields/19"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "S1",
+      "kind": "heading",
+      "text": "The current collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/0",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "T1",
+      "kind": "title",
+      "text": "Everywhere cotton towel with Sage stripe selected",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/1",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "B1",
+      "kind": "badge",
+      "text": "Sage stripe selected",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/2",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "C1",
+      "kind": "copy",
+      "text": "Everywhere cotton towel in Sage stripe is listed at $28.00.",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/3",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "T2",
+      "kind": "title",
+      "text": "Everyday steel bottle shown in Cream",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/4",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "B2",
+      "kind": "badge",
+      "text": "In Cream",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/5",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "C2",
+      "kind": "copy",
+      "text": "Everyday steel bottle is shown in Cream at $36.00.",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/6",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "T3",
+      "kind": "title",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/7",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "B3",
+      "kind": "badge",
+      "text": "Navy selected",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/8",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "C3",
+      "kind": "copy",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Navy and $89; readable caption-style body with omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/8/rawRows/9",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "S2",
+      "kind": "heading",
+      "text": "The selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/10",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "T4",
+      "kind": "title",
+      "text": "Zip essentials pouch in Sage",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/11",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "B4",
+      "kind": "badge",
+      "text": "In Sage",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/12",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "C4",
+      "kind": "copy",
+      "text": "In Sage, this Zip essentials pouch has an item price of $26.00.",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/13",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "T5",
+      "kind": "title",
+      "text": "Everywhere rain jacket selected in Forest",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/14",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "B5",
+      "kind": "badge",
+      "text": "Forest selected",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/15",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "C5",
+      "kind": "copy",
+      "text": "Everywhere rain jacket is shown in Forest at $128.00.",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/16",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "T6",
+      "kind": "title",
+      "text": "Steel lunch box with Rust band selected",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/17",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "B6",
+      "kind": "badge",
+      "text": "Rust band selected",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/8/rawRows/18",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-02",
+      "field": "C6",
+      "kind": "copy",
+      "text": "Steel lunch box with selected Rust band has an item price of $32.00.",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Rust band and $32; ordinary with-selected relation outside grammar.",
+      "sourceJsonPointer": "/arms/8/rawRows/19",
+      "strictSourceJsonPointer": "/arms/8/fullSix/validation/fields/19"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "S1",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/0",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "T1",
+      "kind": "title",
+      "text": "Everyday round sunglasses selected in Black",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/1",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "B1",
+      "kind": "badge",
+      "text": "In Black",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/2",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "C1",
+      "kind": "copy",
+      "text": "Everyday round sunglasses selected in Black with an item price of $48.00.",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Black and $48; readable caption-style body, omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/11/rawRows/3",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "T2",
+      "kind": "title",
+      "text": "Pocket field notes selected in Olive",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/4",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "B2",
+      "kind": "badge",
+      "text": "Olive selected",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/5",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "C2",
+      "kind": "copy",
+      "text": "In Olive, Pocket field notes has an item price of $12.00.",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/6",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "T3",
+      "kind": "title",
+      "text": "Portable table light selected in Slate blue",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/7",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "B3",
+      "kind": "badge",
+      "text": "In Slate blue",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/8",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "C3",
+      "kind": "copy",
+      "text": "Portable table light selected in Slate blue at $64.00.",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Slate blue and $64; readable caption-style body, omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/11/rawRows/9",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "S2",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/10",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "T4",
+      "kind": "title",
+      "text": "Weekender duffel in Charcoal",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/11",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "B4",
+      "kind": "badge",
+      "text": "In Charcoal",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/12",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "C4",
+      "kind": "copy",
+      "text": "Your selected Weekender duffel is shown in Charcoal at $84.00.",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Charcoal and $84; Your selected framing does not invent a new product fact or hidden intent.",
+      "sourceJsonPointer": "/arms/11/rawRows/13",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "T5",
+      "kind": "title",
+      "text": "Everyday daypack selected in Slate blue",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/14",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "B5",
+      "kind": "badge",
+      "text": "In Slate blue",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/15",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "C5",
+      "kind": "copy",
+      "text": "Everyday daypack selected in Slate blue at $68.00.",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Slate blue and $68; readable caption-style body, omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/11/rawRows/16",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "T6",
+      "kind": "title",
+      "text": "Woven everyday throw selected in Rust",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/17",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "B6",
+      "kind": "badge",
+      "text": "In Rust",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/11/rawRows/18",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-03",
+      "field": "C6",
+      "kind": "copy",
+      "text": "Woven everyday throw selected in Rust has an item price of $58.00.",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Rust and $58; ordinary selected-color relative phrase outside pilot grammar.",
+      "sourceJsonPointer": "/arms/11/rawRows/19",
+      "strictSourceJsonPointer": "/arms/11/fullSix/validation/fields/19"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "S1",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/0",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "T1",
+      "kind": "title",
+      "text": "Soft cotton crewneck selected in Forest",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/1",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "B1",
+      "kind": "badge",
+      "text": "Forest selected",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/2",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "C1",
+      "kind": "copy",
+      "text": "This Soft cotton crewneck is shown in Forest with an item price of $72.00.",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/3",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "T2",
+      "kind": "title",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/4",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "B2",
+      "kind": "badge",
+      "text": "In Sage",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/5",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "C2",
+      "kind": "copy",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/6",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "T3",
+      "kind": "title",
+      "text": "Market canvas tote shown in Navy",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/7",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "B3",
+      "kind": "badge",
+      "text": "Navy selected",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/8",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "C3",
+      "kind": "copy",
+      "text": "This Market canvas tote is shown in Navy with an item price of $42.00.",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/9",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "S2",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/10",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "T4",
+      "kind": "title",
+      "text": "Everyday canvas sneakers selected in Charcoal",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/11",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "B4",
+      "kind": "badge",
+      "text": "In Charcoal",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/12",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "C4",
+      "kind": "copy",
+      "text": "Everyday canvas sneakers shown in Charcoal at $96.00.",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Charcoal and $96; readable caption-style body, omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/14/rawRows/13",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "T5",
+      "kind": "title",
+      "text": "Everywhere cotton towel with Sage stripe selected",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/14",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "B5",
+      "kind": "badge",
+      "text": "Sage stripe selected",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/15",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "C5",
+      "kind": "copy",
+      "text": "This Everywhere cotton towel is selected in Sage stripe with an item price of $28.00.",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/16",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "T6",
+      "kind": "title",
+      "text": "Everyday steel bottle selected in Cream",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/17",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "B6",
+      "kind": "badge",
+      "text": "In Cream",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/18",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-04",
+      "field": "C6",
+      "kind": "copy",
+      "text": "Everyday steel bottle is shown in Cream at $36.00.",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/14/rawRows/19",
+      "strictSourceJsonPointer": "/arms/14/fullSix/validation/fields/19"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "S1",
+      "kind": "heading",
+      "text": "The current collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/0",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "T1",
+      "kind": "title",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/1",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "B1",
+      "kind": "badge",
+      "text": "Navy selected",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/2",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "C1",
+      "kind": "copy",
+      "text": "In Navy, Everyday over-ear headphones with cushioned earcups is listed at $89.00.",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "unsupported_specific_detail_needs_verification",
+      "generatedTextUsableWithBoundMetadata": false,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Navy and $89. Cushioned is source-supported, but localization to earcups is not explicit in Cushioned over-ear headphones. Plausible inference, conservatively needs verification; not established false.",
+      "sourceJsonPointer": "/arms/17/rawRows/3",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "T2",
+      "kind": "title",
+      "text": "In",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "complete-exact-selected-identity-required-once",
+        "complete-exact-selected-color-required-once",
+        "title-length",
+        "title-outside-bound-color-relations"
+      ],
+      "qualitativeCategory": "unusable_generated_text",
+      "generatedTextUsableWithBoundMetadata": false,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "In is an incomplete title containing neither item identity nor selected color. Metadata preserves identity, but the generated title is unusable as shown.",
+      "sourceJsonPointer": "/arms/17/rawRows/4",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "B2",
+      "kind": "badge",
+      "text": "In Sage",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/5",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "C2",
+      "kind": "copy",
+      "text": "This Zip essentials pouch with Sage selected has an item price of $26.00.",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Sage and $26; with Sage selected is an intelligible factual relation outside pilot grammar.",
+      "sourceJsonPointer": "/arms/17/rawRows/6",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "T3",
+      "kind": "title",
+      "text": "Everywhere rain jacket selected in Forest",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/7",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "B3",
+      "kind": "badge",
+      "text": "Forest selected",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/8",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "C3",
+      "kind": "copy",
+      "text": "This Everywhere rain jacket is shown in Forest with an item price of $128.00.",
+      "boundFacts": {
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "name": "Everywhere rain jacket",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/9",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "S2",
+      "kind": "heading",
+      "text": "The current collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/10",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "T4",
+      "kind": "title",
+      "text": "Steel lunch box with selected Rust band selected",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "title-outside-bound-color-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name and Rust band. Duplicated selected is poor polish, but the title still communicates its item and selected color.",
+      "sourceJsonPointer": "/arms/17/rawRows/11",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "B4",
+      "kind": "badge",
+      "text": "Rust band selected",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/12",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "C4",
+      "kind": "copy",
+      "text": "This Steel lunch box with bamboo lid is selected in Rust band for $32.00.",
+      "boundFacts": {
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "name": "Steel lunch box",
+        "selectedColor": "Rust band"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Rust band and $32. Bamboo lid is explicitly supported by bound category Steel box with bamboo lid; forbidden by pilot category policy, not an invented material claim.",
+      "sourceJsonPointer": "/arms/17/rawRows/13",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "T5",
+      "kind": "title",
+      "text": "Everyday round sunglasses with selected Black",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "title-outside-bound-color-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name and Black selection; ordinary title framing, slightly awkward word order.",
+      "sourceJsonPointer": "/arms/17/rawRows/14",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "B5",
+      "kind": "badge",
+      "text": "In Black",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/15",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "C5",
+      "kind": "copy",
+      "text": "Everyday round sunglasses with selected Black selected",
+      "boundFacts": {
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "name": "Everyday round sunglasses",
+        "selectedColor": "Black"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "unusable_generated_text",
+      "generatedTextUsableWithBoundMetadata": false,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Repeated selected and unfinished body fragment, same issue as evaluation00 C3. Not classified harmful solely for missing price.",
+      "sourceJsonPointer": "/arms/17/rawRows/16",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "T6",
+      "kind": "title",
+      "text": "Pocket field notes with Olive selected",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/17",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "B6",
+      "kind": "badge",
+      "text": "Olive selected",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/17/rawRows/18",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-05",
+      "field": "C6",
+      "kind": "copy",
+      "text": "This Pocket field notes with Olive selected has an item price of $12.00.",
+      "boundFacts": {
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "name": "Pocket field notes",
+        "selectedColor": "Olive"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Olive and $12; ordinary with-color-selected relation outside pilot grammar.",
+      "sourceJsonPointer": "/arms/17/rawRows/19",
+      "strictSourceJsonPointer": "/arms/17/fullSix/validation/fields/19"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "S1",
+      "kind": "heading",
+      "text": "The current selection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/0",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "T1",
+      "kind": "title",
+      "text": "Portable table light with Slate blue selected",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/1",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "B1",
+      "kind": "badge",
+      "text": "In Slate blue",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/2",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "C1",
+      "kind": "copy",
+      "text": "This Portable table light is shown in Slate blue with an item price of $64.00.",
+      "boundFacts": {
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "name": "Portable table light",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/3",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "T2",
+      "kind": "title",
+      "text": "Weekender duffel in Charcoal",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/4",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "B2",
+      "kind": "badge",
+      "text": "In Charcoal",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/5",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "C2",
+      "kind": "copy",
+      "text": "This Weekender duffel is shown in Charcoal at $84.00.",
+      "boundFacts": {
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "name": "Weekender duffel",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/6",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "T3",
+      "kind": "title",
+      "text": "Everyday daypack selected in Slate blue",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/7",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "B3",
+      "kind": "badge",
+      "text": "In Slate blue",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/8",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "C3",
+      "kind": "copy",
+      "text": "Everyday daypack is shown in Slate blue at $68.00.",
+      "boundFacts": {
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "name": "Everyday daypack",
+        "selectedColor": "Slate blue"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/9",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "S2",
+      "kind": "heading",
+      "text": "Everyday selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/10",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "T4",
+      "kind": "title",
+      "text": "Woven everyday throw with Rust selected",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/11",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "B4",
+      "kind": "badge",
+      "text": "In Rust",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/12",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "C4",
+      "kind": "copy",
+      "text": "This Woven everyday throw is shown in Rust with an item price of $58.00.",
+      "boundFacts": {
+        "category": "Cotton throw blanket",
+        "itemPrice": 58,
+        "name": "Woven everyday throw",
+        "selectedColor": "Rust"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/13",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "T5",
+      "kind": "title",
+      "text": "Soft cotton crewneck selected in Forest",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/14",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "B5",
+      "kind": "badge",
+      "text": "Forest selected",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/15",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "C5",
+      "kind": "copy",
+      "text": "This Soft cotton crewneck is shown in Forest with an item price of $72.00.",
+      "boundFacts": {
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "name": "Soft cotton crewneck",
+        "selectedColor": "Forest"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/16",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "T6",
+      "kind": "title",
+      "text": "Trail mug in Sage",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/17",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "B6",
+      "kind": "badge",
+      "text": "In Sage",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/18",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-06",
+      "field": "C6",
+      "kind": "copy",
+      "text": "Trail mug in Sage is listed at $24.00.",
+      "boundFacts": {
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "name": "Trail mug",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/20/rawRows/19",
+      "strictSourceJsonPointer": "/arms/20/fullSix/validation/fields/19"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "S1",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/0",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/0"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "T1",
+      "kind": "title",
+      "text": "Market canvas tote shown in Navy",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/1",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/1"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "B1",
+      "kind": "badge",
+      "text": "Navy selected",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/2",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/2"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "C1",
+      "kind": "copy",
+      "text": "Market canvas totes with Navy selected",
+      "boundFacts": {
+        "category": "Cotton canvas carryall",
+        "itemPrice": 42,
+        "name": "Market canvas tote",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Readable caption-style phrase with correct item referent and Navy. Generic plural totes is a harmless inflection here; displayed original name/price remain bound. Missing price/period alone is not user-essential in this payload.",
+      "sourceJsonPointer": "/arms/23/rawRows/3",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/3"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "T2",
+      "kind": "title",
+      "text": "Everyday canvas sneakers selected in Charcoal",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/4",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/4"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "B2",
+      "kind": "badge",
+      "text": "In Charcoal",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/5",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/5"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "C2",
+      "kind": "copy",
+      "text": "Everyday canvas sneakers shown in Charcoal at $96.00.",
+      "boundFacts": {
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "name": "Everyday canvas sneakers",
+        "selectedColor": "Charcoal"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Charcoal and $96; readable caption-style body, omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/23/rawRows/6",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/6"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "T3",
+      "kind": "title",
+      "text": "Everywhere cotton towel with Sage stripe selected",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/7",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/7"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "B3",
+      "kind": "badge",
+      "text": "Sage stripe selected",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/8",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/8"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "C3",
+      "kind": "copy",
+      "text": "In Sage stripe, Everywhere cotton towel is listed at $28.00.",
+      "boundFacts": {
+        "category": "Striped cotton towel",
+        "itemPrice": 28,
+        "name": "Everywhere cotton towel",
+        "selectedColor": "Sage stripe"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Sage stripe and $28; grammatical factual reordered phrase outside pilot grammar.",
+      "sourceJsonPointer": "/arms/23/rawRows/9",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/9"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "S2",
+      "kind": "heading",
+      "text": "Your selected collection",
+      "boundFacts": {},
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/10",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/10"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "T4",
+      "kind": "title",
+      "text": "Everyday steel bottle selected in Cream",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/11",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/11"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "B4",
+      "kind": "badge",
+      "text": "In Cream",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/12",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/12"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "C4",
+      "kind": "copy",
+      "text": "Everyday steel bottle is shown in Cream at $36.00.",
+      "boundFacts": {
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "name": "Everyday steel bottle",
+        "selectedColor": "Cream"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/13",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/13"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "T5",
+      "kind": "title",
+      "text": "Everyday over-ear headphones shown in Navy",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/14",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/14"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "B5",
+      "kind": "badge",
+      "text": "Navy selected",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/15",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/15"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "C5",
+      "kind": "copy",
+      "text": "Everyday over-ear headphones shown in Navy at $89.00.",
+      "boundFacts": {
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "name": "Everyday over-ear headphones",
+        "selectedColor": "Navy"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Correct name, Navy and $89; readable caption-style body, omitted auxiliary is.",
+      "sourceJsonPointer": "/arms/23/rawRows/16",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/16"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "T6",
+      "kind": "title",
+      "text": "In Sage, this Zip essentials pouch is listed at $26.00.",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": false,
+      "strictRejections": [
+        "title-outside-bound-color-relations"
+      ],
+      "qualitativeCategory": "usable_factual_outside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "A factual priced title sentence: correct Sage, Zip essentials pouch and $26. Price and period in a title are style/contract differences, not false facts.",
+      "sourceJsonPointer": "/arms/23/rawRows/17",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/17"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "B6",
+      "kind": "badge",
+      "text": "In Sage",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/18",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/18"
+    },
+    {
+      "caseId": "store-copy-v2-eval-07",
+      "field": "C6",
+      "kind": "copy",
+      "text": "In Sage, this Zip essentials pouch has an item price of $26.00.",
+      "boundFacts": {
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "name": "Zip essentials pouch",
+        "selectedColor": "Sage"
+      },
+      "finishReason": "stop",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "qualitativeCategory": "usable_factual_inside_pilot_grammar",
+      "generatedTextUsableWithBoundMetadata": true,
+      "directContradictoryFactFound": false,
+      "judgmentNote": "Read against bound facts: intelligible source-compatible field; no unsupported claim identified.",
+      "sourceJsonPointer": "/arms/23/rawRows/19",
+      "strictSourceJsonPointer": "/arms/23/fullSix/validation/fields/19"
+    }
+  ],
+  "limits": [
+    "No model, GPU, tokenizer or new output generation; no benchmark, adapter, data module or validator edits.",
+    "Catalog descriptions are fixture-declared public evidence, not physical product verification.",
+    "All selected products/colors are locked fixture decisions; user budgets are null and hard requirements empty.",
+    "Native fresh source-conditioning under adversarial fact swaps remains separate; this audit compares static results to supplied facts.",
+    "No hidden-persona preference inference, broad preference quality, independent human review, conversion, browser UI or paint evidence."
+  ]
+}

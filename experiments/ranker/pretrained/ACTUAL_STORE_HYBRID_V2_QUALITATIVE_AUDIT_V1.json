@@ -1,0 +1,3292 @@
+{
+  "schemaVersion": "actual-store-hybrid-v2-qualitative-audit.v1",
+  "reviewer": "Independent offline LLM reviewer; manual contextual judgment, not human review or conversion evidence",
+  "sourcePath": "data/ranker/pretrained/actual-store-hybrid-v2-attempt-1/results.json",
+  "sourceSha256": "3489aadc2854df79dec5fa54d05cbd82696a7cebd6aee2a358afec6e3f030a59",
+  "summary": {
+    "fixedCases": 6,
+    "reviewedFields": 120,
+    "strictAcceptedFields": 96,
+    "definitelyContextuallyUsableFields": 114,
+    "fieldJudgments": {
+      "usable-awkward-heading": 1,
+      "usable-contextual-inference": 3,
+      "usable-factual": 104,
+      "needs-contextual-verification": 1,
+      "usable-terse-caption": 5,
+      "unsupported-use-attribution": 1,
+      "unusable-malformed-price": 2,
+      "unsupported-recommendation": 1,
+      "unusable-use-attribution": 1,
+      "usable-awkward-title": 1
+    },
+    "strictFirstThree": 1,
+    "strictFullSix": 0,
+    "definitelyContextuallyUsableFirstThree": 4,
+    "definitelyContextuallyUsableFullSix": 0,
+    "topOneTargetCorrect": 4,
+    "targetInFirstThree": 4,
+    "targetInFullSix": 6,
+    "contextualFirstThreeAndTargetRetrieved": 2,
+    "contextualFullSixAndTargetRetrieved": 0,
+    "targetCardGeneratedTextUsable": 6,
+    "wholeFullSixPendingOnlyAmbiguousRecommendation": 1,
+    "attemptFirstThreeMedianMs": 5741.142979473807,
+    "attemptFullSixMedianMs": 6966.753792017698,
+    "contextualJointFirstThreeMs": [
+      5474.920833017677,
+      5811.666499939747
+    ]
+  },
+  "cases": [
+    {
+      "caseId": "store-eval-00",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "selectedNames": [
+        "Trail mug",
+        "Everyday steel bottle",
+        "Portable table light",
+        "Pocket field notes",
+        "Steel lunch box",
+        "Everyday round sunglasses"
+      ],
+      "targetProductIndex": 0,
+      "targetRank": 1,
+      "targetInFirstThree": true,
+      "targetInFullSix": true,
+      "strictFirstThree": false,
+      "strictFullSix": false,
+      "definitelyContextuallyUsableFirstThree": true,
+      "definitelyContextuallyUsableFullSix": false,
+      "contextualFirstThreeAndTargetRetrieved": true,
+      "contextualFullSixAndTargetRetrieved": false,
+      "targetCardGeneratedTextUsable": true,
+      "targetCardSourceFields": [
+        "T1",
+        "B1",
+        "C1"
+      ],
+      "firstThreeReadyMs": 5474.920833017677,
+      "fullSixReadyMs": 6168.548749992624,
+      "flaggedFields": [
+        "C5"
+      ]
+    },
+    {
+      "caseId": "store-eval-01",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "selectedNames": [
+        "Everyday steel bottle",
+        "Everyday daypack",
+        "Everyday over-ear headphones",
+        "Portable table light",
+        "Soft cotton crewneck",
+        "Steel lunch box"
+      ],
+      "targetProductIndex": 4,
+      "targetRank": 1,
+      "targetInFirstThree": true,
+      "targetInFullSix": true,
+      "strictFirstThree": false,
+      "strictFullSix": false,
+      "definitelyContextuallyUsableFirstThree": true,
+      "definitelyContextuallyUsableFullSix": false,
+      "contextualFirstThreeAndTargetRetrieved": true,
+      "contextualFullSixAndTargetRetrieved": false,
+      "targetCardGeneratedTextUsable": true,
+      "targetCardSourceFields": [
+        "T1",
+        "B1",
+        "C1"
+      ],
+      "firstThreeReadyMs": 5811.666499939747,
+      "fullSixReadyMs": 6884.829082991928,
+      "flaggedFields": [
+        "C6"
+      ]
+    },
+    {
+      "caseId": "store-eval-02",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "selectedNames": [
+        "Everyday daypack",
+        "Everyday steel bottle",
+        "Everyday round sunglasses",
+        "Everyday canvas sneakers",
+        "Everyday over-ear headphones",
+        "Pocket field notes"
+      ],
+      "targetProductIndex": 1,
+      "targetRank": 1,
+      "targetInFirstThree": true,
+      "targetInFullSix": true,
+      "strictFirstThree": false,
+      "strictFullSix": false,
+      "definitelyContextuallyUsableFirstThree": false,
+      "definitelyContextuallyUsableFullSix": false,
+      "contextualFirstThreeAndTargetRetrieved": false,
+      "contextualFullSixAndTargetRetrieved": false,
+      "targetCardGeneratedTextUsable": true,
+      "targetCardSourceFields": [
+        "T1",
+        "B1",
+        "C1"
+      ],
+      "firstThreeReadyMs": 5670.619459007867,
+      "fullSixReadyMs": 7020.413791993633,
+      "flaggedFields": [
+        "C2"
+      ]
+    },
+    {
+      "caseId": "store-eval-03",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "selectedNames": [
+        "Everyday daypack",
+        "Pocket field notes",
+        "Everyday steel bottle",
+        "Weekender duffel",
+        "Everyday round sunglasses",
+        "Zip essentials pouch"
+      ],
+      "targetProductIndex": 12,
+      "targetRank": 4,
+      "targetInFirstThree": false,
+      "targetInFullSix": true,
+      "strictFirstThree": true,
+      "strictFullSix": false,
+      "definitelyContextuallyUsableFirstThree": true,
+      "definitelyContextuallyUsableFullSix": false,
+      "contextualFirstThreeAndTargetRetrieved": false,
+      "contextualFullSixAndTargetRetrieved": false,
+      "targetCardGeneratedTextUsable": true,
+      "targetCardSourceFields": [
+        "T4",
+        "B4",
+        "C4"
+      ],
+      "firstThreeReadyMs": 5618.1758750462905,
+      "fullSixReadyMs": 6913.093792041764,
+      "flaggedFields": [
+        "C6"
+      ]
+    },
+    {
+      "caseId": "store-eval-04",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "selectedNames": [
+        "Pocket field notes",
+        "Everyday daypack",
+        "Steel lunch box",
+        "Soft cotton crewneck",
+        "Everyday steel bottle",
+        "Everyday over-ear headphones"
+      ],
+      "targetProductIndex": 2,
+      "targetRank": 1,
+      "targetInFirstThree": true,
+      "targetInFullSix": true,
+      "strictFirstThree": false,
+      "strictFullSix": false,
+      "definitelyContextuallyUsableFirstThree": false,
+      "definitelyContextuallyUsableFullSix": false,
+      "contextualFirstThreeAndTargetRetrieved": false,
+      "contextualFullSixAndTargetRetrieved": false,
+      "targetCardGeneratedTextUsable": true,
+      "targetCardSourceFields": [
+        "T1",
+        "B1",
+        "C1"
+      ],
+      "firstThreeReadyMs": 6214.562125038356,
+      "fullSixReadyMs": 7204.298499971628,
+      "flaggedFields": [
+        "C3"
+      ]
+    },
+    {
+      "caseId": "store-eval-05",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "selectedNames": [
+        "Pocket field notes",
+        "Everyday round sunglasses",
+        "Portable table light",
+        "Zip essentials pouch",
+        "Everyday daypack",
+        "Soft cotton crewneck"
+      ],
+      "targetProductIndex": 14,
+      "targetRank": 4,
+      "targetInFirstThree": false,
+      "targetInFullSix": true,
+      "strictFirstThree": false,
+      "strictFullSix": false,
+      "definitelyContextuallyUsableFirstThree": true,
+      "definitelyContextuallyUsableFullSix": false,
+      "contextualFirstThreeAndTargetRetrieved": false,
+      "contextualFullSixAndTargetRetrieved": false,
+      "targetCardGeneratedTextUsable": true,
+      "targetCardSourceFields": [
+        "T4",
+        "B4",
+        "C4"
+      ],
+      "firstThreeReadyMs": 6025.320707936771,
+      "fullSixReadyMs": 7431.054958025925,
+      "flaggedFields": [
+        "C6"
+      ]
+    }
+  ],
+  "fields": [
+    {
+      "caseId": "store-eval-00",
+      "field": "S1",
+      "rawText": "Everyday selected",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-awkward-heading",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Vague elliptical heading, but no product fact or shopper preference is misrepresented.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "heading-outside-generic-grammar"
+      ],
+      "sourceJsonPointer": "/arms/0/rawRows/0/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "T1",
+      "rawText": "Trail mug in Sage is selected for your kitchen table.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-contextual-inference",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "The requested kitchen drinking cup and supplied mug identity support the ordinary kitchen-table selection framing; no additional physical feature is asserted.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "title-outside-bound-color-relations"
+      ],
+      "sourceJsonPointer": "/arms/0/rawRows/1/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "B1",
+      "rawText": "In Sage",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/2/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "C1",
+      "rawText": "This Trail mug is selected in Sage for your kitchen table at $24.00.",
+      "boundFacts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-contextual-inference",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Correct mug, Sage and $24; kitchen-table framing follows this public drinking-cup request and is a reasonable compatibility inference.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/0/rawRows/3/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "T2",
+      "rawText": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/4/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "B2",
+      "rawText": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/5/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "C2",
+      "rawText": "This Everyday steel bottle is selected in Graphite at $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/6/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "T3",
+      "rawText": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/7/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "B3",
+      "rawText": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/8/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "C3",
+      "rawText": "This Portable table light with Ivory selected has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/0/rawRows/9/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "S2",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/10/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "T4",
+      "rawText": "Pocket field notes selected in Terracotta",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/11/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "B4",
+      "rawText": "Terracotta selected",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/12/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "C4",
+      "rawText": "This Pocket field notes with Terracotta selected has an item price of $12.00.",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/0/rawRows/13/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "T5",
+      "rawText": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/14/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "B5",
+      "rawText": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/15/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "C5",
+      "rawText": "This Steel lunch box with Olive band is your kitchen table choice at $32.00.",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "needs-contextual-verification",
+      "definitelyContextuallyUsableWithMetadata": false,
+      "reason": "Lunch-box identity/color/price are correct. Calling it the shopper's kitchen-table choice borrows the request context despite the request being for a drinking cup. This is an ambiguous recommendation, not a proven false physical claim; excluded from definite whole-payload usability pending review.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/0/rawRows/16/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "T6",
+      "rawText": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/17/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "B6",
+      "rawText": "In Tortoise",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/0/rawRows/18/text"
+    },
+    {
+      "caseId": "store-eval-00",
+      "field": "C6",
+      "rawText": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A drinking cup for the kitchen table."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-terse-caption",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Readable factual product/color caption beside the supplied original name, price and image. Sentence and repeated-price requirements explain strict rejection, but are not a separate factual error in this contextual judgment.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/0/rawRows/19/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "S1",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/0/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "T1",
+      "rawText": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/1/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "B1",
+      "rawText": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/2/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "C1",
+      "rawText": "This Everyday steel bottle in Graphite is your choice for carrying water at $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-contextual-inference",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Correct bottle/color/price; carrying water is an ordinary supported inference from bottle identity and the public request.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/1/rawRows/3/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "T2",
+      "rawText": "Everyday daypack selected in Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/4/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "B2",
+      "rawText": "In Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/5/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "C2",
+      "rawText": "This Everyday daypack in Sand is listed at $68.00.",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/6/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "T3",
+      "rawText": "Everyday over-ear headphones selected in Navy",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/7/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "B3",
+      "rawText": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/8/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "C3",
+      "rawText": "Everyday over-ear headphones selected in Navy is listed at $89.00.",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/1/rawRows/9/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "S2",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/10/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "T4",
+      "rawText": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/11/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "B4",
+      "rawText": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/12/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "C4",
+      "rawText": "This Portable table light in Ivory is listed at $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/13/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "T5",
+      "rawText": "Soft cotton crewneck in Oatmeal",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/14/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "B5",
+      "rawText": "In Oatmeal",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/15/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "C5",
+      "rawText": "This Soft cotton crewneck in Oatmeal is listed at $72.00.",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/16/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "T6",
+      "rawText": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/17/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "B6",
+      "rawText": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/1/rawRows/18/text"
+    },
+    {
+      "caseId": "store-eval-01",
+      "field": "C6",
+      "rawText": "This Steel lunch box with Olive band is your choice for carrying water at $32.00.",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "For carrying water when I head out."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "unsupported-use-attribution",
+      "definitelyContextuallyUsableWithMetadata": false,
+      "reason": "Calls a steel lunch box the shopper's choice for carrying water. Supplied identity/category do not establish this use; the water preference belongs to the bottle request.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/1/rawRows/19/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "S1",
+      "rawText": "Everyday selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/0/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "T1",
+      "rawText": "Everyday daypack selected in Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/1/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "B1",
+      "rawText": "In Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/2/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "C1",
+      "rawText": "This Everyday daypack in Sand is listed at $68.00.",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/3/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "T2",
+      "rawText": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/4/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "B2",
+      "rawText": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/5/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "C2",
+      "rawText": "This Everyday steel bottle with Graphite selected has an item price of $36.00.00",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "unusable-malformed-price",
+      "definitelyContextuallyUsableWithMetadata": false,
+      "reason": "Displayed $36.00.00 is not a valid monetary amount. The bound $36 price does not repair the generated copy.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/2/rawRows/6/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "T3",
+      "rawText": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/7/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "B3",
+      "rawText": "Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/8/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "C3",
+      "rawText": "Everyday round sunglasses with Tortoise selected at $48.00.",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/2/rawRows/9/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "S2",
+      "rawText": "Everyday selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/10/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "T4",
+      "rawText": "Everyday canvas sneakers selected in Off-white",
+      "boundFacts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Off-white"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/11/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "B4",
+      "rawText": "In Off-white",
+      "boundFacts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Off-white"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/12/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "C4",
+      "rawText": "Everyday canvas sneakers in Off-white is listed at $96.00.",
+      "boundFacts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Off-white"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/13/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "T5",
+      "rawText": "Everyday over-ear headphones with Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/14/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "B5",
+      "rawText": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/15/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "C5",
+      "rawText": "Everyday over-ear headphones with Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-terse-caption",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Readable factual product/color caption beside the supplied original name, price and image. Sentence and repeated-price requirements explain strict rejection, but are not a separate factual error in this contextual judgment.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/2/rawRows/16/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "T6",
+      "rawText": "Pocket field notes selected in Terracotta",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/17/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "B6",
+      "rawText": "Terracotta selected",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/18/text"
+    },
+    {
+      "caseId": "store-eval-02",
+      "field": "C6",
+      "rawText": "This Pocket field notes in Terracotta has an item price of $12.00.",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A backpack for taking my everyday things along."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/2/rawRows/19/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "S1",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/0/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "T1",
+      "rawText": "Everyday daypack selected in Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/1/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "B1",
+      "rawText": "In Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/2/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "C1",
+      "rawText": "This Everyday daypack is selected in Sand at $68.00.",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/3/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "T2",
+      "rawText": "Pocket field notes selected in Terracotta",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/4/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "B2",
+      "rawText": "Terracotta selected",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/5/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "C2",
+      "rawText": "This Pocket field notes in Terracotta is listed at $12.00.",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/6/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "T3",
+      "rawText": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/7/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "B3",
+      "rawText": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/8/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "C3",
+      "rawText": "This Everyday steel bottle is selected in Graphite at $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/9/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "S2",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/10/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "T4",
+      "rawText": "Weekender duffel in Charcoal",
+      "boundFacts": {
+        "name": "Weekender duffel",
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "selectedColor": "Charcoal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/11/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "B4",
+      "rawText": "In Charcoal",
+      "boundFacts": {
+        "name": "Weekender duffel",
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "selectedColor": "Charcoal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/12/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "C4",
+      "rawText": "This Weekender duffel is selected in Charcoal at $84.00.",
+      "boundFacts": {
+        "name": "Weekender duffel",
+        "category": "Canvas travel bag",
+        "itemPrice": 84,
+        "selectedColor": "Charcoal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/13/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "T5",
+      "rawText": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/14/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "B5",
+      "rawText": "Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/15/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "C5",
+      "rawText": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-terse-caption",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Readable factual product/color caption beside the supplied original name, price and image. Sentence and repeated-price requirements explain strict rejection, but are not a separate factual error in this contextual judgment.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/3/rawRows/16/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "T6",
+      "rawText": "Zip essentials pouch in Ochre",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/17/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "B6",
+      "rawText": "Ochre selected",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/3/rawRows/18/text"
+    },
+    {
+      "caseId": "store-eval-03",
+      "field": "C6",
+      "rawText": "This Zip essentials pouch in Ochre is your perfect travel companion at $26.00.",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "unsupported-recommendation",
+      "definitelyContextuallyUsableWithMetadata": false,
+      "reason": "Perfect travel companion asserts an ungrounded personal fit/quality judgment about the pouch; price/color/name alone do not establish it.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/3/rawRows/19/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "S1",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/0/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "T1",
+      "rawText": "Pocket field notes selected in Terracotta",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/1/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "B1",
+      "rawText": "Terracotta selected",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/2/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "C1",
+      "rawText": "This Pocket field notes in Terracotta is listed at $12.00.",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/3/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "T2",
+      "rawText": "Everyday daypack selected in Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/4/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "B2",
+      "rawText": "In Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/5/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "C2",
+      "rawText": "This Everyday daypack in Sand is listed at $68.00.",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/6/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "T3",
+      "rawText": "Steel lunch box with Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/7/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "B3",
+      "rawText": "Olive band selected",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/8/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "C3",
+      "rawText": "This Steel lunch box with Olive band is your quick note at $32.00.",
+      "boundFacts": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "itemPrice": 32,
+        "selectedColor": "Olive band"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "unusable-use-attribution",
+      "definitelyContextuallyUsableWithMetadata": false,
+      "reason": "Calls a lunch box the shopper's quick note. This does not form a coherent supported use relationship and copies the writing request onto a different product.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/4/rawRows/9/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "S2",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/10/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "T4",
+      "rawText": "Soft cotton crewneck in Oatmeal",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/11/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "B4",
+      "rawText": "In Oatmeal",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/12/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "C4",
+      "rawText": "This Soft cotton crewneck in Oatmeal is listed at $72.00.",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/13/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "T5",
+      "rawText": "Everyday steel bottle selected in Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/14/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "B5",
+      "rawText": "In Graphite",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/15/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "C5",
+      "rawText": "This Everyday steel bottle with Graphite selected has an item price of $36.00.",
+      "boundFacts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/4/rawRows/16/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "T6",
+      "rawText": "Everyday over-ear headphones with Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/17/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "B6",
+      "rawText": "Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/4/rawRows/18/text"
+    },
+    {
+      "caseId": "store-eval-04",
+      "field": "C6",
+      "rawText": "Everyday over-ear headphones with Navy selected",
+      "boundFacts": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "itemPrice": 89,
+        "selectedColor": "Navy"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Somewhere to write a quick note I want to keep."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-terse-caption",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Readable factual product/color caption beside the supplied original name, price and image. Sentence and repeated-price requirements explain strict rejection, but are not a separate factual error in this contextual judgment.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/4/rawRows/19/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "S1",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/0/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "T1",
+      "rawText": "Pocket field notes selected in Terracotta",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/1/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "B1",
+      "rawText": "Terracotta selected",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/2/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "C1",
+      "rawText": "This Terracotta Pocket field notes has an item price of $12.00.",
+      "boundFacts": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "itemPrice": 12,
+        "selectedColor": "Terracotta"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/5/rawRows/3/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "T2",
+      "rawText": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/4/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "B2",
+      "rawText": "In Tortoise",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/5/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "C2",
+      "rawText": "Everyday round sunglasses with Tortoise selected",
+      "boundFacts": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "itemPrice": 48,
+        "selectedColor": "Tortoise"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-terse-caption",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Readable factual product/color caption beside the supplied original name, price and image. Sentence and repeated-price requirements explain strict rejection, but are not a separate factual error in this contextual judgment.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "exact-item-price-required-once",
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/5/rawRows/6/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "T3",
+      "rawText": "Portable table light in Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/7/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "B3",
+      "rawText": "In Ivory",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/8/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "C3",
+      "rawText": "This Portable table light with Ivory selected has an item price of $64.00.",
+      "boundFacts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Ivory"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/5/rawRows/9/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "S2",
+      "rawText": "Your selected collection",
+      "boundFacts": null,
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/10/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "T4",
+      "rawText": "This Zip essentials pouch with Ochre has an item price of $26.00.",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-awkward-title",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "A full factual price sentence is awkward as a title, but it is understandable with correct pouch identity, selected color and item price; no invented feature.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "title-outside-bound-color-relations"
+      ],
+      "sourceJsonPointer": "/arms/5/rawRows/11/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "B4",
+      "rawText": "Ochre selected",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/12/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "C4",
+      "rawText": "This Zip essentials pouch with Ochre selected has an item price of $26.00.",
+      "boundFacts": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "itemPrice": 26,
+        "selectedColor": "Ochre"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/5/rawRows/13/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "T5",
+      "rawText": "Everyday daypack selected in Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/14/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "B5",
+      "rawText": "In Sand",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/15/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "C5",
+      "rawText": "This Everyday daypack in Sand has an item price of $68.00.",
+      "boundFacts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Sand"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/16/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "T6",
+      "rawText": "Soft cotton crewneck in Oatmeal",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/17/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "B6",
+      "rawText": "In Oatmeal",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "usable-factual",
+      "definitelyContextuallyUsableWithMetadata": true,
+      "reason": "Read against the bound facts: ordinary generic heading or understandable selected-product/color/item-price wording, without a new unsupported claim.",
+      "strictAccepted": true,
+      "strictRejections": [],
+      "sourceJsonPointer": "/arms/5/rawRows/18/text"
+    },
+    {
+      "caseId": "store-eval-05",
+      "field": "C6",
+      "rawText": "This Soft cotton crewneck with Oatmeal has an item price of $72.00.00",
+      "boundFacts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Oatmeal"
+      },
+      "publicRequest": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "judgment": "unusable-malformed-price",
+      "definitelyContextuallyUsableWithMetadata": false,
+      "reason": "Displayed $72.00.00 is not a valid monetary amount. The correct structured $72 price does not repair displayed copy.",
+      "strictAccepted": false,
+      "strictRejections": [
+        "copy-one-finished-sentence-or-length",
+        "copy-outside-bound-color-item-price-relations"
+      ],
+      "sourceJsonPointer": "/arms/5/rawRows/19/text"
+    }
+  ],
+  "policy": "Every raw field read against public request and bound facts. Accept understandable factual captions with original metadata even outside finite grammar; reject malformed displayed prices, incoherent use attribution and unsupported recommendations. Ambiguous lunch-box kitchen-table recommendation is a separate pending-verification judgment.",
+  "limitations": [
+    "No validator/benchmark/output edits, repairs, GPU/model execution or new formal acceptance rule.",
+    "Six inspected development-replay requests; posthoc target retrieval is a public-function proxy, not exhaustive relevance or human usefulness.",
+    "Full endpoint timers exclude browser paint and image transfer; contextual usability is retrospective, not a new runtime-validated latency measurement.",
+    "First-three target retrieval and individual useful target-card copy remain separate from whole-payload usability."
+  ]
+}
