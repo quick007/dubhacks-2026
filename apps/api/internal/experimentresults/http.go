@@ -24,9 +24,14 @@ func failure(w http.ResponseWriter, err error) {
 	if errors.Is(err, ErrConflict) {
 		status = 409
 	}
+	if errors.Is(err, errBadSource) {
+		reply(w, 400, map[string]string{"error": err.Error()})
+		return
+	}
 	reply(w, status, map[string]string{"error": publicError(err).Error()})
 }
 func (s *Service) Register(mux *http.ServeMux) {
+	s.registerPresentation(mux)
 	mux.HandleFunc("POST /api/experiment-results", func(w http.ResponseWriter, r *http.Request) {
 		// Local exporter sends no Origin. Reject browser-initiated writes rather
 		// than allowing cross-site requests to this unauthenticated loopback API.
@@ -71,7 +76,7 @@ func (s *Service) Register(mux *http.ServeMux) {
 		reply(w, 200, map[string]any{"reports": items, "source": source, "limit": limit, "humanConversionClaim": false})
 	})
 	mux.HandleFunc("GET /api/experiment-results/reports/{id}", func(w http.ResponseWriter, r *http.Request) {
-		saved, source, err := s.Get(r.Context(), r.PathValue("id"))
+		saved, source, err := s.selected(r.Context(), r.PathValue("id"), r.URL.Query().Get("source"))
 		if err != nil {
 			failure(w, err)
 			return
@@ -85,7 +90,7 @@ func (s *Service) Register(mux *http.ServeMux) {
 				reply(w, 400, map[string]string{"error": "reportId is required; choose one immutable report snapshot"})
 				return
 			}
-			saved, source, err := s.Get(r.Context(), id)
+			saved, source, err := s.selected(r.Context(), id, r.URL.Query().Get("source"))
 			if err != nil {
 				failure(w, err)
 				return
@@ -96,17 +101,21 @@ func (s *Service) Register(mux *http.ServeMux) {
 				return
 			}
 			var value any
-			switch view {
-			case "runs":
-				var raw struct {
-					Rows json.RawMessage `json:"rows"`
+			if report.Version == "shopper-checkout-cohort.v1" {
+				value = cohortView(saved.Report, view)
+			} else {
+				switch view {
+				case "runs":
+					var raw struct {
+						Rows json.RawMessage `json:"rows"`
+					}
+					_ = json.Unmarshal(saved.Report, &raw)
+					value = raw.Rows
+				case "comparison":
+					value = report.Arms
+				case "latency":
+					value = latency(saved.Report)
 				}
-				_ = json.Unmarshal(saved.Report, &raw)
-				value = raw.Rows
-			case "comparison":
-				value = report.Arms
-			case "latency":
-				value = latency(saved.Report)
 			}
 			reply(w, 200, map[string]any{"reportId": id, "experimentId": saved.ExperimentID, "source": source, "synthetic": true, "humanConversionClaim": false, "data": value})
 		})

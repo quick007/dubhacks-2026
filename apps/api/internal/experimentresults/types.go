@@ -98,7 +98,13 @@ func Decode(reader io.Reader) (Envelope, string, error) {
 	if err := json.Unmarshal(e.Report, &report); err != nil {
 		return e, "", fmt.Errorf("invalid report fields")
 	}
-	if err := validate(e, report); err != nil {
+	var err error
+	if report.Version == "shopper-checkout-cohort.v1" {
+		err = validateCohort(e)
+	} else {
+		err = validate(e, report)
+	}
+	if err != nil {
 		return e, "", err
 	}
 	encoded, _ := json.Marshal(e)

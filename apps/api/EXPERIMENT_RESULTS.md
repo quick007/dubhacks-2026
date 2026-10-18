@@ -1,5 +1,7 @@
 # Experiment results integration
 
+For the six-panel server-confirmed checkout cohort and strict Tiger presentation binding, see [COHORT_RESULTS.md](COHORT_RESULTS.md). The original twenty-slot contracts and historical smoke evidence below remain unchanged.
+
 The existing local Go API accepts saved `shopper-evidence-aggregate.v1` reports. Each immutable report keeps all twenty roster rows, both ten-session denominators, the actual `caseId` / `expectedRunId` / `session.run` IDs, raw sessions, evaluator findings, artifact verification results, errors, and harness arm summaries. `generic` retains the store's deterministic search behavior; `local-model` is the personalized arm. This adapter does not run shoppers, models, or an evaluator. Intake checks identity and transport structure; the harness owns evidence validation and outcome calculations.
 
 The original SQLite store, inference path, runner timings, and presentation UI are independent. No automatic schema migration runs at application startup. No extra local database or cloud service is required.
