@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { fetchPresentationResults, type PresentationResults } from "./lib/presentation-results";
 import { Deck } from "./slides/Deck";
 import { CohortResultsSlide } from "./slides/CohortResultsSlide";
-import { ModelSlide } from "./slides/ModelSlide";
 import { SpeedSlide } from "./slides/SpeedSlide";
 import { StakesSlide } from "./slides/StakesSlide";
 import { TitleSlide } from "./slides/TitleSlide";
@@ -31,7 +30,6 @@ export function CohortPresentation({ reportId }: { reportId: string }) {
     { id: "inputs", label: "Shopper context", render: () => <ShopperContextSlide /> },
     { id: "stakes", label: "Why speed matters", render: () => <StakesSlide /> },
     { id: "results", label: "Observed shopper results", render: () => <CohortResultsSlide result={result} /> },
-    { id: "model", label: "Model architecture", render: () => <ModelSlide /> },
     { id: "speed", label: "Ranking comparison", render: () => <SpeedSlide /> },
     { id: "flywheel", label: "The learning loop", render: () => <FlywheelSlide /> },
     { id: "trust", label: "Trust and responsibility", render: () => <TrustSlide /> },
