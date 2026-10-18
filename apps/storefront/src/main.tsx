@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ShoppingCart01Icon } from "@hugeicons/core-free-icons";
@@ -21,7 +21,10 @@ import { useRoute } from "./use-route";
 import type { StorefrontRoute } from "./routes";
 import { localModelEnabled, preserveLocalModelSearch } from "./local-model";
 import { useLocalModel } from "./use-local-model";
+import { demoTraceEnabled, traceContext, traceEvent, traceProducts } from "./session-trace-bridge";
 import "./styles.css";
+
+const TraceControls = lazy(() => import("./TraceControls"));
 
 const initialConfig = parseVariantConfig(window.location.search);
 
@@ -55,6 +58,10 @@ function App() {
     collection.id === "all"
       ? experience.products
       : experience.products.filter((product) => collection.productIds.includes(product.id));
+  useEffect(() => {
+    traceContext({ mode: localMode ? "local-model" : "baseline", order: config.recommendationOrder, shipping: config.showShipping });
+    traceProducts(route.page === "shop" ? visibleProducts.map((product) => product.id) : []);
+  }, [localMode, config.recommendationOrder, config.showShipping, route.page, visibleProducts.map((product) => product.id).join(",")]);
   const cartLines = getCartLines(cart);
   const subtotal = cartLines.reduce((sum, line) => sum + line.subtotal, 0);
   const quote = shippingQuote(subtotal, config.showShipping);
@@ -121,6 +128,7 @@ function App() {
         </a>
         <div className="header-actions">
           <DemoControls config={config} onChange={applyConfig} />
+          {demoTraceEnabled && <Suspense fallback={null}><TraceControls /></Suspense>}
           <button
             aria-label="View cart"
             className="cart-button"
@@ -149,13 +157,16 @@ function App() {
               if (!value.trim() && route.query) goToCollection({ query: "" });
             }}
             onSearchSubmit={() => {
+              traceEvent("search", { source: "submit" });
               goToCollection({ query: searchInput.trim() }, { scrollTo: "hero" });
             }}
             onExampleSearch={(query) => {
+              traceEvent("search", { source: "example" });
               setSearchInput(query);
               goToCollection({ query }, { scrollTo: "hero" });
             }}
             onClearSearch={() => {
+              traceEvent("search", { source: "clear" });
               setSearchInput("");
               goToCollection({ query: "" });
               document.getElementById("shop-search")?.focus();
@@ -163,10 +174,12 @@ function App() {
             onCollectionChange={(collectionId) =>
               goToCollection({ collectionId }, { scrollTo: "collection" })
             }
-            onVariantChange={(productId, variantId) =>
-              setSelectedVariants((items) => ({ ...items, [productId]: variantId }))
-            }
+            onVariantChange={(productId, variantId) => {
+              traceEvent("selection", { productId, variantId });
+              setSelectedVariants((items) => ({ ...items, [productId]: variantId }));
+            }}
             onAdd={(product, variantId, colorName) => {
+              traceEvent("cart-add", { productId: product.id, variantId, count: cart.length + 1 });
               setCart((items) => [...items, { productId: product.id, variantId }]);
               setAdded(`${product.name} (${colorName}) added to cart.`);
             }}
@@ -179,6 +192,7 @@ function App() {
             quote={quote}
             total={total}
             onPlaceOrder={() => {
+              traceEvent("checkout-success", { count: cart.length });
               navigate({ ...route, page: "confirmed" });
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
@@ -192,6 +206,7 @@ function App() {
             quote={quote}
             total={total}
             onBackToCollection={() => {
+              traceEvent("cart-clear", { count: 0 });
               setCart([]);
               setAdded("");
               goToCollection({}, { replace: true });
