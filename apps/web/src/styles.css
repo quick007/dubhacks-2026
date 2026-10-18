@@ -1,22 +1,83 @@
 @import "tailwindcss";
+@import "@fontsource-variable/mona-sans/wdth.css";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
+@import "@fontsource-variable/newsreader/opsz.css";
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Mona Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Mona Sans Variable", ui-sans-serif, sans-serif;
+  --font-display--font-variation-settings: "wdth" 87.5;
+  /* Shoppers' own words: their searches, names and stories. */
+  --font-voice: "Newsreader Variable", Georgia, serif;
+  --color-fog: #ecefea;
+  --color-ink: #17241d;
+  --color-muted: #5e6a63;
+  --color-line: #d5dad3;
+  --color-graphite: #8b938d;
+  --color-cobalt: #2448d6;
+  --color-signal: #e2462a;
+  --color-paper: #ffffff;
+  --animate-slide-in: slide-in 240ms ease-out;
+  --animate-rise: rise 420ms ease-out both;
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
 }
 body {
   margin: 0;
-  background: #f5f7f7;
-  color: #172b35;
+  background: var(--color-fog);
+  color: var(--color-ink);
   font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
-summary {
-  cursor: pointer;
+:where(a, button, [role="button"], [role="slider"]):focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 2px;
 }
-summary:focus-visible,
-a:focus-visible {
-  outline: 2px solid #0f766e;
-  outline-offset: 3px;
+.title-navigation-hint {
+  animation: title-navigation-nudge 2.4s ease-in-out 3;
+}
+@keyframes title-navigation-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+.comparison-drag-hint {
+  animation: comparison-wiggle 1.6s ease-in-out 3;
+}
+@keyframes comparison-wiggle {
+  0%,
+  60%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

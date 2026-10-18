@@ -13,6 +13,7 @@ import (
 	"os"
 	"path/filepath"
 	"storefront/api/internal/contracts"
+	"storefront/api/internal/scenario"
 	"strings"
 	"sync"
 	"time"
@@ -20,6 +21,9 @@ import (
 
 //go:embed fixtures/catalog.json
 var catalogJSON []byte
+
+//go:embed fixtures/scenarios/jacket.json
+var scenarioJSON []byte
 var errQueueFull = errors.New("local queue is full; wait for an active run to complete")
 
 func now() string { return time.Now().UTC().Format(time.RFC3339Nano) }
@@ -46,6 +50,10 @@ type App struct {
 }
 
 func NewApp(options AppOptions) (*App, error) {
+	mockScenario, err := scenario.Load(scenarioJSON)
+	if err != nil {
+		return nil, err
+	}
 	if options.DataDir == "" {
 		options.DataDir = os.Getenv("STOREFRONT_DATA_DIR")
 		if options.DataDir == "" {
@@ -66,7 +74,7 @@ func NewApp(options AppOptions) (*App, error) {
 		options.QueueCapacity = 20
 	}
 	if options.MockStepDelay == 0 {
-		options.MockStepDelay = 50 * time.Millisecond
+		options.MockStepDelay = 200 * time.Millisecond
 	}
 	release, err := acquireLock(dataDir)
 	if err != nil {
@@ -77,7 +85,7 @@ func NewApp(options AppOptions) (*App, error) {
 		release()
 		return nil, err
 	}
-	app := &App{store: store, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot), mux: http.NewServeMux(), releaseLock: release}
+	app := &App{store: store, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario), mux: http.NewServeMux(), releaseLock: release}
 	app.routes()
 	return app, nil
 }
@@ -197,10 +205,16 @@ func (a *App) comparison(w http.ResponseWriter, r *http.Request) {
 		jsonError(w, 500, err)
 		return
 	}
+	// Runs from earlier catalog fixtures stay stored; compare only the current experiment.
+	catalog, err := a.store.catalog()
+	if err != nil {
+		jsonError(w, 500, err)
+		return
+	}
 	rows := []contracts.ComparisonRow{}
 	indices := map[string]int{}
 	for _, run := range runs {
-		if run.Status != "completed" || run.Evaluation == nil || run.Adapter != "mock" {
+		if run.ExperimentID != catalog.Experiment.ID || run.Status != "completed" || run.Evaluation == nil || run.Adapter != "mock" {
 			continue
 		}
 		key := run.VariantID + "/" + run.PersonaSplit
@@ -269,6 +283,8 @@ func (a *App) artifact(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Content-Type", artifact.MimeType)
+	w.Header().Set("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; sandbox")
+	w.Header().Set("X-Content-Type-Options", "nosniff")
 	w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%q", filepath.Base(real)))
 	http.ServeContent(w, r, info.Name(), info.ModTime(), handle)
 }

@@ -3,6 +3,23 @@ import { z } from "zod";
 
 export const CONTRACT_VERSION = 1 as const;
 const id = z.string().min(1).max(100);
+export const RequirementSchema = z
+  .object({
+    id,
+    label: z.string(),
+    kind: z.enum(["hard", "preference"]),
+    attribute: z.string(),
+    value: z.string(),
+  })
+  .strict();
+export const ShoppingTaskSchema = z
+  .object({
+    query: z.string(),
+    requirements: z.array(RequirementSchema),
+    budget: z.number().positive().optional(),
+  })
+  .strict();
+export type ShoppingTask = z.infer<typeof ShoppingTaskSchema>;
 export const PersonaSchema = z
   .object({
     id,
@@ -11,6 +28,8 @@ export const PersonaSchema = z
     split: z.enum(["development", "held-out"]),
     traits: z.array(z.string()),
     history: z.array(z.string()).default([]),
+    bio: z.string().optional(),
+    task: ShoppingTaskSchema.optional(),
   })
   .strict();
 export type Persona = z.infer<typeof PersonaSchema>;
@@ -19,6 +38,7 @@ export const VariantConfigSchema = z
     headline: z.string().min(1).max(120),
     showShipping: z.boolean(),
     recommendationOrder: z.enum(["popular", "budget", "history"]),
+    showAttributes: z.boolean().optional(),
   })
   .strict();
 export type VariantConfig = z.infer<typeof VariantConfigSchema>;
@@ -51,6 +71,17 @@ export const ExperimentSchema = z
     "Persona splits must be disjoint",
   );
 export type Experiment = z.infer<typeof ExperimentSchema>;
+export const PageKindSchema = z.enum([
+  "home",
+  "category",
+  "search",
+  "product",
+  "cart",
+  "checkout",
+  "confirmation",
+  "other",
+]);
+export type PageKind = z.infer<typeof PageKindSchema>;
 export const StepEventSchema = z
   .object({
     id,
@@ -59,6 +90,16 @@ export const StepEventSchema = z
     at: z.string().datetime(),
     kind: z.enum(["navigation", "action", "observation", "failure", "status"]),
     message: z.string(),
+    page: z.object({ kind: PageKindSchema, label: z.string().optional() }).strict().optional(),
+    click: z
+      .object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) })
+      .strict()
+      .optional(),
+    screenshotArtifactId: id.optional(),
+    search: z
+      .object({ query: z.string(), resultCount: z.number().int().nonnegative() })
+      .strict()
+      .optional(),
   })
   .strict();
 export type StepEvent = z.infer<typeof StepEventSchema>;
@@ -73,6 +114,29 @@ export const ArtifactSchema = z
   })
   .strict();
 export type Artifact = z.infer<typeof ArtifactSchema>;
+const count = z.number().int().nonnegative();
+export const FindabilitySchema = z
+  .object({
+    outcome: z.enum([
+      "purchased",
+      "abandoned",
+      "constraint-failure",
+      "technical-failure",
+      "timeout",
+    ]),
+    requirements: z.array(
+      z.object({ id, met: z.boolean(), observed: z.string().optional() }).strict(),
+    ),
+    steps: count,
+    optimalSteps: count,
+    searches: count,
+    emptySearches: count,
+    revisits: count,
+    abandonedAt: id.optional(),
+    orderValue: z.number().nonnegative().optional(),
+  })
+  .strict();
+export type Findability = z.infer<typeof FindabilitySchema>;
 export const EvaluationResultSchema = z
   .object({
     runId: id,
@@ -81,6 +145,7 @@ export const EvaluationResultSchema = z
     score: z.number().min(0).max(1),
     failureReasons: z.array(z.string()),
     notes: z.array(z.string()),
+    findability: FindabilitySchema.optional(),
   })
   .strict();
 export type EvaluationResult = z.infer<typeof EvaluationResultSchema>;
@@ -152,7 +217,7 @@ export type ComparisonRow = z.infer<typeof ComparisonRowSchema>;
  * GET /api/runs -> Run[] (newest first)
  * POST /api/runs RunRequest -> 202 Run; queue full -> 429
  * GET /api/runs/:id -> Run; unknown -> 404
- * GET /api/comparison -> ComparisonRow[] (completed mock runs, split separately; browser smoke excluded)
+ * GET /api/comparison -> ComparisonRow[] (current experiment's completed mock runs, split separately; browser smoke excluded)
  * GET /api/artifacts/:artifactId -> allowlisted local artifact download
  * GET /health -> { ok: true }
  * Errors -> { error: string }. No write endpoint accepts generated code or arbitrary URLs.

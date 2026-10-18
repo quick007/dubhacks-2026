@@ -1,0 +1,823 @@
+{
+  "id": "jacket",
+  "products": [
+    {
+      "id": "harbor",
+      "name": "Harbor rain jacket",
+      "price": 120,
+      "attributes": { "color": ["navy"], "size": ["S", "L"], "waterproof": ["yes"] }
+    },
+    {
+      "id": "trail",
+      "name": "Trail windbreaker",
+      "price": 95,
+      "attributes": { "color": ["navy"], "size": ["M"], "waterproof": ["no"] }
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine parka",
+      "price": 210,
+      "attributes": { "color": ["black"], "size": ["M", "L"], "waterproof": ["yes"] }
+    },
+    {
+      "id": "coastline",
+      "name": "Coastline anorak",
+      "price": 110,
+      "attributes": { "color": ["olive"], "size": ["M", "L"], "waterproof": ["yes"] }
+    },
+    {
+      "id": "summit",
+      "name": "Summit fleece",
+      "price": 70,
+      "attributes": { "color": ["navy"], "size": ["M"], "waterproof": ["no"] }
+    },
+    {
+      "id": "ridgeline",
+      "name": "Ridgeline shell",
+      "price": 138,
+      "attributes": { "color": ["navy"], "size": ["S", "M", "L"], "waterproof": ["yes"] }
+    }
+  ],
+  "optimalSteps": {
+    "dev-commuter": 6,
+    "dev-hiker": 6,
+    "dev-student": 6,
+    "dev-searcher": 6,
+    "dev-gifter": 6,
+    "ho-angler": 6,
+    "ho-cyclist": 6,
+    "ho-walker": 6,
+    "ho-hurried": 6,
+    "ho-parent": 6
+  },
+  "paths": {
+    "dev-commuter": {
+      "baseline": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Opened Jackets; the cards show only name and price",
+            "click": { "x": 0.141, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Harbor rain jacket" },
+            "message": "Harbor rain jacket comes in S and L, not M",
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Went back to Jackets",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Trail windbreaker isn't waterproof",
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Went back to Jackets again",
+            "click": { "x": 0.141, "y": 0.763 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Summit fleece" },
+            "message": "Summit fleece isn't waterproof either",
+            "products": ["summit"]
+          }
+        ],
+        "reason": "Gave up after three product pages: the cards don't say which jackets are waterproof or come in medium."
+      },
+      "card-details": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Spotted navy, medium and waterproof on the Ridgeline shell card",
+            "click": { "x": 0.375, "y": 0.763 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Ridgeline shell" },
+            "message": "Added the Ridgeline shell in M to the cart",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["ridgeline"]
+          }
+        ],
+        "purchase": "ridgeline"
+      }
+    },
+    "dev-hiker": {
+      "baseline": {
+        "steps": [
+          { "page": { "kind": "home", "label": "Home" }, "message": "Opened the shop" },
+          {
+            "page": { "kind": "search", "label": "Search: waterproof jacket" },
+            "message": "Searched for waterproof jacket",
+            "click": { "x": 0.609, "y": 0.388 },
+            "search": { "query": "waterproof jacket", "resultCount": 4 },
+            "products": ["harbor", "alpine", "coastline", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Coastline anorak" },
+            "message": "Coastline anorak: olive, large, waterproof, $110",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["coastline"]
+          }
+        ],
+        "purchase": "coastline"
+      },
+      "card-details": {
+        "steps": [
+          { "page": { "kind": "home", "label": "Home" }, "message": "Opened the shop" },
+          {
+            "page": { "kind": "search", "label": "Search: waterproof jacket" },
+            "message": "Searched for waterproof jacket",
+            "click": { "x": 0.609, "y": 0.388 },
+            "search": { "query": "waterproof jacket", "resultCount": 4 },
+            "products": ["harbor", "alpine", "coastline", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Coastline anorak" },
+            "message": "Coastline anorak: olive, large, waterproof, $110",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["coastline"]
+          }
+        ],
+        "purchase": "coastline"
+      }
+    },
+    "dev-student": {
+      "baseline": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Looked for the cheapest jacket",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Trail windbreaker: medium, $95",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["trail"]
+          }
+        ],
+        "purchase": "trail"
+      },
+      "card-details": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Looked for the cheapest jacket",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Trail windbreaker: medium, $95",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["trail"]
+          }
+        ],
+        "purchase": "trail"
+      }
+    },
+    "dev-searcher": {
+      "baseline": {
+        "steps": [
+          { "page": { "kind": "home", "label": "Home" }, "message": "Opened the shop" },
+          {
+            "page": { "kind": "search", "label": "Search: rain shell navy" },
+            "message": "Searched for rain shell navy and got nothing",
+            "search": { "query": "rain shell navy", "resultCount": 0 }
+          },
+          {
+            "page": { "kind": "search", "label": "Search: navy jacket" },
+            "message": "Searched for navy jacket",
+            "click": { "x": 0.141, "y": 0.388 },
+            "search": { "query": "navy jacket", "resultCount": 4 },
+            "products": ["harbor", "trail", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Harbor rain jacket" },
+            "message": "Harbor rain jacket has no medium",
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "search", "label": "Search: navy jacket" },
+            "message": "Went back to the search results",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Trail windbreaker isn't waterproof",
+            "products": ["trail"]
+          }
+        ],
+        "reason": "Gave up after a search with no results and two products that didn't fit."
+      },
+      "card-details": {
+        "steps": [
+          { "page": { "kind": "home", "label": "Home" }, "message": "Opened the shop" },
+          {
+            "page": { "kind": "search", "label": "Search: rain shell navy" },
+            "message": "Searched for rain shell navy and got nothing",
+            "search": { "query": "rain shell navy", "resultCount": 0 }
+          },
+          {
+            "page": { "kind": "search", "label": "Search: navy jacket" },
+            "message": "The Ridgeline card shows medium and waterproof",
+            "click": { "x": 0.844, "y": 0.388 },
+            "search": { "query": "navy jacket", "resultCount": 4 },
+            "products": ["harbor", "trail", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Ridgeline shell" },
+            "message": "Added the Ridgeline shell in M to the cart",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["ridgeline"]
+          }
+        ],
+        "purchase": "ridgeline"
+      }
+    },
+    "dev-gifter": {
+      "baseline": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Opened Jackets",
+            "click": { "x": 0.141, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Harbor rain jacket" },
+            "message": "Harbor rain jacket: small, waterproof, $120",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["harbor"]
+          }
+        ],
+        "purchase": "harbor"
+      },
+      "card-details": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Opened Jackets",
+            "click": { "x": 0.141, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Harbor rain jacket" },
+            "message": "Harbor rain jacket: small, waterproof, $120",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["harbor"]
+          }
+        ],
+        "purchase": "harbor"
+      }
+    },
+    "ho-angler": {
+      "baseline": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Opened Jackets",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Trail windbreaker isn't waterproof",
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Went back to Jackets",
+            "click": { "x": 0.609, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Alpine parka" },
+            "message": "Alpine parka is black and over budget",
+            "products": ["alpine"]
+          }
+        ],
+        "reason": "Gave up after two product pages without finding a navy waterproof jacket in large."
+      },
+      "card-details": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "The Harbor card shows navy, large and waterproof",
+            "click": { "x": 0.141, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Harbor rain jacket" },
+            "message": "Added the Harbor rain jacket in L to the cart",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["harbor"]
+          }
+        ],
+        "purchase": "harbor"
+      }
+    },
+    "ho-cyclist": {
+      "baseline": {
+        "steps": [
+          { "page": { "kind": "home", "label": "Home" }, "message": "Opened the shop" },
+          {
+            "page": { "kind": "search", "label": "Search: black waterproof jacket" },
+            "message": "Searched for black waterproof jacket",
+            "click": { "x": 0.141, "y": 0.388 },
+            "search": { "query": "black waterproof jacket", "resultCount": 1 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "product", "label": "Alpine parka" },
+            "message": "Alpine parka: black, medium, waterproof, $210",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["alpine"]
+          }
+        ],
+        "purchase": "alpine"
+      },
+      "card-details": {
+        "steps": [
+          { "page": { "kind": "home", "label": "Home" }, "message": "Opened the shop" },
+          {
+            "page": { "kind": "search", "label": "Search: black waterproof jacket" },
+            "message": "Searched for black waterproof jacket",
+            "click": { "x": 0.141, "y": 0.388 },
+            "search": { "query": "black waterproof jacket", "resultCount": 1 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "product", "label": "Alpine parka" },
+            "message": "Alpine parka: black, medium, waterproof, $210",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["alpine"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["alpine"]
+          }
+        ],
+        "purchase": "alpine"
+      }
+    },
+    "ho-walker": {
+      "baseline": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Opened Jackets",
+            "click": { "x": 0.141, "y": 0.763 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Summit fleece" },
+            "message": "Summit fleece isn't waterproof",
+            "products": ["summit"]
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Went back to Jackets",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Trail windbreaker isn't waterproof either",
+            "products": ["trail"]
+          }
+        ],
+        "reason": "Gave up after two product pages that weren't waterproof."
+      },
+      "card-details": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "The Coastline card shows medium and waterproof",
+            "click": { "x": 0.844, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Coastline anorak" },
+            "message": "Added the Coastline anorak in M to the cart",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["coastline"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["coastline"]
+          }
+        ],
+        "purchase": "coastline"
+      }
+    },
+    "ho-hurried": {
+      "baseline": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Picked the jacket that looked most like a rain shell",
+            "click": { "x": 0.375, "y": 0.763 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Ridgeline shell" },
+            "message": "Ridgeline shell: medium, waterproof, $138",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["ridgeline"]
+          }
+        ],
+        "purchase": "ridgeline"
+      },
+      "card-details": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Picked the cheapest card listing medium",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Added the Trail windbreaker without checking waterproofing",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["trail"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["trail"]
+          }
+        ],
+        "purchase": "trail"
+      }
+    },
+    "ho-parent": {
+      "baseline": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Opened Jackets",
+            "click": { "x": 0.141, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Harbor rain jacket" },
+            "message": "Harbor rain jacket has no medium",
+            "products": ["harbor"]
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "Went back to Jackets",
+            "click": { "x": 0.375, "y": 0.388 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Trail windbreaker" },
+            "message": "Trail windbreaker isn't waterproof",
+            "products": ["trail"]
+          }
+        ],
+        "reason": "Gave up after two product pages without a waterproof medium."
+      },
+      "card-details": {
+        "steps": [
+          {
+            "page": { "kind": "home", "label": "Home" },
+            "message": "Opened the shop",
+            "click": { "x": 0.125, "y": 0.44 }
+          },
+          {
+            "page": { "kind": "category", "label": "Jackets" },
+            "message": "The Ridgeline card shows navy, medium and waterproof",
+            "click": { "x": 0.375, "y": 0.763 },
+            "products": ["harbor", "trail", "alpine", "coastline", "summit", "ridgeline"]
+          },
+          {
+            "page": { "kind": "product", "label": "Ridgeline shell" },
+            "message": "Added the Ridgeline shell in M to the cart",
+            "click": { "x": 0.625, "y": 0.615 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "cart", "label": "Cart" },
+            "message": "Reviewed the cart",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "checkout", "label": "Checkout" },
+            "message": "Placed the demo order",
+            "click": { "x": 0.141, "y": 0.365 },
+            "products": ["ridgeline"]
+          },
+          {
+            "page": { "kind": "confirmation", "label": "Order confirmed" },
+            "message": "Saw the demo order confirmation",
+            "products": ["ridgeline"]
+          }
+        ],
+        "purchase": "ridgeline"
+      }
+    }
+  }
+}

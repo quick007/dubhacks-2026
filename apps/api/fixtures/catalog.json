@@ -1,70 +1,370 @@
 {
   "experiment": {
-    "id": "demo-experiment",
-    "name": "Synthetic storefront study",
+    "id": "jacket-study",
+    "name": "Finding the right rain jacket",
     "baselineVariantId": "baseline",
-    "variantIds": ["baseline", "shipping-visible"],
-    "developmentPersonaIds": ["dev-budget", "dev-explorer"],
-    "heldOutPersonaIds": ["heldout-budget", "heldout-repeat"],
+    "variantIds": ["baseline", "card-details"],
+    "developmentPersonaIds": [
+      "dev-commuter",
+      "dev-hiker",
+      "dev-student",
+      "dev-searcher",
+      "dev-gifter"
+    ],
+    "heldOutPersonaIds": ["ho-angler", "ho-cyclist", "ho-walker", "ho-hurried", "ho-parent"],
     "seed": 42,
     "createdAt": "2026-10-17T00:00:00.000Z",
     "contractVersion": 1
   },
   "personas": [
     {
-      "id": "dev-budget",
-      "name": "Budget shopper",
-      "goal": "Find an affordable item with clear delivery information",
+      "id": "dev-commuter",
+      "name": "Bob",
+      "goal": "Waterproof navy jacket, medium, under $150",
       "split": "development",
-      "traits": ["budget", "shipping-sensitive"],
-      "history": []
+      "traits": ["specific", "patient"],
+      "history": [],
+      "task": {
+        "query": "waterproof navy jacket, medium, under $150",
+        "budget": 150,
+        "requirements": [
+          {
+            "id": "color",
+            "label": "Navy",
+            "kind": "hard",
+            "attribute": "color",
+            "value": "navy"
+          },
+          {
+            "id": "size",
+            "label": "Size M",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "M"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Bob walks to class and a campus job through Seattle rain. A broke UW student, Bob needs a waterproof navy jacket in medium, under $150."
     },
     {
-      "id": "dev-explorer",
-      "name": "Curious explorer",
-      "goal": "Discover a popular product",
+      "id": "dev-hiker",
+      "name": "Priya",
+      "goal": "Waterproof jacket in large, olive if possible, under $120",
       "split": "development",
-      "traits": ["discovery"],
-      "history": []
+      "traits": ["outdoors"],
+      "history": [],
+      "task": {
+        "query": "waterproof jacket in large, olive if possible, under $120",
+        "budget": 120,
+        "requirements": [
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          },
+          {
+            "id": "size",
+            "label": "Size L",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "L"
+          },
+          {
+            "id": "color",
+            "label": "Olive",
+            "kind": "preference",
+            "attribute": "color",
+            "value": "olive"
+          }
+        ]
+      },
+      "bio": "Priya hikes Mount Si most weekends and wants a waterproof jacket in large, olive if possible, under $120."
     },
     {
-      "id": "heldout-budget",
-      "name": "Held-out practical shopper",
-      "goal": "Buy a useful gift with clear shipping",
-      "split": "held-out",
-      "traits": ["shipping-sensitive"],
-      "history": []
+      "id": "dev-student",
+      "name": "Leo",
+      "goal": "Any medium jacket under $100",
+      "split": "development",
+      "traits": ["budget"],
+      "history": [],
+      "task": {
+        "query": "any medium jacket under $100",
+        "budget": 100,
+        "requirements": [
+          {
+            "id": "size",
+            "label": "Size M",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "M"
+          }
+        ]
+      },
+      "bio": "Leo just moved to Seattle for grad school and has $100 for any jacket in medium."
     },
     {
-      "id": "heldout-repeat",
-      "name": "Held-out returning shopper",
-      "goal": "Find a recommendation related to supplied history",
+      "id": "dev-searcher",
+      "name": "Hana",
+      "goal": "Navy rain shell, medium",
+      "split": "development",
+      "traits": ["searches first"],
+      "history": [],
+      "task": {
+        "query": "navy rain shell, medium",
+        "budget": 200,
+        "requirements": [
+          {
+            "id": "color",
+            "label": "Navy",
+            "kind": "hard",
+            "attribute": "color",
+            "value": "navy"
+          },
+          {
+            "id": "size",
+            "label": "Size M",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "M"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Hana skips the menus and goes straight to search for a navy rain shell in medium."
+    },
+    {
+      "id": "dev-gifter",
+      "name": "Sam",
+      "goal": "Small waterproof jacket under $150",
+      "split": "development",
+      "traits": ["gift"],
+      "history": [],
+      "task": {
+        "query": "small waterproof jacket under $150",
+        "budget": 150,
+        "requirements": [
+          {
+            "id": "size",
+            "label": "Size S",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "S"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Sam is buying a small waterproof jacket as a birthday gift, with $150 to spend."
+    },
+    {
+      "id": "ho-angler",
+      "name": "Tomás",
+      "goal": "Navy waterproof jacket, large, under $150",
       "split": "held-out",
-      "traits": ["returning"],
-      "history": ["everyday-tote"]
+      "traits": ["specific"],
+      "history": [],
+      "task": {
+        "query": "navy waterproof jacket, large, under $150",
+        "budget": 150,
+        "requirements": [
+          {
+            "id": "color",
+            "label": "Navy",
+            "kind": "hard",
+            "attribute": "color",
+            "value": "navy"
+          },
+          {
+            "id": "size",
+            "label": "Size L",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "L"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Tomás fishes off the Edmonds pier at dawn and needs a navy waterproof jacket in large, under $150."
+    },
+    {
+      "id": "ho-cyclist",
+      "name": "Marcus",
+      "goal": "Black waterproof jacket, medium, under $250",
+      "split": "held-out",
+      "traits": ["searches first"],
+      "history": [],
+      "task": {
+        "query": "black waterproof jacket, medium, under $250",
+        "budget": 250,
+        "requirements": [
+          {
+            "id": "color",
+            "label": "Black",
+            "kind": "hard",
+            "attribute": "color",
+            "value": "black"
+          },
+          {
+            "id": "size",
+            "label": "Size M",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "M"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Marcus rides the Burke-Gilman home after late shifts and needs a black waterproof jacket in medium, under $250."
+    },
+    {
+      "id": "ho-walker",
+      "name": "Ruth",
+      "goal": "Waterproof medium jacket under $120",
+      "split": "held-out",
+      "traits": ["budget"],
+      "history": [],
+      "task": {
+        "query": "waterproof medium jacket under $120",
+        "budget": 120,
+        "requirements": [
+          {
+            "id": "size",
+            "label": "Size M",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "M"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Ruth walks two dogs around Green Lake twice a day, rain or shine, and needs a waterproof medium jacket under $120."
+    },
+    {
+      "id": "ho-hurried",
+      "name": "Dana",
+      "goal": "Waterproof medium jacket under $150",
+      "split": "held-out",
+      "traits": ["impatient"],
+      "history": [],
+      "task": {
+        "query": "waterproof medium jacket under $150",
+        "budget": 150,
+        "requirements": [
+          {
+            "id": "size",
+            "label": "Size M",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "M"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Dana has five minutes between meetings to buy a waterproof medium jacket under $150."
+    },
+    {
+      "id": "ho-parent",
+      "name": "Grace",
+      "goal": "Navy waterproof jacket, medium, under $150",
+      "split": "held-out",
+      "traits": ["specific"],
+      "history": [],
+      "task": {
+        "query": "navy waterproof jacket, medium, under $150",
+        "budget": 150,
+        "requirements": [
+          {
+            "id": "color",
+            "label": "Navy",
+            "kind": "hard",
+            "attribute": "color",
+            "value": "navy"
+          },
+          {
+            "id": "size",
+            "label": "Size M",
+            "kind": "hard",
+            "attribute": "size",
+            "value": "M"
+          },
+          {
+            "id": "waterproof",
+            "label": "Waterproof",
+            "kind": "hard",
+            "attribute": "waterproof",
+            "value": "yes"
+          }
+        ]
+      },
+      "bio": "Grace stands on soccer sidelines every Saturday and needs a navy waterproof jacket in medium, under $150."
     }
   ],
   "variants": [
     {
       "id": "baseline",
-      "experimentId": "demo-experiment",
-      "name": "Baseline",
+      "experimentId": "jacket-study",
+      "name": "Today's shop",
       "isBaseline": true,
       "config": {
-        "headline": "Everyday goods for curious people",
-        "showShipping": false,
+        "headline": "Jackets for every kind of weather",
+        "showShipping": true,
         "recommendationOrder": "popular"
       }
     },
     {
-      "id": "shipping-visible",
-      "experimentId": "demo-experiment",
-      "name": "Visible shipping",
+      "id": "card-details",
+      "experimentId": "jacket-study",
+      "name": "Details on cards",
       "isBaseline": false,
       "config": {
-        "headline": "Everyday goods, clear delivery",
+        "headline": "Jackets for every kind of weather",
         "showShipping": true,
-        "recommendationOrder": "budget"
+        "recommendationOrder": "popular",
+        "showAttributes": true
       }
     }
   ]
