@@ -1,0 +1,287 @@
+{
+  "version": "paired-actual-store-shopper-heldout.v1",
+  "contractVersion": "shopper-session.v1",
+  "initialPairs": 10,
+  "initialRuns": 20,
+  "replicatesPerArm": 1,
+  "defaultBaseUrl": "http://127.0.0.1:4312/",
+  "allowedAlternativeBaseUrl": "http://shop.dubhacks.localhost:1356/",
+  "commonSettings": {
+    "headline": "Good things. Wherever life takes you.",
+    "showShipping": false,
+    "recommendationOrder": "popular",
+    "quantity": 1,
+    "viewport": {
+      "width": 1280,
+      "height": 960
+    }
+  },
+  "budget": {
+    "maxActions": 24,
+    "maxWallSeconds": 120,
+    "wallStart": "navigation dispatch; includes native waits/queue and shopper actions; model startup reported separately",
+    "onLimit": "timeout; retain partial actions and artifacts in the fixed20-run denominator"
+  },
+  "isolation": {
+    "freshReactStateRequired": true,
+    "initialCartEmptyMustBeObserved": true,
+    "freshTabDoesNotMeanFreshStorage": true,
+    "actualReceiptFieldsRequired": [
+      "kind",
+      "sharedStorage",
+      "storageCleared",
+      "initialCartEmpty",
+      "tabId",
+      "contextId",
+      "evidenceArtifactIds",
+      "note"
+    ],
+    "supportedKinds": [
+      "fresh-tab",
+      "fresh-storage-context"
+    ],
+    "freshTabRequiredTruth": {
+      "sharedStorage": true,
+      "storageCleared": false
+    },
+    "crossArmDecisionsOrMemoryPermitted": false
+  },
+  "shopperInstructions": [
+    "Navigate actual headed Chrome and submit only the assigned observable query to search.",
+    "Use private needs to choose independently from visible products and colors. Never receive evaluator gold, correct product IDs, target selectors, another arm decision or a first-button purchase script.",
+    "Choose one qualifying item with quantity1 and only confirm a fake demo order, or abstain with a factual reason if the goal or a hard requirement cannot be verified.",
+    "Do not infer stock, size, capacity, delivery or performance facts from an image, product name or Add to cart button.",
+    "Record actual actions, selected color, choice or abstention, unknowns, missing artifacts and failures. Respect the fixed24-action/120-second budget."
+  ],
+  "schedule": [
+    {
+      "caseId": "holdout-v2-01",
+      "split": "held-out",
+      "seed": 2026102001,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-01-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-01-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-02",
+      "split": "held-out",
+      "seed": 2026102002,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-02-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-02-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-03",
+      "split": "held-out",
+      "seed": 2026102003,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-03-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-03-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-04",
+      "split": "held-out",
+      "seed": 2026102004,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-04-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-04-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-05",
+      "split": "held-out",
+      "seed": 2026102005,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-05-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-05-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-06",
+      "split": "held-out",
+      "seed": 2026102006,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-06-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-06-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-07",
+      "split": "held-out",
+      "seed": 2026102007,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-07-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-07-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-08",
+      "split": "held-out",
+      "seed": 2026102008,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-08-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-08-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-09",
+      "split": "held-out",
+      "seed": 2026102009,
+      "armOrder": [
+        "generic",
+        "local-model"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-09-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-09-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        }
+      ]
+    },
+    {
+      "caseId": "holdout-v2-10",
+      "split": "held-out",
+      "seed": 2026102010,
+      "armOrder": [
+        "local-model",
+        "generic"
+      ],
+      "runs": [
+        {
+          "runId": "holdout-v2-10-local-model",
+          "arm": "local-model",
+          "initialStatus": "unrun"
+        },
+        {
+          "runId": "holdout-v2-10-generic",
+          "arm": "generic",
+          "initialStatus": "unrun"
+        }
+      ]
+    }
+  ],
+  "predeclaredOrderCounts": {
+    "genericThenLocal": 5,
+    "localThenGeneric": 5
+  },
+  "executionPerformed": false,
+  "limitations": [
+    "Synthetic scenario-held-out, catalog-known evaluation; no human conversion or unseen-product generalization claim.",
+    "Each scenario is one independently authored intent/color/budget combination with one replicate per arm; intervals will be wide.",
+    "Catalog names/prices/colors known to model training. New phrasing is not proof of lexical or semantic independence from training.",
+    "No performance facts are inferred from photographs; declared basic product identity and displayed price/color are sufficient for positive cases.",
+    "Private color preferences are never sent to the recommender, so treatment has no private-color information advantage."
+  ],
+  "fixedInitialSmoke": false,
+  "randomization": {
+    "generator": "Python stdlib random.Random; shuffle five AB and five BA slots",
+    "seed": 2026101802,
+    "pairExecutionOrder": "Runner freezes its separate seeded permutation before dispatch; within-pair orders here are immutable."
+  },
+  "experimentId": "actual-store-heldout-shopper-v2"
+}

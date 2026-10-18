@@ -1,0 +1,71 @@
+{
+  "version": "synthetic-shopper-cohort-preregistration.v1",
+  "experimentId": "actual-store-heldout-shopper-v2",
+  "synthetic": true,
+  "fixedDesign": {
+    "blocks": [
+      "store_shopper_eval_v2",
+      "store_shopper_eval_v3",
+      "store_shopper_eval_v4",
+      "store_shopper_eval_v5",
+      "store_shopper_eval_v6",
+      "store_shopper_eval_v7"
+    ],
+    "pairs": 60,
+    "assignedSessions": 120,
+    "purchaseFeasiblePairs": 48,
+    "negativePairs": 12,
+    "negativeArmAssignments": 24,
+    "globalRandomSeed": 20261018,
+    "execution": "sequential",
+    "maxActionsPerSession": 24,
+    "maxWallSecondsPerSession": 120,
+    "sameCatalogPricesAgentSettingsAcrossArms": true
+  },
+  "runtimePilot": {
+    "pairs": 5,
+    "selection": "First five pairs from the frozen full-cohort randomized schedule.",
+    "includedInMainAssignedDenominator": true,
+    "retuningReplacementOrOutcomeBasedResizing": false,
+    "sensitivity": "Report those five pairs separately and the remaining 55 pairs separately alongside the full 60-pair result."
+  },
+  "deadline": {
+    "utc": "2026-10-18T13:00:00Z",
+    "local": "2026-10-18T06:00:00-07:00",
+    "timezone": "America/Los_Angeles",
+    "policy": "Stop future session launches at the deadline. Preserve partial active-session outcomes and every unattempted assignment in fixed denominators; never label an unattempted session executed."
+  },
+  "primaryIntentOutcome": "A verified hard-constraint-correct simulated checkout for a purchase-feasible scenario, or an explicit justified abstention for a negative scenario; ordinary abandonment is not intent success.",
+  "distinctPurchaseMetrics": {
+    "checkoutEvidence": "Server-confirmed simulated checkout, with independent catalog/constraint validation for intent-valid checkout. DOM confirmation alone must not be described as server-confirmed.",
+    "purchaseFeasibleCheckout": "Intent-valid, server-confirmed simulated checkout among the 48 purchase-feasible assigned sessions per arm; failures and unattempted assignments remain zero.",
+    "allAssignedValidRevenue": "Sum of independently validated item revenue from intent-valid, server-confirmed simulated orders divided by all 60 assigned sessions per arm; every other session contributes zero.",
+    "allServerConfirmedRevenue": "Separately report all server-confirmed simulated item revenue divided by all 60 assigned sessions per arm, including constraint-invalid orders, so intent validity cannot hide observed purchases.",
+    "scope": "Quantity one; displayed catalog item price excludes delivery; no real money or purchases."
+  },
+  "negativeAbstentionAudit": {
+    "coverage": "Review all 24 negative arm outcomes, including both arms of all 12 negative scenarios; do not select reviews by arm or apparent effect.",
+    "blinding": "An independent reviewer receives the final stated reason, relevant visible observations and hard constraints with arm/treatment/model identity removed.",
+    "fixedRubric": [
+      "No confirmed simulated order.",
+      "The final reason explicitly identifies the applicable price impossibility or required fact that visible product information cannot verify.",
+      "The reason is consistent with saved visible observations and the scenario hard constraints.",
+      "A vague abandonment, navigation failure, interruption, timeout, or absence of a usable explicit reason does not count as justified abstention."
+    ],
+    "allowedAuditAdjustment": "Preserve the original aggregate. The separate audit may only lower expectedOutcomeMet for an unjustified abstention; it must never promote a purchase or an unrecorded outcome.",
+    "evidence": "Retain blinded review inputs, per-case rubric verdicts and reasons with the final audit."
+  },
+  "secondaryMetrics": {
+    "preferences": "Private color preference satisfaction is a rubric proxy. Report met/known/total counts and assignment-wide versus purchase-conditional denominators; unknowns must remain explicit.",
+    "effort": "Observed actions and measured total elapsed time. Keep failures, timeouts, interruptions and unattempted assignments distinct; exclude partial observation spans from full-runtime statistics.",
+    "latency": "Preserve browser-native readiness scope and missing observations; no physical-paint claim."
+  },
+  "uncertaintyAndClaims": [
+    "Report raw paired counts and uncertainty intervals with the fixed assigned denominators. Per-scenario paired bootstrap intervals are conditional on these hand-authored scenarios and do not turn repeated product cases into independent catalog or customer samples.",
+    "The catalog is known to model training and products repeat across scenarios. These are new scenario wordings/private color preferences for known products, not unseen customers, products or broad generalization.",
+    "The treatment measures combined storefront-experience impact under a frozen snapshot. It does not isolate ranking, copy, imagery, latency or another causal mechanism.",
+    "Preference satisfaction is a synthetic rubric proxy; no human conversion lift, retention or real revenue claim is permitted."
+  ],
+  "optionalAfterMain": "Optional A/A checks or repeats may start only after the fixed 60-pair main cohort is complete and only before the deadline. Keep them separate, with no cohort resizing or stopping based on observed uplift.",
+  "priorEvidence": "Preserve the original 20-attempt no-uplift suite unchanged. No outcome-conditioned replacement, repair or rerun of this preregistered cohort."
+}

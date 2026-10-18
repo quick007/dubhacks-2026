@@ -1,0 +1,310 @@
+[
+  {
+    "caseId": "holdout-v2-01",
+    "privateShopperNeeds": {
+      "goal": "Choose a back-carried daypack for an afternoon bus trip. Prefer Forest because I like dark green. Do not infer laptop dimensions, capacity or stock.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: carry-bag.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "carry-bag"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $75; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 75
+        },
+        {
+          "id": "back-carried",
+          "label": "Choose a backpack/daypack rather than a hand-carried bag.",
+          "attribute": "isBackpack",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Forest; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Forest"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-02",
+    "privateShopperNeeds": {
+      "goal": "Choose a throw blanket for my reading chair. Prefer Ocean blue to match the room. No measured warmth or fabric-performance claim is required.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: sofa-throw.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "sofa-throw"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $60; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 60
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Ocean blue; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Ocean blue"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-03",
+    "privateShopperNeeds": {
+      "goal": "Choose a packed-meal container for bringing lunch. Prefer Navy band. Do not assume leakproofing, microwave safety or a measured capacity.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: packed-meal container.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "packed-meal container"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $35; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 35
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Navy band; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Navy band"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-04",
+    "privateShopperNeeds": {
+      "goal": "Choose over-ear headphones for listening to music at home. Prefer Graphite. Do not infer noise cancellation, wireless support or battery life.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: over-ear listening.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "over-ear listening"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $95; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 95
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Graphite; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Graphite"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-05",
+    "privateShopperNeeds": {
+      "goal": "Choose canvas low-top footwear. Prefer Olive. This demo purchase only requires the displayed color, not an unstated shoe size or fit guarantee.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: footwear.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "footwear"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $100; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 100
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Olive; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Olive"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-06",
+    "privateShopperNeeds": {
+      "goal": "Choose a crewneck sweatshirt as a casual top. Prefer Slate blue. No clothing size, insulation rating or stock status is required in this demo.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: crewneck top.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "crewneck top"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $80; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 80
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Slate blue; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Slate blue"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-07",
+    "privateShopperNeeds": {
+      "goal": "Choose round sunglasses. Prefer Amber. Do not infer a UV certification, prescription compatibility or impact rating.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: eyewear.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "eyewear"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $55; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 55
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Amber; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Amber"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-08",
+    "privateShopperNeeds": {
+      "goal": "Choose a drying towel. Prefer Blue stripe. Do not assume dimensions, absorbency measurements or fast-drying performance.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: drying-towel.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "drying-towel"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $30; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 30
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Blue stripe; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Blue stripe"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v2-09",
+    "privateShopperNeeds": {
+      "goal": "Find a packed-meal container only if its displayed item price is strictly below $32. Do not substitute an unrelated cheaper item. If none qualifies, decline without ordering.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: packed-meal container.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "packed-meal container"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be strictly below $32; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "less-than",
+          "value": 32
+        }
+      ],
+      "preferences": []
+    }
+  },
+  {
+    "caseId": "holdout-v2-10",
+    "privateShopperNeeds": {
+      "goal": "Choose over-ear headphones only if current stock is explicitly stated in visible product information. An Add to cart button is not stock confirmation. If stock cannot be verified, decline without ordering.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: over-ear listening.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "over-ear listening"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $95; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 95
+        },
+        {
+          "id": "stock-evidence",
+          "label": "Current stock must be explicitly verified in public information.",
+          "attribute": "stockVerified",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "preferences": []
+    }
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "version": "synthetic-shopper-preregistration.v1",
+  "scenarioFreezeUtc": "2026-10-18T08:12:00.537435+00:00",
+  "phase": "scenarios-frozen; current source receipt finalized separately before dispatch",
+  "scenarioHeldOut": true,
+  "catalogKnown": true,
+  "modelTrainingUsesThisPacket": false,
+  "sourceDataset": "Independently authored after balanced-v5 fit was reported complete; evaluator files remain outside recommender inputs.",
+  "cohort": {
+    "pairs": 10,
+    "sessions": 20,
+    "satisfiable": 8,
+    "knownEmpty": 1,
+    "unknownRequiredFact": 1
+  },
+  "budget": {
+    "maxActions": 24,
+    "maxWallSeconds": 120
+  },
+  "failurePolicy": "Every assigned session stays in denominator; timeout/interruption/failure/abstention separated. No outcome-conditioned scenario replacement or rerun.",
+  "primary": "Verified simulated checkout conversion and item revenue per assigned session, including all zero-purchase sessions.",
+  "secondary": [
+    "Verified hard-constraint outcome including correct abstention",
+    "Private preference checks: met, known and total; conditional and assignment-wide denominators stated",
+    "Observed shopper steps and measured elapsed time; never treat partial observation span as full runtime",
+    "Browser-native rank/first-three/full readiness; scope and missing values retained"
+  ],
+  "analysis": "Raw paired counts; per-arm Wilson 95% binomial intervals for checkout; paired difference and paired bootstrap intervals for revenue/preference/effort with fixed seed recorded by analysis; no significance or human lift claim.",
+  "catalogAndPrices": "Identical sixteen products/48 colors in both arms; displayed item price excludes delivery; quantity one.",
+  "rationales": [
+    {
+      "caseId": "holdout-v4-01",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-02",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-03",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-04",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-05",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-06",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-07",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-08",
+      "rationale": "Displayed name/type and item price establish positive eligibility; color remains a private soft preference.",
+      "publicColorPreference": false,
+      "eligibility": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v4-09",
+      "rationale": "Known price boundary makes the requested function impossible without substitution.",
+      "publicColorPreference": false,
+      "eligibility": "known-empty"
+    },
+    {
+      "caseId": "holdout-v4-10",
+      "rationale": "Required factual field is not exposed in the catalog; correct result is justified abstention.",
+      "publicColorPreference": false,
+      "eligibility": "unverifiable-required-fact"
+    }
+  ],
+  "priorSuite": "Prior 20-attempt no-uplift results remain immutable; prior waterproof visibility failure motivates using only visible identity/price/color for positive cases, not changing outcomes.",
+  "combinedCohort": {
+    "blocks": 6,
+    "pairs": 60,
+    "assignedSessions": 120,
+    "purchaseFeasiblePairs": 48,
+    "abstentionPairs": 12,
+    "positiveCoverage": "Each known product paired with each of its three private soft color preferences exactly once."
+  },
+  "runtimePolicy": {
+    "pilot": "First five pairs from a separately frozen randomized full60 schedule are included in the main cohort and may not be retuned or replaced.",
+    "deadline": "2026-10-18T06:00:00-07:00",
+    "onDeadline": "Stop new dispatch; preserve partial/in-progress outcomes and all unattempted assigned sessions with zero purchase in assignment-wide denominators. Never claim the remainder executed."
+  },
+  "conversionInterpretation": "Each block has eight purchase-feasible and two abstention pairs. Thus maximum correct-checkout conversion is48/60=80% per arm; correct abstention is a separate objective, never a purchase.",
+  "experimentId": "actual-store-heldout-shopper-v2"
+}

@@ -1,0 +1,310 @@
+[
+  {
+    "caseId": "holdout-v3-01",
+    "privateShopperNeeds": {
+      "goal": "Choose a mug for drinking a hot beverage. Prefer Ivory to go with my pale dishes. Do not infer dishwasher safety or capacity.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: drinking-mug.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "drinking-mug"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $25; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 25
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Ivory; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Ivory"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-02",
+    "privateShopperNeeds": {
+      "goal": "Choose a notebook for written garden reminders. Prefer Olive. Do not infer page count, ruling or weather resistance.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: note-taking.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "note-taking"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $15; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 15
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Olive; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Olive"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-03",
+    "privateShopperNeeds": {
+      "goal": "Choose a rain jacket by its visible product identity. Prefer Ochre. No waterproof performance, stock availability or clothing size is required for this simulated color-only purchase.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: rain-jacket.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "rain-jacket"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $135; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 135
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Ochre; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Ochre"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-04",
+    "privateShopperNeeds": {
+      "goal": "Choose a bottle intended for drinking water. Prefer Cream. Do not infer capacity, insulation duration or leakproofing.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: drinking-water bottle.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "drinking-water bottle"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $38; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 38
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Cream; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Cream"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-05",
+    "privateShopperNeeds": {
+      "goal": "Choose a tote/carryall to bring books home. Prefer Natural. Do not infer the dimensions or a guaranteed load capacity.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: grocery-carryall.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "grocery-carryall"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $45; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 45
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Natural; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Natural"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-06",
+    "privateShopperNeeds": {
+      "goal": "Choose a table light for a console table. Prefer Terracotta. Do not infer brightness measurements, battery duration or electrical certifications.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: table-light.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "table-light"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $65; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 65
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Terracotta; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Terracotta"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-07",
+    "privateShopperNeeds": {
+      "goal": "Choose a travel duffel rather than a backpack or small organizer. Prefer Sand. Do not infer airline compliance, measured capacity or water resistance.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: carry-bag.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "carry-bag"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $88; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 88
+        },
+        {
+          "id": "travel-form",
+          "label": "The product must visibly identify as a canvas travel bag.",
+          "attribute": "category",
+          "operator": "equals",
+          "value": "Canvas travel bag"
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Sand; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Sand"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-08",
+    "privateShopperNeeds": {
+      "goal": "Choose a zipped organizer pouch for loose charging leads. Prefer Sage. Do not assume internal compartments, exact dimensions or a measured capacity.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: cable-organizer.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "cable-organizer"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $28; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 28
+        }
+      ],
+      "preferences": [
+        {
+          "id": "preferred-color",
+          "label": "Prefer the visible color named Sage; another color is acceptable if needed.",
+          "attribute": "selectedColor",
+          "operator": "equals",
+          "value": "Sage"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "holdout-v3-09",
+    "privateShopperNeeds": {
+      "goal": "Find a drying towel only if its displayed item price is strictly below $28. Do not replace it with an unrelated product just to pass the price limit. Otherwise decline without ordering.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: drying-towel.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "drying-towel"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be strictly below $28; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "less-than",
+          "value": 28
+        }
+      ],
+      "preferences": []
+    }
+  },
+  {
+    "caseId": "holdout-v3-10",
+    "privateShopperNeeds": {
+      "goal": "Choose canvas footwear only if a size of EU 40 is explicitly listed and selectable in visible product information. A color selection is not a size selection. If that size cannot be verified, decline without ordering.",
+      "hardConstraints": [
+        {
+          "id": "function",
+          "label": "Choose the requested basic product type/function: footwear.",
+          "attribute": "functions",
+          "operator": "includes",
+          "value": "footwear"
+        },
+        {
+          "id": "item-price",
+          "label": "Displayed item price must be at most $100; delivery is outside the budget.",
+          "attribute": "itemPrice",
+          "operator": "at-most",
+          "value": 100
+        },
+        {
+          "id": "size-evidence",
+          "label": "The size EU 40 must be explicitly listed and selectable.",
+          "attribute": "sizes",
+          "operator": "includes",
+          "value": "EU 40"
+        }
+      ],
+      "preferences": []
+    }
+  }
+]
