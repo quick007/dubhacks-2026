@@ -1,0 +1,312 @@
+{
+  "products": [
+    {
+      "attributes": {
+        "color": [
+          "navy"
+        ],
+        "size": [
+          "S",
+          "L"
+        ],
+        "waterproof": [
+          "yes"
+        ]
+      },
+      "name": "Harbor rain jacket",
+      "price": 120
+    },
+    {
+      "attributes": {
+        "color": [
+          "navy"
+        ],
+        "size": [
+          "M"
+        ],
+        "waterproof": [
+          "no"
+        ]
+      },
+      "name": "Trail windbreaker",
+      "price": 95
+    },
+    {
+      "attributes": {
+        "color": [
+          "black"
+        ],
+        "size": [
+          "M",
+          "L"
+        ],
+        "waterproof": [
+          "yes"
+        ]
+      },
+      "name": "Alpine parka",
+      "price": 210
+    },
+    {
+      "attributes": {
+        "color": [
+          "olive"
+        ],
+        "size": [
+          "M",
+          "L"
+        ],
+        "waterproof": [
+          "yes"
+        ]
+      },
+      "name": "Coastline anorak",
+      "price": 110
+    },
+    {
+      "attributes": {
+        "color": [
+          "navy"
+        ],
+        "size": [
+          "M"
+        ],
+        "waterproof": [
+          "no"
+        ]
+      },
+      "name": "Summit fleece",
+      "price": 70
+    },
+    {
+      "attributes": {
+        "color": [
+          "navy"
+        ],
+        "size": [
+          "S",
+          "M",
+          "L"
+        ],
+        "waterproof": [
+          "yes"
+        ]
+      },
+      "name": "Ridgeline shell",
+      "price": 138
+    }
+  ],
+  "schemaVersion": "jacket-public-inputs.v1",
+  "tasks": [
+    {
+      "budget": 150,
+      "query": "waterproof navy jacket, medium, under $150",
+      "requirements": [
+        {
+          "attribute": "color",
+          "kind": "hard",
+          "label": "Navy",
+          "value": "navy"
+        },
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size M",
+          "value": "M"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "budget": 120,
+      "query": "waterproof jacket in large, olive if possible, under $120",
+      "requirements": [
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        },
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size L",
+          "value": "L"
+        },
+        {
+          "attribute": "color",
+          "kind": "preference",
+          "label": "Olive",
+          "value": "olive"
+        }
+      ]
+    },
+    {
+      "budget": 100,
+      "query": "any medium jacket under $100",
+      "requirements": [
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size M",
+          "value": "M"
+        }
+      ]
+    },
+    {
+      "budget": 200,
+      "query": "navy rain shell, medium",
+      "requirements": [
+        {
+          "attribute": "color",
+          "kind": "hard",
+          "label": "Navy",
+          "value": "navy"
+        },
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size M",
+          "value": "M"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "budget": 150,
+      "query": "small waterproof jacket under $150",
+      "requirements": [
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size S",
+          "value": "S"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "budget": 150,
+      "query": "navy waterproof jacket, large, under $150",
+      "requirements": [
+        {
+          "attribute": "color",
+          "kind": "hard",
+          "label": "Navy",
+          "value": "navy"
+        },
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size L",
+          "value": "L"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "budget": 250,
+      "query": "black waterproof jacket, medium, under $250",
+      "requirements": [
+        {
+          "attribute": "color",
+          "kind": "hard",
+          "label": "Black",
+          "value": "black"
+        },
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size M",
+          "value": "M"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "budget": 120,
+      "query": "waterproof medium jacket under $120",
+      "requirements": [
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size M",
+          "value": "M"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "budget": 150,
+      "query": "waterproof medium jacket under $150",
+      "requirements": [
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size M",
+          "value": "M"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "budget": 150,
+      "query": "navy waterproof jacket, medium, under $150",
+      "requirements": [
+        {
+          "attribute": "color",
+          "kind": "hard",
+          "label": "Navy",
+          "value": "navy"
+        },
+        {
+          "attribute": "size",
+          "kind": "hard",
+          "label": "Size M",
+          "value": "M"
+        },
+        {
+          "attribute": "waterproof",
+          "kind": "hard",
+          "label": "Waterproof",
+          "value": "yes"
+        }
+      ]
+    }
+  ]
+}
