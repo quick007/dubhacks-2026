@@ -14,6 +14,7 @@ import (
 	"os"
 	"path/filepath"
 	"storefront/api/internal/contracts"
+	"storefront/api/internal/democheckout"
 	"storefront/api/internal/experimentresults"
 	"storefront/api/internal/scenario"
 	"storefront/api/internal/shoppingevents"
@@ -51,6 +52,7 @@ type App struct {
 	store       *Store
 	results     *experimentresults.Service
 	shopping    *shoppingevents.Service
+	checkout    *democheckout.Service
 	queue       *JobQueue
 	mux         *http.ServeMux
 	releaseLock func()
@@ -146,7 +148,15 @@ func NewApp(options AppOptions) (*App, error) {
 		release()
 		return nil, err
 	}
-	app := &App{store: store, results: results, shopping: shopping, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario, frames), mux: http.NewServeMux(), releaseLock: release}
+	checkout, err := democheckout.New(filepath.Join(dataDir, "demo-checkout"))
+	if err != nil {
+		shopping.Close()
+		results.Close()
+		store.db.Close()
+		release()
+		return nil, err
+	}
+	app := &App{store: store, results: results, shopping: shopping, checkout: checkout, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario, frames), mux: http.NewServeMux(), releaseLock: release}
 	app.routes()
 	return app, nil
 }
@@ -166,6 +176,7 @@ func jsonError(w http.ResponseWriter, status int, err error) {
 func (a *App) routes() {
 	a.results.Register(a.mux)
 	a.shopping.Register(a.mux)
+	a.checkout.Register(a.mux)
 	a.mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) { jsonResponse(w, 200, map[string]bool{"ok": true}) })
 	a.mux.HandleFunc("GET /api/catalog", func(w http.ResponseWriter, r *http.Request) {
 		catalog, err := a.store.catalog()
