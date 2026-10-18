@@ -12,6 +12,7 @@ import (
 	"slices"
 	"storefront/api/internal/contracts"
 	"storefront/api/internal/optimizer"
+	"strings"
 	"testing"
 	"time"
 )
@@ -84,7 +85,7 @@ func TestMockEndToEnd(t *testing.T) {
 	}
 	snapshots := map[string]contracts.Run{}
 	for _, variant := range catalog.Variants {
-		for _, persona := range []contracts.Persona{catalog.Personas[0], catalog.Personas[2]} {
+		for _, persona := range []contracts.Persona{catalog.Personas[0], catalog.Personas[5]} {
 			response := request(t, app, "POST", "/api/runs", contracts.RunRequest{ExperimentID: catalog.Experiment.ID, VariantID: variant.ID, PersonaID: persona.ID, Adapter: "mock"})
 			if response.Code != 202 {
 				t.Fatal(response.Body.String())
@@ -102,8 +103,18 @@ func TestMockEndToEnd(t *testing.T) {
 		if !reflect.DeepEqual(run.Config, snapshot.Config) || !reflect.DeepEqual(run.Persona, snapshot.Persona) || run.Seed != snapshot.Seed || run.BaselineVariantID != "baseline" {
 			t.Fatal("immutable snapshot changed")
 		}
-		if run.Evaluation == nil || !run.Evaluation.Synthetic || len(run.Artifacts) != 1 {
-			t.Fatal("missing synthetic evaluation or result artifact")
+		resultIndex := slices.IndexFunc(run.Artifacts, func(item contracts.Artifact) bool { return item.Kind == "result" })
+		if run.Evaluation == nil || !run.Evaluation.Synthetic || run.Evaluation.Findability == nil || resultIndex < 0 {
+			t.Fatal("missing synthetic evaluation, findability or result artifact")
+		}
+		for _, event := range run.Events {
+			if event.Page != nil && !slices.ContainsFunc(run.Artifacts, func(item contracts.Artifact) bool { return item.ID == event.ScreenshotArtifactID }) {
+				t.Fatal("step screenshot does not resolve to an artifact")
+			}
+		}
+		frame := request(t, app, "GET", "/api/artifacts/"+run.Events[1].ScreenshotArtifactID, nil)
+		if frame.Code != 200 || frame.Header().Get("Content-Type") != "image/svg+xml" || frame.Header().Get("X-Content-Type-Options") != "nosniff" || !strings.Contains(frame.Header().Get("Content-Security-Policy"), "sandbox") {
+			t.Fatalf("frame served unsafely: %d %v", frame.Code, frame.Header())
 		}
 		statuses := []string{}
 		for i, event := range run.Events {
@@ -117,7 +128,7 @@ func TestMockEndToEnd(t *testing.T) {
 		if !reflect.DeepEqual(statuses, []string{"running", "completed"}) {
 			t.Fatalf("wrong lifecycle: %v", statuses)
 		}
-		artifact := request(t, app, "GET", "/api/artifacts/"+run.Artifacts[0].ID, nil)
+		artifact := request(t, app, "GET", "/api/artifacts/"+run.Artifacts[resultIndex].ID, nil)
 		if artifact.Code != 200 {
 			t.Fatal(artifact.Body.String())
 		}
@@ -160,7 +171,7 @@ func TestMockEndToEnd(t *testing.T) {
 func TestQueueAndStrictInput(t *testing.T) {
 	app := testApp(t, t.TempDir(), 1)
 	defer app.Close()
-	body := map[string]any{"experimentId": "demo-experiment", "variantId": "baseline", "personaId": "dev-budget"}
+	body := map[string]any{"experimentId": "jacket-study", "variantId": "baseline", "personaId": "dev-commuter"}
 	if response := request(t, app, "POST", "/api/runs", body); response.Code != 202 {
 		t.Fatal(response.Body.String())
 	}
@@ -242,5 +253,57 @@ func TestListenAddress(t *testing.T) {
 				t.Fatalf("accepted invalid PORT %q", value)
 			}
 		}
+	}
+}
+
+func TestComparisonIgnoresOtherExperiments(t *testing.T) {
+	app := testApp(t, t.TempDir(), 20)
+	defer app.Close()
+	old := contracts.Run{ID: "old", ExperimentID: "retired-study", VariantID: "baseline", PersonaSplit: "development", Adapter: "mock", Synthetic: true, ContractVersion: 1, Status: "completed", CreatedAt: now(),
+		Events: []contracts.StepEvent{}, Artifacts: []contracts.Artifact{}, ProposedChanges: []contracts.ProposedChange{},
+		Evaluation: &contracts.EvaluationResult{RunID: "old", Synthetic: true, TaskCompleted: true, Score: 1, FailureReasons: []string{}, Notes: []string{}}}
+	if err := app.store.saveRun(old); err != nil {
+		t.Fatal(err)
+	}
+	if rows := decode[[]contracts.ComparisonRow](t, request(t, app, "GET", "/api/comparison", nil)); len(rows) != 0 {
+		t.Fatalf("comparison mixed in another experiment: %+v", rows)
+	}
+}
+
+func TestMockSessionsRunInParallel(t *testing.T) {
+	app, err := NewApp(AppOptions{DataDir: t.TempDir(), MockStepDelay: 40 * time.Millisecond, QueueCapacity: 20})
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer app.Close()
+	catalog := decode[contracts.Catalog](t, request(t, app, "GET", "/api/catalog", nil))
+	for _, persona := range catalog.Personas[:4] {
+		response := request(t, app, "POST", "/api/runs", contracts.RunRequest{ExperimentID: catalog.Experiment.ID, VariantID: "baseline", PersonaID: persona.ID, Adapter: "mock"})
+		if response.Code != 202 {
+			t.Fatal(response.Body.String())
+		}
+	}
+	runs := waitCompleted(t, app, 4)
+	at := func(value string) time.Time {
+		parsed, err := time.Parse(time.RFC3339Nano, value)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return parsed
+	}
+	firstDone := at(runs[0].CompletedAt)
+	for _, run := range runs {
+		if done := at(run.CompletedAt); done.Before(firstDone) {
+			firstDone = done
+		}
+	}
+	overlapping := 0
+	for _, run := range runs {
+		if at(run.StartedAt).Before(firstDone) {
+			overlapping++
+		}
+	}
+	if overlapping < 4 {
+		t.Fatalf("only %d of 4 sessions started before the first finished", overlapping)
 	}
 }

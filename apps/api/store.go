@@ -30,7 +30,8 @@ func openStore(dataDir string) (*Store, error) {
 		db.Close()
 		return nil, err
 	}
-	if _, err = db.Exec("INSERT OR IGNORE INTO catalog (id, body) VALUES (1, ?)", string(catalogJSON)); err != nil {
+	// Runs snapshot their persona and config, so refreshing the fixture leaves history intact.
+	if _, err = db.Exec("INSERT INTO catalog (id, body) VALUES (1, ?) ON CONFLICT(id) DO UPDATE SET body = excluded.body", string(catalogJSON)); err != nil {
 		db.Close()
 		return nil, err
 	}

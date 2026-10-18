@@ -10,17 +10,23 @@ import (
 	"path/filepath"
 	"slices"
 	"storefront/api/internal/contracts"
+	"storefront/api/internal/scenario"
 	"time"
 )
 
 type Result struct {
-	TaskCompleted  bool     `json:"taskCompleted"`
-	FailureReasons []string `json:"failureReasons"`
-	Notes          []string `json:"notes"`
+	TaskCompleted      bool     `json:"taskCompleted"`
+	FailureReasons     []string `json:"failureReasons"`
+	Notes              []string `json:"notes"`
+	PurchasedProductID string   `json:"purchasedProductId,omitempty"`
 }
 type Event struct {
-	Kind    string `json:"kind"`
-	Message string `json:"message"`
+	Kind           string            `json:"kind"`
+	Message        string            `json:"message"`
+	Page           *contracts.Page   `json:"page,omitempty"`
+	Click          *contracts.Point  `json:"click,omitempty"`
+	Search         *contracts.Search `json:"search,omitempty"`
+	ScreenshotFile string            `json:"screenshotFile,omitempty"`
 }
 type Artifact struct {
 	Kind     string `json:"kind"`
@@ -43,45 +49,73 @@ type Adapter interface {
 	Execute(context.Context, Context) (Result, error)
 }
 
-type Mock struct{ StepDelay time.Duration }
+// Mock replays the scripted scenario path for the run's persona and variant, drawing one frame per step.
+type Mock struct {
+	StepDelay time.Duration
+	Scenario  *scenario.Scenario
+}
 
 func (m Mock) Execute(ctx context.Context, c Context) (Result, error) {
-	missing := slices.Contains(c.Run.Persona.Traits, "shipping-sensitive") && !c.Run.Config.ShowShipping
-	observation := "Variant configuration hides shipping information"
-	if c.Run.Config.ShowShipping {
-		observation = "Variant configuration displays shipping information"
+	path, ok := m.Scenario.Path(c.Run.PersonaID, c.Run.VariantID)
+	if !ok {
+		return Result{}, fmt.Errorf("no mock scenario path for persona %s on variant %s", c.Run.PersonaID, c.Run.VariantID)
 	}
-	last := Event{"action", "Synthetic persona completed the fake checkout task"}
-	if missing {
-		last = Event{"failure", "Synthetic shipping-sensitive persona stopped because delivery information was hidden"}
-	}
-	for _, event := range []Event{{"navigation", "Synthetic agent opened the local demo storefront"}, {"observation", observation}, {"action", "Synthetic persona inspected recommendations ordered by " + c.Run.Config.RecommendationOrder}, last} {
-		if err := c.Emit(event); err != nil {
+	for i, step := range path.Steps {
+		file := fmt.Sprintf("step-%02d.svg", i)
+		if err := os.WriteFile(filepath.Join(c.ArtifactDirectory, file), m.Scenario.Frame(step, c.Run.Config.ShowAttributes), 0600); err != nil {
 			return Result{}, err
 		}
-		select {
-		case <-ctx.Done():
-			return Result{}, ctx.Err()
-		case <-time.After(m.StepDelay):
+		if err := c.SaveArtifact(Artifact{"screenshot", file, "image/svg+xml"}); err != nil {
+			return Result{}, err
+		}
+		kind := "navigation"
+		if step.Search != nil || slices.Contains([]string{"cart", "checkout", "confirmation"}, step.Page.Kind) {
+			kind = "action"
+		}
+		if err := c.Emit(Event{Kind: kind, Message: step.Message, Page: &step.Page, Click: step.Click, Search: step.Search, ScreenshotFile: file}); err != nil {
+			return Result{}, err
+		}
+		if err := wait(ctx, m.StepDelay); err != nil {
+			return Result{}, err
 		}
 	}
-	failures := []string{}
-	if missing {
-		failures = append(failures, "Shipping information hidden for a shipping-sensitive synthetic persona")
+	result := Result{
+		TaskCompleted:      path.Purchase != "",
+		FailureReasons:     []string{},
+		Notes:              []string{"Scripted mock shopper on drawn page frames; not measured human behavior.", fmt.Sprintf("Recorded seed: %d", c.Run.Seed)},
+		PurchasedProductID: path.Purchase,
 	}
-	result := Result{!missing, failures, []string{"Deterministic mock rules; this is not measured human conversion.", fmt.Sprintf("Recorded seed: %d", c.Run.Seed)}}
+	if path.Reason != "" {
+		result.FailureReasons = append(result.FailureReasons, path.Reason)
+		if err := c.Emit(Event{Kind: "failure", Message: path.Reason}); err != nil {
+			return Result{}, err
+		}
+	}
+	return result, saveResult(c, result)
+}
+
+func wait(ctx context.Context, delay time.Duration) error {
+	select {
+	case <-ctx.Done():
+		return ctx.Err()
+	case <-time.After(delay):
+		return nil
+	}
+}
+
+func saveResult(c Context, result Result) error {
 	body, err := json.MarshalIndent(struct {
 		Synthetic bool   `json:"synthetic"`
 		RunID     string `json:"runId"`
 		Result
 	}{true, c.Run.ID, result}, "", "  ")
 	if err != nil {
-		return Result{}, err
+		return err
 	}
 	if err = os.WriteFile(filepath.Join(c.ArtifactDirectory, "result.json"), body, 0600); err != nil {
-		return Result{}, err
+		return err
 	}
-	return result, c.SaveArtifact(Artifact{"result", "result.json", "application/json"})
+	return c.SaveArtifact(Artifact{"result", "result.json", "application/json"})
 }
 
 // Browser delegates only the local scripted task to a small TypeScript process.
