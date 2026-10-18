@@ -1,0 +1,2004 @@
+{
+  "schemaVersion": "actual-store-six-card-copy-diagnostic.v1/packet",
+  "copyAdapter": {
+    "reportPath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/short-copy-fit-v1/results.json",
+    "reportSha256": "0fdcfae187933de20bb756c1b271c8951f684dc05d063a451aaef502d8c1ed74",
+    "checkpointPath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/short-copy-fit-v1/adapter.safetensors",
+    "checkpointSha256": "85ce8215add1d4ce561441d6972c8e2958dbb73966bd89f53595ef65b7fddb57",
+    "trainingDistribution": "synthetic daypack STBC raw-focused-prefix; current ordinary-chat actualstore transfer unproven"
+  },
+  "rankReportPath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/report.json",
+  "rankReportSha256": "3a14a970a95b1289795d618ba6de8bfc12c07c4e7b8cafc8c4e0951645f4906d",
+  "rankCheckpointPath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/actual-store-function-v3-attempt-1/learned.pt",
+  "rankCheckpointSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e",
+  "publicCasesPath": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_function_v3/public-cases.json",
+  "publicCasesSha256": "b03e1ace415f5644aa07b7dea322df917e1406dd90db4767903f0d874a07d44b",
+  "modelInputSha256": "205572ed535b6f40cd56ede51208c348ad05998ad4d205f193a8b5bfe3e79fb7",
+  "modelFiles": {
+    "modelPath": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "shards": {
+      "model-00001-of-00002.safetensors": {
+        "bytes": 5349771222,
+        "sha256": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd"
+      },
+      "model-00002-of-00002.safetensors": {
+        "bytes": 600449850,
+        "sha256": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"
+      }
+    },
+    "smallFileSha256": {
+      "config.json": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+      "model.safetensors.index.json": "dd023913fb87cfdae27fb11dcf695117c925833796ccac3c64117d6652d8ff1e",
+      "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+      "tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+      "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+      "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "priorWeightVerificationSha256": "77af896c850e2a1ef6eda39c22b15a02d9eb5c27acc6f5d9f8885bb1340175cf",
+    "freshShardVerificationRequiredBeforeNativeLoad": true
+  },
+  "sourceSha256": {
+    "store_copy_diagnostic.py": "73580fe864ea1ccdf829045973234751cdf2acc1c887569faf2d929d90fe3a73",
+    "store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+    "store_model_bridge.py": "91124b1793bf9960761547f0feb4c1e8609593bd70f4f7abf3c1b97c40c38eaf",
+    "branch_local_copy.py": "2fdee8ee4c224163c1ea9adbbebea764aa112abe416df99558ef42b1a6b691ea",
+    "short_copy_fit.py": "a1ed8ef718a5eb248e0f5c0c92ee46cd6b61bb5da35b193203c65503781e156a",
+    "parallel_decode.py": "7c2049fa82c03f17a4ff6973ba1c0d80b329039782df973a1df22ab045dd338b",
+    "fusion.py": "217abdd3134fc1ee53cfa545c118c1596c05dde010bf0d47382124140c9948e6",
+    "fused_prefix.py": "fac303dfa4e0c8812b5bd0295497df88aae501299a4ddeff3ebc28c067b70f2d",
+    "native_batch_diagnosis.py": "0e010754c957d7c8677a3463679fbe1eb098eff65dcb4117ed24fcebe78afca4"
+  },
+  "bindings": [
+    {
+      "status": "prepared",
+      "bound": {
+        "caseId": "store-eval-00",
+        "request": {
+          "query": "Pick the product that best fits my stated use.",
+          "preferences": [
+            "A drinking cup for the kitchen table."
+          ],
+          "itemBudget": null,
+          "hardRequirements": []
+        },
+        "cards": [
+          {
+            "productIndex": 0,
+            "facts": {
+              "name": "Trail mug",
+              "category": "For the slow mornings",
+              "itemPrice": 24,
+              "selectedColor": "Sage"
+            },
+            "action": {
+              "productId": "mug",
+              "variantId": "mug-sage",
+              "image": {
+                "id": "mug-front",
+                "src": "/products/mug-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 4,
+            "facts": {
+              "name": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "itemPrice": 36,
+              "selectedColor": "Graphite"
+            },
+            "action": {
+              "productId": "bottle",
+              "variantId": "bottle-graphite",
+              "image": {
+                "id": "bottle-studio",
+                "src": "/products/bottle-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 7,
+            "facts": {
+              "name": "Portable table light",
+              "category": "Cordless table lamp",
+              "itemPrice": 64,
+              "selectedColor": "Ivory"
+            },
+            "action": {
+              "productId": "lamp",
+              "variantId": "lamp-ivory",
+              "image": {
+                "id": "lamp-studio",
+                "src": "/products/lamp-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 2,
+            "facts": {
+              "name": "Pocket field notes",
+              "category": "Keep a good thought",
+              "itemPrice": 12,
+              "selectedColor": "Terracotta"
+            },
+            "action": {
+              "productId": "notebook",
+              "variantId": "notebook-terracotta",
+              "image": {
+                "id": "notebook-front",
+                "src": "/products/notebook-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 8,
+            "facts": {
+              "name": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "itemPrice": 32,
+              "selectedColor": "Olive band"
+            },
+            "action": {
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band",
+              "image": {
+                "id": "lunchbox-studio",
+                "src": "/products/lunchbox-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 13,
+            "facts": {
+              "name": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "itemPrice": 48,
+              "selectedColor": "Tortoise"
+            },
+            "action": {
+              "productId": "sunglasses",
+              "variantId": "sunglasses-tortoise",
+              "image": {
+                "id": "sunglasses-studio",
+                "src": "/products/sunglasses-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          }
+        ],
+        "decisionReceipt": {
+          "scores16": [
+            0.8577779531478882,
+            0.001686618896201253,
+            0.01670844480395317,
+            0.0007984146359376609,
+            0.05258449167013168,
+            0.0003135007864329964,
+            0.0017564729787409306,
+            0.03742581233382225,
+            0.013932408764958382,
+            0.002693625632673502,
+            0.00019559367501642555,
+            0.0011566519970074296,
+            0.00033641239861026406,
+            0.006800932809710503,
+            0.001859382726252079,
+            0.003974047489464283
+          ],
+          "topSix": {
+            "productIndices": [
+              0,
+              4,
+              7,
+              2,
+              8,
+              13
+            ],
+            "eligibleRank": [
+              0,
+              4,
+              7,
+              2,
+              8,
+              13,
+              15,
+              9,
+              14,
+              6,
+              1,
+              11,
+              3,
+              12,
+              5,
+              10
+            ],
+            "rawRank": [
+              0,
+              4,
+              7,
+              2,
+              8,
+              13,
+              15,
+              9,
+              14,
+              6,
+              1,
+              11,
+              3,
+              12,
+              5,
+              10
+            ],
+            "eligibleCount": 16,
+            "shortfall": 0,
+            "guards": [
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              }
+            ],
+            "tieBreak": "external source index; never an encoder input"
+          },
+          "rankingMode": "learned full-public-text16-function head; locked before copy",
+          "targetNotUsedByCopy": true
+        },
+        "productSelection": "caller supplied learned ranking receipt; never chosen by copy",
+        "imageColorPolicy": "first declared color and first declared image; deterministic metadata binding, untrained",
+        "knownCopyFacts": [
+          "name",
+          "category",
+          "itemPrice",
+          "selectedColor"
+        ],
+        "unknown": [
+          "sizes",
+          "stock",
+          "shipping"
+        ],
+        "pixelInputs": false
+      }
+    },
+    {
+      "status": "prepared",
+      "bound": {
+        "caseId": "store-eval-01",
+        "request": {
+          "query": "Pick the product that best fits my stated use.",
+          "preferences": [
+            "For carrying water when I head out."
+          ],
+          "itemBudget": null,
+          "hardRequirements": []
+        },
+        "cards": [
+          {
+            "productIndex": 4,
+            "facts": {
+              "name": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "itemPrice": 36,
+              "selectedColor": "Graphite"
+            },
+            "action": {
+              "productId": "bottle",
+              "variantId": "bottle-graphite",
+              "image": {
+                "id": "bottle-studio",
+                "src": "/products/bottle-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 1,
+            "facts": {
+              "name": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "itemPrice": 68,
+              "selectedColor": "Sand"
+            },
+            "action": {
+              "productId": "pack",
+              "variantId": "pack-sand",
+              "image": {
+                "id": "pack-front",
+                "src": "/products/pack-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 9,
+            "facts": {
+              "name": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "itemPrice": 89,
+              "selectedColor": "Navy"
+            },
+            "action": {
+              "productId": "headphones",
+              "variantId": "headphones-navy",
+              "image": {
+                "id": "headphones-studio",
+                "src": "/products/headphones-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 7,
+            "facts": {
+              "name": "Portable table light",
+              "category": "Cordless table lamp",
+              "itemPrice": 64,
+              "selectedColor": "Ivory"
+            },
+            "action": {
+              "productId": "lamp",
+              "variantId": "lamp-ivory",
+              "image": {
+                "id": "lamp-studio",
+                "src": "/products/lamp-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 11,
+            "facts": {
+              "name": "Soft cotton crewneck",
+              "category": "Cotton crewneck sweatshirt",
+              "itemPrice": 72,
+              "selectedColor": "Oatmeal"
+            },
+            "action": {
+              "productId": "sweatshirt",
+              "variantId": "sweatshirt-oatmeal",
+              "image": {
+                "id": "sweatshirt-studio",
+                "src": "/products/sweatshirt-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 8,
+            "facts": {
+              "name": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "itemPrice": 32,
+              "selectedColor": "Olive band"
+            },
+            "action": {
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band",
+              "image": {
+                "id": "lunchbox-studio",
+                "src": "/products/lunchbox-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          }
+        ],
+        "decisionReceipt": {
+          "scores16": [
+            0.033058732748031616,
+            0.33175453543663025,
+            0.00550147145986557,
+            0.0005026718135923147,
+            0.3730584681034088,
+            0.0017765177180990577,
+            0.0009447927586734295,
+            0.05790922790765762,
+            0.03341495618224144,
+            0.076032854616642,
+            0.002435761271044612,
+            0.048907581716775894,
+            3.530103276716545e-05,
+            0.013659640215337276,
+            0.013059322722256184,
+            0.007948510348796844
+          ],
+          "topSix": {
+            "productIndices": [
+              4,
+              1,
+              9,
+              7,
+              11,
+              8
+            ],
+            "eligibleRank": [
+              4,
+              1,
+              9,
+              7,
+              11,
+              8,
+              0,
+              13,
+              14,
+              15,
+              2,
+              10,
+              5,
+              6,
+              3,
+              12
+            ],
+            "rawRank": [
+              4,
+              1,
+              9,
+              7,
+              11,
+              8,
+              0,
+              13,
+              14,
+              15,
+              2,
+              10,
+              5,
+              6,
+              3,
+              12
+            ],
+            "eligibleCount": 16,
+            "shortfall": 0,
+            "guards": [
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              }
+            ],
+            "tieBreak": "external source index; never an encoder input"
+          },
+          "rankingMode": "learned full-public-text16-function head; locked before copy",
+          "targetNotUsedByCopy": true
+        },
+        "productSelection": "caller supplied learned ranking receipt; never chosen by copy",
+        "imageColorPolicy": "first declared color and first declared image; deterministic metadata binding, untrained",
+        "knownCopyFacts": [
+          "name",
+          "category",
+          "itemPrice",
+          "selectedColor"
+        ],
+        "unknown": [
+          "sizes",
+          "stock",
+          "shipping"
+        ],
+        "pixelInputs": false
+      }
+    },
+    {
+      "status": "prepared",
+      "bound": {
+        "caseId": "store-eval-02",
+        "request": {
+          "query": "Pick the product that best fits my stated use.",
+          "preferences": [
+            "A backpack for taking my everyday things along."
+          ],
+          "itemBudget": null,
+          "hardRequirements": []
+        },
+        "cards": [
+          {
+            "productIndex": 1,
+            "facts": {
+              "name": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "itemPrice": 68,
+              "selectedColor": "Sand"
+            },
+            "action": {
+              "productId": "pack",
+              "variantId": "pack-sand",
+              "image": {
+                "id": "pack-front",
+                "src": "/products/pack-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 4,
+            "facts": {
+              "name": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "itemPrice": 36,
+              "selectedColor": "Graphite"
+            },
+            "action": {
+              "productId": "bottle",
+              "variantId": "bottle-graphite",
+              "image": {
+                "id": "bottle-studio",
+                "src": "/products/bottle-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 13,
+            "facts": {
+              "name": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "itemPrice": 48,
+              "selectedColor": "Tortoise"
+            },
+            "action": {
+              "productId": "sunglasses",
+              "variantId": "sunglasses-tortoise",
+              "image": {
+                "id": "sunglasses-studio",
+                "src": "/products/sunglasses-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 10,
+            "facts": {
+              "name": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "itemPrice": 96,
+              "selectedColor": "Off-white"
+            },
+            "action": {
+              "productId": "sneakers",
+              "variantId": "sneakers-off-white",
+              "image": {
+                "id": "sneakers-studio",
+                "src": "/products/sneakers-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 9,
+            "facts": {
+              "name": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "itemPrice": 89,
+              "selectedColor": "Navy"
+            },
+            "action": {
+              "productId": "headphones",
+              "variantId": "headphones-navy",
+              "image": {
+                "id": "headphones-studio",
+                "src": "/products/headphones-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 2,
+            "facts": {
+              "name": "Pocket field notes",
+              "category": "Keep a good thought",
+              "itemPrice": 12,
+              "selectedColor": "Terracotta"
+            },
+            "action": {
+              "productId": "notebook",
+              "variantId": "notebook-terracotta",
+              "image": {
+                "id": "notebook-front",
+                "src": "/products/notebook-views.png",
+                "position": "0% center"
+              }
+            }
+          }
+        ],
+        "decisionReceipt": {
+          "scores16": [
+            2.4948061764007434e-05,
+            0.986010730266571,
+            0.0005574016831815243,
+            3.130766344838776e-05,
+            0.005266762338578701,
+            5.612441327684792e-06,
+            0.00030409530154429376,
+            0.00013935801689513028,
+            0.00035158681566827,
+            0.0007170603494159877,
+            0.002824702998623252,
+            0.00015097300638444722,
+            0.0001619880204088986,
+            0.0030917972326278687,
+            0.0003594568697735667,
+            2.4160890461644158e-06
+          ],
+          "topSix": {
+            "productIndices": [
+              1,
+              4,
+              13,
+              10,
+              9,
+              2
+            ],
+            "eligibleRank": [
+              1,
+              4,
+              13,
+              10,
+              9,
+              2,
+              14,
+              8,
+              6,
+              12,
+              11,
+              7,
+              3,
+              0,
+              5,
+              15
+            ],
+            "rawRank": [
+              1,
+              4,
+              13,
+              10,
+              9,
+              2,
+              14,
+              8,
+              6,
+              12,
+              11,
+              7,
+              3,
+              0,
+              5,
+              15
+            ],
+            "eligibleCount": 16,
+            "shortfall": 0,
+            "guards": [
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              }
+            ],
+            "tieBreak": "external source index; never an encoder input"
+          },
+          "rankingMode": "learned full-public-text16-function head; locked before copy",
+          "targetNotUsedByCopy": true
+        },
+        "productSelection": "caller supplied learned ranking receipt; never chosen by copy",
+        "imageColorPolicy": "first declared color and first declared image; deterministic metadata binding, untrained",
+        "knownCopyFacts": [
+          "name",
+          "category",
+          "itemPrice",
+          "selectedColor"
+        ],
+        "unknown": [
+          "sizes",
+          "stock",
+          "shipping"
+        ],
+        "pixelInputs": false
+      }
+    },
+    {
+      "status": "prepared",
+      "bound": {
+        "caseId": "store-eval-03",
+        "request": {
+          "query": "Pick the product that best fits my stated use.",
+          "preferences": [
+            "A travel bag for a weekend away."
+          ],
+          "itemBudget": null,
+          "hardRequirements": []
+        },
+        "cards": [
+          {
+            "productIndex": 1,
+            "facts": {
+              "name": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "itemPrice": 68,
+              "selectedColor": "Sand"
+            },
+            "action": {
+              "productId": "pack",
+              "variantId": "pack-sand",
+              "image": {
+                "id": "pack-front",
+                "src": "/products/pack-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 2,
+            "facts": {
+              "name": "Pocket field notes",
+              "category": "Keep a good thought",
+              "itemPrice": 12,
+              "selectedColor": "Terracotta"
+            },
+            "action": {
+              "productId": "notebook",
+              "variantId": "notebook-terracotta",
+              "image": {
+                "id": "notebook-front",
+                "src": "/products/notebook-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 4,
+            "facts": {
+              "name": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "itemPrice": 36,
+              "selectedColor": "Graphite"
+            },
+            "action": {
+              "productId": "bottle",
+              "variantId": "bottle-graphite",
+              "image": {
+                "id": "bottle-studio",
+                "src": "/products/bottle-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 12,
+            "facts": {
+              "name": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "itemPrice": 84,
+              "selectedColor": "Charcoal"
+            },
+            "action": {
+              "productId": "duffel",
+              "variantId": "duffel-charcoal",
+              "image": {
+                "id": "duffel-studio",
+                "src": "/products/duffel-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 13,
+            "facts": {
+              "name": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "itemPrice": 48,
+              "selectedColor": "Tortoise"
+            },
+            "action": {
+              "productId": "sunglasses",
+              "variantId": "sunglasses-tortoise",
+              "image": {
+                "id": "sunglasses-studio",
+                "src": "/products/sunglasses-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 14,
+            "facts": {
+              "name": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "itemPrice": 26,
+              "selectedColor": "Ochre"
+            },
+            "action": {
+              "productId": "organizer",
+              "variantId": "organizer-ochre",
+              "image": {
+                "id": "organizer-studio",
+                "src": "/products/organizer-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          }
+        ],
+        "decisionReceipt": {
+          "scores16": [
+            0.005821813829243183,
+            0.34153956174850464,
+            0.186656191945076,
+            0.023415232077240944,
+            0.09377595782279968,
+            0.002637758618220687,
+            0.018380234017968178,
+            0.04214579984545708,
+            0.020307786762714386,
+            0.01762186735868454,
+            0.009330455213785172,
+            0.014516488648951054,
+            0.08418752998113632,
+            0.08149339258670807,
+            0.055553462356328964,
+            0.002616605255752802
+          ],
+          "topSix": {
+            "productIndices": [
+              1,
+              2,
+              4,
+              12,
+              13,
+              14
+            ],
+            "eligibleRank": [
+              1,
+              2,
+              4,
+              12,
+              13,
+              14,
+              7,
+              3,
+              8,
+              6,
+              9,
+              11,
+              10,
+              0,
+              5,
+              15
+            ],
+            "rawRank": [
+              1,
+              2,
+              4,
+              12,
+              13,
+              14,
+              7,
+              3,
+              8,
+              6,
+              9,
+              11,
+              10,
+              0,
+              5,
+              15
+            ],
+            "eligibleCount": 16,
+            "shortfall": 0,
+            "guards": [
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              }
+            ],
+            "tieBreak": "external source index; never an encoder input"
+          },
+          "rankingMode": "learned full-public-text16-function head; locked before copy",
+          "targetNotUsedByCopy": true
+        },
+        "productSelection": "caller supplied learned ranking receipt; never chosen by copy",
+        "imageColorPolicy": "first declared color and first declared image; deterministic metadata binding, untrained",
+        "knownCopyFacts": [
+          "name",
+          "category",
+          "itemPrice",
+          "selectedColor"
+        ],
+        "unknown": [
+          "sizes",
+          "stock",
+          "shipping"
+        ],
+        "pixelInputs": false
+      }
+    },
+    {
+      "status": "prepared",
+      "bound": {
+        "caseId": "store-eval-04",
+        "request": {
+          "query": "Pick the product that best fits my stated use.",
+          "preferences": [
+            "Somewhere to write a quick note I want to keep."
+          ],
+          "itemBudget": null,
+          "hardRequirements": []
+        },
+        "cards": [
+          {
+            "productIndex": 2,
+            "facts": {
+              "name": "Pocket field notes",
+              "category": "Keep a good thought",
+              "itemPrice": 12,
+              "selectedColor": "Terracotta"
+            },
+            "action": {
+              "productId": "notebook",
+              "variantId": "notebook-terracotta",
+              "image": {
+                "id": "notebook-front",
+                "src": "/products/notebook-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 1,
+            "facts": {
+              "name": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "itemPrice": 68,
+              "selectedColor": "Sand"
+            },
+            "action": {
+              "productId": "pack",
+              "variantId": "pack-sand",
+              "image": {
+                "id": "pack-front",
+                "src": "/products/pack-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 8,
+            "facts": {
+              "name": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "itemPrice": 32,
+              "selectedColor": "Olive band"
+            },
+            "action": {
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band",
+              "image": {
+                "id": "lunchbox-studio",
+                "src": "/products/lunchbox-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 11,
+            "facts": {
+              "name": "Soft cotton crewneck",
+              "category": "Cotton crewneck sweatshirt",
+              "itemPrice": 72,
+              "selectedColor": "Oatmeal"
+            },
+            "action": {
+              "productId": "sweatshirt",
+              "variantId": "sweatshirt-oatmeal",
+              "image": {
+                "id": "sweatshirt-studio",
+                "src": "/products/sweatshirt-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 4,
+            "facts": {
+              "name": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "itemPrice": 36,
+              "selectedColor": "Graphite"
+            },
+            "action": {
+              "productId": "bottle",
+              "variantId": "bottle-graphite",
+              "image": {
+                "id": "bottle-studio",
+                "src": "/products/bottle-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 9,
+            "facts": {
+              "name": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "itemPrice": 89,
+              "selectedColor": "Navy"
+            },
+            "action": {
+              "productId": "headphones",
+              "variantId": "headphones-navy",
+              "image": {
+                "id": "headphones-studio",
+                "src": "/products/headphones-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          }
+        ],
+        "decisionReceipt": {
+          "scores16": [
+            0.004442778881639242,
+            0.29840344190597534,
+            0.46384382247924805,
+            0.0024023368023335934,
+            0.03339147940278053,
+            0.020312637090682983,
+            0.0012946197530254722,
+            0.01450058538466692,
+            0.06336767226457596,
+            0.02992263063788414,
+            0.004561461508274078,
+            0.03513786941766739,
+            0.00015840893320273608,
+            0.02174834907054901,
+            0.005415588151663542,
+            0.0010965254623442888
+          ],
+          "topSix": {
+            "productIndices": [
+              2,
+              1,
+              8,
+              11,
+              4,
+              9
+            ],
+            "eligibleRank": [
+              2,
+              1,
+              8,
+              11,
+              4,
+              9,
+              13,
+              5,
+              7,
+              14,
+              10,
+              0,
+              3,
+              6,
+              15,
+              12
+            ],
+            "rawRank": [
+              2,
+              1,
+              8,
+              11,
+              4,
+              9,
+              13,
+              5,
+              7,
+              14,
+              10,
+              0,
+              3,
+              6,
+              15,
+              12
+            ],
+            "eligibleCount": 16,
+            "shortfall": 0,
+            "guards": [
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              }
+            ],
+            "tieBreak": "external source index; never an encoder input"
+          },
+          "rankingMode": "learned full-public-text16-function head; locked before copy",
+          "targetNotUsedByCopy": true
+        },
+        "productSelection": "caller supplied learned ranking receipt; never chosen by copy",
+        "imageColorPolicy": "first declared color and first declared image; deterministic metadata binding, untrained",
+        "knownCopyFacts": [
+          "name",
+          "category",
+          "itemPrice",
+          "selectedColor"
+        ],
+        "unknown": [
+          "sizes",
+          "stock",
+          "shipping"
+        ],
+        "pixelInputs": false
+      }
+    },
+    {
+      "status": "prepared",
+      "bound": {
+        "caseId": "store-eval-05",
+        "request": {
+          "query": "Pick the product that best fits my stated use.",
+          "preferences": [
+            "A zipped pouch to keep loose cables together."
+          ],
+          "itemBudget": null,
+          "hardRequirements": []
+        },
+        "cards": [
+          {
+            "productIndex": 2,
+            "facts": {
+              "name": "Pocket field notes",
+              "category": "Keep a good thought",
+              "itemPrice": 12,
+              "selectedColor": "Terracotta"
+            },
+            "action": {
+              "productId": "notebook",
+              "variantId": "notebook-terracotta",
+              "image": {
+                "id": "notebook-front",
+                "src": "/products/notebook-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 13,
+            "facts": {
+              "name": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "itemPrice": 48,
+              "selectedColor": "Tortoise"
+            },
+            "action": {
+              "productId": "sunglasses",
+              "variantId": "sunglasses-tortoise",
+              "image": {
+                "id": "sunglasses-studio",
+                "src": "/products/sunglasses-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 7,
+            "facts": {
+              "name": "Portable table light",
+              "category": "Cordless table lamp",
+              "itemPrice": 64,
+              "selectedColor": "Ivory"
+            },
+            "action": {
+              "productId": "lamp",
+              "variantId": "lamp-ivory",
+              "image": {
+                "id": "lamp-studio",
+                "src": "/products/lamp-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 14,
+            "facts": {
+              "name": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "itemPrice": 26,
+              "selectedColor": "Ochre"
+            },
+            "action": {
+              "productId": "organizer",
+              "variantId": "organizer-ochre",
+              "image": {
+                "id": "organizer-studio",
+                "src": "/products/organizer-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 1,
+            "facts": {
+              "name": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "itemPrice": 68,
+              "selectedColor": "Sand"
+            },
+            "action": {
+              "productId": "pack",
+              "variantId": "pack-sand",
+              "image": {
+                "id": "pack-front",
+                "src": "/products/pack-views.png",
+                "position": "0% center"
+              }
+            }
+          },
+          {
+            "productIndex": 11,
+            "facts": {
+              "name": "Soft cotton crewneck",
+              "category": "Cotton crewneck sweatshirt",
+              "itemPrice": 72,
+              "selectedColor": "Oatmeal"
+            },
+            "action": {
+              "productId": "sweatshirt",
+              "variantId": "sweatshirt-oatmeal",
+              "image": {
+                "id": "sweatshirt-studio",
+                "src": "/products/sweatshirt-gallery.jpg",
+                "position": "0% center"
+              }
+            }
+          }
+        ],
+        "decisionReceipt": {
+          "scores16": [
+            0.00037444589543156326,
+            0.05576785281300545,
+            0.4145997166633606,
+            0.023877941071987152,
+            0.02386857382953167,
+            0.0018759797094389796,
+            0.002276805927976966,
+            0.11780804395675659,
+            0.015100100077688694,
+            0.01704118587076664,
+            0.0140388123691082,
+            0.029811108484864235,
+            0.0016701826825737953,
+            0.18864841759204865,
+            0.09305095672607422,
+            0.00019019901810679585
+          ],
+          "topSix": {
+            "productIndices": [
+              2,
+              13,
+              7,
+              14,
+              1,
+              11
+            ],
+            "eligibleRank": [
+              2,
+              13,
+              7,
+              14,
+              1,
+              11,
+              3,
+              4,
+              9,
+              8,
+              10,
+              6,
+              5,
+              12,
+              0,
+              15
+            ],
+            "rawRank": [
+              2,
+              13,
+              7,
+              14,
+              1,
+              11,
+              3,
+              4,
+              9,
+              8,
+              10,
+              6,
+              5,
+              12,
+              0,
+              15
+            ],
+            "eligibleCount": 16,
+            "shortfall": 0,
+            "guards": [
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              },
+              {
+                "eligible": true,
+                "reasons": [],
+                "unsupported": [],
+                "learned": false,
+                "budgetScope": "item-price-only"
+              }
+            ],
+            "tieBreak": "external source index; never an encoder input"
+          },
+          "rankingMode": "learned full-public-text16-function head; locked before copy",
+          "targetNotUsedByCopy": true
+        },
+        "productSelection": "caller supplied learned ranking receipt; never chosen by copy",
+        "imageColorPolicy": "first declared color and first declared image; deterministic metadata binding, untrained",
+        "knownCopyFacts": [
+          "name",
+          "category",
+          "itemPrice",
+          "selectedColor"
+        ],
+        "unknown": [
+          "sizes",
+          "stock",
+          "shipping"
+        ],
+        "pixelInputs": false
+      }
+    }
+  ],
+  "fixedCases": 6,
+  "width": 6,
+  "fieldsPerCase": 20,
+  "firstThreeFields": 10,
+  "outputCapPerCase": 416,
+  "limits": [
+    "Locked learned product decisions: standalone copy timing excludes ranking.",
+    "Fresh ordinary native chat cache differs from short-fit raw focused prefix; no transfer-quality assumption.",
+    "Deterministic first-declared image/color metadata bindings; no trained image claim or pixel inputs.",
+    "Conservative lexical gate, not comprehensive semantic or fresh wording proof.",
+    "Actual serialized model payload endpoints, not browser rendering or all16 cards."
+  ]
+}

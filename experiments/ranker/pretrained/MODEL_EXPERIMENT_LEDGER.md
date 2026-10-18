@@ -253,3 +253,45 @@ work; they cannot interrupt a hung native call. FAILED receipts preserve fixed
 and postprocessing failures.12 adaptation CPU tests pass; combined prior suite
 passed36 before adding3 receipt tests. Native v3 experiment is queued, not yet
 claimed completed here.
+
+
+## Actual16-store function adaptation v3, completed
+
+Execution79990df:64 real B1 whole-input forwards,80 learned +80 independent
+prior updates, exact head reload and TRAIN-only means. Learned evaluation12/16
+top1,16/16top6,4/8both-correct preferencepairs; prior1/16, random0/16,
+permuted-query2/16top1. TRAIN32/32top1. All16products are TRAIN-seen; independent
+wording evaluation is now inspected. No unseen-catalog generalization claim.
+
+Contiguous fresh-query→verified16warmcatalog→learnedhead→guards/top6→serialized
+ranking median203.702ms (16requests). Copy/images/browserpaint/startup excluded.
+Model load2.631s, native lifecycle15.503s including.074s CPUfit, run()wall20.474s,
+MLX peak4,716,428,690bytes under6GiB. Eight deterministic guardprobes pass.
+Independent audit reproduces all80+80losses/finaltensors exactly and verifies64
+features/allscorearms/all16endpoint hashes. Details ACTUAL_STORE_FUNCTION_V3_RESULTS.md
+and ACTUAL_STORE_FUNCTION_V3_AUDIT.md/.json; JSONevidence archive
+actual_store_function_results/v3. Weights/features remain local unchanged.
+
+
+## Actual-store six-request copy transfer, completed
+
+The preserved failed-daypack adapter on actual learned top6 decisions gives0/6
+validfirst3 and0/6validfull6. Invalid-attempt median4,979.665ms/6,227.023ms;
+no valid-payload latency samples. Nativewall100.889s, peak6,127,417,756bytes
+under7GiB. All6 width6 fork/rebuild/repeat controls exact;927 base tensors unchanged.
+Titles7/36,bodies6/36,headings7/12 lexical/protocol/native-EOS accepted; badges36/36
+exactNONE. Independent CPUtoken decoding/reassembly reproduces120fields/12payloads.
+Known lexical relational loopholes remain disclosed. No promotion, no native
+training in this diagnostic, no full-ranking+copy or browser measurement.
+See ACTUAL_STORE_COPY_TRANSFER_V1_RESULTS.md and preserved JSONevidence under
+actual_store_copy_transfer_results/v1. Next actual-store v2copy dataset changes
+supervision/prompt together and must compare frozen/failed/new under matched inputs.
+
+
+Resident actualstore action/seam diagnostic completed24 nativequeries. All16
+replayed score/order rows exactly match actualstore-v3. All4copy-adapter-disabled
+rows match frozen scores/actions exactly;927languagehashes unchanged. Fourreal
+native policychecks pass (exactname,budget,colorvariant,stockunknown),5CPUtests
+pass. Median174.942ms includes freshquery,16verifiedcatalogloads,guards,source
+freshness and actualactionserialization; excludesgeneratedcopy/UIpaint. Separate
+endpoint/run; no203.702→174.942speedupclaim. See ACTUAL_STORE_RANK_SESSION_V1_RESULTS.md.

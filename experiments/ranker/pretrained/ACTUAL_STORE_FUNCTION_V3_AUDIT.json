@@ -1,0 +1,238 @@
+{
+  "auditVersion": "actual-store-function-v3-independent-cpu-audit.v1",
+  "auditedAtUtc": "2026-10-18T02:49:35.217765+00:00",
+  "status": "passed",
+  "auditor": "runner_review",
+  "runPath": "data/ranker/pretrained/actual-store-function-v3-attempt-1",
+  "reportSha256": "3a14a970a95b1289795d618ba6de8bfc12c07c4e7b8cafc8c4e0951645f4906d",
+  "sourceHashes": {
+    "store_function_adaptation.py": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+    "store_function_eval_v1.json": "55eb12fc85b4d87289bdea71dad1b4c8b5cb55f31d762c06c39a47131868e377",
+    "store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+    "store_model_bridge.py": "91124b1793bf9960761547f0feb4c1e8609593bd70f4f7abf3c1b97c40c38eaf",
+    "catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "jacket_inputs.py": "f71d6964dc41868bae86d47d3ed9d1b918de16ac851f77cd097701907c09260b",
+    "catalog_fusion/generalization_v2.py": "a4802adbac9eaff3dddc5ef2ec1859c981392f881b1516f90141f7f192dc604c",
+    "catalog_fusion/semantic_factors.py": "fb376a4effc2508460d6b5189f61ab75d0ba23afbc3f89deb5e1fa46ba7e6090",
+    "test_store_function_adaptation.py": "0987301822f2baaebf11a5bb207026c71402c402652fbd17f09d01a97de843f0"
+  },
+  "checks": {
+    "completed_without_failure_receipt": true,
+    "source_freeze_current": true,
+    "dataset_freeze_sha": true,
+    "all_frozen_dataset_files": true,
+    "packet_config_frozen": true,
+    "packet_and_prediction_receipt_hash_chain": true,
+    "fixed_roster_and_request_counts": true,
+    "disjoint_train_eval_request_text": true,
+    "all_raw_feature_hashes": true,
+    "all_train_feature_hashes": true,
+    "frozen_train_members_only": true,
+    "exact64_observations_order_and_jsonl": true,
+    "48_train_before16_eval_order": true,
+    "64_verified_finite_b1_4096_whole_input_features": true,
+    "train_only_mean_digests": true,
+    "learned_checkpoint_sha": true,
+    "learned_exact_reload": true,
+    "random_checkpoint_sha": true,
+    "random_exact_reload": true,
+    "exact80plus80_finite_step_receipts": true,
+    "cpu80step_training_replay_exact_checkpoint": true,
+    "cpu80step_training_replay_exact_losses": true,
+    "random_control_exact_initialization": true,
+    "prior_checkpoint_sha_reload": true,
+    "cpu80step_prior_replay_exact": true,
+    "freeze_label_read_flags_false": true,
+    "independent_full16score_rank_and_control_tallies_replay": true,
+    "all16_endpoint_payload_hash_bytes_and_prediction_replay": true,
+    "all8_guard_probes_independently_replayed": true,
+    "median_endpoint_latency_recomputed": true,
+    "no_hidden_fields_in_encoder_inputs": true,
+    "source_freeze_still_current_after_cpu_audit": true
+  },
+  "counts": {
+    "nativeFeatureReceipts": 64,
+    "trainCatalogFeatures": 16,
+    "trainRequestFeatures": 32,
+    "evaluationRequestFeatures": 16,
+    "learnedOptimizerSteps": 80,
+    "priorOptimizerSteps": 80,
+    "guardProbes": 8,
+    "freshEndpoints": 16
+  },
+  "learnedCheckpointSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e",
+  "metrics": {
+    "train": {
+      "learned": {
+        "fixedCases": 32,
+        "topOneCorrect": 32,
+        "targetInTopSix": 32,
+        "fixedPairs": 0,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 0
+      },
+      "prior": {
+        "fixedCases": 32,
+        "topOneCorrect": 2,
+        "targetInTopSix": 12,
+        "fixedPairs": 0,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 0
+      },
+      "random": {
+        "fixedCases": 32,
+        "topOneCorrect": 1,
+        "targetInTopSix": 9,
+        "fixedPairs": 0,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 0
+      },
+      "permuted-query": {
+        "fixedCases": 32,
+        "topOneCorrect": 0,
+        "targetInTopSix": 11,
+        "fixedPairs": 0,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 0
+      },
+      "public-oracle": {
+        "fixedCases": 32,
+        "topOneCorrect": 32,
+        "targetInTopSix": 32,
+        "fixedPairs": 0,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 0
+      }
+    },
+    "evaluation": {
+      "learned": {
+        "fixedCases": 16,
+        "topOneCorrect": 12,
+        "targetInTopSix": 16,
+        "fixedPairs": 8,
+        "pairsBothCorrect": 4,
+        "pairChoiceChanges": 6
+      },
+      "prior": {
+        "fixedCases": 16,
+        "topOneCorrect": 1,
+        "targetInTopSix": 6,
+        "fixedPairs": 8,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 0
+      },
+      "random": {
+        "fixedCases": 16,
+        "topOneCorrect": 0,
+        "targetInTopSix": 6,
+        "fixedPairs": 8,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 4
+      },
+      "permuted-query": {
+        "fixedCases": 16,
+        "topOneCorrect": 2,
+        "targetInTopSix": 5,
+        "fixedPairs": 8,
+        "pairsBothCorrect": 0,
+        "pairChoiceChanges": 8
+      },
+      "public-oracle": {
+        "fixedCases": 16,
+        "topOneCorrect": 16,
+        "targetInTopSix": 16,
+        "fixedPairs": 8,
+        "pairsBothCorrect": 8,
+        "pairChoiceChanges": 8
+      }
+    }
+  },
+  "missedEvaluationCases": [
+    {
+      "caseId": "store-eval-03",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A travel bag for a weekend away."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "chosenIndex": 1,
+      "chosenProduct": "Everyday daypack",
+      "targetIndex": 12,
+      "targetProduct": "Weekender duffel",
+      "targetRank": 4
+    },
+    {
+      "caseId": "store-eval-05",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "A zipped pouch to keep loose cables together."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "chosenIndex": 2,
+      "chosenProduct": "Pocket field notes",
+      "targetIndex": 14,
+      "targetProduct": "Zip essentials pouch",
+      "targetRank": 4
+    },
+    {
+      "caseId": "store-eval-08",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Something to carry groceries home in."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "chosenIndex": 1,
+      "chosenProduct": "Everyday daypack",
+      "targetIndex": 5,
+      "targetProduct": "Market canvas tote",
+      "targetRank": 4
+    },
+    {
+      "caseId": "store-eval-13",
+      "request": {
+        "query": "Pick the product that best fits my stated use.",
+        "preferences": [
+          "Something that goes over my ears for listening to music."
+        ],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "chosenIndex": 1,
+      "chosenProduct": "Everyday daypack",
+      "targetIndex": 9,
+      "targetProduct": "Everyday over-ear headphones",
+      "targetRank": 2
+    }
+  ],
+  "latency": {
+    "rankingEndpointMedianMs": 203.70204147184268,
+    "minimumMs": 191.2377499975264,
+    "maximumMs": 208.78620899748057,
+    "fixedCases": 16,
+    "scope": "Measured contiguous fresh query encode, serialized immutable query receipt, verified16 warm catalog reads, learned head, guards and serialized top6 ranking payload. No generated copy, images or browser rendering.",
+    "endToEndUiMeasured": false,
+    "copyGenerationMeasured": false
+  },
+  "limitations": [
+    "All 16 product identities and function classes occur in TRAIN; this measures new request wording on a known catalog, not unseen-catalog generalization.",
+    "Synthetic public preference requests; no sealed human-quality evidence or broad personalization result.",
+    "This CPU audit verifies serialized native receipts and source order; it does not re-execute or independently time the Qwen backbone.",
+    "Evaluation labels are loaded only after PREDICTIONS_FROZEN in the inspected runner; hashes may be read earlier for integrity.",
+    "The field nativeExtractionSecondsIncludingLoad includes CPU fitting, checkpoint writes and fresh endpoint work; interpret it as native lifecycle wall time.",
+    "Cooperative deadline rejects returned over-budget calls; it does not interrupt a hung native call.",
+    "No image decision, adapted copy, browser rendering, complete above-fold readiness or full-page readiness was measured."
+  ],
+  "blockers": []
+}

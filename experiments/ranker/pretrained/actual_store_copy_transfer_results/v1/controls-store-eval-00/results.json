@@ -1,0 +1,618 @@
+{
+  "status": "exact-controls-passed",
+  "width": 6,
+  "rows": [
+    {
+      "rowId": "heading-1",
+      "key": "heading-1",
+      "fields": [
+        "S1"
+      ],
+      "kind": "heading",
+      "maxTokens": 16,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write only the heading value, then stop. Bound evidence: {\"genericSection\":1}"
+        }
+      ]
+    },
+    {
+      "rowId": "title-1",
+      "key": "title-1",
+      "fields": [
+        "T1"
+      ],
+      "kind": "title",
+      "maxTokens": 24,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write only the title value, then stop. Bound evidence: {\"category\":\"For the slow mornings\",\"itemPrice\":24,\"name\":\"Trail mug\",\"selectedColor\":\"Sage\"}"
+        }
+      ]
+    },
+    {
+      "rowId": "badge-1",
+      "key": "badge-1",
+      "fields": [
+        "B1"
+      ],
+      "kind": "badge",
+      "maxTokens": 8,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write only the badge value, then stop. Bound evidence: {\"category\":\"For the slow mornings\",\"itemPrice\":24,\"name\":\"Trail mug\",\"selectedColor\":\"Sage\"}"
+        }
+      ]
+    },
+    {
+      "rowId": "copy-1",
+      "key": "copy-1",
+      "fields": [
+        "C1"
+      ],
+      "kind": "copy",
+      "maxTokens": 32,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write only the copy value, then stop. Bound evidence: {\"category\":\"For the slow mornings\",\"itemPrice\":24,\"name\":\"Trail mug\",\"selectedColor\":\"Sage\"}"
+        }
+      ]
+    },
+    {
+      "rowId": "title-2",
+      "key": "title-2",
+      "fields": [
+        "T2"
+      ],
+      "kind": "title",
+      "maxTokens": 24,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write only the title value, then stop. Bound evidence: {\"category\":\"Stainless steel bottle\",\"itemPrice\":36,\"name\":\"Everyday steel bottle\",\"selectedColor\":\"Graphite\"}"
+        }
+      ]
+    },
+    {
+      "rowId": "badge-2",
+      "key": "badge-2",
+      "fields": [
+        "B2"
+      ],
+      "kind": "badge",
+      "maxTokens": 8,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write only the badge value, then stop. Bound evidence: {\"category\":\"Stainless steel bottle\",\"itemPrice\":36,\"name\":\"Everyday steel bottle\",\"selectedColor\":\"Graphite\"}"
+        }
+      ]
+    }
+  ],
+  "arms": [
+    {
+      "label": "fork",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "rawSampledTokenIds": [
+            11179,
+            1247,
+            11125,
+            248046
+          ],
+          "distributionSha256": [
+            "a662138e8401fe19049f5198823d0496d590c6f2ed4ac6757cc248f3849a4a0b",
+            "a6b97f6cbd3e78f33b64cd09327071962b5851f31bfbae6a47619df9f4df0993",
+            "16903b27903ddac1d51d6c8ddc27476ae2900b226bc08ee5e8c3fffc48bff48b",
+            "4b6308a3cfe3904f1874a84a297f637236ceebbc0d9ac9fe5341368e5399d35d"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "title-1",
+          "rawSampledTokenIds": [
+            32,
+            5640,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125
+          ],
+          "distributionSha256": [
+            "0a827b2046b17b83f9aacf9fd1708a5c1ec8e3bf1f48c1f3555a040053a6a91e",
+            "4d7584ba064be09439b195165d0efa34016caadab118e7a655fbbf6be3085f78",
+            "1780f989e1558c9eb03fb2c5c00a3e7825dbd5647b315b81254dd65f55adf05b",
+            "5ebb147e2707dead6b9434c4a3beed5093c9d2965b78e65dd3d0a4e8202a947b",
+            "4f31faa2f70bd9fc15361247ff5260329c8ae2700d9ada7c29daff484a02b7c9",
+            "2fccd51dc923dbdfad0738199e59163c602d93d3e089c057108d1f6bf16418ad",
+            "551c86548d8d9f2482d0992cbd0de71d57be77ecc0c6c61aa569d853b730affc",
+            "5027743650536bb130460300b0960dbcdf70cf28c7f587510d91ab8925e3d32d",
+            "12cf41aead6184cbf06a3ff5b07fa674adb6156827256f81a38badb798ea0daa",
+            "88bd4de6aafe47b7a0b177445b17f60be153ba3ff49cff43e218d8e423d8f227",
+            "26da691621eed5c29d3c88646979d495101823b5473e613ef30a5944f4c0cee6",
+            "7012bc388c5d35197588c785ef747dbdd68fc0bc4fe8ac698aa21838e31f2e46",
+            "359088d98c1a60c71c76113dc2d5f85563dd5f4c53374e17183e39fe9468f126",
+            "33ce8d66807f6c2e8a358ab225ed6a2713edfb31ec1ae79c31dd324f279424fa",
+            "0f9e94a30b2540916018c00b2141cfdbcfe0eb7ab961f2e118b729a09a4ff774",
+            "895c054d0e36ab73d8a1fb03c6bc86618aed3232b548f926541cff484da1fc33",
+            "15a29f8b31011f67da0759dd3eeb6eb191e366ea0fc4e43004d6686da27543b8",
+            "eb4bddb16459ca38be72dd6ac3e3bc1c4559e48fceb56ea39205bd5c2533a82e",
+            "d4807f00a3d5d22b6540b8a0c501c4eac2cbe7d1ba580c5942084fc0ea8e8cd8",
+            "efcd0a77d079c2fe80168cc9742fea28539c9bcbc2e76e4be4a036f94315dd25",
+            "5cf1f1f460987023817c8c1e0984eee773d72ed4cda97f6b7446a0cdca9d6b40",
+            "7b696e2c91161d683855782608f6c059fc811ae3b2038a94932301f1aaae8730",
+            "7cf77593c2bcd97026d8f3cd362f265c55b97f6492716da04887173cf8ba3665",
+            "2f4abf588f1ea7a517919e66286710915b9e28c7aa6fe52804930c9b3eded493"
+          ],
+          "finishReason": "length",
+          "stopTokenId": null
+        },
+        {
+          "rowId": "badge-1",
+          "rawSampledTokenIds": [
+            43910,
+            248046
+          ],
+          "distributionSha256": [
+            "13228e9a6fa637ffd2bae0291601c7ca825d62fd4e19ce7347603a75e56ecaaa",
+            "da29e5d373e51f617a47abca1fcc3a54f6fe04c2b9e88001cf5d1f0547b954ed"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "copy-1",
+          "rawSampledTokenIds": [
+            32,
+            18098,
+            49755,
+            364,
+            279,
+            6103,
+            55287,
+            13,
+            248046
+          ],
+          "distributionSha256": [
+            "8b619e02405229ba13b7adf87fc22a1e979dcf557f8f873f7429366ab366877b",
+            "6452440f3daed8ef6ce6d6050e2bedc91ad4d3170eaefbe95c02dc490f91dcaf",
+            "22b9776e36b318dad4bbc7023fd21bb041656739b4709ec1fe7510313287074a",
+            "0890139ec8827f9966877f4110f7c2bcfb99f13ccce5f37e9ff468d7df0c0083",
+            "14f366badd101a580d27b7ae42bcdff5cc29de3bf84ff64eec724d02d670070c",
+            "f0e2c89c5c1071e5c1b8e5350b1ddb9407f4a8c03d8b999dd781bc13713ca022",
+            "3442562b5b7a2874c6bca976eadfcfe5d92251defe72a0f7e69e96a6500bd48d",
+            "378db43336d5584e0a4ca1c9c987aa6b5229a60bbd364ae2ee9376f1114963ad",
+            "9083a3faa2dabc2378042d41b28cd81c726e5ebbf8bae04f61f310fe9ad828dd"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "title-2",
+          "rawSampledTokenIds": [
+            11179,
+            1247,
+            9229,
+            16002,
+            364,
+            9488,
+            1898,
+            11125,
+            248046
+          ],
+          "distributionSha256": [
+            "9ac5c55dffe87c21f5acf76e267a318047708fb8a67050817b92a78b4eb97237",
+            "8e1c3c7cc6149427cd61b2d1dcaa4107d33dc3ebca970b550356a2e24126cd95",
+            "0aa9bb814c5459993d64d21d86a688ba31bba825d6e7b3a501954f39ffca3b42",
+            "e5433af7fc803c626e4f561c2645380dc76c31c253b17f79f18b563661cd9171",
+            "eb8f3bfdc5808f074391f710e117070f40c44658e26b6c530c11c80673b28c5a",
+            "11ef4c68268de0d47d88471ddb8025836ecafa5bffd12c6a74b5955cfac47de2",
+            "9a2c18786ff637123fa260a0ea3b9c2c938aed575c68ea9406db968044a8c474",
+            "606194af7cd20c3eb21b05299e5864b7e466463726a1d26f346aefa35f9044cd",
+            "d956fcbe20c4c00ce1e9b34ef37e7b4a7e53ef77f1cf09b3e0ca3bf91c8625c6"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "badge-2",
+          "rawSampledTokenIds": [
+            43910,
+            248046
+          ],
+          "distributionSha256": [
+            "f49e27b504393a0e8d8e84928b1446d182da5a0ca9503d820f37f1f582f1d110",
+            "8c1443a9e86b5abd981f19efa9f81aabdce1facf576e9427a0caeb54520f8068"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        }
+      ],
+      "maximumRowsEmittingTogether": 6,
+      "sourceAfter": "d9b658e6420f0bacbdb944c616ebe1fc04bc0be73efd7540e2125a0028fd9f0c",
+      "memory": {
+        "mlxActiveBytes": 5107116558,
+        "mlxPeakBytes": 6051904020,
+        "mlxCacheBytes": 129467198,
+        "processBudgetBytes": 7516192768
+      }
+    },
+    {
+      "label": "independent-rebuild",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "rawSampledTokenIds": [
+            11179,
+            1247,
+            11125,
+            248046
+          ],
+          "distributionSha256": [
+            "a662138e8401fe19049f5198823d0496d590c6f2ed4ac6757cc248f3849a4a0b",
+            "a6b97f6cbd3e78f33b64cd09327071962b5851f31bfbae6a47619df9f4df0993",
+            "16903b27903ddac1d51d6c8ddc27476ae2900b226bc08ee5e8c3fffc48bff48b",
+            "4b6308a3cfe3904f1874a84a297f637236ceebbc0d9ac9fe5341368e5399d35d"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "title-1",
+          "rawSampledTokenIds": [
+            32,
+            5640,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125
+          ],
+          "distributionSha256": [
+            "0a827b2046b17b83f9aacf9fd1708a5c1ec8e3bf1f48c1f3555a040053a6a91e",
+            "4d7584ba064be09439b195165d0efa34016caadab118e7a655fbbf6be3085f78",
+            "1780f989e1558c9eb03fb2c5c00a3e7825dbd5647b315b81254dd65f55adf05b",
+            "5ebb147e2707dead6b9434c4a3beed5093c9d2965b78e65dd3d0a4e8202a947b",
+            "4f31faa2f70bd9fc15361247ff5260329c8ae2700d9ada7c29daff484a02b7c9",
+            "2fccd51dc923dbdfad0738199e59163c602d93d3e089c057108d1f6bf16418ad",
+            "551c86548d8d9f2482d0992cbd0de71d57be77ecc0c6c61aa569d853b730affc",
+            "5027743650536bb130460300b0960dbcdf70cf28c7f587510d91ab8925e3d32d",
+            "12cf41aead6184cbf06a3ff5b07fa674adb6156827256f81a38badb798ea0daa",
+            "88bd4de6aafe47b7a0b177445b17f60be153ba3ff49cff43e218d8e423d8f227",
+            "26da691621eed5c29d3c88646979d495101823b5473e613ef30a5944f4c0cee6",
+            "7012bc388c5d35197588c785ef747dbdd68fc0bc4fe8ac698aa21838e31f2e46",
+            "359088d98c1a60c71c76113dc2d5f85563dd5f4c53374e17183e39fe9468f126",
+            "33ce8d66807f6c2e8a358ab225ed6a2713edfb31ec1ae79c31dd324f279424fa",
+            "0f9e94a30b2540916018c00b2141cfdbcfe0eb7ab961f2e118b729a09a4ff774",
+            "895c054d0e36ab73d8a1fb03c6bc86618aed3232b548f926541cff484da1fc33",
+            "15a29f8b31011f67da0759dd3eeb6eb191e366ea0fc4e43004d6686da27543b8",
+            "eb4bddb16459ca38be72dd6ac3e3bc1c4559e48fceb56ea39205bd5c2533a82e",
+            "d4807f00a3d5d22b6540b8a0c501c4eac2cbe7d1ba580c5942084fc0ea8e8cd8",
+            "efcd0a77d079c2fe80168cc9742fea28539c9bcbc2e76e4be4a036f94315dd25",
+            "5cf1f1f460987023817c8c1e0984eee773d72ed4cda97f6b7446a0cdca9d6b40",
+            "7b696e2c91161d683855782608f6c059fc811ae3b2038a94932301f1aaae8730",
+            "7cf77593c2bcd97026d8f3cd362f265c55b97f6492716da04887173cf8ba3665",
+            "2f4abf588f1ea7a517919e66286710915b9e28c7aa6fe52804930c9b3eded493"
+          ],
+          "finishReason": "length",
+          "stopTokenId": null
+        },
+        {
+          "rowId": "badge-1",
+          "rawSampledTokenIds": [
+            43910,
+            248046
+          ],
+          "distributionSha256": [
+            "13228e9a6fa637ffd2bae0291601c7ca825d62fd4e19ce7347603a75e56ecaaa",
+            "da29e5d373e51f617a47abca1fcc3a54f6fe04c2b9e88001cf5d1f0547b954ed"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "copy-1",
+          "rawSampledTokenIds": [
+            32,
+            18098,
+            49755,
+            364,
+            279,
+            6103,
+            55287,
+            13,
+            248046
+          ],
+          "distributionSha256": [
+            "8b619e02405229ba13b7adf87fc22a1e979dcf557f8f873f7429366ab366877b",
+            "6452440f3daed8ef6ce6d6050e2bedc91ad4d3170eaefbe95c02dc490f91dcaf",
+            "22b9776e36b318dad4bbc7023fd21bb041656739b4709ec1fe7510313287074a",
+            "0890139ec8827f9966877f4110f7c2bcfb99f13ccce5f37e9ff468d7df0c0083",
+            "14f366badd101a580d27b7ae42bcdff5cc29de3bf84ff64eec724d02d670070c",
+            "f0e2c89c5c1071e5c1b8e5350b1ddb9407f4a8c03d8b999dd781bc13713ca022",
+            "3442562b5b7a2874c6bca976eadfcfe5d92251defe72a0f7e69e96a6500bd48d",
+            "378db43336d5584e0a4ca1c9c987aa6b5229a60bbd364ae2ee9376f1114963ad",
+            "9083a3faa2dabc2378042d41b28cd81c726e5ebbf8bae04f61f310fe9ad828dd"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "title-2",
+          "rawSampledTokenIds": [
+            11179,
+            1247,
+            9229,
+            16002,
+            364,
+            9488,
+            1898,
+            11125,
+            248046
+          ],
+          "distributionSha256": [
+            "9ac5c55dffe87c21f5acf76e267a318047708fb8a67050817b92a78b4eb97237",
+            "8e1c3c7cc6149427cd61b2d1dcaa4107d33dc3ebca970b550356a2e24126cd95",
+            "0aa9bb814c5459993d64d21d86a688ba31bba825d6e7b3a501954f39ffca3b42",
+            "e5433af7fc803c626e4f561c2645380dc76c31c253b17f79f18b563661cd9171",
+            "eb8f3bfdc5808f074391f710e117070f40c44658e26b6c530c11c80673b28c5a",
+            "11ef4c68268de0d47d88471ddb8025836ecafa5bffd12c6a74b5955cfac47de2",
+            "9a2c18786ff637123fa260a0ea3b9c2c938aed575c68ea9406db968044a8c474",
+            "606194af7cd20c3eb21b05299e5864b7e466463726a1d26f346aefa35f9044cd",
+            "d956fcbe20c4c00ce1e9b34ef37e7b4a7e53ef77f1cf09b3e0ca3bf91c8625c6"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "badge-2",
+          "rawSampledTokenIds": [
+            43910,
+            248046
+          ],
+          "distributionSha256": [
+            "f49e27b504393a0e8d8e84928b1446d182da5a0ca9503d820f37f1f582f1d110",
+            "8c1443a9e86b5abd981f19efa9f81aabdce1facf576e9427a0caeb54520f8068"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        }
+      ],
+      "maximumRowsEmittingTogether": 6,
+      "sourceAfter": "d9b658e6420f0bacbdb944c616ebe1fc04bc0be73efd7540e2125a0028fd9f0c",
+      "memory": {
+        "mlxActiveBytes": 5107116558,
+        "mlxPeakBytes": 6118095293,
+        "mlxCacheBytes": 129270700,
+        "processBudgetBytes": 7516192768
+      }
+    },
+    {
+      "label": "fork-repeat",
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "rawSampledTokenIds": [
+            11179,
+            1247,
+            11125,
+            248046
+          ],
+          "distributionSha256": [
+            "a662138e8401fe19049f5198823d0496d590c6f2ed4ac6757cc248f3849a4a0b",
+            "a6b97f6cbd3e78f33b64cd09327071962b5851f31bfbae6a47619df9f4df0993",
+            "16903b27903ddac1d51d6c8ddc27476ae2900b226bc08ee5e8c3fffc48bff48b",
+            "4b6308a3cfe3904f1874a84a297f637236ceebbc0d9ac9fe5341368e5399d35d"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "title-1",
+          "rawSampledTokenIds": [
+            32,
+            5640,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125,
+            11125
+          ],
+          "distributionSha256": [
+            "0a827b2046b17b83f9aacf9fd1708a5c1ec8e3bf1f48c1f3555a040053a6a91e",
+            "4d7584ba064be09439b195165d0efa34016caadab118e7a655fbbf6be3085f78",
+            "1780f989e1558c9eb03fb2c5c00a3e7825dbd5647b315b81254dd65f55adf05b",
+            "5ebb147e2707dead6b9434c4a3beed5093c9d2965b78e65dd3d0a4e8202a947b",
+            "4f31faa2f70bd9fc15361247ff5260329c8ae2700d9ada7c29daff484a02b7c9",
+            "2fccd51dc923dbdfad0738199e59163c602d93d3e089c057108d1f6bf16418ad",
+            "551c86548d8d9f2482d0992cbd0de71d57be77ecc0c6c61aa569d853b730affc",
+            "5027743650536bb130460300b0960dbcdf70cf28c7f587510d91ab8925e3d32d",
+            "12cf41aead6184cbf06a3ff5b07fa674adb6156827256f81a38badb798ea0daa",
+            "88bd4de6aafe47b7a0b177445b17f60be153ba3ff49cff43e218d8e423d8f227",
+            "26da691621eed5c29d3c88646979d495101823b5473e613ef30a5944f4c0cee6",
+            "7012bc388c5d35197588c785ef747dbdd68fc0bc4fe8ac698aa21838e31f2e46",
+            "359088d98c1a60c71c76113dc2d5f85563dd5f4c53374e17183e39fe9468f126",
+            "33ce8d66807f6c2e8a358ab225ed6a2713edfb31ec1ae79c31dd324f279424fa",
+            "0f9e94a30b2540916018c00b2141cfdbcfe0eb7ab961f2e118b729a09a4ff774",
+            "895c054d0e36ab73d8a1fb03c6bc86618aed3232b548f926541cff484da1fc33",
+            "15a29f8b31011f67da0759dd3eeb6eb191e366ea0fc4e43004d6686da27543b8",
+            "eb4bddb16459ca38be72dd6ac3e3bc1c4559e48fceb56ea39205bd5c2533a82e",
+            "d4807f00a3d5d22b6540b8a0c501c4eac2cbe7d1ba580c5942084fc0ea8e8cd8",
+            "efcd0a77d079c2fe80168cc9742fea28539c9bcbc2e76e4be4a036f94315dd25",
+            "5cf1f1f460987023817c8c1e0984eee773d72ed4cda97f6b7446a0cdca9d6b40",
+            "7b696e2c91161d683855782608f6c059fc811ae3b2038a94932301f1aaae8730",
+            "7cf77593c2bcd97026d8f3cd362f265c55b97f6492716da04887173cf8ba3665",
+            "2f4abf588f1ea7a517919e66286710915b9e28c7aa6fe52804930c9b3eded493"
+          ],
+          "finishReason": "length",
+          "stopTokenId": null
+        },
+        {
+          "rowId": "badge-1",
+          "rawSampledTokenIds": [
+            43910,
+            248046
+          ],
+          "distributionSha256": [
+            "13228e9a6fa637ffd2bae0291601c7ca825d62fd4e19ce7347603a75e56ecaaa",
+            "da29e5d373e51f617a47abca1fcc3a54f6fe04c2b9e88001cf5d1f0547b954ed"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "copy-1",
+          "rawSampledTokenIds": [
+            32,
+            18098,
+            49755,
+            364,
+            279,
+            6103,
+            55287,
+            13,
+            248046
+          ],
+          "distributionSha256": [
+            "8b619e02405229ba13b7adf87fc22a1e979dcf557f8f873f7429366ab366877b",
+            "6452440f3daed8ef6ce6d6050e2bedc91ad4d3170eaefbe95c02dc490f91dcaf",
+            "22b9776e36b318dad4bbc7023fd21bb041656739b4709ec1fe7510313287074a",
+            "0890139ec8827f9966877f4110f7c2bcfb99f13ccce5f37e9ff468d7df0c0083",
+            "14f366badd101a580d27b7ae42bcdff5cc29de3bf84ff64eec724d02d670070c",
+            "f0e2c89c5c1071e5c1b8e5350b1ddb9407f4a8c03d8b999dd781bc13713ca022",
+            "3442562b5b7a2874c6bca976eadfcfe5d92251defe72a0f7e69e96a6500bd48d",
+            "378db43336d5584e0a4ca1c9c987aa6b5229a60bbd364ae2ee9376f1114963ad",
+            "9083a3faa2dabc2378042d41b28cd81c726e5ebbf8bae04f61f310fe9ad828dd"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "title-2",
+          "rawSampledTokenIds": [
+            11179,
+            1247,
+            9229,
+            16002,
+            364,
+            9488,
+            1898,
+            11125,
+            248046
+          ],
+          "distributionSha256": [
+            "9ac5c55dffe87c21f5acf76e267a318047708fb8a67050817b92a78b4eb97237",
+            "8e1c3c7cc6149427cd61b2d1dcaa4107d33dc3ebca970b550356a2e24126cd95",
+            "0aa9bb814c5459993d64d21d86a688ba31bba825d6e7b3a501954f39ffca3b42",
+            "e5433af7fc803c626e4f561c2645380dc76c31c253b17f79f18b563661cd9171",
+            "eb8f3bfdc5808f074391f710e117070f40c44658e26b6c530c11c80673b28c5a",
+            "11ef4c68268de0d47d88471ddb8025836ecafa5bffd12c6a74b5955cfac47de2",
+            "9a2c18786ff637123fa260a0ea3b9c2c938aed575c68ea9406db968044a8c474",
+            "606194af7cd20c3eb21b05299e5864b7e466463726a1d26f346aefa35f9044cd",
+            "d956fcbe20c4c00ce1e9b34ef37e7b4a7e53ef77f1cf09b3e0ca3bf91c8625c6"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        },
+        {
+          "rowId": "badge-2",
+          "rawSampledTokenIds": [
+            43910,
+            248046
+          ],
+          "distributionSha256": [
+            "f49e27b504393a0e8d8e84928b1446d182da5a0ca9503d820f37f1f582f1d110",
+            "8c1443a9e86b5abd981f19efa9f81aabdce1facf576e9427a0caeb54520f8068"
+          ],
+          "finishReason": "stop",
+          "stopTokenId": 248046
+        }
+      ],
+      "maximumRowsEmittingTogether": 6,
+      "sourceAfter": "d9b658e6420f0bacbdb944c616ebe1fc04bc0be73efd7540e2125a0028fd9f0c",
+      "memory": {
+        "mlxActiveBytes": 5107116558,
+        "mlxPeakBytes": 6118095293,
+        "mlxCacheBytes": 129074110,
+        "processBudgetBytes": 7516192768
+      }
+    }
+  ],
+  "originalCaps": [
+    16,
+    24,
+    8,
+    32,
+    24,
+    8
+  ],
+  "latencyClaim": false,
+  "sourceSha256": "d9b658e6420f0bacbdb944c616ebe1fc04bc0be73efd7540e2125a0028fd9f0c",
+  "preparation": {
+    "rootTokens": 273,
+    "rootTokenSha256": "91dbbb440b9d19e64b6355a3e0e66b5d52611b35203c6101184a5946ff0f79ca",
+    "rootPrepareMs": 542.8042080020532,
+    "prefillStepSize": 256,
+    "freshEmptyCache": true,
+    "rankingPrefixInCopyContext": false,
+    "unusedLogitsOrHiddenForced": false
+  }
+}
