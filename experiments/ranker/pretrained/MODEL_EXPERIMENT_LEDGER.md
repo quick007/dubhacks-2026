@@ -394,3 +394,33 @@ smokes pending at this checkpoint. Model task must not stage its files.
 Tiger Data task01a14d35-a146-72b4-9cb9-11b0ed52d022 owns async experiment-results
 DB adapter/routes, not serving, store DB or presentation UI; interfaces shared.
 No credentials inspected or transmitted.
+
+
+## Evaluation loop complete; overnight queue prepared (2026-10-18)
+
+Successful repaired Sol pairv2: generic12actions72.553s, local8actions44.817s,
+both independently verified simulated checkouts and protocol/evidence/budget pass.
+One pair only,18slotsunattempted at checkpoint; no lift claim. Localbrowser
+first3paintopportunity5450.7ms10/10fields; full6 6384ms19/20fields. Native
+receipt archived store_demo_results/v5: rank204.920ms,first3 5423.797ms,
+full6 6367.897ms. All required first-section fields finished and source factual;
+only bottle directly matches narrow need. No physicalpaint/image timing.
+
+Latest user instruction: majorarchitecture/performance work OVERNIGHT, 'notnow'.
+Servicev5 unchanged healthywidth10,927sourcehashes,queue0. Shopper taskreceived
+exclusive window for remaining9pairs/18sessions using unchangedcommittedsettings;
+no GPUprofile/training/servicechanges may overlap. No new ownedworker launched.
+
+CPU preparations now ready: profilev2+exclusive driver+finalpreflightv4, separately
+versioned equivalentdollar usefulnessscorerv2 (oldoutputs/gates/timesunchanged),
+generated-earlier copycachehelper (no nativewarming),718,810paramparallelwordhead
+with34TRAIN/14heldoutbindings (no nativefeatures/quality), primarysourceDFlash/
+short-generation feasibilityreport, audited32query/16function developmentfrontier.
+66 combinedCPUtests pass. ENGINEEREDheadsmoke is arithmetic-only andpoorquality,
+not a pretrained result. Read STORE_OVERNIGHT_PERFORMANCE_QUEUE_V1.md.
+Low100s-ms personalizedcontent remains atarget, notmeasurement.
+
+Tiger task ownsadapter/API. Initial real hostedreportuploadwasdenied before
+execution; parent then confirmed explicituserapproval andDBowner resumedone
+scopedupload/readback. Modeltask made no export/readcredentials; outcome pending
+DBownerconfirmation at thischeckpoint. Preserve all separateownercommits.

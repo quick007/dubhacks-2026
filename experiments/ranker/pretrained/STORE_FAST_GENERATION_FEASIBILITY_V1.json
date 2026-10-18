@@ -1,0 +1,392 @@
+{
+  "version": "store-fast-generation-feasibility.v1",
+  "date": "2026-10-18",
+  "status": "cpu-source-research-completed-no-native-execution",
+  "scope": {
+    "modelCalls": 0,
+    "nativeTrainingUpdates": 0,
+    "gpuJobsLaunched": 0,
+    "downloadsStarted": false,
+    "packagesInstalled": false,
+    "liveEngineEdits": false,
+    "uiEdits": false,
+    "harnessEdits": false,
+    "gitActions": false,
+    "overnightRunScheduled": false
+  },
+  "mainRecommendation": {
+    "architecture": "compact learned parallel text decoder on existing fresh Qwen decision/catalog features",
+    "owner": "parent parallel_text_head lane; no duplicate implementation here",
+    "comparator": "explicitly shorter fresh autoregressive20-field/six-card workload after common-root/width20 profiling",
+    "hundredMsClaim": false,
+    "reason": "Current fresh ranking alone exceeds100ms; avoid repeated full9B passes for generated text. Low-hundreds remains an unmeasured architectural hypothesis."
+  },
+  "localEvidence": {
+    "sourcesSha256": {
+      "experiments/ranker/pretrained/STORE_DEMO_LATENCY_DIAGNOSIS_V1.json": "af8a9d0d4a33b5c488f22391cab9eeb3dd72b878fcea33ca8a5556a727b6085d",
+      "experiments/ranker/pretrained/BATCH_STAGE_PROFILE.md": "929d37a5a60f2a2b3542655250ec7fdb42c2e310c11ee05b1de8eeea24beebbd",
+      "experiments/ranker/pretrained/store_demo_engine.py": "a1e52eebc7ea90103d27309b5d960ae4676db28c4e207ccec3ebaa3a3564639c",
+      "experiments/ranker/pretrained/store_copy_data_v2.py": "ac424d601d8dc97d480d3c22ed0175de002e46281c7c35f9054f00bb32a8082e",
+      "experiments/ranker/pretrained/requirements.txt": "76e0cf61a9ad11dd5b57e693e7edeb44e2b943833b5c25c02f068e87b5034bd7",
+      ".cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53/config.json": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+      ".tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/generate.py": "9d46803799f99d6fc7c35fff2d4357c79b1a25ae98cc63efeaaebeb50a7b5f33",
+      ".tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_5.py": "851449fd9989d6bf4b3c4fed92ddc3be5f1e781eb2246f89c54d7eff2518d9c6",
+      ".tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/cache.py": "c96cb169fd5e0ec4584a162dd61dc62ab08ccdca03a9850f8a491ce6809145e6",
+      ".tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/gated_delta.py": "f69e837ea68641dbb06fdb5dcc024a9a7e1d9353f08ae58c05275253a0c39428"
+    },
+    "latencySavedRequests": 5,
+    "separateComponentMedians": {
+      "rankMs": 224.5529170613736,
+      "freshRootMs": 529.4806669699028,
+      "combinedForkSuffixPrefillDecodeMs": 5074.830333003774,
+      "copyWallMs": 5637.590042082593,
+      "fullMs": 6001.40975008253,
+      "generationRounds": 32,
+      "actualSampledTokensIncludingEOS": 173,
+      "totalSuffixTokens": 907
+    },
+    "componentMediansAreNotAdditive": true,
+    "isolatedCurrentSuffixDecodeBreakdownAvailable": false,
+    "modelSnapshot": ".cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "safetensorHeaders": {
+      "model-00001-of-00002.safetensors": {
+        "fileBytes": 5349771222,
+        "headerBytes": 157678,
+        "headerSha256": "99df6ed4b0830c17cf85a5ebcd6ddf92f8f774b724a019a4596ebec60f6296c5",
+        "tensorCount": 1253
+      },
+      "model-00002-of-00002.safetensors": {
+        "fileBytes": 600449850,
+        "headerBytes": 818,
+        "headerSha256": "f54ed378e5e37a3699177cd6303363c2ee47b38399db0f43e9093eff9f4204e1",
+        "tensorCount": 7
+      }
+    },
+    "tensorPayloadBytes": {
+      "language_model": 5038041600,
+      "vision_tower": 912020960
+    },
+    "mtpTensorCount": 0,
+    "localConfigMtpLayers": 1,
+    "languageEmbeddingBytes": 572129280,
+    "languageOutputHeadBytes": 572129280,
+    "smallerCacheInventory": [
+      {
+        "name": "Qwen/Qwen3-8B",
+        "completeSnapshotWeightFiles": 0,
+        "incompleteBlobBytes": [
+          27518583,
+          1024000000
+        ],
+        "preserved": true
+      },
+      {
+        "name": "Qwen3.5-0.8B or2B",
+        "completeSnapshotWeightFiles": 0,
+        "availableLocally": false
+      },
+      {
+        "name": "offline-tiny",
+        "parameterCount": 1313,
+        "purpose": "engineered ranking with lexical heuristic; not pretrained text generation"
+      }
+    ],
+    "homeHuggingFaceCacheExists": false,
+    "hardwareIdentity": "M5/24GiB from trusted task; sysctl identity read unavailable under sandbox; no escalation needed"
+  },
+  "installedStockSpeculation": {
+    "mlx": "0.32.4",
+    "mlxLm": "0.32.2",
+    "path": "speculative_generate_step",
+    "requiresTrimmableTargetCache": true,
+    "qwenLinearLayers": 24,
+    "qwenFullAttentionLayers": 8,
+    "arraysCacheTrimmable": false,
+    "status": "not-compatible-through-stock-path",
+    "sameTokenizerRequired": true,
+    "batchGenerator20LaneIntegration": false,
+    "mtp": {
+      "configFlagAloneInsufficient": true,
+      "localMtpTensors": 0,
+      "loaderDropsMtpWeights": true,
+      "nativeMtpPathImplementedInInstalledQwenModule": false
+    }
+  },
+  "analyticCostModel": {
+    "isMeasurement": false,
+    "advertisedM5BandwidthDecimalBytesPerSecond": 153000000000,
+    "approxDecodeWeightStreamBytesExcludingEmbeddingStorage": 4465912320,
+    "idealStreamMsPerFullDecodePass": 29.188969411764706,
+    "fiveIdealStreamPassesMs": 145.9448470588235,
+    "limitations": [
+      "Simplifying weight-stream arithmetic, not a hardware lower-bound proof or measured token latency.",
+      "Excludes prefill, recurrent/KV traffic, compute, cache handling, scheduling, ranking and browser work.",
+      "Existing batch generator has documented terminal lookahead in older traced workload; current changed-shape counts must be measured."
+    ],
+    "cacheEstimate": {
+      "isMeasurement": false,
+      "recurrentBytesPerRoot": 50331648,
+      "recurrentMiBPerRoot": 48,
+      "assumedPrefixTokens": 80,
+      "assumedKvBytesPerElement": 2,
+      "kvBytesPerRoot": 2621440,
+      "convBytesPerRoot": 1179648,
+      "approxTotalBytesPerRoot": 54132736,
+      "approx48RootsGiB": 2.419921875,
+      "recommendation": "One common GPU root initially; bounded hot-root LRU or separately validated host serialization for per-variant roots. Do not cache all 48 GPU roots under the unchanged 7 GiB guard without measurement."
+    }
+  },
+  "compactArComparison": {
+    "status": "predeclared-proposal-not-implemented-or-run",
+    "cards": 6,
+    "fieldCounts": {
+      "headings": 2,
+      "titles": 6,
+      "badges": 6,
+      "bodies": 6
+    },
+    "candidateWords": {
+      "title": [
+        2,
+        4
+      ],
+      "body": [
+        2,
+        5
+      ],
+      "heading": [
+        2,
+        4
+      ],
+      "badge": "supported short factual value or abstention"
+    },
+    "candidateSampledCaps": {
+      "title": 8,
+      "body": 8,
+      "badge": 4,
+      "heading": 4,
+      "total": 128
+    },
+    "legacySampledCap": 416,
+    "outputContractChangedExplicitly": true,
+    "silentTruncationAllowed": false,
+    "factPrefixKey": [
+      "modelRevision",
+      "adapterSha256",
+      "tokenizerSha256",
+      "promptLayoutRevision",
+      "exactPublicFactsSha256",
+      "tokenIdsAndPosition",
+      "nativeCacheFormat"
+    ],
+    "queryPlacement": "fresh public query/style after immutable cached prefix; never splice recurrent state",
+    "evaluation": {
+      "fixedSixCardRequests": 16,
+      "cardConditions": 96,
+      "coverage": "16 products x 3 colors x 2 public query/style conditions; rotate the first three cards.",
+      "timingRepeatsPerArm": 3,
+      "workloadArms": 2,
+      "timedRequestsPlanned": 96,
+      "allProductsEligibleInCopyMicrobench": true,
+      "integratedGuardsSeparate": [
+        "inclusive/exclusive budget",
+        "exact-name no substitution",
+        "changed color",
+        "unknown-stock abstention"
+      ],
+      "trainData": "separate diverse source-supported constructions, independently audited before training",
+      "semanticEvaluation": "blind factual/identity/color/price correctness, useful grammatical text and meaningful changed-public-context response; no exact teacher-string requirement",
+      "claim": "inspected actual-store development replay; no unseen generalization"
+    },
+    "nativeGates": [
+      "same-width fork vs independent rebuild vs repeat raw token/EOS/full-distribution equality",
+      "pristine source-cache hashes before/after",
+      "A toB toA context conditioning",
+      "adapter/prompt/source/color/price invalidation",
+      "all927 frozen tensor hashes unchanged",
+      "actual native memory and fixed failures preserved"
+    ],
+    "measure": [
+      "fresh rank",
+      "prefix hit/miss/build",
+      "suffix prefill",
+      "native decode and forwardcounts",
+      "first3complete validated/serialized",
+      "full6complete validated/serialized",
+      "p50/p95serverendpoint",
+      "memory",
+      "accepted/withheld fields",
+      "semantic quality independently of structural validity"
+    ],
+    "latencyProjection": "No calibrated endpoint range. A100ms endpoint is unsupported by current rank cost; token reduction/root reuse need measurement."
+  },
+  "optionalSmallStudent": {
+    "models": [
+      "Qwen/Qwen3.5-0.8B",
+      "Qwen/Qwen3.5-2B"
+    ],
+    "availableLocally": false,
+    "architecture": "9B decisions plus a separate source-conditioned short-text student",
+    "sameBackboneGenerationClaim": false,
+    "thinking": "explicitly disabled",
+    "training": "diverse source-supported short-text distillation; evaluator gold never inference-visible",
+    "pure4BitParameterStorageEstimateBytes": [
+      400000000,
+      1000000000
+    ],
+    "estimateExcludes": [
+      "scales",
+      "unquantized tensors",
+      "vision storage",
+      "runtime buffers"
+    ],
+    "idealWeightStreamMsAtAdvertisedBandwidth": [
+      2.6143790849673203,
+      6.5359477124183005
+    ],
+    "latencyMeasured": false,
+    "downloadAuthorizationNow": false
+  },
+  "dflashOvernightCandidate": {
+    "status": "researched-only-pending-future-go",
+    "authorRepository": "https://github.com/z-lab/dflash",
+    "draft": "z-lab/Qwen3.5-9B-DFlash",
+    "draftStandaloneGenerator": false,
+    "authorMlxHybridRollbackImplemented": true,
+    "implementation": "captures GatedDeltaNet inputs/state; replays accepted prefix and convolution state after rejection",
+    "singleSequencePathObserved": true,
+    "reusablePrefixArgumentObserved": false,
+    "current20LaneSchedulerProvided": false,
+    "suggestedQuantizedBlockSizes": [
+      2,
+      3,
+      5
+    ],
+    "processIsolationRequired": "Class-level GatedDeltaNet patch plus target-layer hooks.",
+    "authorPinnedMlx": "0.32.0",
+    "authorPinnedMlxLm": "0.31.3",
+    "installedCompatibilityVerified": false,
+    "initializationPeakConcern": "loader materializes draft before quantizing; preserve existing7GiB guard until measured real memory evidence",
+    "actualAdaptedTargetAcceptanceRateKnown": false,
+    "benchmarkTransferCaveat": "Inspected 9B card uses B200, thinking enabled and up to 4096 output tokens. Parent-reported M5 Max long single-stream results also do not establish base-M5 short twenty-field latency.",
+    "firstBoundedGate": {
+      "workload": "One short source-bound field using the actual adapter.",
+      "baseline": "Same-target greedy AR raw token IDs and EOS.",
+      "checks": [
+        "token/EOS equality",
+        "forced rejection/rollback",
+        "source-cache isolation",
+        "frozen927 hashes",
+        "full prefill/first-token/last-token timers",
+        "native memory"
+      ],
+      "doNotProceedToParallelIntegrationBeforeGatePasses": true
+    },
+    "notDone": [
+      "install",
+      "dependency changes",
+      "draft download",
+      "GPUtest",
+      "serviceintegration"
+    ]
+  },
+  "sources": [
+    {
+      "id": "apple-m5",
+      "url": "https://www.apple.com/newsroom/2025/10/apple-unleashes-m5-the-next-big-leap-in-ai-performance-for-apple-silicon/",
+      "type": "hardware-vendor-primary",
+      "supports": "M5 advertised 153 GB/s; not application latency."
+    },
+    {
+      "id": "stock-generate",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/v0.32.2/mlx_lm/generate.py",
+      "type": "pinned-runtime-primary",
+      "supports": "Stock target-cache trimmability guard and same-tokenizer requirement."
+    },
+    {
+      "id": "stock-cache",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/v0.32.2/mlx_lm/models/cache.py",
+      "type": "pinned-runtime-primary",
+      "supports": "ArraysCache inherits non-trimmability."
+    },
+    {
+      "id": "stock-qwen",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/v0.32.2/mlx_lm/models/qwen3_5.py",
+      "type": "pinned-runtime-primary",
+      "supports": "Hybrid cache construction and MTP weight filtering."
+    },
+    {
+      "id": "speculative-paper",
+      "url": "https://arxiv.org/abs/2211.17192",
+      "type": "authors-paper",
+      "supports": "Verified drafting concept; not local timing."
+    },
+    {
+      "id": "medusa-paper",
+      "url": "https://arxiv.org/abs/2401.10774",
+      "type": "authors-paper",
+      "supports": "Trained parallel heads and specialized verification."
+    },
+    {
+      "id": "mtp-paper",
+      "url": "https://arxiv.org/abs/2404.19737",
+      "type": "authors-paper",
+      "supports": "Shared-trunk multi-token heads require training."
+    },
+    {
+      "id": "qwen-small",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+      "type": "model-author-primary",
+      "supports": "0.8B, 24 layers, 1024 hidden units and tied embeddings."
+    },
+    {
+      "id": "qwen-small2",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-2B",
+      "type": "model-author-primary",
+      "supports": "2B, 24 layers and 2048 hidden units."
+    },
+    {
+      "id": "dflash-readme",
+      "url": "https://github.com/z-lab/dflash",
+      "type": "authors-repository",
+      "supports": "MLX Qwen3.5 backend and quantized verification blocks at most five."
+    },
+    {
+      "id": "dflash-card",
+      "url": "https://huggingface.co/z-lab/Qwen3.5-9B-DFlash",
+      "type": "model-author-primary",
+      "supports": "9B target drafter, not standalone; B200 benchmark scope."
+    },
+    {
+      "id": "dflash-paper",
+      "url": "https://arxiv.org/abs/2602.06036",
+      "type": "authors-paper",
+      "supports": "Block diffusion drafting with target verification."
+    },
+    {
+      "id": "dflash-mlx",
+      "url": "https://raw.githubusercontent.com/z-lab/dflash/main/dflash/model_mlx.py",
+      "type": "authors-source",
+      "supports": "Hybrid rollback, single-sequence streaming and fresh caches."
+    },
+    {
+      "id": "dflash-dependencies",
+      "url": "https://raw.githubusercontent.com/z-lab/dflash/main/pyproject.toml",
+      "type": "authors-source",
+      "supports": "Dependency versions differ from the installed environment."
+    },
+    {
+      "id": "dflash-loader",
+      "url": "https://raw.githubusercontent.com/z-lab/dflash/main/dflash/benchmark.py",
+      "type": "authors-source",
+      "supports": "Draft loads before quantization; benchmark scope."
+    }
+  ],
+  "remainingLimits": [
+    "No measured short-AR, student, DFlash or parallel-text endpoint in this lane.",
+    "No complete smaller pretrained generator is available locally; no new weights were downloaded.",
+    "Stock speculation is unsupported for this hybrid cache; the author DFlash backend is a separate candidate.",
+    "Browser readiness, images and UI paint were not measured.",
+    "Overnight work was neither started nor scheduled."
+  ]
+}

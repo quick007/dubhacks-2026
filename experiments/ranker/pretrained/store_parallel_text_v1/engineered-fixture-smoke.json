@@ -1,0 +1,50 @@
+{
+  "status": "engineered-fixture-only",
+  "modelVersion": "qwen-fact-parallel-word-head.v1",
+  "sourceEvidence": {
+    "evidenceSource": "engineered-cpu-fixture",
+    "nativeForwards": 0
+  },
+  "seed": 7211,
+  "steps": 24,
+  "trainingRows": 402,
+  "parameterCount": 180826,
+  "hiddenWidth": 32,
+  "slotsPerField": 14,
+  "vocabularySize": 107,
+  "lossSnapshots": [
+    {
+      "step": 1,
+      "loss": 4.662909984588623
+    },
+    {
+      "step": 24,
+      "loss": 2.593249559402466
+    }
+  ],
+  "fitAndFinalEvaluationSeconds": 0.06180820893496275,
+  "evaluation": {
+    "train": {
+      "fields": 402,
+      "exactTeacherMatch": 6,
+      "acceptedFields": 41,
+      "missingEos": 0
+    },
+    "eval": {
+      "fields": 210,
+      "exactTeacherMatch": 0,
+      "acceptedFields": 18,
+      "missingEos": 0
+    }
+  },
+  "backboneUpdates": 0,
+  "nativeCalls": 0,
+  "heldoutUse": "one final report only, no checkpoint selection",
+  "limitations": [
+    "Independent slots can disagree, repeat, omit or lack EOS.",
+    "Bounded catalog words and short factual grammar, not open-vocabulary prose.",
+    "Heldout product-color combinations; all product identities seen in TRAIN.",
+    "Fresh Qwen query encoding and browser readiness are not measured by CPU head timing.",
+    "No live frontend integration or template fallback."
+  ]
+}

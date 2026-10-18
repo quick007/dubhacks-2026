@@ -1,5 +1,10 @@
 # Tiger Cloud setup
 
+This is the historical WSL/CLI setup. For the current optional experiment-results
+adapter, use [Experiment results integration](../apps/api/EXPERIMENT_RESULTS.md).
+It consumes `TIGER_DATABASE_URL`, and leaves the core SQLite store independent.
+The machine-specific `DATABASE_URL` statements below describe the earlier setup.
+
 Tiger CLI is installed as `tiger`. On this WSL machine, version 0.26.0 was installed through the official Debian repository. PostgreSQL's `psql` client is also available.
 
 The local CLI is authenticated, with `dubhacks-2026` selected as its default service. This is a free development service using shared CPU/memory in `us-east-1`. Database passwords use `~/.pgpass` with mode `600`; production-tagged services are protected from writes by the CLI's `read_only=prod` setting. These are machine-local settings; teammates must authenticate separately.

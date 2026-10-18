@@ -34,6 +34,13 @@ processes. Ctrl-C stops them. It requires no sudo, certificate installation or
 hosts-file change. Seed before starting the API; its data lock prevents
 concurrent mutation. Local metadata and artifacts live in ignored `data/`.
 
+Optional experiment-result persistence uses `TIGER_DATABASE_URL` in the ignored
+root `.env`; `pnpm --filter @storefront/api dev` loads it. See the
+[results adapter guide](apps/api/EXPERIMENT_RESULTS.md) for setup and queries.
+A `202` response confirms a durable local receipt; cloud acknowledgement is
+separate. Hosted export of real shopper evidence requires approval for that
+specific payload and destination.
+
 In the dashboard, open **All sessions** and choose **Run a round** to queue
 the deterministic mock comparisons. The separate legacy Playwright adapter
 exercises a scripted fake checkout and requires
@@ -97,23 +104,39 @@ seconds for conventional autoregressive generation and 5.94 seconds for the
 hybrid. Both failed the frozen complete-copy readiness proxy. An independent
 audit found valid conventional dollar wording falsely rejected, plus real
 hybrid copy and ranking failures; the 3.57× attempt ratio is not a measured
-useful-page speedup.
+useful-page speedup. The separate [v2 offline usefulness scorer](experiments/ranker/pretrained/store_usefulness_v2_candidate/README.md)
+recognizes equivalent correct dollar wording and keeps optional headings/badges
+separate from title/body completeness. It preserves all original outputs and
+readiness timestamps; its retrospective scores are not new timing measurements.
 
 ## Independent shopper evaluation
 
 The [ten-pair packet](experiments/ranker/pretrained/store_shopper_eval_v1/README.md)
 separates public recommender observations, private shopper needs and evaluator
 gold. It fixes five AB and five BA orders, 24 actions and 120 seconds per arm.
-The CPU-only [prepare/aggregate CLI](apps/runner/SHOPPER_EVAL.md) does not launch
-browsers or models and never supplies gold answers to a shopper assignment.
+The [shopper CLI](apps/runner/SHOPPER_EVAL.md) prepares assignments and aggregates
+evidence without supplying gold answers to a shopper. A separate runner uses
+isolated headed Chrome and the installed official Codex CLI with its existing
+ChatGPT login for real screenshot-based Sol decisions. No extra API key or SDK
+installation is required.
 
-One actual Chrome bottle-shopping pair completed exploratory fake checkouts.
-Viewport, timing and durable-evidence deviations keep it outside the formal
-benchmark. All 20 formal slots remain unattempted. See the
-[smoke evidence](experiments/ranker/pretrained/store_shopper_eval_smoke_v1/README.md)
-and [session contract](apps/runner/SHOPPER_CONTRACT_V1.md) for the recorded limits.
-The contract and CLI have CPU tests; fixture sidecars do not count as browser
-execution or conversion evidence.
+```sh
+node --import tsx apps/runner/src/shopper-runner.ts plan --packet experiments/ranker/pretrained/store_shopper_eval_v1 --out /tmp/new-plan
+node --import tsx apps/runner/src/shopper-runner.ts run --packet experiments/ranker/pretrained/store_shopper_eval_v1 --out /tmp/new-run --seed 11 --limit 2
+```
+
+Coordinate local-model runs with the model owner to keep GPU timing isolated.
+The earlier [CUA pair](experiments/ranker/pretrained/store_shopper_eval_smoke_v1/README.md)
+completed exploratory fake checkouts with protocol deviations. The first
+[isolated Sol pair](experiments/ranker/pretrained/store_shopper_sol_smoke_v1/aggregate.json)
+selected the bottle but timed out after repeated Add-to-cart actions. The
+[repaired-feedback pair](experiments/ranker/pretrained/store_shopper_sol_smoke_v2/smoke-summary.json)
+then completed both independently verified fake checkouts: generic 72.553s/12
+actions and local-model 44.817s/8 actions. Both selected one Graphite bottle at
+$36. One pair is complete and eighteen slots remain unattempted; this does not
+establish comparative lift. Earlier failures remain preserved. These are
+synthetic development runs, not human conversion evidence.
+See the [session contract](apps/runner/SHOPPER_CONTRACT_V1.md) for evidence rules.
 
 ## Development and architecture
 

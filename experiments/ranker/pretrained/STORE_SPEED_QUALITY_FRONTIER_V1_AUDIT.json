@@ -1,0 +1,1914 @@
+{
+  "version": "store-speed-quality-frontier-independent-packet-audit.v1",
+  "status": "current final packet passes bounded CPU/source audit after two corrections; no native outcomes",
+  "scope": "Offline independent model judgment and CPU execution of existing deterministic functions; no native/model imports, browser, GPU or generated output. No fixture edits by auditor.",
+  "packetHashes": {
+    "offline-relevance-labels.json": "3e622533a9c0634e669e6f5abec399135c7e674cabc241a6bc22f0047b980ae0",
+    "manifest.json": "63dd7072a974dcdf3f19d9894e68e01e16397133c7c53a4b5931efc907adcb10",
+    "public-requests.json": "ce26a7fdf13a39e9db80f5fb1745013fc3c1d009a280bbdf6869cfbf35e98701"
+  },
+  "catalogPath": "experiments/ranker/pretrained/store_catalog_v1/model_inputs.json",
+  "catalogSha256": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+  "checks": {
+    "requests": 32,
+    "uniqueRequestQueries": 32,
+    "offlineLabels": 32,
+    "targetCatalogProducts": 16,
+    "labelsPerProduct": 2,
+    "publicSupportRecordsMatchCatalog": 32,
+    "publicRequestsWithOnlyQueryInput": 32,
+    "queriesWithoutHiddenPersonaOrGoldKeys": 32,
+    "casesWithAll16ProductsHardEligible": 32,
+    "casesSupportingSixCardTwentyFieldWorkload": 32,
+    "casesWithBudget": 0,
+    "casesWithActiveHardConstraints": 0,
+    "casesWithExactNameOverride": 0,
+    "nativeOutcomes": 0
+  },
+  "boundary": "Public file has case/scheduling metadata outside request; actual inference should receive only request, never the offline label file, case ID encoding or loop target. Static fixture separation checked; future runner behavior not yet evidenced.",
+  "sourceFunctionExecution": [
+    {
+      "sourcePath": "experiments/ranker/pretrained/store_function_adaptation.py",
+      "sourceSha256": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+      "exactDefinitions": [
+        "guard",
+        "rank",
+        "validate_request"
+      ]
+    },
+    {
+      "sourcePath": "experiments/ranker/pretrained/store_rank_session.py",
+      "sourceSha256": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0",
+      "exactDefinitions": [
+        "exact_name_order"
+      ]
+    },
+    {
+      "sourcePath": "experiments/ranker/pretrained/store_demo_engine.py",
+      "sourceSha256": "a1e52eebc7ea90103d27309b5d960ae4676db28c4e207ccec3ebaa3a3564639c",
+      "exactDefinitions": [
+        "BUDGET_CLAUSE",
+        "checked_request",
+        "guarded_order"
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "caseId": "frontier-01-1",
+      "priorQuery": "a small everyday backpack",
+      "currentQuery": "an everyday backpack",
+      "priorEligibleCount": 16,
+      "currentEligibleCount": 16,
+      "resolvedBeforeNativeExecution": true,
+      "issue": "unsupported small-size attribution"
+    },
+    {
+      "caseId": "frontier-03-1",
+      "priorQuery": "a waterproof jacket with a hood",
+      "currentQuery": "a hooded rain jacket",
+      "priorEligibleCount": 1,
+      "currentEligibleCount": 16,
+      "resolvedBeforeNativeExecution": true,
+      "issue": "literal waterproof hardfilter contradicted fixed six-card workload"
+    }
+  ],
+  "priorV3ExactWordingOverlaps": [
+    {
+      "caseId": "frontier-03-1",
+      "query": "a hooded rain jacket",
+      "priorCaseIds": [
+        "train-03-1"
+      ]
+    },
+    {
+      "caseId": "frontier-05-1",
+      "query": "a tote for grocery shopping",
+      "priorCaseIds": [
+        "train-05-0"
+      ]
+    },
+    {
+      "caseId": "frontier-15-2",
+      "query": "a cotton towel for the beach",
+      "priorCaseIds": [
+        "train-15-0"
+      ]
+    }
+  ],
+  "limitations": [
+    "Curated synthetic development packet; labels and wording are author-visible, not sealed or independent human truth.",
+    "Three exact v3TRAIN wording overlaps plus close paraphrases; 32 new unseen-query claim is unsupported.",
+    "Sixteen targets cover all sixteen product classes, not sixteen mutually exclusive abstract functions or broad personalization combinations.",
+    "One expected top product per request is a reasonable primary-function label; other products can share broad uses. It does not label all six cards relevant or prove uniqueness.",
+    "No budget, negation, color-preference, multi-need, stock, size, empty-eligibility, adversarial or hard-constraint quality evidence.",
+    "Labels/support are offline only by structure and declared policy; no future call-path or raw-output compliance proof exists.",
+    "Snapshot hash verified; no new live storefront export or pixel validation was performed."
+  ],
+  "cases": [
+    {
+      "caseId": "frontier-00-1",
+      "query": "a mug for drinking",
+      "targetIndex": 0,
+      "targetName": "Trail mug",
+      "sourceSupport": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/0",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name mug supports a drinking vessel; mug-shaped does not add a capacity, thermal or geometry measurement.",
+      "currentParserRequest": {
+        "query": "a mug for drinking",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-00-2",
+      "query": "something mug-shaped to drink from",
+      "targetIndex": 0,
+      "targetName": "Trail mug",
+      "sourceSupport": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/0",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name mug supports a drinking vessel; mug-shaped does not add a capacity, thermal or geometry measurement.",
+      "currentParserRequest": {
+        "query": "something mug-shaped to drink from",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-01-1",
+      "query": "an everyday backpack",
+      "targetIndex": 1,
+      "targetName": "Everyday daypack",
+      "sourceSupport": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/1",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name Everyday daypack supports backpack/daypack daily carrying. Slogan Pack a smaller plan is not used as size evidence; final request removes small.",
+      "currentParserRequest": {
+        "query": "an everyday backpack",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-01-2",
+      "query": "a daypack to carry daily things",
+      "targetIndex": 1,
+      "targetName": "Everyday daypack",
+      "sourceSupport": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/1",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name Everyday daypack supports backpack/daypack daily carrying. Slogan Pack a smaller plan is not used as size evidence; final request removes small.",
+      "currentParserRequest": {
+        "query": "a daypack to carry daily things",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-02-1",
+      "query": "a notebook for writing ideas",
+      "targetIndex": 2,
+      "targetName": "Pocket field notes",
+      "sourceSupport": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/2",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name Pocket field notes supports note-taking; public catalog image alt also describes writing in the notebook. No page count, paper quality or dimensions claimed.",
+      "currentParserRequest": {
+        "query": "a notebook for writing ideas",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-02-2",
+      "query": "field notes to jot down a thought",
+      "targetIndex": 2,
+      "targetName": "Pocket field notes",
+      "sourceSupport": {
+        "name": "Pocket field notes",
+        "category": "Keep a good thought",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/2",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name Pocket field notes supports note-taking; public catalog image alt also describes writing in the notebook. No page count, paper quality or dimensions claimed.",
+      "currentParserRequest": {
+        "query": "field notes to jot down a thought",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-03-1",
+      "query": "a hooded rain jacket",
+      "targetIndex": 3,
+      "targetName": "Everywhere rain jacket",
+      "sourceSupport": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/3",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public rain-jacket name and Waterproof hooded shell category support rain garment and hood. Final query avoids literal waterproof hardfilter; no waterproof performance test is inferred.",
+      "currentParserRequest": {
+        "query": "a hooded rain jacket",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": [
+        "train-03-1"
+      ]
+    },
+    {
+      "caseId": "frontier-03-2",
+      "query": "a hooded shell for the rain",
+      "targetIndex": 3,
+      "targetName": "Everywhere rain jacket",
+      "sourceSupport": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "searchTerms": []
+      },
+      "catalogJsonPointer": "/products/3",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public rain-jacket name and Waterproof hooded shell category support rain garment and hood. Final query avoids literal waterproof hardfilter; no waterproof performance test is inferred.",
+      "currentParserRequest": {
+        "query": "a hooded shell for the rain",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-04-1",
+      "query": "a bottle for carrying drinking water",
+      "targetIndex": 4,
+      "targetName": "Everyday steel bottle",
+      "sourceSupport": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "searchTerms": [
+          "bottle",
+          "bottles",
+          "water",
+          "hydration"
+        ]
+      },
+      "catalogJsonPointer": "/products/4",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name/category steel bottle and water/hydration search terms support water bottle use. No capacity, insulation or leakproof claim.",
+      "currentParserRequest": {
+        "query": "a bottle for carrying drinking water",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-04-2",
+      "query": "a steel water bottle",
+      "targetIndex": 4,
+      "targetName": "Everyday steel bottle",
+      "sourceSupport": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "searchTerms": [
+          "bottle",
+          "bottles",
+          "water",
+          "hydration"
+        ]
+      },
+      "catalogJsonPointer": "/products/4",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public name/category steel bottle and water/hydration search terms support water bottle use. No capacity, insulation or leakproof claim.",
+      "currentParserRequest": {
+        "query": "a steel water bottle",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-05-1",
+      "query": "a tote for grocery shopping",
+      "targetIndex": 5,
+      "targetName": "Market canvas tote",
+      "sourceSupport": {
+        "name": "Market canvas tote",
+        "category": "Cotton canvas carryall",
+        "searchTerms": [
+          "tote",
+          "market",
+          "shopping",
+          "groceries"
+        ]
+      },
+      "catalogJsonPointer": "/products/5",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public tote/canvas/carryall name/category and grocery/shopping terms support intended function. No load capacity or food safety claim.",
+      "currentParserRequest": {
+        "query": "a tote for grocery shopping",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": [
+        "train-05-0"
+      ]
+    },
+    {
+      "caseId": "frontier-05-2",
+      "query": "a canvas shopping carryall",
+      "targetIndex": 5,
+      "targetName": "Market canvas tote",
+      "sourceSupport": {
+        "name": "Market canvas tote",
+        "category": "Cotton canvas carryall",
+        "searchTerms": [
+          "tote",
+          "market",
+          "shopping",
+          "groceries"
+        ]
+      },
+      "catalogJsonPointer": "/products/5",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public tote/canvas/carryall name/category and grocery/shopping terms support intended function. No load capacity or food safety claim.",
+      "currentParserRequest": {
+        "query": "a canvas shopping carryall",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-06-1",
+      "query": "a cotton blanket to use as a throw",
+      "targetIndex": 6,
+      "targetName": "Woven everyday throw",
+      "sourceSupport": {
+        "name": "Woven everyday throw",
+        "category": "Cotton throw blanket",
+        "searchTerms": [
+          "blanket",
+          "throw",
+          "picnic",
+          "cozy"
+        ]
+      },
+      "catalogJsonPointer": "/products/6",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Cotton throw blanket category and cozy search term support blanket/throw queries. Cozy is catalog language, not measured warmth or tactile quality.",
+      "currentParserRequest": {
+        "query": "a cotton blanket to use as a throw",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-06-2",
+      "query": "a cozy throw blanket",
+      "targetIndex": 6,
+      "targetName": "Woven everyday throw",
+      "sourceSupport": {
+        "name": "Woven everyday throw",
+        "category": "Cotton throw blanket",
+        "searchTerms": [
+          "blanket",
+          "throw",
+          "picnic",
+          "cozy"
+        ]
+      },
+      "catalogJsonPointer": "/products/6",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Cotton throw blanket category and cozy search term support blanket/throw queries. Cozy is catalog language, not measured warmth or tactile quality.",
+      "currentParserRequest": {
+        "query": "a cozy throw blanket",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-07-1",
+      "query": "a cordless lamp for a table",
+      "targetIndex": 7,
+      "targetName": "Portable table light",
+      "sourceSupport": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "searchTerms": [
+          "lamp",
+          "light",
+          "lighting",
+          "reading"
+        ]
+      },
+      "catalogJsonPointer": "/products/7",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Portable table light, Cordless table lamp and reading search term support lamp/table/reading needs. Bedside is intended placement, not eye-safety or illumination performance.",
+      "currentParserRequest": {
+        "query": "a cordless lamp for a table",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-07-2",
+      "query": "a portable bedside reading light",
+      "targetIndex": 7,
+      "targetName": "Portable table light",
+      "sourceSupport": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "searchTerms": [
+          "lamp",
+          "light",
+          "lighting",
+          "reading"
+        ]
+      },
+      "catalogJsonPointer": "/products/7",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Portable table light, Cordless table lamp and reading search term support lamp/table/reading needs. Bedside is intended placement, not eye-safety or illumination performance.",
+      "currentParserRequest": {
+        "query": "a portable bedside reading light",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-08-1",
+      "query": "a lunch box for food",
+      "targetIndex": 8,
+      "targetName": "Steel lunch box",
+      "sourceSupport": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "searchTerms": [
+          "lunch",
+          "lunchbox",
+          "lunchware",
+          "food",
+          "meal"
+        ]
+      },
+      "catalogJsonPointer": "/products/8",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Steel lunch box, Steel box with bamboo lid and food/meal terms support lunch containment. No food-safe, leakproof, thermal or serving-count claim.",
+      "currentParserRequest": {
+        "query": "a lunch box for food",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-08-2",
+      "query": "a steel lunch container with a bamboo lid",
+      "targetIndex": 8,
+      "targetName": "Steel lunch box",
+      "sourceSupport": {
+        "name": "Steel lunch box",
+        "category": "Steel box with bamboo lid",
+        "searchTerms": [
+          "lunch",
+          "lunchbox",
+          "lunchware",
+          "food",
+          "meal"
+        ]
+      },
+      "catalogJsonPointer": "/products/8",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Steel lunch box, Steel box with bamboo lid and food/meal terms support lunch containment. No food-safe, leakproof, thermal or serving-count claim.",
+      "currentParserRequest": {
+        "query": "a steel lunch container with a bamboo lid",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-09-1",
+      "query": "over-ear headphones for listening to music",
+      "targetIndex": 9,
+      "targetName": "Everyday over-ear headphones",
+      "sourceSupport": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "searchTerms": [
+          "headphones",
+          "headphone",
+          "music",
+          "audio",
+          "listen"
+        ]
+      },
+      "catalogJsonPointer": "/products/9",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public over-ear headphones name, cushioned category and music/audio terms support these queries. No wireless, noise-cancellation or measured comfort claim.",
+      "currentParserRequest": {
+        "query": "over-ear headphones for listening to music",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-09-2",
+      "query": "cushioned headphones for audio",
+      "targetIndex": 9,
+      "targetName": "Everyday over-ear headphones",
+      "sourceSupport": {
+        "name": "Everyday over-ear headphones",
+        "category": "Cushioned over-ear headphones",
+        "searchTerms": [
+          "headphones",
+          "headphone",
+          "music",
+          "audio",
+          "listen"
+        ]
+      },
+      "catalogJsonPointer": "/products/9",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public over-ear headphones name, cushioned category and music/audio terms support these queries. No wireless, noise-cancellation or measured comfort claim.",
+      "currentParserRequest": {
+        "query": "cushioned headphones for audio",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-10-1",
+      "query": "canvas shoes with a low top",
+      "targetIndex": 10,
+      "targetName": "Everyday canvas sneakers",
+      "sourceSupport": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "searchTerms": [
+          "shoes",
+          "shoe",
+          "sneaker",
+          "sneakers",
+          "walking"
+        ]
+      },
+      "catalogJsonPointer": "/products/10",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Canvas low-top sneakers category and walking term support footwear query. No fit, stock, athletic or orthopedic promise.",
+      "currentParserRequest": {
+        "query": "canvas shoes with a low top",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-10-2",
+      "query": "low-top sneakers for walking",
+      "targetIndex": 10,
+      "targetName": "Everyday canvas sneakers",
+      "sourceSupport": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "searchTerms": [
+          "shoes",
+          "shoe",
+          "sneaker",
+          "sneakers",
+          "walking"
+        ]
+      },
+      "catalogJsonPointer": "/products/10",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Canvas low-top sneakers category and walking term support footwear query. No fit, stock, athletic or orthopedic promise.",
+      "currentParserRequest": {
+        "query": "low-top sneakers for walking",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-11-1",
+      "query": "a cotton sweatshirt with a crew neck",
+      "targetIndex": 11,
+      "targetName": "Soft cotton crewneck",
+      "sourceSupport": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "searchTerms": [
+          "sweatshirt",
+          "crewneck",
+          "sweater",
+          "cotton",
+          "layer"
+        ]
+      },
+      "catalogJsonPointer": "/products/11",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Soft cotton crewneck name, Cotton crewneck sweatshirt category and layer term support these queries. Soft is explicitly named, not independently tested.",
+      "currentParserRequest": {
+        "query": "a cotton sweatshirt with a crew neck",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-11-2",
+      "query": "a soft cotton crewneck layer",
+      "targetIndex": 11,
+      "targetName": "Soft cotton crewneck",
+      "sourceSupport": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "searchTerms": [
+          "sweatshirt",
+          "crewneck",
+          "sweater",
+          "cotton",
+          "layer"
+        ]
+      },
+      "catalogJsonPointer": "/products/11",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Soft cotton crewneck name, Cotton crewneck sweatshirt category and layer term support these queries. Soft is explicitly named, not independently tested.",
+      "currentParserRequest": {
+        "query": "a soft cotton crewneck layer",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-12-1",
+      "query": "a travel bag for the weekend",
+      "targetIndex": 12,
+      "targetName": "Weekender duffel",
+      "sourceSupport": {
+        "name": "Weekender duffel",
+        "category": "Canvas travel bag",
+        "searchTerms": [
+          "duffel",
+          "weekender",
+          "travel",
+          "luggage",
+          "weekend"
+        ]
+      },
+      "catalogJsonPointer": "/products/12",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Weekender duffel name, Canvas travel bag category and weekend/travel terms support trip bag. No airline carry-on allowance, dimensions or capacity inferred.",
+      "currentParserRequest": {
+        "query": "a travel bag for the weekend",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-12-2",
+      "query": "a canvas duffel to carry on a trip",
+      "targetIndex": 12,
+      "targetName": "Weekender duffel",
+      "sourceSupport": {
+        "name": "Weekender duffel",
+        "category": "Canvas travel bag",
+        "searchTerms": [
+          "duffel",
+          "weekender",
+          "travel",
+          "luggage",
+          "weekend"
+        ]
+      },
+      "catalogJsonPointer": "/products/12",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Weekender duffel name, Canvas travel bag category and weekend/travel terms support trip bag. No airline carry-on allowance, dimensions or capacity inferred.",
+      "currentParserRequest": {
+        "query": "a canvas duffel to carry on a trip",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-13-1",
+      "query": "round sunglasses with acetate frames",
+      "targetIndex": 13,
+      "targetName": "Everyday round sunglasses",
+      "sourceSupport": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "searchTerms": [
+          "sunglasses",
+          "sunglass",
+          "sun",
+          "eyewear"
+        ]
+      },
+      "catalogJsonPointer": "/products/13",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Round acetate sunglasses category and sun/eyewear terms support round sunglasses. Acetate frames is ordinary product-material interpretation; no UV-protection guarantee.",
+      "currentParserRequest": {
+        "query": "round sunglasses with acetate frames",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-13-2",
+      "query": "round eyewear for sunny days",
+      "targetIndex": 13,
+      "targetName": "Everyday round sunglasses",
+      "sourceSupport": {
+        "name": "Everyday round sunglasses",
+        "category": "Round acetate sunglasses",
+        "searchTerms": [
+          "sunglasses",
+          "sunglass",
+          "sun",
+          "eyewear"
+        ]
+      },
+      "catalogJsonPointer": "/products/13",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Round acetate sunglasses category and sun/eyewear terms support round sunglasses. Acetate frames is ordinary product-material interpretation; no UV-protection guarantee.",
+      "currentParserRequest": {
+        "query": "round eyewear for sunny days",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-14-1",
+      "query": "an organizer pouch for cables",
+      "targetIndex": 14,
+      "targetName": "Zip essentials pouch",
+      "sourceSupport": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "searchTerms": [
+          "organizer",
+          "pouch",
+          "cables",
+          "essentials",
+          "zip"
+        ]
+      },
+      "catalogJsonPointer": "/products/14",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Zip essentials pouch name, Canvas organizer pouch category and cables/essentials terms support organization. No compartment, protection or zipper performance claim.",
+      "currentParserRequest": {
+        "query": "an organizer pouch for cables",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-14-2",
+      "query": "a zipped canvas pouch for essentials",
+      "targetIndex": 14,
+      "targetName": "Zip essentials pouch",
+      "sourceSupport": {
+        "name": "Zip essentials pouch",
+        "category": "Canvas organizer pouch",
+        "searchTerms": [
+          "organizer",
+          "pouch",
+          "cables",
+          "essentials",
+          "zip"
+        ]
+      },
+      "catalogJsonPointer": "/products/14",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Zip essentials pouch name, Canvas organizer pouch category and cables/essentials terms support organization. No compartment, protection or zipper performance claim.",
+      "currentParserRequest": {
+        "query": "a zipped canvas pouch for essentials",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-15-1",
+      "query": "a striped cotton swimming towel",
+      "targetIndex": 15,
+      "targetName": "Everywhere cotton towel",
+      "sourceSupport": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "searchTerms": [
+          "towel",
+          "towels",
+          "beach",
+          "swim",
+          "swimming"
+        ]
+      },
+      "catalogJsonPointer": "/products/15",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Striped cotton towel category and swim/beach terms support towel. No absorbency, quick-dry or beach-performance claim.",
+      "currentParserRequest": {
+        "query": "a striped cotton swimming towel",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": []
+    },
+    {
+      "caseId": "frontier-15-2",
+      "query": "a cotton towel for the beach",
+      "targetIndex": 15,
+      "targetName": "Everywhere cotton towel",
+      "sourceSupport": {
+        "name": "Everywhere cotton towel",
+        "category": "Striped cotton towel",
+        "searchTerms": [
+          "towel",
+          "towels",
+          "beach",
+          "swim",
+          "swimming"
+        ]
+      },
+      "catalogJsonPointer": "/products/15",
+      "judgment": "supported primary product-function target; author-written, not exclusive truth",
+      "rationale": "Public Striped cotton towel category and swim/beach terms support towel. No absorbency, quick-dry or beach-performance claim.",
+      "currentParserRequest": {
+        "query": "a cotton towel for the beach",
+        "preferences": [],
+        "itemBudget": null,
+        "hardRequirements": []
+      },
+      "currentParserPolicy": {
+        "budgetSource": "absent",
+        "budgetExclusive": false,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      },
+      "guardEligibleCount": 16,
+      "allEligibleProductIndices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "baseGuardFailures": 0,
+      "additionalGuardFailures": 0,
+      "exactIdentityOverride": false,
+      "requestedCards": 6,
+      "requestedFields": 20,
+      "scoreVectorScope": "sixteen zero scores used only to exercise deterministic eligibility and exact-name policy; not learned ranking or model output",
+      "priorV3ExactWordingCases": [
+        "train-15-0"
+      ]
+    }
+  ]
+}
