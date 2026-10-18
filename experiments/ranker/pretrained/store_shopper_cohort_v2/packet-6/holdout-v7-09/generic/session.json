@@ -1,0 +1,221 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v7-09",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v7-09-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v7-09",
+    "personaSplit": "held-out",
+    "seed": 2026102509
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "d9ffd2cb-de19-40d2-8f5c-59dc7a0a1efa",
+    "contextId": "b6aa98f3-107f-42ad-bf51-db277439c428",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v7-09-generic-screenshot-png",
+      "holdout-v7-09-generic-trace-zip",
+      "holdout-v7-09-generic-browser-observations-json",
+      "holdout-v7-09-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:54:02.773Z",
+  "elapsedMs": 16165.785749999806,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v7-09-generic-step-0",
+        "runId": "holdout-v7-09-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:54:03.743Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 970.5544579997659,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-09-generic-step-1",
+        "runId": "holdout-v7-09-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:54:08.145Z",
+        "kind": "action",
+        "message": "a travel duffel for a short trip strictly below $84"
+      },
+      "elapsedMs": 5372.103999999352,
+      "action": {
+        "type": "search",
+        "query": "a travel duffel for a short trip strictly below $84"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-09-generic-step-2",
+        "runId": "holdout-v7-09-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:54:14.154Z",
+        "kind": "action",
+        "message": "Bags & travel"
+      },
+      "elapsedMs": 11381.79504099954,
+      "action": {
+        "type": "inspect",
+        "target": "Bags & travel"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v7-09-generic-step-3",
+        "runId": "holdout-v7-09-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:54:18.938Z",
+        "kind": "action",
+        "message": "The Weekender duffel is displayed at $84, which is not strictly below $84. The cheaper backpack and tote are not substitutes, so no order will be placed."
+      },
+      "elapsedMs": 16165.781957999803,
+      "action": {
+        "type": "abandon",
+        "target": "The Weekender duffel is displayed at $84, which is not strictly below $84. The cheaper backpack and tote are not substitutes, so no order will be placed."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v7-09-generic-screenshot-png",
+        "runId": "holdout-v7-09-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:54:19.388Z"
+      },
+      "status": "captured",
+      "sha256": "97600c775c07f76c6ff77926604022b088700ce80de18850b5dad113b8958a1c",
+      "bytes": 755203,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-09-generic-trace-zip",
+        "runId": "holdout-v7-09-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:54:19.388Z"
+      },
+      "status": "captured",
+      "sha256": "21dbf3b0defd4244e6cfb94aa294f425c50cfbf943f3d261588c9bc0393dd66f",
+      "bytes": 5055019,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-09-generic-browser-observations-json",
+        "runId": "holdout-v7-09-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:54:19.388Z"
+      },
+      "status": "captured",
+      "sha256": "21e68173bcb4c2f38390512b5414d5229c1f0006a43af56a3d8575ae9f935e0a",
+      "bytes": 17617,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v7-09-generic-checkout-receipt-json",
+        "runId": "holdout-v7-09-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:54:19.391Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v7-09-generic-screenshot-png",
+          "holdout-v7-09-generic-trace-zip",
+          "holdout-v7-09-generic-browser-observations-json",
+          "holdout-v7-09-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v7-09-generic-screenshot-png",
+          "holdout-v7-09-generic-trace-zip",
+          "holdout-v7-09-generic-browser-observations-json",
+          "holdout-v7-09-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "travel-form",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v7-09-generic-screenshot-png",
+          "holdout-v7-09-generic-trace-zip",
+          "holdout-v7-09-generic-browser-observations-json",
+          "holdout-v7-09-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

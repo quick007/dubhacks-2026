@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "71f0a360-7346-4c3e-b316-b34c03bd6a39",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "lamp",
+          "variantId": "lamp-slate-blue",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "71f0a360-7346-4c3e-b316-b34c03bd6a39",
+        "receiptId": "demo-ced2bac61edcf16a58f2a3d78134260b",
+        "createdAt": "2026-10-18T09:57:52.638345Z",
+        "items": [
+          {
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue",
+            "quantity": 1,
+            "unitPrice": 64,
+            "lineTotal": 64
+          }
+        ],
+        "subtotal": 64,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 64,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/71f0a360-7346-4c3e-b316-b34c03bd6a39",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "71f0a360-7346-4c3e-b316-b34c03bd6a39",
+        "receiptId": "demo-ced2bac61edcf16a58f2a3d78134260b",
+        "createdAt": "2026-10-18T09:57:52.638345Z",
+        "items": [
+          {
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue",
+            "quantity": 1,
+            "unitPrice": 64,
+            "lineTotal": 64
+          }
+        ],
+        "subtotal": 64,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 64,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "71f0a360-7346-4c3e-b316-b34c03bd6a39",
+    "receiptId": "demo-ced2bac61edcf16a58f2a3d78134260b"
+  },
+  "errors": []
+}

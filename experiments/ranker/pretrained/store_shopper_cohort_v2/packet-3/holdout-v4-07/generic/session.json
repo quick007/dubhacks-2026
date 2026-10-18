@@ -1,0 +1,286 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v4-07",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v4-07-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v4-07",
+    "personaSplit": "held-out",
+    "seed": 2026102207
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "3b04a630-90b7-4d01-a234-0b7ed56ba23e",
+    "contextId": "49a37457-565b-445b-a78c-1ea8e3969b43",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v4-07-generic-screenshot-png",
+      "holdout-v4-07-generic-trace-zip",
+      "holdout-v4-07-generic-browser-observations-json",
+      "holdout-v4-07-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:57:20.290Z",
+  "elapsedMs": 32377.324958000332,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v4-07-generic-step-0",
+        "runId": "holdout-v4-07-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:57:21.328Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 1037.5420420002192,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-07-generic-step-1",
+        "runId": "holdout-v4-07-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:57:25.873Z",
+        "kind": "action",
+        "message": "a portable lamp to place on a side table, at most $64"
+      },
+      "elapsedMs": 5582.958583000116,
+      "action": {
+        "type": "search",
+        "query": "a portable lamp to place on a side table, at most $64"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-07-generic-step-2",
+        "runId": "holdout-v4-07-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:57:33.293Z",
+        "kind": "action",
+        "message": "Portable table light color: Slate blue"
+      },
+      "elapsedMs": 13002.148833000101,
+      "action": {
+        "type": "inspect",
+        "target": "Portable table light color: Slate blue"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-07-generic-step-3",
+        "runId": "holdout-v4-07-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:57:39.427Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 19136.58958300017,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "lamp",
+        "variantId": "lamp-slate-blue"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-07-generic-step-4",
+        "runId": "holdout-v4-07-generic",
+        "sequence": 4,
+        "at": "2026-10-18T09:57:43.921Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 23629.92516699992,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-07-generic-step-5",
+        "runId": "holdout-v4-07-generic",
+        "sequence": 5,
+        "at": "2026-10-18T09:57:48.608Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 28317.000500000082,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v4-07-generic-step-6",
+        "runId": "holdout-v4-07-generic",
+        "sequence": 6,
+        "at": "2026-10-18T09:57:52.668Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 32377.31704200059,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v4-07-generic-screenshot-png",
+        "runId": "holdout-v4-07-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:57:53.050Z"
+      },
+      "status": "captured",
+      "sha256": "b0d3c421b1b9192665726fd63b12805810ec534467c13eba8c0f6ce9d6dd6d4f",
+      "bytes": 32497,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-07-generic-trace-zip",
+        "runId": "holdout-v4-07-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:57:53.050Z"
+      },
+      "status": "captured",
+      "sha256": "23ed2f03ac62531ed6b11cdf728f9ca6efb53f8d04f2353271cd6ff91eae0c95",
+      "bytes": 6564780,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-07-generic-browser-observations-json",
+        "runId": "holdout-v4-07-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:57:53.050Z"
+      },
+      "status": "captured",
+      "sha256": "e671c4d1d02ae65c1eaba462f6fdbbefc06fc1bdf21e2ad25fc54770c9b67015",
+      "bytes": 31986,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v4-07-generic-checkout-receipt-json",
+        "runId": "holdout-v4-07-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:57:53.053Z"
+      },
+      "status": "captured",
+      "sha256": "3679bd75c019bf45afa5d7985d9ddf2ca9d0d7ba37d8f4916711db4887c4a1fb",
+      "bytes": 2114,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Portable table light",
+    "selectedColor": "Slate blue",
+    "catalogPrice": 64,
+    "quantity": 1,
+    "productId": "lamp",
+    "variantId": "lamp-slate-blue",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v4-07-generic-step-3",
+      "holdout-v4-07-generic-step-5"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v4-07-generic-screenshot-png",
+      "holdout-v4-07-generic-trace-zip",
+      "holdout-v4-07-generic-browser-observations-json",
+      "holdout-v4-07-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"table-light\"]",
+        "evidenceArtifactIds": [
+          "holdout-v4-07-generic-screenshot-png",
+          "holdout-v4-07-generic-trace-zip",
+          "holdout-v4-07-generic-browser-observations-json",
+          "holdout-v4-07-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "64",
+        "evidenceArtifactIds": [
+          "holdout-v4-07-generic-screenshot-png",
+          "holdout-v4-07-generic-trace-zip",
+          "holdout-v4-07-generic-browser-observations-json",
+          "holdout-v4-07-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Slate blue\"",
+        "evidenceArtifactIds": [
+          "holdout-v4-07-generic-screenshot-png",
+          "holdout-v4-07-generic-trace-zip",
+          "holdout-v4-07-generic-browser-observations-json",
+          "holdout-v4-07-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

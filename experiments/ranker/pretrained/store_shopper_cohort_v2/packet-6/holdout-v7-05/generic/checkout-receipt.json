@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "d0d21aff-a537-4cc3-a2c9-4885e2cbe074",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "pack",
+          "variantId": "pack-slate-blue",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "d0d21aff-a537-4cc3-a2c9-4885e2cbe074",
+        "receiptId": "demo-c012d98e25932cd3ab684de66fdf4442",
+        "createdAt": "2026-10-18T09:55:27.888891Z",
+        "items": [
+          {
+            "productId": "pack",
+            "variantId": "pack-slate-blue",
+            "quantity": 1,
+            "unitPrice": 68,
+            "lineTotal": 68
+          }
+        ],
+        "subtotal": 68,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 68,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/d0d21aff-a537-4cc3-a2c9-4885e2cbe074",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "d0d21aff-a537-4cc3-a2c9-4885e2cbe074",
+        "receiptId": "demo-c012d98e25932cd3ab684de66fdf4442",
+        "createdAt": "2026-10-18T09:55:27.888891Z",
+        "items": [
+          {
+            "productId": "pack",
+            "variantId": "pack-slate-blue",
+            "quantity": 1,
+            "unitPrice": 68,
+            "lineTotal": 68
+          }
+        ],
+        "subtotal": 68,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 68,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "d0d21aff-a537-4cc3-a2c9-4885e2cbe074",
+    "receiptId": "demo-c012d98e25932cd3ab684de66fdf4442"
+  },
+  "errors": []
+}

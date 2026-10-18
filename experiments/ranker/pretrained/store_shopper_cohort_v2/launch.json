@@ -1,0 +1,32 @@
+{
+  "schema": "shopper-cohort-launch.v1",
+  "synthetic": true,
+  "launchedAt": "2026-10-18T08:42:31.661643+00:00",
+  "pid": 6376,
+  "command": [
+    "/opt/homebrew/Cellar/node/26.9.0/bin/node",
+    "--import",
+    "tsx",
+    "apps/runner/src/shopper-cohort.ts",
+    "run",
+    "--resume",
+    "--packets-json",
+    "[\"experiments/ranker/pretrained/store_shopper_eval_v2\",\"experiments/ranker/pretrained/store_shopper_eval_v3\",\"experiments/ranker/pretrained/store_shopper_eval_v4\",\"experiments/ranker/pretrained/store_shopper_eval_v5\",\"experiments/ranker/pretrained/store_shopper_eval_v6\",\"experiments/ranker/pretrained/store_shopper_eval_v7\"]",
+    "--snapshot",
+    "experiments/ranker/pretrained/store_shopper_cohort_snapshot_v2.json",
+    "--out",
+    "experiments/ranker/pretrained/store_shopper_cohort_v2",
+    "--seed",
+    "20261018",
+    "--pilot-pairs",
+    "5",
+    "--deadline",
+    "2026-10-18T13:00:00Z"
+  ],
+  "cwd": "/Users/lukas/Documents/Projects/dubhacks-2026",
+  "sourceCommit": "00ab473",
+  "fixedAssignedSessions": 120,
+  "planSha256": "4c1deff586b1a9a23b5b757b1bbec6d56dc514f50adbb30e29ec5c620c29580d",
+  "stdoutLog": "runtime.log",
+  "notes": "Detached process preserves assigned evidence if the app transport disconnects; no credentials copied or new paid services."
+}

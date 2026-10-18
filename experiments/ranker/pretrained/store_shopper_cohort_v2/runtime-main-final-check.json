@@ -1,0 +1,193 @@
+{
+  "schema": "shopper-main-runtime-final-check.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "checkedAt": "2026-10-18T09:58:30.760Z",
+  "planSha256": "4c1deff586b1a9a23b5b757b1bbec6d56dc514f50adbb30e29ec5c620c29580d",
+  "sourcePins": 670,
+  "pinsPassed": true,
+  "recorded": 120,
+  "identity": {
+    "checkedAt": "2026-10-18T09:58:30.638Z",
+    "pids": {
+      "storefront": 90191,
+      "checkout": 89743,
+      "model": 4200
+    },
+    "modelHealthIdentity": {
+      "status": "ready",
+      "ready": true,
+      "startup.rankCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+      "startup.copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+      "startup.sourceTensorsHashed": 927,
+      "startup.width": 10,
+      "startup.nativeFallback": false,
+      "startup.rankSessionProvenance.rankHead.servingExportSha256": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703",
+      "startup.rankSessionProvenance.rankHead.headCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+      "startup.copyMode": "parallel",
+      "startup.copyCandidate.kind": "fresh-parallel-head",
+      "startup.copyCandidate.checkpointSha256": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+      "startup.copyCandidate.featuresSha256": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+      "startup.copyCandidate.publicFactsSha256": "bbd2400e0c6e2907c783f01b7c157714cae00ec5b76fc619790a939a0f9d07f3",
+      "startup.imageDeliveryManifestSha256": "7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839"
+    }
+  },
+  "health": {
+    "status": "ready",
+    "ready": true,
+    "error": null,
+    "queuedRequests": 0,
+    "startup": {
+      "rankCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+      "copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+      "sourceTensorsHashed": 927,
+      "residentLoadMs": 1123.6344169592485,
+      "engineInitializationMs": 10857.761042076163,
+      "initializationScope": "engine constructor including source/checkpoint verification, model load, frozen hashes and catalog head; excludes process imports, worker lock wait and browser",
+      "memory": {
+        "mlxActiveBytes": 5038303752,
+        "mlxPeakBytes": 5101611528,
+        "mlxCacheBytes": 70295364,
+        "processBudgetBytes": 7516192768
+      },
+      "width": 10,
+      "nativeFallback": false,
+      "rankSessionProvenance": {
+        "featureBase": {
+          "kind": "original-v3-frozen-feature-base",
+          "run": "data/ranker/pretrained/actual-store-function-v3-attempt-1",
+          "reportSha256": "3a14a970a95b1289795d618ba6de8bfc12c07c4e7b8cafc8c4e0951645f4906d",
+          "packetSha256": "3b42c3f917df39c42643ac9771502e9e74ae0e7af24c1827c1107f8d248f645a",
+          "originalRunNativeForwards": 64,
+          "catalogFeatureVectors": 16,
+          "catalogTensorAndReceiptPins": 32,
+          "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+          "originalV3HeadSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e"
+        },
+        "rankHead": {
+          "kind": "v5-known-catalog-function-head",
+          "version": "store-v5-rank-session.v1",
+          "servingExportSha256": "17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703",
+          "headCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+          "newRunNativeForwards": 96,
+          "totalFeatureVectors": 144,
+          "reusedTrainAndCatalogVectors": 48,
+          "trainQueries": 96,
+          "freshEvaluationQueries": 32,
+          "trainSteps": 80,
+          "frozen927TrainingHashesUnchanged": true,
+          "teacherOrEvaluationFilesReadAtServing": false,
+          "requestEncodingUnchanged": true,
+          "selection": "explicit caller-selected serving export checksum; adapter performs no quality promotion",
+          "scope": "known16 single-function paraphrase adaptation; not promoted"
+        }
+      },
+      "candidateVersion": "store-candidate-engine.v1",
+      "copyMode": "parallel",
+      "copyCandidate": {
+        "version": "store-candidate-engine.v1",
+        "kind": "fresh-parallel-head",
+        "checkpointSha256": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+        "featuresSha256": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+        "publicFactsSha256": "bbd2400e0c6e2907c783f01b7c157714cae00ec5b76fc619790a939a0f9d07f3",
+        "assetSha256": {
+          "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/head.pt": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+          "data/ranker/pretrained/store-parallel-text-v1-attempt-1/features.pt": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+          "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/public-runtime-features.json": "bbd2400e0c6e2907c783f01b7c157714cae00ec5b76fc619790a939a0f9d07f3",
+          "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/serving-manifest.json": "4bf86af880a59ffb420646bbaf24cd200b743dccb5d0cf9274190d3d0a4acfae"
+        },
+        "trainingScope": "TRAIN-ALL public catalog demo; no heldout evaluation",
+        "heldoutBindings": 0,
+        "teacherStringsReadAtServing": false,
+        "offlineFeatures": "48 frozen-base Qwen fact encodings; no request/target features",
+        "headSlots": 14,
+        "vocabularySize": 107,
+        "style": "plain"
+      },
+      "candidateSourcesSha256": {
+        "store_candidate_engine_v1.py": "014e02881f9c4f3fceaffb6a927d031856d461f1f4907c63a824749af32b8a67",
+        "store_parallel_text_head_v1.py": "dd534fed7a956ac34c3533976f274ccf0aa1f564516ab9b86c36c2e87f8fa3d8",
+        "store_parallel_text_data_v1.py": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+        "store_parallel_text_demo_all_v1.py": "2f7d01ad4dca0c9bb882c2ba7b1add92f513bf6cb2f2b77f2795a7f464c06adb",
+        "store_generated_copy_cache_v1.py": "a5c372b7b1a80a156bbb4e30e08e2d407d9a4a24b275eabcd03d52c7e1a65c62",
+        "store_demo_engine.py": "bf2168f8898211ec2752d60676e933a647441fd15df93c4ad0450881c958deff"
+      },
+      "nativeFreshBackend": "store_demo_service CLI remains available",
+      "imageDelivery": {
+        "version": "same-dimension-product-webp.v1",
+        "encoder": {
+          "version": "1.6.0\nlibsharpyuv: 0.4.2",
+          "quality": 82,
+          "method": 4,
+          "metadata": "icc",
+          "resize": false,
+          "crop": false,
+          "encoderJobs": 1,
+          "multithreadFlag": false
+        },
+        "summary": {
+          "sourceCount": 87,
+          "sourceBytes": 44840476,
+          "optimizedBytes": 13245460,
+          "savedBytes": 31595016,
+          "optimizedToOriginalRatio": 0.29539070905491727,
+          "bytesSavedPercent": 70.46092909450827,
+          "nonSmallerDerivativeCount": 0
+        },
+        "manifestFile": "apps/storefront/src/responsive-product-assets.json",
+        "manifestSha256": "5724357f24475bb03ee845ad4903d01b998f0753b7802087223fbe62120e416a",
+        "responsiveManifestFile": "apps/storefront/src/responsive-product-sizes.json",
+        "responsiveManifestSha256": "548fc11314e848c47c72117c1c3557cb0646e9f16ff4c400b2069f225e3193d2",
+        "responsiveSummary": {
+          "sourceCount": 87,
+          "sourceBytes": 44840476,
+          "fullSizeWebpBytes": 13245460,
+          "variantCount": 409,
+          "variantBytes": 15374078,
+          "perWidth": {
+            "192": {
+              "count": 87,
+              "bytes": 374496
+            },
+            "384": {
+              "count": 87,
+              "bytes": 1079774
+            },
+            "768": {
+              "count": 87,
+              "bytes": 3294260
+            },
+            "1152": {
+              "count": 87,
+              "bytes": 6259114
+            },
+            "1536": {
+              "count": 61,
+              "bytes": 4366434
+            }
+          }
+        },
+        "runtimeProjectionFile": "apps/storefront/src/product-image-runtime.json",
+        "runtimeProjectionSha256": "c92cbbda72ecf32873ce233f7411645b899a393d48d3b550394a25685ec7fb08",
+        "runtimeProjectionBytes": 3125,
+        "delivery": "responsive whole-sheet WebP srcset/sizes; small lazy thumbnails; original-format fallback; full-size alternative retained",
+        "originalAssetBytesUnchanged": true,
+        "catalogFactsUnchanged": true,
+        "modelInputsUnchanged": true,
+        "learnedImageFeatures": false,
+        "selection": "existing color/gallery metadata; alternate format only",
+        "derivativeHashesVerifiedAtFreeze": true
+      },
+      "imageDeliveryManifestSha256": "7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839",
+      "imageServingSourcesSha256": {
+        "experiments/ranker/pretrained/store_candidate_image_service_v1.py": "68729ac3aa020af9f05f03e0c54fdcbc52ea54a7086f235cb515aa7acdfecd4d",
+        "experiments/ranker/pretrained/store_demo_image_binding_v1.py": "365adb11a097e233e1ba65039c9bc225e7e1eb7028c323f30480fab0699335d0",
+        "experiments/ranker/pretrained/store_rank_session_v5.py": "81dd458578fe087b7d2ad6eb9c2b0ceb03d456d11555d5ca9fc8abf62fb81d28",
+        "scripts/prepare-product-webp.mjs": "50d4962f9a4886905aa704ab5acd26060c8b4acf4a495fd476eb1dbee02c000f",
+        "scripts/prepare-product-responsive-webp.mjs": "48ae7d92938bdf8eaaaec4d5504465a7b567b4b2881a382ad57181145ec4a3c2",
+        "scripts/prepare-product-runtime-projection.mjs": "d66b4fe447330a090d0eea03169321bbe7cdce25bf6019c0a073cf39a3cb6908"
+      }
+    }
+  },
+  "cohortResult": "cohort-result-1792312952539-6376.json"
+}
