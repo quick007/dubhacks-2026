@@ -114,3 +114,85 @@ budget semantics separate from delivered cost and waterproof distinct from
 water-resistant. Do not fit these ten inspected tasks and call their inherited
 held-out names a fresh evaluation. Grouping remains deterministic. No checkpoint
 from the failed transfer or complete-card arms is promoted.
+
+
+## Corrected-input generalization v2, completed
+
+The explicitly approved restart adds versioned typed jacket inputs and honest
+variable-card plans without rewriting legacy encoder/validator/checkpoint bytes.
+All21 targeted CPU tests pass; all10 pinned public tasks reproduce15 returned
+cards of30 requested,15 disclosed shortfalls and55 independent unexecuted copy
+jobs. Image selection abstains, stock/shipping remain unknown, and hard masks
+precede caller scores. See JACKET_MODEL_CONTRACT.md and the independently checked
+jacket_alignment_results/v1/report.json. This is a model-side contract, not native
+jacket ranking/copy or a live serving integration.
+
+A real corrected-data v2 comparison completed at execution5ca10cb:192B1 native
+encodes, four fixed80-step factor fits (320 actual steps) and two random heads.
+The frozen9B weights were unchanged; TRAIN-only role means use21queries and21
+products per representation. Private ranking targets are opened only after all
+six head checkpoints freeze. Exactly matched supervision/schedule compares full
+public text against a new compact native encoding of only declared positive
+preferences/product attributes. Both remain real native hidden features, not
+one-hot oracle features. No image variants were invented.
+
+Focused validation and test each achieve21/21 best-set choices, nDCG3=1 and
+94/94,115/115 both-correct disjoint-best-set pairs. Full text achieves8/21 and
+7/21; its test prior gets10/21. Focused test prior10/21, random4/21 and
+opposing-query11/21 distinguish the learned conditional result. All14 novel
+pair/triple queries per held-out split pass; singleton meanings/texts necessarily
+overlap and some focused catalog rows match TRAIN singleton text exactly. This
+is nuisance invariance plus combination transfer on synthetic public attributes,
+not evidence of unseen singleton meanings, natural preference learning or human
+conversion. Pair metrics reuse21queries and are correlated, not115independent
+observations. Both modes share newly balanced data, so gains over older runs
+cannot isolate the coverage correction from the representation correction.
+
+Actual test native query-encode medians are180.804ms full and124.990ms focused;
+full context60–75tokens, focused15–25. These are encoding measurements from one
+fixed-order run, not end-to-end rank/grid/copy/page speedups or latency tails.
+Model load3.009s, native lifecycle33.669s, CPU fit/freezes.125s, evaluation.281s,
+wall including startup37.041s, peak MLX4,706,802,514bytes under6GiB. No cache or
+memory limit was hit. Full raw tokens/counts/timings/probabilities/scores,
+checkpoints/fit traces and immutablefeature/checkpoint receipts are retained in
+catalog_fusion/results/generalization-v2-attempt-1 and the original data run.
+
+The independent audit verifies192native artifacts,384sealed feature files,
+six checkpoint reloads,320steps,630score vectors,52,920probability scalars and
+420atom confusion tables. See CATALOG_FUSION_GENERALIZATION_V2_ATTEMPT_1_AUDIT.md.
+No v2 checkpoint is promoted to jacket, image, generated-copy or full-page use.
+The next transfer experiment must use current storefront facts and a new public
+task/label freeze, then validate fresh copy and complete-request latency.
+
+Teammate main advanced during this restart. A normal non-force merge at e172f60
+preserves their16-product storefront/color/gallery work and the model fix. That
+catalog is separate from the pinned six-jacket scenario; versioned actual-store
+input mapping is being recorded separately. MEMORY_MODEL_ASSESSMENT.md records
+real24GiBhardware/headroom/swap and larger-model planning. The6/7GiBguards are
+experiment limits, not user hardware restrictions. No apps were closed and no
+weights were downloaded: current corrected-data quality improved on the same9B.
+
+
+The actual-store import is now completed and independently checked:16products,
+48color variants,195gallery records,32separate previews and81hashed local assets.
+`store_catalog_v1.py` preserves all external crop/action bindings while excluding
+routing IDs and persona briefs from model text. The additional `store_model_bridge`
+checks current bytes of15selected input-producing sources before/after preparing
+all195rows; historical authenticity alone does not establish active freshness.
+The actual CPU receipt is store_model_results/v1/report.json; no native action,
+rank, image choice or new copy is claimed. Three freshness/action tests supplement
+14import tests. See ACTUAL_STORE_MODEL_INPUTS.md for capabilities and public task
+compatibility limits. The old jacket snapshot remains unchanged.
+
+The independent data review finds old labels teacher-consistent, but the old
+TRAINquerydistribution was28singletons while validation/test usedonlypairs;
+all84oldcatalogproducts hadexactlytwo tags. V2balances bothTRAINroles at21rows,
+seven each cardinality1/2/3, eachatom6positives/15negatives. Seeded nuisance
+assignment is not empirical decorrelation: its six-product testcatalog has
+price-versus-tag-cardinality Pearsonr=.837. This narrow result needs new catalog
+replications and explicit nuisance counterfactuals before broad claims. Focused
+v2also omits free task wording/history from its positive-preference vector; it
+is not a replacement for observed-profile/history reasoning. Unknown/negative/
+contradictorypreferences and hiddenpersona inference were not trained/evaluated.
+Hard public constraints remain outside learned scores. No larger model was
+substituted to disguise these data/coverage limitations.
