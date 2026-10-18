@@ -124,30 +124,44 @@ accepted-only `pnpm dev:personalized` entry remains closed until its full gate
 passes. Model weights and public numerical feature caches remain local and are
 not part of the Git repository.
 
-On the configured machine, `pnpm dev:personalized:demo` starts this explicitly
-non-promoted development demo at <http://127.0.0.1:4313>. It requires the copied
-local artifact bundle and preserved review evidence listed in the
-[preencoded development entry guide](scripts/dev-personalized-preencoded.md). It refuses
-busy model/UI ports, uses the local simulated checkout, and stops only its own
-children on Ctrl+C. No weights, credentials or paid service are fetched.
-`pnpm dev:personalized:uncached` preserves the earlier development path.
+On the configured machine, `pnpm dev:personalized:demo` starts the explicitly
+non-promoted, factorized-profile development demo at <http://127.0.0.1:4313>.
+It requires the copied local artifact bundle and preserved evidence in the
+[factorized entry guide](scripts/dev-personalized-factorized.md). It refuses busy
+model/UI ports, uses local simulated checkout, and stops only its own children
+on Ctrl+C. No weights, credentials or paid service are fetched.
+`pnpm dev:personalized:warm` preserves V3; `pnpm dev:personalized:uncached` preserves V2.
 
-The [measured warm-profile run](experiments/ranker/pretrained/PERSONA_WARM_BROWSER_V1_INDEPENDENT_AUDIT.md)
-encoded ten public browsing contexts once in 5.12 seconds before readiness.
-Every request then performed a fresh Qwen query forward, fresh ranking projection
-and fresh copy predictions. Ten loaded, pre-scrolled profile switches reached
-three fully visible factual cards with decoded images in 335.4 ms median;
-six-card copy and decoded images completed in 350.8 ms median (416.6 ms p95).
-The service generated 20 fields; the current UI renders 19 strings. Six decoded
-cards do not mean six simultaneously visible cards, and the initial hero leaves
-card copy below the fold. These are resident development measurements, excluding
-startup and physical paint, with the failed-quality adapter above.
+V4 preencoded ten public profiles once in 18.75 seconds before readiness. Every
+request still performed a fresh Qwen query forward, fresh ranking projection,
+learned color choice and fresh copy predictions. Ten loaded, pre-scrolled profile
+switches reached three fully visible factual cards with decoded images in
+335.5 ms median (649.0 ms p95). Six-card copy and decoded images completed in
+351.2 ms median. Ten distinct typed queries on a known profile completed six-card
+copy and decoded images in 413.5 ms median (463.4 ms p95). Actual search scrolling
+left no complete first-three visibility endpoint in those ten cases; the initial
+hero also showed zero complete useful cards. Full six-card completion does not
+mean all six cards were visible. The service generated 20 fields; the UI renders
+19 strings. Startup, browser launch and physical paint are excluded.
 
-Both context caches include the query. A new typed `work bag` query took
-3.315 seconds for six-card completion; its reload took 1.538 seconds. That query
-path still exceeds the low-hundreds target. No response words or completed
-rankings were cached. Query-independent profile encoding is a separate serving
-experiment, not a property of this measured path.
+The [saved measurements](experiments/ranker/pretrained/persona_factorized_results/v1/browser-derived-summary.json)
+retain all fixed requests and misses. V4 caches pure public persona/history
+features, with actual queries and hard guards handled separately; it caches no
+scores, rankings or response words. One new public context cost 1.977 seconds to
+encode over HTTP, then a different query on that context completed in 270 ms.
+These two HTTP samples are separate from browser latency distributions.
+
+This changes context conditioning from V2/V3. The checkpoint failed the older
+quality packet; V4 personalization quality has no independent promotion result.
+The [independent public review](experiments/ranker/pretrained/PERSONA_FACTORIZED_V4_PUBLIC_INDEPENDENT_AUDIT_V1.md)
+still found owned-item repeats, palette misses and common
+products across profiles. It is a factual, functioning development demo with
+measured latency, not an accepted personalization model. The earlier
+[warm-profile measurement](experiments/ranker/pretrained/PERSONA_WARM_BROWSER_V1_INDEPENDENT_AUDIT.md)
+preserved V2 outputs exactly and used 5.12-second startup encoding, but a new
+work-bag query took 3.315 seconds and reload 1.538 seconds. Those older caches
+included the query. The different conditioning prevents an output-parity or
+quality-improvement claim for V4.
 
 The parallel head is a fully supervised catalog demo: all 48 product/color
 bindings and three short writing styles were trained. It predicts word/EOS
@@ -167,7 +181,7 @@ projection against the full source/derivative audit manifests.
 
 ## Measured status
 
-The [matched loaded-shop comparison](experiments/ranker/pretrained/STORE_PAIRED_INCREMENTAL_PROBE_V1_INDEPENDENT_AUDIT.md)
+The older v5 [matched loaded-shop comparison](experiments/ranker/pretrained/STORE_PAIRED_INCREMENTAL_PROBE_V1_INDEPENDENT_AUDIT.md)
 completed 20 pairs with all 40 observations
 retained. Generic first-three visibility and decoded images took p50/p95
 64.3/65.1 ms; fresh local personalization took 281.1/297.7 ms. Paired additional

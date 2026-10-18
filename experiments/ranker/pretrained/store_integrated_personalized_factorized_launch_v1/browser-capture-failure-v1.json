@@ -1,0 +1,202 @@
+{
+  "version": "main-factorized-persona-launch-browser-smoke.v1",
+  "synthetic": true,
+  "qualityGatePassed": false,
+  "modelPromotion": false,
+  "v4ConditioningQualityValidated": false,
+  "checks": [
+    {
+      "name": "six cards and20 fresh accepted fields",
+      "passed": true
+    },
+    {
+      "name": "actual fresh Qwen query forward",
+      "passed": true
+    },
+    {
+      "name": "pure profile reuse with fresh projection",
+      "passed": true
+    },
+    {
+      "name": "actual persona switcher present",
+      "passed": true
+    },
+    {
+      "name": "bare main URL uses observed public history",
+      "passed": true
+    }
+  ],
+  "requests": [
+    {
+      "request": {
+        "query": "Browse the store",
+        "itemBudget": 90,
+        "hardRequirements": [],
+        "persona": {
+          "background": [
+            "Recently furnished a small living room and spends evenings reading on the sofa.",
+            "Keeps the room uncluttered and is adding a few useful finishing touches.",
+            "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+          ],
+          "colorPreferences": [
+            "green and natural shades"
+          ]
+        },
+        "publicHistory": [
+          {
+            "eventId": "demo-bob-event-1",
+            "eventType": "purchase",
+            "itemName": "two-seat sofa",
+            "category": "Living room furniture",
+            "occurredAt": "2026-10-12T13:30:00.000Z",
+            "source": "demo-seed",
+            "external": true
+          },
+          {
+            "eventId": "demo-bob-event-2",
+            "eventType": "purchase",
+            "itemName": "Trail mug",
+            "category": "For the slow mornings",
+            "occurredAt": "2026-10-13T07:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Cobalt",
+            "productId": "mug",
+            "variantId": "mug-cobalt"
+          },
+          {
+            "eventId": "demo-bob-event-3",
+            "eventType": "view",
+            "itemName": "Portable table light",
+            "category": "Cordless table lamp",
+            "occurredAt": "2026-10-14T01:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Slate blue",
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue"
+          },
+          {
+            "eventId": "demo-bob-event-4",
+            "eventType": "view",
+            "itemName": "Zip essentials pouch",
+            "category": "Canvas organizer pouch",
+            "occurredAt": "2026-10-14T19:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Sage",
+            "productId": "organizer",
+            "variantId": "organizer-sage"
+          },
+          {
+            "eventId": "demo-bob-event-5",
+            "eventType": "cart",
+            "itemName": "Pocket field notes",
+            "category": "Keep a good thought",
+            "occurredAt": "2026-10-15T13:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Terracotta",
+            "productId": "notebook",
+            "variantId": "notebook-terracotta"
+          },
+          {
+            "eventId": "demo-bob-event-6",
+            "eventType": "view",
+            "itemName": "Portable table light",
+            "category": "Cordless table lamp",
+            "occurredAt": "2026-10-16T07:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Slate blue",
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue"
+          },
+          {
+            "eventId": "demo-bob-event-7",
+            "eventType": "view",
+            "itemName": "Zip essentials pouch",
+            "category": "Canvas organizer pouch",
+            "occurredAt": "2026-10-17T01:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Sage",
+            "productId": "organizer",
+            "variantId": "organizer-sage"
+          },
+          {
+            "eventId": "demo-bob-event-8",
+            "eventType": "view",
+            "itemName": "Pocket field notes",
+            "category": "Keep a good thought",
+            "occurredAt": "2026-10-17T19:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Terracotta",
+            "productId": "notebook",
+            "variantId": "notebook-terracotta"
+          }
+        ]
+      },
+      "requestId": "4c45a714-6b51-42d9-8eb9-f46c7fe78d96",
+      "selectedProductIds": [
+        "blanket",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "sunglasses"
+      ],
+      "acceptedFields": 20,
+      "queryFeature": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.33441605046391487,
+          "forwardMs": 236.33120802696794,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+          "textBytes": 306,
+          "elapsedMs": 237.06791596487164,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.33441605046391487,
+          "nativeForwardMs": 236.33120802696794,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 30.405292054638267,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 10,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "rawSha256": "01e8eaa7ab195d51b8abe2904744bae68a52ab77d727d4899fb1ea53f7e0b73e"
+    }
+  ],
+  "pageErrors": [],
+  "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier\nResponse body is not available for a response that was navigated away from. Read response.body() before triggering any navigation.",
+  "browserClosed": true
+}

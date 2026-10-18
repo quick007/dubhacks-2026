@@ -1,0 +1,406 @@
+{
+  "version": "main-factorized-persona-launch-browser-smoke.v2",
+  "synthetic": true,
+  "qualityGatePassed": false,
+  "modelPromotion": false,
+  "v4ConditioningQualityValidated": false,
+  "checks": [
+    {
+      "name": "six cards and20 fresh accepted fields",
+      "passed": true
+    },
+    {
+      "name": "actual fresh Qwen query forward",
+      "passed": true
+    },
+    {
+      "name": "pure profile reuse with fresh projection",
+      "passed": true
+    },
+    {
+      "name": "actual persona switcher present",
+      "passed": true
+    },
+    {
+      "name": "bare main URL uses observed public history",
+      "passed": true
+    },
+    {
+      "name": "six cards and20 fresh accepted fields",
+      "passed": true
+    },
+    {
+      "name": "actual fresh Qwen query forward",
+      "passed": true
+    },
+    {
+      "name": "pure profile reuse with fresh projection",
+      "passed": true
+    },
+    {
+      "name": "actual persona switcher present",
+      "passed": true
+    },
+    {
+      "name": "new query keeps same public persona/history",
+      "passed": true
+    },
+    {
+      "name": "same profile key across different actual queries",
+      "passed": true
+    },
+    {
+      "name": "actual query changes selected order",
+      "passed": true
+    },
+    {
+      "name": "zero browser page errors",
+      "passed": true
+    }
+  ],
+  "requests": [
+    {
+      "request": {
+        "query": "Browse the store",
+        "itemBudget": 90,
+        "hardRequirements": [],
+        "persona": {
+          "background": [
+            "Recently furnished a small living room and spends evenings reading on the sofa.",
+            "Keeps the room uncluttered and is adding a few useful finishing touches.",
+            "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+          ],
+          "colorPreferences": [
+            "green and natural shades"
+          ]
+        },
+        "publicHistory": [
+          {
+            "eventId": "demo-bob-event-1",
+            "eventType": "purchase",
+            "itemName": "two-seat sofa",
+            "category": "Living room furniture",
+            "occurredAt": "2026-10-12T13:30:00.000Z",
+            "source": "demo-seed",
+            "external": true
+          },
+          {
+            "eventId": "demo-bob-event-2",
+            "eventType": "purchase",
+            "itemName": "Trail mug",
+            "category": "For the slow mornings",
+            "occurredAt": "2026-10-13T07:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Cobalt",
+            "productId": "mug",
+            "variantId": "mug-cobalt"
+          },
+          {
+            "eventId": "demo-bob-event-3",
+            "eventType": "view",
+            "itemName": "Portable table light",
+            "category": "Cordless table lamp",
+            "occurredAt": "2026-10-14T01:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Slate blue",
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue"
+          },
+          {
+            "eventId": "demo-bob-event-4",
+            "eventType": "view",
+            "itemName": "Zip essentials pouch",
+            "category": "Canvas organizer pouch",
+            "occurredAt": "2026-10-14T19:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Sage",
+            "productId": "organizer",
+            "variantId": "organizer-sage"
+          },
+          {
+            "eventId": "demo-bob-event-5",
+            "eventType": "cart",
+            "itemName": "Pocket field notes",
+            "category": "Keep a good thought",
+            "occurredAt": "2026-10-15T13:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Terracotta",
+            "productId": "notebook",
+            "variantId": "notebook-terracotta"
+          },
+          {
+            "eventId": "demo-bob-event-6",
+            "eventType": "view",
+            "itemName": "Portable table light",
+            "category": "Cordless table lamp",
+            "occurredAt": "2026-10-16T07:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Slate blue",
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue"
+          },
+          {
+            "eventId": "demo-bob-event-7",
+            "eventType": "view",
+            "itemName": "Zip essentials pouch",
+            "category": "Canvas organizer pouch",
+            "occurredAt": "2026-10-17T01:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Sage",
+            "productId": "organizer",
+            "variantId": "organizer-sage"
+          },
+          {
+            "eventId": "demo-bob-event-8",
+            "eventType": "view",
+            "itemName": "Pocket field notes",
+            "category": "Keep a good thought",
+            "occurredAt": "2026-10-17T19:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Terracotta",
+            "productId": "notebook",
+            "variantId": "notebook-terracotta"
+          }
+        ]
+      },
+      "requestId": "bd9e707a-4415-4d30-b58d-1ee2a971edd7",
+      "selectedProductIds": [
+        "blanket",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "lunchbox",
+        "sunglasses"
+      ],
+      "acceptedFields": 20,
+      "queryFeature": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.25533302687108517,
+          "forwardMs": 232.62004205025733,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+          "textBytes": 306,
+          "elapsedMs": 233.227499993518,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.25533302687108517,
+          "nativeForwardMs": 232.62004205025733,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 14.560249983333051,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 10,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "rawSha256": "e9a88165ff32bd0c71fa541c2fa249e099bd4157ffc0335b8bf12db2d0f35481"
+    },
+    {
+      "request": {
+        "query": "work bag",
+        "itemBudget": 90,
+        "hardRequirements": [],
+        "persona": {
+          "background": [
+            "Recently furnished a small living room and spends evenings reading on the sofa.",
+            "Keeps the room uncluttered and is adding a few useful finishing touches.",
+            "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+          ],
+          "colorPreferences": [
+            "green and natural shades"
+          ]
+        },
+        "publicHistory": [
+          {
+            "eventId": "demo-bob-event-1",
+            "eventType": "purchase",
+            "itemName": "two-seat sofa",
+            "category": "Living room furniture",
+            "occurredAt": "2026-10-12T13:30:00.000Z",
+            "source": "demo-seed",
+            "external": true
+          },
+          {
+            "eventId": "demo-bob-event-2",
+            "eventType": "purchase",
+            "itemName": "Trail mug",
+            "category": "For the slow mornings",
+            "occurredAt": "2026-10-13T07:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Cobalt",
+            "productId": "mug",
+            "variantId": "mug-cobalt"
+          },
+          {
+            "eventId": "demo-bob-event-3",
+            "eventType": "view",
+            "itemName": "Portable table light",
+            "category": "Cordless table lamp",
+            "occurredAt": "2026-10-14T01:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Slate blue",
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue"
+          },
+          {
+            "eventId": "demo-bob-event-4",
+            "eventType": "view",
+            "itemName": "Zip essentials pouch",
+            "category": "Canvas organizer pouch",
+            "occurredAt": "2026-10-14T19:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Sage",
+            "productId": "organizer",
+            "variantId": "organizer-sage"
+          },
+          {
+            "eventId": "demo-bob-event-5",
+            "eventType": "cart",
+            "itemName": "Pocket field notes",
+            "category": "Keep a good thought",
+            "occurredAt": "2026-10-15T13:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Terracotta",
+            "productId": "notebook",
+            "variantId": "notebook-terracotta"
+          },
+          {
+            "eventId": "demo-bob-event-6",
+            "eventType": "view",
+            "itemName": "Portable table light",
+            "category": "Cordless table lamp",
+            "occurredAt": "2026-10-16T07:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Slate blue",
+            "productId": "lamp",
+            "variantId": "lamp-slate-blue"
+          },
+          {
+            "eventId": "demo-bob-event-7",
+            "eventType": "view",
+            "itemName": "Zip essentials pouch",
+            "category": "Canvas organizer pouch",
+            "occurredAt": "2026-10-17T01:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Sage",
+            "productId": "organizer",
+            "variantId": "organizer-sage"
+          },
+          {
+            "eventId": "demo-bob-event-8",
+            "eventType": "view",
+            "itemName": "Pocket field notes",
+            "category": "Keep a good thought",
+            "occurredAt": "2026-10-17T19:30:00.000Z",
+            "source": "demo-seed",
+            "selectedColor": "Terracotta",
+            "productId": "notebook",
+            "variantId": "notebook-terracotta"
+          }
+        ]
+      },
+      "requestId": "7676c731-9d77-441f-8c4b-9ba217fc4f46",
+      "selectedProductIds": [
+        "pack",
+        "blanket",
+        "sweatshirt",
+        "organizer",
+        "notebook",
+        "tote"
+      ],
+      "acceptedFields": 20,
+      "queryFeature": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.2021249383687973,
+          "forwardMs": 210.92858293559402,
+          "batchRows": 1,
+          "paddedTokensPerRow": 63,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "f4951ecccf291415709e845365633fb34dd2e1e05680a4ed3c0c897c7a29f0ce",
+          "textBytes": 298,
+          "elapsedMs": 211.59366704523563,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.2021249383687973,
+          "nativeForwardMs": 210.92858293559402,
+          "paddedTokensPerRow": 63,
+          "role": "query"
+        }
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 7.26087496150285,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 10,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "rawSha256": "b4d71a420da1b973d3e5834d2948e9fecce887ef6c59991b272fb10423ccfb8d"
+    }
+  ],
+  "pageErrors": [],
+  "sourceHashes": {
+    "apps/storefront/src/main.tsx": "b8ab479d7723ab9f665c974f12fc4afcad220cec03ad0f695344026c6aa70183",
+    "experiments/ranker/pretrained/store_persona_adapter_runtime_v4.py": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d",
+    "experiments/ranker/pretrained/store_persona_adapter_engine_v4.py": "1d977c06fa2d4a7db75ab5ec07e8de6604fec3716fa77b057a2e21024fa97b48"
+  },
+  "browserClosed": true
+}

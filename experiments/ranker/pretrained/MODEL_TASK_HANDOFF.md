@@ -1,5 +1,61 @@
 # Model engineering handoff
 
+## Current integration checkpoint, 2026-10-18 13:15 UTC
+
+Left ready for recording: launcher91659, native91663/8767, persona UI92022/4313.
+The final active lifetime is exec10284, data/personalized-development/
+2026-10-18T13-13-52.310Z-825e4301-40d8-4cf9-b36d-7c045131c1e5.
+See persona_factorized_results/v1/live-service-receipt.json for fresh ready/queue0,
+HTTP200 storefront/presentation and actual source:tiger readback. This active
+lifetime has not been shut down; its prior main lifetime has the clean927 proof.
+Only stop launcher91659 gracefully before another native worker.
+
+The explicit development entry `pnpm dev:personalized:demo` now selects V4 on
+http://127.0.0.1:4313. It uses MAIN code and copied MAIN runtime assets, local
+simulated checkout4331, public background/history and fresh query computation.
+`dev:personalized:warm` preserves V3; `dev:personalized:uncached` preserves V2.
+The accepted-only `dev:personalized` stays closed. Model promotion is false.
+
+V4 technical/factual acceptance passed:13 primary browser requests,10 profile
+three-card/six-card observations,2 functional arms,10 distinct query observations
+and1 new-history HTTP probe. All23 browser actual requests/native receipts were
+independently joined. Main-only launch then passed13 actual browser checks over
+2 real requests with changed query/order and same public profile key. Its
+graceful owned cleanup was unforced, with all927/rank/copy/cache/source proofs.
+Failed CDP receipt capture is preserved; a new response-clone probe version passed
+without modifying the storefront/model. See store_integrated_personalized_factorized_launch_v1.
+
+Loaded profile first3 useful-content p50/p95:335.5/649.0ms; full6 decoded copy
+p50:351.2ms. Ten distinct queries full6 p50/p95:413.5/463.4ms, but first3 useful
+visibility0/10 because actual search scroll leaves copy below the fold. Initial
+hero also exposes0 complete useful cards. Do not substitute rank/head timing
+for these complete content measurements. Startup profile encoding18.753s; new
+history capture remains about2s. Physical paint is not measured. Pure persona/
+history features are cached, scores/ranks/response words are not; every actual
+query is freshly encoded B1 and hard constraints use the original request.
+
+V4 changes context conditioning; prior independent packet scores do not measure
+its quality. Public facts/images passed but four profiles repeat owned products,
+palette/function misses and a common30/60 product-slot trio remain. The first
+adapter failed17/32 versus base20(raw)/19(fused); bounded clear-data follow-up
+failed19/32 versus base23(raw)/22(fused) on a DIFFERENT packet. Both are now
+development and neither is promoted. All checkpoints/failed runs are retained.
+No further fit is planned before the parent recording boundary.
+
+Main integrated CPU checks passed:51 runtime/analyzer/admission Python tests,
+52 launcher/profile Node tests,23 browser-protocol Node tests. Earlier unchanged
+UI acceptance includes76 storefront tests/typecheck/build,11 generic real browser
+checks and50 strict-Tiger presentation checks. The hosted120-session cohort is
+the older frozen v5 model, never a V4 result; no new conversion benefit is claimed.
+
+Read PERSONA_FACTORIZED_V4_PUBLIC_INDEPENDENT_AUDIT_V1.md and
+persona_factorized_results/v1/README.md for measured scopes and retained failures.
+The final live demo lifetime is recorded separately from these retired evidence
+lifetimes. Stop its launcher gracefully before any new GPU work. Keep strict
+Tiger4311, checkout4331, website4310 and generic storefront4312 unchanged.
+All following sections are preserved chronological history.
+
+
 Worktree: `/Users/lukas/Documents/Projects/dubhacks-2026`, remote
 `quick007/dubhacks-2026`, branch `main` only. Preserve teammate changes, all
 checkpoints, raw runs, reports and prepared candidate sources. No UI, API,
@@ -508,3 +564,57 @@ logits on complete catalog-conditioned prompts in canonical/reversed orders.
 This uses no gold, optimizer or autoregressive decode and is not a promotion
 claim. Any new candidate needs separately frozen independent quality evidence
 and actual serving/browser acceptance before becoming the normal store model.
+
+## Integrated persona demo and completed follow-up, 2026-10-18 12:56 UTC
+
+Canonical main now includes the ten-person public persona/history UI, real Tiger
+public-history readback, actual local checkout, accepted-only launcher, explicit
+failed-quality development launcher, and measured fresh-query profile caching.
+Main 6955302 is pushed. No persona model has passed the promotion gate.
+
+The first final31 rank4 LoRA fit completed 3,584 optimizer updates and all 927
+frozen tensor/adapter/cache/reload checks, but independent quality was 17/32
+primary versus frozen-base 20/32 (fused 17 versus 19). A complete audit of the
+legacy 320 authored priority labels found ambiguous priorities despite valid
+source history facts. The one bounded follow-up used only the independently
+audited 128 clear TRAIN profiles for supervised loss and legacy contexts for
+frozen-base distillation. Its 3,584 updates and native parity/integrity checks
+passed, but a separately frozen 32-case packet scored 19/32 versus base 23/32
+(fused 19 versus 22). These are different packets; 17-to-19 is not an improvement
+comparison. Both packets are now development. All failures/checkpoints remain.
+See persona_choice_results/{v1,clear_v2} and the independent adjudications.
+
+The V3 warm-context candidate preserves V2 outputs exactly. It preencoded ten
+public color contexts in 5.12 seconds, then performed a fresh Qwen query forward,
+rank projection and copy predictions on every request. Ten loaded, pre-scrolled
+profile switches reached three visible cards with decoded images at p50 335.4ms,
+p95 416.6ms; full six-card decoded copy completed at p50 350.8ms. Startup and
+physical paint are excluded. The initial hero exposes no complete useful card.
+New work-bag query completion was 3.315s and reload 1.538s because full-context
+feature keys still contain the query. All 13 protocol and two functional checks
+passed; separate public relevance review still found ownership/preference misses.
+
+Main `pnpm dev:personalized:demo` was actually launched, completed a real six-card
+HTTP request with a fresh query forward, then gracefully stopped native82756 and
+owned UI83106 unforced. All 927/copy/rank/cache/source shutdown proofs passed.
+See store_integrated_personalized_launch_v1/report.json. The old uncached entry
+is preserved as `pnpm dev:personalized:uncached`; `pnpm dev:personalized` remains
+accepted-only and deliberately closed. Local weights are not in Git.
+
+Main generic storefront also passed 11 actual browser checks: 16 products, real
+search/cart, local fake checkout POST202 + fresh GET + matching visible ID, return
+navigation, zero model requests and zero page errors. Earlier probe/HMR failures
+are retained separately. Correct direct startup uses explicit PORT=4312.
+
+One serving-only V4 experiment is now being measured separately. It neutralizes
+query/budget/hard requirements only for profile-context feature conditioning;
+actual fresh queries and actual hard guards still use the original request. It
+preencodes pure color and X/H/Y tensors, verifies native/cache logits exactly
+before storing, and caches no scores/rankings/response words. This is a different
+function, with unvalidated quality; old packet quality and V3 parity do not apply.
+No more training is planned in this pass. V2/V3 and their evidence remain intact.
+
+Current non-model services: main website4310, generic storefront4312, strict
+Tiger experiment API4311, local checkout4331. All hosted cohort proofs and old
+READY/snapshots/packets remain immutable. Native timing workers and persona4313
+are root-owned and may change only at an explicit graceful boundary.
