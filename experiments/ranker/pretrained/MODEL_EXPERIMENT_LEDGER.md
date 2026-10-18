@@ -222,3 +222,34 @@ features remain in data/ranker/pretrained/focused-rank-transfer-v1. Raw predicti
 receipts and all three small checkpoints are preserved byte-for-byte under
 focused_rank_transfer_results/v1 with COPY_RECEIPT.json. The concurrent
 short-copy-fit-v1 experiment is still running; no copy result is implied here.
+
+
+## Clean replacement: reconciliation and actual-store runner repair
+
+At restart main was1ca67c8. An elevated read-only process inventory on2026-10-18
+found no Python/model worker and neither prior PID32633 nor32623. All uncommitted
+handoff/copy evidence and checkpoints were retained. No apps were closed. Host
+has24GiB physical RAM,4.30GiB swapped at inventory; this run keeps the existing
+6GiB native guard and does not infer usable headroom from free pages alone.
+
+The independent short-copy V2 audit verifies240 exact gates and240 actual updates,
+480 generated field rows,927 unchanged frozen language tensors (producer receipts),
+and0/24 valid first3 and0/24 valid full6 payloads. Native wall972.864s, MLX peak
+6,626,986,154bytes. No adapter promotion or valid-payload speedup. Original1.844GB
+feature archive and both adapter checkpoints remain local. The existing508-file
+copy under short_copy_results/v1 is preserved; weight copies are excluded from
+this scoped commit.
+
+Actual-store adaptation retains the original32 TRAIN/16 independently worded
+EVAL requests and all16 TRAIN-seen products. Original source and v1/v2 packets
+remain archived. The repaired v3 packet uses48 TRAIN/catalog encodes,80 learned
+updates plus80 prior updates and exact head reload, then16 fresh evaluation
+encodes while Qwen remains resident. Each evaluation timer spans native encode,
+immutable query feature save/reload,16 verified catalog reads, learned scoring,
+hard guards, top6 and actual serialization. It excludes generated copy, images
+and UI paint. Post-call/final cooperative elapsed guards reject returned late
+work; they cannot interrupt a hung native call. FAILED receipts preserve fixed
+64-forward/32-TRAIN/16-EVAL denominators and partial progress, including setup
+and postprocessing failures.12 adaptation CPU tests pass; combined prior suite
+passed36 before adding3 receipt tests. Native v3 experiment is queued, not yet
+claimed completed here.
