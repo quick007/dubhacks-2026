@@ -1,0 +1,88 @@
+{
+  "version": "persona-native-preflight-independent-audit.v4",
+  "verdict": "no-launch-blocker-in-reviewed-scope",
+  "nativeExecutedByReviewer": false,
+  "optimizerExecutedByReviewer": false,
+  "preflight": "experiments/ranker/pretrained/persona_qwen_prepare_v4/preflight.json",
+  "preflightSha256": "71c9cabc533083e726cfd5938fed9e2cacf88e4ef841b102b4dc3a73ba619c35",
+  "rowCount": 432,
+  "splits": {
+    "train": 320,
+    "development-replay": 40,
+    "demo-nonfit": 10,
+    "demo-default-query-nonfit": 10,
+    "history-diagnostic-nonfit": 20,
+    "independent-evaluation": 32
+  },
+  "tokenRange": [
+    195,
+    392
+  ],
+  "preflightTokenIdsVerified": "Producer CPU tokenizer preflight; reviewer verified exact roster/source/annotation hashes, no native execution",
+  "sourcePins": {
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_qwen_v1.py": "6297fd8a4e4d5ce9f80b4b7382e72c1083cff0b357d711db89ef7a5c5a2a17b3",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_context_v1.py": "381bd4a40987461eac344fba71574a21c29aba0b02c71807e5f5e495bf33b77c",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_qwen_fit_v1.py": "ef04f3e06702fd69317c67eb6a06ab854749321090887296c9ab8ce923ee0fac",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_demo_engine.py": "bf2168f8898211ec2752d60676e933a647441fd15df93c4ad0450881c958deff",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_function_adaptation.py": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/catalog_fusion/generalization_v2.py": "a4802adbac9eaff3dddc5ef2ec1859c981392f881b1516f90141f7f192dc604c",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_copy_fit_v2.py": "7f63b9ac18f9142910694499b18c1a5427d4b2da13f0dc3be20860fb44b89968",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_rank_session.py": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0"
+  },
+  "annotationExpectedPins": {
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/synthetic_history_v1/labels.train.json": "1b1ae769cb162bcb0deee76ea938ac619fbd7a94ee3ef39d7544d5d2491e8ccb",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/synthetic_history_train_contrasts_v2/labels.train.json": "c4f7dc7c7ebb2d2ba5d9fbd85a0692b62f60d02694b14c85f93b321bd2507562",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/persona_qwen_independent_eval_v2/labels.private.json": "95242eb91920e55b807b022a0436d5b895e92c0ba51f5fc6faedfa868f95c638"
+  },
+  "allPinsIndependentlyRehashed": true,
+  "checks": {
+    "wholeB1Max512NoTruncation": true,
+    "publicOnlyContextFormatting": true,
+    "opaqueIdsAndAbsoluteDatesExcluded": true,
+    "frozenActualQwenCatalogProvenance": true,
+    "lockThrough927CheckAndCleanup": true,
+    "failedIntegrityShutdownNonzeroExit": true,
+    "activeCaseFailureReceipt": true,
+    "fitChecksExtractionSourcePublicCatalogAnnotationPins": true,
+    "checkpointAndAllIndependentPredictionsBeforeGoldParse": true,
+    "fixed32Denominator": true,
+    "ownershipCoefficientInitialZeroAndTrainable": true,
+    "noFixedOwnershipMask": true,
+    "exactNamesAndHardConstraintsRetained": true
+  },
+  "tests": {
+    "nativeAndContextCpu": {
+      "passed": 13,
+      "seconds": 0.062
+    },
+    "independentSeedContextFreshPacket": {
+      "passed": 19,
+      "seconds": 0.036
+    },
+    "frontendPersonaIntegration": {
+      "passed": 9,
+      "durationMs": 1332.964333
+    }
+  },
+  "knownScope": {
+    "old40": "development replay",
+    "fresh32": "independent-agent authored known16 catalog, shared trained ownership mechanism; gold kept separate",
+    "demo20": "10same publicpeople original/defaultquery, nonfit",
+    "nativeCallsClaimedByReviewer": 0,
+    "allNonfitFeaturesMayBeLoadedBeforeOptimizer": true,
+    "heldoutLabelsUsedForOptimization": false,
+    "newNativeOneHotOrNoHistoryAblation": "not implemented; no semantic advantage claim"
+  },
+  "remainingAfterLaunch": [
+    "Verify actual432native receipts/token/feature hashes and frozen927 shutdown",
+    "Verify actual250optimizer steps/learnedowned scalar, reload and predictionfreeze order",
+    "Independently recompute fresh32 metrics/baselines and root gate",
+    "Audit knownhistory10pairs and demo10coherence",
+    "Root-owned browser copy/facts/constraints/complete-useful-readiness tests aftercohortidle"
+  ]
+}

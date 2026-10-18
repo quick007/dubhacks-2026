@@ -1,0 +1,29 @@
+# Synthetic public shopping histories v1
+
+This packet contains **10 named demo people and 200 anonymous profiles with 1,572 authored activity records**. It is agent-generated synthetic data. No event was observed in a browser, no checkout occurred, and the packet makes no claim about human preference or conversion. The 10 demo people contribute another 88 illustrative events and remain outside all fitting/evaluation groups.
+
+The public [demo people](synthetic_history_v1/demo-people.json) provide names, compact roles, readable summaries and the same request structure used by the model. Bob has a recent external sofa purchase and a reading-at-home background; the other people have distinct routines around reading, lectures, commuting, listening, packed meals, travel, drawing, swimming and walking. Names/roles are display metadata. Models receive the public background, stated color preferences, query, budget/hard constraints and activity records, without a desired answer.
+
+## Boundary and catalog
+
+The [TypeScript contract](../../../packages/contracts/src/synthetic-history-v1.ts) rejects unexpected fields, including targets inserted at request, persona or event level. Store events bind canonical product ID, variant ID, name, category and color to the captured actual storefront catalog: 16 products and 48 variants. Forty-five variants occur in the anonymous histories; all 48 are available as legitimate catalog choices. External items, such as a sofa or train booking, have an explicit external flag and no store SKU. All timestamps are synthetic and precede the fixed packet cutoff.
+
+`profiles.public.json` contains only profile/group/session routing IDs and public requests. Models must exclude those routing IDs, event IDs and absolute timestamps from text features; observed store IDs may resolve factual catalog history. `labels.train.json` and `labels.heldout.json` are separate private sidecars with all 16 relevance grades, acceptable/preferred variant IDs, already-owned negatives and authored rationales. The UI and serving engine must not import them.
+
+Grades describe plausible additions under the public routine and item budget, rather than a simulated purchase outcome. Each row has at least two positive products and a grade-three option. A recorded already-owned store item receives grade zero because these requests ask for an addition, with no replacement or repeat-purchase intention. Variant judgments use a declared coarse color-family match with catalog-default fallback when no match exists; they are weak synthetic preferences, not pixel-derived taste evidence or hard color constraints. All catalog variants of relevant products remain acceptable in the sidecar.
+
+## Frozen split and limits
+
+There are 100 anonymous user groups with two sessions each. Twenty authored scenario families provide 80 TRAIN groups/160 sessions; five different family descriptions provide 20 heldout groups/40 sessions. Both sessions stay in their group. `PUBLIC_SPLIT_FROZEN.json` binds the public files and split before private label publication. The manifest hashes all packet artifacts and builder/schema/catalog sources. No named demo group occurs in either partition.
+
+All 16 product identities have primary TRAIN support: eight sessions each, except blanket, lamp, lunch box and organizer with 16 each. The largest TRAIN class prior is 10%. Heldout primary choices cover only five products—blanket, towel, notebook, tote and headphones—with eight sessions per class. Report results by family/product and compare against simple priors. This evaluation does not establish heldout performance for all 16 functions.
+
+Exact family descriptions are split, but semantic motifs remain shared: sofa/reading, swimming, drawing, market trips and listening commutes. Authorship and reusable color/setting phrases are also shared. This is a bounded synthetic family/profile-combination test. It does not establish unseen semantic-category or human-behavior generalization. Background often states the activity motif, so successful ranking alone does not prove history adds value.
+
+The separate `history-only-probes.public.json` contains 10 diagnostic pairs. Query, budget, hard requirements, background, colors and all other events are identical within a pair. One purchase changes from an external item to an actual store product; private judgments lower that newly owned product from grade three to zero and retain useful unowned alternatives. These pairs are excluded from training/model selection. Freeze predictions before reading their private labels. They test sensitivity to ownership under an addition request, without asserting that buying one item always rules out another in real commerce.
+
+## Reproduction and database round trip
+
+Build into an unused directory with `node scripts/build-synthetic-history-v1.ts /tmp/new-synthetic-history`. The builder refuses to overwrite a frozen packet. Run `node --test scripts/build-synthetic-history-v1.test.ts scripts/build-synthetic-history-probes-v1.test.ts` for nine checks covering reproduction, groups, catalog truth, public/gold separation, budget/ownership labels, hard-constraint preservation and matched probes. The independent auditor also reports five passing seed checks.
+
+For the requested persistence-to-training loop, the backend must store these as explicitly synthetic immutable seed reports, retain dataset/profile/group/session identity and separate report IDs, then read/export them with hashes and complete row counts. The final candidate must train from that verified readback export and TRAIN labels only. Preserve raw export and training/prediction provenance. Heldout labels may be decoded only after fixed candidate predictions/checkpoints freeze; retain failures and fixed denominators. The local seed packet alone is **not evidence of a Tiger Data round trip**. No database write, model fit or serving change was performed by this data lane.

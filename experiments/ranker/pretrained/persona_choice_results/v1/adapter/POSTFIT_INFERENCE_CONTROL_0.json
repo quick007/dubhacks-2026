@@ -1,0 +1,220 @@
+{
+  "version": "persona-choice-inference-parity.v1",
+  "caseId": "history-u-7672505f76f7-s1-canonical",
+  "noPrivateEvaluationLabels": true,
+  "reference": "single-decision gradient-mode numerical gate; TRAIN labels or fixed PUBLIC arbitrary control, no evaluation gold",
+  "labelFreeCaptureFeaturesMatchTrainingExact": true,
+  "comparisons": {
+    "plainNative": {
+      "exactVsTrainingGradientNative": false,
+      "maxAbsDifference": 0.125,
+      "top1Equal": true,
+      "orderEqual": false,
+      "routeLogits": [
+        16.875,
+        6.71875,
+        17.625,
+        9.1875,
+        10.125,
+        9.25,
+        21.5,
+        15.8125,
+        10.5625,
+        10.5625,
+        3.9375,
+        17.25,
+        11.375,
+        5.3125,
+        13.0,
+        10.75
+      ]
+    },
+    "cachedPlain": {
+      "exactVsTrainingGradientNative": true,
+      "maxAbsDifference": 0.0,
+      "top1Equal": true,
+      "orderEqual": true,
+      "routeLogits": [
+        17.0,
+        6.71875,
+        17.625,
+        9.125,
+        10.125,
+        9.1875,
+        21.5,
+        15.8125,
+        10.625,
+        10.6875,
+        3.921875,
+        17.25,
+        11.375,
+        5.375,
+        13.0625,
+        10.75
+      ]
+    },
+    "cachedGradient": {
+      "exactVsTrainingGradientNative": true,
+      "maxAbsDifference": 0.0,
+      "top1Equal": true,
+      "orderEqual": true,
+      "routeLogits": [
+        17.0,
+        6.71875,
+        17.625,
+        9.125,
+        10.125,
+        9.1875,
+        21.5,
+        15.8125,
+        10.625,
+        10.6875,
+        3.921875,
+        17.25,
+        11.375,
+        5.375,
+        13.0625,
+        10.75
+      ]
+    },
+    "publicGradientNative": {
+      "exactVsTrainingGradientNative": true,
+      "maxAbsDifference": 0.0,
+      "top1Equal": true,
+      "orderEqual": true,
+      "routeLogits": [
+        17.0,
+        6.71875,
+        17.625,
+        9.125,
+        10.125,
+        9.1875,
+        21.5,
+        15.8125,
+        10.625,
+        10.6875,
+        3.921875,
+        17.25,
+        11.375,
+        5.375,
+        13.0625,
+        10.75
+      ]
+    },
+    "publicGradientReconstructed": {
+      "exactVsTrainingGradientNative": true,
+      "maxAbsDifference": 0.0,
+      "top1Equal": true,
+      "orderEqual": true,
+      "routeLogits": [
+        17.0,
+        6.71875,
+        17.625,
+        9.125,
+        10.125,
+        9.1875,
+        21.5,
+        15.8125,
+        10.625,
+        10.6875,
+        3.921875,
+        17.25,
+        11.375,
+        5.375,
+        13.0625,
+        10.75
+      ]
+    }
+  },
+  "publicCaptureProof": {
+    "version": "persona-choice-public-gradient-capture.v1",
+    "targetOrLossProvided": false,
+    "optimizerUpdates": 0,
+    "scalar": "sum16publicroutinglogits",
+    "promptTokenIdsSha256": "fdc395ded413383549a23c6d72f00816c07453baa904240164b276799c78cb30",
+    "featureTensors": {
+      "x": {
+        "shape": [
+          1,
+          16,
+          12288
+        ],
+        "dtype": "mlx.core.bfloat16",
+        "sha256": "a99bf0e7921f08bcbf9451e3b4d6c0dab2e86b51461d0e897d31f25152a16dc7"
+      },
+      "h": {
+        "shape": [
+          1,
+          16,
+          4096
+        ],
+        "dtype": "mlx.core.bfloat16",
+        "sha256": "e38de59f98b7a0a0f180962aeaf6ccfc686a527da033188f6ad15c2051f23139"
+      },
+      "y": {
+        "shape": [
+          1,
+          16,
+          4096
+        ],
+        "dtype": "mlx.core.bfloat16",
+        "sha256": "3acce2f3be713ffdb5f91a49584a9857f777435e75f250eea5b8f6a7612cc911"
+      }
+    },
+    "nativeRouteScores": [
+      17.0,
+      6.71875,
+      17.625,
+      9.125,
+      10.125,
+      9.1875,
+      21.5,
+      15.8125,
+      10.625,
+      10.6875,
+      3.921875,
+      17.25,
+      11.375,
+      5.375,
+      13.0625,
+      10.75
+    ],
+    "nativeRouteScoresTensor": {
+      "shape": [
+        16
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "f3c5d716232768c38df5ff89993732d2c25527dd1400eba0e117947935cc1f1c"
+    },
+    "sourceCacheUnchanged": true,
+    "adapterUnchanged": true
+  },
+  "referenceRouteLogits": [
+    17.0,
+    6.71875,
+    17.625,
+    9.125,
+    10.125,
+    9.1875,
+    21.5,
+    15.8125,
+    10.625,
+    10.6875,
+    3.921875,
+    17.25,
+    11.375,
+    5.375,
+    13.0625,
+    10.75
+  ],
+  "cachedPlainScoreMatchesTrainingFeaturesExact": true,
+  "cachedGradientScoreMatchesTrainingFeaturesExact": true,
+  "plainNativeMatchesTrainingGradientExact": false,
+  "labelFreeGradientPathExact": true,
+  "dynamicMode": "gradient-public-XHY-last16",
+  "cachedScoringMode": "plain",
+  "fixedServingPolicy": {
+    "cachedScoringMode": "plain",
+    "dynamicMode": "gradient-public-XHY-last16"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "arm": {
+    "name": "raw-2500",
+    "centered": false,
+    "steps": 2500
+  },
+  "config": {
+    "seed": 20261018,
+    "steps": 250,
+    "learningRate": 0.003,
+    "weightDecay": 0.0001,
+    "textDimensions": 4096,
+    "colorDimensions": 256,
+    "hiddenWidth": 64,
+    "colorWidth": 32,
+    "threads": 1,
+    "halfLifeDays": 30.0,
+    "variantLossWeight": 0.5,
+    "selection": "three-arm DEVELOPMENT comparison; no unseen claim",
+    "contextRepresentation": "fresh frozen Qwen4096 whole public observations; no hashed new text; catalog original Qwen4096",
+    "scope": "synthetic known16 catalog; family/group heldout; no human or unseen-catalog claim",
+    "ownershipCoefficient": "one shared trainable scalar initialized0, additive public purchase indicator; no mask",
+    "maxTokens": 512,
+    "memoryGiB": 7,
+    "maxNativeSeconds": 600,
+    "oldHeldoutScope": "40 previously inspected synthetic cases are DEVELOPMENT REPLAY; no selection from their outcomes",
+    "independentScope": "previous independent32 now DEVELOPMENT; no untouched evaluation in this comparison",
+    "arms": [
+      {
+        "name": "raw-2500",
+        "centered": false,
+        "steps": 2500
+      },
+      {
+        "name": "centered-250",
+        "centered": true,
+        "steps": 250
+      },
+      {
+        "name": "centered-1000",
+        "centered": true,
+        "steps": 1000
+      }
+    ],
+    "contextCenter": "mean of320 TRAIN contexts only",
+    "catalogCenter": "mean of16 public catalog vectors only",
+    "centeringOperation": "subtract mean then L2 normalize with eps1e-12; same transform at inference"
+  },
+  "planSha256": "b9ec986785923a00253e90609e7d72f0a2663f1f5a5ac7cf7a6765be091ad0c0",
+  "centersDerivedFromTrain320AndPublicCatalog16Only": true,
+  "contextMeanSha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+  "catalogMeanSha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+  "initialStateSha256": {
+    "scale": "d88c86f15bbea365d658ad95a81d45367c465f7af6f7264fb077f01747ddc77d",
+    "ownership": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+    "context_mean": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+    "catalog_mean": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+    "context.weight": "ebcba6874ee295fa969528e15402f27cd40e08367d82ad49b0daf65f449d568c",
+    "context.bias": "8881f93f8661da6c2fd5037cc5dcc7de82a8f014692436aa8fc5e69c0c8fdcf2",
+    "product.weight": "cee3ca1c3f702e65e17c85a7bb19ce51c89d37cb2a578a13f06f661be1c0d0a0",
+    "color_context.weight": "50e3ce2b613ab590aced6519735fa0cdf2bb0b23181ced32594d94f12b29fb50",
+    "color_context.bias": "a50d11a2bb8b94e93f6417d767ee451f02765226ff2b621a7be6388197be4ad7",
+    "color_candidate.weight": "a1f631419dfd3aa608113c5f016d30934147c9ae20a2c366af1e0747b371ee1f"
+  },
+  "developmentGoldParsed": false
+}

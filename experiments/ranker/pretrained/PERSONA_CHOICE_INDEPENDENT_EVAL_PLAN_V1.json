@@ -1,0 +1,166 @@
+{
+  "version": "persona-choice-independent-evaluation-plan.v1",
+  "status": "plan-frozen-awaiting-new-TRAIN128-public-freeze",
+  "frozenUtc": "2026-10-18T10:33:05.058801+00:00",
+  "actualCaseAuthoringStarted": false,
+  "newCandidateOutputsInspected": false,
+  "newCandidateFitStartedByAuthor": false,
+  "scope": "New authored synthetic public combinations of the same16 catalog products. No human-behavior or unseen-catalog claim. Prior32/40/history diagnostics are DEVELOPMENT.",
+  "legacyNumericGateSource": {
+    "file": "PERSONA_QWEN_PROMOTION_GATE_V1.json",
+    "sha256": "89e243b2444eea4516b420491c1c70a18a5b115a686d1fc0f1324f4cd061aa4f",
+    "oldFileUnchanged": true,
+    "architectureSpecificInputControlsExplicitlyReplaceOldScalarAblations": true
+  },
+  "authoringPrerequisite": {
+    "owner": "runner_review",
+    "newTRAINPublicRows": 128,
+    "combinedTRAINPublicRows": 448,
+    "requireOwnerFrozenPublicPathAndSha": true,
+    "inspectOnlyFrozenPublicTRAINForDedupAndCombinatorialIsolation": true,
+    "doNotReadNewTRAINAnnotations": true,
+    "noCaseTextOrGoldUntilPrerequisiteSatisfied": true,
+    "newCandidateOutputsRemainUnreadDuringAuthoring": true
+  },
+  "main32": {
+    "requests": 32,
+    "matchedPairs": 16,
+    "groups": 16,
+    "sessionsPerGroup": 2,
+    "all16DesignatedPrimaryAProductsOnce": true,
+    "BDesignatedPrimaryProductsAlsoPermutationOf16": true,
+    "pairPolicy": "Same stated priorities, query, budget, constraints, colors and other events. Exactly one declared observed event changes from interest/external anchor to an actual completed purchase satisfying A primary need. B asks for an unowned useful addition. Main targets are not already-owned usable products.",
+    "interventionCounts": {
+      "viewOrCartToPurchasePairsMinimum": 8,
+      "externalAnchorToCatalogPurchasePairsMinimum": 4
+    },
+    "publicVariation": {
+      "distinctQueriesMinimum": 8,
+      "distinctColorPreferenceListsMinimum": 8,
+      "distinctUnorderedNeedCombinations": 16,
+      "sharedBackgroundBlocksWithTRAINMaximum": 0,
+      "sharedFullRequestsWithTRAINMaximum": 0,
+      "hardColorPairsMinimum": 2,
+      "hardColorPairsMaximum": 4,
+      "budgetRestrictsCatalogInSessionsMinimum": 8
+    },
+    "pairControls": "Keep unrelated view/cart interests fixed within each pair, but vary them independently across needs and against TRAIN patterns. Event IDs are opaque metadata, excluded from model semantics. Literal event-type/observed-SKU changes are public evidence, not gold.",
+    "constraintPolicy": "Both intended needs must remain source-supported, affordable and compatible with typed hard constraints in both arms. Preserve real shortfalls; do not pad. Prefer at least4 eligible products for ordinary cases; any smaller pool must be declared before freeze.",
+    "primaryAmbiguityPolicy": "Write clear, ordinary public priorities distinguishing the intended functional category. Avoid ambiguous cases before freeze rather than forcing an arbitrary unique purchase. No exact full product-name search in main32; normal functional nouns are allowed.",
+    "gold": {
+      "grades": "All16 canonical products, integer0..3; grade3 intended first useful addition, grade2 other clearly useful stated need, grade1 weaker but plausible interest, grade0 irrelevant/ineligible/already-owned usable duplicates. Do not make every distractor zero automatically.",
+      "uniquePrimaryGrade3Required": true,
+      "alreadyOwnedProducts": "Match public completed purchases; all usable-owned products grade0 in main32. No replacement intent in this denominator.",
+      "sourceBinding": "Preferred/acceptable variants must be actual48 variant IDs and satisfy current source facts, budgets and hard colors.",
+      "rationaleRequired": true,
+      "privateOnly": true
+    }
+  },
+  "replacement4": {
+    "requests": 4,
+    "groups": 4,
+    "separateFromMain32": true,
+    "fourDistinctTargetFunctions": true,
+    "allCasesExplicitlyRequestReplacementOfObservedOwnedProduct": true,
+    "publicEvidence": "Owned condition or loss and replacement intent must be explicitly authored public observations/query, never inferred from a private label. Do not fabricate new catalog specifications.",
+    "positiveOwnedTargetAllowed": true,
+    "noveltyMetricNotApplied": true,
+    "targetComplianceAt1Minimum": 3,
+    "denominator": 4,
+    "sourceFactViolationsMaximum": 0,
+    "freezePublicAndGoldAtSameTimeAsMain32": true
+  },
+  "qualityGate": {
+    "mainDenominator": 32,
+    "primaryGrade3At1Minimum": 20,
+    "novelRelevantGradeAtLeast2At1Minimum": 24,
+    "strongGradeAtLeast2WithinFirst3Minimum": 28,
+    "budgetTypedConstraintVariantOrFactViolationsMaximum": 0,
+    "all36SourceFactViolationsMaximum": 0,
+    "replacementTargetAt1Minimum": 3,
+    "replacementDenominator": 4,
+    "primaryAt1MustStrictlyExceed": [
+      "training-popularity",
+      "latest-owned-repeat",
+      "owned-only-public-context",
+      "shuffled-profile"
+    ],
+    "purchaseHistoryRemovedIsReportOnly": true,
+    "noThresholdChangesAfterOutcomes": true
+  },
+  "baselineContract": {
+    "training-popularity": "TRAIN-only mean of actual model16-product target distributions, counted per canonical public TRAIN request, not duplicated prompt orders; apply original query/budget/hard guards.",
+    "latest-owned-repeat": "Same prior plus10 on the latest public completed catalog purchase, using explicit timestamp ordering; retain original hard guards.",
+    "owned-only-public-context": "INPUT ABLATION: retain original query, budget and hard requirements; background and soft colors empty; retain only public purchase events. Not a zero vector or scalar-disabled model.",
+    "shuffled-profile": "INPUT ABLATION: retain original query/budget/hard guards; move background, soft colors and whole history jointly from another nonpair main32 profile. Fixed mapping i\u2192(i+17)%32 in frozen A/B pair roster; no same-group source.",
+    "purchase-history-removed": "REPORT-ONLY INPUT ABLATION: preserve query, background, soft colors, hard constraints and view/cart events; remove purchase events. Do not claim equivalence to old ownership-scalar ablation.",
+    "allInputControlsUseSameAdaptedCheckpointAndScoringRule": true,
+    "noPerCaseOrPostGoldSelection": true
+  },
+  "nativePromptRecordAccounting": {
+    "mainNaturalRequests": 32,
+    "replacementNaturalRequests": 4,
+    "ownedOnlyRequests": 32,
+    "shuffledProfileRequests": 32,
+    "purchaseHistoryRemovedRequests": 32,
+    "totalNaturalAndInputControlRequests": 132,
+    "expectedPromptOrdersPerRequest": 2,
+    "totalPromptRecordsIfBothOrdersUsed": 264,
+    "priorAndLatestOwnedNeedNoNativeCalls": true,
+    "freezeExactOrdersAndPrimaryAggregationInCandidateRecipeBeforeFit": true,
+    "mainDenominatorRemains32Not64": true
+  },
+  "freezeAndAccessOrder": [
+    "Freeze newTRAIN128 public files and full448 public TRAIN source/semantic coverage; author records exact public-only access hashes.",
+    "Read public TRAIN only for text/semantic-combination/history-pattern dedup, without new TRAIN gold or candidate outputs.",
+    "Author new isolated main32 and replacement4 public profiles with separate private gold, checking all source facts and public inferability.",
+    "Before any optimizer or candidate scoring, durably freeze public32/private32/public4/private4, authoring source, exposure log, source catalog pins, plan and candidate scoring recipe.",
+    "Model may preflight/extract public prompts without private gold. Save provenance/tokens/whole-request receipts. Main32 plus replacement4/control accounting is fixed.",
+    "Fit only TRAIN. Durably freeze final checkpoint and all primary/control predictions and failures for fixed32+4 rosters before any future private annotation parsing.",
+    "Independent audit checks hashes, actual updates/reload/integrity and fixed denominators before opening future gold. Score all cases once; failures/unattempted remain in denominators.",
+    "After outcomes are inspected, these cases become DEVELOPMENT; no further unseen claim or silent tuning on them."
+  ],
+  "publicSchemaAllowlist": [
+    "query",
+    "itemBudget",
+    "hardRequirements",
+    "persona.background",
+    "persona.colorPreferences",
+    "publicHistory(eventId,eventType,itemName,category,selectedColor,occurredAt,source,optional observed productId/variantId/external)"
+  ],
+  "privateOrMetadataNeverInModelPrompt": [
+    "gold target IDs",
+    "grades",
+    "preferred or acceptable gold variants",
+    "label rationale",
+    "pair/group/session/case IDs",
+    "semantic family labels",
+    "split membership",
+    "private shopper or evaluator truth"
+  ],
+  "reservedPacketDirectory": "persona_choice_independent_eval_v1",
+  "reservedPacketFiles": [
+    "main.public.json",
+    "main.labels.private.json",
+    "replacement.public.json",
+    "replacement.labels.private.json",
+    "AUTHOR_ACCESS_LOG.json",
+    "DATA_CARD.md",
+    "MANIFEST.json"
+  ],
+  "servingAcceptanceSeparatePending": [
+    "actual10publicdemo coherence including Bobsofa\u2192throw first3",
+    "specificquery/exactname and hardguard compliance",
+    "source-bound selected variants/images and allfreshcopy",
+    "realbrowser switch/cart/query/stale response checks",
+    "complete useful visible readiness separately fromfullcompletion",
+    "adaptedcheckpoint reload and all927 base tensor integrity"
+  ],
+  "catalogSha256": {
+    "experiments/ranker/pretrained/store_catalog_v1/runtime_export.json": "1f5bff7df9075beab1cda7e81aa52bfbc741b9b5a7bc4e0be629f568a80347ac",
+    "experiments/ranker/pretrained/store_catalog_v1/model_inputs.json": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+    "experiments/ranker/pretrained/store_catalog_v1/external_mapping.json": "eaae73bc158c71b19f0b22a6854246b7450316d0f1ca60dd7969b02ebbf95937"
+  },
+  "noActualCasesOrGoldInThisPlan": true,
+  "noNativeOptimizerBrowserGitExecuted": true
+}

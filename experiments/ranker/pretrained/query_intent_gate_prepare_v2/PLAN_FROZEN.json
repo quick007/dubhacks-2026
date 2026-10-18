@@ -1,0 +1,34 @@
+{
+  "version": "query-intent-linear.v2",
+  "planSha256": "eb9e662fb27ad5c65745d3291bdc7691113575aacd6a0dcecb7f4de53a754d07",
+  "recipe": {
+    "seed": 20261019,
+    "dimensions": 4096,
+    "hiddenLayers": 0,
+    "steps": 250,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "threads": 1,
+    "loss": "0.5 mean broad BCE +0.5 mean specific BCE",
+    "selection": "fixed final250steps only; no evaluation/threshold tuning",
+    "feature": "existing v5 final4096 L2-normalized raw query vector before learned ranking head",
+    "probability": "sigmoid linear output, specific=1; no hard routing threshold",
+    "runtimeText": "request_text(ranking_input(checked_context_request(public_request, actual_catalog)[0]))",
+    "memoryGiB": 7,
+    "maxTokens": 512,
+    "maxNativeSeconds": 300,
+    "contextBudgets": [
+      null,
+      50,
+      100,
+      200
+    ],
+    "contextHardColors": [
+      null,
+      "Navy"
+    ],
+    "contextPolicy": "All159TRAIN phrases crossed with same8contexts; intent independent of product fulfilment/eligibility"
+  },
+  "nativeExecuted": false,
+  "optimizerUpdates": 0
+}

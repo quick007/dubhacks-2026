@@ -1,0 +1,17 @@
+# Shopping profiles
+
+This candidate keeps the existing storefront and adds a compact Base UI person switcher at the bottom right. The selected person's background, stated color preferences and recent observed history go to the model alongside the current search. Profile display identity, labels, relevance supervision and evaluation answers are excluded from the request. No product order, selected color or generated text is authored by this UI.
+
+After the candidate model is approved, start the storefront with `VITE_PERSONALIZED_STORE=true` in its trusted local build environment. The ordinary shop URL then shows profiles and calls the fixed local persona backend at `http://127.0.0.1:8767/personalize`; the user does not need query flags. Keep candidate storefront port `4313` isolated until the parent releases it. An explicit `?model=generic` selects the nonpersonalized baseline. Before that build setting is enabled, the existing `?model=local&candidate=persona` path remains available for isolated integration checks. Arbitrary endpoint URLs are not supported.
+
+The context comes from `experiments/ranker/pretrained/synthetic_history_v1/demo-people.json`. Its provenance stays in the data and documentation. Histories are authored examples, not measurements of real shoppers. This version displays the three most recent supplied events and does not append live cart actions or infer hidden preferences. A search always replaces the seed example query; an empty search requests `Browse the store`. Public item budgets and explicit hard requirements are retained.
+
+Each card also displays its canonical public category in both generic and personalized modes. This exposes facts such as the catalog's “Canvas travel bag” category without requiring a shopper to infer them from an image. It is static catalog metadata and is excluded from generated-field counts. The earlier frozen shopper cohort used the prior renderer; its failed attempts and denominators remain unchanged.
+
+A person or search change immediately clears prior rank/copy and scopes any manual color selection to the new person and query. Detached native work is aborted before another context starts; A→B→A creates a fresh A request rather than replaying A's previous result. A same-turn StrictMode resubscription still shares one fetch. Existing request IDs, catalog validation, copy/variant agreement, streaming readiness marks and internal provenance receipts are preserved.
+
+Each person's current cart survives switching. A switch invalidates the active checkout identity and receipt. Late success, failure and finalization from the prior checkout cannot confirm the new person's cart or clear its pending state. Search/category state survives cart navigation. The shopping page removes the demo banner and controls; checkout retains a brief statement that no payment or shipment takes place.
+
+CPU validation: run `node --import tsx --test "src/*.test.ts"` and `../../node_modules/.bin/tsc --noEmit` from `apps/storefront`, then the normal Vite build. The popover uses Base UI focus, keyboard dismissal and viewport positioning, with the currently selected person as its initial focus target. Browser checks must verify Escape restores trigger focus and keyboard activation switches the model request.
+
+The candidate was prepared without a browser, native model run, server launch or Git operation. Browser visual checks and actual learned personalization remain parent-controlled release gates.

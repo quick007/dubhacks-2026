@@ -1,7 +1,25 @@
 import { PRODUCTS, type Product } from "./config";
 import { PRODUCT_VARIANTS } from "./variants";
 
-export type LocalModelRequest = {
+export type PublicHistoryEvent = {
+  eventId: string;
+  eventType: "view" | "cart" | "purchase";
+  itemName: string;
+  category: string;
+  selectedColor?: string;
+  occurredAt: string;
+  source: "demo-seed" | "storefront-action";
+  productId?: string;
+  variantId?: string;
+  external?: true;
+};
+export type PersonalizationContext = {
+  persona?: { background: string[]; colorPreferences: string[] };
+  publicHistory?: PublicHistoryEvent[];
+  itemBudget?: number | null;
+  hardRequirements?: { attribute: string; value: string }[];
+};
+export type LocalModelRequest = PersonalizationContext & {
   query: string;
   itemBudget?: number | null;
   hardRequirements?: { attribute: string; value: string }[];
@@ -54,20 +72,47 @@ export type LocalModelState = {
   pendingQuery: string;
   error: string | null;
   firstThreeReadyMs: number | null;
+  requestKey: string;
 };
 
 export const INITIAL_LOCAL_MODEL_STATE: LocalModelState = {
-  phase: "idle", rank: null, copy: null, displayQuery: "", pendingQuery: "", error: null, firstThreeReadyMs: null,
+  phase: "idle", rank: null, copy: null, displayQuery: "", pendingQuery: "", error: null, firstThreeReadyMs: null, requestKey: "",
 };
 export const LOCAL_MODEL_ENDPOINT = "http://127.0.0.1:8766/personalize";
 
-export function localModelEnabled(search: string): boolean {
-  return new URLSearchParams(search).get("model") === "local";
+/** Fixed local candidates only; no arbitrary remote endpoint in shared links. */
+export function localModelEndpoint(search: string, personalizedDefault = false): string {
+  return new URLSearchParams(search).get("candidate") === "persona" || personalizedDefault
+    ? "http://127.0.0.1:8767/personalize" : LOCAL_MODEL_ENDPOINT;
+}
+
+/** Project inference-visible fields explicitly; display identity and labels never travel. */
+export function buildLocalModelRequest(query: string, context: PersonalizationContext = {}): LocalModelRequest {
+  return {
+    query: query.trim() || "Browse the store",
+    ...(context.itemBudget === undefined ? {} : { itemBudget: context.itemBudget }),
+    ...(context.hardRequirements ? { hardRequirements: context.hardRequirements.map(({ attribute, value }) => ({ attribute, value })) } : {}),
+    ...(context.persona ? { persona: { background: [...context.persona.background], colorPreferences: [...context.persona.colorPreferences] } } : {}),
+    ...(context.publicHistory ? { publicHistory: context.publicHistory.map(event => ({
+      eventId: event.eventId, eventType: event.eventType, itemName: event.itemName, category: event.category,
+      occurredAt: event.occurredAt, source: event.source,
+      ...(event.selectedColor === undefined ? {} : { selectedColor: event.selectedColor }),
+      ...(event.productId === undefined ? {} : { productId: event.productId }),
+      ...(event.variantId === undefined ? {} : { variantId: event.variantId }),
+      ...(event.external === true ? { external: true as const } : {}),
+    })) } : {}),
+  };
+}
+
+export function localModelEnabled(search: string, personalizedDefault = false): boolean {
+  const mode = new URLSearchParams(search).get("model");
+  return mode === "generic" ? false : mode === "local" || personalizedDefault;
 }
 
 export function preserveLocalModelSearch(serializedConfig: string, currentSearch: string): string {
   const params = new URLSearchParams(serializedConfig);
   if (localModelEnabled(currentSearch)) params.set("model", "local");
+  if (new URLSearchParams(currentSearch).get("candidate") === "persona") params.set("candidate", "persona");
   return params.toString();
 }
 
@@ -170,12 +215,12 @@ export function parseLocalModelEvent(value: unknown): LocalModelEvent {
     timing: { readyMs: number(timing.readyMs), copyMs: number(timing.copyMs) } };
 }
 
-export function beginLocalModelRequest(state: LocalModelState, query: string): LocalModelState {
-  return { ...state, phase: "ranking", pendingQuery: query, error: null };
+export function beginLocalModelRequest(state: LocalModelState, query: string, requestKey = query, clearPrevious = false): LocalModelState {
+  return { ...(clearPrevious ? INITIAL_LOCAL_MODEL_STATE : state), phase: "ranking", pendingQuery: query, requestKey, error: null };
 }
 
-export function applyLocalModelEvent(state: LocalModelState, event: LocalModelEvent, query: string): LocalModelState {
-  if (query !== state.pendingQuery) return state;
+export function applyLocalModelEvent(state: LocalModelState, event: LocalModelEvent, query: string, requestKey = query): LocalModelState {
+  if (requestKey !== state.requestKey || query !== state.pendingQuery) return state;
   if (event.type === "error") {
     if (event.requestId && state.rank?.requestId && event.requestId !== state.rank.requestId && state.phase !== "ranking") return state;
     return { ...state, phase: "error", error: event.message };

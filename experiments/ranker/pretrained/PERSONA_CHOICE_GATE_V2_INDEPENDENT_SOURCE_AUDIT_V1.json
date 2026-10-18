@@ -1,0 +1,33 @@
+{
+  "version": "persona-choice-gate-v2-independent-source-audit.v1",
+  "auditedUtc": "2026-10-18T10:36:26.290385+00:00",
+  "status": "source-and-CPU-pass-native-gate-pending",
+  "planSha256": "53fe1866d5df696ca6c194df83d5faedcee4e5221f075a7114e34bc968bba026",
+  "allPlanPinsVerified": 35,
+  "sourceSha256": {
+    "store_persona_choice_features_v2.py": "16656aefd43f2f8b9cec8438bdfcf64ad11b4131eb4684db5c609d2140756418",
+    "store_persona_choice_gate_pilot_v2.py": "9923e1c349c27c1fb9d2d5c5af43673dafd4ce1327166899a4dd98a364f1a0d1",
+    "test_store_persona_choice_features_v2.py": "46a1361c61c0cbea33179c57a7b2f17bb93c605915a386d8587de4f65adff1e1",
+    "test_store_persona_choice_gate_pilot_v2.py": "fa44a3df44e1d8eb7a03da62e3b3e642cdc32a2e5d1f89224872df98790dbedc"
+  },
+  "checks": {
+    "actualWholePromptSplitIntoPrefixAndRealLast16": true,
+    "noPaddingTargetOrEOSInput": true,
+    "all16XHYShapesPreservedThroughAdapterResidualNorm": true,
+    "onlyLastPositionNativeFullLMProjectionThen16Gather": true,
+    "zeroAndNonzeroBExactGradientAndCacheChecksRequired": true,
+    "trueZeroBResetAndFrozen927LifecycleRetained": true,
+    "globalLockDeadlineMemoryAndFailureReceiptsRetained": true
+  },
+  "CPUtests": {
+    "passed": 11,
+    "seconds": 0.004,
+    "command": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python -B -m unittest experiments.ranker.pretrained.test_store_persona_choice_features_v2 experiments.ranker.pretrained.test_store_persona_choice_gate_pilot_v2"
+  },
+  "nativeExecutedByReviewer": false,
+  "optimizerExecutedByReviewer": false,
+  "qualityClaim": false,
+  "newTRAIN128AnnotationsRead": false,
+  "futureEvalCasesAuthored": 0,
+  "limitations": "Actual kernel VJP support, exact native/auxiliary/archive gradients/logits and frozen927 integrity require the root-owned real pilot; CPU tests cannot establish them."
+}

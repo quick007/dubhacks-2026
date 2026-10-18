@@ -22,7 +22,7 @@ export function CartView({
 }) {
   return (
     <section className="cart-page">
-      <h1>Your demo cart</h1>
+      <h1>Your cart</h1>
       {lines.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -42,18 +42,18 @@ export function CartView({
           </div>
           <div className="cart-summary">
             <div>
-              <span>Demo subtotal</span>
+              <span>Subtotal</span>
               <span>${subtotal}</span>
             </div>
             {quote && (
               <div>
-                <span>Demo shipping</span>
+                <span>Shipping</span>
                 <span>{quote.label}</span>
               </div>
             )}
             {quote && (
               <div className="cart-grand-total">
-                <span>Demo total</span>
+                <span>Total</span>
                 <strong>${total}</strong>
               </div>
             )}
@@ -61,7 +61,7 @@ export function CartView({
           <p className="demo-note">No payment required. Nothing will be shipped.</p>
           {checkoutError && <p role="alert">{checkoutError}</p>}
           <button className="primary-button" onClick={onPlaceOrder} disabled={checkoutPending}>
-            {checkoutPending ? "Confirming demo order…" : "Place demo order"}
+            {checkoutPending ? "Confirming order…" : "Confirm order"}
           </button>
         </>
       )}

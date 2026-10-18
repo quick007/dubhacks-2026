@@ -1,0 +1,817 @@
+{
+  "auditVersion": "persona-choice-independent-eval-v2-label-audit.v1",
+  "privateAudit": true,
+  "accessBoundary": "Only root receives privategoldmeaning; no gold/queries/targets forwarded to trainer/copy/querygate/runtimeowners. This audit is not model inference input.",
+  "createdAt": "2026-10-18T10:52:33.981835+00:00",
+  "verdict": "BLOCKED_BY_PUBLIC_HISTORY_ORDER; semantic/source/variantgoldPASS",
+  "manifestSha256": "60543bb1837a9630c5a94f6774ebc081540b4e9ce29bdaf204602506d5dcbb48",
+  "counts": {
+    "naturalRequestsReviewed": 36,
+    "main": 32,
+    "replacement": 4,
+    "matchedPairs": 16,
+    "gradeCells": 576,
+    "gradeCellCounts": {
+      "3": 36,
+      "0": 477,
+      "2": 20,
+      "1": 43
+    },
+    "hardColorRequests": 4,
+    "canonicalStoreHistoryFacts": 140,
+    "declaredExternalObservations": 4,
+    "variantPolicyBindingCounts": {
+      "first-explicit-offered-color": 63,
+      "indifferent-among-source-eligible-variants": 36
+    },
+    "naturalRequestsOutOfOrder": 36,
+    "controlRequestsOutOfOrder": 52,
+    "controlsDenominator": 96,
+    "semanticOrFactualLabelIssues": 0,
+    "frozenFileHashesVerified": 8
+  },
+  "runtimeBlocker": {
+    "function": "store_qwen_lexical_choice_inputs_v2.checked_request:60",
+    "rule": "reject timezone-aware histories where any timestamp precedes theprevious event",
+    "exampleProfileId": "ind-choice-1218e04c48ee-session-1",
+    "exampleSerializedTimes": [
+      "2026-10-16T13:00:00.000Z",
+      "2026-10-12T10:00:00.000Z",
+      "2026-10-17T09:00:00.000Z",
+      "2026-10-17T18:00:00.000Z"
+    ],
+    "allNaturalAffectedIds": [
+      "ind-choice-1218e04c48ee-session-1",
+      "ind-choice-1218e04c48ee-session-2",
+      "ind-choice-a4675d1438ae-session-1",
+      "ind-choice-a4675d1438ae-session-2",
+      "ind-choice-7ec55eee82f6-session-1",
+      "ind-choice-7ec55eee82f6-session-2",
+      "ind-choice-9c76acb1ba7f-session-1",
+      "ind-choice-9c76acb1ba7f-session-2",
+      "ind-choice-8e65127bdaf9-session-1",
+      "ind-choice-8e65127bdaf9-session-2",
+      "ind-choice-e4623a7fa422-session-1",
+      "ind-choice-e4623a7fa422-session-2",
+      "ind-choice-fa2a423573b6-session-1",
+      "ind-choice-fa2a423573b6-session-2",
+      "ind-choice-2f9f4bccb987-session-1",
+      "ind-choice-2f9f4bccb987-session-2",
+      "ind-choice-64210a457814-session-1",
+      "ind-choice-64210a457814-session-2",
+      "ind-choice-af4b4f69758a-session-1",
+      "ind-choice-af4b4f69758a-session-2",
+      "ind-choice-56a236dc2e1e-session-1",
+      "ind-choice-56a236dc2e1e-session-2",
+      "ind-choice-1cb5130197b4-session-1",
+      "ind-choice-1cb5130197b4-session-2",
+      "ind-choice-660e8bc284d4-session-1",
+      "ind-choice-660e8bc284d4-session-2",
+      "ind-choice-3d906b746a69-session-1",
+      "ind-choice-3d906b746a69-session-2",
+      "ind-choice-1f9265985545-session-1",
+      "ind-choice-1f9265985545-session-2",
+      "ind-choice-a75ad8d0fe35-session-1",
+      "ind-choice-a75ad8d0fe35-session-2",
+      "ind-choice-54b3fa553f3e-session-1",
+      "ind-choice-798e721f0cd3-session-1",
+      "ind-choice-197d4736c949-session-1",
+      "ind-choice-de011ce06cfb-session-1"
+    ],
+    "controlAffectedIds": [
+      "ind-choice-1218e04c48ee-session-2--owned-only-public-context",
+      "ind-choice-a4675d1438ae-session-2--owned-only-public-context",
+      "ind-choice-7ec55eee82f6-session-2--owned-only-public-context",
+      "ind-choice-9c76acb1ba7f-session-2--owned-only-public-context",
+      "ind-choice-8e65127bdaf9-session-2--owned-only-public-context",
+      "ind-choice-e4623a7fa422-session-2--owned-only-public-context",
+      "ind-choice-fa2a423573b6-session-2--owned-only-public-context",
+      "ind-choice-2f9f4bccb987-session-2--owned-only-public-context",
+      "ind-choice-64210a457814-session-1--owned-only-public-context",
+      "ind-choice-64210a457814-session-2--owned-only-public-context",
+      "ind-choice-af4b4f69758a-session-1--owned-only-public-context",
+      "ind-choice-af4b4f69758a-session-2--owned-only-public-context",
+      "ind-choice-56a236dc2e1e-session-1--owned-only-public-context",
+      "ind-choice-56a236dc2e1e-session-2--owned-only-public-context",
+      "ind-choice-1cb5130197b4-session-1--owned-only-public-context",
+      "ind-choice-1cb5130197b4-session-2--owned-only-public-context",
+      "ind-choice-660e8bc284d4-session-2--owned-only-public-context",
+      "ind-choice-3d906b746a69-session-2--owned-only-public-context",
+      "ind-choice-1f9265985545-session-2--owned-only-public-context",
+      "ind-choice-a75ad8d0fe35-session-2--owned-only-public-context",
+      "ind-choice-1218e04c48ee-session-1--shuffled-profile",
+      "ind-choice-1218e04c48ee-session-2--shuffled-profile",
+      "ind-choice-a4675d1438ae-session-1--shuffled-profile",
+      "ind-choice-a4675d1438ae-session-2--shuffled-profile",
+      "ind-choice-7ec55eee82f6-session-1--shuffled-profile",
+      "ind-choice-7ec55eee82f6-session-2--shuffled-profile",
+      "ind-choice-9c76acb1ba7f-session-1--shuffled-profile",
+      "ind-choice-9c76acb1ba7f-session-2--shuffled-profile",
+      "ind-choice-8e65127bdaf9-session-1--shuffled-profile",
+      "ind-choice-8e65127bdaf9-session-2--shuffled-profile",
+      "ind-choice-e4623a7fa422-session-1--shuffled-profile",
+      "ind-choice-e4623a7fa422-session-2--shuffled-profile",
+      "ind-choice-fa2a423573b6-session-1--shuffled-profile",
+      "ind-choice-fa2a423573b6-session-2--shuffled-profile",
+      "ind-choice-2f9f4bccb987-session-1--shuffled-profile",
+      "ind-choice-2f9f4bccb987-session-2--shuffled-profile",
+      "ind-choice-64210a457814-session-1--shuffled-profile",
+      "ind-choice-64210a457814-session-2--shuffled-profile",
+      "ind-choice-af4b4f69758a-session-1--shuffled-profile",
+      "ind-choice-af4b4f69758a-session-2--shuffled-profile",
+      "ind-choice-56a236dc2e1e-session-1--shuffled-profile",
+      "ind-choice-56a236dc2e1e-session-2--shuffled-profile",
+      "ind-choice-1cb5130197b4-session-1--shuffled-profile",
+      "ind-choice-1cb5130197b4-session-2--shuffled-profile",
+      "ind-choice-660e8bc284d4-session-1--shuffled-profile",
+      "ind-choice-660e8bc284d4-session-2--shuffled-profile",
+      "ind-choice-3d906b746a69-session-1--shuffled-profile",
+      "ind-choice-3d906b746a69-session-2--shuffled-profile",
+      "ind-choice-1f9265985545-session-1--shuffled-profile",
+      "ind-choice-1f9265985545-session-2--shuffled-profile",
+      "ind-choice-a75ad8d0fe35-session-1--shuffled-profile",
+      "ind-choice-a75ad8d0fe35-session-2--shuffled-profile"
+    ],
+    "repair": "Preservev2; sorteachhistorybyactualtimestampinnewversion, regeneratecontrolrequestsconsistently, runstrictpublicDTO/formattervalidation, freezeallnewhashesbeforefit. Labelsneednoretargetingforchronologysort."
+  },
+  "semanticOrFactualLabelIssues": [],
+  "profileReview": [
+    {
+      "profileId": "ind-choice-1218e04c48ee-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "mug",
+      "manualSemanticSecondary": [
+        "jacket"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-1218e04c48ee-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "jacket",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-a4675d1438ae-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "pack",
+      "manualSemanticSecondary": [
+        "lamp"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-a4675d1438ae-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "lamp",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-7ec55eee82f6-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "notebook",
+      "manualSemanticSecondary": [
+        "towel"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-7ec55eee82f6-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "towel",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-9c76acb1ba7f-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "jacket",
+      "manualSemanticSecondary": [
+        "headphones"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-9c76acb1ba7f-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "headphones",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-8e65127bdaf9-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "bottle",
+      "manualSemanticSecondary": [
+        "sweatshirt"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-8e65127bdaf9-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "sweatshirt",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-e4623a7fa422-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "tote",
+      "manualSemanticSecondary": [
+        "duffel"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-e4623a7fa422-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "duffel",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-fa2a423573b6-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "blanket",
+      "manualSemanticSecondary": [
+        "organizer"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-fa2a423573b6-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "organizer",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-2f9f4bccb987-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "lamp",
+      "manualSemanticSecondary": [
+        "bottle"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-2f9f4bccb987-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "bottle",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-64210a457814-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "lunchbox",
+      "manualSemanticSecondary": [
+        "sunglasses"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-64210a457814-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "sunglasses",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-af4b4f69758a-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "headphones",
+      "manualSemanticSecondary": [
+        "tote"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-af4b4f69758a-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "tote",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-56a236dc2e1e-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "sneakers",
+      "manualSemanticSecondary": [
+        "notebook"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-56a236dc2e1e-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "notebook",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-1cb5130197b4-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "sweatshirt",
+      "manualSemanticSecondary": [
+        "lunchbox"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-1cb5130197b4-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "lunchbox",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-660e8bc284d4-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "duffel",
+      "manualSemanticSecondary": [
+        "sneakers"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-660e8bc284d4-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "sneakers",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-3d906b746a69-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "sunglasses",
+      "manualSemanticSecondary": [
+        "blanket"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-3d906b746a69-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "blanket",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-1f9265985545-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "organizer",
+      "manualSemanticSecondary": [
+        "mug"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-1f9265985545-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "mug",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-a75ad8d0fe35-session-1",
+      "split": "main",
+      "manualSemanticPrimary": "towel",
+      "manualSemanticSecondary": [
+        "pack"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-a75ad8d0fe35-session-2",
+      "split": "main",
+      "manualSemanticPrimary": "pack",
+      "manualSemanticSecondary": [],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-54b3fa553f3e-session-1",
+      "split": "replacement",
+      "manualSemanticPrimary": "mug",
+      "manualSemanticSecondary": [
+        "jacket"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-798e721f0cd3-session-1",
+      "split": "replacement",
+      "manualSemanticPrimary": "notebook",
+      "manualSemanticSecondary": [
+        "towel"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-197d4736c949-session-1",
+      "split": "replacement",
+      "manualSemanticPrimary": "headphones",
+      "manualSemanticSecondary": [
+        "tote"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    },
+    {
+      "profileId": "ind-choice-de011ce06cfb-session-1",
+      "split": "replacement",
+      "manualSemanticPrimary": "sneakers",
+      "manualSemanticSecondary": [
+        "notebook"
+      ],
+      "wholeGradeVectorMatchesIndependentReview": true,
+      "sourceFactsValid": true,
+      "ownershipAndExplicitReplacementSupported": true,
+      "chronologyValid": false,
+      "positiveBudgetAndHardColorValid": true,
+      "preferredVariantPolicyValid": true
+    }
+  ],
+  "pairReview": [
+    {
+      "pairId": "ind-choice-1218e04c48ee",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-a4675d1438ae",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-7ec55eee82f6",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-9c76acb1ba7f",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-8e65127bdaf9",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-e4623a7fa422",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-fa2a423573b6",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-2f9f4bccb987",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-64210a457814",
+      "kind": "external-purchase-to-owned-store-product",
+      "changedEventKeys": [
+        "category",
+        "external",
+        "itemName",
+        "productId",
+        "selectedColor",
+        "variantId"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-af4b4f69758a",
+      "kind": "external-purchase-to-owned-store-product",
+      "changedEventKeys": [
+        "category",
+        "external",
+        "itemName",
+        "productId",
+        "selectedColor",
+        "variantId"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-56a236dc2e1e",
+      "kind": "external-purchase-to-owned-store-product",
+      "changedEventKeys": [
+        "category",
+        "external",
+        "itemName",
+        "productId",
+        "selectedColor",
+        "variantId"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-1cb5130197b4",
+      "kind": "external-purchase-to-owned-store-product",
+      "changedEventKeys": [
+        "category",
+        "external",
+        "itemName",
+        "productId",
+        "selectedColor",
+        "variantId"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-660e8bc284d4",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-3d906b746a69",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-1f9265985545",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    },
+    {
+      "pairId": "ind-choice-a75ad8d0fe35",
+      "kind": "view-or-cart-to-purchase",
+      "changedEventKeys": [
+        "eventType"
+      ],
+      "allChangesOneEvent": true,
+      "otherPublicFieldsSame": true
+    }
+  ],
+  "limits": [
+    "12pairschangeonlyview/carttopurchase;4replaceanexternalpurchaseobservationwithastoreproductpurchase. Thelatterarenotisolatedevent-typechanges.",
+    "Grade1isweakobservedview/cartinterest,notastatedstrongneed; allprimary/secondarylabelsareindependentlyinferable.",
+    "acceptableVariantIdsduplicatespreference-policysetsforsoftcolors; do not treatanotherofferedsoftcolorasahardconstraint/sourcefactviolation.",
+    "Daypackcomputer/booksneedsmeanordinaryhandsfreecarrying;nocapacity/laptopsizedimensionisdeclaredorguaranteed.",
+    "Allnaturalrequestshaveeligibleprimary;thisisnotunknown-abstention,unseen-catalog,realbehaviororhuman-conversionevidence.",
+    "Authorfreezeprovenanceverifiedashashes,notindependentproofthatnohistoricalqualitywaspreviouslyseen;authorlogdisclosesolddevelopmentresults.",
+    "Noeval/modeloutputsread,thresholdsunchanged,nocherrypicking."
+  ],
+  "frozenFileChecks": {
+    "AUTHOR_ACCESS_LOG.json": true,
+    "controls.public.json": true,
+    "DATA_CARD.md": true,
+    "replacement.labels.private.json": true,
+    "PUBLIC_DEDUP_AUDIT.json": true,
+    "main.public.json": true,
+    "replacement.public.json": true,
+    "main.labels.private.json": true
+  },
+  "frozenFilesModified": false,
+  "modelOrGpuOrBrowserOrGitUsed": false,
+  "catalogSourceHashChecks": {
+    "experiments/ranker/pretrained/store_catalog_v1/runtime_export.json": {
+      "expectedSha256": "1f5bff7df9075beab1cda7e81aa52bfbc741b9b5a7bc4e0be629f568a80347ac",
+      "actualSha256": "1f5bff7df9075beab1cda7e81aa52bfbc741b9b5a7bc4e0be629f568a80347ac",
+      "matches": true
+    },
+    "experiments/ranker/pretrained/store_catalog_v1/model_inputs.json": {
+      "expectedSha256": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+      "actualSha256": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+      "matches": true
+    },
+    "experiments/ranker/pretrained/store_catalog_v1/external_mapping.json": {
+      "expectedSha256": "eaae73bc158c71b19f0b22a6854246b7450316d0f1ca60dd7969b02ebbf95937",
+      "actualSha256": "eaae73bc158c71b19f0b22a6854246b7450316d0f1ca60dd7969b02ebbf95937",
+      "matches": true
+    }
+  },
+  "canonicalFactCatalogBindingSha256": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450"
+}

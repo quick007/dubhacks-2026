@@ -1,0 +1,27 @@
+{
+  "version": "persona-specific-query-regression-policy.v1",
+  "scope": "Conservative serving acceptance supplement; not an independent semantic-quality benchmark",
+  "declaredBeforeAnyAdapterHTTPOrBrowserOutcomes": true,
+  "originalPromotionGateSha256": "73fa0d52c5ef4fe983834f610ef00cf89a899cf420cdb81008dd5a7909298c6e",
+  "originalPublic320PlanSha256": "39c4d2883dc58058b846d9a364fc6393d665cb6638064b128902173378cbcb1f",
+  "adapterPublic320PlanSha256": "a06cfbdb157d343cf0d435dcfdab6e936d4182656d0ef04801d8a57fe759c8e1",
+  "fixedCases": 320,
+  "policy": "No top-one regression from the frozen v5 branch under exactly the same effective query, budget, hard requirements and exact-name policy for any assigned request. Empty guarded orders must agree as empty. No exclusions, retries or outcome-dependent exceptions.",
+  "requirements": {
+    "completedProtocolAndFactualCases": 320,
+    "sameGuardV5Top1Agreements": 320,
+    "sourceOrHardConstraintViolations": 0,
+    "specificQueryRegressionPassed": true
+  },
+  "finalAcceptanceMustBind": [
+    "this policy SHA256",
+    "actual HTTP validation report SHA256",
+    "actual adapter, query-gate and v5 checkpoint identities",
+    "actual fixed320 plan SHA256",
+    "specificQueryRegressionPassed"
+  ],
+  "interpretation": "This makes preservation of the existing query branch concrete before serving outcomes. It is intentionally stricter than allowing unreviewed alternative products. It does not turn the original v5 choices into human ground truth or establish unseen wording/catalog quality. New primary personalization quality remains subject to the separate unchanged sealed32-case gate.",
+  "overallPromotionGranted": false,
+  "httpExecuted": false,
+  "browserExecuted": false
+}

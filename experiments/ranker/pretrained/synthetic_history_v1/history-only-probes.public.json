@@ -1,0 +1,2352 @@
+{
+  "schemaVersion": "agent-authored-shopping-history.v1",
+  "scope": "Ten diagnostic matched pairs, excluded from training/model selection. Background/query/color/budget/other events identical; only one observed purchase changes. Authored synthetic, not browser evidence.",
+  "pairs": [
+    {
+      "pairId": "history-only-01",
+      "profileA": {
+        "profileId": "history-only-01-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 90,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Recently furnished a small living room and spends evenings reading on the sofa.",
+              "Keeps the room uncluttered and is adding a few useful finishing touches.",
+              "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+            ],
+            "colorPreferences": [
+              "green and natural shades"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-bob-event-1",
+              "eventType": "purchase",
+              "itemName": "two-seat sofa",
+              "category": "Living room furniture",
+              "occurredAt": "2026-10-12T13:30:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-bob-event-2",
+              "eventType": "purchase",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Cobalt",
+              "occurredAt": "2026-10-13T07:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-cobalt"
+            },
+            {
+              "eventId": "demo-bob-event-3",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-14T01:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            },
+            {
+              "eventId": "demo-bob-event-4",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-14T19:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-bob-event-5",
+              "eventType": "cart",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-15T13:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            },
+            {
+              "eventId": "demo-bob-event-6",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-16T07:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            },
+            {
+              "eventId": "demo-bob-event-7",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-17T01:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-bob-event-8",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-17T19:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-01-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 90,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Recently furnished a small living room and spends evenings reading on the sofa.",
+              "Keeps the room uncluttered and is adding a few useful finishing touches.",
+              "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+            ],
+            "colorPreferences": [
+              "green and natural shades"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-bob-event-1",
+              "eventType": "purchase",
+              "itemName": "Woven everyday throw",
+              "category": "Cotton throw blanket",
+              "selectedColor": "Rust",
+              "occurredAt": "2026-10-12T13:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "blanket",
+              "variantId": "blanket-rust"
+            },
+            {
+              "eventId": "demo-bob-event-2",
+              "eventType": "purchase",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Cobalt",
+              "occurredAt": "2026-10-13T07:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-cobalt"
+            },
+            {
+              "eventId": "demo-bob-event-3",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-14T01:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            },
+            {
+              "eventId": "demo-bob-event-4",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-14T19:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-bob-event-5",
+              "eventType": "cart",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-15T13:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            },
+            {
+              "eventId": "demo-bob-event-6",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-16T07:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            },
+            {
+              "eventId": "demo-bob-event-7",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-17T01:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-bob-event-8",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-17T19:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-02",
+      "profileA": {
+        "profileId": "history-only-02-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 90,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Reads paperbacks after dinner in a corner that gets little daylight.",
+              "Has just put a chair beside a side table and is arranging that corner.",
+              "Lives in a compact apartment and usually shops for one practical addition at a time."
+            ],
+            "colorPreferences": [
+              "warm earth tones"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-maya-event-1",
+              "eventType": "purchase",
+              "itemName": "reading chair",
+              "category": "Living room furniture",
+              "occurredAt": "2026-10-13T07:00:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-maya-event-2",
+              "eventType": "purchase",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-14T01:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-maya-event-3",
+              "eventType": "view",
+              "itemName": "Woven everyday throw",
+              "category": "Cotton throw blanket",
+              "selectedColor": "Rust",
+              "occurredAt": "2026-10-14T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "blanket",
+              "variantId": "blanket-rust"
+            },
+            {
+              "eventId": "demo-maya-event-4",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Ivory",
+              "occurredAt": "2026-10-15T13:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-ivory"
+            },
+            {
+              "eventId": "demo-maya-event-5",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-16T07:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-maya-event-6",
+              "eventType": "view",
+              "itemName": "Woven everyday throw",
+              "category": "Cotton throw blanket",
+              "selectedColor": "Rust",
+              "occurredAt": "2026-10-17T01:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "blanket",
+              "variantId": "blanket-rust"
+            },
+            {
+              "eventId": "demo-maya-event-7",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Ivory",
+              "occurredAt": "2026-10-17T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-ivory"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-02-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 90,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Reads paperbacks after dinner in a corner that gets little daylight.",
+              "Has just put a chair beside a side table and is arranging that corner.",
+              "Lives in a compact apartment and usually shops for one practical addition at a time."
+            ],
+            "colorPreferences": [
+              "warm earth tones"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-maya-event-1",
+              "eventType": "purchase",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Ivory",
+              "occurredAt": "2026-10-13T07:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-ivory"
+            },
+            {
+              "eventId": "demo-maya-event-2",
+              "eventType": "purchase",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-14T01:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-maya-event-3",
+              "eventType": "view",
+              "itemName": "Woven everyday throw",
+              "category": "Cotton throw blanket",
+              "selectedColor": "Rust",
+              "occurredAt": "2026-10-14T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "blanket",
+              "variantId": "blanket-rust"
+            },
+            {
+              "eventId": "demo-maya-event-4",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Ivory",
+              "occurredAt": "2026-10-15T13:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-ivory"
+            },
+            {
+              "eventId": "demo-maya-event-5",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-16T07:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-maya-event-6",
+              "eventType": "view",
+              "itemName": "Woven everyday throw",
+              "category": "Cotton throw blanket",
+              "selectedColor": "Rust",
+              "occurredAt": "2026-10-17T01:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "blanket",
+              "variantId": "blanket-rust"
+            },
+            {
+              "eventId": "demo-maya-event-7",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Ivory",
+              "occurredAt": "2026-10-17T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-ivory"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-03",
+      "profileA": {
+        "profileId": "history-only-03-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 55,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Attends morning lectures and writes ideas by hand between classes.",
+              "Carries pens loose in an existing day bag and studies in different places.",
+              "Shares a home and likes belongings that are easy to use in more than one room."
+            ],
+            "colorPreferences": [
+              "navy and blue"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-priya-event-1",
+              "eventType": "purchase",
+              "itemName": "set of drawing pens",
+              "category": "Writing supplies",
+              "occurredAt": "2026-10-09T11:45:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-priya-event-2",
+              "eventType": "purchase",
+              "itemName": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "selectedColor": "Sand",
+              "occurredAt": "2026-10-10T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "pack",
+              "variantId": "pack-sand"
+            },
+            {
+              "eventId": "demo-priya-event-3",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-10T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-priya-event-4",
+              "eventType": "view",
+              "itemName": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "selectedColor": "Olive band",
+              "occurredAt": "2026-10-11T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band"
+            },
+            {
+              "eventId": "demo-priya-event-5",
+              "eventType": "cart",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-12T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-priya-event-6",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-13T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-priya-event-7",
+              "eventType": "view",
+              "itemName": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "selectedColor": "Olive band",
+              "occurredAt": "2026-10-13T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band"
+            },
+            {
+              "eventId": "demo-priya-event-8",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-14T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-priya-event-9",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-15T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-priya-event-10",
+              "eventType": "view",
+              "itemName": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "selectedColor": "Olive band",
+              "occurredAt": "2026-10-16T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band"
+            },
+            {
+              "eventId": "demo-priya-event-11",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-16T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-priya-event-12",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-17T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-03-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 55,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Attends morning lectures and writes ideas by hand between classes.",
+              "Carries pens loose in an existing day bag and studies in different places.",
+              "Shares a home and likes belongings that are easy to use in more than one room."
+            ],
+            "colorPreferences": [
+              "navy and blue"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-priya-event-1",
+              "eventType": "purchase",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-09T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            },
+            {
+              "eventId": "demo-priya-event-2",
+              "eventType": "purchase",
+              "itemName": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "selectedColor": "Sand",
+              "occurredAt": "2026-10-10T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "pack",
+              "variantId": "pack-sand"
+            },
+            {
+              "eventId": "demo-priya-event-3",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-10T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-priya-event-4",
+              "eventType": "view",
+              "itemName": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "selectedColor": "Olive band",
+              "occurredAt": "2026-10-11T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band"
+            },
+            {
+              "eventId": "demo-priya-event-5",
+              "eventType": "cart",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-12T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-priya-event-6",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-13T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-priya-event-7",
+              "eventType": "view",
+              "itemName": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "selectedColor": "Olive band",
+              "occurredAt": "2026-10-13T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band"
+            },
+            {
+              "eventId": "demo-priya-event-8",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-14T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-priya-event-9",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-15T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-priya-event-10",
+              "eventType": "view",
+              "itemName": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "selectedColor": "Olive band",
+              "occurredAt": "2026-10-16T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band"
+            },
+            {
+              "eventId": "demo-priya-event-11",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-16T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-priya-event-12",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-17T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-04",
+      "profileA": {
+        "profileId": "history-only-04-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 150,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Walks from the train to work even when the forecast changes.",
+              "Has a regular weekday commute and carries a few things for the day.",
+              "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+            ],
+            "colorPreferences": [
+              "green and natural shades"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-lena-event-1",
+              "eventType": "purchase",
+              "itemName": "monthly train pass",
+              "category": "Public transport",
+              "occurredAt": "2026-10-12T10:30:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-lena-event-2",
+              "eventType": "purchase",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-13T04:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-lena-event-3",
+              "eventType": "view",
+              "itemName": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-13T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "pack",
+              "variantId": "pack-slate-blue"
+            },
+            {
+              "eventId": "demo-lena-event-4",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Graphite",
+              "occurredAt": "2026-10-14T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-graphite"
+            },
+            {
+              "eventId": "demo-lena-event-5",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-15T10:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            },
+            {
+              "eventId": "demo-lena-event-6",
+              "eventType": "view",
+              "itemName": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-16T04:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "pack",
+              "variantId": "pack-slate-blue"
+            },
+            {
+              "eventId": "demo-lena-event-7",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Graphite",
+              "occurredAt": "2026-10-16T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-graphite"
+            },
+            {
+              "eventId": "demo-lena-event-8",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-17T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-04-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 150,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Walks from the train to work even when the forecast changes.",
+              "Has a regular weekday commute and carries a few things for the day.",
+              "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+            ],
+            "colorPreferences": [
+              "green and natural shades"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-lena-event-1",
+              "eventType": "purchase",
+              "itemName": "Everywhere rain jacket",
+              "category": "Waterproof hooded shell",
+              "selectedColor": "Forest",
+              "occurredAt": "2026-10-12T10:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "jacket",
+              "variantId": "jacket-forest"
+            },
+            {
+              "eventId": "demo-lena-event-2",
+              "eventType": "purchase",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-13T04:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-lena-event-3",
+              "eventType": "view",
+              "itemName": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-13T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "pack",
+              "variantId": "pack-slate-blue"
+            },
+            {
+              "eventId": "demo-lena-event-4",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Graphite",
+              "occurredAt": "2026-10-14T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-graphite"
+            },
+            {
+              "eventId": "demo-lena-event-5",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-15T10:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            },
+            {
+              "eventId": "demo-lena-event-6",
+              "eventType": "view",
+              "itemName": "Everyday daypack",
+              "category": "Pack a smaller plan",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-16T04:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "pack",
+              "variantId": "pack-slate-blue"
+            },
+            {
+              "eventId": "demo-lena-event-7",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Graphite",
+              "occurredAt": "2026-10-16T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-graphite"
+            },
+            {
+              "eventId": "demo-lena-event-8",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-17T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-05",
+      "profileA": {
+        "profileId": "history-only-05-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 115,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Spends a long train ride listening to albums and spoken-word programs.",
+              "Changes between a shared desk and a quiet workspace several days a week.",
+              "Has recently reorganized a weekly routine and is filling in a few practical gaps."
+            ],
+            "colorPreferences": [
+              "quiet neutrals"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-june-event-1",
+              "eventType": "purchase",
+              "itemName": "digital music subscription",
+              "category": "Listening services",
+              "occurredAt": "2026-10-15T09:15:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-june-event-2",
+              "eventType": "purchase",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T03:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-june-event-3",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-16T21:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            },
+            {
+              "eventId": "demo-june-event-4",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-17T15:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-05-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 115,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Spends a long train ride listening to albums and spoken-word programs.",
+              "Changes between a shared desk and a quiet workspace several days a week.",
+              "Has recently reorganized a weekly routine and is filling in a few practical gaps."
+            ],
+            "colorPreferences": [
+              "quiet neutrals"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-june-event-1",
+              "eventType": "purchase",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-15T09:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-navy"
+            },
+            {
+              "eventId": "demo-june-event-2",
+              "eventType": "purchase",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T03:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-june-event-3",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-16T21:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            },
+            {
+              "eventId": "demo-june-event-4",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-17T15:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-06",
+      "profileA": {
+        "profileId": "history-only-06-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 65,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Cooks dinner in batches and takes a packed portion to work the next day.",
+              "Has started keeping a regular lunch break away from the desk.",
+              "Shares a home and likes belongings that are easy to use in more than one room."
+            ],
+            "colorPreferences": [
+              "navy and blue"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-grace-event-1",
+              "eventType": "purchase",
+              "itemName": "meal-prep cookbook",
+              "category": "Cooking books",
+              "occurredAt": "2026-10-09T08:45:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-grace-event-2",
+              "eventType": "purchase",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Olive",
+              "occurredAt": "2026-10-10T02:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-olive"
+            },
+            {
+              "eventId": "demo-grace-event-3",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-10T20:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-grace-event-4",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-11T14:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-sage"
+            },
+            {
+              "eventId": "demo-grace-event-5",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-12T08:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-navy"
+            },
+            {
+              "eventId": "demo-grace-event-6",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-13T02:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-grace-event-7",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-13T20:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-sage"
+            },
+            {
+              "eventId": "demo-grace-event-8",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-14T14:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-navy"
+            },
+            {
+              "eventId": "demo-grace-event-9",
+              "eventType": "cart",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-15T08:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-grace-event-10",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-16T02:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-sage"
+            },
+            {
+              "eventId": "demo-grace-event-11",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T20:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-navy"
+            },
+            {
+              "eventId": "demo-grace-event-12",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-17T14:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-06-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 65,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Cooks dinner in batches and takes a packed portion to work the next day.",
+              "Has started keeping a regular lunch break away from the desk.",
+              "Shares a home and likes belongings that are easy to use in more than one room."
+            ],
+            "colorPreferences": [
+              "navy and blue"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-grace-event-1",
+              "eventType": "purchase",
+              "itemName": "Steel lunch box",
+              "category": "Steel box with bamboo lid",
+              "selectedColor": "Olive band",
+              "occurredAt": "2026-10-09T08:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "lunchbox",
+              "variantId": "lunchbox-olive-band"
+            },
+            {
+              "eventId": "demo-grace-event-2",
+              "eventType": "purchase",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Olive",
+              "occurredAt": "2026-10-10T02:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-olive"
+            },
+            {
+              "eventId": "demo-grace-event-3",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-10T20:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-grace-event-4",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-11T14:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-sage"
+            },
+            {
+              "eventId": "demo-grace-event-5",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-12T08:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-navy"
+            },
+            {
+              "eventId": "demo-grace-event-6",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-13T02:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-grace-event-7",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-13T20:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-sage"
+            },
+            {
+              "eventId": "demo-grace-event-8",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-14T14:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-navy"
+            },
+            {
+              "eventId": "demo-grace-event-9",
+              "eventType": "cart",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-15T08:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-grace-event-10",
+              "eventType": "view",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-16T02:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-sage"
+            },
+            {
+              "eventId": "demo-grace-event-11",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T20:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-navy"
+            },
+            {
+              "eventId": "demo-grace-event-12",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-17T14:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-07",
+      "profileA": {
+        "profileId": "history-only-07-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 115,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Takes short overnight trips by train and packs a change of clothes.",
+              "Keeps the trip simple and tries to keep small essentials together.",
+              "Has recently reorganized a weekly routine and is filling in a few practical gaps."
+            ],
+            "colorPreferences": [
+              "quiet neutrals"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-sam-event-1",
+              "eventType": "purchase",
+              "itemName": "weekend rail reservation",
+              "category": "Travel bookings",
+              "occurredAt": "2026-10-10T19:15:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-sam-event-2",
+              "eventType": "purchase",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Graphite",
+              "occurredAt": "2026-10-11T13:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            },
+            {
+              "eventId": "demo-sam-event-3",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-12T07:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-sam-event-4",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-13T01:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-navy"
+            },
+            {
+              "eventId": "demo-sam-event-5",
+              "eventType": "cart",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-13T19:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-sam-event-6",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-14T13:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-sam-event-7",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-15T07:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-navy"
+            },
+            {
+              "eventId": "demo-sam-event-8",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T01:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-sam-event-9",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-16T19:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-sam-event-10",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-17T13:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-navy"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-07-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 115,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Takes short overnight trips by train and packs a change of clothes.",
+              "Keeps the trip simple and tries to keep small essentials together.",
+              "Has recently reorganized a weekly routine and is filling in a few practical gaps."
+            ],
+            "colorPreferences": [
+              "quiet neutrals"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-sam-event-1",
+              "eventType": "purchase",
+              "itemName": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-10T19:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "duffel",
+              "variantId": "duffel-charcoal"
+            },
+            {
+              "eventId": "demo-sam-event-2",
+              "eventType": "purchase",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Graphite",
+              "occurredAt": "2026-10-11T13:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-graphite"
+            },
+            {
+              "eventId": "demo-sam-event-3",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-12T07:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-sam-event-4",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-13T01:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-navy"
+            },
+            {
+              "eventId": "demo-sam-event-5",
+              "eventType": "cart",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-13T19:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-sam-event-6",
+              "eventType": "view",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-14T13:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-sam-event-7",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-15T07:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-navy"
+            },
+            {
+              "eventId": "demo-sam-event-8",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T01:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-navy"
+            },
+            {
+              "eventId": "demo-sam-event-9",
+              "eventType": "cart",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Sage",
+              "occurredAt": "2026-10-16T19:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-sage"
+            },
+            {
+              "eventId": "demo-sam-event-10",
+              "eventType": "view",
+              "itemName": "Everyday over-ear headphones",
+              "category": "Cushioned over-ear headphones",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-17T13:15:00.000Z",
+              "source": "demo-seed",
+              "productId": "headphones",
+              "variantId": "headphones-navy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-08",
+      "profileA": {
+        "profileId": "history-only-08-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 70,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Sketches at a small desk in the evenings and takes supplies to a weekly class.",
+              "Several pencils and charging leads keep getting mixed together.",
+              "Lives in a compact apartment and usually shops for one practical addition at a time."
+            ],
+            "colorPreferences": [
+              "warm earth tones"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-ana-event-1",
+              "eventType": "purchase",
+              "itemName": "watercolor pencil set",
+              "category": "Art supplies",
+              "occurredAt": "2026-10-13T01:00:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-ana-event-2",
+              "eventType": "purchase",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Ivory",
+              "occurredAt": "2026-10-13T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-ivory"
+            },
+            {
+              "eventId": "demo-ana-event-3",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-14T13:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            },
+            {
+              "eventId": "demo-ana-event-4",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-15T07:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            },
+            {
+              "eventId": "demo-ana-event-5",
+              "eventType": "cart",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T01:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-navy"
+            },
+            {
+              "eventId": "demo-ana-event-6",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-16T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            },
+            {
+              "eventId": "demo-ana-event-7",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-17T13:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-08-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 70,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Sketches at a small desk in the evenings and takes supplies to a weekly class.",
+              "Several pencils and charging leads keep getting mixed together.",
+              "Lives in a compact apartment and usually shops for one practical addition at a time."
+            ],
+            "colorPreferences": [
+              "warm earth tones"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-ana-event-1",
+              "eventType": "purchase",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-13T01:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            },
+            {
+              "eventId": "demo-ana-event-2",
+              "eventType": "purchase",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Ivory",
+              "occurredAt": "2026-10-13T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-ivory"
+            },
+            {
+              "eventId": "demo-ana-event-3",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-14T13:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            },
+            {
+              "eventId": "demo-ana-event-4",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-15T07:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            },
+            {
+              "eventId": "demo-ana-event-5",
+              "eventType": "cart",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Navy",
+              "occurredAt": "2026-10-16T01:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-navy"
+            },
+            {
+              "eventId": "demo-ana-event-6",
+              "eventType": "view",
+              "itemName": "Pocket field notes",
+              "category": "Keep a good thought",
+              "selectedColor": "Terracotta",
+              "occurredAt": "2026-10-16T19:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "notebook",
+              "variantId": "notebook-terracotta"
+            },
+            {
+              "eventId": "demo-ana-event-7",
+              "eventType": "view",
+              "itemName": "Portable table light",
+              "category": "Cordless table lamp",
+              "selectedColor": "Slate blue",
+              "occurredAt": "2026-10-17T13:00:00.000Z",
+              "source": "demo-seed",
+              "productId": "lamp",
+              "variantId": "lamp-slate-blue"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-09",
+      "profileA": {
+        "profileId": "history-only-09-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 95,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Has started swimming before work twice a week.",
+              "Packs a small bag the evening before and walks home after the pool.",
+              "Shares a home and likes belongings that are easy to use in more than one room."
+            ],
+            "colorPreferences": [
+              "navy and blue"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-rosa-event-1",
+              "eventType": "purchase",
+              "itemName": "swim goggles",
+              "category": "Swimming accessories",
+              "occurredAt": "2026-10-09T05:45:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-rosa-event-2",
+              "eventType": "purchase",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-09T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            },
+            {
+              "eventId": "demo-rosa-event-3",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-10T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-rosa-event-4",
+              "eventType": "view",
+              "itemName": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-11T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "duffel",
+              "variantId": "duffel-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-5",
+              "eventType": "cart",
+              "itemName": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-12T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "sneakers",
+              "variantId": "sneakers-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-6",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-12T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-rosa-event-7",
+              "eventType": "view",
+              "itemName": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-13T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "duffel",
+              "variantId": "duffel-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-8",
+              "eventType": "view",
+              "itemName": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-14T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "sneakers",
+              "variantId": "sneakers-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-9",
+              "eventType": "cart",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-15T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-rosa-event-10",
+              "eventType": "view",
+              "itemName": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-15T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "duffel",
+              "variantId": "duffel-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-11",
+              "eventType": "view",
+              "itemName": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-16T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "sneakers",
+              "variantId": "sneakers-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-12",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-17T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-09-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 95,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Has started swimming before work twice a week.",
+              "Packs a small bag the evening before and walks home after the pool.",
+              "Shares a home and likes belongings that are easy to use in more than one room."
+            ],
+            "colorPreferences": [
+              "navy and blue"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-rosa-event-1",
+              "eventType": "purchase",
+              "itemName": "Everywhere cotton towel",
+              "category": "Striped cotton towel",
+              "selectedColor": "Sage stripe",
+              "occurredAt": "2026-10-09T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "towel",
+              "variantId": "towel-sage-stripe"
+            },
+            {
+              "eventId": "demo-rosa-event-2",
+              "eventType": "purchase",
+              "itemName": "Zip essentials pouch",
+              "category": "Canvas organizer pouch",
+              "selectedColor": "Ochre",
+              "occurredAt": "2026-10-09T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "organizer",
+              "variantId": "organizer-ochre"
+            },
+            {
+              "eventId": "demo-rosa-event-3",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-10T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-rosa-event-4",
+              "eventType": "view",
+              "itemName": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-11T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "duffel",
+              "variantId": "duffel-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-5",
+              "eventType": "cart",
+              "itemName": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-12T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "sneakers",
+              "variantId": "sneakers-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-6",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-12T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-rosa-event-7",
+              "eventType": "view",
+              "itemName": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-13T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "duffel",
+              "variantId": "duffel-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-8",
+              "eventType": "view",
+              "itemName": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-14T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "sneakers",
+              "variantId": "sneakers-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-9",
+              "eventType": "cart",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-15T05:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            },
+            {
+              "eventId": "demo-rosa-event-10",
+              "eventType": "view",
+              "itemName": "Weekender duffel",
+              "category": "Canvas travel bag",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-15T23:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "duffel",
+              "variantId": "duffel-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-11",
+              "eventType": "view",
+              "itemName": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "selectedColor": "Charcoal",
+              "occurredAt": "2026-10-16T17:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "sneakers",
+              "variantId": "sneakers-charcoal"
+            },
+            {
+              "eventId": "demo-rosa-event-12",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Steel blue",
+              "occurredAt": "2026-10-17T11:45:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-steel-blue"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "pairId": "history-only-10",
+      "profileA": {
+        "profileId": "history-only-10-a",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 120,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Walks to the bakery and park most days and spends more time outside lately.",
+              "Prefers an easy everyday outfit for errands on foot.",
+              "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+            ],
+            "colorPreferences": [
+              "green and natural shades"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-felix-event-1",
+              "eventType": "purchase",
+              "itemName": "walking route guide",
+              "category": "Local activity books",
+              "occurredAt": "2026-10-12T04:30:00.000Z",
+              "source": "demo-seed",
+              "external": true
+            },
+            {
+              "eventId": "demo-felix-event-2",
+              "eventType": "purchase",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Cobalt",
+              "occurredAt": "2026-10-12T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-cobalt"
+            },
+            {
+              "eventId": "demo-felix-event-3",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-13T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-felix-event-4",
+              "eventType": "view",
+              "itemName": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "selectedColor": "Amber",
+              "occurredAt": "2026-10-14T10:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "sunglasses",
+              "variantId": "sunglasses-amber"
+            },
+            {
+              "eventId": "demo-felix-event-5",
+              "eventType": "cart",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Olive",
+              "occurredAt": "2026-10-15T04:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-olive"
+            },
+            {
+              "eventId": "demo-felix-event-6",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-15T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-felix-event-7",
+              "eventType": "view",
+              "itemName": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "selectedColor": "Amber",
+              "occurredAt": "2026-10-16T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "sunglasses",
+              "variantId": "sunglasses-amber"
+            },
+            {
+              "eventId": "demo-felix-event-8",
+              "eventType": "view",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Olive",
+              "occurredAt": "2026-10-17T10:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-olive"
+            }
+          ]
+        }
+      },
+      "profileB": {
+        "profileId": "history-only-10-b",
+        "request": {
+          "query": "Show me a few useful things for the next couple of weeks.",
+          "itemBudget": 120,
+          "hardRequirements": [],
+          "persona": {
+            "background": [
+              "Walks to the bakery and park most days and spends more time outside lately.",
+              "Prefers an easy everyday outfit for errands on foot.",
+              "Keeps a small set of everyday things and prefers to avoid buying duplicates."
+            ],
+            "colorPreferences": [
+              "green and natural shades"
+            ]
+          },
+          "publicHistory": [
+            {
+              "eventId": "demo-felix-event-1",
+              "eventType": "purchase",
+              "itemName": "Everyday canvas sneakers",
+              "category": "Canvas low-top sneakers",
+              "selectedColor": "Off-white",
+              "occurredAt": "2026-10-12T04:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "sneakers",
+              "variantId": "sneakers-off-white"
+            },
+            {
+              "eventId": "demo-felix-event-2",
+              "eventType": "purchase",
+              "itemName": "Trail mug",
+              "category": "For the slow mornings",
+              "selectedColor": "Cobalt",
+              "occurredAt": "2026-10-12T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "mug",
+              "variantId": "mug-cobalt"
+            },
+            {
+              "eventId": "demo-felix-event-3",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-13T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-felix-event-4",
+              "eventType": "view",
+              "itemName": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "selectedColor": "Amber",
+              "occurredAt": "2026-10-14T10:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "sunglasses",
+              "variantId": "sunglasses-amber"
+            },
+            {
+              "eventId": "demo-felix-event-5",
+              "eventType": "cart",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Olive",
+              "occurredAt": "2026-10-15T04:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-olive"
+            },
+            {
+              "eventId": "demo-felix-event-6",
+              "eventType": "view",
+              "itemName": "Everyday steel bottle",
+              "category": "Stainless steel bottle",
+              "selectedColor": "Cream",
+              "occurredAt": "2026-10-15T22:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "bottle",
+              "variantId": "bottle-cream"
+            },
+            {
+              "eventId": "demo-felix-event-7",
+              "eventType": "view",
+              "itemName": "Everyday round sunglasses",
+              "category": "Round acetate sunglasses",
+              "selectedColor": "Amber",
+              "occurredAt": "2026-10-16T16:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "sunglasses",
+              "variantId": "sunglasses-amber"
+            },
+            {
+              "eventId": "demo-felix-event-8",
+              "eventType": "view",
+              "itemName": "Market canvas tote",
+              "category": "Cotton canvas carryall",
+              "selectedColor": "Olive",
+              "occurredAt": "2026-10-17T10:30:00.000Z",
+              "source": "demo-seed",
+              "productId": "tote",
+              "variantId": "tote-olive"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

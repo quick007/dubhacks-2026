@@ -1,0 +1,304 @@
+"""Author-controlled TRAIN expansion. CPU/std-library; reads only public catalog + frozen plan."""
+from pathlib import Path
+from copy import deepcopy
+from collections import Counter
+from datetime import datetime, timezone, timedelta
+import hashlib
+import json
+import random
+import uuid
+
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parents[3]
+SOURCE=ROOT/'experiments/ranker/pretrained/synthetic_history_v1/catalog-binding.json'
+VERSION='authored-public-persona-train-expansion.v3'
+
+# Each paragraph below is authored for its situation. No evaluation text is read.
+# Order: priority reversal, ownership-only contrast, explicit replacement, color contrast.
+AUTHORED={
+'mug':[
+('Browse the store',
+ 'Breakfast on the balcony is my quiet part of the day. A proper mug for coffee comes first; a small paper notebook for the ideas I jot down over breakfast would be the next useful addition.',
+ 'The balcony coffee ritual is staying, but capturing the ideas is now the pressing job: I want pocket paper notes first. A mug for the drink is still a sensible second choice.'),
+('What would fill a gap in my everyday routine?',
+ 'Work through my missing things in this order: a mug for tea at home, a drinking bottle for the rest of the day, then pocket paper for brief lists. Skip anything already purchased and take the next unfinished job.',None),
+('Help me choose one thing I still need.',
+ 'The Trail mug in my purchase history is still doing its job, so another is unnecessary. I would first make the sofa more comfortable with a cotton throw, with a small table light as the next improvement.',
+ 'The Trail mug I purchased has worn out and I explicitly want its replacement first. Making the sofa comfortable with a cotton throw remains my second priority; lighting can wait.'),
+('Can you narrow down a useful next addition?',
+ 'For my bedside corner, I need a mug for evening tea before anything else. A cordless light on the little table would also help when I read there.',None)],
+'pack':[
+('What belongs next in my day-to-day kit?',
+ 'Errands take me across town on foot. Carrying my daily things in a daypack is the first problem to solve; having a bottle for drinking water is useful too, but comes after the bag.',
+ 'On those same walking errands I now want to sort out drinking water first, with a steel bottle. A daypack for my daily things is still the next job, rather than the main one.'),
+('Find a practical addition for the week ahead.',
+ 'My campus list goes: a daypack for daily things, a container for the lunch I bring, and a bottle for water. Follow that order among the things I have not bought; a purchase means that job is already covered.',None),
+('Which missing everyday item should I sort out?',
+ 'My purchased Everyday daypack is still fine; I am not replacing it. Over-ear listening for the commute is the priority now, followed by a pouch to gather loose cables and small belongings.',
+ 'The Everyday daypack I bought is now damaged, and replacing that daily bag takes priority. Over-ear listening on the commute is still worthwhile afterward; the small-item pouch is no longer on this shopping list.'),
+('Help me pick something for my usual outings.',
+ 'I want a daypack for the things I take on ordinary outings. A cotton crewneck that I can wear as a separate layer is my other interest, but the daily carrying job matters first.',None)],
+'notebook':[
+('What useful thing could I add to my mornings?',
+ 'I keep losing little handwritten reminders between breakfast and leaving home. Pocket paper notes are my first need; a mug for the coffee alongside them is a second, smaller improvement.',
+ 'I want to settle the coffee mug part of breakfast first now. Having pocket paper for handwritten reminders is still useful, but it is the second thing to address.'),
+('Choose around the things I have not sorted yet.',
+ 'At my writing table the unfinished jobs, in order, are pocket handwritten notes, a cordless table light, and a pouch for loose pens. Leave out any of those that a purchase in the history has already settled.',None),
+('Where would a small upgrade help most?',
+ 'The Pocket field notes I bought are still available, so I do not need another notebook. My first wish is cushioned over-ear listening, with a cordless table light as the secondary improvement to my evening routine.',
+ 'I have filled the Pocket field notes I purchased and am deliberately replacing that notebook first. Cushioned over-ear listening remains second; I am setting aside the table-light idea for this request.'),
+('Suggest a useful addition for keeping things together.',
+ 'Short handwritten observations are what I need to start keeping in pocket notes. Gathering the loose writing bits in a zipped pouch is a second related task, rather than the main purchase.',None)],
+'jacket':[
+('What would make my regular route easier?',
+ 'Walking is how I get around, including rainy days. My first need is a waterproof shell with a hood; ordinary canvas low-top shoes for the same route are the secondary need.',
+ 'For that walking route I want everyday canvas low-top shoes first now. A waterproof hooded layer for rain remains on the list, but is the second purchase to consider.'),
+('Find what is still missing for ordinary errands.',
+ 'For rainy market trips I would fill these gaps in order: a waterproof hooded shell, a cotton canvas shopping carryall, then a daypack for other daily things. If I already purchased one, pass to the next gap instead of duplicating it.',None),
+('Help me finish my going-out essentials.',
+ 'The Everywhere rain jacket I purchased is still serving me; I am not buying a duplicate shell. A steel bottle for water is the present priority, with everyday canvas shoes as a secondary idea.',
+ 'My purchased Everywhere rain jacket is worn out, and I explicitly need to replace the waterproof hooded shell first. A steel drinking bottle is still next; new canvas shoes can wait.'),
+('Pick something useful for leaving the house.',
+ 'Rain cover is the job that matters most: I need a waterproof shell with a hood. Carrying the rest of my daily things in a daypack would be helpful afterward.',None)],
+'bottle':[
+('Browse the store',
+ 'I go swimming before work. A steel bottle for drinking water is the first missing part of that routine, and a cotton towel for drying off is a second thing I would find useful.',
+ 'I now need to sort out drying off after swimming first, with a cotton towel. A steel drinking bottle still belongs on the list, but comes second.'),
+('What should I add to the routine I already have?',
+ 'My workday and swim list is ordered: drinking water in a steel bottle, packed food in a lunch container, then a cotton towel for drying after the pool. Do not repeat a purchase; continue to the first job without one.',None),
+('Choose something that serves my current priorities.',
+ 'I already purchased the Everyday steel bottle and it still works for me; another bottle is not needed. First I want a mug for tea breaks, then pocket paper for handwritten reminders.',
+ 'I lost the Everyday steel bottle from my purchase history and want to replace it first. A mug for tea is still a second priority; I am leaving paper notes out of this purchase.'),
+('Which everyday addition fits the way I spend my time?',
+ 'I want a steel drinking bottle to use throughout the day. Over-ear headphones for private listening are also of interest, but the bottle is the more important task.',None)],
+ 'tote':[
+('What would help with my small weekly routines?',
+ 'At the market I want a cotton canvas carryall for the things I buy; that is the main gap. Keeping the shopping reminders in pocket handwritten notes is a useful secondary task.',
+ 'For the same market routine I want to settle the handwritten shopping reminders first. A cotton canvas bag to carry purchases remains useful, but is now second.'),
+('Help me complete the gaps, rather than repeat purchases.',
+ 'My remaining list runs from a canvas carryall for groceries to a steel lunch container and then a water bottle. Use that order only for unowned things: something I purchased is not a gap anymore.',None),
+('What would be worth adding to a quiet weekend?',
+ 'The Market canvas tote I bought is still in use and does not need a replacement. A cotton throw for resting on the sofa is my first wish, with a mug for a warm drink as a second addition.',
+ 'My purchased Market canvas tote is damaged and I specifically want its replacement first. A cotton throw for resting is still second; the extra mug is not part of this request now.'),
+('Choose a practical addition for my time outside.',
+ 'A canvas carryall for market purchases is my main need. Low-top canvas shoes for ordinary daily wear would be another useful addition, but I would sort out the bag first.',None)],
+'blanket':[
+('What would make my reading corner more usable?',
+ 'My sofa reading spot needs a cotton throw before anything else. A mug for tea while I sit there is a welcome secondary addition, but the throw is the main job.',
+ 'I would now like to settle the tea mug first for that reading spot. A cotton throw is still useful for resting on the sofa, but is my second priority.'),
+('Find the next unfinished part of my home routine.',
+ 'For quiet evenings, my order is a cotton throw for the sofa, a cordless light on the table, and a mug for tea. Treat a purchased item as finished and select the next unmet part of that list.',None),
+('What should I consider for a more comfortable evening?',
+ 'The Woven everyday throw I purchased is still fine; I am not asking for another. A cotton crewneck for an extra clothing layer is the first need, with a small table light as a secondary idea.',
+ 'The Woven everyday throw I bought is worn out and I explicitly want a replacement before anything else. A cotton crewneck remains second; I am not shopping for lighting on this request.'),
+('Suggest an addition for slow time at home.',
+ 'I want a cotton throw for time spent resting on the sofa. Keeping brief handwritten journal notes is a separate interest, and pocket paper for that would be my second choice.',None)],
+'lamp':[
+('What would make a useful small change at home?',
+ 'I want a cordless light on the table where I write; lighting that spot is the first job. Pocket paper for the short diary entries I make there would also be useful, but comes second.',
+ 'Keeping my short diary entries on pocket paper is now the first job. A cordless table light for the writing spot remains the next useful addition.'),
+('Help me work through the things still missing.',
+ 'For my quiet desk-to-sofa routine, the order is a cordless table light, a cotton throw for resting, then pocket handwritten notes. Only consider a job unfinished when its item has not already been purchased.',None),
+('Which addition would improve my evenings now?',
+ 'The Portable table light I bought still works, and I do not want to replace it. Cushioned over-ear listening is my current priority, followed by pocket paper for the notes I write during breaks.',
+ 'My purchased Portable table light has stopped working and replacing that cordless table light is now the first priority. Over-ear listening stays second; fresh paper notes are not needed in this request.'),
+('What could I add for the way I use this room?',
+ 'A cordless light that sits on a table is what I want to address first. A mug for the tea I drink in the same room is another useful idea, but not the leading need.',None)],
+'lunchbox':[
+('Browse the store',
+ 'I bring food from home instead of buying lunch. A steel lunch container is the first missing item; a steel bottle for water is useful as well, but takes second place.',
+ 'I want to address drinking water first now, with a steel bottle. A container for the lunch I bring from home is still a sensible second addition.'),
+('What is the next gap to fill for an ordinary day?',
+ 'I would complete my workday kit in this order: a lunch container, a canvas carryall, then a drinking bottle. If the history says I purchased one of those, skip it and tackle the next unfilled need.',None),
+('Choose around what is useful to me right now.',
+ 'My purchased Steel lunch box is still available, so another food container would repeat it. First I want a zipped pouch for small loose belongings, with a drinking bottle as a second useful item.',
+ 'The Steel lunch box I purchased is lost and I deliberately want to replace that lunch container first. A zipped pouch for small things stays second; a bottle is no longer on this shopping list.'),
+('Help me select something for my normal workday.',
+ 'My main job is finding a steel container for the food I take to work. A mug for tea at the desk would be another nice addition, but the lunch container comes first.',None)],
+'headphones':[
+('What would be useful for the way I travel each day?',
+ 'I want cushioned over-ear headphones for listening on my daily ride. A zipped pouch to gather small loose belongings is my secondary interest; listening is the main purchase to sort out.',
+ 'Keeping my small loose belongings together in a zipped pouch matters first now. Over-ear headphones for listening on the daily ride remain a worthwhile second choice.'),
+('Find something for the next gap in this routine.',
+ 'My ordered interests are over-ear listening, pocket handwritten notes, and a pouch for loose pens. A product I purchased is already owned, so move to the next interest instead of recommending it again.',None),
+('What would help with my time between commitments?',
+ 'I already have the Everyday over-ear headphones from my purchase history and they are still fine. A cotton crewneck layer is what I need first, followed by pocket paper for reminders.',
+ 'My purchased Everyday over-ear headphones are worn out and I explicitly want to replace them first. A cotton crewneck is still a second need; I am not asking for more paper notes now.'),
+('Choose a practical addition for a short break away.',
+ 'Over-ear listening is the first thing I want for time on the journey. A canvas travel bag for the clothes I take overnight would be useful too, but it is the secondary task.',None)],
+'sneakers':[
+('What would be a useful addition to this active routine?',
+ 'I want canvas low-top shoes for ordinary daily wear first. I also go for a swim and could use a cotton towel for drying off, but the everyday shoes are the more urgent gap.',
+ 'Drying off after swimming has become the first gap to fill, with a cotton towel. Ordinary low-top canvas shoes are still the secondary purchase I am considering.'),
+('Help me put the remaining needs in order.',
+ 'For days walking outside, consider canvas low-top shoes first, round sunglasses next, and a drinking bottle after that. Exclude anything already purchased and use the next job that remains unfilled.',None),
+('What should I add for getting around on foot?',
+ 'My purchased Everyday canvas sneakers are still wearable and I am not replacing them. A waterproof hooded shell for rain is the first need, with a pouch for small belongings as a second idea.',
+ 'The Everyday canvas sneakers I bought have worn out and I explicitly want replacement shoes first. A waterproof hooded shell remains second; the pouch is not on this request.'),
+('Which useful item should I consider for daily errands?',
+ 'My first aim is a pair of low-top canvas shoes for everyday wear. A canvas carryall for market purchases is useful as well, but is lower on this list.',None)],
+'sweatshirt':[
+('What could I add to my usual start to the day?',
+ 'A cotton crewneck is the first thing I want as a separate clothing layer on quiet mornings. A mug for the coffee I drink then would be a useful second addition.',
+ 'I would rather sort out the morning coffee mug first now. A cotton crewneck for an extra clothing layer is still something I would use, but comes second.'),
+('Find an addition without duplicating what I already bought.',
+ 'My unfinished list is ordered: a cotton crewneck layer, over-ear listening for breaks, and a mug for tea. Skip each item recorded as purchased and choose the first job that still needs one.',None),
+('What belongs on my shopping list for evenings indoors?',
+ 'The Soft cotton crewneck I purchased is still in use, so another would duplicate it. My first wish is a cotton throw for resting on the sofa; a cordless table light would be the second improvement.',
+ 'My purchased Soft cotton crewneck has worn out and I explicitly want a replacement first. The sofa throw stays second; the cordless light is outside this request now.'),
+('Help me choose something useful to take along.',
+ 'A cotton crewneck I can wear as a layer matters first. Having a daypack for the things I take out is another interest, but it is the second job to address.',None)],
+'duffel':[
+('Browse the store',
+ 'For an overnight visit, my first need is a canvas travel bag for clothes. A separate zipped pouch for the small loose things would help too, but the clothes bag is the main task.',
+ 'For that visit I now want to gather the small loose things in a zipped pouch first. A canvas travel bag for the overnight clothes remains my second priority.'),
+('What would finish the kit for my next few days?',
+ 'My trip list goes from a canvas clothes bag to a cotton towel and then a pouch for small belongings. Count purchases as already handled and fill the next gap, rather than supplying duplicates.',None),
+('Choose a useful next item for occasional trips.',
+ 'I already bought the Weekender duffel and it is still usable, so I am not replacing it. Pocket paper for handwritten trip notes is my first interest, and a pouch for small things is second.',
+ 'The Weekender duffel I purchased is damaged and I deliberately want a replacement travel bag first. Pocket notes for the trip stay second; the small-item pouch is no longer a goal here.'),
+('What is worth adding for a little time away?',
+ 'I need a canvas travel bag for the clothes I take on a short visit. Cushioned over-ear listening for the journey is a second interest, but carrying the clothes is the main job.',None)],
+'sunglasses':[
+('Help me choose something for my ordinary time outside.',
+ 'Round sunglasses for bright days are the main thing I want. A canvas carryall for market purchases would also be useful, but that carrying job is secondary.',
+ 'For the same days out, I now want a canvas carryall for market purchases first. Round sunglasses for bright conditions remain my next interest.'),
+('What would be useful among the things I have not bought?',
+ 'My order for days on foot is round sunglasses, low-top canvas shoes, and a drinking bottle. A purchase means I own that item already; consider the first unfilled job instead of repeating it.',None),
+('Find the addition that matches my priorities today.',
+ 'The Everyday round sunglasses I purchased are still with me and do not need replacement. A steel drinking bottle is the first gap, with a canvas carryall as a useful second option.',
+ 'I lost my purchased Everyday round sunglasses and explicitly want to replace them first. A steel drinking bottle is still second; a carryall is not part of this request now.'),
+('What could I add for the way I get around?',
+ 'Round sunglasses for bright days come first for me. A zipped canvas pouch for small belongings would be useful too, but is the second need rather than the main one.',None)],
+'organizer':[
+('Which small addition would make my daily things easier?',
+ 'Loose pens and little belongings are what I want to gather first, in a zipped canvas pouch. A daypack to carry my daily things is another useful idea, but comes after that smaller organizing job.',
+ 'The bigger daily carrying job now matters first, so I want a daypack. A zipped pouch to gather loose pens and belongings remains my second choice.'),
+('Help me fill the gaps in the things I use for breaks.',
+ 'I would tackle a pouch for loose cables first, over-ear listening second, then pocket handwritten notes. Only fill jobs whose items have not been purchased; an observed purchase is not a new need.',None),
+('What would be useful for keeping a short trip simple?',
+ 'The Zip essentials pouch I purchased is still useful and I am not replacing it. A canvas travel bag for clothes is my first need, with pocket handwritten notes as a second interest.',
+ 'My purchased Zip essentials pouch is damaged and I explicitly want its replacement first. A canvas travel bag for clothes is still second; paper notes are not requested this time.'),
+('Choose something that fits my everyday writing routine.',
+ 'I want a zipped canvas pouch for the loose writing items first. Pocket paper for handwritten observations is another sensible addition, but not the leading need.',None)],
+ 'towel':[
+('What could I add to make this regular routine easier?',
+ 'After a swim, drying off with a cotton towel is the first gap I want to fill. A drinking bottle for water is useful too, but it is my second priority.',
+ 'I now want to address drinking water first with a bottle. A cotton towel for drying off after swimming is still on the list, but comes second.'),
+('Help me choose the next thing I have yet to sort out.',
+ 'For a visit that includes swimming, my order is a cotton towel, a canvas bag for clothes, and a drinking bottle. Ignore any item I have purchased already and move along to the next unmet job.',None),
+('What would help with my usual days away from home?',
+ 'My purchased Everywhere cotton towel is still fine, so I do not want another. First I want low-top canvas shoes for daily wear, with a drinking bottle as my second interest.',
+ 'The Everywhere cotton towel I bought is worn out and I explicitly want to replace it first. Low-top canvas shoes are still second; a bottle is not part of this request now.'),
+('Find a useful addition for the things I do during the week.',
+ 'A cotton towel for drying after swimming matters most to me. A steel container for taking lunch from home is a separate useful addition, but it takes second place.',None)],
+}
+
+COLOR_PHRASES=[
+ 'I gravitate toward {a}; {b} is my next choice when that first shade is unavailable.',
+ 'My first color choice is {a}. I also like {b}, in that order.',
+ 'For colors I would start with {a}, and consider {b} afterward.',
+ 'I tend to choose {a}; if it is not offered, {b} appeals to me next.',
+ 'I like seeing {a} among my everyday things, with {b} as the other shade I would choose.',
+ 'Color-wise, {a} leads for me and {b} is the next option.',
+ 'I am drawn to {a} first, then to {b}.',
+ 'My preferred shade is {a}, followed by {b} if the first is not available.',
+ 'I would choose {a} ahead of {b} when deciding between colors.',
+ 'I keep returning to {a}; {b} is also a color I like.',
+ 'The order I like for colors is {a}, then {b}.',
+ 'For this purchase my favorite shade is {a}, with {b} next.',
+ 'I would look for {a} before considering {b}.',
+ 'The color that appeals most is {a}; my next preference is {b}.',
+ 'I enjoy {a} most and would also consider {b}.',
+ 'I lean toward {a}, with {b} as a second color option.',
+]
+
+def canonical(value):return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False)
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def write(name,value):
+ p=HERE/name
+ if p.exists():raise FileExistsError(p)
+ p.write_text(json.dumps(value,indent=2,ensure_ascii=False)+'\n')
+def event(product,variant,kind,index,group):
+ at=datetime(2026,10,3,tzinfo=timezone.utc)+timedelta(days=index*2,hours=(group*3+index*5)%20)
+ return {'eventId':str(uuid.UUID(hashlib.md5(f'public-event:{group}:{index}:{kind}:{product["name"]}'.encode()).hexdigest())),
+  'eventType':kind,'itemName':product['name'],'category':product['category'],'selectedColor':variant['colorName'],
+  'occurredAt':at.isoformat(timespec='milliseconds').replace('+00:00','Z'),'source':'demo-seed','productId':product['id'],'variantId':variant['id']}
+
+def build():
+ freeze=json.loads((HERE/'PLAN_FREEZE.json').read_text())
+ for name,checksum in freeze['files'].items():assert sha(HERE/name)==checksum
+ assert sha(SOURCE)==freeze['publicCatalogSourceSha256']
+ coverage=json.loads((HERE/'SEMANTIC_COVERAGE.json').read_text())['groups']
+ products=json.loads(SOURCE.read_text())['products'];byid={p['id']:p for p in products};ids=list(byid)
+ profiles=[];labels=[];pairs=[];authorship=[]
+ for n,g in enumerate(coverage):
+  p,s,t=g['sourceProductId'],g['secondaryProductId'],g['thirdProductId'];mode=n%4
+  query,base_text,cf_text=AUTHORED[p][mode]
+  active={p,s,t};others=[x for x in ids if x not in active]
+  owned=others[(n*5+3)%len(others)];distractor=others[(n*7+1)%len(others)]
+  if distractor==owned:distractor=others[(others.index(owned)+1)%len(others)]
+  # Purchase is in varying chronological positions; all entries still ordered by time.
+  spec=[(owned,'purchase'),(p,'view'),(s,'cart'),(t or distractor,'view')]
+  if mode==2:spec[1]=(p,'purchase')
+  if n%3==1:spec.append((distractor,'cart'))
+  if n%3==2:spec.extend([(distractor,'view'),(others[(n+2)%len(others)],'cart')])
+  shift=n%len(spec);spec=spec[shift:]+spec[:shift]
+  history=[event(byid[pid],byid[pid]['variants'][(n+i)%3],kind,i,n) for i,(pid,kind) in enumerate(spec)]
+  common=[v['colorName'] for v in byid[p]['variants'] if any(w['colorName']==v['colorName'] for w in byid[s]['variants'])]
+  primary_color=(common[n%len(common)] if mode==3 and common else byid[p]['variants'][(n//4+mode)%3]['colorName'])
+  secondary_color=byid[s]['variants'][(n//4+1)%3]['colorName']
+  colors=[primary_color,secondary_color]
+  phrase=COLOR_PHRASES[(n*5)%len(COLOR_PHRASES)].format(a=colors[0],b=colors[1]) if colors[0]!=colors[1] else f'I prefer {colors[0]} when it is offered; I do not need a different shade.'
+  base_bg=[base_text]
+  hard=[{'attribute':'color','value':primary_color}] if mode==3 and common else []
+  if hard:base_bg.append(f'Please keep both choices in {primary_color}; I want that exact color this time.')
+  budget=max(byid[x]['price'] for x in active if x)+[0,5,15,25][(n//4)%4]
+  base_request={'query':query,'itemBudget':budget,'hardRequirements':hard,'persona':{'background':base_bg,'colorPreferences':[phrase]},'publicHistory':history}
+  cf=deepcopy(base_request)
+  if mode==0:cf['persona']['background']=[cf_text];base_grades={p:3,s:2};cf_grades={s:3,p:2};replacement=[]
+  elif mode==1:
+   purchase=next(e for e in cf['publicHistory'] if e['productId']==p and e['eventType']=='view');purchase['eventType']='purchase'
+   base_grades={p:3,s:2,t:2};cf_grades={s:3,t:2};replacement=[]
+  elif mode==2:
+   cf['persona']['background']=[cf_text];base_grades={s:3,t:2};cf_grades={p:3,s:2};replacement=[p]
+  else:
+   cf['hardRequirements']=[];cf['persona']['background']=[base_text]
+   other=[v['colorName'] for v in byid[p]['variants'] if v['colorName']!=primary_color]
+   cfcolors=[other[n%len(other)],byid[s]['variants'][(n//4+2)%3]['colorName']]
+   cf['persona']['colorPreferences']=[COLOR_PHRASES[(n*5+7)%16].format(a=cfcolors[0],b=cfcolors[1]) if cfcolors[0]!=cfcolors[1] else f'My color choice is {cfcolors[0]}; another shade is not necessary.']
+   cf['itemBudget']=max(byid[p]['price'],byid[s]['price'])
+   base_grades={p:3,s:2};cf_grades={p:3,s:2};replacement=[]
+  for arm,request,positive,allowed in [('base',base_request,base_grades,[]),('counterfactual',cf,cf_grades,replacement)]:
+   profile_id=f'functional-v3-profile-{n+1:03d}-{arm}';group_id=g['groupId']
+   profiles.append({'profileId':profile_id,'userGroupId':group_id,'sessionId':str(uuid.uuid5(uuid.NAMESPACE_URL,profile_id)),'request':request})
+   owned_ids=sorted({e['productId'] for e in request['publicHistory'] if e['eventType']=='purchase'})
+   grades={pid:positive.get(pid,0) for pid in ids}
+   preferred=[];acceptable=[];color_order=colors if arm=='base' or mode!=3 else cfcolors
+   for pid,grade in grades.items():
+    if not grade:continue
+    choices=[v for v in byid[pid]['variants'] if all(c['attribute']!='color' or c['value']==v['colorName'] for c in request['hardRequirements'])]
+    choice=next((v for color in color_order for v in choices if v['colorName']==color),choices[0])
+    preferred.append(choice['id']);acceptable.extend(v['id'] for v in choices)
+   roles={pid:('first unmet functional need' if grade==3 else 'explicit secondary functional interest') for pid,grade in grades.items() if grade}
+   labels.append({'profileId':profile_id,'relevanceGrades':grades,'preferredVariantIds':preferred,'acceptableVariantIds':acceptable,
+    'alreadyOwnedProductIds':owned_ids,'replacementAllowedProductIds':allowed,
+    'rationale':' '.join(f'{byid[pid]["name"]} ({byid[pid]["category"]}) serves the {roles[pid]} stated in the public background.' for pid in roles)+
+      (' The publicly stated replacement request permits the previously purchased item.' if allowed else ' Other observed purchases are already owned, not unmet additions.'),
+    'negativeReasons':{pid:('owned-without-replacement' if pid in owned_ids and pid not in allowed else 'over-item-budget' if byid[pid]['price']>request['itemBudget'] else 'hard-color-ineligible' if not any(all(c['attribute']!='color' or c['value']==v['colorName'] for c in request['hardRequirements']) for v in byid[pid]['variants']) else 'outside-current-stated-priorities') for pid,v in grades.items() if not v},
+    'judgmentSource':'agent-authored-synthetic-training-not-observed-choice'})
+  changed=[key for key in ['itemBudget','hardRequirements','persona.background','persona.colorPreferences'] if (base_request[key] if '.' not in key else base_request['persona'][key.split('.')[1]]) != (cf[key] if '.' not in key else cf['persona'][key.split('.')[1]])]
+  if base_request['publicHistory']!=cf['publicHistory']:changed.append('publicHistory.eventType')
+  pairs.append({'pairId':g['groupId'],'kind':g['pairKind'],'baseProfileId':profiles[-2]['profileId'],'counterfactualProfileId':profiles[-1]['profileId'],
+   'expectedPrimaryChange':mode in (0,1,2),'expectedFunctionalGradesHeldFixed':mode==3,'publicChangedFields':changed})
+  authorship.append({'groupId':g['groupId'],'query':query,'baseParagraph':base_text,'counterfactualParagraph':cf_text,'colorHardConstraint':bool(hard),'sourceProductId':p,'secondaryProductId':s})
+ # Public order is fixed shuffled, so adjacent row/ID order is never an inference feature.
+ random.Random(2026101803).shuffle(profiles);random.Random(2026101804).shuffle(labels)
+ provenance={'kind':'agent-authored-synthetic-train-only','realCustomerData':False,'browserObserved':False,'humanConversionClaim':False,'privateEvaluationRead':False,'nativeOrGpuUsed':False,'sourceOnly':str(SOURCE.relative_to(ROOT))}
+ write('profiles.train.public.json',{'schemaVersion':VERSION,'provenance':provenance,'profiles':profiles})
+ write('labels.train.json',{'schemaVersion':VERSION,'labelScope':'TRAIN-only authored functional priorities; grade0 context-specific, never universal irrelevant','labels':labels})
+ write('pairs.train.json',{'schemaVersion':VERSION,'labelScope':'TRAIN-only counterfactual semantics, excluded from inference','pairs':pairs})
+ write('AUTHORSHIP.json',{'groups':authorship})
+ return profiles,labels,pairs
+
+if __name__=='__main__':build()

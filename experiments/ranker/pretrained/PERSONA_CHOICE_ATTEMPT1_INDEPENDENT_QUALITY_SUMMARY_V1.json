@@ -1,0 +1,130 @@
+{
+  "version": "persona-choice-attempt1-independent-quality-summary.v1",
+  "createdUTC": "2026-10-18T11:51:30.465314+00:00",
+  "status": "rejected-by-frozen-quality-gate",
+  "adjudicationSha256": "107fe4e5e330d4176ba8f0bca7ee6b4329f2d705e06b2ca84ebf18f9c410254c",
+  "admissionSha256": "a9d20061de716d0994d06c214b922ba0012c4733deb025ab052c3813204ef975",
+  "correctionReceiptSha256": "acbb129193f25159200d125cba197e3e3cbf904cd9bc1682c739832212bb0d18",
+  "mechanicalSupplementSha256": "0994eefbd86cad9f89e765a76053a8e1b5e6517386d602d849e3132ab1a51809",
+  "gateSha256": "73fa0d52c5ef4fe983834f610ef00cf89a899cf420cdb81008dd5a7909298c6e",
+  "sourceSha256": "950cebc62d752b33dbfe7a09031958671afcba3e130bc2abc1428517c321907d",
+  "fresh32NowDevelopment": true,
+  "noModelOrThresholdRetuning": true,
+  "overallPromotionPass": false,
+  "offlineCoreAndReplacementPass": false,
+  "mechanicalSupplementPassed": true,
+  "mechanicalCombinedFreezeMatchesAdmission": true,
+  "mechanicalAdapterMatchesAdmission": true,
+  "scope": "Samecatalog synthetic evaluation; canonical order determines quality, reversed order robustness only; no humanconversion/generalizationclaim.",
+  "raw": {
+    "core": {
+      "learned": {
+        "primaryTop1": 17,
+        "novelRelevantTop1": 23,
+        "strongPositiveTop3": 27,
+        "ownedTop1": 3,
+        "ndcg6": 0.73288406308485
+      },
+      "frozen-base-lexical-decision": {
+        "primaryTop1": 20,
+        "novelRelevantTop1": 26,
+        "strongPositiveTop3": 31,
+        "ownedTop1": 4,
+        "ndcg6": 0.8272750548096804
+      },
+      "TRAIN-popularity": {
+        "primaryTop1": 2,
+        "novelRelevantTop1": 3,
+        "strongPositiveTop3": 10,
+        "ownedTop1": 1,
+        "ndcg6": 0.3256648036805565
+      },
+      "latest-owned-repeat": {
+        "primaryTop1": 0,
+        "novelRelevantTop1": 0,
+        "strongPositiveTop3": 7,
+        "ownedTop1": 25,
+        "ndcg6": 0.28121118833545106
+      }
+    },
+    "inputControlPrimary": {
+      "owned-only-public-context": 8,
+      "shuffled-public-profile": 5,
+      "purchase-history-removed": 7
+    },
+    "replacementPrimary": 3,
+    "sourceEligibilityViolations": 0,
+    "reversedRobustnessOnly": {
+      "primaryTop1": 21,
+      "novelRelevantTop1": 25,
+      "strongPositiveTop3": 28
+    }
+  },
+  "combined": {
+    "core": {
+      "learned": {
+        "primaryTop1": 17,
+        "novelRelevantTop1": 24,
+        "strongPositiveTop3": 28,
+        "ownedTop1": 3,
+        "ndcg6": 0.7115065648673318
+      },
+      "frozen-base-lexical-decision": {
+        "primaryTop1": 19,
+        "novelRelevantTop1": 25,
+        "strongPositiveTop3": 29,
+        "ownedTop1": 4,
+        "ndcg6": 0.7645173852224303
+      },
+      "TRAIN-popularity": {
+        "primaryTop1": 3,
+        "novelRelevantTop1": 4,
+        "strongPositiveTop3": 12,
+        "ownedTop1": 2,
+        "ndcg6": 0.34700214073255314
+      },
+      "latest-owned-repeat": {
+        "primaryTop1": 2,
+        "novelRelevantTop1": 2,
+        "strongPositiveTop3": 10,
+        "ownedTop1": 25,
+        "ndcg6": 0.3419847287917445
+      }
+    },
+    "inputControlPrimary": {
+      "owned-only-public-context": 6,
+      "shuffled-public-profile": 4,
+      "purchase-history-removed": 7
+    },
+    "replacementPrimary": 3,
+    "sourceEligibilityViolations": 0,
+    "reversedRobustnessOnly": {
+      "primaryTop1": 20,
+      "novelRelevantTop1": 25,
+      "strongPositiveTop3": 27
+    }
+  },
+  "knownDevelopmentHistory": {
+    "knownDevelopmentHistory": {
+      "developmentOnly": true,
+      "fixedPairs": 10,
+      "rawOwnedPriorityDemotions": 6,
+      "novelRelevantAfterTop1": 7,
+      "pass": false
+    },
+    "combinedKnownDevelopmentHistory": {
+      "developmentOnly": true,
+      "fixedPairs": 10,
+      "rawOwnedPriorityDemotions": 7,
+      "novelRelevantAfterTop1": 7,
+      "pass": false
+    }
+  },
+  "pendingServingChecks": [
+    "specific320querysemanticregression",
+    "tenauthoreddemocoherence",
+    "actualselectedvariant/color/sourcegallery/copyfacts",
+    "browserfirst3/full6readiness"
+  ],
+  "interpretation": "Adaptation improves over weakprofile/priorcontrols but degrades strictcanonical primary relative to the same frozenbackbone lexical baseline. Mechanical correctness and strongTRAINfit do not establish useful independentquality. No posthoc catalogorder selection or defaultpromotion."
+}

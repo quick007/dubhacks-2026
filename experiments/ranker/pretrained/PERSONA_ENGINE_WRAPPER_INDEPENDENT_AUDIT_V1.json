@@ -1,0 +1,29 @@
+{
+  "version": "persona-engine-wrapper-independent-audit.v1",
+  "verdict": "pass-bounded-wrapper-scope",
+  "nativeExecuted": false,
+  "sourceEdits": false,
+  "tests": {
+    "command": ".tools/pretrained-venv/bin/python -B -m unittest experiments.ranker.pretrained.test_store_persona_engine_v1",
+    "passed": 9,
+    "seconds": 0.034
+  },
+  "sources": {
+    "experiments/ranker/pretrained/store_persona_engine_v1.py": "9b03e77b4e347589f6ce598da078b777738b8eca1c26f5875a1714c05231d174",
+    "experiments/ranker/pretrained/test_store_persona_engine_v1.py": "98c2c0861e2f6e6aee039b02adf32c3a077d27d18b759d0428c2381625adf3a7"
+  },
+  "reviewed": [
+    "module-global RequestCancelled supports real HTTP worker-future NDJSON failure/cancellation",
+    "post-super failures cleanup exactly once; original exception retained if cleanup fails",
+    "source SHA checked before every event and inherited close cleanup runs in finally",
+    "startup counts actual context entries; query cache startup0; feature native forward counts warm0/cold2/unknownnull",
+    "request timing excludes startup/network/paint/image fetchdecode",
+    "learned color variant plus canonical gallery policy has no vision claim"
+  ],
+  "notClaimed": [
+    "Actual native hashes, serving quality, browser behavior, physical paint or deployment"
+  ],
+  "separateMetadataCaveat": "store_persona_runtime_v1.rank contextRepresentation uses hashed-v1 label even for native_context; sent owner for wording correction before lifetime. Not wrapper algorithm blocker.",
+  "nativeV4Unaffected": true,
+  "nativeV4Sha256": "71c9cabc533083e726cfd5938fed9e2cacf88e4ef841b102b4dc3a73ba619c35"
+}

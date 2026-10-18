@@ -1,0 +1,41 @@
+{
+  "version": "persona-choice-lora-proposal.v1",
+  "status": "cpu-feasibility-only-not-training-ready",
+  "sourceAuditSha256": "943bb547ed4246c01cc385f07e0706db774b07d894b69933c3ab8e892c77a022",
+  "nativeCalls": 0,
+  "optimizerUpdates": 0,
+  "privateLabelsParsed": false,
+  "recommendedFirstTarget": "language_model.model.layers.31.mlp.down_proj",
+  "rank": 4,
+  "scaleProposedNotFrozen": 20.0,
+  "trainableFloats": 65536,
+  "initialization": "pristine frozen base; seeded A and exactly zero B; no failed adapter warm start",
+  "input": "complete factual public16 catalog plus typed public profile/history/query/budget/requirements",
+  "nativeSuffix": "actual final prompt token only; prefix is actual promptTokenIds[:-1]",
+  "target": "one next routing token; no teacher token or EOS in input",
+  "routingVocabulary": "pending audited lexical public product-bound pilot; A-P tokenizer cost measured provisionally only",
+  "targetDistribution": "proposed uniform mass over all legitimate maximum-grade TRAIN products; freeze objective before fit",
+  "lossNormalization": "pending explicit full-vocabulary versus route-conditional choice; report both later",
+  "trainingData": "original320 immutable TRAIN plus independently curated128 pending audit; no final join or schedule frozen",
+  "knownDevelopment": "previously inspected40,32,and10history pairs; no unseen claim",
+  "featureArchiveProjectionBytesPerRow": 81920,
+  "featureArchiveProjection640RowsBytes": 52428800,
+  "projectionsAreMeasurements": false,
+  "requiredNewGate": [
+    "exact source-token prefix and one-token suffix",
+    "native versus auxiliary versus serialized x/h/y logit/loss/A/B-gradient parity at nonzero B",
+    "zero-B restoration and exactly two trainable tensors",
+    "complete attention/recurrent state equality base versus adapted final-down",
+    "selected16 LM projection versus full native quantized LM projection parity or full-projection fallback",
+    "927 frozen tensor integrity before/after, adapter reload and prediction parity",
+    "bounded memory/time pilot before full extraction",
+    "all source/data/model/routing/schedule pins frozen before optimizer and predictions before DEV labels"
+  ],
+  "unchangedScope": ["hard query/budget/constraint guards", "actual variant/gallery bindings", "fresh ALL48 factual neural copy", "original frozen models and artifacts"],
+  "notClaimed": ["attention adaptation", "new factual product capabilities", "unseen generalization", "native peak memory", "native extraction duration", "sub193ms serving", "fresh copy or browser readiness"],
+  "sources": [
+    "https://github.com/ml-explore/mlx-lm/blob/v0.32.2/mlx_lm/tuner/lora.py",
+    "https://github.com/ml-explore/mlx-lm/blob/v0.32.2/mlx_lm/models/qwen3_5.py",
+    "https://arxiv.org/abs/2106.09685"
+  ]
+}

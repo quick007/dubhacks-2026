@@ -15,8 +15,8 @@ export default defineConfig({
     proxy: { "/api/demo-checkout": { target: demoCheckoutApi, changeOrigin: true } },
     hmr: {
       protocol: "ws",
-      host: new URL(LOCAL_ORIGINS.storefront).hostname,
-      clientPort: LOCAL_PROXY_PORT,
+      host: process.env.PORT ? "127.0.0.1" : new URL(LOCAL_ORIGINS.storefront).hostname,
+      clientPort: process.env.PORT ? Number(process.env.PORT) : LOCAL_PROXY_PORT,
     },
   },
 });
