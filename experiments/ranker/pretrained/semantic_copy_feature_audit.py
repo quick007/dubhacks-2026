@@ -50,6 +50,11 @@ def audit(out=OUT,preflight_path=PREFLIGHT,verify_features=False):
     dataset=ROOT/'semantic_copy_pairs'
     check('dataset manifest unchanged',digest(dataset/'manifest.json')==pre['datasetManifestSha256'])
     check('all frozen dataset payloads unchanged',all(digest(dataset/n)==s for n,s in pre['payloadSha256'].items()))
+    model_receipt=run['modelVerification'];model_pre=pre['modelFiles']
+    check('fresh pinned model verification receipt',model_receipt['verified'] is True
+        and model_receipt['modelRevision']==model_pre['revision']
+        and model_receipt['freshShardsSha256']=={k:v['sha256'] for k,v in model_pre['shards'].items()}
+        and model_receipt['smallFileSha256']==model_pre['smallFileSha256'])
     expected=pre['splits']['train']['rows'];lookup={(r['caseId'],r['rowId']):r for r in expected}
     check('fixed training preflight denominator',len(expected)==len(lookup)==504)
     check('extraction prefix indices',all(e['index']==i for i,e in enumerate(entries)) and len(entries)<=504)
@@ -194,6 +199,7 @@ def audit(out=OUT,preflight_path=PREFLIGHT,verify_features=False):
     result={'status':('audit-passed' if not issues else 'audit-issues') if terminal else 'in-progress',
         'runStatus':run['status'],'phase':run['phase'],'finalConclusion':terminal,
         'experimentCompleted':run['status']=='completed','qualityComparisonComplete':len(completed)==12,
+        'auditSourceSha256':digest(Path(__file__)),
         'snapshotSha256':hashlib.sha256(raw).hexdigest(),'executionCommit':run['executionCommit'],
         'extractedRows':len(entries),'evaluatedUpdates':run['nativeUpdates'],'completedArms':len(completed),
         'verifiedFeatureArchives':archives_checked,'fullFeatureArchiveVerification':verify_features,
