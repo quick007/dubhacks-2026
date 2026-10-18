@@ -1,6 +1,6 @@
 # Storefront image library
 
-The editorial hero and photographic category shortcuts come from the teammate storefront follow-ups. Search sits beside the collection heading; categories filter the visible catalog. The public persona selector retains its biography/history and current model integration. While a personalized request is pending, the hero and six product positions show placeholders; generic or previous-person results are not substituted. Current first-three cards can appear while the remaining selected cards finish.
+The editorial hero and photographic category shortcuts come from the teammate storefront follow-ups. Search sits at the top right of the header; categories filter the visible catalog. The public persona selector retains its biography/history and current model integration. While a personalized request is pending, the hero and six product positions show placeholders; generic or previous-person results are not substituted. Current first-three cards can appear while the remaining selected cards finish.
 
 Pages and filters live in the hash (`#collection?q=…&c=…`, `#cart`, `#confirmed`), so a link is shareable and the browser Back and Forward buttons step through the shop. Demo settings stay in the query string (`?showShipping=true&recommendationOrder=budget`); the Demo control keeps that query in step as settings change.
 
@@ -12,7 +12,7 @@ When shipping details are visible, the cart restates the same fixture terms as t
 
 The demo keeps the same product, price and cart identity while changing the context in which it is shown. Search wording expresses an interest in a use case; it does not establish who a person is.
 
-The catalog now has 16 products. The daypack and rain jacket remain the detailed multi-context examples. Twelve additional versatile products broaden the range of shopping tasks, materials, prices and presentation candidates.
+The UI catalog now has 35 fixture products: the original 16, 14 teammate additions, and five new rain/work-bag fixtures. The original 16 names, prices, variant IDs and galleries stay exact. `packages/contracts/data/expanded-store-catalog-v1.json` supplies the additional public facts and 3×3 image-sheet coordinates. Model and checkout adapters must use the matching catalog version.
 
 | Product                | City commute       | Campus                  | Family days                 | Trails             | Other views                            |
 | ---------------------- | ------------------ | ----------------------- | --------------------------- | ------------------ | -------------------------------------- |
@@ -82,6 +82,8 @@ For isolated validation only, use `VITE_SHOP_TELEMETRY=synthetic`, an exact loop
 
 ## Teammate storefront follow-ups
 
-Integrated fork `xclarityy/dubhacks-2026` branch `feat/storefront-follow-ups` through `e1134b2`: editorial hero with six wide photo boards, category photography, collection search, cart quantity/remove controls and keyboard gallery navigation. Canonical product IDs, names, prices, variants, responsive assets, model generation, telemetry and server-confirmed checkout are preserved. The 14 additional product definitions/images remain in source as an unactivated catalog candidate; the live model/checkout catalog remains 16 products. Their inclusion in source does not imply trained support.
+Integrated fork `xclarityy/dubhacks-2026` branch `feat/storefront-follow-ups` through `e1134b2`: editorial hero with six available wide photo boards, category photography, header search, cart quantity/remove controls and keyboard gallery navigation. Canonical product IDs, names, prices, variants, responsive assets, model generation, telemetry and server-confirmed checkout are preserved. The normalized 35-product public packet is consumed through `src/expanded-catalog-adapter.ts`; activation requires all 35 entries. Fresh model quality and readiness are established separately by the serving owner’s bound validation receipts.
 
 Hero assets and generation prompts are documented in [`public/products/HERO-PROMPTS.md`](public/products/HERO-PROMPTS.md). The hero keeps one factual editorial image selected from that person’s learned product order; it has no timer or slideshow. It hides during a new request and changes when the person changes. Galleries reveal additional views with a count button; arrow keys, Home and End navigate photographs. Cart mutations invalidate an earlier confirmation receipt. The loading-state rendering tests are in `src/shop-loading.test.ts`.
+
+Suggested searches load only from `/search-suggestions.json` with schema `fieldwork.validated-search-suggestions.v1`. The serving owner publishes exact query strings after validating and preencoding them. Missing or malformed metadata yields no suggestions; the UI never invents browsing history. Arbitrary searches remain available.
