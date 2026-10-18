@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "a52ecdef-73ab-4514-90aa-acdd4774eb43",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-slate-blue",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "a52ecdef-73ab-4514-90aa-acdd4774eb43",
+        "receiptId": "demo-d1bf2b20a32400082a2ea7d53c04d2ba",
+        "createdAt": "2026-10-18T08:56:15.320589Z",
+        "items": [
+          {
+            "productId": "sweatshirt",
+            "variantId": "sweatshirt-slate-blue",
+            "quantity": 1,
+            "unitPrice": 72,
+            "lineTotal": 72
+          }
+        ],
+        "subtotal": 72,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 72,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/a52ecdef-73ab-4514-90aa-acdd4774eb43",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "a52ecdef-73ab-4514-90aa-acdd4774eb43",
+        "receiptId": "demo-d1bf2b20a32400082a2ea7d53c04d2ba",
+        "createdAt": "2026-10-18T08:56:15.320589Z",
+        "items": [
+          {
+            "productId": "sweatshirt",
+            "variantId": "sweatshirt-slate-blue",
+            "quantity": 1,
+            "unitPrice": 72,
+            "lineTotal": 72
+          }
+        ],
+        "subtotal": 72,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 72,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "a52ecdef-73ab-4514-90aa-acdd4774eb43",
+    "receiptId": "demo-d1bf2b20a32400082a2ea7d53c04d2ba"
+  },
+  "errors": []
+}

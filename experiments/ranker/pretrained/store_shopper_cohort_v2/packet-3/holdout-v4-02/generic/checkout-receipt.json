@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "196ce139-95c9-44d8-b111-7367b04a81c7",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "196ce139-95c9-44d8-b111-7367b04a81c7",
+        "receiptId": "demo-e5024799528b8a2760d75577894368fb",
+        "createdAt": "2026-10-18T08:49:59.319148Z",
+        "items": [
+          {
+            "productId": "blanket",
+            "variantId": "blanket-moss",
+            "quantity": 1,
+            "unitPrice": 58,
+            "lineTotal": 58
+          }
+        ],
+        "subtotal": 58,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 58,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/196ce139-95c9-44d8-b111-7367b04a81c7",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "196ce139-95c9-44d8-b111-7367b04a81c7",
+        "receiptId": "demo-e5024799528b8a2760d75577894368fb",
+        "createdAt": "2026-10-18T08:49:59.319148Z",
+        "items": [
+          {
+            "productId": "blanket",
+            "variantId": "blanket-moss",
+            "quantity": 1,
+            "unitPrice": 58,
+            "lineTotal": 58
+          }
+        ],
+        "subtotal": 58,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 58,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "196ce139-95c9-44d8-b111-7367b04a81c7",
+    "receiptId": "demo-e5024799528b8a2760d75577894368fb"
+  },
+  "errors": []
+}

@@ -1,0 +1,365 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v5-08",
+  "arm": "local-model",
+  "run": {
+    "id": "holdout-v5-08-local-model",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v5-08",
+    "personaSplit": "held-out",
+    "seed": 2026102308
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "cb581d1b-fa02-43e9-ab87-4fdd42a4b55f",
+    "contextId": "2db0f0e7-a4f9-41c5-bc10-8c056794d617",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v5-08-local-model-screenshot-png",
+      "holdout-v5-08-local-model-trace-zip",
+      "holdout-v5-08-local-model-browser-observations-json",
+      "holdout-v5-08-local-model-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T08:50:43.302Z",
+  "elapsedMs": 48849.14741699997,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-0",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T08:50:44.291Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 989.0043330000481,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-1",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T08:50:49.278Z",
+        "kind": "action",
+        "message": "a tote bag for bringing home produce, at most $42"
+      },
+      "elapsedMs": 5976.301625000022,
+      "action": {
+        "type": "search",
+        "query": "a tote bag for bringing home produce, at most $42"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-2",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T08:50:54.480Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 11178.708207999996,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-3",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T08:51:06.044Z",
+        "kind": "action",
+        "message": "Market canvas tote color: Navy"
+      },
+      "elapsedMs": 22741.79929200001,
+      "action": {
+        "type": "inspect",
+        "target": "Market canvas tote color: Navy"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-4",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 4,
+        "at": "2026-10-18T08:51:10.844Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 27542.472458000004,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "tote",
+        "variantId": "tote-navy"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-5",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 5,
+        "at": "2026-10-18T08:51:16.332Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 33029.545500000066,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-6",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 6,
+        "at": "2026-10-18T08:51:21.672Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 38370.07966700004,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-7",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 7,
+        "at": "2026-10-18T08:51:26.809Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 43507.249458000006,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-08-local-model-step-8",
+        "runId": "holdout-v5-08-local-model",
+        "sequence": 8,
+        "at": "2026-10-18T08:51:32.151Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 48849.133667000046,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v5-08-local-model-screenshot-png",
+        "runId": "holdout-v5-08-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T08:51:32.644Z"
+      },
+      "status": "captured",
+      "sha256": "7473aa6c4c5c9c9ef09ee4a66bac88d9c55342d9d0dcd60df35c4e2f50c4982d",
+      "bytes": 32994,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-08-local-model-trace-zip",
+        "runId": "holdout-v5-08-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T08:51:32.644Z"
+      },
+      "status": "captured",
+      "sha256": "184fbd134664dabeb7a11633eea83f2535b9152ab03ef753286d290205337847",
+      "bytes": 9338934,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-08-local-model-browser-observations-json",
+        "runId": "holdout-v5-08-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:51:32.644Z"
+      },
+      "status": "captured",
+      "sha256": "d202d0b4598e98166104bc8efda6b41910fea21e3f4f212fd161d9065fae73bf",
+      "bytes": 119844,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-08-local-model-checkout-receipt-json",
+        "runId": "holdout-v5-08-local-model",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:51:32.648Z"
+      },
+      "status": "captured",
+      "sha256": "299b86899a9a316b657b013b332d507df1d29775a39b7a7b18ec32b2113f5079",
+      "bytes": 2096,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Market canvas tote",
+    "selectedColor": "Navy",
+    "catalogPrice": 42,
+    "quantity": 1,
+    "productId": "tote",
+    "variantId": "tote-navy",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v5-08-local-model-step-4",
+      "holdout-v5-08-local-model-step-7"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v5-08-local-model-screenshot-png",
+      "holdout-v5-08-local-model-trace-zip",
+      "holdout-v5-08-local-model-browser-observations-json",
+      "holdout-v5-08-local-model-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"grocery-carryall\",\"carry-bag\"]",
+        "evidenceArtifactIds": [
+          "holdout-v5-08-local-model-screenshot-png",
+          "holdout-v5-08-local-model-trace-zip",
+          "holdout-v5-08-local-model-browser-observations-json",
+          "holdout-v5-08-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "42",
+        "evidenceArtifactIds": [
+          "holdout-v5-08-local-model-screenshot-png",
+          "holdout-v5-08-local-model-trace-zip",
+          "holdout-v5-08-local-model-browser-observations-json",
+          "holdout-v5-08-local-model-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Navy\"",
+        "evidenceArtifactIds": [
+          "holdout-v5-08-local-model-screenshot-png",
+          "holdout-v5-08-local-model-trace-zip",
+          "holdout-v5-08-local-model-browser-observations-json",
+          "holdout-v5-08-local-model-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "4485e808-2cc4-4e02-87a5-798dd44681aa",
+        "startTimeMs": 5479.800000071526,
+        "durationMs": 345.5,
+        "capturedAtElapsedMs": 11517.839708000014,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v5-08-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "4485e808-2cc4-4e02-87a5-798dd44681aa",
+        "startTimeMs": 5479.800000071526,
+        "durationMs": 360.7999999523163,
+        "capturedAtElapsedMs": 11517.840083000017,
+        "acceptedFields": 10,
+        "withheldFields": 0,
+        "requiredFields": 10,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v5-08-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "4485e808-2cc4-4e02-87a5-798dd44681aa",
+        "startTimeMs": 5479.800000071526,
+        "durationMs": 360.7999999523163,
+        "capturedAtElapsedMs": 11517.840333,
+        "acceptedFields": 20,
+        "withheldFields": 0,
+        "requiredFields": 20,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v5-08-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": true,
+    "kind": "last-safe-model",
+    "reason": "Local model is ordering products; last available result shown…"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "c532d644-1bd2-4592-83ed-1370ea12c9c6",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "headphones",
+          "variantId": "headphones-graphite",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "c532d644-1bd2-4592-83ed-1370ea12c9c6",
+        "receiptId": "demo-9f17c475798512d1214ca0c771896ebf",
+        "createdAt": "2026-10-18T08:57:26.608636Z",
+        "items": [
+          {
+            "productId": "headphones",
+            "variantId": "headphones-graphite",
+            "quantity": 1,
+            "unitPrice": 89,
+            "lineTotal": 89
+          }
+        ],
+        "subtotal": 89,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 89,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/c532d644-1bd2-4592-83ed-1370ea12c9c6",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "c532d644-1bd2-4592-83ed-1370ea12c9c6",
+        "receiptId": "demo-9f17c475798512d1214ca0c771896ebf",
+        "createdAt": "2026-10-18T08:57:26.608636Z",
+        "items": [
+          {
+            "productId": "headphones",
+            "variantId": "headphones-graphite",
+            "quantity": 1,
+            "unitPrice": 89,
+            "lineTotal": 89
+          }
+        ],
+        "subtotal": 89,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 89,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "c532d644-1bd2-4592-83ed-1370ea12c9c6",
+    "receiptId": "demo-9f17c475798512d1214ca0c771896ebf"
+  },
+  "errors": []
+}

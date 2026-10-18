@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "2259ec2a-3540-435c-954b-3ceec6dc87e8",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "sneakers",
+          "variantId": "sneakers-charcoal",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "2259ec2a-3540-435c-954b-3ceec6dc87e8",
+        "receiptId": "demo-b8047ce4227ec3f8485027cbd330c5e6",
+        "createdAt": "2026-10-18T08:55:08.928468Z",
+        "items": [
+          {
+            "productId": "sneakers",
+            "variantId": "sneakers-charcoal",
+            "quantity": 1,
+            "unitPrice": 96,
+            "lineTotal": 96
+          }
+        ],
+        "subtotal": 96,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 96,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/2259ec2a-3540-435c-954b-3ceec6dc87e8",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "2259ec2a-3540-435c-954b-3ceec6dc87e8",
+        "receiptId": "demo-b8047ce4227ec3f8485027cbd330c5e6",
+        "createdAt": "2026-10-18T08:55:08.928468Z",
+        "items": [
+          {
+            "productId": "sneakers",
+            "variantId": "sneakers-charcoal",
+            "quantity": 1,
+            "unitPrice": 96,
+            "lineTotal": 96
+          }
+        ],
+        "subtotal": 96,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 96,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "2259ec2a-3540-435c-954b-3ceec6dc87e8",
+    "receiptId": "demo-b8047ce4227ec3f8485027cbd330c5e6"
+  },
+  "errors": []
+}

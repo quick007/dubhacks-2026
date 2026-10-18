@@ -1,0 +1,286 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v2-04",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v2-04-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v2-04",
+    "personaSplit": "held-out",
+    "seed": 2026102004
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "fcad2637-6543-4f79-9c3c-2d953d90c7e7",
+    "contextId": "5e356656-1f59-4cf8-a121-776d8778082d",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v2-04-generic-screenshot-png",
+      "holdout-v2-04-generic-trace-zip",
+      "holdout-v2-04-generic-browser-observations-json",
+      "holdout-v2-04-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T08:56:53.320Z",
+  "elapsedMs": 33324.39070899994,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v2-04-generic-step-0",
+        "runId": "holdout-v2-04-generic",
+        "sequence": 0,
+        "at": "2026-10-18T08:56:54.350Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 1030.058834000025,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-04-generic-step-1",
+        "runId": "holdout-v2-04-generic",
+        "sequence": 1,
+        "at": "2026-10-18T08:56:59.697Z",
+        "kind": "action",
+        "message": "over-ear headphones for listening to an album, at most $95"
+      },
+      "elapsedMs": 6377.256792000029,
+      "action": {
+        "type": "search",
+        "query": "over-ear headphones for listening to an album, at most $95"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-04-generic-step-2",
+        "runId": "holdout-v2-04-generic",
+        "sequence": 2,
+        "at": "2026-10-18T08:57:05.878Z",
+        "kind": "action",
+        "message": "Everyday over-ear headphones color: Graphite"
+      },
+      "elapsedMs": 12558.803458999959,
+      "action": {
+        "type": "inspect",
+        "target": "Everyday over-ear headphones color: Graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-04-generic-step-3",
+        "runId": "holdout-v2-04-generic",
+        "sequence": 3,
+        "at": "2026-10-18T08:57:10.094Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 16774.412459000014,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "headphones",
+        "variantId": "headphones-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-04-generic-step-4",
+        "runId": "holdout-v2-04-generic",
+        "sequence": 4,
+        "at": "2026-10-18T08:57:15.825Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 22504.921875,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-04-generic-step-5",
+        "runId": "holdout-v2-04-generic",
+        "sequence": 5,
+        "at": "2026-10-18T08:57:20.612Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 27292.65745900001,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-04-generic-step-6",
+        "runId": "holdout-v2-04-generic",
+        "sequence": 6,
+        "at": "2026-10-18T08:57:26.644Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 33324.38579199999,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v2-04-generic-screenshot-png",
+        "runId": "holdout-v2-04-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T08:57:27.041Z"
+      },
+      "status": "captured",
+      "sha256": "6f4b29fb0f3ffb9ebf299b939f3d213430add97545076bbb78d649da2714b2ee",
+      "bytes": 32548,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-04-generic-trace-zip",
+        "runId": "holdout-v2-04-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T08:57:27.042Z"
+      },
+      "status": "captured",
+      "sha256": "909ba6500783db80077579ce017a9af76ada4ae59e00597e0599c234924c4929",
+      "bytes": 6939229,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-04-generic-browser-observations-json",
+        "runId": "holdout-v2-04-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:57:27.042Z"
+      },
+      "status": "captured",
+      "sha256": "f3cecd13a54d7ad6f5b0fd97f2f5d524222f36684935746a5b1f03b155888f9e",
+      "bytes": 32229,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-04-generic-checkout-receipt-json",
+        "runId": "holdout-v2-04-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:57:27.045Z"
+      },
+      "status": "captured",
+      "sha256": "458f175d10eeb4acb025c82334da549595ad7805732d717dd7b800d90d8addfb",
+      "bytes": 2144,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday over-ear headphones",
+    "selectedColor": "Graphite",
+    "catalogPrice": 89,
+    "quantity": 1,
+    "productId": "headphones",
+    "variantId": "headphones-graphite",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v2-04-generic-step-3",
+      "holdout-v2-04-generic-step-5"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v2-04-generic-screenshot-png",
+      "holdout-v2-04-generic-trace-zip",
+      "holdout-v2-04-generic-browser-observations-json",
+      "holdout-v2-04-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"over-ear listening\"]",
+        "evidenceArtifactIds": [
+          "holdout-v2-04-generic-screenshot-png",
+          "holdout-v2-04-generic-trace-zip",
+          "holdout-v2-04-generic-browser-observations-json",
+          "holdout-v2-04-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "89",
+        "evidenceArtifactIds": [
+          "holdout-v2-04-generic-screenshot-png",
+          "holdout-v2-04-generic-trace-zip",
+          "holdout-v2-04-generic-browser-observations-json",
+          "holdout-v2-04-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Graphite\"",
+        "evidenceArtifactIds": [
+          "holdout-v2-04-generic-screenshot-png",
+          "holdout-v2-04-generic-trace-zip",
+          "holdout-v2-04-generic-browser-observations-json",
+          "holdout-v2-04-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

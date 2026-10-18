@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "02c4c812-7015-4f7e-aa9a-84004fe74d32",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "02c4c812-7015-4f7e-aa9a-84004fe74d32",
+        "receiptId": "demo-ba90952bb76940c87b5e05a7bb52d0c7",
+        "createdAt": "2026-10-18T08:53:51.025607Z",
+        "items": [
+          {
+            "productId": "lamp",
+            "variantId": "lamp-ivory",
+            "quantity": 1,
+            "unitPrice": 64,
+            "lineTotal": 64
+          }
+        ],
+        "subtotal": 64,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 64,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/02c4c812-7015-4f7e-aa9a-84004fe74d32",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "02c4c812-7015-4f7e-aa9a-84004fe74d32",
+        "receiptId": "demo-ba90952bb76940c87b5e05a7bb52d0c7",
+        "createdAt": "2026-10-18T08:53:51.025607Z",
+        "items": [
+          {
+            "productId": "lamp",
+            "variantId": "lamp-ivory",
+            "quantity": 1,
+            "unitPrice": 64,
+            "lineTotal": 64
+          }
+        ],
+        "subtotal": 64,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 64,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "02c4c812-7015-4f7e-aa9a-84004fe74d32",
+    "receiptId": "demo-ba90952bb76940c87b5e05a7bb52d0c7"
+  },
+  "errors": []
+}
