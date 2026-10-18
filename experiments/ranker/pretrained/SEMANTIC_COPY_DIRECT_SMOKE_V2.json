@@ -1,0 +1,177 @@
+{
+  "status": "smoke-passed",
+  "config": {
+    "seed": 19074,
+    "rank": 4,
+    "scale": 20.0,
+    "learningRate": 0.0001,
+    "epochs": 2,
+    "batchSize": 1,
+    "memoryGiB": 7,
+    "prefillStep": 256,
+    "maximumContext": 4096,
+    "maximumRankingPrefix": 1792,
+    "target": "language_model.model.layers.31.mlp.down_proj",
+    "selection": "final fixed step; no dev/test checkpoint selection",
+    "trainingMode": "direct native teacher-forced suffix; frozen upstream eval",
+    "updateOrder": "fixed case order; seeded row shuffle within each case, two passes per case",
+    "featureOptimization": "retired after strict v2/v3/v4 mismatch; never used for updates"
+  },
+  "executionCommit": "aeb7dcacbf1715d434eabe709da2350b84bce14e",
+  "sourceSha256": "f1372e34bf6bc2167176551c3c2c0db2f130acc3d676b9b2793a8a8fbbd6b9bd",
+  "helperSourceSha256": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+  "inputHashesVerified": {
+    "cases.train.jsonl": "1515b46d18ac75fd79c62f544d06698ec0c675c3c6868a4bfa25c7ce5694ed77",
+    "cases.dev.jsonl": "732bec767d5155da61ced587789572533a9aa6abd9cb7846209a9b534a195955",
+    "cases.test.jsonl": "93413db55345169a4ea1c1cf6e0dc18deba47da01b6bcb9eb829941c94fcaddf",
+    "fields.train.jsonl": "9a7b708411e581b1ceb1dcb126410a18d2bd00b6516e450cc2d045958bccfd36",
+    "fields.dev.jsonl": "ffc2a8aebeaa78d8e5409ceb229c8c9a650c38b5324719729bac01a48de50ea1",
+    "fields.test.jsonl": "df9aa23b8c3af94ed774db336a24cfd97f4096ebfc014110380cb926a3dc316a"
+  },
+  "runtime": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.32.2",
+    "torch": "2.14.1",
+    "numpy": "2.5.4"
+  },
+  "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "tokenizerSha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+  "frozenLanguageWeights": true,
+  "frozenDecisionHeads": true,
+  "controls": {
+    "nonzeroCacheProof": {
+      "adapterNonzero": true,
+      "prefixTokens": 2226,
+      "completeStateHashes": [
+        "b77f65fe79afe8175349c159267a2341f119d170da872cb70932842359be5550",
+        "b77f65fe79afe8175349c159267a2341f119d170da872cb70932842359be5550"
+      ],
+      "maxAbsLogitEffect": 0.0625,
+      "matchedForcedContinuationLogitsExact": true,
+      "forcedContinuationTokens": [
+        13788,
+        17248,
+        5640
+      ],
+      "predictions": [
+        72599,
+        5640,
+        56799
+      ]
+    },
+    "directRepeatability": {
+      "nonzeroB": true,
+      "loss": 2.796349287033081,
+      "gradientKeys": [
+        "lora_a",
+        "lora_b"
+      ],
+      "exact": true
+    },
+    "learnedCacheProof": {
+      "adapterNonzero": true,
+      "prefixTokens": 2226,
+      "completeStateHashes": [
+        "b77f65fe79afe8175349c159267a2341f119d170da872cb70932842359be5550",
+        "b77f65fe79afe8175349c159267a2341f119d170da872cb70932842359be5550"
+      ],
+      "maxAbsLogitEffect": 0.15625,
+      "matchedForcedContinuationLogitsExact": true,
+      "forcedContinuationTokens": [
+        13788,
+        17248,
+        5640
+      ],
+      "predictions": [
+        72599,
+        5640,
+        56799
+      ]
+    },
+    "frozenLanguageHashesUnchanged": true
+  },
+  "steps": [
+    {
+      "caseId": "copy-43a759a1ad17bae9",
+      "rowId": "heading-1",
+      "kind": "heading",
+      "epoch": 0,
+      "loss": 2.795262336730957,
+      "gradientL2": 6.89181321467626,
+      "sourceStateHash": "dca12a6ede372ac738ba58a1ba1db5779dfdcc3ff4c735701412e34d3715cb1c",
+      "ms": 352.33475000131875
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "copy-43a759a1ad17bae9",
+      "preparation": {
+        "sharedEvidenceTokens": 643,
+        "sharedCompletePrefixTokens": 2190,
+        "commonMessageSha256": "6524bf7fe6f4f1ac705f2aff858dba9edae6220185d9517c079344cb82857ca3",
+        "completePrepareMs": 1433.6116659687832,
+        "prefillStepSize": 256,
+        "unusedLogitsOrHiddenForced": false
+      },
+      "rows": [
+        {
+          "rowId": "heading-1",
+          "kind": "heading",
+          "targetTokens": 4,
+          "predictionStart": 2225,
+          "supervisedTokenCount": 4,
+          "teacherInputTokens": 2229,
+          "fullTokens": 2230,
+          "stopTokenId": 248046,
+          "stopToken": "<|im_end|>",
+          "eosReceipt": {
+            "eosTokenIds": [
+              248046
+            ],
+            "eosTokenId": [
+              248046
+            ],
+            "acceptedEosTokenIds": [
+              248046
+            ],
+            "stopDeclaredBy": [
+              "eos_token_ids",
+              "eos_token_id"
+            ]
+          },
+          "promptSha256": "9d62a40c1d31493df408c03b9ac4df1377525ec5458ec9c50ffdc1b01a015f1f",
+          "modelInputSha256": "9b1c6a369ecca218b6f354ec17d09f3b5dfffea9bd74c2c67634b49e3f00be49",
+          "promptTokenCount": 2226
+        }
+      ],
+      "parameterAbsoluteChanges": {
+        "lora_a": 0.0,
+        "lora_b": 5.1808881759643555
+      },
+      "sourceStateHash": "dca12a6ede372ac738ba58a1ba1db5779dfdcc3ff4c735701412e34d3715cb1c",
+      "sourceStatePreserved": true,
+      "wallMs": 15732.198750018142
+    }
+  ],
+  "arms": [],
+  "wallMs": 43921.60958296154,
+  "loadMs": 2173.8222920103,
+  "trainableParameters": {
+    "language_model.model.layers.31.mlp.down_proj.lora_a": 49152,
+    "language_model.model.layers.31.mlp.down_proj.lora_b": 16384
+  },
+  "firstTrainingProbeBefore": 2.8165369033813477,
+  "firstTrainingProbeAfter": 2.602294921875,
+  "checkpoint": {
+    "sha256": "131446b336eb5731753e864cf00c79aaa7b8b280b09144c7bc064c6357c8b0cb",
+    "exactDirectLossReload": true,
+    "loss": 2.602294921875
+  },
+  "languageParameterTensorsHashed": 927,
+  "memory": {
+    "mlxActiveBytes": 5039368734,
+    "mlxPeakBytes": 6322457250,
+    "mlxCacheBytes": 0,
+    "processBudgetBytes": 7516192768
+  }
+}
