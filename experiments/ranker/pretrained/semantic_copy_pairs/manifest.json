@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": "semantic-copy-pairs-v1",
+  "seed": 19075,
+  "frozenBeforeNextNativeOrTrainingAttempt": true,
+  "modelCalls": 0,
+  "nativeExecution": false,
+  "generatorSha256": "ab95cb738f0fc2a4f48047759469801d66cae9ee0e67fb8c15f0a0f85f2cb42c",
+  "sourceSha256": {
+    "experiments/ranker/pretrained/semantic_copy_data/cases.train.jsonl": "1515b46d18ac75fd79c62f544d06698ec0c675c3c6868a4bfa25c7ce5694ed77",
+    "experiments/ranker/pretrained/semantic_copy_data/cases.dev.jsonl": "732bec767d5155da61ced587789572533a9aa6abd9cb7846209a9b534a195955",
+    "experiments/ranker/pretrained/semantic_copy_data/cases.test.jsonl": "93413db55345169a4ea1c1cf6e0dc18deba47da01b6bcb9eb829941c94fcaddf",
+    "experiments/ranker/pretrained/SCHEDULER_IDENTITY_CASES.json": "41f3ce458a6bf355fda7e41a6bd62da0661c70d9e3e8c59943ed94d48e47c9b6",
+    "data/ranker/datasets/v2/catalog.json": "4780ccaafd6be8398b39e95222dfd23ef17f6c51892ae9397982458a0644419d",
+    "data/ranker/datasets/v2/public/diagnostics.jsonl": "b116f59db6589e6f6642fce4812b73749b26e84c23628cd81f5b52edc06c3f30",
+    "data/ranker/datasets/v2/public/test.jsonl": "f4af5b9f19737857741b51876e1f447c680cba3ba6b983697f5c975a4ec1ecfb",
+    "data/ranker/datasets/v2/public/train.jsonl": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+    "data/ranker/datasets/v2/public/validation.jsonl": "2d2f2c82bbc19baeea95b6e7d476afa4265148a2a22e29f4fa6af2edd215c780"
+  },
+  "validatorSha256AtAudit": {
+    "evidence_plan.py": "01e3e96b8f230d7802da445c1e5c6da0503ac7fbef1efe529c93ef10b9c0ca1a",
+    "fusion.py": "217abdd3134fc1ee53cfa545c118c1596c05dde010bf0d47382124140c9948e6"
+  },
+  "fileSha256": {
+    "cases.train.jsonl": "6171c8c5c81d11c9585b4601c93feb3aeba92a085abb4d6116295dc54e01be6b",
+    "cases.dev.jsonl": "09c95bf5a462b589fed8f27df85721db35ebe21b6aa0728510003ff618d1daed",
+    "cases.test.jsonl": "8d31a23f62ab1fa061e57eb1266a487e51085569c1e7663c786143d4d5910f99",
+    "fields.train.jsonl": "2f209f759c7d0649f1220b1e9d2421188225618dfea02aae33ac820a0b933ab6",
+    "fields.dev.jsonl": "7ccfb65791a63a5650a36d2f17fccab0ab0513c2c3abdbb2ebd08d7f93a94e70",
+    "fields.test.jsonl": "3050f193d0f3d628c4fae58f22bb6f7072aaddf8367f50ebffb61cc4ef70f309",
+    "pairs.jsonl": "740cb177638688b82818952f3bbe0976ae28071bb742b37500f4440ade07e42c",
+    "exclusions.json": "c5d24819c813164fa987ea9bcd94c2bc813f2b2f70b8efdec292346bae22e63a",
+    "inspected_replays.json": "a977d92c009fc83454a502c944649c000cd550d10fe73cbe9f4dd11395b5c20d",
+    "AUDIT.json": "5fa16a3501833a7f44c2fb444a0bb3e928873bcce4e6d685f316dbbf76bc720c"
+  },
+  "trainFile": "fields.train.jsonl",
+  "developmentFile": "fields.dev.jsonl",
+  "evaluationOnlyFile": "fields.test.jsonl",
+  "proposedTrainingLater": {
+    "epochs": 1,
+    "individualUpdates": 504,
+    "executed": false,
+    "selection": "final fixed step, no dev/test checkpoint selection"
+  },
+  "promptContract": "same public_messages and independent values-only field request; metadata excluded",
+  "audit": {
+    "status": "passed",
+    "nativeExecution": false,
+    "modelCalls": 0,
+    "trainingExecuted": false,
+    "pairedFamilies": 18,
+    "sharedProductsWithChangedTitleAndBadgeAcrossPair": 21,
+    "oldTrainingProductsByteEquivalent": 72,
+    "positiveTrainingTitleCountsByAttribute": {
+      "adjustable": 4,
+      "compact": 5,
+      "compressible": 4,
+      "durable": 2,
+      "expandable": 4,
+      "foldable": 2,
+      "lightweight": 4,
+      "mesh": 6,
+      "organizer": 2,
+      "packable": 6,
+      "padded": 2,
+      "quilted": 4,
+      "reflective": 3,
+      "rolltop": 3,
+      "roomy": 3,
+      "structured": 5,
+      "ventilated": 3,
+      "water-resistant": 6
+    },
+    "summary": {
+      "train": {
+        "requests": 36,
+        "fieldExamples": 504,
+        "uniqueProducts": 72,
+        "teacherPagesPassingStrictValidator": 36,
+        "positiveUniversalHeadings": 34,
+        "emptyUniversalHeadings": 38,
+        "titlesPassingIdentity": 216,
+        "requiredNoneBadges": 148,
+        "supportedTitles": 68,
+        "supportedBadges": 68
+      },
+      "dev": {
+        "requests": 3,
+        "fieldExamples": 42,
+        "uniqueProducts": 18,
+        "teacherPagesPassingStrictValidator": 3,
+        "positiveUniversalHeadings": 3,
+        "emptyUniversalHeadings": 3,
+        "titlesPassingIdentity": 18,
+        "supportedTitles": 12,
+        "supportedBadges": 12,
+        "requiredNoneBadges": 6
+      },
+      "test": {
+        "requests": 3,
+        "fieldExamples": 42,
+        "uniqueProducts": 18,
+        "teacherPagesPassingStrictValidator": 3,
+        "positiveUniversalHeadings": 3,
+        "emptyUniversalHeadings": 3,
+        "titlesPassingIdentity": 18,
+        "supportedTitles": 12,
+        "supportedBadges": 12,
+        "requiredNoneBadges": 6
+      }
+    },
+    "normalizedNonNoneTargetOverlapBetweenSplits": {
+      "train/dev": 8,
+      "train/test": 8,
+      "dev/test": 2
+    },
+    "targetOverlapDisclosure": "Shared short heading/badge grammar and NONE are intentional, not a held-out wording claim; product title completions use disjoint new names."
+  },
+  "limitations": [
+    "Synthetic grammar, not human validated production data or measured model improvement.",
+    "All targets are supervision only; no runtime teacher-answer fallback.",
+    "Only explicit public preferences; no history or latent persona truths.",
+    "Train catalogs and fixture selection are reused; all fresh ranking/image quality is unlabeled.",
+    "Common heading/badge wording and NONE overlap across cases/splits intentionally.",
+    "Fresh cases disjoint from the explicit hashed exclusion inventory, not a claim about unseen external data.",
+    "Tokenizer target+EOS, context and native cap fit not measured in this data-only preparation.",
+    "Previously inspected old dev/test are separate replay references, never fresh holdouts."
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "auditSourceSha256": "9de6ea9d27b5e5a7f95aedc49a3e7da282c4c1bdbed3205b7ff24ae92ed645ad",
+  "priorReportSha256": "64b68a1302abba6829b378a45d758530b85f19d9169548675b20a26f2318c98d",
+  "execution": {
+    "atUtc": "2026-10-18T00:12:39.374923+00:00",
+    "commit": "e9fb4afc11e489220c747f5f7d03f9d10754a3b6",
+    "relevantSourceStatus": [],
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "torch": "2.14.1",
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2",
+      "tokenizers": "0.23.3",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2"
+    },
+    "argv": [
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py",
+      "--out",
+      "data/ranker/pretrained/catalog-user-fusion-v1-attempt-1"
+    ],
+    "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+  },
+  "featureEntriesVerified": 216,
+  "exactScoreReloadChecks": 192,
+  "independentRawRankChecks": 192,
+  "trainingConfounds": {
+    "requests": 24,
+    "distinctCandidatePools": 12,
+    "samePoolSizes": [
+      2
+    ],
+    "poolsWithUnchangedBestProduct": 12,
+    "comparablePoolProductImagePairs": 19,
+    "comparableImagePairsWithUnchangedBestVariant": 19,
+    "perPoolSkuMembershipDisjoint": true
+  },
+  "quality": {
+    "train": {
+      "random": {
+        "rawProductCorrect": 2,
+        "guardedProductCorrect": 3,
+        "requests": 24,
+        "guardedNdcgAt3": 0.6773165869180326,
+        "allCandidateImageCorrect": 33,
+        "allCandidateImageInformative": 54,
+        "oracleImageCorrect": 10,
+        "oracleImageInformative": 18,
+        "selectedImageCorrect": 12,
+        "selectedImageInformative": 16
+      },
+      "prior": {
+        "rawProductCorrect": 24,
+        "guardedProductCorrect": 24,
+        "requests": 24,
+        "guardedNdcgAt3": 0.9708141684786807,
+        "allCandidateImageCorrect": 54,
+        "allCandidateImageInformative": 54,
+        "oracleImageCorrect": 18,
+        "oracleImageInformative": 18,
+        "selectedImageCorrect": 18,
+        "selectedImageInformative": 18
+      },
+      "fusion": {
+        "rawProductCorrect": 24,
+        "guardedProductCorrect": 24,
+        "requests": 24,
+        "guardedNdcgAt3": 0.9708141684786807,
+        "allCandidateImageCorrect": 54,
+        "allCandidateImageInformative": 54,
+        "oracleImageCorrect": 18,
+        "oracleImageInformative": 18,
+        "selectedImageCorrect": 18,
+        "selectedImageInformative": 18
+      },
+      "permuted-query": {
+        "rawProductCorrect": 24,
+        "guardedProductCorrect": 24,
+        "requests": 24,
+        "guardedNdcgAt3": 0.9708141684786807,
+        "allCandidateImageCorrect": 39,
+        "allCandidateImageInformative": 54,
+        "oracleImageCorrect": 14,
+        "oracleImageInformative": 18,
+        "selectedImageCorrect": 14,
+        "selectedImageInformative": 18
+      },
+      "fusionVsPermutedRawRankAgreement": 24
+    },
+    "validation": {
+      "random": {
+        "rawProductCorrect": 4,
+        "guardedProductCorrect": 5,
+        "requests": 6,
+        "guardedNdcgAt3": 0.8804516907408404,
+        "allCandidateImageCorrect": 12,
+        "allCandidateImageInformative": 16,
+        "oracleImageCorrect": 4,
+        "oracleImageInformative": 5,
+        "selectedImageCorrect": 3,
+        "selectedImageInformative": 4
+      },
+      "prior": {
+        "rawProductCorrect": 0,
+        "guardedProductCorrect": 1,
+        "requests": 6,
+        "guardedNdcgAt3": 0.5796232490393287,
+        "allCandidateImageCorrect": 8,
+        "allCandidateImageInformative": 16,
+        "oracleImageCorrect": 2,
+        "oracleImageInformative": 5,
+        "selectedImageCorrect": 2,
+        "selectedImageInformative": 4
+      },
+      "fusion": {
+        "rawProductCorrect": 0,
+        "guardedProductCorrect": 1,
+        "requests": 6,
+        "guardedNdcgAt3": 0.5796232490393287,
+        "allCandidateImageCorrect": 8,
+        "allCandidateImageInformative": 16,
+        "oracleImageCorrect": 2,
+        "oracleImageInformative": 5,
+        "selectedImageCorrect": 3,
+        "selectedImageInformative": 4
+      },
+      "permuted-query": {
+        "rawProductCorrect": 0,
+        "guardedProductCorrect": 1,
+        "requests": 6,
+        "guardedNdcgAt3": 0.5796232490393287,
+        "allCandidateImageCorrect": 15,
+        "allCandidateImageInformative": 16,
+        "oracleImageCorrect": 5,
+        "oracleImageInformative": 5,
+        "selectedImageCorrect": 4,
+        "selectedImageInformative": 4
+      },
+      "fusionVsPermutedRawRankAgreement": 6
+    },
+    "test": {
+      "random": {
+        "rawProductCorrect": 6,
+        "guardedProductCorrect": 6,
+        "requests": 12,
+        "guardedNdcgAt3": 0.9060019035998031,
+        "allCandidateImageCorrect": 1,
+        "allCandidateImageInformative": 23,
+        "oracleImageCorrect": 1,
+        "oracleImageInformative": 8,
+        "selectedImageCorrect": 1,
+        "selectedImageInformative": 8
+      },
+      "prior": {
+        "rawProductCorrect": 2,
+        "guardedProductCorrect": 5,
+        "requests": 12,
+        "guardedNdcgAt3": 0.6933368255781359,
+        "allCandidateImageCorrect": 4,
+        "allCandidateImageInformative": 23,
+        "oracleImageCorrect": 2,
+        "oracleImageInformative": 8,
+        "selectedImageCorrect": 1,
+        "selectedImageInformative": 6
+      },
+      "fusion": {
+        "rawProductCorrect": 2,
+        "guardedProductCorrect": 5,
+        "requests": 12,
+        "guardedNdcgAt3": 0.7110809335359024,
+        "allCandidateImageCorrect": 12,
+        "allCandidateImageInformative": 23,
+        "oracleImageCorrect": 5,
+        "oracleImageInformative": 8,
+        "selectedImageCorrect": 3,
+        "selectedImageInformative": 6
+      },
+      "permuted-query": {
+        "rawProductCorrect": 2,
+        "guardedProductCorrect": 5,
+        "requests": 12,
+        "guardedNdcgAt3": 0.7110809335359024,
+        "allCandidateImageCorrect": 13,
+        "allCandidateImageInformative": 23,
+        "oracleImageCorrect": 5,
+        "oracleImageInformative": 8,
+        "selectedImageCorrect": 4,
+        "selectedImageInformative": 6
+      },
+      "fusionVsPermutedRawRankAgreement": 12
+    },
+    "diagnostics": {
+      "random": {
+        "rawProductCorrect": 2,
+        "guardedProductCorrect": 2,
+        "requests": 6,
+        "guardedNdcgAt3": 0.7245454539044779,
+        "allCandidateImageCorrect": 18,
+        "allCandidateImageInformative": 22,
+        "oracleImageCorrect": 5,
+        "oracleImageInformative": 6,
+        "selectedImageCorrect": 4,
+        "selectedImageInformative": 6
+      },
+      "prior": {
+        "rawProductCorrect": 1,
+        "guardedProductCorrect": 1,
+        "requests": 6,
+        "guardedNdcgAt3": 0.702996628082479,
+        "allCandidateImageCorrect": 16,
+        "allCandidateImageInformative": 22,
+        "oracleImageCorrect": 3,
+        "oracleImageInformative": 6,
+        "selectedImageCorrect": 6,
+        "selectedImageInformative": 6
+      },
+      "fusion": {
+        "rawProductCorrect": 1,
+        "guardedProductCorrect": 1,
+        "requests": 6,
+        "guardedNdcgAt3": 0.702996628082479,
+        "allCandidateImageCorrect": 22,
+        "allCandidateImageInformative": 22,
+        "oracleImageCorrect": 6,
+        "oracleImageInformative": 6,
+        "selectedImageCorrect": 6,
+        "selectedImageInformative": 6
+      },
+      "permuted-query": {
+        "rawProductCorrect": 1,
+        "guardedProductCorrect": 1,
+        "requests": 6,
+        "guardedNdcgAt3": 0.702996628082479,
+        "allCandidateImageCorrect": 22,
+        "allCandidateImageInformative": 22,
+        "oracleImageCorrect": 6,
+        "oracleImageInformative": 6,
+        "selectedImageCorrect": 6,
+        "selectedImageInformative": 6
+      },
+      "fusionVsPermutedRawRankAgreement": 6
+    }
+  },
+  "diagnosticPairs": {
+    "train": {
+      "random": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "prior": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "fusion": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "permuted-query": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      }
+    },
+    "validation": {
+      "random": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "prior": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "fusion": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "permuted-query": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      }
+    },
+    "test": {
+      "random": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "prior": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "fusion": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "permuted-query": {
+        "pairs": 0,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      }
+    },
+    "diagnostics": {
+      "random": {
+        "pairs": 3,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "prior": {
+        "pairs": 3,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "fusion": {
+        "pairs": 3,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      },
+      "permuted-query": {
+        "pairs": 3,
+        "bothCorrect": 0,
+        "selectionChanges": 0
+      }
+    }
+  },
+  "timingMs": {
+    "train:cold": {
+      "requests": 12,
+      "observedPipelineWallMs": {
+        "mean": 2326.6235625972818,
+        "median": 2297.198499960359
+      },
+      "freshQueryNativeEncodeMs": {
+        "mean": 210.17958691421276,
+        "median": 180.50695850979537
+      },
+      "catalogResolveConstructHashLoadOrExtractMs": {
+        "mean": 2114.1885764178974,
+        "median": 2116.3453339831904
+      }
+    },
+    "train:warm": {
+      "requests": 12,
+      "observedPipelineWallMs": {
+        "mean": 202.62938880478032,
+        "median": 193.99616651935503
+      },
+      "freshQueryNativeEncodeMs": {
+        "mean": 193.90487516648136,
+        "median": 187.14387551881373
+      },
+      "catalogResolveConstructHashLoadOrExtractMs": {
+        "mean": 5.8231771787783755,
+        "median": 6.2426874646916986
+      }
+    },
+    "validation:cold": {
+      "requests": 3,
+      "observedPipelineWallMs": {
+        "mean": 2363.5128610379375,
+        "median": 2330.71158407256
+      },
+      "freshQueryNativeEncodeMs": {
+        "mean": 243.07756933073202,
+        "median": 188.2300419965759
+      },
+      "catalogResolveConstructHashLoadOrExtractMs": {
+        "mean": 2111.9301943884543,
+        "median": 2101.36237507686
+      }
+    },
+    "validation:warm": {
+      "requests": 3,
+      "observedPipelineWallMs": {
+        "mean": 191.77227769978344,
+        "median": 191.5830000070855
+      },
+      "freshQueryNativeEncodeMs": {
+        "mean": 183.57126399253806,
+        "median": 181.5219159470871
+      },
+      "catalogResolveConstructHashLoadOrExtractMs": {
+        "mean": 3.9899443121006093,
+        "median": 3.416541963815689
+      }
+    },
+    "test:cold": {
+      "requests": 6,
+      "observedPipelineWallMs": {
+        "mean": 2374.9449374930314,
+        "median": 2383.8619790039957
+      },
+      "freshQueryNativeEncodeMs": {
+        "mean": 184.43137496554604,
+        "median": 183.0207079765387
+      },
+      "catalogResolveConstructHashLoadOrExtractMs": {
+        "mean": 2187.3327916837297,
+        "median": 2200.3014375222847
+      }
+    },
+    "test:warm": {
+      "requests": 6,
+      "observedPipelineWallMs": {
+        "mean": 209.34513199608773,
+        "median": 201.73289597732946
+      },
+      "freshQueryNativeEncodeMs": {
+        "mean": 198.641819646582,
+        "median": 191.78145850310102
+      },
+      "catalogResolveConstructHashLoadOrExtractMs": {
+        "mean": 5.185076326597482,
+        "median": 5.3897289908491075
+      }
+    },
+    "diagnostics:warm": {
+      "requests": 6,
+      "observedPipelineWallMs": {
+        "mean": 178.92878465742493,
+        "median": 178.66599949775264
+      },
+      "freshQueryNativeEncodeMs": {
+        "mean": 173.44484734348953,
+        "median": 173.5410835244693
+      },
+      "catalogResolveConstructHashLoadOrExtractMs": {
+        "mean": 2.428465348202735,
+        "median": 2.0936879445798695
+      }
+    }
+  },
+  "peakBytes": 4809720344,
+  "peakGiB": 4.479401133954525,
+  "activeBytes": 4465912330,
+  "declaredGuardBytes": 6442450944,
+  "wallSeconds": 62.62342974997591,
+  "fits": {
+    "fusion": {
+      "arm": "fusion",
+      "config": {
+        "seed": 728,
+        "rank": 4,
+        "dimension": 4096,
+        "epochs": 80,
+        "learningRate": 0.03,
+        "weightDecay": 0.001,
+        "cpuThreads": 1,
+        "maxSecondsPerArm": 60,
+        "selection": "fixed attempt; no validation/test outcome selection"
+      },
+      "trained": true,
+      "architectureParameters": 32786,
+      "trainableParameters": 32786,
+      "requests": 24,
+      "lossBefore": 2.079669952392578,
+      "lossAfter": 0.02612372860312462,
+      "firstGradientL2": {
+        "U": 0.0002750410058069974,
+        "V": 0.007165531162172556,
+        "prior": 0.0031234214548021555,
+        "interaction": 0.00010245676821796224,
+        "bias": 5.890201215663637e-09
+      },
+      "parameterAbsoluteChange": {
+        "U": 5382.95263671875,
+        "V": 11790.5400390625,
+        "prior": 10.728475570678711,
+        "interaction": 12.24899673461914,
+        "bias": 0.45652827620506287
+      },
+      "predictionAbsoluteChange": 1198.9622421264648,
+      "seconds": 0.44231116701848805,
+      "checkpoint": "fusion.pt",
+      "sha256": "3f699f6d837390e9dcfc6078ef63ec71a24a209024e38f76a2990b04893fde93",
+      "exactTrainingPredictionReload": true
+    },
+    "prior": {
+      "arm": "prior",
+      "config": {
+        "seed": 728,
+        "rank": 4,
+        "dimension": 4096,
+        "epochs": 80,
+        "learningRate": 0.03,
+        "weightDecay": 0.001,
+        "cpuThreads": 1,
+        "maxSecondsPerArm": 60,
+        "selection": "fixed attempt; no validation/test outcome selection"
+      },
+      "trained": true,
+      "architectureParameters": 32786,
+      "trainableParameters": 16394,
+      "requests": 24,
+      "lossBefore": 2.079660654067993,
+      "lossAfter": 0.11449120938777924,
+      "firstGradientL2": {
+        "V": 0.007279295939952135,
+        "prior": 0.003123044967651367,
+        "bias": 1.343172506551582e-08
+      },
+      "parameterAbsoluteChange": {
+        "U": 0.0,
+        "V": 14276.044921875,
+        "prior": 16.371074676513672,
+        "interaction": 0.0,
+        "bias": 0.3714059591293335
+      },
+      "predictionAbsoluteChange": 940.6670150756836,
+      "seconds": 0.44186216592788696,
+      "checkpoint": "prior.pt",
+      "sha256": "7807a79575e687c8f3d44f9d6af5c0191faf6fb73c322d871706353eb5389dd1",
+      "exactTrainingPredictionReload": true
+    }
+  },
+  "nativeForwards": 216,
+  "conclusion": "Genuine fitted/cached pipeline, but no product personalization or held-out image-context benefit established; do not promote.",
+  "limitations": [
+    "Prior and fusion memorize constant training pool winners; nonzero interaction gradients alone are insufficient.",
+    "Held-out outcomes have been inspected and are replay evidence.",
+    "Warm/cold groups contain different requests; their timings are not a matched speed ratio.",
+    "This audit does not execute native A/B/A or fresh feature parity; retain the separate probe receipt."
+  ]
+}
