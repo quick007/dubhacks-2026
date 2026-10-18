@@ -38,6 +38,7 @@ export function ProductCard({
       {freshCopy?.title && freshCopy.title !== product.name && (
         <p className="search-status">{product.name}</p>
       )}
+      <div className="search-status product-category">{product.category}</div>
       {freshCopy?.badge && <p className="search-status">{freshCopy.badge}</p>}
       {freshCopy?.bodyCopy && <p className="search-status">{freshCopy.bodyCopy}</p>}
       <div className="product-colors" role="group" aria-label={`${product.name} colors`}>
