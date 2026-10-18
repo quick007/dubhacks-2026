@@ -15,7 +15,8 @@ established.
 Use Node 24.11+ in the 24.x line or Node 26+, pnpm 12.5.1, and Go 1.24+ with
 CGO and a C compiler. The Go helper prefers `.tools/go/bin/go` when present,
 then system Go; `STOREFRONT_GO_BINARY` overrides it. SQLite needs no database
-server. The default demo requires no model weights or API key.
+server. The generic storefront requires no model weights or API key. The
+verified-results presentation needs the configured Tiger connection described below.
 
 ```sh
 pnpm install
