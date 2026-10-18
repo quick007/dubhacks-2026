@@ -59,7 +59,7 @@ test("deck runs shoppers, tells the featured shopper's story and shows the held-
       { timeout: 30_000 },
     )
     .toBeGreaterThanOrEqual(20);
-  await expect(page.getByRole("list", { name: "What shoppers search for" })).toBeVisible();
+  await expect(page.getByText("AI shoppers browse your store")).toBeVisible();
   await page.keyboard.press("ArrowRight");
   await expect(page.getByRole("heading", { name: /^Meet / })).toBeVisible();
   await page.goto("/#sessions");

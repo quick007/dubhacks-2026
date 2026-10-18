@@ -118,7 +118,16 @@ export function App() {
   const hasRuns = story.pairs.some((pair) => pair.baseline || pair.candidate);
   const run = () => void runShoppers();
   const views: Record<SlideId, () => ReactNode> = {
-    title: () => <TitleSlide personas={catalog.personas} featuredId={feature.persona.id} />,
+    title: () => (
+      <TitleSlide
+        names={[
+          feature.persona.name,
+          ...story.pairs
+            .filter((pair) => pair.persona.id !== feature.persona.id)
+            .map((pair) => pair.persona.name),
+        ]}
+      />
+    ),
     meet: () => <MeetSlide persona={feature.persona} />,
     struggle: () => <StruggleSlide pair={feature} onEvidence={openEvidence} />,
     fix: () => <FixSlide pair={feature} />,
