@@ -27,25 +27,27 @@ source/checkpoint identities. Loaded first3 fully visible median269.95ms;
 cold/reload navigation through full text plus6 images533.10/362.40ms. These
 small samples are not tail-latency or human-conversion evidence.
 
-## Current work
+## Completed measurement and current integration
 
-1. Finish the isolated fast-path host profile:20 counterbalanced pairs on the
-   four existing public browser queries. Separate ordinary vs instrumented
-   requests, account observer overhead, compare exact scores/actions/copy slots
-   and retain startup/shutdown integrity. Attempt1 stopped during excluded
-   instrumentation warmup;40 timed arms remained unattempted and927/checkpoint
-   checks passed. Attempt2 fixes delegated-tokenizer restoration only.
-2. Measure generic versus local request-to-useful-content delay with20 paired
-   loaded collection observations per arm. Fix AB/BA order, explicit browser
-   cache eligibility, matching two-frame visibility/decode endpoint, actual
-   POST/raw-body provenance and p50/p95 methodology. Generic static text must
-   never be represented as20 generated fields. Preserve failed slots/outliers.
-3. Freeze v11 plus the server-confirmed demo-checkout hook, health identity,
-   model/export/assets/source hashes and process IDs for the60-pair shopper
-   cohort. Keep weights, features, storefront and server behavior unchanged
-   throughout that cohort. Root owns GPU windows; harness owns shopper results.
-4. Prepare isolated optimizations from measured critical-path cost: resident
-   verified catalog tensors/projections and fixed public query-prefix reuse.
+1. Profile complete:20 exact-output pairs, original full6 p50/p95
+   192.785/202.370ms; paired observer overhead median3.782ms. Fresh Qwen encoding
+   dominates at170.622ms exclusive median. Attempt1's excluded warmup failure
+   and all40 unattempted slots remain archived; attempt2 completes all40.
+2. Matched browser comparison complete:40/40 valid arms. Generic first-useful
+   p50/p95 64.3/65.1ms; local281.1/297.7ms; paired additional delay217.4/234.4ms.
+   This is loaded/pre-scrolled, image-cache-eligible, loopback browser scope;
+   generic static copy is not20 generated fields. Independent3291-check audit
+   preserves all82 raw files and records observer-ID and small-scroll caveats.
+3. Frozen60-pair shopper cohort is ACTIVE, with native4200/8766, storefront
+   90191/4312 and checkout89743/4331. All670 source/assets/checkpoint pins remain
+   fixed. No other browser/native jobs until the harness releases its window.
+4. Isolated persona integration now takes priority: compact person switcher,
+   public authored histories, Tiger readback/export, actual CPU candidate fit
+   and held-out evaluation. The separate worktree preserves the live cohort.
+   Final acceptance checks switching/query/cart/navigation, full build/tests,
+   actual results in the existing presentation and canonical remote main.
+5. Prepared optimizations remain unpromoted: resident verified catalog
+   tensors/projections (five CPU tests) and fixed public query-prefix reuse.
    Prefix reuse has26 cached tokens and43–52 fresh suffix tokens on32 public
    controls, full KV/SSM cloning and strict numeric/ranking gates. Ten CPU tests
    pass; no native parity or speed result exists. Never claim reused response

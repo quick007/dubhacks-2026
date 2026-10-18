@@ -24,6 +24,7 @@ import { StakesSlide } from "./slides/StakesSlide";
 import { StruggleSlide } from "./slides/StruggleSlide";
 import { TitleSlide } from "./slides/TitleSlide";
 import { TwoShoppersSlide } from "./slides/TwoShoppersSlide";
+import { CohortPresentation } from "./CohortPresentation";
 
 const message = (cause: unknown) =>
   cause instanceof Error ? cause.message : "Could not reach the local API.";
@@ -45,6 +46,11 @@ const labels: Record<SlideId, string> = {
 const featuredSlides = new Set<SlideId>(["meet", "struggle", "fix", "retest"]);
 
 export function App() {
+  const reportId = new URLSearchParams(window.location.search).get("report");
+  return reportId ? <CohortPresentation reportId={reportId} /> : <LegacyApp />;
+}
+
+function LegacyApp() {
   const [catalog, setCatalog] = useState<Catalog>();
   const [runs, setRuns] = useState<Run[]>([]);
   // Polling errors clear on the next good poll; a failed submission stays until the next attempt.

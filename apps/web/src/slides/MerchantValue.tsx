@@ -5,7 +5,7 @@ import { merchant, type Pair } from "../lib/story";
 const money = (value: number) => `$${value.toLocaleString("en-US")}`;
 const count = (value: number) => String(value);
 
-// Fewer returns is the improvement, so a rise is shown as a regression.
+// Fewer unsuitable purchases is the improvement; actual returns are not observed.
 function tone(before: number, after: number, lowerIsBetter: boolean) {
   if (after === before) return "text-ink";
   return after < before === lowerIsBetter ? "text-cobalt" : "text-signal";
@@ -16,7 +16,7 @@ export function MerchantValue({ pairs }: { pairs: Pair[] }) {
   const rows = [
     ["Purchases that fit", baseline.orders, candidate.orders, count, false],
     ["Value of purchases that fit", baseline.value, candidate.value, money, false],
-    ["Likely returns", baseline.wrongItems, candidate.wrongItems, count, true],
+    ["Purchases that miss a requirement", baseline.wrongItems, candidate.wrongItems, count, true],
   ] as const;
   return (
     <dl className="grid gap-8 sm:grid-cols-3">

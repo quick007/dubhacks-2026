@@ -122,7 +122,8 @@ projection against the full source/derivative audit manifests.
 
 ## Measured status
 
-The matched loaded-shop comparison completed 20 pairs with all 40 observations
+The [matched loaded-shop comparison](experiments/ranker/pretrained/STORE_PAIRED_INCREMENTAL_PROBE_V1_INDEPENDENT_AUDIT.md)
+completed 20 pairs with all 40 observations
 retained. Generic first-three visibility and decoded images took p50/p95
 64.3/65.1 ms; fresh local personalization took 281.1/297.7 ms. Paired additional
 delay was 217.4/234.4 ms. These are loopback, already-loaded collection views
@@ -191,6 +192,13 @@ attributes most copy time to suffix prefill and autoregressive steps. Profiling
 adds synchronization overhead; the ordinary six-card attempt median was5.58s.
 
 ## Independent shopper evaluation
+
+The new [60-pair protocol](apps/runner/SHOPPER_COHORT.md) freezes 120 assigned
+sessions, service identities and source/checkpoint pins. It is currently running
+against the saved fast-model snapshot. The first five pairs are a prespecified
+runtime pilot and remain in the final denominator; no interim effect is claimed.
+Server-confirmed orders, suitable purchases and correct abstentions are scored
+separately. The final report will preserve timeouts, failures and unattempted slots.
 
 The [ten-pair packet](experiments/ranker/pretrained/store_shopper_eval_v1/README.md)
 separates public recommender observations, private shopper needs and evaluator

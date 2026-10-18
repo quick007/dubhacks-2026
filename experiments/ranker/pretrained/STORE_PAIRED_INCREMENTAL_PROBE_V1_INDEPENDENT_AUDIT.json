@@ -1,0 +1,1521 @@
+{
+  "version": "paired-incremental-independent-audit.v1",
+  "status": "all40arms valid under fixedplan",
+  "checksPassed": 3291,
+  "evidence": {
+    "runDirectory": "experiments/ranker/pretrained/store_paired_incremental_probe_results_v1_attempt_1",
+    "originalFilesRecheckedUnchanged": 82,
+    "reportSha256": "6f448811ced78a72855432969b9ca83d2748840f10e741cf8d1f902a37836672",
+    "runPlanSha256": "a03c94fb1cbc6875b8d6619876486f19b38ef5f79b711989e3ef2bb9fa5d5bc2",
+    "predeclaredPlanSha256": "679059f8b5df01e151d238b6890258ea93c2efe9beac53c5517aa878bb88f7a8",
+    "probeSha256": "df5e032def7a6892b2bf3b43191969f357b01dc596627e10739a2b0aaea7e0c8",
+    "all29PinnedSourceHashesCurrentAndBeforeAfterEqual": true,
+    "startupBeforeAfterEqual": true,
+    "integrationManifest": {
+      "path": "experiments/ranker/pretrained/store_demo_integration_v11/manifest.json",
+      "sha256": "7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839",
+      "version": "actual-store-render-image-delivery.v3"
+    },
+    "rankCheckpointSha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+    "copyCheckpointSha256": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+    "all40NativePayloadsContainOnlyPublicQuery": true
+  },
+  "denominators": {
+    "fixedPairs": 20,
+    "fixedArms": 40,
+    "genericValid": 20,
+    "localValid": 20,
+    "failed": 0,
+    "unattempted": 0,
+    "zeroResult": 0,
+    "genericFirstPairs": 10,
+    "localFirstPairs": 10,
+    "uniqueNativeRequests": 40,
+    "bootstrapNativeRequestsUnscored": 20,
+    "scoredNativeRequests": 20
+  },
+  "statistics": {
+    "genericFirstUseful": {
+      "fixedDenominator": 20,
+      "valid": 20,
+      "missing": 0,
+      "rawMs": [
+        62.59999990463257,
+        63.799999952316284,
+        81.19999992847443,
+        64.5,
+        64.60000002384186,
+        64.89999997615814,
+        64.5,
+        64.70000004768372,
+        64.70000004768372,
+        63.300000071525574,
+        65.10000002384186,
+        64.30000007152557,
+        64.10000002384186,
+        63.299999952316284,
+        64.5,
+        63.5,
+        64.60000002384186,
+        62.60000002384186,
+        63.700000047683716,
+        63.199999928474426
+      ],
+      "p50Ms": 64.30000007152557,
+      "p95Ms": 65.10000002384186,
+      "minimumMs": 62.59999990463257,
+      "maximumMs": 81.19999992847443,
+      "estimator": "nearest rank10/19 of20"
+    },
+    "localFirstUseful": {
+      "fixedDenominator": 20,
+      "valid": 20,
+      "missing": 0,
+      "rawMs": [
+        281,
+        281,
+        280.10000002384186,
+        296.5,
+        281.3000000715256,
+        280.59999990463257,
+        264.3000000715256,
+        296.7999999523163,
+        281.2999999523163,
+        281,
+        281,
+        297.6999999284744,
+        282.39999997615814,
+        282.1999999284744,
+        264.7000000476837,
+        298.39999997615814,
+        281.10000002384186,
+        281.10000002384186,
+        281.10000002384186,
+        297.60000002384186
+      ],
+      "p50Ms": 281.10000002384186,
+      "p95Ms": 297.6999999284744,
+      "minimumMs": 264.3000000715256,
+      "maximumMs": 298.39999997615814,
+      "estimator": "nearest rank10/19 of20"
+    },
+    "localFullSix": {
+      "fixedDenominator": 20,
+      "valid": 20,
+      "missing": 0,
+      "rawMs": [
+        281,
+        281,
+        280.10000002384186,
+        282,
+        281.3000000715256,
+        280.59999990463257,
+        264.3000000715256,
+        281,
+        281.2999999523163,
+        281,
+        281,
+        281.10000002384186,
+        282.39999997615814,
+        282.1999999284744,
+        281.2000000476837,
+        281.60000002384186,
+        281.10000002384186,
+        281.10000002384186,
+        281.10000002384186,
+        283.10000002384186
+      ],
+      "p50Ms": 281.10000002384186,
+      "p95Ms": 282.39999997615814,
+      "minimumMs": 264.3000000715256,
+      "maximumMs": 283.10000002384186,
+      "estimator": "nearest rank10/19 of20"
+    },
+    "pairedIncrementalLocalMinusGeneric": {
+      "fixedDenominator": 20,
+      "valid": 20,
+      "missing": 0,
+      "rawMs": [
+        218.40000009536743,
+        217.20000004768372,
+        198.90000009536743,
+        232.0,
+        216.70000004768372,
+        215.69999992847443,
+        199.80000007152557,
+        232.09999990463257,
+        216.59999990463257,
+        217.69999992847443,
+        215.89999997615814,
+        233.39999985694885,
+        218.29999995231628,
+        218.89999997615814,
+        200.20000004768372,
+        234.89999997615814,
+        216.5,
+        218.5,
+        217.39999997615814,
+        234.40000009536743
+      ],
+      "p50Ms": 217.39999997615814,
+      "p95Ms": 234.40000009536743,
+      "minimumMs": 198.90000009536743,
+      "maximumMs": 234.89999997615814,
+      "estimator": "nearest rank10/19 of20"
+    }
+  },
+  "arms": [
+    {
+      "pair": 1,
+      "repeat": 0,
+      "query": "a light for my bedside table",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "3fd1f6c9b4b7e487bf3d956777332115eda2d32deb52ff1981081da0b810969d",
+      "screenshotSha256": "482021aafcc7735d9d3402d7bd599fc0da60aa752b979c043ecee8581bcd9155",
+      "observerInstanceUuid": "2818ff68-a5a3-45ad-be33-e792aa0d4dff",
+      "firstUsefulMs": 62.59999990463257,
+      "commonCandidateAfterDispatchMs": 29.299999952316284,
+      "commonBarrierAfterCandidateMs": 33.299999952316284,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Portable table light",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 1,
+      "repeat": 0,
+      "query": "a light for my bedside table",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "fb617371426d739729cfadb21d3d4e05ea4b131b09995af8c381a8c1b5726176",
+      "screenshotSha256": "6644922e4e6794c1a20f0d5b3349838d1f0a05bb60df0a06e227c95ee285fe92",
+      "observerInstanceUuid": "2981fe26-f542-4901-b481-e647270befee",
+      "firstUsefulMs": 281,
+      "commonCandidateAfterDispatchMs": 250.39999997615814,
+      "commonBarrierAfterCandidateMs": 30.600000023841858,
+      "localFullSixMs": 281,
+      "nativeRequestId": "9c888b74-80ea-4563-b73c-0e7957ca4e53",
+      "actualBodySha256": "6d4b8c7dd3150b85601ffea00b7be7a53fac7f7ae0f9f3125873c79745a7a21b",
+      "bootstrapBodySha256": "21586683b0f8162610d2c1524208cedc3f512a19fff1346de42fa0155d830fc7",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Portable table light",
+        "Everywhere cotton towel",
+        "Trail mug"
+      ]
+    },
+    {
+      "pair": 2,
+      "repeat": 0,
+      "query": "a bottle for drinking water",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "2a74c60b564f91ba29153e8892ee67fa13ae1b95f936be4a8badcb1b9016000b",
+      "screenshotSha256": "b83c0188dd1aaa77165f5c2f5945feaf0de02e86abbca2b5884b61c6ca44eab7",
+      "observerInstanceUuid": "77a7a5ec-97b2-485c-b29d-a3333868e3ff",
+      "firstUsefulMs": 281,
+      "commonCandidateAfterDispatchMs": 248.5,
+      "commonBarrierAfterCandidateMs": 32.5,
+      "localFullSixMs": 281,
+      "nativeRequestId": "09dfd0fd-c015-4d28-afa9-62d509d6d3ab",
+      "actualBodySha256": "4698866c4fedcffd88edbeefb26e0d39f0ad14fd284c0c08ad13bb65f76e2a21",
+      "bootstrapBodySha256": "82908e65bd6955993f42f78cd48de952c485309f3d1301af809d28639382ec38",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 2,
+      "repeat": 0,
+      "query": "a bottle for drinking water",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "92770749925744276bcb9a462bb6f3955f40cb364b9b62fe9ea3817bdb2b4811",
+      "screenshotSha256": "e8f79fbea7a92aa1b53eafa0ec4a6a993ac7e3b8a6c7a9b95deaef8695937f18",
+      "observerInstanceUuid": "0b91b5e4-2c34-46ba-9366-7bf4cdaed780",
+      "firstUsefulMs": 63.799999952316284,
+      "commonCandidateAfterDispatchMs": 32.0,
+      "commonBarrierAfterCandidateMs": 31.799999952316284,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 3,
+      "repeat": 0,
+      "query": "a notebook for quick notes",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "352914f25f4e53685efd33cb9bdfc44e951c3c39c2ed65dd526e4b31ee112477",
+      "screenshotSha256": "6dde34f71f8eb3762236d8469a0ca7000e3997db27ba5568dedb0513ead1cdb5",
+      "observerInstanceUuid": "f062a3e0-2537-4736-ae4a-d00e5fa8b169",
+      "firstUsefulMs": 81.19999992847443,
+      "commonCandidateAfterDispatchMs": 48.0,
+      "commonBarrierAfterCandidateMs": 33.199999928474426,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 3,
+      "repeat": 0,
+      "query": "a notebook for quick notes",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "eb104e9fb14274d2fe4d63849880fc0d8920be0a27480896f1d8e05f23e35248",
+      "screenshotSha256": "cdf45694485cae5e53073bbc34cd234631a197bd5dafd82201fbe21d3266731a",
+      "observerInstanceUuid": "6d6c5947-c3f2-4a42-abd9-337b2c91f156",
+      "firstUsefulMs": 280.10000002384186,
+      "commonCandidateAfterDispatchMs": 250.60000002384186,
+      "commonBarrierAfterCandidateMs": 29.5,
+      "localFullSixMs": 280.10000002384186,
+      "nativeRequestId": "90ed1ebe-d47a-47ab-86aa-2c2040aff16d",
+      "actualBodySha256": "33fecb3ad46db71a619433352626e617b29b3f8609e48a866dd5ba73553fc9c0",
+      "bootstrapBodySha256": "a095fa34618d7cee0118143d6a93c0818b59ef3d2fd794e049f7876589371169",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Portable table light",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 4,
+      "repeat": 0,
+      "query": "a bag for carrying my things",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "0d5f2c6ef3f8145b37497be952376ee35c517f65d726c8c5fa2ad1005ad7e6f7",
+      "screenshotSha256": "39053acc9849293488991fda66b0607452dfc4eedf6e72c82e8dd98442c0f7ae",
+      "observerInstanceUuid": "9046973c-ab6e-431a-8450-26ed367b5014",
+      "firstUsefulMs": 296.5,
+      "commonCandidateAfterDispatchMs": 264.3000000715256,
+      "commonBarrierAfterCandidateMs": 32.199999928474426,
+      "localFullSixMs": 282,
+      "nativeRequestId": "b4e94e4f-43ae-4ac4-ad36-6c51c31f4a8c",
+      "actualBodySha256": "cb26eb253c5804be04231e8408f608fdfb1b820c1c8e274e748107d305f4e150",
+      "bootstrapBodySha256": "049108ad02312ba1b6abad34058d1c0597adf7a08cad62bad2c7ec4a6cba38fb",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Market canvas tote",
+        "Everyday daypack",
+        "Weekender duffel"
+      ]
+    },
+    {
+      "pair": 4,
+      "repeat": 0,
+      "query": "a bag for carrying my things",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "0e948b55038fd077c7fdc0bdbc6c646cac25f1c398504567cb771fd6ddd0d8d4",
+      "screenshotSha256": "c525e2349804797f9f6f0cdd67ca67cd9ca60132c61cd5c44cbce64fce5b5506",
+      "observerInstanceUuid": "fe8f3960-63be-4d5b-832e-6942492ccbcf",
+      "firstUsefulMs": 64.5,
+      "commonCandidateAfterDispatchMs": 31.399999976158142,
+      "commonBarrierAfterCandidateMs": 33.10000002384186,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 452,
+      "scrollChangePx": 0,
+      "firstThreeNames": [
+        "Everyday daypack",
+        "Trail mug",
+        "Pocket field notes"
+      ]
+    },
+    {
+      "pair": 5,
+      "repeat": 1,
+      "query": "a light for my bedside table",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "7c1b9720b43a98a0f78a1d5ef5a0dba56376c2c20a0c341a6c9f0b4ff25e06e4",
+      "screenshotSha256": "f9304f278ffc7e7f63b9786a02d7fb820a490e6366bffad94f407bf102f498d5",
+      "observerInstanceUuid": "5458151e-c621-439e-9d8f-335c27c9ea32",
+      "firstUsefulMs": 281.3000000715256,
+      "commonCandidateAfterDispatchMs": 248.70000004768372,
+      "commonBarrierAfterCandidateMs": 32.60000002384186,
+      "localFullSixMs": 281.3000000715256,
+      "nativeRequestId": "c3008c4d-c7d9-429c-b87c-e2126575b148",
+      "actualBodySha256": "1449868dac6a2cc91d449e6fd40621cf1bb04935fc8c9174ee1a87800ac5efb9",
+      "bootstrapBodySha256": "013b505e3999ce4044078f73448ec149607762ee429de20af636d0c8e8728d1a",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Portable table light",
+        "Everywhere cotton towel",
+        "Trail mug"
+      ]
+    },
+    {
+      "pair": 5,
+      "repeat": 1,
+      "query": "a light for my bedside table",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "b656d7dbeab4242856140035542cfc4eda64f9cf2e952df687182a1f7a59ac56",
+      "screenshotSha256": "eebe5e5e9cf63e5766593c646a613c2ed6642013776584e7e69d24fca2395d87",
+      "observerInstanceUuid": "9848de9d-1f17-4a73-aaef-3e176e62649f",
+      "firstUsefulMs": 64.60000002384186,
+      "commonCandidateAfterDispatchMs": 31.100000023841858,
+      "commonBarrierAfterCandidateMs": 33.5,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Portable table light",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 6,
+      "repeat": 1,
+      "query": "a bottle for drinking water",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "f7fffd790af318877e9db8cd743c4dcd6267d16505f9321a298115928cd0906f",
+      "screenshotSha256": "e8f79fbea7a92aa1b53eafa0ec4a6a993ac7e3b8a6c7a9b95deaef8695937f18",
+      "observerInstanceUuid": "8505d47e-fc70-4586-bbbb-98fd3753d310",
+      "firstUsefulMs": 64.89999997615814,
+      "commonCandidateAfterDispatchMs": 31.600000023841858,
+      "commonBarrierAfterCandidateMs": 33.299999952316284,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 6,
+      "repeat": 1,
+      "query": "a bottle for drinking water",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "bc7c6bb208b0190bb5cfd79a8426f4c8a957fb8511bf72fb8d1b77ebf2a2c9f4",
+      "screenshotSha256": "1209fd39308e1480a75a5ff86bd704492d2449178a46ac61e35eb6156d05196e",
+      "observerInstanceUuid": "518fd051-f1b2-4c9a-a82a-8259e217a34a",
+      "firstUsefulMs": 280.59999990463257,
+      "commonCandidateAfterDispatchMs": 247.5,
+      "commonBarrierAfterCandidateMs": 33.09999990463257,
+      "localFullSixMs": 280.59999990463257,
+      "nativeRequestId": "d7863bce-502d-44e1-b3ac-7a3b9e9508ac",
+      "actualBodySha256": "a98a63bde0f3e41a807198e356a54b6c8f25478789416b0f52466fa4e64f8ef3",
+      "bootstrapBodySha256": "7229ce84a53ebf73b97d31a1003bddd24accd78d97d68beb509645a8943c6d62",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 7,
+      "repeat": 1,
+      "query": "a notebook for quick notes",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "f89beccfeeabf30922997cda76315bf20f1f6598b405d10a3ef7c7dfca53af15",
+      "screenshotSha256": "8574266817f50a0ebe446c9cd55ad9bff9d06455b1d1e4d4485e219027519460",
+      "observerInstanceUuid": "424d1b8e-715a-45de-9398-cef96e2deda0",
+      "firstUsefulMs": 264.3000000715256,
+      "commonCandidateAfterDispatchMs": 233.30000007152557,
+      "commonBarrierAfterCandidateMs": 31.0,
+      "localFullSixMs": 264.3000000715256,
+      "nativeRequestId": "5ad61b10-f257-42cb-ae73-c251174a76fa",
+      "actualBodySha256": "ca186f4572bb54fc8d48f6270898491677a65dbf9215a2b26fa53f53b59d6904",
+      "bootstrapBodySha256": "bb8e413701213333fa7315b78273f97296dec317d8f23482d1ae4b4831ebcc8a",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Portable table light",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 7,
+      "repeat": 1,
+      "query": "a notebook for quick notes",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "9e88e7f3b299a02a04c69cbf8c17cad3a2811ee5e9c68020dd398ccffd597914",
+      "screenshotSha256": "6dde34f71f8eb3762236d8469a0ca7000e3997db27ba5568dedb0513ead1cdb5",
+      "observerInstanceUuid": "36ce2fd5-e9b4-4165-bfe7-fded397d6f09",
+      "firstUsefulMs": 64.5,
+      "commonCandidateAfterDispatchMs": 31.199999928474426,
+      "commonBarrierAfterCandidateMs": 33.300000071525574,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 8,
+      "repeat": 1,
+      "query": "a bag for carrying my things",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "fff2ef03227d9aa15102140a0bd6bc6754a00e929315c62edfd15a02e2392266",
+      "screenshotSha256": "0b9279ccad5951a19fc5350825dca1b6618627215166c686992862e17d4484e2",
+      "observerInstanceUuid": "45013783-5e47-49d0-82c8-2b75f571ad4c",
+      "firstUsefulMs": 64.70000004768372,
+      "commonCandidateAfterDispatchMs": 31.200000047683716,
+      "commonBarrierAfterCandidateMs": 33.5,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday daypack",
+        "Trail mug",
+        "Pocket field notes"
+      ]
+    },
+    {
+      "pair": 8,
+      "repeat": 1,
+      "query": "a bag for carrying my things",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "d0e4bc1951ef73cc0162fcbe8455643e3cfbfdbfa7058d66f632b7b9432aa173",
+      "screenshotSha256": "39053acc9849293488991fda66b0607452dfc4eedf6e72c82e8dd98442c0f7ae",
+      "observerInstanceUuid": "5ed3f502-81bd-4186-8216-51d3ae22dc2a",
+      "firstUsefulMs": 296.7999999523163,
+      "commonCandidateAfterDispatchMs": 263.60000002384186,
+      "commonBarrierAfterCandidateMs": 33.199999928474426,
+      "localFullSixMs": 281,
+      "nativeRequestId": "2d0a5de9-67b6-4828-a4dc-edc53be0f773",
+      "actualBodySha256": "69b500855deb84813398de19775c9ad846afac37513da24f300eca838c820550",
+      "bootstrapBodySha256": "79640d0e6dd55ad7afa5a5e729fa0ea42d1312ed2ed03cec6229adba970fbb45",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Market canvas tote",
+        "Everyday daypack",
+        "Weekender duffel"
+      ]
+    },
+    {
+      "pair": 9,
+      "repeat": 2,
+      "query": "a light for my bedside table",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "c53e57827c7ac394afb5e225cc6fe7484d29879d44651fb857d299d079e6481d",
+      "screenshotSha256": "eebe5e5e9cf63e5766593c646a613c2ed6642013776584e7e69d24fca2395d87",
+      "observerInstanceUuid": "85c728ca-631b-44a3-87cd-b02a5ce95fec",
+      "firstUsefulMs": 64.70000004768372,
+      "commonCandidateAfterDispatchMs": 31.40000009536743,
+      "commonBarrierAfterCandidateMs": 33.299999952316284,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Portable table light",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 9,
+      "repeat": 2,
+      "query": "a light for my bedside table",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "49dddf94d7fe3bc8841a8ea43bc8bc7a21863ae3a56e5f86a0179f2dfbd2c3ae",
+      "screenshotSha256": "f9304f278ffc7e7f63b9786a02d7fb820a490e6366bffad94f407bf102f498d5",
+      "observerInstanceUuid": "0e76a01c-2137-4e44-9939-8d4b414bf72d",
+      "firstUsefulMs": 281.2999999523163,
+      "commonCandidateAfterDispatchMs": 249.29999995231628,
+      "commonBarrierAfterCandidateMs": 32,
+      "localFullSixMs": 281.2999999523163,
+      "nativeRequestId": "e62f715d-5bc2-4d11-a59e-7ac2c2576379",
+      "actualBodySha256": "473491ce0bef3ed534e3f9c0cf61d4a1c73091fc73e14bdef5d18f0cc7d880ef",
+      "bootstrapBodySha256": "184984c11616cd5c3c8b15671b26c464b839862f4934b86ffa9848de0645af97",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Portable table light",
+        "Everywhere cotton towel",
+        "Trail mug"
+      ]
+    },
+    {
+      "pair": 10,
+      "repeat": 2,
+      "query": "a bottle for drinking water",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "89d6fc503492a7b196175c96d03a6975e28902fbd5ec1b4e88a21ff4499fdc3b",
+      "screenshotSha256": "b83c0188dd1aaa77165f5c2f5945feaf0de02e86abbca2b5884b61c6ca44eab7",
+      "observerInstanceUuid": "8c6dba5a-17e0-492b-bb3c-3d1d2e7038a6",
+      "firstUsefulMs": 281,
+      "commonCandidateAfterDispatchMs": 248.09999990463257,
+      "commonBarrierAfterCandidateMs": 32.90000009536743,
+      "localFullSixMs": 281,
+      "nativeRequestId": "68cd737a-21c7-42e4-9112-6fa7229854b5",
+      "actualBodySha256": "c6cd0d564a179fa9f012ac08c9155c4f88f1c41e13fa4dcb0641ca6892a3576e",
+      "bootstrapBodySha256": "deb22ee8ccf2a353ac20f8318e04c818be2e64434410429e82667227a977413d",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 10,
+      "repeat": 2,
+      "query": "a bottle for drinking water",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "761ca69859077fe775d9adfa846cdefe8a7d51f725346b059a4acf97e329968b",
+      "screenshotSha256": "e8f79fbea7a92aa1b53eafa0ec4a6a993ac7e3b8a6c7a9b95deaef8695937f18",
+      "observerInstanceUuid": "018fed8b-0996-428f-b24a-0ed8422abf22",
+      "firstUsefulMs": 63.300000071525574,
+      "commonCandidateAfterDispatchMs": 31.399999976158142,
+      "commonBarrierAfterCandidateMs": 31.90000009536743,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 11,
+      "repeat": 2,
+      "query": "a notebook for quick notes",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "c5f9299ee104bea435c3b155a0024374006bb12f94c619de7ea4a804e9872ce3",
+      "screenshotSha256": "6dde34f71f8eb3762236d8469a0ca7000e3997db27ba5568dedb0513ead1cdb5",
+      "observerInstanceUuid": "97eda285-695d-4dfe-b8a3-6bf572b6b4ad",
+      "firstUsefulMs": 65.10000002384186,
+      "commonCandidateAfterDispatchMs": 31.5,
+      "commonBarrierAfterCandidateMs": 33.60000002384186,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 11,
+      "repeat": 2,
+      "query": "a notebook for quick notes",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "ce350aeb71a647e7aa235395d10d5829ae6883a75db789bfccdac8193b7bb7dd",
+      "screenshotSha256": "69c68cc406c148d64dda105a6e045e15ff88c543e5049e5f5b3c72b2a768c75e",
+      "observerInstanceUuid": "3333f6e5-5297-4d6f-8c68-076f60da861c",
+      "firstUsefulMs": 281,
+      "commonCandidateAfterDispatchMs": 248.60000002384186,
+      "commonBarrierAfterCandidateMs": 32.39999997615814,
+      "localFullSixMs": 281,
+      "nativeRequestId": "0135b141-f7a9-433b-8aed-6d6eb5838175",
+      "actualBodySha256": "228a8d5fb2be85a52f7e98681ef31b0bbfa72a16cbdd9855b6936fd70ffd5c41",
+      "bootstrapBodySha256": "52f68e3a52fc487b2c100d7b9c2024a4978449f699e888ec412dbf1980fbbe21",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Portable table light",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 12,
+      "repeat": 2,
+      "query": "a bag for carrying my things",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "1b1ce4c87d657d2aae25830274ef58e915079a40fd0640aa24a8f7d0351f4ae4",
+      "screenshotSha256": "39053acc9849293488991fda66b0607452dfc4eedf6e72c82e8dd98442c0f7ae",
+      "observerInstanceUuid": "5e0da34b-44cf-4b36-93c0-3b8028b24224",
+      "firstUsefulMs": 297.6999999284744,
+      "commonCandidateAfterDispatchMs": 264.5,
+      "commonBarrierAfterCandidateMs": 33.199999928474426,
+      "localFullSixMs": 281.10000002384186,
+      "nativeRequestId": "12e4d3cd-06ae-45cb-a32a-5faaaf08d1ce",
+      "actualBodySha256": "618dace13cf397a5e558d223e835c2a8aacfe95ec0b7d9acdad82fdd9da02a37",
+      "bootstrapBodySha256": "f68bf74a32f2ba6ba9c94dd155ffa624934e1edb5502f23fdeaa2dee4d43320e",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Market canvas tote",
+        "Everyday daypack",
+        "Weekender duffel"
+      ]
+    },
+    {
+      "pair": 12,
+      "repeat": 2,
+      "query": "a bag for carrying my things",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "64722de8fb30a933c6b13eeb1d953ae2862450c0ecd1a27edb7aef820fee82de",
+      "screenshotSha256": "45dc1f34ddd3f66d938ac2176bd5e48ad6129a4a789519966aefb22df09bf0ce",
+      "observerInstanceUuid": "4059318e-4c83-4875-92d4-a0e8e10237f8",
+      "firstUsefulMs": 64.30000007152557,
+      "commonCandidateAfterDispatchMs": 31.0,
+      "commonBarrierAfterCandidateMs": 33.300000071525574,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 452,
+      "scrollChangePx": 0,
+      "firstThreeNames": [
+        "Everyday daypack",
+        "Trail mug",
+        "Pocket field notes"
+      ]
+    },
+    {
+      "pair": 13,
+      "repeat": 3,
+      "query": "a light for my bedside table",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "f42b9a0d173a02b4cbb38b6d2483440fb34d8753a234ebd9683295adc284b8a2",
+      "screenshotSha256": "f9304f278ffc7e7f63b9786a02d7fb820a490e6366bffad94f407bf102f498d5",
+      "observerInstanceUuid": "2aa39f9c-a536-4e1d-bfa1-74fae44772d3",
+      "firstUsefulMs": 282.39999997615814,
+      "commonCandidateAfterDispatchMs": 250.69999992847443,
+      "commonBarrierAfterCandidateMs": 31.700000047683716,
+      "localFullSixMs": 282.39999997615814,
+      "nativeRequestId": "4e3139bb-6d62-4802-ab88-ba4576d91d33",
+      "actualBodySha256": "45477625282c43a1a944d428d85d96a1393f6377bf7d6f5fb39ca21fad9ca5e0",
+      "bootstrapBodySha256": "87b55b3560bb950b3b15f325184fceacb1610fa41184238ddaa7336aa5ea4d57",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Portable table light",
+        "Everywhere cotton towel",
+        "Trail mug"
+      ]
+    },
+    {
+      "pair": 13,
+      "repeat": 3,
+      "query": "a light for my bedside table",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "39eae59674aa17534c9630cac699145c4576aecba4f60f4a4df32fe2fcb90ef8",
+      "screenshotSha256": "eebe5e5e9cf63e5766593c646a613c2ed6642013776584e7e69d24fca2395d87",
+      "observerInstanceUuid": "04f8d56d-9b2d-4deb-8b20-9eaa58025659",
+      "firstUsefulMs": 64.10000002384186,
+      "commonCandidateAfterDispatchMs": 31.0,
+      "commonBarrierAfterCandidateMs": 33.10000002384186,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Portable table light",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 14,
+      "repeat": 3,
+      "query": "a bottle for drinking water",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "739d6f34ffcaa692cdb44795c5d36435b5396598c2335a060c5ee742aa093980",
+      "screenshotSha256": "e8f79fbea7a92aa1b53eafa0ec4a6a993ac7e3b8a6c7a9b95deaef8695937f18",
+      "observerInstanceUuid": "f004ab1d-a8a1-4736-bfa5-b0f956a3c139",
+      "firstUsefulMs": 63.299999952316284,
+      "commonCandidateAfterDispatchMs": 30.899999976158142,
+      "commonBarrierAfterCandidateMs": 32.39999997615814,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 14,
+      "repeat": 3,
+      "query": "a bottle for drinking water",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "0f7b9ea83542696e021f353b37671558063aa7df433a904f1878ba3cf7fc8717",
+      "screenshotSha256": "b83c0188dd1aaa77165f5c2f5945feaf0de02e86abbca2b5884b61c6ca44eab7",
+      "observerInstanceUuid": "fe67afa4-6162-406b-aed1-07c546f2f9f0",
+      "firstUsefulMs": 282.1999999284744,
+      "commonCandidateAfterDispatchMs": 249.19999992847443,
+      "commonBarrierAfterCandidateMs": 33.0,
+      "localFullSixMs": 282.1999999284744,
+      "nativeRequestId": "a12cfd00-ee74-4efb-800b-01e3c8b009f8",
+      "actualBodySha256": "a0c7ee2d43abe97e270ba4e631a0662d31a2b03b8d0b2480c63165b32a505347",
+      "bootstrapBodySha256": "714144a4487f21ded92675bce207c5ce96f6855c2b1ef3ee4b632811998bc60f",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 15,
+      "repeat": 3,
+      "query": "a notebook for quick notes",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "317093a1cdfa5b9b9cd85c69287d1721e96e4f4c9ba5bb4d6abb5a0b94c70e8d",
+      "screenshotSha256": "fdcf8d9982354b74b670cd7dff52dd06c3081726abb48ff81ace155e09f7df61",
+      "observerInstanceUuid": "b4fa8e4e-985a-45d2-a10f-cbbdbce20dbf",
+      "firstUsefulMs": 264.7000000476837,
+      "commonCandidateAfterDispatchMs": 234.80000007152557,
+      "commonBarrierAfterCandidateMs": 29.899999976158142,
+      "localFullSixMs": 281.2000000476837,
+      "nativeRequestId": "2f79ea5c-a4cd-4518-ab93-884f7d4537f8",
+      "actualBodySha256": "79f2a77a4c24da312088037dd3c6d0f6c68a5526302ea342de9fd1849ad06570",
+      "bootstrapBodySha256": "907bc3028c40d476f3d3d1cef33ceb19722ae0c90b67114b0be3643cdba48fde",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Portable table light",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 15,
+      "repeat": 3,
+      "query": "a notebook for quick notes",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "e22ac799491af0cb900dc1a5c788cc48e311941b789378881b0e1216650cc3e9",
+      "screenshotSha256": "6dde34f71f8eb3762236d8469a0ca7000e3997db27ba5568dedb0513ead1cdb5",
+      "observerInstanceUuid": "d7eff247-c46c-4b32-80cc-645bdb312158",
+      "firstUsefulMs": 64.5,
+      "commonCandidateAfterDispatchMs": 33.10000002384186,
+      "commonBarrierAfterCandidateMs": 31.399999976158142,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 16,
+      "repeat": 3,
+      "query": "a bag for carrying my things",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "162759d6886aba6d5a063681b5945ebee7a4a93fa7d6c2a817768efa9ddbc2db",
+      "screenshotSha256": "0b9279ccad5951a19fc5350825dca1b6618627215166c686992862e17d4484e2",
+      "observerInstanceUuid": "cd0bad61-08c7-48bf-8a04-a89e73741176",
+      "firstUsefulMs": 63.5,
+      "commonCandidateAfterDispatchMs": 31.100000023841858,
+      "commonBarrierAfterCandidateMs": 32.39999997615814,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday daypack",
+        "Trail mug",
+        "Pocket field notes"
+      ]
+    },
+    {
+      "pair": 16,
+      "repeat": 3,
+      "query": "a bag for carrying my things",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "96913b252d31341580eb7006e9b333e84748d3f9e0200c592eca51c617476aaf",
+      "screenshotSha256": "39053acc9849293488991fda66b0607452dfc4eedf6e72c82e8dd98442c0f7ae",
+      "observerInstanceUuid": "a18efc46-028c-462d-b7ae-cccdbc311117",
+      "firstUsefulMs": 298.39999997615814,
+      "commonCandidateAfterDispatchMs": 265.0,
+      "commonBarrierAfterCandidateMs": 33.39999997615814,
+      "localFullSixMs": 281.60000002384186,
+      "nativeRequestId": "ffda32a5-3c3e-4aa4-9bd0-324eb8707338",
+      "actualBodySha256": "ec3b0f8cc54777be307e25abef3103ab261a4aed18f9249d6670d8b84b0d1790",
+      "bootstrapBodySha256": "d060aacef8db3b217ad8d7a829a633dcefb8db776fb4c32484f46312e9787bbf",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Market canvas tote",
+        "Everyday daypack",
+        "Weekender duffel"
+      ]
+    },
+    {
+      "pair": 17,
+      "repeat": 4,
+      "query": "a light for my bedside table",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "68974ac697547ecbe18284ac92655b1e259a9b8f03d15899052bf2e0587af9d8",
+      "screenshotSha256": "eebe5e5e9cf63e5766593c646a613c2ed6642013776584e7e69d24fca2395d87",
+      "observerInstanceUuid": "cfdd48bb-1da9-4ebf-ab81-ea7c3e98c2f0",
+      "firstUsefulMs": 64.60000002384186,
+      "commonCandidateAfterDispatchMs": 31.299999952316284,
+      "commonBarrierAfterCandidateMs": 33.300000071525574,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 452,
+      "scrollChangePx": 0,
+      "firstThreeNames": [
+        "Portable table light",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 17,
+      "repeat": 4,
+      "query": "a light for my bedside table",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "89fab0ff9808601a412ca00856a99c5d2fc3264992eb2290682abfda8d109ffc",
+      "screenshotSha256": "f9304f278ffc7e7f63b9786a02d7fb820a490e6366bffad94f407bf102f498d5",
+      "observerInstanceUuid": "2c0c095c-568b-4265-9780-2bacaf97f5f6",
+      "firstUsefulMs": 281.10000002384186,
+      "commonCandidateAfterDispatchMs": 247.60000002384186,
+      "commonBarrierAfterCandidateMs": 33.5,
+      "localFullSixMs": 281.10000002384186,
+      "nativeRequestId": "239e86e1-6d52-4759-945c-2a086d53c884",
+      "actualBodySha256": "323b9b31419daf27a9d290d99489d993ad2a1db4e23883a80c7d03eba3f69b59",
+      "bootstrapBodySha256": "81c4aa170e5793f153514328cf467cdf4c2c334419e2444b902109726a1ef569",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Portable table light",
+        "Everywhere cotton towel",
+        "Trail mug"
+      ]
+    },
+    {
+      "pair": 18,
+      "repeat": 4,
+      "query": "a bottle for drinking water",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "0a05808f9a95188538109b74e1af31358dc97d36cdb797781b098402dc582f6a",
+      "screenshotSha256": "b83c0188dd1aaa77165f5c2f5945feaf0de02e86abbca2b5884b61c6ca44eab7",
+      "observerInstanceUuid": "92cf1c1e-ea1b-47e6-a59d-0918cb79e8e7",
+      "firstUsefulMs": 281.10000002384186,
+      "commonCandidateAfterDispatchMs": 247.5,
+      "commonBarrierAfterCandidateMs": 33.60000002384186,
+      "localFullSixMs": 281.10000002384186,
+      "nativeRequestId": "2e3cc79b-1d0e-4254-8527-86b6fd47f418",
+      "actualBodySha256": "46b48a0003c60fe6e7472539088bd68ca601e140d7723192b30cf43c66350bb8",
+      "bootstrapBodySha256": "1d899c2ed813cdb5535e7915c09360f42514a3e403555449af5453c49a7983b4",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 18,
+      "repeat": 4,
+      "query": "a bottle for drinking water",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "0960ca83ab38f7388f46fa4bb9fec4ef703ea21f70623111cb9c17ef20daa02d",
+      "screenshotSha256": "e8f79fbea7a92aa1b53eafa0ec4a6a993ac7e3b8a6c7a9b95deaef8695937f18",
+      "observerInstanceUuid": "1692135d-cce1-4afa-9cbe-f7222bb9c921",
+      "firstUsefulMs": 62.60000002384186,
+      "commonCandidateAfterDispatchMs": 31.700000047683716,
+      "commonBarrierAfterCandidateMs": 30.899999976158142,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday steel bottle",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 19,
+      "repeat": 4,
+      "query": "a notebook for quick notes",
+      "mode": "generic",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "1c63d02f61fc3c388d5634c12d8a80307b08aa336769d287b48397d7509e1f31",
+      "screenshotSha256": "6dde34f71f8eb3762236d8469a0ca7000e3997db27ba5568dedb0513ead1cdb5",
+      "observerInstanceUuid": "bdeda1a5-f969-4dd5-b66a-c031eb286217",
+      "firstUsefulMs": 63.700000047683716,
+      "commonCandidateAfterDispatchMs": 30.600000023841858,
+      "commonBarrierAfterCandidateMs": 33.10000002384186,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Trail mug",
+        "Everyday daypack"
+      ]
+    },
+    {
+      "pair": 19,
+      "repeat": 4,
+      "query": "a notebook for quick notes",
+      "mode": "local",
+      "order": [
+        "generic",
+        "local"
+      ],
+      "receiptSha256": "e524875228496a3e593aa70cd874391ade7e6cc5c510e3e519044ef2fe0fbe34",
+      "screenshotSha256": "648e8856c086dc74db337ab596e44c8da97d3d437fc391b975ab3fdceb15e48a",
+      "observerInstanceUuid": "9c8b3eec-98db-422f-811b-a81324e0d96e",
+      "firstUsefulMs": 281.10000002384186,
+      "commonCandidateAfterDispatchMs": 248.10000002384186,
+      "commonBarrierAfterCandidateMs": 33.0,
+      "localFullSixMs": 281.10000002384186,
+      "nativeRequestId": "071299cb-1cfa-43b7-9b55-3f2bbd60e276",
+      "actualBodySha256": "8908c347ba78b62173efb2cb016d93b2a93c146a8e92f08787432d1a09f64948",
+      "bootstrapBodySha256": "1598782ac6321e9e5316a0b79a1ac927c2cb08ec30154ea90c8a70ef0448cf2b",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Pocket field notes",
+        "Portable table light",
+        "Steel lunch box"
+      ]
+    },
+    {
+      "pair": 20,
+      "repeat": 4,
+      "query": "a bag for carrying my things",
+      "mode": "local",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "91e5e0e65f8aba2403bcd2e1882c50cc08dadc855011de9f45c1d7ce2bbec331",
+      "screenshotSha256": "06326f9fe695649b5cfb2e8436b60d8f83d3c17994173fb9c64e9aa93ef49297",
+      "observerInstanceUuid": "de30fa06-40f7-49c2-a757-aeb8a04e18fc",
+      "firstUsefulMs": 297.60000002384186,
+      "commonCandidateAfterDispatchMs": 265.5,
+      "commonBarrierAfterCandidateMs": 32.10000002384186,
+      "localFullSixMs": 283.10000002384186,
+      "nativeRequestId": "773b4b82-4cae-44cb-8997-c782c6d977c4",
+      "actualBodySha256": "b922ef7c5b95c5cc15d0ffe125a35a3e47eeb96dd1430d442ccf8c52c2c6c851",
+      "bootstrapBodySha256": "0f58d6ad8461bd521b38f5d3a1fdceb3ecd976960a0668c46c01fb1192aa5f13",
+      "dispatchScrollY": 460.5,
+      "endpointScrollY": 460.5,
+      "scrollChangePx": 0.0,
+      "firstThreeNames": [
+        "Market canvas tote",
+        "Everyday daypack",
+        "Weekender duffel"
+      ]
+    },
+    {
+      "pair": 20,
+      "repeat": 4,
+      "query": "a bag for carrying my things",
+      "mode": "generic",
+      "order": [
+        "local",
+        "generic"
+      ],
+      "receiptSha256": "feb2fce1ac75d0473d6bf12b719da530bc5098558f8ad55069d08007ccd5bb46",
+      "screenshotSha256": "0b9279ccad5951a19fc5350825dca1b6618627215166c686992862e17d4484e2",
+      "observerInstanceUuid": "53ba71c7-cc85-4ca2-bc6a-17a7d32b5a0e",
+      "firstUsefulMs": 63.199999928474426,
+      "commonCandidateAfterDispatchMs": 31.59999990463257,
+      "commonBarrierAfterCandidateMs": 31.600000023841858,
+      "localFullSixMs": null,
+      "nativeRequestId": null,
+      "actualBodySha256": null,
+      "bootstrapBodySha256": null,
+      "dispatchScrollY": 452,
+      "endpointScrollY": 454.5,
+      "scrollChangePx": 2.5,
+      "firstThreeNames": [
+        "Everyday daypack",
+        "Trail mug",
+        "Pocket field notes"
+      ]
+    }
+  ],
+  "observerReview": {
+    "sameCommonTwoRafFunctionForBothModes": true,
+    "localCommonBarrierStartsAtCommitNotAfterAppFrames": true,
+    "commonAndAppFramesOverlap": true,
+    "settlementOutsideTiming": true,
+    "firstThreeEntireCardTitleImagesVisible40": true,
+    "localCopyParagraphsVisible20": true,
+    "genericHasStaticTitlesNoGeneratedBodyBadges": true,
+    "localFull20FieldsAnd6ImagesVerified20": true,
+    "fullSixVisibilityClaim": false,
+    "documentIdCaveat": "installObserver assigns documentId UUID on every reset. Bootstrap and scored UUIDs differ on same page; these are observer IDs, not independent document lifecycle proof. New isolated context per arm established by pinned newContext loop.",
+    "actualScrollChanges": [
+      {
+        "pair": 2,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 3,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 5,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 6,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 7,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 8,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 9,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 10,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 11,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 13,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 14,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 15,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 16,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 18,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 19,
+        "mode": "generic",
+        "deltaPx": 2.5
+      },
+      {
+        "pair": 20,
+        "mode": "generic",
+        "deltaPx": 2.5
+      }
+    ],
+    "scrollInterpretation": "No scripted/user post-dispatch scroll in pinned probe. Actual16generic endpoints shifted+2.5px; cause unestablished. All actual endpoint card rectangles still fully visible.",
+    "fullSixEarlierThanFirstUsefulCount": 5,
+    "fullSixLaterThanFirstUsefulCount": 1
+  },
+  "imageEvidence": {
+    "uniqueAssets": {
+      "/products/optimized/responsive/lamp-gallery.jpg.w1152.webp": {
+        "sha256": "d0d32d72ea1d246a8d8a1561701cef307c28de6984126d614f3a04bdc4bbdbde",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/lamp-gallery.jpg"
+      },
+      "/products/optimized/responsive/mug-tabletop.jpg.w1152.webp": {
+        "sha256": "e648f1ed0cf43d89c90871f1f603ed18048b50af82f68ab637ae6c4a140282c8",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/mug-tabletop.jpg"
+      },
+      "/products/optimized/responsive/pack-tabletop-v3.jpg.w1152.webp": {
+        "sha256": "7f4bd60d971eb5da4029cb206b260c91793b91b15f616fcdebdb07a1f38348f3",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/pack-tabletop-v3.jpg"
+      },
+      "/products/optimized/responsive/towel-gallery.jpg.w1152.webp": {
+        "sha256": "8a498b3476fd4d609d6112daa305de3ab4dcea30c56a6fde43ce37b6d654e7df",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/towel-gallery.jpg"
+      },
+      "/products/optimized/responsive/lunchbox-gallery.jpg.w1152.webp": {
+        "sha256": "482907c6e19c1b24cc0f2aa989ec72cb69ec4ee3106344a6456d49705ddbdca5",
+        "width": 1152,
+        "height": 385,
+        "source": "/products/lunchbox-gallery.jpg"
+      },
+      "/products/optimized/responsive/headphones-gallery.jpg.w1152.webp": {
+        "sha256": "b4feb803588d43403a1535e10741cdad9eb2725031552627bbf6913517776a93",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/headphones-gallery.jpg"
+      },
+      "/products/optimized/responsive/tote-gallery.jpg.w1152.webp": {
+        "sha256": "c8ae60e3ce9f403eb4d10473273530c9b1aa3ab08024e2c4565a3e134251d347",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/tote-gallery.jpg"
+      },
+      "/products/optimized/responsive/bottle-gallery.jpg.w1152.webp": {
+        "sha256": "c653f424c3b0131be4fd77980483eb94c5e9dd71e4aa6f3d327788ee5f3afdcb",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/bottle-gallery.jpg"
+      },
+      "/products/optimized/responsive/sunglasses-gallery.jpg.w1152.webp": {
+        "sha256": "ea122f6eaa4036a9438f6e6a915507cb9824cfb9bf726ccdd8244cc198746e66",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/sunglasses-gallery.jpg"
+      },
+      "/products/optimized/responsive/notebook-tabletop-v2.jpg.w1152.webp": {
+        "sha256": "95328acfe8b85aae5c4f4a43e971dca73e4463d7bf4855d22ea8753d789ea98a",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/notebook-tabletop-v2.jpg"
+      },
+      "/products/optimized/responsive/organizer-gallery.jpg.w1152.webp": {
+        "sha256": "605344ab6465d9d1d3cfc3732fb647279e8117e18a07f3f8232bd97095140eef",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/organizer-gallery.jpg"
+      },
+      "/products/optimized/responsive/jacket-dark.jpg.w384.webp": {
+        "sha256": "1756a0def65fc803ef3371d43800076f373bff9d5c3d2e7ad02fc276d3e4644b",
+        "width": 384,
+        "height": 384,
+        "source": "/products/jacket-dark.jpg"
+      },
+      "/products/optimized/responsive/duffel-gallery.jpg.w1152.webp": {
+        "sha256": "e88fa9da4d8d26d7d49b507b8b7ed308069d38d91c7208c8e9ee47e043ad9973",
+        "width": 1152,
+        "height": 384,
+        "source": "/products/duffel-gallery.jpg"
+      }
+    },
+    "minimumEncodedPixelsPerCssPixel": 1.0069861301755751,
+    "observedDPR1All40": true,
+    "noHighDprClaim": true
+  },
+  "pageErrors": {
+    "count": 40,
+    "message": "WebSocket closed without opened.",
+    "stackSource": "http://127.0.0.1:4312/@vite/client:225:30",
+    "scope": "Whole arm page lifetime includes bootstrap; not40scored native failures."
+  },
+  "limits": [
+    "Loaded pre-scrolled hash dispatch after own unscored bootstrap; not cold navigation,click-to-ready,LCP or physical paint.",
+    "Four fixed known-catalog queries repeated5times;20pairs not20independent shopper intents. Nearest-rank p95 second largest of20, not stable population tail; maxima/first samples preserved.",
+    "Generic deterministic search also puts relevant primary products first for these four broad queries; no measured shopper benefit from extra generated copy.",
+    "Same visibility/decode/frame observer, different content workload: local generates20fresh fields, generic has static titles/prices. Incremental cost, not speedup over static storefront or ordinaryAR comparison.",
+    "Resident model/catalog features warm and scored HTTP cache eligible afterbootstrap; OS/native state uncontrolled. Passive clone overhead applies to local; settlement outside endpoint.",
+    "Full6 endpoint can precede first3 because it uses complete app mirror and decoded6images without common first3 visibility barrier. Do not substitute it for first-useful readiness.",
+    "Active120session cohort not read,pooled ormodified. No browser/GPU/Git/runtime source actions by audit."
+  ],
+  "auditMethod": {
+    "basis": "Independent standard-library CPU reparse, not executing the benchmark functions to derive statistics. Source reviewed for frame symmetry and work/capture boundaries.",
+    "sourceStatsEstimatorRecomputed": "Sort20 numeric slots and select zero-based9/18 for p50/p95. Paired differences computed before sorting.",
+    "pinned29SourceHashes": {
+      "experiments/ranker/pretrained/store_paired_incremental_probe_v1.mjs": "df5e032def7a6892b2bf3b43191969f357b01dc596627e10739a2b0aaea7e0c8",
+      "experiments/ranker/pretrained/test_store_paired_incremental_probe_v1.mjs": "e9848248f31f2d0340dbf9f0082bde2138e6d4d3d9b1c4fcf122fd99a34fb737",
+      "experiments/ranker/pretrained/store_paired_incremental_probe_v1_PLAN.json": "679059f8b5df01e151d238b6890258ea93c2efe9beac53c5517aa878bb88f7a8",
+      "experiments/ranker/pretrained/store_candidate_browser_probe_v1.mjs": "3893f863b41fef840fb1e9538f83f5e96726b55f05031ea78bd91b7787f94f16",
+      "experiments/ranker/pretrained/store_candidate_browser_probe_v2.mjs": "32804cc2c953177d22c3a02cdf16ce64d69d3e4721b4a09f39337bd4a14de1c7",
+      "experiments/ranker/pretrained/store_candidate_collection_probe_v1.mjs": "badd6718b64e69d819534de0c3228f8bc10778707141a5c65934692fd361262e",
+      "experiments/ranker/pretrained/store_candidate_image_service_v1.py": "68729ac3aa020af9f05f03e0c54fdcbc52ea54a7086f235cb515aa7acdfecd4d",
+      "experiments/ranker/pretrained/store_candidate_engine_v1.py": "014e02881f9c4f3fceaffb6a927d031856d461f1f4907c63a824749af32b8a67",
+      "experiments/ranker/pretrained/store_demo_engine.py": "bf2168f8898211ec2752d60676e933a647441fd15df93c4ad0450881c958deff",
+      "experiments/ranker/pretrained/store_rank_session_v5.py": "81dd458578fe087b7d2ad6eb9c2b0ceb03d456d11555d5ca9fc8abf62fb81d28",
+      "experiments/ranker/pretrained/store_demo_integration_v11/manifest.json": "7e4b06fcaecce868d79454587dcbf118cb1d4a3989db039c0db08df8a52a6839",
+      "apps/storefront/src/main.tsx": "5c70bb1cb5d602554c0a5d05f57f950a4771274c54c0226dcca1d7b16665779f",
+      "apps/storefront/src/ShopView.tsx": "b30f066c6658c703868d3a358e7d452bd7ca7b88dcc716208e52b8874a303c75",
+      "apps/storefront/src/ProductCard.tsx": "0ab0de77256aecc58d9258525bdeb40539efce1ff7c9620bc4fc39b697f9a527",
+      "apps/storefront/src/local-model.ts": "6a36aa74706631838c9bb16f660f63991db8857b5d970d983cca047237305e46",
+      "apps/storefront/src/use-local-model.ts": "dc8a8f6711f17cc283dd5e544d3de6583ef78b83d28a9ffa1d746fe64048d712",
+      "apps/storefront/src/local-model-performance.ts": "6a5033019baf465c8e6e3314237dc53392b54b6fa613ba07d34485f3337ae32b",
+      "apps/storefront/src/ProductPhoto.tsx": "82e67036f498801a28f0676245edf52091e45d86915bb277d701be21e17a2c00",
+      "apps/storefront/src/ProductGallery.tsx": "f5976a52ddb7fc9bc611b15e1833812fbcf345c6be548cb07a2020ac3683a9bc",
+      "apps/storefront/src/product-asset-source.ts": "b030bba7cd078fce93decc5a0edb3839a325fe52ec1c2b2ccf24001cfb6d3e66",
+      "apps/storefront/src/responsive-product-assets.json": "5724357f24475bb03ee845ad4903d01b998f0753b7802087223fbe62120e416a",
+      "apps/storefront/src/product-responsive-source.ts": "9cee8ba7ffa09cc884599707f63d6a835ea3bd74efdf784697c3816e40b2195c",
+      "apps/storefront/src/responsive-product-sizes.json": "548fc11314e848c47c72117c1c3557cb0646e9f16ff4c400b2069f225e3193d2",
+      "apps/storefront/src/product-responsive-runtime.ts": "f2c0ac6fc5b07289b48064fe8616de27792bd7325e75e954b5c64fb2a41854d7",
+      "apps/storefront/src/product-image-runtime.json": "c92cbbda72ecf32873ce233f7411645b899a393d48d3b550394a25685ec7fb08",
+      "scripts/prepare-product-webp.mjs": "50d4962f9a4886905aa704ab5acd26060c8b4acf4a495fd476eb1dbee02c000f",
+      "scripts/prepare-product-responsive-webp.mjs": "48ae7d92938bdf8eaaaec4d5504465a7b567b4b2881a382ad57181145ec4a3c2",
+      "scripts/prepare-product-runtime-projection.mjs": "d66b4fe447330a090d0eea03169321bbe7cdce25bf6019c0a073cf39a3cb6908",
+      "experiments/ranker/pretrained/store_demo_image_binding_v1.py": "365adb11a097e233e1ba65039c9bc225e7e1eb7028c323f30480fab0699335d0"
+    }
+  }
+}

@@ -28,8 +28,8 @@ export function InputsSlide() {
   return (
     <SlideFrame
       className="max-w-[110rem] py-6"
-      title="A store knows more about a shopper than an LLM can read in time"
-      lead={`An LLM can weigh all of it, but it takes ${seconds(fastestLlm)} or more per page. Our model ranks the shop in ${seconds(ours.median)}, ${Math.round(fastestLlm / ours.median)} times faster.`}
+      title="A shopper's context can guide the next recommendation"
+      lead={`Illustrative shopping context. In the separate ranking-only comparison, the local head takes ${seconds(ours.median)} and the fastest hosted client takes ${seconds(fastestLlm)}.`}
     >
       <div className="grid gap-10 lg:grid-cols-[1fr_20rem]">
         <figure>
@@ -78,7 +78,7 @@ export function InputsSlide() {
         </figure>
         <div className="grid content-start gap-8">
           <figure>
-            <p className="font-medium">Time to personalize one page</p>
+            <p className="font-medium">Historical time to rank the catalog</p>
             <ul className="mt-3 grid gap-3">
               {series.map((item) => (
                 <li key={item.id}>
