@@ -159,6 +159,11 @@ archives and duplicate observation images remain local; normalized observations,
 final screenshots and artifact hashes are committed. One interrupted trace is
 honestly missing. One local-model session recorded fallback use.
 
+Readiness summaries count requests, not independent sessions. The ten local-model
+completion entries cover nine runs; one run repeated its query, and two entries
+required no copy fields. Their short completion times must not be described as
+generated-copy latency. Per-request field counts and run IDs remain in the summary.
+
 The result-only audit can be invoked once after a completed suite has saved all
 twenty receipts. It never starts browsers or requests a model, and refuses to
 overwrite its outputs:
