@@ -1,0 +1,996 @@
+{
+  "version": "parallel-word-train-all-fresh-benchmark.v1",
+  "status": "failed-benchmark",
+  "nativeExecution": true,
+  "runtime": {
+    "manifest": {
+      "version": "parallel-word-train-all-catalog-demo.v1",
+      "scope": "TRAIN-ALL public catalog demo; no heldout evaluation",
+      "headFile": "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/head.pt",
+      "headSha256": "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889",
+      "publicFeatureContractFile": "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2/public-runtime-features.json",
+      "publicFeatureContractSha256": "bbd2400e0c6e2907c783f01b7c157714cae00ec5b76fc619790a939a0f9d07f3",
+      "featureBundleFile": "data/ranker/pretrained/store-parallel-text-v1-attempt-1/features.pt",
+      "featureBundleSha256": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+      "featureTensorSha256": "c78a028bc3ffae72222299bcd7c8c9ebaeb7af6c6c723b1ba074d67f6644255e",
+      "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+      "copyAdapterEnabledForFeatureExtraction": false,
+      "nativeSourceRunResultSha256": "6bb8d1a372a394ccdc1fb224d307aa773db089acbfa86d20d35ff17bee7fbfe9",
+      "sourceSha256": "2f7d01ad4dca0c9bb882c2ba7b1add92f513bf6cb2f2b77f2795a7f464c06adb",
+      "runtimeTeacherLookup": false,
+      "slotsPerField": 14,
+      "vocabularySize": 107,
+      "publicStyles": [
+        "plain",
+        "browse",
+        "compact"
+      ],
+      "all48BindingsSupervised": true,
+      "heldoutQualityClaim": false,
+      "freshQueryTimingClaim": false
+    },
+    "servingManifestSha256": "4bf86af880a59ffb420646bbaf24cd200b743dccb5d0cf9274190d3d0a4acfae",
+    "publicRecordCount": 48,
+    "teacherDataRead": false,
+    "nativeFeatureExtractionPerformed": false
+  },
+  "scope": "all48catalogbindings supervised; curated32publicqueries; no heldout generalization claim",
+  "requests": [
+    {
+      "caseId": "frontier-00-1",
+      "input": {
+        "query": "a mug for drinking"
+      },
+      "file": "request-000.json",
+      "status": "completed-attempt",
+      "sha256": "976d4ce0854d879b4fa0f9c721963e038816274bd5750a0c478237146930a6c5",
+      "timing": {
+        "rankThroughJsonMs": 194.0823330078274,
+        "attemptFirstThreeMs": 196.37250003870577,
+        "attemptFullSixMs": 196.44150009844452,
+        "usefulFirstThreeMs": 196.37250003870577,
+        "usefulFullSixMs": 196.44150009844452,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        0,
+        8,
+        7,
+        4,
+        15,
+        9
+      ]
+    },
+    {
+      "caseId": "frontier-00-2",
+      "input": {
+        "query": "something mug-shaped to drink from"
+      },
+      "file": "request-001.json",
+      "status": "completed-attempt",
+      "sha256": "11fb493a003f1cb5da523a5b78d7905846a4c2f8a32f51af37cfbd9d3ce1b97b",
+      "timing": {
+        "rankThroughJsonMs": 174.20220805797726,
+        "attemptFirstThreeMs": 175.7141250418499,
+        "attemptFullSixMs": 175.755082978867,
+        "usefulFirstThreeMs": 175.7141250418499,
+        "usefulFullSixMs": 175.755082978867,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        0,
+        8,
+        2,
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-01-1",
+      "input": {
+        "query": "an everyday backpack"
+      },
+      "file": "request-002.json",
+      "status": "completed-attempt",
+      "sha256": "caebdc4bb95e44b652c54631445b349405e2a2a879c32478299895f992e128f1",
+      "timing": {
+        "rankThroughJsonMs": 192.95516703277826,
+        "attemptFirstThreeMs": 194.48337506037205,
+        "attemptFullSixMs": 194.52566700056195,
+        "usefulFirstThreeMs": 194.48337506037205,
+        "usefulFullSixMs": 194.52566700056195,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        1,
+        4,
+        10,
+        6,
+        12,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-01-2",
+      "input": {
+        "query": "a daypack to carry daily things"
+      },
+      "file": "request-003.json",
+      "status": "completed-attempt",
+      "sha256": "fcc02f86e8731c91c7cf09620bf41a2a329f6cb8f6b8b234acc76d0347f21c3e",
+      "timing": {
+        "rankThroughJsonMs": 179.1212500538677,
+        "attemptFirstThreeMs": 180.42870797216892,
+        "attemptFullSixMs": 180.46666600275785,
+        "usefulFirstThreeMs": 180.42870797216892,
+        "usefulFullSixMs": 180.46666600275785,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        1,
+        14,
+        12,
+        8,
+        2,
+        9
+      ]
+    },
+    {
+      "caseId": "frontier-02-1",
+      "input": {
+        "query": "a notebook for writing ideas"
+      },
+      "file": "request-004.json",
+      "status": "completed-attempt",
+      "sha256": "0d2010e84c81587c46fa45109804db6ad6e4d4f44716f9130abcded69675f030",
+      "timing": {
+        "rankThroughJsonMs": 173.18820802029222,
+        "attemptFirstThreeMs": 174.41354203037918,
+        "attemptFullSixMs": 174.45241706445813,
+        "usefulFirstThreeMs": 174.41354203037918,
+        "usefulFullSixMs": 174.45241706445813,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        14,
+        4,
+        5,
+        7,
+        9,
+        8
+      ]
+    },
+    {
+      "caseId": "frontier-02-2",
+      "input": {
+        "query": "field notes to jot down a thought"
+      },
+      "file": "request-005.json",
+      "status": "completed-attempt",
+      "sha256": "b0430990afee0349bec7f66d38fd145a4e1c163b5e5777261b942dd40d5f9cab",
+      "timing": {
+        "rankThroughJsonMs": 188.17545799538493,
+        "attemptFirstThreeMs": 189.5901660900563,
+        "attemptFullSixMs": 189.6350410534069,
+        "usefulFirstThreeMs": 189.5901660900563,
+        "usefulFullSixMs": 189.6350410534069,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        2,
+        1,
+        13,
+        12,
+        8,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-03-1",
+      "input": {
+        "query": "a hooded rain jacket"
+      },
+      "file": "request-006.json",
+      "status": "completed-attempt",
+      "sha256": "dbb244844d23d252470bd59bc403fa47bcfd898d5ae6016216dd328c1f598edb",
+      "timing": {
+        "rankThroughJsonMs": 172.3891249857843,
+        "attemptFirstThreeMs": 173.72879199683666,
+        "attemptFullSixMs": 173.76654199324548,
+        "usefulFirstThreeMs": 173.72879199683666,
+        "usefulFullSixMs": 173.76654199324548,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        3,
+        15,
+        12,
+        11,
+        6,
+        2
+      ]
+    },
+    {
+      "caseId": "frontier-03-2",
+      "input": {
+        "query": "a hooded shell for the rain"
+      },
+      "file": "request-007.json",
+      "status": "completed-attempt",
+      "sha256": "85dca0d83bdb395b02d7585f55c74a214c10829d7a2175ca1794b8a5a36243a6",
+      "timing": {
+        "rankThroughJsonMs": 176.54029198456556,
+        "attemptFirstThreeMs": 177.75416700169444,
+        "attemptFullSixMs": 177.7920420281589,
+        "usefulFirstThreeMs": 177.75416700169444,
+        "usefulFullSixMs": 177.7920420281589,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        3,
+        15,
+        5,
+        14,
+        0,
+        11
+      ]
+    },
+    {
+      "caseId": "frontier-04-1",
+      "input": {
+        "query": "a bottle for carrying drinking water"
+      },
+      "file": "request-008.json",
+      "status": "completed-attempt",
+      "sha256": "133b4ad8dd5f053df78af6375900358a5764769a08883af46d81189b9c4cb143",
+      "timing": {
+        "rankThroughJsonMs": 192.00612499844283,
+        "attemptFirstThreeMs": 193.36262496653944,
+        "attemptFullSixMs": 193.40166600886732,
+        "usefulFirstThreeMs": 193.36262496653944,
+        "usefulFullSixMs": 193.40166600886732,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        4,
+        0,
+        8,
+        1,
+        15,
+        7
+      ]
+    },
+    {
+      "caseId": "frontier-04-2",
+      "input": {
+        "query": "a steel water bottle"
+      },
+      "file": "request-009.json",
+      "status": "completed-attempt",
+      "sha256": "ae383113734b58f3326a5ad61bc6c1dfb1efa7393c9706dedee4859f17065b1f",
+      "timing": {
+        "rankThroughJsonMs": 180.86404202040285,
+        "attemptFirstThreeMs": 182.77304200455546,
+        "attemptFullSixMs": 182.83820792566985,
+        "usefulFirstThreeMs": 182.77304200455546,
+        "usefulFullSixMs": 182.83820792566985,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        4,
+        8,
+        3,
+        0,
+        2,
+        7
+      ]
+    },
+    {
+      "caseId": "frontier-05-1",
+      "input": {
+        "query": "a tote for grocery shopping"
+      },
+      "file": "request-010.json",
+      "status": "completed-attempt",
+      "sha256": "47493e76bae095cc0cbb7f38dae40507bc4b5f5859c3b901a7014514883ad756",
+      "timing": {
+        "rankThroughJsonMs": 184.1430829372257,
+        "attemptFirstThreeMs": 186.48679193574935,
+        "attemptFullSixMs": 186.54316698666662,
+        "usefulFirstThreeMs": 186.48679193574935,
+        "usefulFullSixMs": 186.54316698666662,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        5,
+        12,
+        8,
+        14,
+        15,
+        9
+      ]
+    },
+    {
+      "caseId": "frontier-05-2",
+      "input": {
+        "query": "a canvas shopping carryall"
+      },
+      "file": "request-011.json",
+      "status": "completed-attempt",
+      "sha256": "cdcebc3d9647b9650197f047996232764e3178889fdfa3342f39d4be1d087bdb",
+      "timing": {
+        "rankThroughJsonMs": 184.93720807600766,
+        "attemptFirstThreeMs": 188.66854102816433,
+        "attemptFullSixMs": 188.77104099374264,
+        "usefulFirstThreeMs": 188.66854102816433,
+        "usefulFullSixMs": 188.77104099374264,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        5,
+        12,
+        14,
+        10,
+        1,
+        11
+      ]
+    },
+    {
+      "caseId": "frontier-06-1",
+      "input": {
+        "query": "a cotton blanket to use as a throw"
+      },
+      "file": "request-012.json",
+      "status": "completed-attempt",
+      "sha256": "afcb9f36bccfe13f830b1406608e9963ec5b6e66668d1b6f0f3dcc4796d02977",
+      "timing": {
+        "rankThroughJsonMs": 186.00341700948775,
+        "attemptFirstThreeMs": 189.67479199636728,
+        "attemptFullSixMs": 190.25779201183468,
+        "usefulFirstThreeMs": 189.67479199636728,
+        "usefulFullSixMs": 190.25779201183468,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        15,
+        11,
+        6,
+        0,
+        7,
+        5
+      ]
+    },
+    {
+      "caseId": "frontier-06-2",
+      "input": {
+        "query": "a cozy throw blanket"
+      },
+      "file": "request-013.json",
+      "status": "completed-attempt",
+      "sha256": "c4e54a657437cfc73ce0ab66e9cb61a22313f09006025d170ce4a62c6f6749a9",
+      "timing": {
+        "rankThroughJsonMs": 200.74416603893042,
+        "attemptFirstThreeMs": 204.59666603710502,
+        "attemptFullSixMs": 204.68820806127042,
+        "usefulFirstThreeMs": 204.59666603710502,
+        "usefulFullSixMs": 204.68820806127042,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        6,
+        10,
+        4,
+        7,
+        13,
+        14
+      ]
+    },
+    {
+      "caseId": "frontier-07-1",
+      "input": {
+        "query": "a cordless lamp for a table"
+      },
+      "file": "request-014.json",
+      "status": "completed-attempt",
+      "sha256": "bd9e770fd630aba391c1eb2be6cd6d006d6e08073a2f70cc6a20248b06b813f9",
+      "timing": {
+        "rankThroughJsonMs": 181.8664170568809,
+        "attemptFirstThreeMs": 185.26579206809402,
+        "attemptFullSixMs": 185.3518340503797,
+        "usefulFirstThreeMs": 185.26579206809402,
+        "usefulFullSixMs": 185.3518340503797,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        7,
+        15,
+        9,
+        0,
+        14,
+        8
+      ]
+    },
+    {
+      "caseId": "frontier-07-2",
+      "input": {
+        "query": "a portable bedside reading light"
+      },
+      "file": "request-015.json",
+      "status": "completed-attempt",
+      "sha256": "838966a6fc0cdf5a11f4980aaabf14eeb99fd1bd47ad73f7e3e6d342b9b49da8",
+      "timing": {
+        "rankThroughJsonMs": 187.14812502730638,
+        "attemptFirstThreeMs": 189.65200008824468,
+        "attemptFullSixMs": 189.733250066638,
+        "usefulFirstThreeMs": 189.65200008824468,
+        "usefulFullSixMs": 189.733250066638,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        7,
+        8,
+        9,
+        14,
+        5,
+        1
+      ]
+    },
+    {
+      "caseId": "frontier-08-1",
+      "input": {
+        "query": "a lunch box for food"
+      },
+      "file": "request-016.json",
+      "status": "completed-attempt",
+      "sha256": "01e306419c6df87188824e31d059da77a61597fc1983cd8516f46fe0291ebaa2",
+      "timing": {
+        "rankThroughJsonMs": 188.2298340788111,
+        "attemptFirstThreeMs": 192.16225005220622,
+        "attemptFullSixMs": 192.25129205733538,
+        "usefulFirstThreeMs": 192.16225005220622,
+        "usefulFullSixMs": 192.25129205733538,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        8,
+        1,
+        0,
+        7,
+        9,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-08-2",
+      "input": {
+        "query": "a steel lunch container with a bamboo lid"
+      },
+      "file": "request-017.json",
+      "status": "completed-attempt",
+      "sha256": "d0ac31db8c103772a8a60881ad80be61df8d7869cc8b2f2a4a97250975bdce74",
+      "timing": {
+        "rankThroughJsonMs": 181.16070807445794,
+        "attemptFirstThreeMs": 183.52062499616295,
+        "attemptFullSixMs": 183.5908330976963,
+        "usefulFirstThreeMs": 183.52062499616295,
+        "usefulFullSixMs": 183.5908330976963,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        8,
+        4,
+        12,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-09-1",
+      "input": {
+        "query": "over-ear headphones for listening to music"
+      },
+      "file": "request-018.json",
+      "status": "completed-attempt",
+      "sha256": "2f2d4ba66073261fd996cc6f5e07421594f2de7bdcab6d37c8798714b9b390d9",
+      "timing": {
+        "rankThroughJsonMs": 197.93024996761233,
+        "attemptFirstThreeMs": 201.46212494000793,
+        "attemptFullSixMs": 201.55741693452,
+        "usefulFirstThreeMs": 201.46212494000793,
+        "usefulFullSixMs": 201.55741693452,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        9,
+        1,
+        0,
+        7,
+        8,
+        4
+      ]
+    },
+    {
+      "caseId": "frontier-09-2",
+      "input": {
+        "query": "cushioned headphones for audio"
+      },
+      "file": "request-019.json",
+      "status": "completed-attempt",
+      "sha256": "19670257d47efc7d40b0280453731172d0cbcbd324fb3fd0fc496a74815d96b0",
+      "timing": {
+        "rankThroughJsonMs": 187.0014170417562,
+        "attemptFirstThreeMs": 190.49754203297198,
+        "attemptFullSixMs": 190.5882089631632,
+        "usefulFirstThreeMs": 190.49754203297198,
+        "usefulFullSixMs": 190.5882089631632,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        9,
+        10,
+        1,
+        4,
+        6,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-10-1",
+      "input": {
+        "query": "canvas shoes with a low top"
+      },
+      "file": "request-020.json",
+      "status": "completed-attempt",
+      "sha256": "f149151fdd384770bce82fe9acec3f8f2e26723d60a3ac36fdca3b1a56e0326b",
+      "timing": {
+        "rankThroughJsonMs": 186.57575000543147,
+        "attemptFirstThreeMs": 190.83695800509304,
+        "attemptFullSixMs": 191.00700004491955,
+        "usefulFirstThreeMs": 190.83695800509304,
+        "usefulFullSixMs": 191.00700004491955,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        10,
+        12,
+        11,
+        2,
+        13,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-10-2",
+      "input": {
+        "query": "low-top sneakers for walking"
+      },
+      "file": "request-021.json",
+      "status": "completed-attempt",
+      "sha256": "5b39a78f8f29994c97c88f7bb9a4f1e84fc3a9b1854c110de0cd41c0105a6cbc",
+      "timing": {
+        "rankThroughJsonMs": 194.27745800931007,
+        "attemptFirstThreeMs": 197.7329170331359,
+        "attemptFullSixMs": 197.82379199750721,
+        "usefulFirstThreeMs": 197.7329170331359,
+        "usefulFullSixMs": 197.82379199750721,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        10,
+        9,
+        4,
+        3,
+        6,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-11-1",
+      "input": {
+        "query": "a cotton sweatshirt with a crew neck"
+      },
+      "file": "request-022.json",
+      "status": "completed-attempt",
+      "sha256": "a4350967b77dd9ba4340fad58cc8a71404c456af0a1b7a69852f15c523876a8c",
+      "timing": {
+        "rankThroughJsonMs": 185.76229200698435,
+        "attemptFirstThreeMs": 189.53945895191282,
+        "attemptFullSixMs": 189.64229198172688,
+        "usefulFirstThreeMs": 189.53945895191282,
+        "usefulFullSixMs": 189.64229198172688,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        11,
+        15,
+        6,
+        3,
+        12,
+        10
+      ]
+    },
+    {
+      "caseId": "frontier-11-2",
+      "input": {
+        "query": "a soft cotton crewneck layer"
+      },
+      "file": "request-023.json",
+      "status": "completed-attempt",
+      "sha256": "9fe4cbe0b715bc378b02b45d6968184a3c35615e4aaa3a0b9c80d1cc2e0ad7a3",
+      "timing": {
+        "rankThroughJsonMs": 193.190916092135,
+        "attemptFirstThreeMs": 196.4527500094846,
+        "attemptFullSixMs": 196.5492080198601,
+        "usefulFirstThreeMs": 196.4527500094846,
+        "usefulFullSixMs": 196.5492080198601,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        11,
+        6,
+        3,
+        5,
+        2,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-12-1",
+      "input": {
+        "query": "a travel bag for the weekend"
+      },
+      "file": "request-024.json",
+      "status": "completed-attempt",
+      "sha256": "6608e7a79b77e4d6edba84360d1edc1f02eb2ffdad7d30fd4135333937cb16fa",
+      "timing": {
+        "rankThroughJsonMs": 187.01241700910032,
+        "attemptFirstThreeMs": 190.64637506380677,
+        "attemptFullSixMs": 190.73858298361301,
+        "usefulFirstThreeMs": 190.64637506380677,
+        "usefulFullSixMs": 190.73858298361301,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        12,
+        1,
+        15,
+        8,
+        3,
+        14
+      ]
+    },
+    {
+      "caseId": "frontier-12-2",
+      "input": {
+        "query": "a canvas duffel to carry on a trip"
+      },
+      "file": "request-025.json",
+      "status": "completed-attempt",
+      "sha256": "8bbb5168ee77587c2cefe5f2b2a0ee020c68232a089c426989602170e3dca0e0",
+      "timing": {
+        "rankThroughJsonMs": 188.3536670356989,
+        "attemptFirstThreeMs": 191.74683303572237,
+        "attemptFullSixMs": 191.8343330034986,
+        "usefulFirstThreeMs": 191.74683303572237,
+        "usefulFullSixMs": 191.8343330034986,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        12,
+        5,
+        14,
+        15,
+        0,
+        2
+      ]
+    },
+    {
+      "caseId": "frontier-13-1",
+      "input": {
+        "query": "round sunglasses with acetate frames"
+      },
+      "file": "request-026.json",
+      "status": "completed-attempt",
+      "sha256": "e37c2d202acb1b543fa693d13121455401054ead2834ab87a9dc0f59ca23286c",
+      "timing": {
+        "rankThroughJsonMs": 191.78012502379715,
+        "attemptFirstThreeMs": 194.97829105239362,
+        "attemptFullSixMs": 195.09983295574784,
+        "usefulFirstThreeMs": 194.97829105239362,
+        "usefulFullSixMs": 195.09983295574784,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        13,
+        7,
+        9,
+        8,
+        3,
+        11
+      ]
+    },
+    {
+      "caseId": "frontier-13-2",
+      "input": {
+        "query": "round eyewear for sunny days"
+      },
+      "file": "request-027.json",
+      "status": "completed-attempt",
+      "sha256": "24fa669093a008434c58ca7419127d302a7669dd252eaec4d55edf0367406d5c",
+      "timing": {
+        "rankThroughJsonMs": 182.0370830828324,
+        "attemptFirstThreeMs": 185.19116705283523,
+        "attemptFullSixMs": 185.2835420286283,
+        "usefulFirstThreeMs": 185.19116705283523,
+        "usefulFullSixMs": 185.2835420286283,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        13,
+        7,
+        9,
+        8,
+        3,
+        15
+      ]
+    },
+    {
+      "caseId": "frontier-14-1",
+      "input": {
+        "query": "an organizer pouch for cables"
+      },
+      "file": "request-028.json",
+      "status": "completed-attempt",
+      "sha256": "88925c28aace4065cef9fcf917d78a829a24332eebdcb8511ead7e688b505f78",
+      "timing": {
+        "rankThroughJsonMs": 191.22112507466227,
+        "attemptFirstThreeMs": 194.84495907090604,
+        "attemptFullSixMs": 194.9347920017317,
+        "usefulFirstThreeMs": 194.84495907090604,
+        "usefulFullSixMs": 194.9347920017317,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        14,
+        4,
+        12,
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "caseId": "frontier-14-2",
+      "input": {
+        "query": "a zipped canvas pouch for essentials"
+      },
+      "file": "request-029.json",
+      "status": "completed-attempt",
+      "sha256": "6fe20b60f4746705c4d446d2ecade93c1c6c44dcddfe13279699678cb0ee1e04",
+      "timing": {
+        "rankThroughJsonMs": 187.55966692697257,
+        "attemptFirstThreeMs": 191.0477919736877,
+        "attemptFullSixMs": 191.14820891991258,
+        "usefulFirstThreeMs": 191.0477919736877,
+        "usefulFullSixMs": 191.14820891991258,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        14,
+        5,
+        11,
+        2,
+        3,
+        12
+      ]
+    },
+    {
+      "caseId": "frontier-15-1",
+      "input": {
+        "query": "a striped cotton swimming towel"
+      },
+      "file": "request-030.json",
+      "status": "completed-attempt",
+      "sha256": "9bd97fda005dc7b15e7a088c9dab0e48e8c555cb65df812eda11983b6b3060d9",
+      "timing": {
+        "rankThroughJsonMs": 180.07658410351723,
+        "attemptFirstThreeMs": 184.0291670523584,
+        "attemptFullSixMs": 184.1275420738384,
+        "usefulFirstThreeMs": 184.0291670523584,
+        "usefulFullSixMs": 184.1275420738384,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        15,
+        6,
+        12,
+        3,
+        11,
+        14
+      ]
+    },
+    {
+      "caseId": "frontier-15-2",
+      "input": {
+        "query": "a cotton towel for the beach"
+      },
+      "file": "request-031.json",
+      "status": "completed-attempt",
+      "sha256": "3f96f5a21ed6e26722cf53f868efe8d990d49a06f6d8b3387d7068461ad41bab",
+      "timing": {
+        "rankThroughJsonMs": 195.17195806838572,
+        "attemptFirstThreeMs": 199.03441600035876,
+        "attemptFullSixMs": 199.1317910142243,
+        "usefulFirstThreeMs": 199.03441600035876,
+        "usefulFullSixMs": 199.1317910142243,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        15,
+        6,
+        11,
+        5,
+        12,
+        7
+      ]
+    }
+  ],
+  "styleCounterfactuals": [
+    {
+      "file": "style-000.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "file": "style-001.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "file": "style-002.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "file": "style-003.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "file": "style-004.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "file": "style-005.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "file": "style-006.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "file": "style-007.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    }
+  ],
+  "guardProbes": [
+    {
+      "file": "guard-00.json",
+      "probe": "exclusive-exact-abstention",
+      "passed": true
+    },
+    {
+      "file": "guard-01.json",
+      "probe": "inclusive-exact",
+      "passed": true
+    },
+    {
+      "file": "guard-02.json",
+      "probe": "unknown-stock",
+      "passed": true
+    },
+    {
+      "file": "guard-03.json",
+      "probe": "unknown-size",
+      "passed": true
+    },
+    {
+      "file": "guard-04.json",
+      "probe": "waterproof-declared-only",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "plannedRequests": 32,
+    "completedRequests": 32,
+    "failedRequests": 0,
+    "unattemptedRequests": 0,
+    "runningRequests": 0,
+    "sixCardsEveryRequest": true,
+    "twentyFieldsEveryRequest": true,
+    "firstThreeAllFieldPasses": 32,
+    "fullSixAllFieldPasses": 32,
+    "firstThreeTitleBodyProxyPasses": 32,
+    "fullSixTitleBodyProxyPasses": 32,
+    "medianRankThroughJsonMs": 187.00691702542827,
+    "medianAttemptFirstThreeMs": 190.08616701466963,
+    "medianAttemptFullSixMs": 190.42300048749894,
+    "medianUsefulFirstThreeMs": 190.08616701466963,
+    "medianUsefulFullSixMs": 190.42300048749894,
+    "independentHumanQualityClaim": false,
+    "rankingRelevanceScoredHere": false,
+    "latencyDenominator": "completed attempts only; fixed planned/failed/unattempted counts retained separately",
+    "scope": "curated development frontier; no unseen generalization, physical paint or human-conversion claim"
+  },
+  "startup": {
+    "rankCheckpointSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e",
+    "copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+    "sourceTensorsHashed": 927,
+    "residentLoadMs": 1246.1032500723377,
+    "engineInitializationMs": 10500.678207958117,
+    "initializationScope": "engine constructor including source/checkpoint verification, model load, frozen hashes and catalog head; excludes process imports, worker lock wait and browser",
+    "memory": {
+      "mlxActiveBytes": 5038303752,
+      "mlxPeakBytes": 5101611528,
+      "mlxCacheBytes": 70311748,
+      "processBudgetBytes": 7516192768
+    },
+    "width": 10,
+    "nativeFallback": false
+  },
+  "activeStage": "timed-request",
+  "activeCase": "frontier-15-2",
+  "shutdownIntegrity": {
+    "frozen927HashesUnchanged": true,
+    "copyCheckpointUnchanged": true,
+    "memory": {
+      "mlxActiveBytes": 5038303754,
+      "mlxPeakBytes": 5285665086,
+      "mlxCacheBytes": 134171998,
+      "processBudgetBytes": 7516192768
+    }
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "No single declared variant satisfies every hard color requirement"
+  },
+  "totalWallMsIncludingStartupArchiveOfflineScoring": 21717.473875032738
+}

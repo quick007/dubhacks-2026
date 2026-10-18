@@ -1,0 +1,985 @@
+{
+  "version": "parallel-text-cpu-followup.v2",
+  "status": "completed-cpu-candidates-not-promoted",
+  "nativeExecution": false,
+  "sourceNativeRun": "data/ranker/pretrained/store-parallel-text-v1-attempt-1",
+  "sourceResultSha256": "6bb8d1a372a394ccdc1fb224d307aa773db089acbfa86d20d35ff17bee7fbfe9",
+  "sourceFeatureBundleSha256": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+  "sourceFrozenPreflightSha256": "2fd138a646169ce770c377da430de3bc743cd430e5270ff2c780c5c9c4c65454",
+  "declaredArms": [
+    {
+      "name": "train-normalized-independent160",
+      "sharedSlots": false,
+      "normalize": true,
+      "steps": 160
+    },
+    {
+      "name": "shared-slots-raw800",
+      "sharedSlots": true,
+      "normalize": false,
+      "steps": 800
+    },
+    {
+      "name": "shared-slots-train-normalized800",
+      "sharedSlots": true,
+      "normalize": true,
+      "steps": 800
+    }
+  ],
+  "cpuThreads": 1,
+  "arms": [
+    {
+      "name": "train-normalized-independent160",
+      "status": "completed-unpromoted",
+      "checkpointSha256": "8a547e5a3525e7ec69d37bc2105af98d381e744f145ad0d03e7ac644541c9f6f",
+      "normalization": {
+        "enabled": true,
+        "fitSource": "unique TRAIN source bindings only",
+        "fitBindings": 34,
+        "fitFeatureKeysSha256": "f39e754738a9c84b1310ca7727d6a421b210560794df06d5e6ebbade965ac72e",
+        "stdFloor": 0.0005408675642684102,
+        "meanTensorSha256": "c99bbfd3ab42f036d527c944ea74b56ca17b754d8d0382789d84d3991606d53c",
+        "inverseStdTensorSha256": "008adb3561142aca7d7dea4e08ce148d152738e8bf9f7c799b3707a0c133dbdb",
+        "evalFeatureKeysUsedForFit": false
+      },
+      "lossSnapshots": [
+        {
+          "step": 1,
+          "loss": 4.7097344398498535
+        },
+        {
+          "step": 160,
+          "loss": 0.2260660082101822
+        }
+      ],
+      "train": {
+        "section": {
+          "fields": 96,
+          "accepted": 96,
+          "exactTeacher": 81,
+          "literal": {}
+        },
+        "title": {
+          "fields": 102,
+          "accepted": 95,
+          "exactTeacher": 95,
+          "literal": {
+            "completeIdentity": [
+              97,
+              102
+            ],
+            "selectedColor": [
+              101,
+              102
+            ]
+          }
+        },
+        "badge": {
+          "fields": 102,
+          "accepted": 96,
+          "exactTeacher": 96,
+          "literal": {
+            "selectedColor": [
+              101,
+              102
+            ]
+          }
+        },
+        "copy": {
+          "fields": 102,
+          "accepted": 94,
+          "exactTeacher": 94,
+          "literal": {
+            "selectedColor": [
+              101,
+              102
+            ],
+            "exactItemPrice": [
+              99,
+              102
+            ]
+          }
+        }
+      },
+      "eval": {
+        "section": {
+          "fields": 84,
+          "accepted": 25,
+          "exactTeacher": 12,
+          "literal": {}
+        },
+        "title": {
+          "fields": 42,
+          "accepted": 0,
+          "exactTeacher": 0,
+          "literal": {
+            "completeIdentity": [
+              9,
+              42
+            ],
+            "selectedColor": [
+              0,
+              42
+            ]
+          }
+        },
+        "badge": {
+          "fields": 42,
+          "accepted": 1,
+          "exactTeacher": 1,
+          "literal": {
+            "selectedColor": [
+              1,
+              42
+            ]
+          }
+        },
+        "copy": {
+          "fields": 42,
+          "accepted": 0,
+          "exactTeacher": 0,
+          "literal": {
+            "selectedColor": [
+              0,
+              42
+            ],
+            "exactItemPrice": [
+              16,
+              42
+            ]
+          }
+        }
+      },
+      "heldoutViews": {
+        "caseCount": 42,
+        "firstThreeAllFieldsAccepted": 0,
+        "fullSixAllFieldsAccepted": 0,
+        "medianHeadForwardArgmaxMs": 0.18206244567409158,
+        "medianHeadPreparationGenerationValidationMs": 0.8555835229344666,
+        "timingScope": "CPU head only; fresh Qwen query, ranking, catalog verification, network, React/images excluded"
+      }
+    },
+    {
+      "name": "shared-slots-raw800",
+      "status": "completed-unpromoted",
+      "checkpointSha256": "cbcc40a49cb313028d3e4132fa1dfb90f7592de2a6ff363da895e9b93fe2503a",
+      "normalization": {
+        "enabled": false,
+        "fitSource": "unique TRAIN source bindings only",
+        "fitBindings": 34,
+        "fitFeatureKeysSha256": "f39e754738a9c84b1310ca7727d6a421b210560794df06d5e6ebbade965ac72e",
+        "stdFloor": null,
+        "meanTensorSha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+        "inverseStdTensorSha256": "3035aac5fb87474c303702f9030301b4e6bb7aee93be3710b8ab8dcea201db70",
+        "evalFeatureKeysUsedForFit": false
+      },
+      "lossSnapshots": [
+        {
+          "step": 1,
+          "loss": 4.669875621795654
+        },
+        {
+          "step": 800,
+          "loss": 0.0009558600140735507
+        }
+      ],
+      "train": {
+        "section": {
+          "fields": 96,
+          "accepted": 96,
+          "exactTeacher": 96,
+          "literal": {}
+        },
+        "title": {
+          "fields": 102,
+          "accepted": 102,
+          "exactTeacher": 102,
+          "literal": {
+            "completeIdentity": [
+              102,
+              102
+            ],
+            "selectedColor": [
+              102,
+              102
+            ]
+          }
+        },
+        "badge": {
+          "fields": 102,
+          "accepted": 102,
+          "exactTeacher": 102,
+          "literal": {
+            "selectedColor": [
+              102,
+              102
+            ]
+          }
+        },
+        "copy": {
+          "fields": 102,
+          "accepted": 102,
+          "exactTeacher": 102,
+          "literal": {
+            "selectedColor": [
+              102,
+              102
+            ],
+            "exactItemPrice": [
+              102,
+              102
+            ]
+          }
+        }
+      },
+      "eval": {
+        "section": {
+          "fields": 84,
+          "accepted": 84,
+          "exactTeacher": 84,
+          "literal": {}
+        },
+        "title": {
+          "fields": 42,
+          "accepted": 3,
+          "exactTeacher": 3,
+          "literal": {
+            "completeIdentity": [
+              32,
+              42
+            ],
+            "selectedColor": [
+              3,
+              42
+            ]
+          }
+        },
+        "badge": {
+          "fields": 42,
+          "accepted": 3,
+          "exactTeacher": 3,
+          "literal": {
+            "selectedColor": [
+              3,
+              42
+            ]
+          }
+        },
+        "copy": {
+          "fields": 42,
+          "accepted": 2,
+          "exactTeacher": 2,
+          "literal": {
+            "selectedColor": [
+              2,
+              42
+            ],
+            "exactItemPrice": [
+              32,
+              42
+            ]
+          }
+        }
+      },
+      "heldoutViews": {
+        "caseCount": 42,
+        "firstThreeAllFieldsAccepted": 0,
+        "fullSixAllFieldsAccepted": 0,
+        "medianHeadForwardArgmaxMs": 0.23685448104515672,
+        "medianHeadPreparationGenerationValidationMs": 0.8021045359782875,
+        "timingScope": "CPU head only; fresh Qwen query, ranking, catalog verification, network, React/images excluded"
+      }
+    },
+    {
+      "name": "shared-slots-train-normalized800",
+      "status": "completed-unpromoted",
+      "checkpointSha256": "4b9b8bf00987b10fa58a5524aa56fe4331551d7f13cb15caea31c8cc24345e94",
+      "normalization": {
+        "enabled": true,
+        "fitSource": "unique TRAIN source bindings only",
+        "fitBindings": 34,
+        "fitFeatureKeysSha256": "f39e754738a9c84b1310ca7727d6a421b210560794df06d5e6ebbade965ac72e",
+        "stdFloor": 0.0005408675642684102,
+        "meanTensorSha256": "c99bbfd3ab42f036d527c944ea74b56ca17b754d8d0382789d84d3991606d53c",
+        "inverseStdTensorSha256": "008adb3561142aca7d7dea4e08ce148d152738e8bf9f7c799b3707a0c133dbdb",
+        "evalFeatureKeysUsedForFit": false
+      },
+      "lossSnapshots": [
+        {
+          "step": 1,
+          "loss": 4.668619155883789
+        },
+        {
+          "step": 800,
+          "loss": 0.22853459417819977
+        }
+      ],
+      "train": {
+        "section": {
+          "fields": 96,
+          "accepted": 96,
+          "exactTeacher": 96,
+          "literal": {}
+        },
+        "title": {
+          "fields": 102,
+          "accepted": 88,
+          "exactTeacher": 88,
+          "literal": {
+            "completeIdentity": [
+              97,
+              102
+            ],
+            "selectedColor": [
+              98,
+              102
+            ]
+          }
+        },
+        "badge": {
+          "fields": 102,
+          "accepted": 96,
+          "exactTeacher": 93,
+          "literal": {
+            "selectedColor": [
+              98,
+              102
+            ]
+          }
+        },
+        "copy": {
+          "fields": 102,
+          "accepted": 66,
+          "exactTeacher": 64,
+          "literal": {
+            "selectedColor": [
+              96,
+              102
+            ],
+            "exactItemPrice": [
+              74,
+              102
+            ]
+          }
+        }
+      },
+      "eval": {
+        "section": {
+          "fields": 84,
+          "accepted": 30,
+          "exactTeacher": 22,
+          "literal": {}
+        },
+        "title": {
+          "fields": 42,
+          "accepted": 0,
+          "exactTeacher": 0,
+          "literal": {
+            "completeIdentity": [
+              3,
+              42
+            ],
+            "selectedColor": [
+              0,
+              42
+            ]
+          }
+        },
+        "badge": {
+          "fields": 42,
+          "accepted": 0,
+          "exactTeacher": 0,
+          "literal": {
+            "selectedColor": [
+              0,
+              42
+            ]
+          }
+        },
+        "copy": {
+          "fields": 42,
+          "accepted": 0,
+          "exactTeacher": 0,
+          "literal": {
+            "selectedColor": [
+              0,
+              42
+            ],
+            "exactItemPrice": [
+              6,
+              42
+            ]
+          }
+        }
+      },
+      "heldoutViews": {
+        "caseCount": 42,
+        "firstThreeAllFieldsAccepted": 0,
+        "fullSixAllFieldsAccepted": 0,
+        "medianHeadForwardArgmaxMs": 0.2926454762928188,
+        "medianHeadPreparationGenerationValidationMs": 0.8995209936983883,
+        "timingScope": "CPU head only; fresh Qwen query, ranking, catalog verification, network, React/images excluded"
+      }
+    }
+  ],
+  "sourceSha256": "5abebdb2eb5ab62c2e8083cfdea0fd9562933ae9c99635bfcb713e4bc790b6ae",
+  "scope": "same curated known catalog;14heldout source combinations; three fixed TRAIN-only candidates; no live promotion, new native feature or browser latency claim",
+  "featureGeometry": {
+    "allPairCosineMean": 0.9761502146720886,
+    "allPairCosineMin": 0.9378763437271118,
+    "withinProductColorCosineMean": 0.9937191717326641,
+    "withinProductColorCosineMin": 0.9673115611076355,
+    "withinProductColorL2Mean": 0.10596089872221152,
+    "trainCoordinateStdMean": 0.002234421670436859,
+    "trainCoordinateStdMin": 0.000685710518155247,
+    "trainCoordinateStdMax": 0.025885513052344322,
+    "diagnosticScope": "descriptive all48 geometry only; actual fitted normalization uses unique34TRAIN only"
+  },
+  "positionCoverage": {
+    "zeroPositiveTrainSlotWordPairs": [
+      [
+        1,
+        "Steel"
+      ],
+      [
+        2,
+        "Everyday"
+      ],
+      [
+        2,
+        "Portable"
+      ],
+      [
+        3,
+        "Sage"
+      ],
+      [
+        3,
+        "Slate"
+      ],
+      [
+        3,
+        "daypack"
+      ],
+      [
+        3,
+        "steel"
+      ],
+      [
+        3,
+        "table"
+      ],
+      [
+        4,
+        "Charcoal"
+      ],
+      [
+        4,
+        "Forest"
+      ],
+      [
+        4,
+        "Steel"
+      ],
+      [
+        4,
+        "blue"
+      ],
+      [
+        4,
+        "bottle"
+      ],
+      [
+        4,
+        "light"
+      ],
+      [
+        5,
+        "$36.00"
+      ],
+      [
+        5,
+        "$64.00"
+      ],
+      [
+        5,
+        "$68.00"
+      ],
+      [
+        7,
+        "$36.00"
+      ],
+      [
+        7,
+        "$64.00"
+      ],
+      [
+        7,
+        "$68.00"
+      ]
+    ],
+    "zeroPositiveTrainKindStyleSlotWordPairs": [
+      [
+        "badge",
+        "browse",
+        1,
+        "Steel"
+      ],
+      [
+        "badge",
+        "compact",
+        0,
+        "Steel"
+      ],
+      [
+        "badge",
+        "plain",
+        0,
+        "Steel"
+      ],
+      [
+        "copy",
+        "browse",
+        2,
+        "Steel"
+      ],
+      [
+        "copy",
+        "browse",
+        7,
+        "$36.00"
+      ],
+      [
+        "copy",
+        "browse",
+        7,
+        "$64.00"
+      ],
+      [
+        "copy",
+        "browse",
+        7,
+        "$68.00"
+      ],
+      [
+        "copy",
+        "compact",
+        0,
+        "Steel"
+      ],
+      [
+        "copy",
+        "compact",
+        4,
+        "$36.00"
+      ],
+      [
+        "copy",
+        "compact",
+        4,
+        "$64.00"
+      ],
+      [
+        "copy",
+        "compact",
+        4,
+        "$68.00"
+      ],
+      [
+        "copy",
+        "plain",
+        2,
+        "Steel"
+      ],
+      [
+        "copy",
+        "plain",
+        5,
+        "$36.00"
+      ],
+      [
+        "copy",
+        "plain",
+        5,
+        "$64.00"
+      ],
+      [
+        "copy",
+        "plain",
+        5,
+        "$68.00"
+      ],
+      [
+        "title",
+        "browse",
+        0,
+        "Steel"
+      ],
+      [
+        "title",
+        "browse",
+        2,
+        "Everyday"
+      ],
+      [
+        "title",
+        "browse",
+        2,
+        "Portable"
+      ],
+      [
+        "title",
+        "browse",
+        3,
+        "daypack"
+      ],
+      [
+        "title",
+        "browse",
+        3,
+        "steel"
+      ],
+      [
+        "title",
+        "browse",
+        3,
+        "table"
+      ],
+      [
+        "title",
+        "browse",
+        4,
+        "bottle"
+      ],
+      [
+        "title",
+        "browse",
+        4,
+        "light"
+      ],
+      [
+        "title",
+        "compact",
+        3,
+        "Sage"
+      ],
+      [
+        "title",
+        "compact",
+        3,
+        "Slate"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "Charcoal"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "Forest"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "Steel"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "blue"
+      ],
+      [
+        "title",
+        "plain",
+        3,
+        "Sage"
+      ],
+      [
+        "title",
+        "plain",
+        3,
+        "Slate"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "Charcoal"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "Forest"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "Steel"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "blue"
+      ]
+    ],
+    "affectedFields": [
+      {
+        "rowId": "p0-c0-plain-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 3,
+            "word": "Sage"
+          }
+        ]
+      },
+      {
+        "rowId": "p0-c0-compact-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 3,
+            "word": "Sage"
+          }
+        ]
+      },
+      {
+        "rowId": "p1-c1-plain-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 3,
+            "word": "Slate"
+          },
+          {
+            "slot": 4,
+            "word": "blue"
+          }
+        ]
+      },
+      {
+        "rowId": "p1-c1-plain-copy",
+        "kind": "copy",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 5,
+            "word": "$68.00"
+          }
+        ]
+      },
+      {
+        "rowId": "p1-c1-browse-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 2,
+            "word": "Everyday"
+          },
+          {
+            "slot": 3,
+            "word": "daypack"
+          }
+        ]
+      },
+      {
+        "rowId": "p1-c1-browse-copy",
+        "kind": "copy",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 7,
+            "word": "$68.00"
+          }
+        ]
+      },
+      {
+        "rowId": "p1-c1-compact-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 3,
+            "word": "Slate"
+          },
+          {
+            "slot": 4,
+            "word": "blue"
+          }
+        ]
+      },
+      {
+        "rowId": "p3-c0-plain-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Forest"
+          }
+        ]
+      },
+      {
+        "rowId": "p3-c0-compact-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Forest"
+          }
+        ]
+      },
+      {
+        "rowId": "p4-c2-plain-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Steel"
+          }
+        ]
+      },
+      {
+        "rowId": "p4-c2-plain-copy",
+        "kind": "copy",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 5,
+            "word": "$36.00"
+          }
+        ]
+      },
+      {
+        "rowId": "p4-c2-browse-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 2,
+            "word": "Everyday"
+          },
+          {
+            "slot": 3,
+            "word": "steel"
+          },
+          {
+            "slot": 4,
+            "word": "bottle"
+          }
+        ]
+      },
+      {
+        "rowId": "p4-c2-browse-badge",
+        "kind": "badge",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 1,
+            "word": "Steel"
+          }
+        ]
+      },
+      {
+        "rowId": "p4-c2-browse-copy",
+        "kind": "copy",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 7,
+            "word": "$36.00"
+          }
+        ]
+      },
+      {
+        "rowId": "p4-c2-compact-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Steel"
+          }
+        ]
+      },
+      {
+        "rowId": "p7-c1-plain-copy",
+        "kind": "copy",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 5,
+            "word": "$64.00"
+          }
+        ]
+      },
+      {
+        "rowId": "p7-c1-browse-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 2,
+            "word": "Portable"
+          },
+          {
+            "slot": 3,
+            "word": "table"
+          },
+          {
+            "slot": 4,
+            "word": "light"
+          }
+        ]
+      },
+      {
+        "rowId": "p7-c1-browse-copy",
+        "kind": "copy",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 7,
+            "word": "$64.00"
+          }
+        ]
+      },
+      {
+        "rowId": "p10-c1-plain-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Charcoal"
+          }
+        ]
+      },
+      {
+        "rowId": "p10-c1-compact-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Charcoal"
+          }
+        ]
+      },
+      {
+        "rowId": "p11-c2-plain-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Forest"
+          }
+        ]
+      },
+      {
+        "rowId": "p11-c2-compact-title",
+        "kind": "title",
+        "missingPositiveSlotWords": [
+          {
+            "slot": 4,
+            "word": "Forest"
+          }
+        ]
+      }
+    ],
+    "interpretation": "v1 independent word classifiers have no positive gradient for missing position-word classes; shared classifier removes this parameter-level restriction, not the need to learn word order"
+  }
+}

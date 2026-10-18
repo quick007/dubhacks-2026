@@ -1,0 +1,1171 @@
+{
+  "version": "store-parallel-text-native-run.v1",
+  "status": "completed-candidate-not-promoted",
+  "nativeExecution": true,
+  "config": {
+    "trainingSteps": 160,
+    "learningRate": 0.004,
+    "hiddenWidth": 128,
+    "cpuThreads": 1,
+    "featureRows": 48,
+    "featureTokenCap": 512,
+    "frontierRequests": 32,
+    "cardsPerRequest": 6,
+    "fieldsPerRequest": 20,
+    "publicStyle": "plain",
+    "styleCounterfactualRequests": 8,
+    "requestTimeoutSeconds": 30,
+    "extractionTimeoutSeconds": 180
+  },
+  "requests": [
+    {
+      "caseId": "frontier-00-1",
+      "input": {
+        "query": "a mug for drinking"
+      },
+      "status": "completed-attempt",
+      "file": "request-000.json",
+      "sha256": "f5189b873c424ffc2c53e1c09c2281f1ae30846c541d6aa93be16bc37cb8b7a1",
+      "timing": {
+        "rankThroughJsonMs": 196.80716609582305,
+        "attemptFirstThreeMs": 198.09850002638996,
+        "attemptFullSixMs": 198.15387506969273,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        0,
+        8,
+        7,
+        4,
+        15,
+        9
+      ]
+    },
+    {
+      "caseId": "frontier-00-2",
+      "input": {
+        "query": "something mug-shaped to drink from"
+      },
+      "status": "completed-attempt",
+      "file": "request-001.json",
+      "sha256": "130780b4f2ef00c153ded150604438ddcaa7cd4db64cef5e457d986a95296890",
+      "timing": {
+        "rankThroughJsonMs": 192.96212494373322,
+        "attemptFirstThreeMs": 194.2687080008909,
+        "attemptFullSixMs": 194.30883298628032,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        0,
+        8,
+        2,
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-01-1",
+      "input": {
+        "query": "an everyday backpack"
+      },
+      "status": "completed-attempt",
+      "file": "request-002.json",
+      "sha256": "909a45ab4400a84dec881d6ac81ac5bcca437fef8778b87cfee9dfdeb8f50fce",
+      "timing": {
+        "rankThroughJsonMs": 210.1407089503482,
+        "attemptFirstThreeMs": 211.9277500314638,
+        "attemptFullSixMs": 211.96862496435642,
+        "usefulFirstThreeMs": 211.9277500314638,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        1,
+        4,
+        10,
+        6,
+        12,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-01-2",
+      "input": {
+        "query": "a daypack to carry daily things"
+      },
+      "status": "completed-attempt",
+      "file": "request-003.json",
+      "sha256": "1ce0b954929515939399059e12a04e76f4d89546047466280b7b6d086d44f9de",
+      "timing": {
+        "rankThroughJsonMs": 195.71529200766236,
+        "attemptFirstThreeMs": 197.12049991358072,
+        "attemptFullSixMs": 197.18220899812877,
+        "usefulFirstThreeMs": 197.12049991358072,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        1,
+        14,
+        12,
+        8,
+        2,
+        9
+      ]
+    },
+    {
+      "caseId": "frontier-02-1",
+      "input": {
+        "query": "a notebook for writing ideas"
+      },
+      "status": "completed-attempt",
+      "file": "request-004.json",
+      "sha256": "bfb3ee0f8cf285713aff9cf540909e9e0ddaa76a6866851e3c03d94197bb5cd2",
+      "timing": {
+        "rankThroughJsonMs": 192.03979091253132,
+        "attemptFirstThreeMs": 193.30412498675287,
+        "attemptFullSixMs": 193.34587489720434,
+        "usefulFirstThreeMs": 193.30412498675287,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        14,
+        4,
+        5,
+        7,
+        9,
+        8
+      ]
+    },
+    {
+      "caseId": "frontier-02-2",
+      "input": {
+        "query": "field notes to jot down a thought"
+      },
+      "status": "completed-attempt",
+      "file": "request-005.json",
+      "sha256": "aa796d75bcaa7dc1ce7492938afb065ec6d22a9e0505e65e9b93bf5b8feacff9",
+      "timing": {
+        "rankThroughJsonMs": 191.82533398270607,
+        "attemptFirstThreeMs": 193.16266698297113,
+        "attemptFullSixMs": 193.20512504782528,
+        "usefulFirstThreeMs": 193.16266698297113,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        2,
+        1,
+        13,
+        12,
+        8,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-03-1",
+      "input": {
+        "query": "a hooded rain jacket"
+      },
+      "status": "completed-attempt",
+      "file": "request-006.json",
+      "sha256": "f007cca351ec983355de91b3e55e922a27955cb09b4dc1fd1bb2af89e15973cd",
+      "timing": {
+        "rankThroughJsonMs": 198.7144579179585,
+        "attemptFirstThreeMs": 200.2072079339996,
+        "attemptFullSixMs": 200.26716601569206,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        3,
+        15,
+        12,
+        11,
+        6,
+        2
+      ]
+    },
+    {
+      "caseId": "frontier-03-2",
+      "input": {
+        "query": "a hooded shell for the rain"
+      },
+      "status": "completed-attempt",
+      "file": "request-007.json",
+      "sha256": "4eafa702b7a19d7d3cd705a9c6701f2571b96688932b587ad6c67c972fabc8d6",
+      "timing": {
+        "rankThroughJsonMs": 199.6669159270823,
+        "attemptFirstThreeMs": 201.61612494848669,
+        "attemptFullSixMs": 201.65558299049735,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        3,
+        15,
+        5,
+        14,
+        0,
+        11
+      ]
+    },
+    {
+      "caseId": "frontier-04-1",
+      "input": {
+        "query": "a bottle for carrying drinking water"
+      },
+      "status": "completed-attempt",
+      "file": "request-008.json",
+      "sha256": "4c32634207de7bf1bb76b2d7cabd075d1af4350620329d7732bcbb3a7a0130be",
+      "timing": {
+        "rankThroughJsonMs": 189.7932079154998,
+        "attemptFirstThreeMs": 191.0969999153167,
+        "attemptFullSixMs": 191.14504102617502,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        4,
+        0,
+        8,
+        1,
+        15,
+        7
+      ]
+    },
+    {
+      "caseId": "frontier-04-2",
+      "input": {
+        "query": "a steel water bottle"
+      },
+      "status": "completed-attempt",
+      "file": "request-009.json",
+      "sha256": "55a1be71665d0d762cabed5425e17247a1e654950bfd280478dda362c79d4ec2",
+      "timing": {
+        "rankThroughJsonMs": 191.3326249923557,
+        "attemptFirstThreeMs": 192.62254191562533,
+        "attemptFullSixMs": 192.6657499279827,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        4,
+        8,
+        3,
+        0,
+        2,
+        7
+      ]
+    },
+    {
+      "caseId": "frontier-05-1",
+      "input": {
+        "query": "a tote for grocery shopping"
+      },
+      "status": "completed-attempt",
+      "file": "request-010.json",
+      "sha256": "74e611f58227d612b3c27cd08a5ccdd4903bda7bfdce3eb34028b0431946d64a",
+      "timing": {
+        "rankThroughJsonMs": 202.6189169846475,
+        "attemptFirstThreeMs": 204.3462919536978,
+        "attemptFullSixMs": 204.39016702584922,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        5,
+        12,
+        8,
+        14,
+        15,
+        9
+      ]
+    },
+    {
+      "caseId": "frontier-05-2",
+      "input": {
+        "query": "a canvas shopping carryall"
+      },
+      "status": "completed-attempt",
+      "file": "request-011.json",
+      "sha256": "a10f5d9468d75293c5efef73f5911c8494ff3cd7e19e28b4dfd80649e8f009d0",
+      "timing": {
+        "rankThroughJsonMs": 200.50929207354784,
+        "attemptFirstThreeMs": 202.04808400012553,
+        "attemptFullSixMs": 202.0916249603033,
+        "usefulFirstThreeMs": 202.04808400012553,
+        "usefulFullSixMs": 202.0916249603033,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        5,
+        12,
+        14,
+        10,
+        1,
+        11
+      ]
+    },
+    {
+      "caseId": "frontier-06-1",
+      "input": {
+        "query": "a cotton blanket to use as a throw"
+      },
+      "status": "completed-attempt",
+      "file": "request-012.json",
+      "sha256": "a8763a02a97a8a028095413fc96801e187a197b985e7118a4b8d14e325b12b35",
+      "timing": {
+        "rankThroughJsonMs": 191.88800000119954,
+        "attemptFirstThreeMs": 193.22791695594788,
+        "attemptFullSixMs": 193.27150005847216,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        15,
+        11,
+        6,
+        0,
+        7,
+        5
+      ]
+    },
+    {
+      "caseId": "frontier-06-2",
+      "input": {
+        "query": "a cozy throw blanket"
+      },
+      "status": "completed-attempt",
+      "file": "request-013.json",
+      "sha256": "92637bb387f2f3afbf8a61297e9c5206fc4ee3e12f53cbde8f8e7656b7dc8945",
+      "timing": {
+        "rankThroughJsonMs": 173.41270891483873,
+        "attemptFirstThreeMs": 174.68808393459767,
+        "attemptFullSixMs": 174.72687491681427,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        6,
+        10,
+        4,
+        7,
+        13,
+        14
+      ]
+    },
+    {
+      "caseId": "frontier-07-1",
+      "input": {
+        "query": "a cordless lamp for a table"
+      },
+      "status": "completed-attempt",
+      "file": "request-014.json",
+      "sha256": "33c87280cda512c62c6b1d9201a138c28993019d94d0261395d7f598ca1f492c",
+      "timing": {
+        "rankThroughJsonMs": 186.7754589766264,
+        "attemptFirstThreeMs": 188.08291701134294,
+        "attemptFullSixMs": 188.12679196707904,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        7,
+        15,
+        9,
+        0,
+        14,
+        8
+      ]
+    },
+    {
+      "caseId": "frontier-07-2",
+      "input": {
+        "query": "a portable bedside reading light"
+      },
+      "status": "completed-attempt",
+      "file": "request-015.json",
+      "sha256": "72fa667eed37cca6d12766b5c1d5cea360d3a9eb05a9823391004555b30d6621",
+      "timing": {
+        "rankThroughJsonMs": 204.97412502299994,
+        "attemptFirstThreeMs": 206.51154103688896,
+        "attemptFullSixMs": 206.55624999199063,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        7,
+        8,
+        9,
+        14,
+        5,
+        1
+      ]
+    },
+    {
+      "caseId": "frontier-08-1",
+      "input": {
+        "query": "a lunch box for food"
+      },
+      "status": "completed-attempt",
+      "file": "request-016.json",
+      "sha256": "1c0994de19274d59054c8791df1f881527f4701074b158014c6df9f2e791c248",
+      "timing": {
+        "rankThroughJsonMs": 201.8889170140028,
+        "attemptFirstThreeMs": 203.34300003014505,
+        "attemptFullSixMs": 203.3851669402793,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        8,
+        1,
+        0,
+        7,
+        9,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-08-2",
+      "input": {
+        "query": "a steel lunch container with a bamboo lid"
+      },
+      "status": "completed-attempt",
+      "file": "request-017.json",
+      "sha256": "36d4611492e3dc1e369ae0d318117bab7d6664f0a9490a5930f9aab293a1d47e",
+      "timing": {
+        "rankThroughJsonMs": 196.5328750666231,
+        "attemptFirstThreeMs": 197.87941710092127,
+        "attemptFullSixMs": 197.9187090182677,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        8,
+        4,
+        12,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-09-1",
+      "input": {
+        "query": "over-ear headphones for listening to music"
+      },
+      "status": "completed-attempt",
+      "file": "request-018.json",
+      "sha256": "01cff9807e468c1d40542014db44d1c1d82d4dd6a23d52a22e049442deeb06ca",
+      "timing": {
+        "rankThroughJsonMs": 202.2819590056315,
+        "attemptFirstThreeMs": 203.5802500322461,
+        "attemptFullSixMs": 203.62591708544642,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        9,
+        1,
+        0,
+        7,
+        8,
+        4
+      ]
+    },
+    {
+      "caseId": "frontier-09-2",
+      "input": {
+        "query": "cushioned headphones for audio"
+      },
+      "status": "completed-attempt",
+      "file": "request-019.json",
+      "sha256": "06fbefafb191c5389f6c524c3acef17e4ba8f91d87e6cda2966738be6209ae74",
+      "timing": {
+        "rankThroughJsonMs": 170.35533301532269,
+        "attemptFirstThreeMs": 171.6342919971794,
+        "attemptFullSixMs": 171.67324991896749,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        9,
+        10,
+        1,
+        4,
+        6,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-10-1",
+      "input": {
+        "query": "canvas shoes with a low top"
+      },
+      "status": "completed-attempt",
+      "file": "request-020.json",
+      "sha256": "f6280b45d7a8b46c049657a7affec73641b48eab4911e953af4e43de09d7134f",
+      "timing": {
+        "rankThroughJsonMs": 195.3225409379229,
+        "attemptFirstThreeMs": 196.96316600311548,
+        "attemptFullSixMs": 197.0036249840632,
+        "usefulFirstThreeMs": 196.96316600311548,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        10,
+        12,
+        11,
+        2,
+        13,
+        3
+      ]
+    },
+    {
+      "caseId": "frontier-10-2",
+      "input": {
+        "query": "low-top sneakers for walking"
+      },
+      "status": "completed-attempt",
+      "file": "request-021.json",
+      "sha256": "a6992180b240b3d520a09ef092731df5a916d95fa1427958183932f0751350d0",
+      "timing": {
+        "rankThroughJsonMs": 192.0485000591725,
+        "attemptFirstThreeMs": 193.4055839665234,
+        "attemptFullSixMs": 193.44829197507352,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        10,
+        9,
+        4,
+        3,
+        6,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-11-1",
+      "input": {
+        "query": "a cotton sweatshirt with a crew neck"
+      },
+      "status": "completed-attempt",
+      "file": "request-022.json",
+      "sha256": "5611335d04c04fc2ba6d85a67358d8ba199b416d23c50c561079180206faed42",
+      "timing": {
+        "rankThroughJsonMs": 195.31491596717387,
+        "attemptFirstThreeMs": 196.63200003560632,
+        "attemptFullSixMs": 196.67129102163017,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        11,
+        15,
+        6,
+        3,
+        12,
+        10
+      ]
+    },
+    {
+      "caseId": "frontier-11-2",
+      "input": {
+        "query": "a soft cotton crewneck layer"
+      },
+      "status": "completed-attempt",
+      "file": "request-023.json",
+      "sha256": "4339118438ebc85b12cc1250baa7e1c5eab04ab9dee3be9c06d64ea517fe0014",
+      "timing": {
+        "rankThroughJsonMs": 172.85558301955462,
+        "attemptFirstThreeMs": 174.13091694470495,
+        "attemptFullSixMs": 174.1727499756962,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        11,
+        6,
+        3,
+        5,
+        2,
+        13
+      ]
+    },
+    {
+      "caseId": "frontier-12-1",
+      "input": {
+        "query": "a travel bag for the weekend"
+      },
+      "status": "completed-attempt",
+      "file": "request-024.json",
+      "sha256": "f22716b38257dc5be45db2f15ad65af46df262bfd294f988aef90a6d37cd3f2c",
+      "timing": {
+        "rankThroughJsonMs": 190.61941700056195,
+        "attemptFirstThreeMs": 192.08704202901572,
+        "attemptFullSixMs": 192.12770904414356,
+        "usefulFirstThreeMs": 192.08704202901572,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        12,
+        1,
+        15,
+        8,
+        3,
+        14
+      ]
+    },
+    {
+      "caseId": "frontier-12-2",
+      "input": {
+        "query": "a canvas duffel to carry on a trip"
+      },
+      "status": "completed-attempt",
+      "file": "request-025.json",
+      "sha256": "c4c5d97e653b61403829e7839d12ef336377490575cf671a16a7b27072fde06d",
+      "timing": {
+        "rankThroughJsonMs": 194.85783390700817,
+        "attemptFirstThreeMs": 196.2198339169845,
+        "attemptFullSixMs": 197.41687492933124,
+        "usefulFirstThreeMs": 196.2198339169845,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        12,
+        5,
+        14,
+        15,
+        0,
+        2
+      ]
+    },
+    {
+      "caseId": "frontier-13-1",
+      "input": {
+        "query": "round sunglasses with acetate frames"
+      },
+      "status": "completed-attempt",
+      "file": "request-026.json",
+      "sha256": "0beae3268b8b8db055b3e2a2cf6dfa7b53194cd43b368f9918ec2b6a50c5b42f",
+      "timing": {
+        "rankThroughJsonMs": 195.72491699364036,
+        "attemptFirstThreeMs": 197.0494999550283,
+        "attemptFullSixMs": 197.08879198879004,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        13,
+        7,
+        9,
+        8,
+        3,
+        11
+      ]
+    },
+    {
+      "caseId": "frontier-13-2",
+      "input": {
+        "query": "round eyewear for sunny days"
+      },
+      "status": "completed-attempt",
+      "file": "request-027.json",
+      "sha256": "291350301ba49498da877c70927496964f97a08cc1736f2cdd34f60c35dab257",
+      "timing": {
+        "rankThroughJsonMs": 193.56024998705834,
+        "attemptFirstThreeMs": 195.10795804671943,
+        "attemptFullSixMs": 195.14924997929484,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        13,
+        7,
+        9,
+        8,
+        3,
+        15
+      ]
+    },
+    {
+      "caseId": "frontier-14-1",
+      "input": {
+        "query": "an organizer pouch for cables"
+      },
+      "status": "completed-attempt",
+      "file": "request-028.json",
+      "sha256": "580272fb9b803578ad2fd951165ce801d2a72d7904ba9e4e630f98dac740dd0d",
+      "timing": {
+        "rankThroughJsonMs": 204.12116695661098,
+        "attemptFirstThreeMs": 205.80112503375858,
+        "attemptFullSixMs": 205.84204199258238,
+        "usefulFirstThreeMs": 205.80112503375858,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        14,
+        4,
+        12,
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "caseId": "frontier-14-2",
+      "input": {
+        "query": "a zipped canvas pouch for essentials"
+      },
+      "status": "completed-attempt",
+      "file": "request-029.json",
+      "sha256": "c987ddf0d8031dc6c062bd930ffd10ce5296018ae74b4108890da175f770b89c",
+      "timing": {
+        "rankThroughJsonMs": 206.46133297123015,
+        "attemptFirstThreeMs": 207.84874993842095,
+        "attemptFullSixMs": 208.03283294662833,
+        "usefulFirstThreeMs": 207.84874993842095,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        14,
+        5,
+        11,
+        2,
+        3,
+        12
+      ]
+    },
+    {
+      "caseId": "frontier-15-1",
+      "input": {
+        "query": "a striped cotton swimming towel"
+      },
+      "status": "completed-attempt",
+      "file": "request-030.json",
+      "sha256": "9010b57df1512b96cd308957233cc4e202fc4e5c963dee4ad96bc21ea81880a4",
+      "timing": {
+        "rankThroughJsonMs": 204.30608291644603,
+        "attemptFirstThreeMs": 205.58674994390458,
+        "attemptFullSixMs": 205.6274579372257,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        15,
+        6,
+        12,
+        3,
+        11,
+        14
+      ]
+    },
+    {
+      "caseId": "frontier-15-2",
+      "input": {
+        "query": "a cotton towel for the beach"
+      },
+      "status": "completed-attempt",
+      "file": "request-031.json",
+      "sha256": "35b1a5e9b919eff8ca40ac0a3c4844ef93e89613dbaafe03f82a3cf71a3d66b6",
+      "timing": {
+        "rankThroughJsonMs": 186.88987498171628,
+        "attemptFirstThreeMs": 188.69562505278736,
+        "attemptFullSixMs": 188.75987501814961,
+        "usefulFirstThreeMs": null,
+        "usefulFullSixMs": null,
+        "scope": "contiguous fresh query Qwen encode+rank+guards+cached offline feature head+all-field validation+source freshness+canonical JSON; no startup/offline48features/training/archive/browser/images",
+        "firstThreePolicy": "all20slots generated/validated in one pass, then first3 and full6 serialized separately"
+      },
+      "selectedProductIndices": [
+        15,
+        6,
+        11,
+        5,
+        12,
+        7
+      ]
+    }
+  ],
+  "styleCounterfactuals": [
+    {
+      "caseId": "frontier-00-1",
+      "file": "style-000.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "caseId": "frontier-00-2",
+      "file": "style-001.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "caseId": "frontier-01-1",
+      "file": "style-002.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "caseId": "frontier-01-2",
+      "file": "style-003.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "caseId": "frontier-02-1",
+      "file": "style-004.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "caseId": "frontier-02-2",
+      "file": "style-005.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "caseId": "frontier-03-1",
+      "file": "style-006.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    },
+    {
+      "caseId": "frontier-03-2",
+      "file": "style-007.json",
+      "changedFieldsPlainVsBrowse": 20,
+      "changedFieldsPlainVsCompact": 20
+    }
+  ],
+  "preflightSha256": "2fd138a646169ce770c377da430de3bc743cd430e5270ff2c780c5c9c4c65454",
+  "summary": {
+    "plannedRequests": 32,
+    "completedRequests": 32,
+    "failedRequests": 0,
+    "unattemptedRequests": 0,
+    "runningRequests": 0,
+    "sixCardsEveryRequest": true,
+    "twentyFieldsEveryRequest": true,
+    "firstThreeAllFieldPasses": 10,
+    "fullSixAllFieldPasses": 1,
+    "firstThreeTitleBodyProxyPasses": 10,
+    "fullSixTitleBodyProxyPasses": 1,
+    "medianRankThroughJsonMs": 195.31872845254838,
+    "medianAttemptFirstThreeMs": 196.7975830193609,
+    "medianAttemptFullSixMs": 197.04620848642662,
+    "medianUsefulFirstThreeMs": 197.0418329583481,
+    "medianUsefulFullSixMs": 202.0916249603033,
+    "independentHumanQualityClaim": false,
+    "rankingRelevanceScoredHere": false,
+    "latencyDenominator": "completed attempts only; fixed planned/failed/unattempted counts retained separately",
+    "scope": "curated development frontier; no unseen generalization, physical paint or human-conversion claim"
+  },
+  "startup": {
+    "rankCheckpointSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e",
+    "copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+    "sourceTensorsHashed": 927,
+    "residentLoadMs": 1016.1573329241946,
+    "engineInitializationMs": 9473.278207937256,
+    "initializationScope": "engine constructor including source/checkpoint verification, model load, frozen hashes and catalog head; excludes process imports, worker lock wait and browser",
+    "memory": {
+      "mlxActiveBytes": 5038303752,
+      "mlxPeakBytes": 5101611528,
+      "mlxCacheBytes": 70295364,
+      "processBudgetBytes": 7516192768
+    },
+    "width": 10,
+    "nativeFallback": false
+  },
+  "featureBundle": {
+    "file": "features.pt",
+    "sha256": "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8",
+    "tensorSha256": "c78a028bc3ffae72222299bcd7c8c9ebaeb7af6c6c723b1ba074d67f6644255e",
+    "provenance": {
+      "evidenceSource": "native-frozen-qwen",
+      "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+      "copyAdapterEnabled": false,
+      "nativeForwards": 48,
+      "truncatedRows": 0,
+      "pooling": "last-valid-token unit L2",
+      "modelVerification": {
+        "freshShardsSha256": {
+          "model-00001-of-00002.safetensors": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd",
+          "model-00002-of-00002.safetensors": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"
+        },
+        "smallFileSha256": {
+          "config.json": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+          "model.safetensors.index.json": "dd023913fb87cfdae27fb11dcf695117c925833796ccac3c64117d6652d8ff1e",
+          "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+          "tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+          "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+          "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+        "verified": true,
+        "method": "8 MiB CPU byte stream; no checkpoint tensor execution"
+      },
+      "offlineExtractionWallMs": 6562.891707988456,
+      "rowReceiptSha256": {
+        "000.json": "cf0728a74d390121588337571d5699d1b6b0db3391c34c4db8cea8ce3364b1d7",
+        "001.json": "49758d5440f2ca27686cf924e1e11d8897efed8cf30f0aed80623665c6f6f4b8",
+        "002.json": "295d80077784ea2628870e361db2b6925467fd00e6254b106918bbc9d2f3ec29",
+        "003.json": "e48d5655e969021db41ce94d468770c7a43b1b62706a520c92bd052726fc7ecc",
+        "004.json": "bdc817c616cf5a592a50ac7828c689ea88804bea4b23d94b224cc666dd34bd65",
+        "005.json": "557f444ccc785cbc9812dfda42d45bb3b3d007e154af5325b3399c36f5f68728",
+        "006.json": "658a506dd5625436e940e27e73f1f5224cd51ab01bc2a15ffbd07d41d091a62f",
+        "007.json": "1cbc7fec22fd0f13e94c47e40dc222a63cf81db925d66ee45500c3b717866528",
+        "008.json": "63aae73de4b593f61f9f69ddf96287396f5d92a02711a1fbb69db25989ce5f70",
+        "009.json": "7430713198a6970d82bbb33f334905f674097e3b4df47e00838a52e19a4f99ab",
+        "010.json": "2014f7b524a33cc8bc0447479b97396908ba46551646dfe6ffa8cbd42761f38b",
+        "011.json": "af4af6e53146f1339b212a858d9621c24210f71aa03401555146ab7a035e9ad9",
+        "012.json": "4e8fc01de80eab2801546532820bf606a3ea5908e889a66b98fb44ca51e01871",
+        "013.json": "9b4eaf943f03413801c11492fa90256510ad652f42081d051bf658f7ff5a5122",
+        "014.json": "be0668c83725258b2640108c9cd780ffa823dde5a1fe533bd136802824e30f8f",
+        "015.json": "48c3b7cf8ac7932768b9607ed16638149bf321efb19aea5235930fef50b6b14c",
+        "016.json": "3128451ce78d6236674b54989c1a1c7a9414ddfbc3bba52fdd9fcba79e30deff",
+        "017.json": "760094eafc1b5b09d2527bd79b539ef225950527c29be2abd4458f5375392034",
+        "018.json": "cf8ed9bfc386ee63a2c56dc28172b6de67e2a70df909b4140e37dae1120a4112",
+        "019.json": "727d60b9d5329cb02845322fb94da723c142644df210f102954fce0911923870",
+        "020.json": "997f84ab1b2576cea8201d4b5a1fc30122c8628eeac0a2885e5dccbb00d8a86f",
+        "021.json": "9b6aee09c7e70761fc05e0c018073eccfc851e79b76f80dfaade73fa78ee8751",
+        "022.json": "53507213970eb297d3775959720d227115626792e65f2bf41eff555b054fcb33",
+        "023.json": "ce50d36dcb97258258ee771270e1b35cfb1a81a41eb3011f6ebfc14792991ecd",
+        "024.json": "6911e378fc5ceaec66ea93586b5bf367337d05e6baf18a2b9f256f5e38ec3ecd",
+        "025.json": "2b047ebaeeb11319830467a4fe9c004b805e2088525167f06348e928e4c548c8",
+        "026.json": "e251dd6a5a9ff454d54fb3d48be2ccbbbf862491ec58b3ebcce8783a125b2f99",
+        "027.json": "f1f8fcabb88f69eb967d42f117ef6f50e67d60492d86e546fd23cde5131e1340",
+        "028.json": "4eb3678401bd0025d5b07b9cf75a1473c86e60be9b1b97f73d3106f57825942b",
+        "029.json": "da26a200faead89b451dc5fbd24bdb556e2bf267865e64d88066c0a5483423a5",
+        "030.json": "6c4a2ec76be5142e3b101565e101b6c150933ce64130f6db1decf73c0c334f7f",
+        "031.json": "5a29d957f46a4d30c4e1232387068692378495dc97643dd2144900fda3aadd9e",
+        "032.json": "afeb194660fe98a25e94efadf44865656932b02d474cf109ff2362e2bdf4797a",
+        "033.json": "60b5b262fabe490f59fdb80ce48416f46d559ae462a6b59718d65dcc53a6288a",
+        "034.json": "2a1f0013becd0b3ff8e62023f6090a70456c4842005f07a14b16ef83d1678307",
+        "035.json": "8a577fcb2860e71ce9a014a28a794c13a11c41d116c2ab50148f3d7149c2a318",
+        "036.json": "6d38144ea4dd896fccae6417f32ec9b8bbca92b788100d2d7f354245d3c5fcd4",
+        "037.json": "f7637294957c9b7645d3c7b3ab7328d355b8d9a858a7171bf4fc095cb580b330",
+        "038.json": "710bb71ecc2423bb7c5c00cb2554886e6c12f68476c64354f673880c2ac878c5",
+        "039.json": "342deb3b0a6cba901f97ad65418a88530fc95855d14c674664db83dd60baf2b2",
+        "040.json": "8ec42f7e91d8d5c3a391d98706c4ec7390f577f80222ec01f9f0164b13eaaa83",
+        "041.json": "29658562e154a11bfe4134861d5df60990c6aee4fc6e79d899564abe20469e68",
+        "042.json": "c7be50f191f1e4260ef194b023e329bee37106a6781ba728838e289f4a5ab51f",
+        "043.json": "62dc2eb05929865576ef9ab98b00c0c44352cdd4d9b86fc956904ed083b1897c",
+        "044.json": "302a30c90d5c2fcdbf08ad8a6f3b4a4a31fe3d9180aec2153349c9a99762640d",
+        "045.json": "91e49a9e3c66a0367bd44a0017b2d71e3dee1c19d313afea7b7f18ef64b40e80",
+        "046.json": "2f994e2a0e79f53c488c735d6797707f0cf37f42b2e8d97d59b2e995deeb5bba",
+        "047.json": "58c3c9de065ec1c7af65a437c6eef011273f7361c69d92a1da56b77c9afe3402"
+      }
+    }
+  },
+  "fit": {
+    "status": "native-feature-candidate-not-promoted",
+    "modelVersion": "qwen-fact-parallel-word-head.v1",
+    "sourceEvidence": {
+      "evidenceSource": "native-frozen-qwen",
+      "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+      "copyAdapterEnabled": false,
+      "nativeForwards": 48,
+      "truncatedRows": 0,
+      "pooling": "last-valid-token unit L2",
+      "modelVerification": {
+        "freshShardsSha256": {
+          "model-00001-of-00002.safetensors": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd",
+          "model-00002-of-00002.safetensors": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"
+        },
+        "smallFileSha256": {
+          "config.json": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+          "model.safetensors.index.json": "dd023913fb87cfdae27fb11dcf695117c925833796ccac3c64117d6652d8ff1e",
+          "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+          "tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+          "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+          "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+        },
+        "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+        "verified": true,
+        "method": "8 MiB CPU byte stream; no checkpoint tensor execution"
+      },
+      "offlineExtractionWallMs": 6562.891707988456,
+      "rowReceiptSha256": {
+        "000.json": "cf0728a74d390121588337571d5699d1b6b0db3391c34c4db8cea8ce3364b1d7",
+        "001.json": "49758d5440f2ca27686cf924e1e11d8897efed8cf30f0aed80623665c6f6f4b8",
+        "002.json": "295d80077784ea2628870e361db2b6925467fd00e6254b106918bbc9d2f3ec29",
+        "003.json": "e48d5655e969021db41ce94d468770c7a43b1b62706a520c92bd052726fc7ecc",
+        "004.json": "bdc817c616cf5a592a50ac7828c689ea88804bea4b23d94b224cc666dd34bd65",
+        "005.json": "557f444ccc785cbc9812dfda42d45bb3b3d007e154af5325b3399c36f5f68728",
+        "006.json": "658a506dd5625436e940e27e73f1f5224cd51ab01bc2a15ffbd07d41d091a62f",
+        "007.json": "1cbc7fec22fd0f13e94c47e40dc222a63cf81db925d66ee45500c3b717866528",
+        "008.json": "63aae73de4b593f61f9f69ddf96287396f5d92a02711a1fbb69db25989ce5f70",
+        "009.json": "7430713198a6970d82bbb33f334905f674097e3b4df47e00838a52e19a4f99ab",
+        "010.json": "2014f7b524a33cc8bc0447479b97396908ba46551646dfe6ffa8cbd42761f38b",
+        "011.json": "af4af6e53146f1339b212a858d9621c24210f71aa03401555146ab7a035e9ad9",
+        "012.json": "4e8fc01de80eab2801546532820bf606a3ea5908e889a66b98fb44ca51e01871",
+        "013.json": "9b4eaf943f03413801c11492fa90256510ad652f42081d051bf658f7ff5a5122",
+        "014.json": "be0668c83725258b2640108c9cd780ffa823dde5a1fe533bd136802824e30f8f",
+        "015.json": "48c3b7cf8ac7932768b9607ed16638149bf321efb19aea5235930fef50b6b14c",
+        "016.json": "3128451ce78d6236674b54989c1a1c7a9414ddfbc3bba52fdd9fcba79e30deff",
+        "017.json": "760094eafc1b5b09d2527bd79b539ef225950527c29be2abd4458f5375392034",
+        "018.json": "cf8ed9bfc386ee63a2c56dc28172b6de67e2a70df909b4140e37dae1120a4112",
+        "019.json": "727d60b9d5329cb02845322fb94da723c142644df210f102954fce0911923870",
+        "020.json": "997f84ab1b2576cea8201d4b5a1fc30122c8628eeac0a2885e5dccbb00d8a86f",
+        "021.json": "9b6aee09c7e70761fc05e0c018073eccfc851e79b76f80dfaade73fa78ee8751",
+        "022.json": "53507213970eb297d3775959720d227115626792e65f2bf41eff555b054fcb33",
+        "023.json": "ce50d36dcb97258258ee771270e1b35cfb1a81a41eb3011f6ebfc14792991ecd",
+        "024.json": "6911e378fc5ceaec66ea93586b5bf367337d05e6baf18a2b9f256f5e38ec3ecd",
+        "025.json": "2b047ebaeeb11319830467a4fe9c004b805e2088525167f06348e928e4c548c8",
+        "026.json": "e251dd6a5a9ff454d54fb3d48be2ccbbbf862491ec58b3ebcce8783a125b2f99",
+        "027.json": "f1f8fcabb88f69eb967d42f117ef6f50e67d60492d86e546fd23cde5131e1340",
+        "028.json": "4eb3678401bd0025d5b07b9cf75a1473c86e60be9b1b97f73d3106f57825942b",
+        "029.json": "da26a200faead89b451dc5fbd24bdb556e2bf267865e64d88066c0a5483423a5",
+        "030.json": "6c4a2ec76be5142e3b101565e101b6c150933ce64130f6db1decf73c0c334f7f",
+        "031.json": "5a29d957f46a4d30c4e1232387068692378495dc97643dd2144900fda3aadd9e",
+        "032.json": "afeb194660fe98a25e94efadf44865656932b02d474cf109ff2362e2bdf4797a",
+        "033.json": "60b5b262fabe490f59fdb80ce48416f46d559ae462a6b59718d65dcc53a6288a",
+        "034.json": "2a1f0013becd0b3ff8e62023f6090a70456c4842005f07a14b16ef83d1678307",
+        "035.json": "8a577fcb2860e71ce9a014a28a794c13a11c41d116c2ab50148f3d7149c2a318",
+        "036.json": "6d38144ea4dd896fccae6417f32ec9b8bbca92b788100d2d7f354245d3c5fcd4",
+        "037.json": "f7637294957c9b7645d3c7b3ab7328d355b8d9a858a7171bf4fc095cb580b330",
+        "038.json": "710bb71ecc2423bb7c5c00cb2554886e6c12f68476c64354f673880c2ac878c5",
+        "039.json": "342deb3b0a6cba901f97ad65418a88530fc95855d14c674664db83dd60baf2b2",
+        "040.json": "8ec42f7e91d8d5c3a391d98706c4ec7390f577f80222ec01f9f0164b13eaaa83",
+        "041.json": "29658562e154a11bfe4134861d5df60990c6aee4fc6e79d899564abe20469e68",
+        "042.json": "c7be50f191f1e4260ef194b023e329bee37106a6781ba728838e289f4a5ab51f",
+        "043.json": "62dc2eb05929865576ef9ab98b00c0c44352cdd4d9b86fc956904ed083b1897c",
+        "044.json": "302a30c90d5c2fcdbf08ad8a6f3b4a4a31fe3d9180aec2153349c9a99762640d",
+        "045.json": "91e49a9e3c66a0367bd44a0017b2d71e3dee1c19d313afea7b7f18ef64b40e80",
+        "046.json": "2f994e2a0e79f53c488c735d6797707f0cf37f42b2e8d97d59b2e995deeb5bba",
+        "047.json": "58c3c9de065ec1c7af65a437c6eef011273f7361c69d92a1da56b77c9afe3402"
+      }
+    },
+    "seed": 7211,
+    "steps": 160,
+    "trainingRows": 402,
+    "parameterCount": 718810,
+    "hiddenWidth": 128,
+    "slotsPerField": 14,
+    "vocabularySize": 107,
+    "lossSnapshots": [
+      {
+        "step": 1,
+        "loss": 4.687127113342285
+      },
+      {
+        "step": 160,
+        "loss": 0.0749083012342453
+      }
+    ],
+    "fitAndFinalEvaluationSeconds": 0.5216815000167117,
+    "evaluation": {
+      "train": {
+        "fields": 402,
+        "exactTeacherMatch": 402,
+        "acceptedFields": 402,
+        "missingEos": 0
+      },
+      "eval": {
+        "fields": 210,
+        "exactTeacherMatch": 84,
+        "acceptedFields": 84,
+        "missingEos": 0
+      }
+    },
+    "backboneUpdates": 0,
+    "nativeCalls": 0,
+    "heldoutUse": "one final report only, no checkpoint selection",
+    "limitations": [
+      "Independent slots can disagree, repeat, omit or lack EOS.",
+      "Bounded catalog words and short factual grammar, not open-vocabulary prose.",
+      "Heldout product-color combinations; all product identities seen in TRAIN.",
+      "Fresh Qwen query encoding and browser readiness are not measured by CPU head timing.",
+      "No live frontend integration or template fallback."
+    ]
+  },
+  "checkpoint": {
+    "file": "head.pt",
+    "sha256": "e0798da436986a97349e7bba95a5d6b703f623b3ffffff6c8b4e96855d414b2a"
+  },
+  "heldout": {
+    "caseCount": 42,
+    "firstThreeAllFieldsAccepted": 0,
+    "fullSixAllFieldsAccepted": 0,
+    "medianHeadForwardArgmaxMs": 0.10599999222904444,
+    "medianHeadPreparationGenerationValidationMs": 0.5638545262627304,
+    "timingScope": "CPU head only; fresh Qwen query, ranking, catalog verification, network, React/images excluded"
+  },
+  "reloadExactSlotParity": true,
+  "warmupExcluded": "warmup.json",
+  "shutdownIntegrity": {
+    "frozen927HashesUnchanged": true,
+    "copyCheckpointUnchanged": true,
+    "memory": {
+      "mlxActiveBytes": 5038303754,
+      "mlxPeakBytes": 5278226532,
+      "mlxCacheBytes": 133415816,
+      "processBudgetBytes": 7516192768
+    }
+  },
+  "totalWallMsIncludingSetupOfflineFeaturesFitEvaluationArchive": 25990.68279203493
+}
