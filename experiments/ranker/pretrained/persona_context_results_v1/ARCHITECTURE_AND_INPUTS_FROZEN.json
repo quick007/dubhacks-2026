@@ -1,0 +1,30 @@
+{
+  "version": "public-persona-context-model.v1",
+  "config": {
+    "seed": 20261018,
+    "steps": 250,
+    "learningRate": 0.003,
+    "weightDecay": 0.0001,
+    "textDimensions": 2048,
+    "colorDimensions": 256,
+    "hiddenWidth": 64,
+    "colorWidth": 32,
+    "threads": 1,
+    "halfLifeDays": 30.0,
+    "variantLossWeight": 0.5,
+    "selection": "single predeclared final step; no validation or heldout tuning",
+    "contextRepresentation": "signed public word/character ngrams plus observed real-item Qwen history mean; no Qwen persona encoding",
+    "scope": "synthetic known16 catalog; family/group heldout; no human or unseen-catalog claim"
+  },
+  "dataSha256": {
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/data/authored-history-tiger-v1/profiles.public.json": "c36a54ebf54021389486f594275258852fbe460cb0933f8f9701f93c939c25f9",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/synthetic_history_v1/split.json": "bf377038be8118472d98c517bc36de8d4404470acee54ddc4784936156a30b3d",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/synthetic_history_v1/labels.train.json": "1b1ae769cb162bcb0deee76ea938ac619fbd7a94ee3ef39d7544d5d2491e8ccb",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/synthetic_history_v1/labels.heldout.json": "81b5a341eada3b151fc61b12cf98f87a83c8c4459b442c7c55d8d44460a4fd51",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/synthetic_history_v1/manifest.json": "f717829925121e35470635f08a4baf508ac1f46c287f38a0657b93debb10b27d"
+  },
+  "sourceSha256": "4775025236afa245af5d78987a65157ce301767d0dd640c51ef65562f785c6bd",
+  "provisionalSeedOnly": false,
+  "frozenBeforeAnyProfileOrGoldParse": true,
+  "heldoutUsedForFitOrSelection": false
+}
