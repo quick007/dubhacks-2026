@@ -1,0 +1,32 @@
+{
+  "version": "persona-choice-derived-identity-correction.v1",
+  "createdUTC": "2026-10-18T11:48:40.685878+00:00",
+  "reason": "V1 admission passed and labels parsed; input-control gold join and reverse robustness metric views normalized profileId/orderLabel while retaining productioncaseId, then index_rows rejected those derived views.",
+  "attempt1": {
+    "adjudicationSha256": "b00333836f1567e6d60d0a08a46df71af279b95a7dbef5ca44b03ef0aca10e28",
+    "admissionBeforeGoldSha256": "a9d20061de716d0994d06c214b922ba0012c4733deb025ab052c3813204ef975",
+    "exitCode": 1,
+    "privateQualityJSONParsed": true,
+    "qualityMetricResultCompleted": false,
+    "error": "order-specific case identity changed"
+  },
+  "preserved": {
+    "originalSourceSha256": "cac3469c0eb67cfe86b796f8760035e52d14412d5f46e98ae1f01ce1fbf2106d",
+    "originalFreezeSha256": "d16e32fc2eda64c05e15ec956fdc1294402ae8f24b6e7536459f6116eaa45153",
+    "originalAttemptUnmodified": true,
+    "allModelPredictionFilesUnmodified": true
+  },
+  "correction": "Only choose() derivedmetricview sets caseId=derived profileId + canonical. Original model rows are fully validated unchanged before derived normalization. Source VERSION/self-freeze filename advance toV2. No threshold/math/model/data change.",
+  "candidateOrLabelRetune": false,
+  "newGoldAuthorship": false,
+  "nativeCalls": 0,
+  "optimizerUpdates": 0,
+  "beforeAttempt2": true,
+  "tests": {
+    "targeted": 4,
+    "originalFakeTestsReplayed": 16,
+    "passed": true,
+    "elapsedSeconds": 0.301
+  },
+  "correctedSourceSha256": "950cebc62d752b33dbfe7a09031958671afcba3e130bc2abc1428517c321907d"
+}
