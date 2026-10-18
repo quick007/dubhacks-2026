@@ -1,370 +1,392 @@
 {
   "experiment": {
-    "id": "jacket-study",
-    "name": "Finding the right rain jacket",
-    "baselineVariantId": "baseline",
-    "variantIds": ["baseline", "card-details"],
+    "id": "fieldwork-study",
+    "name": "Finding it on fieldwork",
+    "baselineVariantId": "default",
+    "variantIds": ["default", "ranked"],
     "developmentPersonaIds": [
-      "dev-commuter",
-      "dev-hiker",
-      "dev-student",
-      "dev-searcher",
-      "dev-gifter"
+      "dev-cup",
+      "dev-backpack",
+      "dev-notes",
+      "dev-rain",
+      "dev-groceries",
+      "dev-sofa",
+      "dev-light",
+      "dev-canvas"
     ],
-    "heldOutPersonaIds": ["ho-angler", "ho-cyclist", "ho-walker", "ho-hurried", "ho-parent"],
+    "heldOutPersonaIds": [
+      "ho-water",
+      "ho-weekend",
+      "ho-cables",
+      "ho-crewneck",
+      "ho-lunch",
+      "ho-swim",
+      "ho-music",
+      "ho-sunglasses"
+    ],
     "seed": 42,
     "createdAt": "2026-10-17T00:00:00.000Z",
     "contractVersion": 1
   },
   "personas": [
     {
-      "id": "dev-commuter",
-      "name": "Bob",
-      "goal": "Waterproof navy jacket, medium, under $150",
+      "id": "dev-cup",
+      "name": "Maya",
+      "goal": "A drinking cup for the kitchen table.",
       "split": "development",
-      "traits": ["specific", "patient"],
+      "traits": ["browses the first six products"],
       "history": [],
       "task": {
-        "query": "waterproof navy jacket, medium, under $150",
-        "budget": 150,
+        "query": "A drinking cup for the kitchen table.",
         "requirements": [
           {
-            "id": "color",
-            "label": "Navy",
+            "id": "fit",
+            "label": "A cup for the table",
             "kind": "hard",
-            "attribute": "color",
-            "value": "navy"
-          },
-          {
-            "id": "size",
-            "label": "Size M",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "M"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
+            "attribute": "product",
+            "value": "mug"
           }
         ]
       },
-      "bio": "Bob walks to class and a campus job through Seattle rain. A broke UW student, Bob needs a waterproof navy jacket in medium, under $150."
+      "bio": "Maya drinks tea at a small Capitol Hill kitchen table and wants a sturdy cup for it."
     },
     {
-      "id": "dev-hiker",
+      "id": "ho-water",
+      "name": "Diego",
+      "goal": "For carrying water when I head out.",
+      "split": "held-out",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "For carrying water when I head out.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "Carries water",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "bottle"
+          }
+        ]
+      },
+      "bio": "Diego bikes the Burke-Gilman most mornings and keeps forgetting water."
+    },
+    {
+      "id": "dev-backpack",
       "name": "Priya",
-      "goal": "Waterproof jacket in large, olive if possible, under $120",
+      "goal": "A backpack for taking my everyday things along.",
       "split": "development",
-      "traits": ["outdoors"],
+      "traits": ["browses the first six products"],
       "history": [],
       "task": {
-        "query": "waterproof jacket in large, olive if possible, under $120",
-        "budget": 120,
+        "query": "A backpack for taking my everyday things along.",
         "requirements": [
           {
-            "id": "waterproof",
-            "label": "Waterproof",
+            "id": "fit",
+            "label": "A backpack",
             "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
-          },
-          {
-            "id": "size",
-            "label": "Size L",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "L"
-          },
-          {
-            "id": "color",
-            "label": "Olive",
-            "kind": "preference",
-            "attribute": "color",
-            "value": "olive"
+            "attribute": "product",
+            "value": "pack"
           }
         ]
       },
-      "bio": "Priya hikes Mount Si most weekends and wants a waterproof jacket in large, olive if possible, under $120."
+      "bio": "Priya takes the light rail to work with a laptop, lunch and a book."
     },
     {
-      "id": "dev-student",
-      "name": "Leo",
-      "goal": "Any medium jacket under $100",
-      "split": "development",
-      "traits": ["budget"],
-      "history": [],
-      "task": {
-        "query": "any medium jacket under $100",
-        "budget": 100,
-        "requirements": [
-          {
-            "id": "size",
-            "label": "Size M",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "M"
-          }
-        ]
-      },
-      "bio": "Leo just moved to Seattle for grad school and has $100 for any jacket in medium."
-    },
-    {
-      "id": "dev-searcher",
-      "name": "Hana",
-      "goal": "Navy rain shell, medium",
-      "split": "development",
-      "traits": ["searches first"],
-      "history": [],
-      "task": {
-        "query": "navy rain shell, medium",
-        "budget": 200,
-        "requirements": [
-          {
-            "id": "color",
-            "label": "Navy",
-            "kind": "hard",
-            "attribute": "color",
-            "value": "navy"
-          },
-          {
-            "id": "size",
-            "label": "Size M",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "M"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
-          }
-        ]
-      },
-      "bio": "Hana skips the menus and goes straight to search for a navy rain shell in medium."
-    },
-    {
-      "id": "dev-gifter",
+      "id": "ho-weekend",
       "name": "Sam",
-      "goal": "Small waterproof jacket under $150",
+      "goal": "A travel bag for a weekend away.",
+      "split": "held-out",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "A travel bag for a weekend away.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "A weekend bag",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "duffel"
+          }
+        ]
+      },
+      "bio": "Sam takes the ferry to Bainbridge for weekends and packs light."
+    },
+    {
+      "id": "dev-notes",
+      "name": "Ana",
+      "goal": "Somewhere to write a quick note I want to keep.",
       "split": "development",
-      "traits": ["gift"],
+      "traits": ["browses the first six products"],
       "history": [],
       "task": {
-        "query": "small waterproof jacket under $150",
-        "budget": 150,
+        "query": "Somewhere to write a quick note I want to keep.",
         "requirements": [
           {
-            "id": "size",
-            "label": "Size S",
+            "id": "fit",
+            "label": "Somewhere to write",
             "kind": "hard",
-            "attribute": "size",
-            "value": "S"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
+            "attribute": "product",
+            "value": "notebook"
           }
         ]
       },
-      "bio": "Sam is buying a small waterproof jacket as a birthday gift, with $150 to spend."
+      "bio": "Ana jots down ideas between shifts at a Ballard coffee shop."
     },
     {
-      "id": "ho-angler",
-      "name": "Tomás",
-      "goal": "Navy waterproof jacket, large, under $150",
+      "id": "ho-cables",
+      "name": "Kenji",
+      "goal": "A zipped pouch to keep loose cables together.",
       "split": "held-out",
-      "traits": ["specific"],
+      "traits": ["browses the first six products"],
       "history": [],
       "task": {
-        "query": "navy waterproof jacket, large, under $150",
-        "budget": 150,
+        "query": "A zipped pouch to keep loose cables together.",
         "requirements": [
           {
-            "id": "color",
-            "label": "Navy",
+            "id": "fit",
+            "label": "A zipped cable pouch",
             "kind": "hard",
-            "attribute": "color",
-            "value": "navy"
-          },
-          {
-            "id": "size",
-            "label": "Size L",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "L"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
+            "attribute": "product",
+            "value": "organizer"
           }
         ]
       },
-      "bio": "Tomás fishes off the Edmonds pier at dawn and needs a navy waterproof jacket in large, under $150."
+      "bio": "Kenji's chargers tangle at the bottom of his bag on every commute."
     },
     {
-      "id": "ho-cyclist",
+      "id": "dev-rain",
+      "name": "Lena",
+      "goal": "A hooded layer for when the rain starts.",
+      "split": "development",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "A hooded layer for when the rain starts.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "A hooded rain layer",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "jacket"
+          }
+        ]
+      },
+      "bio": "Lena walks her dog around Green Lake whatever the forecast says."
+    },
+    {
+      "id": "ho-crewneck",
       "name": "Marcus",
-      "goal": "Black waterproof jacket, medium, under $250",
+      "goal": "A cotton top with a crew neck.",
       "split": "held-out",
-      "traits": ["searches first"],
+      "traits": ["browses the first six products"],
       "history": [],
       "task": {
-        "query": "black waterproof jacket, medium, under $250",
-        "budget": 250,
+        "query": "A cotton top with a crew neck.",
         "requirements": [
           {
-            "id": "color",
-            "label": "Black",
+            "id": "fit",
+            "label": "A cotton crewneck",
             "kind": "hard",
-            "attribute": "color",
-            "value": "black"
-          },
-          {
-            "id": "size",
-            "label": "Size M",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "M"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
+            "attribute": "product",
+            "value": "sweatshirt"
           }
         ]
       },
-      "bio": "Marcus rides the Burke-Gilman home after late shifts and needs a black waterproof jacket in medium, under $250."
+      "bio": "Marcus wants a plain cotton top for cool Fremont evenings."
     },
     {
-      "id": "ho-walker",
-      "name": "Ruth",
-      "goal": "Waterproof medium jacket under $120",
-      "split": "held-out",
-      "traits": ["budget"],
+      "id": "dev-groceries",
+      "name": "Theo",
+      "goal": "Something to carry groceries home in.",
+      "split": "development",
+      "traits": ["browses the first six products"],
       "history": [],
       "task": {
-        "query": "waterproof medium jacket under $120",
-        "budget": 120,
+        "query": "Something to carry groceries home in.",
         "requirements": [
           {
-            "id": "size",
-            "label": "Size M",
+            "id": "fit",
+            "label": "Carries groceries",
             "kind": "hard",
-            "attribute": "size",
-            "value": "M"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
+            "attribute": "product",
+            "value": "tote"
           }
         ]
       },
-      "bio": "Ruth walks two dogs around Green Lake twice a day, rain or shine, and needs a waterproof medium jacket under $120."
+      "bio": "Theo walks home from the U District farmers market with an armful of groceries every Saturday."
     },
     {
-      "id": "ho-hurried",
-      "name": "Dana",
-      "goal": "Waterproof medium jacket under $150",
-      "split": "held-out",
-      "traits": ["impatient"],
-      "history": [],
-      "task": {
-        "query": "waterproof medium jacket under $150",
-        "budget": 150,
-        "requirements": [
-          {
-            "id": "size",
-            "label": "Size M",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "M"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
-          }
-        ]
-      },
-      "bio": "Dana has five minutes between meetings to buy a waterproof medium jacket under $150."
-    },
-    {
-      "id": "ho-parent",
+      "id": "ho-lunch",
       "name": "Grace",
-      "goal": "Navy waterproof jacket, medium, under $150",
+      "goal": "A container for my packed meal.",
       "split": "held-out",
-      "traits": ["specific"],
+      "traits": ["browses the first six products"],
       "history": [],
       "task": {
-        "query": "navy waterproof jacket, medium, under $150",
-        "budget": 150,
+        "query": "A container for my packed meal.",
         "requirements": [
           {
-            "id": "color",
-            "label": "Navy",
+            "id": "fit",
+            "label": "Holds a packed meal",
             "kind": "hard",
-            "attribute": "color",
-            "value": "navy"
-          },
-          {
-            "id": "size",
-            "label": "Size M",
-            "kind": "hard",
-            "attribute": "size",
-            "value": "M"
-          },
-          {
-            "id": "waterproof",
-            "label": "Waterproof",
-            "kind": "hard",
-            "attribute": "waterproof",
-            "value": "yes"
+            "attribute": "product",
+            "value": "lunchbox"
           }
         ]
       },
-      "bio": "Grace stands on soccer sidelines every Saturday and needs a navy waterproof jacket in medium, under $150."
+      "bio": "Grace packs lunch for long days at a South Lake Union lab."
+    },
+    {
+      "id": "dev-sofa",
+      "name": "Bob",
+      "goal": "A throw blanket for my sofa.",
+      "split": "development",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "A throw blanket for my sofa.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "A sofa throw",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "blanket"
+          }
+        ]
+      },
+      "bio": "Bob is a broke UW student whose first apartment has a drafty window right behind the sofa."
+    },
+    {
+      "id": "ho-swim",
+      "name": "Rosa",
+      "goal": "A towel to use after a swim.",
+      "split": "held-out",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "A towel to use after a swim.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "A swim towel",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "towel"
+          }
+        ]
+      },
+      "bio": "Rosa swims laps at the Medgar Evers pool before work."
+    },
+    {
+      "id": "dev-light",
+      "name": "Omar",
+      "goal": "A cordless light for my table.",
+      "split": "development",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "A cordless light for my table.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "A cordless table light",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "lamp"
+          }
+        ]
+      },
+      "bio": "Omar reads on a balcony in Beacon Hill with no outlet nearby."
+    },
+    {
+      "id": "ho-music",
+      "name": "June",
+      "goal": "Something that goes over my ears for listening to music.",
+      "split": "held-out",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "Something that goes over my ears for listening to music.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "Over-ear headphones",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "headphones"
+          }
+        ]
+      },
+      "bio": "June listens to records on the bus from West Seattle."
+    },
+    {
+      "id": "dev-canvas",
+      "name": "Felix",
+      "goal": "Canvas footwear with a low top.",
+      "split": "development",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "Canvas footwear with a low top.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "Low-top canvas shoes",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "sneakers"
+          }
+        ]
+      },
+      "bio": "Felix wants plain canvas shoes for summer days on Alki."
+    },
+    {
+      "id": "ho-sunglasses",
+      "name": "Iris",
+      "goal": "Round sunglasses with an acetate frame.",
+      "split": "held-out",
+      "traits": ["browses the first six products"],
+      "history": [],
+      "task": {
+        "query": "Round sunglasses with an acetate frame.",
+        "requirements": [
+          {
+            "id": "fit",
+            "label": "Round sunglasses",
+            "kind": "hard",
+            "attribute": "product",
+            "value": "sunglasses"
+          }
+        ]
+      },
+      "bio": "Iris squints through every sunny day at Gas Works Park."
     }
   ],
   "variants": [
     {
-      "id": "baseline",
-      "experimentId": "jacket-study",
-      "name": "Today's shop",
+      "id": "default",
+      "experimentId": "fieldwork-study",
+      "name": "Default page",
       "isBaseline": true,
       "config": {
-        "headline": "Jackets for every kind of weather",
-        "showShipping": true,
+        "headline": "Good things. Wherever life takes you.",
+        "showShipping": false,
         "recommendationOrder": "popular"
       }
     },
     {
-      "id": "card-details",
-      "experimentId": "jacket-study",
-      "name": "Details on cards",
+      "id": "ranked",
+      "experimentId": "fieldwork-study",
+      "name": "Personalized page",
       "isBaseline": false,
       "config": {
-        "headline": "Jackets for every kind of weather",
-        "showShipping": true,
-        "recommendationOrder": "popular",
-        "showAttributes": true
+        "headline": "Good things. Wherever life takes you.",
+        "showShipping": false,
+        "recommendationOrder": "popular"
       }
     }
   ]

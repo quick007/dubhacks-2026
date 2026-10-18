@@ -3,8 +3,8 @@ import { ToggleGroup } from "@base-ui/react/toggle-group";
 import type { Arm } from "../lib/story";
 
 export const armLabels: Record<Arm, string> = {
-  baseline: "Today's shop",
-  candidate: "With the fix",
+  baseline: "Default page",
+  candidate: "Personalized page",
 };
 
 export function ArmToggle({ value, onChange }: { value: Arm; onChange: (arm: Arm) => void }) {

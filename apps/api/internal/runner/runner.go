@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io/fs"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -49,10 +50,12 @@ type Adapter interface {
 	Execute(context.Context, Context) (Result, error)
 }
 
-// Mock replays the scripted scenario path for the run's persona and variant, drawing one frame per step.
+// Mock replays the scripted scenario path for the run's persona and variant, saving one frame per step:
+// the step's captured screenshot from Frames when it names one, otherwise a drawn stand-in.
 type Mock struct {
 	StepDelay time.Duration
 	Scenario  *scenario.Scenario
+	Frames    fs.FS
 }
 
 func (m Mock) Execute(ctx context.Context, c Context) (Result, error) {
@@ -61,11 +64,21 @@ func (m Mock) Execute(ctx context.Context, c Context) (Result, error) {
 		return Result{}, fmt.Errorf("no mock scenario path for persona %s on variant %s", c.Run.PersonaID, c.Run.VariantID)
 	}
 	for i, step := range path.Steps {
-		file := fmt.Sprintf("step-%02d.svg", i)
-		if err := os.WriteFile(filepath.Join(c.ArtifactDirectory, file), m.Scenario.Frame(step, c.Run.Config.ShowAttributes), 0600); err != nil {
+		file, mimeType, frame := fmt.Sprintf("step-%02d.svg", i), "image/svg+xml", m.Scenario.Frame(step, c.Run.Config.ShowAttributes)
+		if step.Screenshot != "" {
+			if m.Frames == nil {
+				return Result{}, fmt.Errorf("no captured frames for screenshot %s", step.Screenshot)
+			}
+			captured, err := fs.ReadFile(m.Frames, step.Screenshot)
+			if err != nil {
+				return Result{}, err
+			}
+			file, mimeType, frame = fmt.Sprintf("step-%02d.jpg", i), "image/jpeg", captured
+		}
+		if err := os.WriteFile(filepath.Join(c.ArtifactDirectory, file), frame, 0600); err != nil {
 			return Result{}, err
 		}
-		if err := c.SaveArtifact(Artifact{"screenshot", file, "image/svg+xml"}); err != nil {
+		if err := c.SaveArtifact(Artifact{"screenshot", file, mimeType}); err != nil {
 			return Result{}, err
 		}
 		kind := "navigation"
@@ -82,7 +95,7 @@ func (m Mock) Execute(ctx context.Context, c Context) (Result, error) {
 	result := Result{
 		TaskCompleted:      path.Purchase != "",
 		FailureReasons:     []string{},
-		Notes:              []string{"Scripted mock shopper on drawn page frames; not measured human behavior.", fmt.Sprintf("Recorded seed: %d", c.Run.Seed)},
+		Notes:              []string{"Scripted mock shopper replayed on recorded page frames; not measured human behavior.", fmt.Sprintf("Recorded seed: %d", c.Run.Seed)},
 		PurchasedProductID: path.Purchase,
 	}
 	if path.Reason != "" {

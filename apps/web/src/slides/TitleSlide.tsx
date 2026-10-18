@@ -1,25 +1,22 @@
 import { ArrowRight, RefreshCw } from "lucide-react";
 import { Fragment } from "react";
-import { StoreSketch, type SketchStage } from "./StoreSketch";
+import { StoreShot, type ShotStage } from "./StoreShot";
 
 const STAGGER_MS = 450;
-const steps: { stage: SketchStage; caption: string }[] = [
+const steps: { stage: ShotStage; caption: string }[] = [
   { stage: "browse", caption: "AI shoppers browse your store" },
   { stage: "stuck", caption: "See where each one gets stuck" },
-  { stage: "fit", caption: "Shoppers find it, stores sell it" },
+  { stage: "fit", caption: "The model personalizes each shopper's page" },
 ];
 
 export function TitleSlide({ names }: { names: string[] }) {
   return (
-    <div className="mx-auto flex w-full max-w-6xl flex-col justify-center gap-14 px-4 py-10 sm:px-8">
+    <div className="mx-auto flex w-full max-w-6xl flex-col justify-center gap-10 px-4 py-10 sm:gap-14 sm:px-8">
       <div className="text-center">
-        <h1
-          className="font-display text-7xl leading-[0.85] font-black tracking-[-0.03em] sm:text-9xl"
-          style={{ fontVariationSettings: '"wdth" 75' }}
-        >
+        <h1 className="font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.12] font-semibold tracking-[-0.025em] text-balance">
           Storefront Lab
         </h1>
-        <p className="mt-5 text-xl sm:text-3xl">
+        <p className="mx-auto mt-6 max-w-[42ch] text-xl leading-relaxed text-muted sm:text-2xl">
           Better personalized shopping for customers and stores.
         </p>
       </div>
@@ -37,7 +34,7 @@ export function TitleSlide({ names }: { names: string[] }) {
               className="grid animate-rise grid-cols-[9rem_1fr] items-center gap-4 md:block"
               style={{ animationDelay: `${300 + i * STAGGER_MS}ms` }}
             >
-              <StoreSketch stage={step.stage} names={names} />
+              <StoreShot stage={step.stage} names={names} />
               <p className="text-lg leading-snug sm:text-xl md:mt-4">{step.caption}</p>
             </li>
           </Fragment>
@@ -48,7 +45,7 @@ export function TitleSlide({ names }: { names: string[] }) {
         style={{ animationDelay: `${300 + steps.length * STAGGER_MS}ms` }}
       >
         <RefreshCw aria-hidden className="size-5 shrink-0" />
-        Simulated shoppers test, agents fix, repeat
+        Simulated shoppers test, the model personalizes, repeat
       </p>
     </div>
   );
