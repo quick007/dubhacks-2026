@@ -71,6 +71,18 @@ class SchedulerIdentityTests(unittest.TestCase):
         self.assertEqual(result['pagePlan']['sections'][0]['products'][0]['badge'],{'text':None,'source':'rejected'})
         self.assertFalse(result['quality']['correctNone'])
 
+    def test_padded_none_requires_exact_raw_sentinel(self):
+        for raw in ('NONE ',' NONE','NONE\t','NONE\u00a0'):
+            with self.subTest(raw=repr(raw)):
+                rows,plan,request,catalog=self.values_fixture()
+                rows[2]['text']=raw
+                encoded,failures=encode_value_rows(rows)
+                self.assertIn('badge-1:nonexact-NONE-sentinel',failures)
+                self.assertEqual(encoded[2]['rawValue'],raw)
+                result=assemble_values(rows,plan,request,catalog)
+                self.assertEqual(result['pagePlan']['sections'][0]['products'][0]['badge'],{'text':None,'source':'rejected'})
+                self.assertFalse(result['quality']['allFieldsFulfilled'])
+
     def test_same_evidence_fields_caps_for_values_layout(self):
         from .test_heading_experiment import HeadingExperimentTests
         from .shared_evidence_experiment import shared_layout

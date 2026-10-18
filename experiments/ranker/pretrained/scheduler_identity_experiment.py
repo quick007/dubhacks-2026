@@ -30,7 +30,7 @@ def values_layout(plan,request,catalog):
     return common,rows,evidence
 
 
-def encode_value_rows(rows):
+def encode_value_rows(rows,*,exact_none=True):
     """Trusted scheduler prefix, untouched raw value; never repair old outputs."""
     result=[];failures=[];seen=set()
     for row in rows:
@@ -40,6 +40,8 @@ def encode_value_rows(rows):
         seen.add(label);raw=row['text'];errors=[]
         if not raw or not raw.strip():errors.append('empty-value')
         if any(c in raw for c in FORBIDDEN_SEPARATORS):errors.append('multiline-or-line-separator')
+        if exact_none and row['kind']=='badge' and raw!='NONE' and raw.strip()=='NONE':
+            errors.append('nonexact-NONE-sentinel')
         if re.search(r'(?<![A-Za-z0-9])[STB]\d+\s*:',unicodedata.normalize('NFKC',raw),re.I):
             errors.append('unexpected-generated-field-label')
         # Even invalid input is retained verbatim; fail-closed page status is
@@ -53,7 +55,7 @@ def encode_value_rows(rows):
 def assemble_values_legacy_v1(rows,plan,request,catalog):
     """Frozen historical accounting for explicit replay only, never new serving."""
     from .parallel_decode import assemble
-    encoded,failures=encode_value_rows(rows);result=assemble(encoded,plan,request,catalog)
+    encoded,failures=encode_value_rows(rows,exact_none=False);result=assemble(encoded,plan,request,catalog)
     if failures:
         result['quality']['allFieldsFulfilled']=False
         result['quality']['rejections']+=failures
@@ -68,6 +70,12 @@ def assemble_values(rows,plan,request,catalog):
     establish that this scheduler-owned field was generated successfully.
     """
     result=assemble_values_legacy_v1(rows,plan,request,catalog)
+    encoded,failures=encode_value_rows(rows)
+    result['wireRows']=encoded
+    result['valueProtocolRejections']=failures
+    if failures:
+        result['quality']['allFieldsFulfilled']=False
+        result['quality']['rejections'] += [f for f in failures if f not in result['quality']['rejections']]
     sections=result['pagePlan']['sections']
     cards=[card for section in sections for card in section['products']]
     rejected=set()
