@@ -58,6 +58,11 @@ def run(args):
         report['trainableParameters']={k:int(v.size) for k,v in trainable.items()};save()
         optimizer=optim.Adam(learning_rate=CONFIG['learningRate']);rng=np.random.default_rng(CONFIG['seed'])
         fields=records(DATA/'fields.train.jsonl');cases=records(DATA/'cases.train.jsonl')
+        expected_fields={f'S{i}' for i in (1,2)}|{f'{kind}{i}' for kind in ('T','B') for i in range(1,7)}
+        if len(cases)!=12 or len(fields)!=168:raise AssertionError('Wrong frozen training denominator')
+        for case in cases:
+            rows=[f for f in fields if f['caseId']==case['caseId']]
+            if len(rows)!=14 or {f['field'] for f in rows}!=expected_fields:raise AssertionError('Wrong training field membership')
         if args.smoke:cases=cases[:1];fields=fields[:1]
         def make_state(case,common):
             with disabled(model,adapter):
@@ -120,7 +125,9 @@ def run(args):
         state,_=make_state(cases[0],fields[0]['messages'][0]);first=contract_for(state,fields[0])
         report['firstTrainingProbeAfter']=float(direct_loss(state,first).item())
         checkpoint=args.out/'adapter.safetensors';mx.save_safetensors(str(checkpoint),dict(tree_flatten(adapter.trainable_parameters())))
-        before_reload=float(direct_loss(state,first).item());adapter.load_weights(list(mx.load(str(checkpoint)).items()));mx.eval(adapter.parameters())
+        before_reload=float(direct_loss(state,first).item());saved=mx.load(str(checkpoint))
+        if set(saved)!={'lora_a','lora_b'}:raise AssertionError('Wrong adapter checkpoint membership')
+        adapter.load_weights(list(saved.items()),strict=False);mx.eval(adapter.parameters())
         after_reload=float(direct_loss(state,first).item())
         if before_reload!=after_reload:raise AssertionError('Reload prediction mismatch')
         report['checkpoint']={'sha256':digest(checkpoint),'exactDirectLossReload':True,'loss':after_reload}
@@ -150,6 +157,7 @@ def run(args):
                             print(json.dumps({'split':split,'caseId':case['caseId'],'arm':arm,'quality':result['quality'],'fullMs':result['externalFullCompletionMs']}),flush=True);save()
                             gc.collect();mx.clear_cache()
             finally:scheduler.values_layout=old_layout;fusion.encode_shared_prefix=old_encode
+        if len(report['steps'])!=(1 if args.smoke else 336):raise AssertionError('Incomplete fixed training step count')
         report['status']='smoke-passed' if args.smoke else 'completed';report['memory']=bb.runtime_memory();save()
         print(json.dumps({'status':report['status'],'steps':len(report['steps']),'firstProbeBefore':report['firstTrainingProbeBefore'],'firstProbeAfter':report['firstTrainingProbeAfter'],'memory':report['memory']}),flush=True)
     except Exception as exc:
