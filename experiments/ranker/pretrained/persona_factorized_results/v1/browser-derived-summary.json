@@ -1,0 +1,4755 @@
+{
+  "version": "factorized-browser-derived-summary.v1",
+  "derivedSubsetNotRawReport": true,
+  "sourceReport": {
+    "path": "/Users/lukas/Documents/Projects/dubhacks-persona-integration/data/ranker/pretrained/persona-factorized-browser-v1-attempt-1/report.json",
+    "sha256": "d69ca7096d0639e7d38e0626473ed52c2fb31b439d7bffcd38dfe041be66c413",
+    "bytes": 39244479
+  },
+  "qualityGatePassed": false,
+  "modelPromotion": false,
+  "v4ConditioningQualityValidated": false,
+  "sourcesUnchanged": true,
+  "startupUnchanged": true,
+  "error": null,
+  "profileFirst3": {
+    "fixedDenominator": 10,
+    "valid": 10,
+    "rawMs": [
+      342.7999999523163,
+      649,
+      481.2999999523163,
+      335.5,
+      334.3000000715256,
+      380.10000002384186,
+      383.09999990463257,
+      332.09999990463257,
+      334.6999999284744,
+      334
+    ],
+    "p50Ms": 335.5,
+    "p95Ms": 649,
+    "estimator": "nearest-rank; fixed10 complete only"
+  },
+  "profileFull6": {
+    "fixedDenominator": 10,
+    "valid": 10,
+    "rawMs": [
+      359.60000002384186,
+      649,
+      481.2999999523163,
+      335.5,
+      334.3000000715256,
+      397.7999999523163,
+      399.89999997615814,
+      350.5,
+      351.1999999284744,
+      350.60000002384186
+    ],
+    "p50Ms": 351.1999999284744,
+    "p95Ms": 649,
+    "estimator": "nearest-rank; fixed10 complete only"
+  },
+  "distinctQuerySummary": {
+    "fixedDenominator": 10,
+    "recorded": 10,
+    "queries": [
+      "a lamp for quiet reading",
+      "a notebook for class notes",
+      "a bottle for daily water",
+      "a bag for a short trip",
+      "a towel for pool days",
+      "something for listening on the train",
+      "a light jacket for rainy walks",
+      "a soft layer for evenings",
+      "a container for lunch",
+      "a mug for my morning drink"
+    ],
+    "firstThree": {
+      "fixedDenominator": 10,
+      "valid": 0,
+      "rawMs": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "p50Ms": null,
+      "p95Ms": null,
+      "estimator": "nearest-rank; fixed10 complete only"
+    },
+    "fullSix": {
+      "fixedDenominator": 10,
+      "valid": 10,
+      "rawMs": [
+        333.7000000476837,
+        463.39999997615814,
+        413.6999999284744,
+        432.2000000476837,
+        430.6999999284744,
+        412.10000002384186,
+        413.5,
+        412.90000009536743,
+        344.7000000476837,
+        415.39999997615814
+      ],
+      "p50Ms": 413.5,
+      "p95Ms": 463.39999997615814,
+      "estimator": "nearest-rank; fixed10 complete only"
+    },
+    "scope": "Ten distinct actual query edits on known public Bob profile; separate from original profile-switch denominator and HTTP-only cold new-profile arm"
+  },
+  "attempts": [
+    {
+      "index": 0,
+      "kind": "bare-navigation",
+      "personId": "bob",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "f36c51a5-b465-42a6-843b-601269950534"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "observedAt": 1680.7999999523163,
+          "fromNativeFetchMs": 839.8999999761581,
+          "fromActionMs": 1680.7999999523163,
+          "navigationStartMs": 1680.7999999523163
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.3741250839084387,
+          "forwardMs": 625.5122090224177,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+          "textBytes": 306,
+          "elapsedMs": 626.7278749728575,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.3741250839084387,
+          "nativeForwardMs": 625.5122090224177,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+            "textBytes": 306,
+            "elapsedMs": 626.7278749728575,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.3741250839084387,
+            "nativeForwardMs": 625.5122090224177,
+            "paddedTokensPerRow": 64,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 626.7278749728575,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 719.0251669380814,
+        "runtimeIntegrityChecksMs": 4.63799899443984,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 66.4577919524163,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-olive",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Olive",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-olive-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Olive band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Olive band",
+          "badge": "Olive band selected",
+          "bodyCopy": "Shown in Olive band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sunglasses",
+          "variantId": "sunglasses-tortoise",
+          "productIndex": 13,
+          "originalName": "Everyday round sunglasses",
+          "selectedColor": "Tortoise",
+          "itemPrice": 48,
+          "title": "Everyday round sunglasses in Tortoise",
+          "badge": "Tortoise selected",
+          "bodyCopy": "Shown in Tortoise at $48.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "kind": "loaded-profile-switch",
+      "personId": "maya",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "54252b61-1964-4bba-81de-ed0d38a666da"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 5780.799999952316,
+          "fromNativeFetchMs": 342.7999999523163,
+          "fromActionMs": 363.60000002384186,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 5797.600000023842,
+          "fromNativeFetchMs": 359.60000002384186,
+          "fromActionMs": 380.40000009536743,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.6374170770868659,
+          "forwardMs": 218.69658399373293,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+          "textBytes": 306,
+          "elapsedMs": 219.87283299677074,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.6374170770868659,
+          "nativeForwardMs": 218.69658399373293,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+            "textBytes": 306,
+            "elapsedMs": 219.87283299677074,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.6374170770868659,
+            "nativeForwardMs": 218.69658399373293,
+            "paddedTokensPerRow": 64,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 219.87283299677074,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 272.79391605407,
+        "runtimeIntegrityChecksMs": 4.292250028811395,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 22.682332899421453,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "c24146e87a5db9ffec1e99d9c6484562e482207776d9c6a8cb75430c5ff00db1",
+        "profileKeySha256": "c083d7f7aaf81554ce123741ab5c31f0a210b34c62917719c388c4441dad355e",
+        "pureFeatureSha256": "50ceac65e8b47c05314f653a01c5afb3784315a9321c3dd354e87e60f9fca8d1",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "blanket",
+          "variantId": "blanket-rust",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Rust",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Rust",
+          "badge": "Rust selected",
+          "bodyCopy": "Shown in Rust at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-terracotta",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Terracotta",
+          "itemPrice": 64,
+          "title": "Portable table light in Terracotta",
+          "badge": "Terracotta selected",
+          "bodyCopy": "Shown in Terracotta at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-oatmeal",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Oatmeal",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Oatmeal",
+          "badge": "Oatmeal selected",
+          "bodyCopy": "Shown in Oatmeal at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-terracotta",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Terracotta",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Terracotta",
+          "badge": "Terracotta selected",
+          "bodyCopy": "Shown in Terracotta at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-rust-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Rust band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Rust band",
+          "badge": "Rust band selected",
+          "bodyCopy": "Shown in Rust band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "kind": "loaded-profile-switch",
+      "personId": "priya",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "bcad85a5-a82b-4646-91b5-1c4b8c78cdb3"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 10730.699999928474,
+          "fromNativeFetchMs": 649,
+          "fromActionMs": 664.3999999761581,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 10730.699999928474,
+          "fromNativeFetchMs": 649,
+          "fromActionMs": 664.3999999761581,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.11416699271649122,
+          "forwardMs": 481.01291607599705,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "93341113627ea2cf68653a2a2e318caa7ad58df0e1ebf504a4db1bc33c425963",
+          "textBytes": 306,
+          "elapsedMs": 482.222874998115,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.11416699271649122,
+          "nativeForwardMs": 481.01291607599705,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "93341113627ea2cf68653a2a2e318caa7ad58df0e1ebf504a4db1bc33c425963",
+            "textBytes": 306,
+            "elapsedMs": 482.222874998115,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.11416699271649122,
+            "nativeForwardMs": 481.01291607599705,
+            "paddedTokensPerRow": 64,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 482.222874998115,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 574.5739580597728,
+        "runtimeIntegrityChecksMs": 3.8800410693511367,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 66.5101669728756,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "78ccc626c86e2ae34da930616c09356efc10962752dd2f4e87d9a759b6317817",
+        "profileKeySha256": "ecdcd59d0d680ff6383674a431d29445b8859bbd585e447eeaeb7fb6e41c14d9",
+        "pureFeatureSha256": "226c9e1843cea847387f3fd0be6ef3c8f408d550ebe08a4787b47dbdb21ff3ab",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "notebook",
+          "variantId": "notebook-navy",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Navy",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-navy",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Navy",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-navy-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Navy band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Navy band",
+          "badge": "Navy band selected",
+          "bodyCopy": "Shown in Navy band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sunglasses",
+          "variantId": "sunglasses-amber",
+          "productIndex": 13,
+          "originalName": "Everyday round sunglasses",
+          "selectedColor": "Amber",
+          "itemPrice": 48,
+          "title": "Everyday round sunglasses in Amber",
+          "badge": "Amber selected",
+          "bodyCopy": "Shown in Amber at $48.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "mug",
+          "variantId": "mug-cobalt",
+          "productIndex": 0,
+          "originalName": "Trail mug",
+          "selectedColor": "Cobalt",
+          "itemPrice": 24,
+          "title": "Trail mug in Cobalt",
+          "badge": "Cobalt selected",
+          "bodyCopy": "Shown in Cobalt at $24.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "bottle",
+          "variantId": "bottle-steel-blue",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Steel blue",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Steel blue",
+          "badge": "Steel blue selected",
+          "bodyCopy": "Shown in Steel blue at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "kind": "loaded-profile-switch",
+      "personId": "lena",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "6f8e178a-028c-464f-ac67-e92445e23719"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 14978.799999952316,
+          "fromNativeFetchMs": 481.2999999523163,
+          "fromActionMs": 497.5,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 14978.799999952316,
+          "fromNativeFetchMs": 481.2999999523163,
+          "fromActionMs": 497.5,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.10212499182671309,
+          "forwardMs": 368.6242919648066,
+          "batchRows": 1,
+          "paddedTokensPerRow": 65,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "fe488cef8fac17fa07699186b4249ad2307b31a9005c03213b467b0b45f4ad98",
+          "textBytes": 307,
+          "elapsedMs": 369.08970796503127,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.10212499182671309,
+          "nativeForwardMs": 368.6242919648066,
+          "paddedTokensPerRow": 65,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "fe488cef8fac17fa07699186b4249ad2307b31a9005c03213b467b0b45f4ad98",
+            "textBytes": 307,
+            "elapsedMs": 369.08970796503127,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.10212499182671309,
+            "nativeForwardMs": 368.6242919648066,
+            "paddedTokensPerRow": 65,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 369.08970796503127,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 414.42649997770786,
+        "runtimeIntegrityChecksMs": 3.588625113479793,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 21.18341694585979,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "e84a52f0d02a98081f0d4edc8b1bd579728a2ee9799198c9d8095a02968a26ca",
+        "profileKeySha256": "fc1bb91345fb97d33c720dd104c2a5caa63686bdf3b56e179176d62590f0207a",
+        "pureFeatureSha256": "dcabbdc2481830c292a5d6a0164e2ad2c337c3511603e53b123d8420ca6c73d3",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "jacket",
+          "variantId": "jacket-navy",
+          "productIndex": 3,
+          "originalName": "Everywhere rain jacket",
+          "selectedColor": "Navy",
+          "itemPrice": 128,
+          "title": "Everywhere rain jacket in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $128.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-navy",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Navy",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-navy",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Navy",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-slate-blue",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Slate blue",
+          "itemPrice": 64,
+          "title": "Portable table light in Slate blue",
+          "badge": "Slate blue selected",
+          "bodyCopy": "Shown in Slate blue at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-navy-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Navy band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Navy band",
+          "badge": "Navy band selected",
+          "bodyCopy": "Shown in Navy band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "kind": "loaded-profile-switch",
+      "personId": "june",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "d6a3a9b5-0549-4416-8f56-283f7f4d8c54"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 19047.5,
+          "fromNativeFetchMs": 335.5,
+          "fromActionMs": 350.39999997615814,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 19047.5,
+          "fromNativeFetchMs": 335.5,
+          "fromActionMs": 350.39999997615814,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.09641703218221664,
+          "forwardMs": 217.047999962233,
+          "batchRows": 1,
+          "paddedTokensPerRow": 65,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "9ec8d81e6dba1087aaaa6ff9547100731c35bf7e774aea03666c5cd2a6bac86a",
+          "textBytes": 307,
+          "elapsedMs": 217.5298749934882,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.09641703218221664,
+          "nativeForwardMs": 217.047999962233,
+          "paddedTokensPerRow": 65,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "9ec8d81e6dba1087aaaa6ff9547100731c35bf7e774aea03666c5cd2a6bac86a",
+            "textBytes": 307,
+            "elapsedMs": 217.5298749934882,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.09641703218221664,
+            "nativeForwardMs": 217.047999962233,
+            "paddedTokensPerRow": 65,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 217.5298749934882,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 265.7719999551773,
+        "runtimeIntegrityChecksMs": 3.7160819629207253,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 21.149458014406264,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "e4797e1abe5e5e388a638a5de9fcd0385de7be26921bf666332323ef69c24849",
+        "profileKeySha256": "494aa96d7ee86e60f4b8e107a69bd8636b98488660096df2ee8974f830b9e7cc",
+        "pureFeatureSha256": "bdcb5500ff7295df50d00084f40b18eba245757b6b8f6a5ab03dde7e6d83b61a",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "headphones",
+          "variantId": "headphones-sand",
+          "productIndex": 9,
+          "originalName": "Everyday over-ear headphones",
+          "selectedColor": "Sand",
+          "itemPrice": 89,
+          "title": "Everyday over-ear headphones in Sand",
+          "badge": "Sand selected",
+          "bodyCopy": "Shown in Sand at $89.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-ochre",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Ochre",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Ochre",
+          "badge": "Ochre selected",
+          "bodyCopy": "Shown in Ochre at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-terracotta",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Terracotta",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Terracotta",
+          "badge": "Terracotta selected",
+          "bodyCopy": "Shown in Terracotta at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-oatmeal",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Oatmeal",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Oatmeal",
+          "badge": "Oatmeal selected",
+          "bodyCopy": "Shown in Oatmeal at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-rust-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Rust band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Rust band",
+          "badge": "Rust band selected",
+          "bodyCopy": "Shown in Rust band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "kind": "loaded-profile-switch",
+      "personId": "grace",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "11e6626d-6329-498d-8f7a-bcaf5cca6b17"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 23015.100000023842,
+          "fromNativeFetchMs": 334.3000000715256,
+          "fromActionMs": 349.2000000476837,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 23015.100000023842,
+          "fromNativeFetchMs": 334.3000000715256,
+          "fromActionMs": 349.2000000476837,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.11395907495170832,
+          "forwardMs": 216.19429101701826,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "7e25cc34d1c81bed76a26b5441471c83376b5d81e882d15780803cbd8db42cd1",
+          "textBytes": 306,
+          "elapsedMs": 216.78162494208664,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.11395907495170832,
+          "nativeForwardMs": 216.19429101701826,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "7e25cc34d1c81bed76a26b5441471c83376b5d81e882d15780803cbd8db42cd1",
+            "textBytes": 306,
+            "elapsedMs": 216.78162494208664,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.11395907495170832,
+            "nativeForwardMs": 216.19429101701826,
+            "paddedTokensPerRow": 64,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 216.78162494208664,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 265.70566603913903,
+        "runtimeIntegrityChecksMs": 4.395666066557169,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 17.71087502129376,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "e55f9aa80a6230ca7b0677bfc6c0d7bacc13c94bd6cfb4c485caf5a68881c79d",
+        "profileKeySha256": "888b35ad3d43a536f87a9f9cea80d782206105c2a699adb9c6edd4cf21a00233",
+        "pureFeatureSha256": "b68d2eb5cad9c8405afca85171a513bea3f8ef6165583fd864e09dec0565f3c6",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "bottle",
+          "variantId": "bottle-steel-blue",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Steel blue",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Steel blue",
+          "badge": "Steel blue selected",
+          "bodyCopy": "Shown in Steel blue at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-navy",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Navy",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-navy-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Navy band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Navy band",
+          "badge": "Navy band selected",
+          "bodyCopy": "Shown in Navy band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sunglasses",
+          "variantId": "sunglasses-tortoise",
+          "productIndex": 13,
+          "originalName": "Everyday round sunglasses",
+          "selectedColor": "Tortoise",
+          "itemPrice": 48,
+          "title": "Everyday round sunglasses in Tortoise",
+          "badge": "Tortoise selected",
+          "bodyCopy": "Shown in Tortoise at $48.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-navy",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Navy",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-slate-blue",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Slate blue",
+          "itemPrice": 64,
+          "title": "Portable table light in Slate blue",
+          "badge": "Slate blue selected",
+          "bodyCopy": "Shown in Slate blue at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "kind": "loaded-profile-switch",
+      "personId": "sam",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "ddf8934d-747b-4317-aed9-038caf7aa158"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 27113,
+          "fromNativeFetchMs": 380.10000002384186,
+          "fromActionMs": 397,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 27130.699999928474,
+          "fromNativeFetchMs": 397.7999999523163,
+          "fromActionMs": 414.6999999284744,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.21674996241927147,
+          "forwardMs": 261.71708304900676,
+          "batchRows": 1,
+          "paddedTokensPerRow": 65,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "9ec8d81e6dba1087aaaa6ff9547100731c35bf7e774aea03666c5cd2a6bac86a",
+          "textBytes": 307,
+          "elapsedMs": 262.36133300699294,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.21674996241927147,
+          "nativeForwardMs": 261.71708304900676,
+          "paddedTokensPerRow": 65,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "9ec8d81e6dba1087aaaa6ff9547100731c35bf7e774aea03666c5cd2a6bac86a",
+            "textBytes": 307,
+            "elapsedMs": 262.36133300699294,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.21674996241927147,
+            "nativeForwardMs": 261.71708304900676,
+            "paddedTokensPerRow": 65,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 262.36133300699294,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 314.5094169303775,
+        "runtimeIntegrityChecksMs": 4.552499973215163,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 17.212415928952396,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "164b58e15a80146a01b2adfeb648c0b62a06cb3816a0a7290e97a9ed19176d2c",
+        "profileKeySha256": "6096a96a148b4cb06df09effdfa038c6d1a329c33806dc2828f50cd45d598050",
+        "pureFeatureSha256": "e12456970a3a4beca39887965a03142340b3b51484a9f67f716d9b74801f0303",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "duffel",
+          "variantId": "duffel-charcoal",
+          "productIndex": 12,
+          "originalName": "Weekender duffel",
+          "selectedColor": "Charcoal",
+          "itemPrice": 84,
+          "title": "Weekender duffel in Charcoal",
+          "badge": "Charcoal selected",
+          "bodyCopy": "Shown in Charcoal at $84.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-terracotta",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Terracotta",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Terracotta",
+          "badge": "Terracotta selected",
+          "bodyCopy": "Shown in Terracotta at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-ochre",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Ochre",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Ochre",
+          "badge": "Ochre selected",
+          "bodyCopy": "Shown in Ochre at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-slate-blue",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Slate blue",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Slate blue",
+          "badge": "Slate blue selected",
+          "bodyCopy": "Shown in Slate blue at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-terracotta",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Terracotta",
+          "itemPrice": 64,
+          "title": "Portable table light in Terracotta",
+          "badge": "Terracotta selected",
+          "bodyCopy": "Shown in Terracotta at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-rust-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Rust band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Rust band",
+          "badge": "Rust band selected",
+          "bodyCopy": "Shown in Rust band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "kind": "loaded-profile-switch",
+      "personId": "ana",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "3e7dc59c-dbdb-4e24-a6a3-133f9bb65d50"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 31230.699999928474,
+          "fromNativeFetchMs": 383.09999990463257,
+          "fromActionMs": 397.09999990463257,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 31247.5,
+          "fromNativeFetchMs": 399.89999997615814,
+          "fromActionMs": 413.89999997615814,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.10537495836615562,
+          "forwardMs": 274.76616599597037,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "fd69027011a234c19c5f1a987f19345565d72a5dba1c51d4ea34220d749602af",
+          "textBytes": 306,
+          "elapsedMs": 275.31258307863027,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.10537495836615562,
+          "nativeForwardMs": 274.76616599597037,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "fd69027011a234c19c5f1a987f19345565d72a5dba1c51d4ea34220d749602af",
+            "textBytes": 306,
+            "elapsedMs": 275.31258307863027,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.10537495836615562,
+            "nativeForwardMs": 274.76616599597037,
+            "paddedTokensPerRow": 64,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 275.31258307863027,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 319.9741669232026,
+        "runtimeIntegrityChecksMs": 3.8990420289337635,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 15.465541975572705,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "140f14ff436ee6785fd4d14c3b3b8abb30dd1eeff0229292e59c204d453cfd9d",
+        "profileKeySha256": "5e4fa75d94e26dae250f03e5176f428eb769de40fb7ac86c6913e4bcba4e037c",
+        "pureFeatureSha256": "f449e6bbcdca61aae4ba2ed6768106deea106dc93b6ac8b4a2cf14dfe844db1e",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "notebook",
+          "variantId": "notebook-terracotta",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Terracotta",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Terracotta",
+          "badge": "Terracotta selected",
+          "bodyCopy": "Shown in Terracotta at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-ochre",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Ochre",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Ochre",
+          "badge": "Ochre selected",
+          "bodyCopy": "Shown in Ochre at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "mug",
+          "variantId": "mug-ivory",
+          "productIndex": 0,
+          "originalName": "Trail mug",
+          "selectedColor": "Ivory",
+          "itemPrice": 24,
+          "title": "Trail mug in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $24.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-rust-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Rust band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Rust band",
+          "badge": "Rust band selected",
+          "bodyCopy": "Shown in Rust band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-terracotta",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Terracotta",
+          "itemPrice": 64,
+          "title": "Portable table light in Terracotta",
+          "badge": "Terracotta selected",
+          "bodyCopy": "Shown in Terracotta at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sunglasses",
+          "variantId": "sunglasses-black",
+          "productIndex": 13,
+          "originalName": "Everyday round sunglasses",
+          "selectedColor": "Black",
+          "itemPrice": 48,
+          "title": "Everyday round sunglasses in Black",
+          "badge": "Black selected",
+          "bodyCopy": "Shown in Black at $48.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "kind": "loaded-profile-switch",
+      "personId": "rosa",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "d6cf8a44-69c1-4154-a390-4fed5aea6434"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 35262.199999928474,
+          "fromNativeFetchMs": 332.09999990463257,
+          "fromActionMs": 346.1999999284744,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 35280.60000002384,
+          "fromNativeFetchMs": 350.5,
+          "fromActionMs": 364.60000002384186,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.10112498421221972,
+          "forwardMs": 221.62395808845758,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "57e4c6447b10af1af8ccae137081798faf7fbd96403d0a68d1d92b825eab6b70",
+          "textBytes": 306,
+          "elapsedMs": 222.1020000288263,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.10112498421221972,
+          "nativeForwardMs": 221.62395808845758,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "57e4c6447b10af1af8ccae137081798faf7fbd96403d0a68d1d92b825eab6b70",
+            "textBytes": 306,
+            "elapsedMs": 222.1020000288263,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.10112498421221972,
+            "nativeForwardMs": 221.62395808845758,
+            "paddedTokensPerRow": 64,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 222.1020000288263,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 270.9708330221474,
+        "runtimeIntegrityChecksMs": 3.4677080111578107,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 15.31175000127405,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "384fd25b71b596cfd352a4c3d1fdd76c2748a64528dfa2efbe46ce7db1290de9",
+        "profileKeySha256": "6e8d95ef5bb8cb03a1be08e3bd318e8f6aa04f4937b87869dfcab322af46bd75",
+        "pureFeatureSha256": "0d8fb3f9304b3ab6e467f97b2849268ee0e527a206931c4372a5c19c0704fdf1",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "bottle",
+          "variantId": "bottle-steel-blue",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Steel blue",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Steel blue",
+          "badge": "Steel blue selected",
+          "bodyCopy": "Shown in Steel blue at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-slate-blue",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Slate blue",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Slate blue",
+          "badge": "Slate blue selected",
+          "bodyCopy": "Shown in Slate blue at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-navy",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Navy",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-navy",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Navy",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Navy",
+          "badge": "Navy selected",
+          "bodyCopy": "Shown in Navy at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "towel",
+          "variantId": "towel-blue-stripe",
+          "productIndex": 15,
+          "originalName": "Everywhere cotton towel",
+          "selectedColor": "Blue stripe",
+          "itemPrice": 28,
+          "title": "Everywhere cotton towel in Blue stripe",
+          "badge": "Blue stripe selected",
+          "bodyCopy": "Shown in Blue stripe at $28.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-navy-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Navy band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Navy band",
+          "badge": "Navy band selected",
+          "bodyCopy": "Shown in Navy band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "kind": "loaded-profile-switch",
+      "personId": "felix",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "99d35842-fadb-4ef8-81b3-5ba585fd9f71"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 39280.799999952316,
+          "fromNativeFetchMs": 334.6999999284744,
+          "fromActionMs": 348.60000002384186,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 39297.299999952316,
+          "fromNativeFetchMs": 351.1999999284744,
+          "fromActionMs": 365.10000002384186,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.12895790860056877,
+          "forwardMs": 212.2278749011457,
+          "batchRows": 1,
+          "paddedTokensPerRow": 65,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "50409fbd5ffc96a52d8bc9424a98f328008dbca766889ae9fa732a5bc33ac113",
+          "textBytes": 307,
+          "elapsedMs": 212.77670795097947,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.12895790860056877,
+          "nativeForwardMs": 212.2278749011457,
+          "paddedTokensPerRow": 65,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "50409fbd5ffc96a52d8bc9424a98f328008dbca766889ae9fa732a5bc33ac113",
+            "textBytes": 307,
+            "elapsedMs": 212.77670795097947,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.12895790860056877,
+            "nativeForwardMs": 212.2278749011457,
+            "paddedTokensPerRow": 65,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 212.77670795097947,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 263.7977080885321,
+        "runtimeIntegrityChecksMs": 3.8725410122424364,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 21.4812500635162,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "157284e32c394475c8e7bbe2998e28b077be3b1c86184c64397b892b1013f378",
+        "profileKeySha256": "e8a118c51ea50eb56fd83ac14ca1da8fc8fcef7d2f69de7986a1e3f18c98ea49",
+        "pureFeatureSha256": "dca1a7f1472610066e95fccc0508d4f4ca8a1e01cb5f683e4dad2f88940eb3e0",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "sneakers",
+          "variantId": "sneakers-olive",
+          "productIndex": 10,
+          "originalName": "Everyday canvas sneakers",
+          "selectedColor": "Olive",
+          "itemPrice": 96,
+          "title": "Everyday canvas sneakers in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $96.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-olive",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Olive",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-olive-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Olive band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Olive band",
+          "badge": "Olive band selected",
+          "bodyCopy": "Shown in Olive band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "kind": "loaded-profile-switch",
+      "personId": "bob",
+      "query": "Browse the store",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "6bd53fe4-0d6c-4b1a-befd-f1009a6a1b55"
+      },
+      "timings": {
+        "firstThree": {
+          "observedAt": 43397.199999928474,
+          "fromNativeFetchMs": 334,
+          "fromActionMs": 347.39999997615814,
+          "navigationStartMs": null
+        },
+        "fullSix": {
+          "observedAt": 43413.799999952316,
+          "fromNativeFetchMs": 350.60000002384186,
+          "fromActionMs": 364,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": true,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.10908301919698715,
+          "forwardMs": 221.9218750251457,
+          "batchRows": 1,
+          "paddedTokensPerRow": 64,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+          "textBytes": 306,
+          "elapsedMs": 222.48058300465345,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.10908301919698715,
+          "nativeForwardMs": 221.9218750251457,
+          "paddedTokensPerRow": 64,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "96bbb7b25bd8f8dc0caf34a926c9eba36aeb97eb0ee69f7c2e25e2d8c165cdae",
+            "textBytes": 306,
+            "elapsedMs": 222.48058300465345,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.10908301919698715,
+            "nativeForwardMs": 221.9218750251457,
+            "paddedTokensPerRow": 64,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 222.48058300465345,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 268.4759170515463,
+        "runtimeIntegrityChecksMs": 3.9893740322440863,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 21.46550000179559,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-olive",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Olive",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-olive-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Olive band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Olive band",
+          "badge": "Olive band selected",
+          "bodyCopy": "Shown in Olive band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sunglasses",
+          "variantId": "sunglasses-tortoise",
+          "productIndex": 13,
+          "originalName": "Everyday round sunglasses",
+          "selectedColor": "Tortoise",
+          "itemPrice": 48,
+          "title": "Everyday round sunglasses in Tortoise",
+          "badge": "Tortoise selected",
+          "bodyCopy": "Shown in Tortoise at $48.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "kind": "first-work-bag-query",
+      "personId": "bob",
+      "query": "work bag",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "484412e0-d2da-42e5-9b6f-0048fe0fc1c6"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "observedAt": 47430.5,
+          "fromNativeFetchMs": 332.89999997615814,
+          "fromActionMs": 347.7000000476837,
+          "navigationStartMs": null
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.08387502748519182,
+          "forwardMs": 221.77483304403722,
+          "batchRows": 1,
+          "paddedTokensPerRow": 63,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "f4951ecccf291415709e845365633fb34dd2e1e05680a4ed3c0c897c7a29f0ce",
+          "textBytes": 298,
+          "elapsedMs": 222.2141659585759,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.08387502748519182,
+          "nativeForwardMs": 221.77483304403722,
+          "paddedTokensPerRow": 63,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "f4951ecccf291415709e845365633fb34dd2e1e05680a4ed3c0c897c7a29f0ce",
+            "textBytes": 298,
+            "elapsedMs": 222.2141659585759,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.08387502748519182,
+            "nativeForwardMs": 221.77483304403722,
+            "paddedTokensPerRow": 63,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 222.2141659585759,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 263.9043329982087,
+        "runtimeIntegrityChecksMs": 3.3054579980671406,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 15.568875009194016,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "productIndex": 1,
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "itemPrice": 68,
+          "title": "Everyday daypack in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $68.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-olive",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Olive",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "tote",
+          "variantId": "tote-olive",
+          "productIndex": 5,
+          "originalName": "Market canvas tote",
+          "selectedColor": "Olive",
+          "itemPrice": 42,
+          "title": "Market canvas tote in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $42.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "kind": "same-query-reload",
+      "personId": "bob",
+      "query": "work bag",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "b1ff4818-1acb-44e0-9624-2c1fa3df88ee"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "observedAt": 516.1999999284744,
+          "fromNativeFetchMs": 410,
+          "fromActionMs": 516.1999999284744,
+          "navigationStartMs": 516.1999999284744
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.09337498340755701,
+          "forwardMs": 285.86395794991404,
+          "batchRows": 1,
+          "paddedTokensPerRow": 63,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "f4951ecccf291415709e845365633fb34dd2e1e05680a4ed3c0c897c7a29f0ce",
+          "textBytes": 298,
+          "elapsedMs": 286.3147499738261,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.09337498340755701,
+          "nativeForwardMs": 285.86395794991404,
+          "paddedTokensPerRow": 63,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "f4951ecccf291415709e845365633fb34dd2e1e05680a4ed3c0c897c7a29f0ce",
+            "textBytes": 298,
+            "elapsedMs": 286.3147499738261,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.09337498340755701,
+            "nativeForwardMs": 285.86395794991404,
+            "paddedTokensPerRow": 63,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 286.3147499738261,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 331.1573750106618,
+        "runtimeIntegrityChecksMs": 3.246207954362035,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 14.929500059224665,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "productIndex": 1,
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "itemPrice": 68,
+          "title": "Everyday daypack in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $68.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-olive",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Olive",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "tote",
+          "variantId": "tote-olive",
+          "productIndex": 5,
+          "originalName": "Market canvas tote",
+          "selectedColor": "Olive",
+          "itemPrice": 42,
+          "title": "Market canvas tote in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $42.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    }
+  ],
+  "distinctQueries": [
+    {
+      "index": 0,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a lamp for quiet reading",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "09181675-9d94-457c-9be6-c78e066805f5"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 333.7000000476837,
+          "fromActionMs": 347.60000002384186
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.11633301619440317,
+          "forwardMs": 210.70174989290535,
+          "batchRows": 1,
+          "paddedTokensPerRow": 66,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "dbb725eec9fbd901fc774cdce5d9d58b47e1ed89f7c0344ad2c23ace26902095",
+          "textBytes": 314,
+          "elapsedMs": 211.213041911833,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.11633301619440317,
+          "nativeForwardMs": 210.70174989290535,
+          "paddedTokensPerRow": 66,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "dbb725eec9fbd901fc774cdce5d9d58b47e1ed89f7c0344ad2c23ace26902095",
+            "textBytes": 314,
+            "elapsedMs": 211.213041911833,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.11633301619440317,
+            "nativeForwardMs": 210.70174989290535,
+            "paddedTokensPerRow": 66,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 211.213041911833,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 263.9478750061244,
+        "runtimeIntegrityChecksMs": 3.34945903159678,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 23.523833020590246,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "notebook",
+          "variantId": "notebook-olive",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Olive",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "mug",
+          "variantId": "mug-ivory",
+          "productIndex": 0,
+          "originalName": "Trail mug",
+          "selectedColor": "Ivory",
+          "itemPrice": 24,
+          "title": "Trail mug in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $24.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a notebook for class notes",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "df35d1e6-ae1b-4419-b9e4-ff930e0f40bf"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 463.39999997615814,
+          "fromActionMs": 480.59999990463257
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.420666066929698,
+          "forwardMs": 326.9997499883175,
+          "batchRows": 1,
+          "paddedTokensPerRow": 66,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "5659398e0e84cff7d8aae2710a7b0dc7feb4f7082769070d04805fbb477d4001",
+          "textBytes": 316,
+          "elapsedMs": 328.61345796845853,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.420666066929698,
+          "nativeForwardMs": 326.9997499883175,
+          "paddedTokensPerRow": 66,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "5659398e0e84cff7d8aae2710a7b0dc7feb4f7082769070d04805fbb477d4001",
+            "textBytes": 316,
+            "elapsedMs": 328.61345796845853,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.420666066929698,
+            "nativeForwardMs": 326.9997499883175,
+            "paddedTokensPerRow": 66,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 328.61345796845853,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 381.4642080105841,
+        "runtimeIntegrityChecksMs": 4.6960009494796395,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 22.306332946754992,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "notebook",
+          "variantId": "notebook-olive",
+          "productIndex": 2,
+          "originalName": "Pocket field notes",
+          "selectedColor": "Olive",
+          "itemPrice": 12,
+          "title": "Pocket field notes in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $12.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "productIndex": 1,
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "itemPrice": 68,
+          "title": "Everyday daypack in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $68.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a bottle for daily water",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "2b7ac22a-459a-4340-a84d-9d93dad21e0a"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 413.6999999284744,
+          "fromActionMs": 430.5
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.38474996108561754,
+          "forwardMs": 278.906499966979,
+          "batchRows": 1,
+          "paddedTokensPerRow": 66,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "7ae63b3f4bbe6ce2b04bd0fb6c6f2c41bd63aeb3f907ba9dc1818d2e42ecb6bb",
+          "textBytes": 314,
+          "elapsedMs": 281.0102079529315,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.38474996108561754,
+          "nativeForwardMs": 278.906499966979,
+          "paddedTokensPerRow": 66,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "7ae63b3f4bbe6ce2b04bd0fb6c6f2c41bd63aeb3f907ba9dc1818d2e42ecb6bb",
+            "textBytes": 314,
+            "elapsedMs": 281.0102079529315,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.38474996108561754,
+            "nativeForwardMs": 278.906499966979,
+            "paddedTokensPerRow": 66,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 281.0102079529315,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 329.762417008169,
+        "runtimeIntegrityChecksMs": 4.66770795173943,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 15.642000013031065,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "mug",
+          "variantId": "mug-ivory",
+          "productIndex": 0,
+          "originalName": "Trail mug",
+          "selectedColor": "Ivory",
+          "itemPrice": 24,
+          "title": "Trail mug in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $24.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "productIndex": 1,
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "itemPrice": 68,
+          "title": "Everyday daypack in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $68.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a bag for a short trip",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "c4936633-5129-4bc2-ac6a-8c96ee61a773"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 432.2000000476837,
+          "fromActionMs": 447.10000002384186
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.18199998885393143,
+          "forwardMs": 285.2408749749884,
+          "batchRows": 1,
+          "paddedTokensPerRow": 67,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "98023f426c1ca7fa96715d3ab140ef80240f2eaedcfa35bdbbfa2232fce64805",
+          "textBytes": 312,
+          "elapsedMs": 286.1534170806408,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.18199998885393143,
+          "nativeForwardMs": 285.2408749749884,
+          "paddedTokensPerRow": 67,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "98023f426c1ca7fa96715d3ab140ef80240f2eaedcfa35bdbbfa2232fce64805",
+            "textBytes": 312,
+            "elapsedMs": 286.1534170806408,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.18199998885393143,
+            "nativeForwardMs": 285.2408749749884,
+            "paddedTokensPerRow": 67,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 286.1534170806408,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 339.2190409358591,
+        "runtimeIntegrityChecksMs": 3.8363741477951407,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 22.649124963209033,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "productIndex": 1,
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "itemPrice": 68,
+          "title": "Everyday daypack in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $68.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "duffel",
+          "variantId": "duffel-olive",
+          "productIndex": 12,
+          "originalName": "Weekender duffel",
+          "selectedColor": "Olive",
+          "itemPrice": 84,
+          "title": "Weekender duffel in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $84.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "tote",
+          "variantId": "tote-olive",
+          "productIndex": 5,
+          "originalName": "Market canvas tote",
+          "selectedColor": "Olive",
+          "itemPrice": 42,
+          "title": "Market canvas tote in Olive",
+          "badge": "Olive selected",
+          "bodyCopy": "Shown in Olive at $42.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a towel for pool days",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "a79b465e-223a-4d49-8aa0-19f3d77af505"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 430.6999999284744,
+          "fromActionMs": 446.89999997615814
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.2723749494180083,
+          "forwardMs": 280.6062919553369,
+          "batchRows": 1,
+          "paddedTokensPerRow": 66,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "322cb009a188880a59623c65bec48700477dc332da4f947970647681ded3c9b6",
+          "textBytes": 311,
+          "elapsedMs": 281.3940829364583,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.2723749494180083,
+          "nativeForwardMs": 280.6062919553369,
+          "paddedTokensPerRow": 66,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "322cb009a188880a59623c65bec48700477dc332da4f947970647681ded3c9b6",
+            "textBytes": 311,
+            "elapsedMs": 281.3940829364583,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.2723749494180083,
+            "nativeForwardMs": 280.6062919553369,
+            "paddedTokensPerRow": 66,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 281.3940829364583,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 335.21183393895626,
+        "runtimeIntegrityChecksMs": 4.0420410223305225,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 21.107416949234903,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "towel",
+          "variantId": "towel-sage-stripe",
+          "productIndex": 15,
+          "originalName": "Everywhere cotton towel",
+          "selectedColor": "Sage stripe",
+          "itemPrice": 28,
+          "title": "Everywhere cotton towel in Sage stripe",
+          "badge": "Sage stripe selected",
+          "bodyCopy": "Shown in Sage stripe at $28.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "mug",
+          "variantId": "mug-ivory",
+          "productIndex": 0,
+          "originalName": "Trail mug",
+          "selectedColor": "Ivory",
+          "itemPrice": 24,
+          "title": "Trail mug in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $24.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "something for listening on the train",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "71280e2a-7605-4fc5-a745-5a9ac731148c"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 412.10000002384186,
+          "fromActionMs": 429
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.19862502813339233,
+          "forwardMs": 276.92558290436864,
+          "batchRows": 1,
+          "paddedTokensPerRow": 67,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "3b0ce3f27b5f865903bde38a2719e381ec01b12e8518d42c413ab7147951fbf4",
+          "textBytes": 326,
+          "elapsedMs": 277.9430409427732,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.19862502813339233,
+          "nativeForwardMs": 276.92558290436864,
+          "paddedTokensPerRow": 67,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "3b0ce3f27b5f865903bde38a2719e381ec01b12e8518d42c413ab7147951fbf4",
+            "textBytes": 326,
+            "elapsedMs": 277.9430409427732,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.19862502813339233,
+            "nativeForwardMs": 276.92558290436864,
+            "paddedTokensPerRow": 67,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 277.9430409427732,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 326.90441596787423,
+        "runtimeIntegrityChecksMs": 4.253582912497222,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 15.992207918316126,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "headphones",
+          "variantId": "headphones-graphite",
+          "productIndex": 9,
+          "originalName": "Everyday over-ear headphones",
+          "selectedColor": "Graphite",
+          "itemPrice": 89,
+          "title": "Everyday over-ear headphones in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $89.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-olive-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Olive band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Olive band",
+          "badge": "Olive band selected",
+          "bodyCopy": "Shown in Olive band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a light jacket for rainy walks",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "23fbc887-7185-4db3-b7b9-c01b84c968c3"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 413.5,
+          "fromActionMs": 431
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.4641659324988723,
+          "forwardMs": 272.49616698827595,
+          "batchRows": 1,
+          "paddedTokensPerRow": 67,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "36f67fc69dc771b8b83f90945fef8daaa3cb891b7136947cab5ff05779bf3ea8",
+          "textBytes": 320,
+          "elapsedMs": 273.79883301910013,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.4641659324988723,
+          "nativeForwardMs": 272.49616698827595,
+          "paddedTokensPerRow": 67,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "36f67fc69dc771b8b83f90945fef8daaa3cb891b7136947cab5ff05779bf3ea8",
+            "textBytes": 320,
+            "elapsedMs": 273.79883301910013,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.4641659324988723,
+            "nativeForwardMs": 272.49616698827595,
+            "paddedTokensPerRow": 67,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 273.79883301910013,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 321.3857499649748,
+        "runtimeIntegrityChecksMs": 4.468373954296112,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 15.975042013451457,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "towel",
+          "variantId": "towel-sage-stripe",
+          "productIndex": 15,
+          "originalName": "Everywhere cotton towel",
+          "selectedColor": "Sage stripe",
+          "itemPrice": 28,
+          "title": "Everywhere cotton towel in Sage stripe",
+          "badge": "Sage stripe selected",
+          "bodyCopy": "Shown in Sage stripe at $28.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a soft layer for evenings",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "a3f5a90b-e7f3-49f5-8a6b-e039709ba073"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 412.90000009536743,
+          "fromActionMs": 429.90000009536743
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.3624580567702651,
+          "forwardMs": 273.49070797208697,
+          "batchRows": 1,
+          "paddedTokensPerRow": 66,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "75b18a15bfc3d3be0af937c50fcfc6354c36429b7f76f60efa4b48f9cfff033a",
+          "textBytes": 315,
+          "elapsedMs": 274.39304208382964,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.3624580567702651,
+          "nativeForwardMs": 273.49070797208697,
+          "paddedTokensPerRow": 66,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "75b18a15bfc3d3be0af937c50fcfc6354c36429b7f76f60efa4b48f9cfff033a",
+            "textBytes": 315,
+            "elapsedMs": 274.39304208382964,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.3624580567702651,
+            "nativeForwardMs": 273.49070797208697,
+            "paddedTokensPerRow": 66,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 274.39304208382964,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 323.4254999551922,
+        "runtimeIntegrityChecksMs": 4.627458984032273,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 15.980750089511275,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "organizer",
+          "variantId": "organizer-sage",
+          "productIndex": 14,
+          "originalName": "Zip essentials pouch",
+          "selectedColor": "Sage",
+          "itemPrice": 26,
+          "title": "Zip essentials pouch in Sage",
+          "badge": "Sage selected",
+          "bodyCopy": "Shown in Sage at $26.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-olive-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Olive band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Olive band",
+          "badge": "Olive band selected",
+          "bodyCopy": "Shown in Olive band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a container for lunch",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "e3de067a-0166-4ae9-80ba-8eec6476d875"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 344.7000000476837,
+          "fromActionMs": 360.90000009536743
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.11233298573642969,
+          "forwardMs": 221.58587502781302,
+          "batchRows": 1,
+          "paddedTokensPerRow": 65,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "446660f6618a1fcd2a38a96192c15ac264415faabfc199908365dd5ba69e5cfe",
+          "textBytes": 311,
+          "elapsedMs": 222.2840420436114,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.11233298573642969,
+          "nativeForwardMs": 221.58587502781302,
+          "paddedTokensPerRow": 65,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "446660f6618a1fcd2a38a96192c15ac264415faabfc199908365dd5ba69e5cfe",
+            "textBytes": 311,
+            "elapsedMs": 222.2840420436114,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.11233298573642969,
+            "nativeForwardMs": 221.58587502781302,
+            "paddedTokensPerRow": 65,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 222.2840420436114,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 269.9272090103477,
+        "runtimeIntegrityChecksMs": 4.032167023979127,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 16.687499941326678,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-olive-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Olive band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Olive band",
+          "badge": "Olive band selected",
+          "bodyCopy": "Shown in Olive band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "mug",
+          "variantId": "mug-ivory",
+          "productIndex": 0,
+          "originalName": "Trail mug",
+          "selectedColor": "Ivory",
+          "itemPrice": 24,
+          "title": "Trail mug in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $24.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "productIndex": 1,
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "itemPrice": 68,
+          "title": "Everyday daypack in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $68.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "kind": "known-profile-distinct-new-query",
+      "personId": "bob",
+      "query": "a mug for my morning drink",
+      "protocol": {
+        "passed": true,
+        "failures": [],
+        "requestId": "0e4b636b-e701-408c-a5ac-da4ce5a2d368"
+      },
+      "timings": {
+        "firstThree": null,
+        "fullSix": {
+          "fromNativeFetchMs": 415.39999997615814,
+          "fromActionMs": 430.89999997615814
+        }
+      },
+      "usefulContract": {
+        "firstThree": false,
+        "fullSix": true
+      },
+      "generatedFields": {
+        "accepted": 20,
+        "withheld": 0,
+        "required": 20
+      },
+      "freshQuery": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.3036250127479434,
+          "forwardMs": 277.9543329961598,
+          "batchRows": 1,
+          "paddedTokensPerRow": 67,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "28f5a359cd12e44a6a7c95f70f33feb2180fa9cf3cf8634324831383a5958a19",
+          "textBytes": 316,
+          "elapsedMs": 278.85195903945714,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.3036250127479434,
+          "nativeForwardMs": 277.9543329961598,
+          "paddedTokensPerRow": 67,
+          "role": "query"
+        }
+      },
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "28f5a359cd12e44a6a7c95f70f33feb2180fa9cf3cf8634324831383a5958a19",
+            "textBytes": 316,
+            "elapsedMs": 278.85195903945714,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.3036250127479434,
+            "nativeForwardMs": 277.9543329961598,
+            "paddedTokensPerRow": 67,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 278.85195903945714,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 335.23333410266787,
+        "runtimeIntegrityChecksMs": 4.006001050584018,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 22.878332994878292,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "f8b7d6d9673b3c9e538403797351b6fcbaaf59fe9d39883f8cb391823479b18c",
+        "profileKeySha256": "85cbae79fa1a1857fc046530bed2c461707cfd3fc193db06312b8e30fb5ede0b",
+        "pureFeatureSha256": "693119675cff9ee372c6c4236dc3d2554443b05c81d2d47a1597e7773771c9c5",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "selectedCards": [
+        {
+          "productId": "mug",
+          "variantId": "mug-ivory",
+          "productIndex": 0,
+          "originalName": "Trail mug",
+          "selectedColor": "Ivory",
+          "itemPrice": 24,
+          "title": "Trail mug in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $24.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "blanket",
+          "variantId": "blanket-moss",
+          "productIndex": 6,
+          "originalName": "Woven everyday throw",
+          "selectedColor": "Moss",
+          "itemPrice": 58,
+          "title": "Woven everyday throw in Moss",
+          "badge": "Moss selected",
+          "bodyCopy": "Shown in Moss at $58.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "productIndex": 11,
+          "originalName": "Soft cotton crewneck",
+          "selectedColor": "Forest",
+          "itemPrice": 72,
+          "title": "Soft cotton crewneck in Forest",
+          "badge": "Forest selected",
+          "bodyCopy": "Shown in Forest at $72.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "bottle",
+          "variantId": "bottle-graphite",
+          "productIndex": 4,
+          "originalName": "Everyday steel bottle",
+          "selectedColor": "Graphite",
+          "itemPrice": 36,
+          "title": "Everyday steel bottle in Graphite",
+          "badge": "Graphite selected",
+          "bodyCopy": "Shown in Graphite at $36.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lunchbox",
+          "variantId": "lunchbox-olive-band",
+          "productIndex": 8,
+          "originalName": "Steel lunch box",
+          "selectedColor": "Olive band",
+          "itemPrice": 32,
+          "title": "Steel lunch box in Olive band",
+          "badge": "Olive band selected",
+          "bodyCopy": "Shown in Olive band at $32.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        },
+        {
+          "productId": "lamp",
+          "variantId": "lamp-ivory",
+          "productIndex": 7,
+          "originalName": "Portable table light",
+          "selectedColor": "Ivory",
+          "itemPrice": 64,
+          "title": "Portable table light in Ivory",
+          "badge": "Ivory selected",
+          "bodyCopy": "Shown in Ivory at $64.00.",
+          "stock": null,
+          "size": null,
+          "shipping": null
+        }
+      ]
+    }
+  ],
+  "functional": [
+    {
+      "kind": "rapid-Bob-Maya-Bob",
+      "passed": true
+    },
+    {
+      "kind": "per-person-cart-and-checkout-invalidation",
+      "passed": true
+    }
+  ],
+  "coldProfileHttpPassed": true,
+  "initialViewportUsefulCards": 0,
+  "renderedScope": "20 generated fields; 19 visible DOM strings per six-card response; decoded six cards does not mean all six visible. Profile first3 pre-scrolled; actual search scroll leaves no first3 useful endpoint. Startup/physical paint excluded."
+}
