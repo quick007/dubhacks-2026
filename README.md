@@ -92,7 +92,7 @@ root. Choose a new output directory for each service lifetime:
 ```sh
 .tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.store_candidate_image_service_v1 \
   --candidate-run data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2 \
-  --integration-manifest experiments/ranker/pretrained/store_demo_integration_v11/manifest.json \
+  --integration-manifest experiments/ranker/pretrained/store_demo_integration_personalized_adapter_v2/manifest.json \
   --rank-head-export data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json \
   --rank-head-export-sha256 17a0a15a2da6e2fc90e651e1f5bb2c237d61241795ec0cca548a4f3ce319d703 \
   --output data/ranker/pretrained/store-candidate-new-session
@@ -112,6 +112,24 @@ constraints use deterministic guards. Images use the existing storefront
 gallery; image selection and hidden-persona inference are not learned here.
 Stock and sizes remain unknown. Unsafe or unfinished generated fields are
 withheld, while catalog names and prices remain available.
+
+The ten-person storefront is a separate development path on port 4313, with
+public background, color preferences and dated shopping history. Its LoRA choice
+adapter and learned query gate share the frozen Qwen backbone with the copy
+system. The first adapter failed independent quality checks: 17/32 primary
+choices versus frozen-base controls of 20/32 raw and 19/32 combined. It is not an
+accepted model. The [preserved result](experiments/ranker/pretrained/PERSONA_CHOICE_ATTEMPT1_INDEPENDENT_QUALITY_SUMMARY_V1.md)
+records that failure; the inspected packet is now development data. The
+accepted-only `pnpm dev:personalized` entry remains closed until its full gate
+passes. Model weights and public numerical feature caches remain local and are
+not part of the Git repository.
+
+On the configured machine, `pnpm dev:personalized:demo` starts this explicitly
+non-promoted development demo at <http://127.0.0.1:4313>. It requires the copied
+local artifact bundle and preserved review evidence listed in the
+[development entry guide](scripts/dev-personalized-development.md). It refuses
+busy model/UI ports, uses the local simulated checkout, and stops only its own
+children on Ctrl+C. No weights, credentials or paid service are fetched.
 
 The parallel head is a fully supervised catalog demo: all 48 product/color
 bindings and three short writing styles were trained. It predicts word/EOS
