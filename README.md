@@ -49,8 +49,16 @@ the default real-session export; replay is separate from training examples. The
 context-only learner packet. Its consumer check uses explicitly synthetic CPU
 protocol vectors; no shopper query was captured and no live model was retrained.
 
-In the dashboard, open **All sessions** and choose **Run a round** to queue
-the deterministic mock comparisons. The separate legacy Playwright adapter
+The dashboard opens the verified Tiger cohort by default. It requires the
+configured results API; a missing report displays an error. For a standalone
+presentation with the existing results receiver on port 4311, run
+`DEV_API_ORIGIN=http://127.0.0.1:4311 PORT=4310 pnpm --filter @storefront/web dev`
+and open <http://127.0.0.1:4310>. The immutable report is
+`store-shopper-checkout-cohort-v2-final`; its actual-browser acceptance passed
+[50 checks](experiments/ranker/pretrained/store_cohort_presentation_acceptance_v1/report.json).
+
+The explicit `?legacy=1` dashboard retains **All sessions** and **Run a round**
+for deterministic mock comparisons. The separate legacy Playwright adapter
 exercises a scripted fake checkout and requires
 `pnpm exec playwright install chromium`. Its first-item purchase script does
 not represent an independent shopper choosing a suitable product.
@@ -193,12 +201,15 @@ adds synchronization overhead; the ordinary six-card attempt median was5.58s.
 
 ## Independent shopper evaluation
 
-The new [60-pair protocol](apps/runner/SHOPPER_COHORT.md) freezes 120 assigned
-sessions, service identities and source/checkpoint pins. It is currently running
-against the saved fast-model snapshot. The first five pairs are a prespecified
-runtime pilot and remain in the final denominator; no interim effect is claimed.
-Server-confirmed orders, suitable purchases and correct abstentions are scored
-separately. The final report will preserve timeouts, failures and unattempted slots.
+The [60-pair protocol](apps/runner/SHOPPER_COHORT.md) completed all 120 assigned
+sessions against the frozen fast-model snapshot. Generic and personalized shops
+met 58/60 and 57/60 goals; suitable checkouts were 46/48 and 47/48. The $96
+merchandise difference came from one generic timeout. This synthetic run does
+not demonstrate conversion lift. Both timeouts and all fixed denominators remain
+in the [audited report](experiments/ranker/pretrained/store_shopper_cohort_v2/REPORT.md).
+Eight separate control sessions are excluded from those counts. The first five
+pilot pairs remain included. Actual Tiger archive/readback and presentation
+binding are recorded in the [backend proof](apps/api/checkout-cohort.verification.json).
 
 The [ten-pair packet](experiments/ranker/pretrained/store_shopper_eval_v1/README.md)
 separates public recommender observations, private shopper needs and evaluator

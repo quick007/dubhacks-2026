@@ -473,3 +473,38 @@ freezes20/32 primary,24/32 novel-relevant and28/32 strong top-three minimums,
 baseline contribution, factual checks and separate live-store acceptance.
 Runtime portability tests pass: a moved checkpoint uses its adjacent exact-hash
 public context cache, with no fallback to the original worktree path.
+
+## Completed cohort and next representation, 2026-10-18 10:25 UTC
+
+All120 main shopper sessions and8 separate controls are preserved. Main intent
+success is generic58/60 versus local57/60; suitable checkouts46/48 versus47/48.
+The $96 merchandise difference came from one generic decision timeout. No
+conversion benefit was demonstrated. REPORT.md in store_shopper_cohort_v2
+contains fixed denominators, paired intervals, visibility mismatch, readiness
+scope and the31 transient last-safe observations that subsequently completed.
+Actual Tiger report store-shopper-checkout-cohort-v2-final has envelope SHA
+31afcba97aa08096b805960f6b6d5f8871fe5fde258467e9ff6ac451d9394172.
+The default five-slide website now consumes that report, with50 real-Chrome
+acceptance checks passed and screenshots/source pins saved separately.
+
+The harness released all browsers at10:04:43Z. Root gracefully retired native4200,
+verified its process absence and all927 frozen tensors/checkpoint/source pins;
+store_fast_model_snapshot_retirement_v1.json records the evidence. Checkout4331
+and strict Tiger receiver4311 remain live. Original READY/snapshots are immutable.
+
+The new genuine432-context extraction completed234.24s with5.53GB peak and all927
+tensors unchanged. Its250-update head failed independent32:4 primary,7 novel
+relevant,15 strong top-three. Integrity and facts passed. The32 cases are now
+development replay; do not promote or reuse them as unseen evidence. Independent
+TRAIN replay found original requests45/160 primary, contrasts145/160, severe
+feature anisotropy and remaining underfit. Three preregistered CPU follow-ups
+completed3750 total updates (raw2500, centered250/1000), each fitting TRAIN320/320
+and known history diagnostics10/10. All still scored only8/32 development primary.
+Sources, failed checkpoints, means, all predictions and freeze receipts remain in
+the isolated persona worktree; no runtime accepted profile has been created.
+
+A separate20-forward public-demo diagnostic is testing the pretrained LM answer
+logits on complete catalog-conditioned prompts in canonical/reversed orders.
+This uses no gold, optimizer or autoregressive decode and is not a promotion
+claim. Any new candidate needs separately frozen independent quality evidence
+and actual serving/browser acceptance before becoming the normal store model.

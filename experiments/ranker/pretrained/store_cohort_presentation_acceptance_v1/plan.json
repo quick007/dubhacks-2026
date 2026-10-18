@@ -1,0 +1,80 @@
+{
+  "version": "cohort-presentation-acceptance.v1",
+  "execute": true,
+  "origin": "http://127.0.0.1:4310",
+  "reportId": "store-shopper-checkout-cohort-v2-final",
+  "output": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_cohort_presentation_acceptance_v1",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "deviceScaleFactor": 1,
+  "browser": "Installed headed Chrome through root @playwright/test; one owned isolated context",
+  "prerequisite": "Parent must explicitly confirm ALLBROWSERIDLE before invoking --run; this script cannot infer that state.",
+  "actualDataOnly": true,
+  "slides": [
+    {
+      "id": "title",
+      "label": "Storefront Lab",
+      "action": "initial navigation"
+    },
+    {
+      "id": "results",
+      "label": "Shopper results",
+      "action": "ArrowRight"
+    },
+    {
+      "id": "model",
+      "label": "The model",
+      "action": "navigation button"
+    },
+    {
+      "id": "speed",
+      "label": "Ranking comparison",
+      "action": "ArrowRight"
+    },
+    {
+      "id": "stakes",
+      "label": "Why speed matters",
+      "action": "navigation button"
+    }
+  ],
+  "defaultReportConfig": "apps/web/src/fieldwork/presentation-report.json",
+  "requiredDefaultConfigSchema": "presentation-report.v1: reportId, reportSha256, metricsSourceSha256, synthetic:true, humanConversionClaim:false, scope",
+  "requestGuardDisablesHttpCache": true,
+  "checks": [
+    "Fresh strict-Tiger report GET; exact immutable ID, synthetic 60/120 scope and evidence digests",
+    "Final default configuration must exist and bind exact selected ID, API envelope digest and metrics source digest",
+    "Bare /#title must load that same selected Tiger report; unconfigured legacy default fails",
+    "Visible goal, purchase and merchandise figures equal actual API metrics, including exact cents",
+    "All five measured slides reached using both keyboard and navigation buttons; screenshots saved",
+    "Explicit ?report=ID remains a separate checked entry path with identical figures and Tiger data",
+    "Current model values match local audited projection; historical ranking scope remains explicit",
+    "Unknown report actual 404 and empty report client error remain outside legacy deck",
+    "No /api/runs, /api/catalog, model/personalize or write request may leave the context"
+  ],
+  "noSyntheticResponses": true,
+  "noModelCalls": true,
+  "noPerformanceBenchmark": true,
+  "defaultBehavior": "No network, browser import/launch or output-directory creation without --run",
+  "example": "node scripts/accept-cohort-presentation.mjs --run --report EXACT_FINAL_REPORT_ID --out NEW_DIRECTORY",
+  "sourceHashes": {
+    "scripts/accept-cohort-presentation.mjs": "56251dc874099994f4a41aff402e8303a951419e8180dd6a4c806933db65a15e",
+    "apps/web/src/App.tsx": "a9d2b1867eb6ac093fc3876dbbc83a0c720443294c14fecfaa60f6a512a1ba8d",
+    "apps/web/src/CohortPresentation.tsx": "fbcdf4a304d788e04a02e1014d5cfbe79ba2ba25f95c31ceef9acbbb8fc0ef47",
+    "apps/web/src/lib/presentation-results.ts": "356d425581cab70ad4bb1d0acc8913ec7e2babdb694bbaf98ebff5e7de7c04aa",
+    "apps/web/src/slides/Deck.tsx": "776e9d53860bc7585f1afdd8b1f454dba9c3748c6ace445e1d7147e2279ecaa9",
+    "apps/web/src/slides/CohortResultsSlide.tsx": "d51bd5980e3e3467afda31c808e44a58a5492392bfa4377a516c5c69de3116ba",
+    "apps/web/src/slides/ModelSlide.tsx": "e90ddb9445d53e302c55a2f4e6231116d5792d3bacd58d97b3bb569d12417c6c",
+    "apps/web/src/slides/SpeedSlide.tsx": "fb22b706ae371a268ee9ecd80abe04ec5de0a0814c225996ee662f9a77e5a401",
+    "apps/web/src/slides/StakesSlide.tsx": "892486dbdaee47b3b367d6c883d374324695db3cd19768d292f5ad8cb741c361",
+    "apps/web/src/slides/SlideFrame.tsx": "22a67ac6075ed653bef57d2c57346b923ba0916773d50059d379325fd3caa191",
+    "apps/web/src/styles.css": "26bfa78b24ba2be3af509680097df1b0f99b408a96465761050005fc661da639",
+    "apps/web/vite.config.ts": "47ea024424176a7dbdbb04f68b17a1044e3c0354bedcfd7710a5820f807b7b31",
+    "apps/web/src/fieldwork/presentation-report.json": "4d425fef0b2793ef0e0b1e0a6d327eb7320c73a8b5651b05447acd912961ec8f",
+    "apps/web/src/fieldwork/current-model.json": "e85148e152328da6193f6f5570a4e0c50d355d68eb5d28d0bc74f9e2613a9a93",
+    "apps/web/src/fieldwork/model-run.json": "5f03aea391aaccf1f1840023dee45d25f034a5ecc3a862dd2b06dcd790177720",
+    "apps/web/src/fieldwork/llm-run.json": "0c5e8c3fb6f3bc5f0dddd73cc3b0c6ba2c853879c3cbf660447adb6a21d70838",
+    "apps/api/internal/experimentresults/presentation.go": "ff3714200d3b256d498123c712770723e9d06ed33ae951beb8d2ac806e8efcb9"
+  }
+}

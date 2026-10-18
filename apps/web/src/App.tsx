@@ -25,6 +25,7 @@ import { StruggleSlide } from "./slides/StruggleSlide";
 import { TitleSlide } from "./slides/TitleSlide";
 import { TwoShoppersSlide } from "./slides/TwoShoppersSlide";
 import { CohortPresentation } from "./CohortPresentation";
+import presentationReport from "./fieldwork/presentation-report.json";
 
 const message = (cause: unknown) =>
   cause instanceof Error ? cause.message : "Could not reach the local API.";
@@ -47,8 +48,9 @@ const featuredSlides = new Set<SlideId>(["meet", "struggle", "fix", "retest"]);
 
 export function App() {
   const params = new URLSearchParams(window.location.search);
-  const reportId = params.get("report") ?? "";
-  return params.has("report") ? <CohortPresentation key={reportId} reportId={reportId} /> : <LegacyApp />;
+  if (params.get("legacy") === "1") return <LegacyApp />;
+  const reportId = params.has("report") ? params.get("report") ?? "" : presentationReport.reportId;
+  return <CohortPresentation key={reportId} reportId={reportId} />;
 }
 
 function LegacyApp() {

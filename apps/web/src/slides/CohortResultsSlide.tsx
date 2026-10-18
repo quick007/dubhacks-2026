@@ -37,6 +37,7 @@ export function CohortResultsSlide({ result }: { result: PresentationResults }) 
         ))}
       </dl>
       <p className="mt-8 text-sm text-muted">Generic shop → personalized shop. Server-confirmed simulated orders; merchandise value only.</p>
+      <p className="mt-2 text-sm text-muted">The $96 difference came from one generic timeout; no conversion gain was demonstrated.</p>
     </SlideFrame>
   );
 }
