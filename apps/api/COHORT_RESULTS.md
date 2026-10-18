@@ -60,4 +60,12 @@ Use `metrics.arms.generic` / `metrics.arms["local-model"]`. Intent-correct succe
 
 Existing raw report/runs/comparison/latency routes accept `source=tiger` for strict cloud readback too. For cohorts, runs retains all 120 original rows, comparison returns the combined metric arm objects, and latency returns the harness's measured-session/readiness distributions verbatim. Original smoke IDs are never promoted or pooled into this cohort.
 
-Validation: full Go race suite/vet, `node --import tsx --test apps/api/scripts/checkout-cohort-export.test.mjs apps/web/src/lib/presentation-results.test.ts`, and web typechecking. Tests use credential-free protocol fixtures, including an offline Tiger with an available local spool to prove there is no fallback. Actual cohort upload/readback waits for finalized source files and is recorded separately from these tests.
+Validation: full Go race suite/vet, `node --import tsx --test apps/api/scripts/checkout-cohort-export.test.mjs apps/web/src/lib/presentation-results.test.ts`, and web typechecking. Tests use credential-free protocol fixtures, including an offline Tiger with an available local spool to prove there is no fallback.
+
+## Actual final cohort readback
+
+The finalized cohort was archived as report `store-shopper-checkout-cohort-v2-final`, experiment `actual-store-checkout-cohort-v2`. Its accepted digest is `31afcba97aa08096b805960f6b6d5f8871fe5fde258467e9ff6ac451d9394172`. Before uploading, the ten allowed final files matched the harness handoff's byte counts/hashes, and reanalysis with rehashed receipt artifacts exactly reproduced the saved metrics.
+
+A fresh `source=tiger` raw-report read matched the complete prepared envelope structurally. The presentation response passed the actual frontend parser, retained the original metrics/slide data and all source digests, and strict Tiger runs/comparison/latency reads retained all 120 recorded slots and matched their archived distributions. Identical POST retry preserved the digest and returned `duplicate: true`; pending uploads reached zero. No controls or raw browser logs were uploaded, and the frozen checkout receiver was left unchanged.
+
+The archived synthetic panel has intent-correct outcomes of 58/60 generic and 57/60 local-model, feasible verified fake checkouts of 46/48 and 47/48, and valid-scored merchandise revenue per assigned session of $42.35 and $43.95. These are different outcome definitions, with the original paired uncertainty, failures and limitations preserved. They do not establish human conversion lift or real revenue. See [checkout-cohort.verification.json](checkout-cohort.verification.json). The existing deck can select the explicit immutable snapshot with `?report=store-shopper-checkout-cohort-v2-final`.

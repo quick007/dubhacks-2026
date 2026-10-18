@@ -1,0 +1,188 @@
+{
+  "version": "checkout-cohort-tiger-verification.v1",
+  "reportId": "store-shopper-checkout-cohort-v2-final",
+  "experimentId": "actual-store-checkout-cohort-v2",
+  "sha256": "31afcba97aa08096b805960f6b6d5f8871fe5fde258467e9ff6ac451d9394172",
+  "receivedAt": "2026-10-18T10:08:56.236076Z",
+  "source": "tiger",
+  "rawEnvelopeStructurallyEqual": true,
+  "presentationAdapterAccepted": true,
+  "presentationMetricsVerbatim": true,
+  "allViewsTiger": true,
+  "fixedCases": 60,
+  "fixedSessions": 120,
+  "recordedSessions": 120,
+  "sourceReports": 6,
+  "controlsUploaded": false,
+  "rawBrowserLogsUploaded": false,
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "physicalPaintMeasured": false,
+  "imageTransferMeasured": false,
+  "arms": {
+    "generic": {
+      "assigned": 60,
+      "intentCorrectSuccess": {
+        "rate": 0.9666666666666667,
+        "numerator": 58,
+        "interval95": {
+          "level": 0.95,
+          "lower": 0.886362257256914,
+          "upper": 0.9908106807438021,
+          "method": "Wilson score"
+        },
+        "denominator": 60
+      },
+      "prespecifiedFeasibleCheckout": {
+        "rate": 0.9583333333333334,
+        "numerator": 46,
+        "interval95": {
+          "level": 0.95,
+          "lower": 0.8602434412954456,
+          "upper": 0.9884981065106133,
+          "method": "Wilson score"
+        },
+        "denominator": 48
+      },
+      "revenue": {
+        "currency": "USD",
+        "totalCents": 254100,
+        "nonpurchaseSessions": 14,
+        "quantityPerPurchase": 1,
+        "revenuePerAssignedSessionCents": 4235
+      },
+      "allServerConfirmedOrders": {
+        "rate": 0.7666666666666667,
+        "count": 46,
+        "scope": "Server-confirmed quantity-one orders, including confirmed orders excluded from valid-purchase scoring; revenue is merchandise subtotal only. Hidden shipping remains unknown, never an observed zero charge.",
+        "assigned": 60,
+        "evaluated": true,
+        "interval95": {
+          "level": 0.95,
+          "lower": 0.6456372962239805,
+          "upper": 0.8556043826335717,
+          "method": "Wilson score"
+        },
+        "shippingCents": null,
+        "shippingKnown": false,
+        "knownShippingCents": 0,
+        "shippingKnownOrders": 0,
+        "shippingUnknownOrders": 46,
+        "merchandiseSubtotalCents": 254100,
+        "visibleCheckoutConfirmations": 46,
+        "withoutVisibleCheckoutConfirmation": 0,
+        "merchandiseRevenuePerAssignedSessionCents": 4235
+      }
+    },
+    "local-model": {
+      "assigned": 60,
+      "intentCorrectSuccess": {
+        "rate": 0.95,
+        "numerator": 57,
+        "interval95": {
+          "level": 0.95,
+          "lower": 0.8629948352365147,
+          "upper": 0.9828504978356043,
+          "method": "Wilson score"
+        },
+        "denominator": 60
+      },
+      "prespecifiedFeasibleCheckout": {
+        "rate": 0.9791666666666666,
+        "numerator": 47,
+        "interval95": {
+          "level": 0.95,
+          "lower": 0.8910078200474814,
+          "upper": 0.9963128890224893,
+          "method": "Wilson score"
+        },
+        "denominator": 48
+      },
+      "revenue": {
+        "currency": "USD",
+        "totalCents": 263700,
+        "nonpurchaseSessions": 13,
+        "quantityPerPurchase": 1,
+        "revenuePerAssignedSessionCents": 4395
+      },
+      "allServerConfirmedOrders": {
+        "rate": 0.7833333333333333,
+        "count": 47,
+        "scope": "Server-confirmed quantity-one orders, including confirmed orders excluded from valid-purchase scoring; revenue is merchandise subtotal only. Hidden shipping remains unknown, never an observed zero charge.",
+        "assigned": 60,
+        "evaluated": true,
+        "interval95": {
+          "level": 0.95,
+          "lower": 0.6637997242680521,
+          "upper": 0.868769559518097,
+          "method": "Wilson score"
+        },
+        "shippingCents": null,
+        "shippingKnown": false,
+        "knownShippingCents": 0,
+        "shippingKnownOrders": 0,
+        "shippingUnknownOrders": 47,
+        "merchandiseSubtotalCents": 263700,
+        "visibleCheckoutConfirmations": 47,
+        "withoutVisibleCheckoutConfirmation": 0,
+        "merchandiseRevenuePerAssignedSessionCents": 4395
+      }
+    }
+  },
+  "checks": {
+    "finalHandoffTenFileHashes": true,
+    "unchangedCPUAnalyzerExactMatch": true,
+    "receiptArtifactHashesReverified": true,
+    "TigerDigestMatchesLocal202": true,
+    "rawRunsRetained": 120,
+    "strictComparisonAndLatencyMatch": true,
+    "identicalRetryPreservesDigest": true,
+    "pendingReports": 0
+  },
+  "provenance": {
+    "metrics": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/shopper-metrics.json",
+      "sha256": "c840160b3ec2b41d417a5af9caf99c3f0dc2210e0cd0e3104ab480dad51dc73d"
+    },
+    "plan": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/cohort-plan.json",
+      "sha256": "4c1deff586b1a9a23b5b757b1bbec6d56dc514f50adbb30e29ec5c620c29580d"
+    },
+    "serverOutcomes": {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/server-outcomes.json",
+      "sha256": "8f2bd103db9ba606dfebfe9fdd9d5604cd906c250659eaa0f6055ac09d2c6ad9"
+    },
+    "sourceReports": [
+      {
+        "experimentId": "actual-store-heldout-shopper-v2",
+        "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/aggregate-audited.json",
+        "sha256": "c5eea5999fbe89861a302ffab9d59c3761c4b37df3a843a25c56b5710ee2ed38"
+      },
+      {
+        "experimentId": "actual-store-heldout-shopper-v2",
+        "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/aggregate-audited.json",
+        "sha256": "bb3db626d6f4f5af95285fb33bcfbece560ee2daf70585b60082ac479f2d3bf0"
+      },
+      {
+        "experimentId": "actual-store-heldout-shopper-v2",
+        "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/packet-3/aggregate-audited.json",
+        "sha256": "21ee6a49a6b39bcda3cec566536c8cccd4b90cddfc9110c7337295034a203455"
+      },
+      {
+        "experimentId": "actual-store-heldout-shopper-v2",
+        "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/packet-4/aggregate-audited.json",
+        "sha256": "ee0dd5ef0d7dec0adfee9fad8871bf957b05a0afb92dc1f7bfbf7d76086d4b99"
+      },
+      {
+        "experimentId": "actual-store-heldout-shopper-v2",
+        "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/packet-5/aggregate-audited.json",
+        "sha256": "a672218e34305f3ac2532fa554fdbf2ca5c22425feca872b5d6db7388a607d7a"
+      },
+      {
+        "experimentId": "actual-store-heldout-shopper-v2",
+        "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_cohort_v2/packet-6/aggregate-audited.json",
+        "sha256": "555585ba57df30e7220144811f081a83669fb566585718555e97858d00934aa7"
+      }
+    ]
+  }
+}
