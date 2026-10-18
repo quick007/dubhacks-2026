@@ -1,7 +1,8 @@
 """CPU persona ranking/variant runtime and exact public-query feature cache.
 
-Only frozen-base query vectors are cached. Context scores, selected bindings and
-all neural copy words are recomputed for every request. No labels are read.
+Only exact frozen-base query/public-context vectors may be reused. Learned
+context scores, selected bindings and all neural copy words are recomputed for
+every request. No labels are read.
 """
 from contextlib import nullcontext
 from copy import deepcopy
@@ -55,6 +56,13 @@ class ExactQueryFeatureCache:
             'scope': 'fresh frozen-base public query feature; no context/rank/variant/copy cached'}
 
 class PersonaRuntime:
+    """Load an explicit head plus its co-located public context cache.
+
+    ``feature_root`` / launcher ``personaFeatureRoot`` is the original verified
+    catalog feature run (actual-store-function-v3-attempt-1), not the new public
+    context extraction directory. The public context cache always comes from
+    the selected head's own directory, with the checkpoint's expected checksum.
+    """
     def __init__(self, head_path, expected_sha, feature_root):
         if context_model.sha(head_path) != expected_sha: raise ValueError('Explicit persona checkpoint hash required')
         self.head_path = Path(head_path); self.head_sha = expected_sha
@@ -64,13 +72,21 @@ class PersonaRuntime:
             from .store_persona_qwen_fit_v1 import load
             from . import store_persona_qwen_v1 as formatter
             self.head,self.saved=load(head_path,expected_sha);self.native_context=True
-            cache_path=Path(self.saved['publicDemoFeatureCacheFile'])
-            if context_model.sha(cache_path)!=self.saved['publicDemoFeatureCacheSha256']:raise ValueError('Public nativecontext cache changed')
+            original_cache_path = self.saved['publicDemoFeatureCacheFile']
+            cache_path = self.head_path.parent / Path(original_cache_path).name
+            if not cache_path.is_file():
+                raise FileNotFoundError('Co-located public context cache required at ' + str(cache_path) + '; saved original path is provenance only')
+            if context_model.sha(cache_path)!=self.saved['publicDemoFeatureCacheSha256']:
+                raise ValueError('Co-located public context cache checksum mismatch')
+            self.context_cache_provenance = {'checkpointOriginalFile': original_cache_path,
+                'runtimeFile': str(cache_path.resolve()), 'sha256': self.saved['publicDemoFeatureCacheSha256'],
+                'resolution': 'selected checkpoint directory plus saved basename; no original-path fallback'}
             self.context_cache=torch.load(cache_path,map_location='cpu',weights_only=True)
             if self.context_cache['teacherOrLabels'] is not False or self.context_cache['contextFormatterSha256']!=context_model.sha(formatter.__file__):raise ValueError('Exact public nativecontext formatter/cache required')
             self.context_cache_path=cache_path;self.dynamic_context_cache=None
         else:self.head, self.saved = context_model.load_head(head_path)
-        self.catalog = context_model.load_catalog_features(feature_root)
+        self.catalog_feature_root = Path(feature_root)
+        self.catalog = context_model.load_catalog_features(self.catalog_feature_root)
         if self.saved['catalogPins'] != self.catalog['pins']: raise ValueError('Persona checkpoint and runtime real catalog features differ')
         self.pins = {str(Path(__file__)): context_model.sha(__file__), str(Path(context_model.__file__)): context_model.sha(context_model.__file__), str(self.head_path): expected_sha}
         if self.native_context:
@@ -143,4 +159,5 @@ class PersonaRuntime:
             self.dynamic_context_cache=(key,values.detach().clone());source='fresh-native-public-context';calls=1
         if tuple(values.shape)!=(1,4096) or not torch.isfinite(values).all():raise ValueError('Finite native context4096required')
         return values,{'kind':source,'cacheHit':calls==0,'nativeBackboneForwardCalls':calls,'publicContextTextSha256':key,'tokens':len(tokens),
-            'elapsedMs':(time.perf_counter()-started)*1000,'scope':'only exact public frozen-base context feature reused; learned ownership/rank/color/fresh neural copy recomputed'}
+            'elapsedMs':(time.perf_counter()-started)*1000,'precomputedContextCacheArtifact':deepcopy(self.context_cache_provenance),
+            'scope':'only exact public frozen-base context feature reused; learned ownership/rank/color/fresh neural copy recomputed'}

@@ -79,3 +79,74 @@ class ContextRepresentationTests(unittest.TestCase):
         self.assertEqual(hashed['contextRepresentation'],legacy.CONFIG['contextRepresentation'])
         self.assertNotEqual(native['contextRepresentation'],hashed['contextRepresentation'])
         self.assertEqual(native['scores16'],hashed['scores16'])
+
+class MovedNativeArtifactsTests(unittest.TestCase):
+    """Real CPU checkpoint serialization with random, untrained fixture weights."""
+    def artifacts(self,directory):
+        import shutil
+        from pathlib import Path
+        from . import store_persona_context_v1 as base
+        from . import store_persona_qwen_v1 as formatter
+        from .store_persona_qwen_fit_v1 import NativePersonaHead,CONFIG,VERSION
+        original=Path(directory)/'original';moved=Path(directory)/'moved';original.mkdir();moved.mkdir()
+        cache=original/'public-demo-features.pt'
+        torch.save({'teacherOrLabels':False,'contextFormatterSha256':base.sha(formatter.__file__),
+            'features':{},'sourceExtractionReportSha256':'fixture-only'},cache)
+        head=original/'head.pt'
+        torch.save({'version':VERSION,'config':CONFIG,'state_dict':NativePersonaHead().state_dict(),
+            'publicDemoFeatureCacheFile':str(cache),'publicDemoFeatureCacheSha256':base.sha(cache),'catalogPins':{}},head)
+        shutil.copy2(head,moved/'head.pt');shutil.copy2(cache,moved/cache.name)
+        return original,moved,base.sha(head)
+    def construct(self,head,head_sha,catalog_root):
+        from unittest.mock import patch
+        from . import store_persona_context_v1 as base
+        from .store_persona_runtime_v1 import PersonaRuntime
+        catalog={'pins':{},'products':[],'variants':[],'vectors':torch.zeros(16,4096)}
+        with patch.object(base,'load_catalog_features',return_value=catalog) as loader,patch.object(base,'source_colors',return_value=(torch.zeros(48,256),torch.arange(16).repeat_interleave(3))):
+            obj=PersonaRuntime(head,head_sha,catalog_root)
+        loader.assert_called_once_with(catalog_root)
+        return obj
+    def test_moved_checkpoint_and_sibling_cache_work_with_original_removed_byte_exact(self):
+        import tempfile
+        from pathlib import Path
+        from . import store_persona_context_v1 as base
+        with tempfile.TemporaryDirectory() as directory:
+            original,moved,head_sha=self.artifacts(directory);declared=original/'public-demo-features.pt'
+            declared.unlink();(original/'head.pt').unlink()
+            catalog_root=Path(directory)/'original-verified-catalog-run'
+            obj=self.construct(moved/'head.pt',head_sha,catalog_root)
+            self.assertEqual(base.sha(moved/'head.pt'),head_sha)
+            self.assertEqual(obj.saved['publicDemoFeatureCacheFile'],str(declared))
+            self.assertEqual(obj.context_cache_path,moved/'public-demo-features.pt')
+            self.assertEqual(obj.context_cache_provenance['checkpointOriginalFile'],str(declared))
+            self.assertEqual(obj.context_cache_provenance['runtimeFile'],str((moved/'public-demo-features.pt').resolve()))
+            obj.assert_current()
+            (moved/'public-demo-features.pt').write_bytes(b'changed after initialization')
+            with self.assertRaisesRegex(ValueError,'runtime/checkpoint changed'):obj.assert_current()
+    def test_altered_sibling_rejected_even_when_saved_original_is_valid(self):
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import patch
+        from . import store_persona_context_v1 as base
+        with tempfile.TemporaryDirectory() as directory:
+            original,moved,head_sha=self.artifacts(directory);local=moved/'public-demo-features.pt';local.write_bytes(b'altered local artifact')
+            real_sha=base.sha;hashed=[]
+            def record(path):hashed.append(Path(path));return real_sha(path)
+            with patch.object(base,'sha',side_effect=record):
+                with self.assertRaisesRegex(ValueError,'Co-located public context cache checksum mismatch'):
+                    self.construct(moved/'head.pt',head_sha,Path(directory)/'original-catalog')
+            self.assertTrue((original/'public-demo-features.pt').is_file())
+            self.assertNotIn(original/'public-demo-features.pt',hashed)
+    def test_missing_sibling_rejected_without_reading_valid_original(self):
+        import tempfile
+        from pathlib import Path
+        from unittest.mock import patch
+        from . import store_persona_context_v1 as base
+        with tempfile.TemporaryDirectory() as directory:
+            original,moved,head_sha=self.artifacts(directory);(moved/'public-demo-features.pt').unlink()
+            real_sha=base.sha;hashed=[]
+            def record(path):hashed.append(Path(path));return real_sha(path)
+            with patch.object(base,'sha',side_effect=record):
+                with self.assertRaisesRegex(FileNotFoundError,'saved original path is provenance only'):
+                    self.construct(moved/'head.pt',head_sha,Path(directory)/'original-catalog')
+            self.assertNotIn(original/'public-demo-features.pt',hashed)
