@@ -26,7 +26,7 @@ export function CohortPresentation({ reportId }: { reportId: string }) {
   }, [reportId]);
   if (!result || result.reportId !== reportId) return <p role="status" className="p-8 text-lg text-muted">{error || "Loading verified results…"}</p>;
   return <Deck slides={[
-    { id: "title", label: "Storefront Lab", render: () => <TitleSlide names={[]} /> },
+    { id: "title", label: "Personalization Labs", render: () => <TitleSlide names={[]} /> },
     { id: "inputs", label: "Shopper context", render: () => <ShopperContextSlide /> },
     { id: "stakes", label: "Why speed matters", render: () => <StakesSlide /> },
     { id: "results", label: "Observed shopper results", render: () => <CohortResultsSlide result={result} /> },

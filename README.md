@@ -1,6 +1,6 @@
-# Storefront Lab
+# Personalization Labs
 
-A local DubHacks demo for adapting a storefront to a shopper's public request.
+Personalization Labs is a local DubHacks project that adapts storefronts to a shopper's public request.
 The React shop has 35 fixture products, color/gallery controls and a fake
 checkout. An optional local Qwen path learns product ordering and generates
 fresh titles, badges, headings and short copy from selected catalog facts.

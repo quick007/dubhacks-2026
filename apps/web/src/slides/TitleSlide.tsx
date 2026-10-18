@@ -14,7 +14,7 @@ export function TitleSlide({ names }: { names: string[] }) {
     <div className="mx-auto flex w-full max-w-6xl flex-col justify-center gap-10 px-4 py-10 sm:gap-14 sm:px-8">
       <div className="text-center">
         <h1 className="font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.12] font-semibold tracking-[-0.025em] text-balance">
-          Storefront Lab
+          Personalization Labs
         </h1>
         <p className="mx-auto mt-6 max-w-[42ch] text-xl leading-relaxed text-muted sm:text-2xl">
           Better personalized shopping for customers and stores.
