@@ -18,7 +18,7 @@ import { CartView } from "./CartView";
 import { ConfirmationView } from "./ConfirmationView";
 import { useRoute } from "./use-route";
 import type { StorefrontRoute } from "./routes";
-import { localModelEnabled, localModelEndpoint } from "./local-model";
+import { storefrontModelMode } from "./local-model-mode";
 import { useLocalModel } from "./use-local-model";
 import { demoTraceEnabled, traceContext, traceEvent, traceProducts } from "./session-trace-bridge";
 import { confirmDemoCheckout, type DemoCheckoutReceipt } from "./demo-checkout-client";
@@ -52,9 +52,9 @@ function App() {
   }, [route.query]);
 
   const personalizedDefault = import.meta.env.VITE_PERSONALIZED_STORE === "true";
-  const localMode = localModelEnabled(window.location.search, personalizedDefault);
-  const localModel = useLocalModel(localMode && route.page === "shop", route.query, person.request,
-    localModelEndpoint(window.location.search, personalizedDefault));
+  const { enabled: localMode, endpoint, personaEnabled, context: modelContext, personName } =
+    storefrontModelMode(window.location.search, personalizedDefault, person);
+  const localModel = useLocalModel(localMode && route.page === "shop", route.query, modelContext, endpoint);
   const defaultExperience = personalizeStorefront(route.query, config);
   const catalogProducts = orderedProducts(config.recommendationOrder);
   const experience = localMode
@@ -179,7 +179,7 @@ function App() {
             selectedVariants={selectedVariants}
             added={added}
             localModel={localMode ? localModel : undefined}
-            personName={localMode ? person.displayName : undefined}
+            personName={personName}
             onSearchInput={(value) => {
               setSearchInput(value);
               if (!value.trim() && route.query) goToCollection({ query: "" });
@@ -243,7 +243,7 @@ function App() {
           />
         )}
       </main>
-      {localMode && <Suspense fallback={null}><PersonaSwitcher people={SHOPPER_PERSONAS} person={person} onChange={(next: ShopperPersona) => {
+      {personaEnabled && <Suspense fallback={null}><PersonaSwitcher people={SHOPPER_PERSONAS} person={person} onChange={(next: ShopperPersona) => {
         if (next.id === personId) return;
         const switched = switchShoppingPerson({ personId, cart, carts: carts.current, checkoutReceipt }, next.id);
         carts.current = switched.carts;

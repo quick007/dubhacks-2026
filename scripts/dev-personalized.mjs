@@ -5,6 +5,7 @@ import { access, mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { ADAPTER_VERSION, ADAPTER_MODULE, validateAdapterProfile, verifyAdapterArtifacts, adapterArguments, assertAdapterHealth } from "./personalized-adapter-profile.mjs";
 
 export const ROOT = fileURLToPath(new URL("../", import.meta.url));
 export const PORTS = Object.freeze({ storefront: 4313, native: 8767, checkout: 4331 });
@@ -31,6 +32,7 @@ export async function assertNoFrontendDotenv(root, inspect = stat) {
 }
 
 export function validateReviewedProfile(value, root, assetRoot) {
+  if (value?.version === ADAPTER_VERSION) return validateAdapterProfile(value, root, assetRoot);
   if (value?.version !== "personalized-local-profile.v1" || value.status !== "accepted") {
     throw new Error("Personalized store is pending its reviewed model quality gate; no accepted serving profile is available and no model was launched.");
   }
@@ -57,6 +59,7 @@ export function validateReviewedProfile(value, root, assetRoot) {
 }
 
 export function nativeArguments({ assetRoot, profile, manifestFile, rankExport, candidate }) {
+  if (profile.version === ADAPTER_VERSION) return adapterArguments({ assetRoot, profile, candidate });
   return ["-m", NATIVE_MODULE, "--asset-root", assetRoot, "--persona-head", profile.personaHead.file,
     "--persona-head-sha256", profile.personaHead.sha256, "--persona-feature-root", profile.personaFeatureRoot,
     "--integration-manifest", manifestFile, "--rank-head-export", rankExport,
@@ -141,21 +144,24 @@ export async function buildPlan({ root = ROOT, assetRoot, session, manifest = MA
   await assertNoFrontendDotenv(root);
   assetRoot = path.resolve(assetRoot || (await stat(path.join(root, ".tools/pretrained-venv/bin/python")).then(() => root).catch(() => path.join(root, "../dubhacks-2026"))));
   const profile = await acceptedProfile(root, assetRoot);
+  const adapter = profile.version === ADAPTER_VERSION;
+  const selectedProfile = adapter ? await verifyAdapterArtifacts(profile) : profile;
   const python = path.join(assetRoot, ".tools/pretrained-venv/bin/python"); // Keep the lexical venv interpreter path.
-  const nativeFile = path.join(root, ...NATIVE_MODULE.split(".")) + ".py";
-  const persona = profile.personaHead.file;
+  const nativeFile = path.join(root, ...(adapter ? ADAPTER_MODULE : NATIVE_MODULE).split(".")) + ".py";
+  const persona = selectedProfile.personaHead.file;
   const candidate = path.join(assetRoot, "data/ranker/pretrained/store-parallel-text-train-all-demo-v1-attempt-2");
   const rank = path.join(assetRoot, ORIGINAL_CATALOG_RUN);
   const rankExport = path.join(assetRoot, "data/ranker/pretrained/actual-store-function-v5-attempt-1/serving-head.json");
   const copy = path.join(assetRoot, "data/ranker/pretrained/actual-store-copy-fit-v2-attempt-1");
   const features = path.join(assetRoot, "data/ranker/pretrained/store-parallel-text-v1-attempt-1/features.pt");
   const publicContract = path.join(candidate, "public-runtime-features.json");
-  const manifestFile = path.resolve(root, manifest);
+  const manifestFile = adapter ? selectedProfile.integrationManifest.file : path.resolve(root, manifest);
   const manifestBytes = await readFile(manifestFile).catch(() => { throw new Error(`Reviewed personalized integration manifest is not ready: ${manifestFile}. No older manifest was substituted.`); });
   JSON.parse(manifestBytes);
+  if (adapter && digest(manifestBytes) !== selectedProfile.integrationManifest.sha256) throw new Error("Accepted adapter integration manifest changed during preflight.");
   const assets = await Promise.all([
-    requiredFile(python, null, true), requiredFile(nativeFile), requiredFile(persona, profile.personaHead.sha256),
-    requiredFile(path.join(path.dirname(persona), "public-demo-features.pt")),
+    requiredFile(python, null, true), requiredFile(nativeFile), requiredFile(persona, selectedProfile.personaHead.sha256),
+    ...(adapter ? [] : [requiredFile(path.join(path.dirname(persona), "public-demo-features.pt"))]),
     requiredFile(rankExport, RANK_EXPORT_SHA),
     requiredFile(path.join(candidate, "head.pt"), "074169e31bf5f6b99cc5bc35c9b2e64d82396d5225b3a67cc2cf5f613fcc4889"),
     requiredFile(features, "2624a947f715e489431abf652a16e6872677fd0d4b824a76df694e0f8fae6ee8"),
@@ -165,6 +171,7 @@ export async function buildPlan({ root = ROOT, assetRoot, session, manifest = MA
     requiredFile(path.join(rank, "RAW_FEATURES_FROZEN.json")),
     requiredFile(path.join(root, "apps/storefront/node_modules/.bin/vp"), null, true),
   ]);
+  if (adapter) assets.push(...selectedProfile.assets);
   const model = path.join(assetRoot, ".cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53");
   for (const [name, bytes] of [["model-00001-of-00002.safetensors", 5349771222], ["model-00002-of-00002.safetensors", 600449850]]) {
     const actual = await requiredFile(path.join(model, name));
@@ -175,8 +182,8 @@ export async function buildPlan({ root = ROOT, assetRoot, session, manifest = MA
   return { version: "personalized-local-launch.v1", root, assetRoot, python, nativeFile,
     lock: path.join(assetRoot, "data/ranker/pretrained/native-owner.lock"),
     session: session || path.join(root, "data/personalized-dev", `${new Date().toISOString().replaceAll(":", "-")}-${randomUUID()}`),
-    manifest: { file: manifestFile, sha256: digest(manifestBytes) }, profile, assets,
-    nativeArgs: nativeArguments({ assetRoot, profile, manifestFile, rankExport, candidate }),
+    manifest: { file: manifestFile, sha256: digest(manifestBytes) }, profile: selectedProfile, assets,
+    nativeArgs: nativeArguments({ assetRoot, profile: selectedProfile, manifestFile, rankExport, candidate }),
     modelVerification: "Shard presence/size checked here; original full model/source/checkpoint integrity remains mandatory at native startup.",
     noDownloads: true, noEnvironmentFileLoaded: true };
 }
@@ -251,6 +258,7 @@ export async function waitUntil(ready, { children, timeoutMs = 180_000, delay = 
 }
 
 export async function run(plan, children = new OwnedChildren()) {
+  if (plan.profile.version === ADAPTER_VERSION) await verifyAdapterArtifacts(plan.profile);
   await mkdir(path.dirname(plan.session), { recursive: true, mode: 0o700 });
   await mkdir(plan.session, { mode: 0o700 }); // Never reuse or overwrite a previous lifetime.
   const record = (name, value) => writeFile(path.join(plan.session, name), JSON.stringify(value, null, 2) + "\n", { flag: "wx", mode: 0o600 });
@@ -276,6 +284,10 @@ export async function run(plan, children = new OwnedChildren()) {
         const response = await localJson(`http://127.0.0.1:${PORTS.native}/health`);
         if (response.value?.status === "error" || response.value?.error) throw new Error("Native model startup failed; inspect native.log.");
         if (response.value?.ready === true && response.value?.startup?.persona?.checkpointSha256 !== plan.profile.personaHead.sha256) throw new Error("Native model startup failed: unexpected persona checkpoint.");
+        if (response.value?.ready === true && plan.profile.version === ADAPTER_VERSION) {
+          try { assertAdapterHealth(response.value, plan.profile); }
+          catch (cause) { throw new Error("Native model startup failed: " + cause.message); }
+        }
         return response.status === 200 && response.value?.ready === true;
       } catch (cause) { if (cause.message?.includes("Native model startup failed")) throw cause; return false; }
     }, { children });
@@ -306,7 +318,7 @@ export async function run(plan, children = new OwnedChildren()) {
   if (error) throw error;
 }
 
-export async function main(argv = process.argv.slice(2)) {
+export async function main(argv = process.argv.slice(2), dependencies = {}) {
   const options = {}; let execute = false;
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === "--run") execute = true;
@@ -314,10 +326,10 @@ export async function main(argv = process.argv.slice(2)) {
     else if (argv[i] === "--help") { console.log("node scripts/dev-personalized.mjs [--run] [--asset-root LOCAL_EXISTING_REPO]\nWithout --run: preflight only. No download, install, .env load or service takeover."); return; }
     else throw new Error(`Unknown launcher argument: ${argv[i]}`);
   }
-  const plan = await preflight(options);
+  const plan = await preflight(options, dependencies);
   if (!execute) { console.log(JSON.stringify({ ...plan, execution: "preflight-only; no session directory or services created" }, null, 2)); return; }
   process.umask(0o077);
-  await run(plan);
+  await (dependencies.run || run)(plan);
 }
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {
