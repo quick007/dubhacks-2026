@@ -1,0 +1,264 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-08",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-08-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-08",
+    "personaSplit": "development",
+    "seed": 2026101808
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "85a1e33d-b74d-4e02-adbc-0d230a3d9d20",
+    "contextId": "c8bccbee-8369-47b0-a563-d05f968e060d",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-08-generic-screenshot-png",
+      "shopper-pair-08-generic-trace-zip",
+      "shopper-pair-08-generic-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T04:38:42.979Z",
+  "elapsedMs": 49625.747,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-0",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 0,
+        "at": "2026-10-18T04:38:44.190Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 1211.756,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-1",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 1,
+        "at": "2026-10-18T04:38:51.518Z",
+        "kind": "action",
+        "message": "a waterproof rain jacket up to $130"
+      },
+      "elapsedMs": 8539.065834,
+      "action": {
+        "type": "search",
+        "query": "a waterproof rain jacket up to $130"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-2",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 2,
+        "at": "2026-10-18T04:38:57.217Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 14238.107750000001,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-3",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 3,
+        "at": "2026-10-18T04:39:03.946Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 20967.317334,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-4",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 4,
+        "at": "2026-10-18T04:39:10.180Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 27201.188334,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-5",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 5,
+        "at": "2026-10-18T04:39:18.761Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 35782.477875,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-6",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 6,
+        "at": "2026-10-18T04:39:26.030Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 43051.0695,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-08-generic-step-7",
+        "runId": "shopper-pair-08-generic",
+        "sequence": 7,
+        "at": "2026-10-18T04:39:32.605Z",
+        "kind": "action",
+        "message": "The Everywhere rain jacket is $128 in Forest, but the visible public information does not explicitly declare it waterproof. I cannot verify this required fact, so I will not add it or place an order."
+      },
+      "elapsedMs": 49625.741167,
+      "action": {
+        "type": "abandon",
+        "target": "The Everywhere rain jacket is $128 in Forest, but the visible public information does not explicitly declare it waterproof. I cannot verify this required fact, so I will not add it or place an order."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-08-generic-screenshot-png",
+        "runId": "shopper-pair-08-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:39:33.595Z"
+      },
+      "status": "captured",
+      "sha256": "d75348dd68788717d8077783554e7b49ab4084451cbe64ca1bec2d7a57919bca",
+      "bytes": 1229000,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-08-generic-trace-zip",
+        "runId": "shopper-pair-08-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:39:33.595Z"
+      },
+      "status": "captured",
+      "sha256": "74be2812149e4efb3d703ef53a2d715d928b95bc0490daab5599a5af4ec57de9",
+      "bytes": 33327000,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-08-generic-browser-observations-json",
+        "runId": "shopper-pair-08-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:39:33.595Z"
+      },
+      "status": "captured",
+      "sha256": "ab2b29f8567a71bbf5a3ffcc94797952fc17120bf14b5f583de54ef04775e02f",
+      "bytes": 54462,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-08-generic-screenshot-png",
+          "shopper-pair-08-generic-trace-zip",
+          "shopper-pair-08-generic-browser-observations-json"
+        ]
+      },
+      {
+        "needId": "waterproof-evidence",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-08-generic-screenshot-png",
+          "shopper-pair-08-generic-trace-zip",
+          "shopper-pair-08-generic-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-08-generic-screenshot-png",
+          "shopper-pair-08-generic-trace-zip",
+          "shopper-pair-08-generic-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
