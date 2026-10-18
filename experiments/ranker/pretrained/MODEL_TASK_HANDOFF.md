@@ -277,3 +277,28 @@ Tiger task ownsadapter/API. Initial real hostedreportuploadwasdenied before
 execution; parent then confirmed explicituserapproval andDBowner resumedone
 scopedupload/readback. Modeltask made no export/readcredentials; outcome pending
 DBownerconfirmation at thischeckpoint. Preserve all separateownercommits.
+
+
+## Full shopper suite and completed component profile
+
+Shopper owner released allGPU/browserrequests after20actualreceipts. Fullsuite
+fixeddenom10each: generic8expected(6fakecheckouts+2correctabstentions),local7
+(5+2). Preserved pair04genericwalltimeout/localinterruption,03localtimeout,
+08bothincorrectabstentions. Read auditedfullsuite summary; requestweighted
+readinessincludeszero-copycases, not10comparablefreshcopy samples. No export
+of the newfullsuite wasperformedbymodeltask.
+
+Root then ran bounded nativecomponentprofile on same3developmentqueries,
+6cards20fields416cap. Firstlaunch failedbeforepreflight/model becauselauncher
+resolvedvenvsymlinktosystemPython; failurelogpreserved. Correctedattempt2
+complete,3/3fulltoken/binding/EOSparity, no nativefailedattempts. Ordinaryfull6
+median5580.099ms, instrumented5945.541ms (+365.442ms/6.55%observeroverhead).
+Instrumentedmedians AR2517.889ms, suffixprefill1969.822ms, cacheoperations
+562.505ms, root494.417ms, rowclone3.424ms. Independentread-onlyauditpass,
+all927+adapterunchanged atshutdown, peak6,622,274,410B under7GiB. No new
+speedoptimization orusefulcopylatencyclaimed. Read STORE_DEMO_COMPONENT_PROFILE_V1_RESULTS.md.
+
+Unchangedservice restoredPID4452, data/ranker/pretrained/store-demo-v6-post-profile-1,
+healthready zeroqueue927tensors. v5gracefulshutdownintegrityconfirmed.
+Architectureexperiments remainqueued per 'notnow'; no newtraining/download/
+install/deployment. Allsource/nativeevidencearchived store_demo_performance_results/v1.

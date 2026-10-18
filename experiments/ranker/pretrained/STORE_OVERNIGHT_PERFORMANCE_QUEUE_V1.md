@@ -1,7 +1,10 @@
 # Overnight performance queue
 
 Prepared on 2026-10-18. The user's latest timing instruction is **not now** for
-major architecture work. The live six-card native service remains unchanged;
+major architecture work. The later bounded component profile has now completed;
+see [measured components](STORE_DEMO_COMPONENT_PROFILE_V1_RESULTS.md). Architecture
+candidates below remain unmeasured.
+ The live six-card native service remains unchanged;
 there has been no new native profiling, training, model download or package
 installation in this preparation. Work below is queued for the later coordinated
 performance window. No low-hundreds-of-milliseconds result is claimed.
@@ -15,8 +18,9 @@ first-three paint opportunity in5450.7ms with10/10fields accepted; full-six in
 physical paint and image transfer. The [native receipt](store_demo_results/v5/requests/18bf1940-31bb-4ae1-9f8f-badfe767f170/receipt.json)
 records rank204.920ms, serialized first3 5423.797ms and full6 6367.897ms. The
 first section has three finished factual bodies and matching names/colors/prices.
-The remaining nine paired shopper scenarios have the next exclusive serving
-window; no GPU profiling or training may overlap them. Only the bottle directly answers the narrow request; a mug and towel are broad
+The remaining nine paired scenarios have since completed; fullsuite expected
+outcomes are8/10generic and7/10local, with failures preserved. The timing window
+was released before the bounded native profile. Only the bottle directly answers the narrow request; a mug and towel are broad
 store fill. This is a working development example, not six relevant alternatives,
 a population comparison or conversion lift. Eighteen shopper slots remain open.
 

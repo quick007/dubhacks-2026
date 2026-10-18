@@ -1,0 +1,120 @@
+{
+  "version": "store-demo-performance.v1",
+  "nativeExecution": false,
+  "cases": [
+    {
+      "caseId": "demo-water-six",
+      "request": {
+        "query": "a bottle for drinking water"
+      },
+      "armOrder": [
+        "baseline",
+        "profile-v2"
+      ],
+      "catalogProducts": 16,
+      "cards": 6,
+      "copyFields": 20,
+      "publicInputSha256": "06a66088173fc02e0174433d427852c496565ab65543014315c6840e2523f29a"
+    },
+    {
+      "caseId": "demo-light-six",
+      "request": {
+        "query": "a light for my bedside table"
+      },
+      "armOrder": [
+        "profile-v2",
+        "baseline"
+      ],
+      "catalogProducts": 16,
+      "cards": 6,
+      "copyFields": 20,
+      "publicInputSha256": "5232c4d7c9dbd364a032a44682e349f224b94148af19def7ae22cef4b5a9c323"
+    },
+    {
+      "caseId": "demo-notebook-six",
+      "request": {
+        "query": "a notebook for quick notes"
+      },
+      "armOrder": [
+        "baseline",
+        "profile-v2"
+      ],
+      "catalogProducts": 16,
+      "cards": 6,
+      "copyFields": 20,
+      "publicInputSha256": "99369593742e658ee08069cb6ea386adf676357ef0e63184f9064365fef75efe"
+    }
+  ],
+  "armNames": {
+    "baseline": "ordinary resident hybrid decode",
+    "profile-v2": "same decode with synchronized phase observer"
+  },
+  "sourceSha256": {
+    "store_ar_comparison_run_v1.py": "332112e55b14543b642ea5a926ce1e05b37c62ffe311554df79ba548db803574",
+    "store_autoregressive_baseline.py": "cb582e66e5f3c0291782a1e7349dfc0bfa1906cba664c9ef156d10814f1deead",
+    "store_demo_engine.py": "a1e52eebc7ea90103d27309b5d960ae4676db28c4e207ccec3ebaa3a3564639c",
+    "store_demo_catalog.py": "f1240656d1b7b07f0776186c2046361a081c6a553587ede4462f8aa2b6b6cb86",
+    "store_copy_wide_v2.py": "a6631ff3b9e930b6c5a74465326fb8eba05aba6a736690c18b577718d98d096c",
+    "store_rank_session.py": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "store_copy_data_v2.py": "ac424d601d8dc97d480d3c22ed0175de002e46281c7c35f9054f00bb32a8082e",
+    "semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "store_copy_fit_v2.py": "7f63b9ac18f9142910694499b18c1a5427d4b2da13f0dc3be20860fb44b89968"
+  },
+  "requestFixtureSha256": "652c09d8988a9b91a27dbb91cf1dd3b8c1062e37aac1684298ea6bbf99bbfe1e",
+  "integrationManifest": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_demo_integration_v3/manifest.json",
+  "integrationManifestSha256": "2afa5b9be6a135445765b1869a611b02e58317943644d12c9d431fe089f222b6",
+  "copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+  "copyReportSha256": "f995a3ad9e6184ccd907b67a231de220f764d204ff914483a7a878efc8efe8ae",
+  "rankCheckpointSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e",
+  "rankReportSha256": "3a14a970a95b1289795d618ba6de8bfc12c07c4e7b8cafc8c4e0951645f4906d",
+  "pinnedBackboneFilesFromCompletedFit": {
+    "modelPath": "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/snapshots/8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "shards": {
+      "model-00001-of-00002.safetensors": {
+        "bytes": 5349771222,
+        "sha256": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd"
+      },
+      "model-00002-of-00002.safetensors": {
+        "bytes": 600449850,
+        "sha256": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"
+      }
+    },
+    "smallFileSha256": {
+      "config.json": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+      "model.safetensors.index.json": "dd023913fb87cfdae27fb11dcf695117c925833796ccac3c64117d6652d8ff1e",
+      "tokenizer.json": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+      "tokenizer_config.json": "e98f1901ac6f0adff67b1d540bfa0c36ac1a0cf59eb72ed78146ef89aafa1182",
+      "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+      "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "priorWeightVerificationSha256": "77af896c850e2a1ef6eda39c22b15a02d9eb5c27acc6f5d9f8885bb1340175cf",
+    "freshShardVerificationRequiredBeforeNativeLoad": true
+  },
+  "freshLargeShardVerification": "ResidentDemoEngine constructor before native use; CPU preflight records completed-fit receipts only",
+  "workload": "same three public requests, complete16catalog, six real cards and20fresh copyfields per request",
+  "timerPolicy": "caller entry before rank through serializedfirst3/full6; archivewriteexcluded; controls/startupexcluded; profileadds explicit phase synchronization",
+  "cachePolicy": "one warm resident backbone; one excluded complete baseline warmup; fresh request caches and allocator clear before each arm; no response/prompt-result caching",
+  "performanceVersion": "store-demo-performance.v1",
+  "selectedWidth": 10,
+  "pairedOrder": [
+    [
+      "baseline",
+      "profile-v2"
+    ],
+    [
+      "profile-v2",
+      "baseline"
+    ],
+    [
+      "baseline",
+      "profile-v2"
+    ]
+  ],
+  "profileSourceSha256": "35ae26be84bc544861f7b8884f708296c1528980581e3c4cf92386d0de0a86d5",
+  "profileSupportSourceSha256": "49f5639c45022d7bf6357e4e654fd89d4f068f34c9730942e90ea70b0fe55ae7",
+  "runnerSourceSha256": "a3b016d3cf404953b9651e83240219f6935d6347dfaa60a9adbb0310176b14b3",
+  "scope": "same full query-to-serialized20field path, baseline versus synchronized phase observer; no browser",
+  "executionPolicy": "CPU preparation now; explicit native run only in the coordinated later performance window; never bypass an active service or owner lock"
+}

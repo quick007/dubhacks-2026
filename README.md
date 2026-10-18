@@ -108,6 +108,9 @@ useful-page speedup. The separate [v2 offline usefulness scorer](experiments/ran
 recognizes equivalent correct dollar wording and keeps optional headings/badges
 separate from title/body completeness. It preserves all original outputs and
 readiness timestamps; its retrospective scores are not new timing measurements.
+The [native component profile](experiments/ranker/pretrained/STORE_DEMO_COMPONENT_PROFILE_V1_RESULTS.md)
+attributes most copy time to suffix prefill and autoregressive steps. Profiling
+adds synchronization overhead; the ordinary six-card attempt median was5.58s.
 
 ## Independent shopper evaluation
 
@@ -133,9 +136,13 @@ selected the bottle but timed out after repeated Add-to-cart actions. The
 [repaired-feedback pair](experiments/ranker/pretrained/store_shopper_sol_smoke_v2/smoke-summary.json)
 then completed both independently verified fake checkouts: generic 72.553s/12
 actions and local-model 44.817s/8 actions. Both selected one Graphite bottle at
-$36. One pair is complete and eighteen slots remain unattempted; this does not
-establish comparative lift. Earlier failures remain preserved. These are
-synthetic development runs, not human conversion evidence.
+$36. The [full twenty-session suite](experiments/ranker/pretrained/store_shopper_sol_full_v1/summary.json)
+is now complete: expected outcomes8/10 generic and7/10 local, including two
+correct abstentions per arm. Timeouts, an interrupted session and incorrect
+abstentions remain in their fixed denominators. This small synthetic suite does
+not establish human conversion or comparative lift. Its browser timing entries
+are request-weighted, include zero-copy abstentions, and are not ten comparable
+fresh-copy samples.
 See the [session contract](apps/runner/SHOPPER_CONTRACT_V1.md) for evidence rules.
 
 ## Development and architecture
