@@ -1,0 +1,296 @@
+{
+  "version": "factorized-context-cold-warm-http-measurement.v1",
+  "synthetic": true,
+  "browserTiming": false,
+  "qualityValidated": false,
+  "selection": "fixed public Bob context plus one explicitly authored additional background fact; two queries fixed before dispatch",
+  "requests": [
+    {
+      "name": "new-public-context",
+      "elapsedMs": 1976.8226250307634,
+      "query": "work bag",
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "f4951ecccf291415709e845365633fb34dd2e1e05680a4ed3c0c897c7a29f0ce",
+            "textBytes": 298,
+            "elapsedMs": 225.9086249396205,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.11895899660885334,
+            "nativeForwardMs": 225.35229206550866,
+            "paddedTokensPerRow": 63,
+            "role": "query"
+          },
+          {
+            "textSha256": "91f1abd3f1541b2d1d33a4f56e5a172c697fb390393cc0f93b44fca213ce23b4",
+            "textBytes": 1232,
+            "elapsedMs": 471.1702910717577,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.26570900809019804,
+            "nativeForwardMs": 470.21966706961393,
+            "paddedTokensPerRow": 288,
+            "role": "color-context"
+          }
+        ],
+        "nativeBackboneForwardCalls": 2,
+        "encodingMs": 697.0789160113782,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 1940.718665951863,
+        "runtimeIntegrityChecksMs": 3.3625829964876175,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 2,
+        "rankDecisionNativeBodyForwards": 3,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "fresh-native-neutral-profile-last16",
+        "cacheHit": false,
+        "nativeBodyForwards": 3,
+        "attemptedNativeBodyForwards": 3,
+        "nativeLanguageModelProjectionCalls": 2,
+        "gradientEvaluationCalls": 1,
+        "catalogPrefixCacheUsed": true,
+        "catalogPrefixCacheHit": true,
+        "catalogPrefixCreatedThisRequest": false,
+        "catalogPrefixTokensReused": 721,
+        "catalogPrefixTokensPrefilled": 0,
+        "catalogPrefixPrefillForwards": 0,
+        "freshPublicPrefixTokens": 506,
+        "nativeRankSuffixTokens": 16,
+        "targetFreeCapture": {
+          "version": "persona-choice-public-gradient-capture.v1",
+          "targetOrLossProvided": false,
+          "optimizerUpdates": 0,
+          "scalar": "sum16publicroutinglogits",
+          "promptTokenIdsSha256": "a39294e0ace22cd05bc1c072e7ce2b511c980f0cd967ebde60284a57e3aae7a3",
+          "featureTensors": {
+            "x": {
+              "shape": [
+                1,
+                16,
+                12288
+              ],
+              "dtype": "mlx.core.bfloat16",
+              "sha256": "a5822120d270032ae0b7afb81159ee994666507e4e54e7a990b71e137194902a"
+            },
+            "h": {
+              "shape": [
+                1,
+                16,
+                4096
+              ],
+              "dtype": "mlx.core.bfloat16",
+              "sha256": "7927fdcffc96cdc13acbee42c30b85a6e8dc4fee32b34195f2f67fa5e826bc0d"
+            },
+            "y": {
+              "shape": [
+                1,
+                16,
+                4096
+              ],
+              "dtype": "mlx.core.bfloat16",
+              "sha256": "bb942ded322817f343d203705aec7c14125f76550e8ec16f1d6b649915661233"
+            }
+          },
+          "sourceCacheUnchanged": true,
+          "adapterUnchanged": true,
+          "nativeCachedRouteScoresExact": true,
+          "nativeRouteScoresSha256": "c90e8c52849645083a62dd9a7ffc42073e7106aab9e0dba057f5db52ead4af79",
+          "cachedRouteScoresSha256": "c90e8c52849645083a62dd9a7ffc42073e7106aab9e0dba057f5db52ead4af79"
+        },
+        "elapsedMs": 1202.7659160085022,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "a39294e0ace22cd05bc1c072e7ce2b511c980f0cd967ebde60284a57e3aae7a3",
+        "profileKeySha256": "f7b5a085db519564cc2a2777bde1c9111cf082f984721c14978cf130841f26b3",
+        "pureFeatureSha256": "755fb255c8df323af6715d29b9ca757fc0fc42574b47ace3100b58bb591dfd0d",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "colorFeature": {
+        "kind": "fresh-base-color-context",
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "checkpointSha256": "2ec600745b19086b4bedcc4f66c283b5870b65eebce43f8715f0e8cbb154ea56",
+        "publicFeatureCacheSha256": "dbf8c335a533120f5220a19f88ad163e4984631e7d9a7e80e5894080d02af28e",
+        "oldProductScoresUsedForProductRanking": false,
+        "withinProductVariantMathUnchanged": true,
+        "cachePolicy": "bounded exact neutral profile text; actual query/budget/hard requirements excluded",
+        "cacheEntries": 11,
+        "cacheCapacity": 32,
+        "formatterTextSha256": "91f1abd3f1541b2d1d33a4f56e5a172c697fb390393cc0f93b44fca213ce23b4",
+        "responseWordsCached": false,
+        "elapsedMs": 471.7179170111194,
+        "cacheKeySha256": "91f1abd3f1541b2d1d33a4f56e5a172c697fb390393cc0f93b44fca213ce23b4",
+        "featureTensorSha256": "0820644e30fe37808de3645d4a59a729b980af684b9554b038d252e5b3ed5f6a",
+        "cacheProducerSourceSha256": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d",
+        "warmCacheSha256": "12b70409827c8753989545fd18f80305591ca73e08935b0e230c0fc7b4692f29",
+        "cacheOrigin": "dynamic-request",
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "profileKeySha256": "f7b5a085db519564cc2a2777bde1c9111cf082f984721c14978cf130841f26b3",
+        "actualQueryOrGuardFieldsUsedForContext": false
+      },
+      "queryFeature": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.11895899660885334,
+          "forwardMs": 225.35229206550866,
+          "batchRows": 1,
+          "paddedTokensPerRow": 63,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "f4951ecccf291415709e845365633fb34dd2e1e05680a4ed3c0c897c7a29f0ce",
+          "textBytes": 298,
+          "elapsedMs": 225.9086249396205,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.11895899660885334,
+          "nativeForwardMs": 225.35229206550866,
+          "paddedTokensPerRow": 63,
+          "role": "query"
+        }
+      }
+    },
+    {
+      "name": "same-context-new-query",
+      "elapsedMs": 270.0652088969946,
+      "query": "desk light",
+      "featureEncoding": {
+        "baseCalls": [
+          {
+            "textSha256": "31b94512f67966f02bc79863a0dd2d09bcfc1945a42c836aa637d2346d6cead0",
+            "textBytes": 300,
+            "elapsedMs": 202.4768750416115,
+            "nativeBackboneForwardCalls": 1,
+            "batchRows": 1,
+            "adaptersDisabled": true,
+            "truncatedRows": 0,
+            "nativeTokenizeMs": 0.08345907554030418,
+            "nativeForwardMs": 202.03187491279095,
+            "paddedTokensPerRow": 63,
+            "role": "query"
+          }
+        ],
+        "nativeBackboneForwardCalls": 1,
+        "encodingMs": 202.4768750416115,
+        "publicProfilePreencodingEnabled": true,
+        "totalRuntimeRankMs": 240.04125001374632,
+        "runtimeIntegrityChecksMs": 3.633751068264246,
+        "runtimeIntegrityCheckCalls": 2,
+        "baseB1EncoderForwardCalls": 1,
+        "rankDecisionNativeBodyForwards": 0,
+        "timingScope": "runtime rank only; engine admission, outer guards, fresh copy/serialization and browser separately",
+        "colorContextCacheIncludesActualQuery": false,
+        "rankXHYCacheIncludesActualWholePromptAndQuery": false,
+        "newUniqueQueryMayMissBothContextAndRankCaches": false,
+        "responseWordsCached": false,
+        "rankingFormulaUnchanged": true,
+        "profileFeatureKeyExcludesQueryBudgetHardRequirements": true,
+        "profileCacheContainsPureFeaturesOnly": true
+      },
+      "rankDecision": {
+        "kind": "factorized-profile-XHY-feature-reuse",
+        "cacheHit": true,
+        "nativeBodyForwards": 0,
+        "nativeLanguageModelProjectionCalls": 1,
+        "gradientEvaluationCalls": 0,
+        "catalogPrefixCacheUsed": false,
+        "nativeCachedRouteScoresExactAtCapture": true,
+        "elapsedMs": 6.618082989007235,
+        "adapterCheckpointSha256": "1e88bdc919e8d8dede8cc54f8f39aff6c8af297c7e496504d7ab6cada63c148b",
+        "promptTokenIdsSha256": "a39294e0ace22cd05bc1c072e7ce2b511c980f0cd967ebde60284a57e3aae7a3",
+        "profileKeySha256": "f7b5a085db519564cc2a2777bde1c9111cf082f984721c14978cf130841f26b3",
+        "pureFeatureSha256": "755fb255c8df323af6715d29b9ca757fc0fc42574b47ace3100b58bb591dfd0d",
+        "profileCacheEntries": 11,
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "actualQueryOrGuardFieldsUsedForContext": false,
+        "actualQueryUsedForFreshQueryHeadAndGuards": true,
+        "freshLearnedDecision": true,
+        "cachedScoringMode": "plain",
+        "dynamicMode": "gradient-public-XHY-last16",
+        "copyAdapterParticipated": false,
+        "generatedContinuationTokens": 0,
+        "optimizerUpdates": 0,
+        "targetWeightsProvided": false,
+        "scoresOrRankingsOrResponseWordsCached": false
+      },
+      "colorFeature": {
+        "kind": "exact-full-text-multi-color-context",
+        "cacheHit": true,
+        "nativeBackboneForwardCalls": 0,
+        "checkpointSha256": "2ec600745b19086b4bedcc4f66c283b5870b65eebce43f8715f0e8cbb154ea56",
+        "publicFeatureCacheSha256": "dbf8c335a533120f5220a19f88ad163e4984631e7d9a7e80e5894080d02af28e",
+        "oldProductScoresUsedForProductRanking": false,
+        "withinProductVariantMathUnchanged": true,
+        "cachePolicy": "bounded exact neutral profile text; actual query/budget/hard requirements excluded",
+        "cacheEntries": 11,
+        "cacheCapacity": 32,
+        "formatterTextSha256": "91f1abd3f1541b2d1d33a4f56e5a172c697fb390393cc0f93b44fca213ce23b4",
+        "responseWordsCached": false,
+        "elapsedMs": 0.4388329107314348,
+        "cacheKeySha256": "91f1abd3f1541b2d1d33a4f56e5a172c697fb390393cc0f93b44fca213ce23b4",
+        "featureTensorSha256": "0820644e30fe37808de3645d4a59a729b980af684b9554b038d252e5b3ed5f6a",
+        "cacheProducerSourceSha256": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d",
+        "warmCacheSha256": "12b70409827c8753989545fd18f80305591ca73e08935b0e230c0fc7b4692f29",
+        "cacheOrigin": "dynamic-request",
+        "conditioningPolicy": "factorized-public-persona-history.v1",
+        "profileKeySha256": "f7b5a085db519564cc2a2777bde1c9111cf082f984721c14978cf130841f26b3",
+        "actualQueryOrGuardFieldsUsedForContext": false
+      },
+      "queryFeature": {
+        "cacheHit": false,
+        "nativeBackboneForwardCalls": 1,
+        "native": {
+          "tokenizeMs": 0.08345907554030418,
+          "forwardMs": 202.03187491279095,
+          "batchRows": 1,
+          "paddedTokensPerRow": 63,
+          "truncatedRows": 0,
+          "backboneForwardCalls": 1
+        },
+        "forceFreshQuery": true,
+        "encodingMeasurement": {
+          "textSha256": "31b94512f67966f02bc79863a0dd2d09bcfc1945a42c836aa637d2346d6cead0",
+          "textBytes": 300,
+          "elapsedMs": 202.4768750416115,
+          "nativeBackboneForwardCalls": 1,
+          "batchRows": 1,
+          "adaptersDisabled": true,
+          "truncatedRows": 0,
+          "nativeTokenizeMs": 0.08345907554030418,
+          "nativeForwardMs": 202.03187491279095,
+          "paddedTokensPerRow": 63,
+          "role": "query"
+        }
+      }
+    }
+  ]
+}
