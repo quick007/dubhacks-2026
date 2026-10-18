@@ -1,0 +1,61 @@
+{
+  "version": "store-persona-browser-probe-preparation.v1",
+  "createdAt": "2026-10-18T09:55:04.690367+00:00",
+  "status": "source-only-cpu-prepared-not-executed",
+  "checks": {
+    "syntax": "passed",
+    "newCpuTestsPassed": 10,
+    "combinedCpuTestsPassed": 28,
+    "browserLaunched": false,
+    "gpuUsed": false,
+    "nativeRequestsMade": 0,
+    "gitActions": false
+  },
+  "run": "node experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs --run --out NEW_OUTPUT_DIRECTORY [--manifest ACTUAL_PERSONA_INTEGRATION_MANIFEST]",
+  "releaseRequired": "Parent executes only after accepted model and ALL BROWSER IDLE; no automatic launch",
+  "hashes": {
+    "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs": "997434e862157de7b4ca56c15553d07b429446059f96b0ee129ed2f4e7e0bd53",
+    "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs": "e2e783529ec7de65edb20c53240f2811dce10d325d3a72e04ab2c91925458104",
+    "experiments/ranker/pretrained/STORE_PERSONA_BROWSER_PROBE_V1_PLAN.json": "db5a2137288fb996ddcd64bf2fb12b1419d5c9854dbcbbc7540fc6dcb4303342"
+  },
+  "notes": [
+    "13 fixed actual app requests, 10 public profile switches + bare navigation + first work bag search + true same-query reload",
+    "No native cold-context assumption; record query/context cache flags and source kind",
+    "Real search form retains existing smooth scroll to hero; first3 useful endpoint may legitimately be null",
+    "3 second bounded post-complete image observation; geometry misses remain null and all fixed profiles retained, invalid/unsettled response stops later requests",
+    "No modifications to frontend or legacy benchmarks"
+  ],
+  "sourceChangeBeforeFirstRun": {
+    "reason": "Parent requested direct rendered selected-card price text; pinning ProductCard source alone was insufficient",
+    "previousPreparation": {
+      "version": "store-persona-browser-probe-preparation.v1",
+      "createdAt": "2026-10-18T09:53:15.058081+00:00",
+      "status": "source-only-cpu-prepared-not-executed",
+      "checks": {
+        "syntax": "passed",
+        "newCpuTestsPassed": 9,
+        "combinedCpuTestsPassed": 27,
+        "browserLaunched": false,
+        "gpuUsed": false,
+        "nativeRequestsMade": 0,
+        "gitActions": false
+      },
+      "run": "node experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs --run --out NEW_OUTPUT_DIRECTORY [--manifest ACTUAL_PERSONA_INTEGRATION_MANIFEST]",
+      "releaseRequired": "Parent executes only after accepted model and ALL BROWSER IDLE; no automatic launch",
+      "hashes": {
+        "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs": "80705aefd387932b02ee034938c4010eafd010948fc957d421e21ff8cdb84482",
+        "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs": "ad13c5d387f55bb4b6642c1e42884a8d8d0af1c68eba67719513f88f92700272",
+        "experiments/ranker/pretrained/STORE_PERSONA_BROWSER_PROBE_V1_PLAN.json": "5ba085244906ad16888c5c92e932e86356def5619234909fbef100c03355e48a"
+      },
+      "notes": [
+        "13 fixed actual app requests, 10 public profile switches + bare navigation + first work bag search + true same-query reload",
+        "No native cold-context assumption; record query/context cache flags and source kind",
+        "Real search form retains existing smooth scroll to hero; first3 useful endpoint may legitimately be null",
+        "3 second bounded post-complete image observation; geometry misses remain null and all fixed profiles retained, invalid/unsettled response stops later requests",
+        "No modifications to frontend or legacy benchmarks"
+      ]
+    },
+    "actualBrowserOrNativeOutcomesBeforeChange": false,
+    "newBehavior": "Capture actual DOM price text; compare all selected-card prices against canonical catalog AND actual payload at complete React observation and useful image endpoints; missing/mismatched prices fail protocol"
+  }
+}
