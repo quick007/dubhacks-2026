@@ -1,0 +1,3383 @@
+{
+  "auditVersion": "synthetic-history-train-expansion-v3-independent-semantic.v1",
+  "createdAt": "2026-10-18T10:44:24.787202+00:00",
+  "scope": "TRAIN-only independent machine-assisted semantic review of all128serialized requests and labels; not model evaluation or human shopping evidence",
+  "verdict": {
+    "relevanceGradesOnly": "PASS: all128 hand-adjudicated product-grade vectors match; source/ownership/budget/hard-color checks pass",
+    "exactVariantPreference": "NEEDS CORRECTION:37 singleton preferred variants lack offered expressed color evidence; eligible choice is not observed preference",
+    "wholePacketClearance": "Qualified product-label pass, not unconditional clearance for exact-variant supervision"
+  },
+  "method": [
+    "Read every serialized background, color list and paired labels; record primary/secondary judgments manually before full-vector comparison. All128 rows reviewed, no sampling.",
+    "Independently join history/variant/price facts to frozen16-product public catalog using stdlib; do not call author build or validation functions.",
+    "Longest exact canonical color-name spans in supplied color prose, ordered by occurrence; nested Navy versus Navy band and Sage versus Sage stripe do not collapse.",
+    "Only TRAIN files, public catalog and public DTO/formatter source read; no DEV/private/future evaluation files, native model, GPU, browser or Git."
+  ],
+  "source": {
+    "worktree": "/Users/lukas/Documents/Projects/dubhacks-persona-integration",
+    "packet": "experiments/ranker/pretrained/synthetic_history_train_expansion_v3",
+    "manifestSha256": "ac15b0242899c75ee5b80f33d057c7e5c32ef096ec4892eaf9a41f7011aca8d7",
+    "publicSha256": "391c08b9cc80619d0c9d3723289d776f1aa70d02a86dae73d3c370f57fcc46f4",
+    "labelsSha256": "c09cff4f4580687100ac0f8ea900f54334eefe9c14e411c08b478833295488a4",
+    "pairsSha256": "251c67973f31eead94b2d0d78daeaf505b5deecd88014ee6319b44b621f9059c",
+    "catalogSha256": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450",
+    "formatterSource": "synthetic_history_train_expansion_v3/validate.py:12-19",
+    "frozenFilesUnchanged": true,
+    "fileChecks": [
+      {
+        "file": "PLAN.json",
+        "expectedSha256": "fb31754b1edd94c1de0164365e7a23d5e854c9fefe8415440087c78f5187f946",
+        "actualSha256": "fb31754b1edd94c1de0164365e7a23d5e854c9fefe8415440087c78f5187f946",
+        "matches": true
+      },
+      {
+        "file": "SEMANTIC_COVERAGE.json",
+        "expectedSha256": "b4ed498add7a2c22b870efba623a345bc37ff0c1a90322424dd42c94e166de47",
+        "actualSha256": "b4ed498add7a2c22b870efba623a345bc37ff0c1a90322424dd42c94e166de47",
+        "matches": true
+      },
+      {
+        "file": "PLAN_FREEZE.json",
+        "expectedSha256": "e34c3d061f727614d68c41ab90a6bb5367510a4339886321f20003dd9665b65d",
+        "actualSha256": "e34c3d061f727614d68c41ab90a6bb5367510a4339886321f20003dd9665b65d",
+        "matches": true
+      },
+      {
+        "file": "build.py",
+        "expectedSha256": "fde836288a2e031cad158385a3d842e412d0f92df6c1e05967c1017c0a2d4fac",
+        "actualSha256": "fde836288a2e031cad158385a3d842e412d0f92df6c1e05967c1017c0a2d4fac",
+        "matches": true
+      },
+      {
+        "file": "validate.py",
+        "expectedSha256": "af457e85f26195ee0f13238cecbf679cde4d6798bf3ff66d9b097230ece19cd1",
+        "actualSha256": "af457e85f26195ee0f13238cecbf679cde4d6798bf3ff66d9b097230ece19cd1",
+        "matches": true
+      },
+      {
+        "file": "test_validate.py",
+        "expectedSha256": "0da459710b948496f24230dd0416291ea08859b56576d22007f6142a1b7afc56",
+        "actualSha256": "0da459710b948496f24230dd0416291ea08859b56576d22007f6142a1b7afc56",
+        "matches": true
+      },
+      {
+        "file": "validate-contract.mjs",
+        "expectedSha256": "65a41bae4173891f1e02c2f2b6c30dfd86118bad4b4076fb4f9767bd98966c17",
+        "actualSha256": "65a41bae4173891f1e02c2f2b6c30dfd86118bad4b4076fb4f9767bd98966c17",
+        "matches": true
+      },
+      {
+        "file": "token_preflight.py",
+        "expectedSha256": "8b4dcc4e74fbd150a73f003ed25cceb67faa38fab72269f180932c8b05c6d879",
+        "actualSha256": "8b4dcc4e74fbd150a73f003ed25cceb67faa38fab72269f180932c8b05c6d879",
+        "matches": true
+      },
+      {
+        "file": "TOKEN_PREFLIGHT.json",
+        "expectedSha256": "6ca916b11af3f64c72b4d9fe16e6e4c9a4d5cc2243ebbd5fa3c325784383aee3",
+        "actualSha256": "6ca916b11af3f64c72b4d9fe16e6e4c9a4d5cc2243ebbd5fa3c325784383aee3",
+        "matches": true
+      },
+      {
+        "file": "profiles.train.public.json",
+        "expectedSha256": "391c08b9cc80619d0c9d3723289d776f1aa70d02a86dae73d3c370f57fcc46f4",
+        "actualSha256": "391c08b9cc80619d0c9d3723289d776f1aa70d02a86dae73d3c370f57fcc46f4",
+        "matches": true
+      },
+      {
+        "file": "labels.train.json",
+        "expectedSha256": "c09cff4f4580687100ac0f8ea900f54334eefe9c14e411c08b478833295488a4",
+        "actualSha256": "c09cff4f4580687100ac0f8ea900f54334eefe9c14e411c08b478833295488a4",
+        "matches": true
+      },
+      {
+        "file": "pairs.train.json",
+        "expectedSha256": "251c67973f31eead94b2d0d78daeaf505b5deecd88014ee6319b44b621f9059c",
+        "actualSha256": "251c67973f31eead94b2d0d78daeaf505b5deecd88014ee6319b44b621f9059c",
+        "matches": true
+      },
+      {
+        "file": "AUTHORSHIP.json",
+        "expectedSha256": "b3f3e45cfa3b6792effe59141a2fcb41366464ed36cfd8346a053e31b2490c38",
+        "actualSha256": "b3f3e45cfa3b6792effe59141a2fcb41366464ed36cfd8346a053e31b2490c38",
+        "matches": true
+      },
+      {
+        "file": "DATA_CARD.md",
+        "expectedSha256": "c8cd58433780c833c8269ac42fc4eb26a1a3163decaf756af56060a8cfd5566e",
+        "actualSha256": "c8cd58433780c833c8269ac42fc4eb26a1a3163decaf756af56060a8cfd5566e",
+        "matches": true
+      },
+      {
+        "file": "AUDIT.json",
+        "expectedSha256": "15fdb3028b1959004316e75ca7a6885bea090c9e877bdd3e95aaa02040ab2ff8",
+        "actualSha256": "15fdb3028b1959004316e75ca7a6885bea090c9e877bdd3e95aaa02040ab2ff8",
+        "matches": true
+      },
+      {
+        "file": "PUBLIC_DEDUP.json",
+        "expectedSha256": "bd6bcdb74512291dd48c286208c72fc692b2994fd41350b39deb109bc1707326",
+        "actualSha256": "bd6bcdb74512291dd48c286208c72fc692b2994fd41350b39deb109bc1707326",
+        "matches": true
+      }
+    ],
+    "actualChoicePromptSource": {
+      "systemFile": "experiments/ranker/pretrained/store_qwen_lexical_choice_pilot_v1.py",
+      "systemFileSha256": "85c7fdbed9d7908968b7ba437ba11ace29fef9a8337d14d88556f299171eb9a9",
+      "inputBuilderFile": "experiments/ranker/pretrained/store_qwen_lexical_choice_inputs_v2.py",
+      "inputBuilderFileSha256": "6f0eba923ee97f2f919af9982f6e9458b78d6d22b2f38f8366c43794a3e2ee5b",
+      "checkedLines": "SYSTEM:38-42; checked_request:40-70; build_messages:72-88",
+      "explicitReplacementExceptionPresent": true,
+      "fullCatalogIncluded": true,
+      "noOpaqueHistoryProductVariantOrEventIdsInModelText": true,
+      "absolutePublicHistoryDatesIncluded": true,
+      "notTheCompact205to294TokenPreflightPrompt": true,
+      "nativeTrainingNotRunByAuditor": true
+    }
+  },
+  "counts": {
+    "profilesReviewed": 128,
+    "groupsReviewed": 64,
+    "productGradeCellsReviewed": 2048,
+    "primaryLabels": 128,
+    "secondaryLabels": 144,
+    "positiveProductBindings": 272,
+    "negativeProductBindings": 1776,
+    "historyEventsChecked": 638,
+    "hardColorRows": 12,
+    "positiveAtBudgetBoundaryRows": 38,
+    "exactExpressedOfferedColorSupportedBindings": 235,
+    "unsupportedSingletonSoftPreferenceBindings": 37,
+    "affectedProfiles": 37,
+    "affectedDistinctPreferredVariants": 9,
+    "colorPairsAlsoChangingBudget": 12,
+    "independentStructuralOrProductLabelErrors": 0
+  },
+  "errors": [],
+  "variantPreferenceCorrections": [
+    {
+      "profileId": "functional-v3-profile-002-base",
+      "productId": "notebook",
+      "unsupportedSingletonPreferredVariantId": "notebook-terracotta",
+      "expressedColorOrder": [
+        "Ivory",
+        "Cream"
+      ],
+      "publicColorText": "Color-wise, Ivory leads for me and Cream is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "notebook-terracotta",
+        "notebook-navy",
+        "notebook-olive"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-002-counterfactual",
+      "productId": "notebook",
+      "unsupportedSingletonPreferredVariantId": "notebook-terracotta",
+      "expressedColorOrder": [
+        "Ivory",
+        "Cream"
+      ],
+      "publicColorText": "Color-wise, Ivory leads for me and Cream is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "notebook-terracotta",
+        "notebook-navy",
+        "notebook-olive"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-003-base",
+      "productId": "lamp",
+      "unsupportedSingletonPreferredVariantId": "lamp-ivory",
+      "expressedColorOrder": [
+        "Cobalt",
+        "Ocean blue"
+      ],
+      "publicColorText": "The order I like for colors is Cobalt, then Ocean blue.",
+      "eligibleIndifferentVariantIds": [
+        "lamp-ivory",
+        "lamp-slate-blue",
+        "lamp-terracotta"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-006-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Forest",
+        "Rust band"
+      ],
+      "publicColorText": "I keep returning to Forest; Rust band is also a color I like.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-006-counterfactual",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Forest",
+        "Rust band"
+      ],
+      "publicColorText": "I keep returning to Forest; Rust band is also a color I like.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-007-base",
+      "productId": "organizer",
+      "unsupportedSingletonPreferredVariantId": "organizer-ochre",
+      "expressedColorOrder": [
+        "Sand",
+        "Graphite"
+      ],
+      "publicColorText": "I enjoy Sand most and would also consider Graphite.",
+      "eligibleIndifferentVariantIds": [
+        "organizer-ochre",
+        "organizer-navy",
+        "organizer-sage"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-010-base",
+      "productId": "organizer",
+      "unsupportedSingletonPreferredVariantId": "organizer-ochre",
+      "expressedColorOrder": [
+        "Terracotta",
+        "Ivory"
+      ],
+      "publicColorText": "The color that appeals most is Terracotta; my next preference is Ivory.",
+      "eligibleIndifferentVariantIds": [
+        "organizer-ochre",
+        "organizer-navy",
+        "organizer-sage"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-010-counterfactual",
+      "productId": "organizer",
+      "unsupportedSingletonPreferredVariantId": "organizer-ochre",
+      "expressedColorOrder": [
+        "Terracotta",
+        "Ivory"
+      ],
+      "publicColorText": "The color that appeals most is Terracotta; my next preference is Ivory.",
+      "eligibleIndifferentVariantIds": [
+        "organizer-ochre",
+        "organizer-navy",
+        "organizer-sage"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-011-base",
+      "productId": "lamp",
+      "unsupportedSingletonPreferredVariantId": "lamp-ivory",
+      "expressedColorOrder": [
+        "Navy"
+      ],
+      "publicColorText": "I prefer Navy when it is offered; I do not need a different shade.",
+      "eligibleIndifferentVariantIds": [
+        "lamp-ivory",
+        "lamp-slate-blue",
+        "lamp-terracotta"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-014-base",
+      "productId": "pack",
+      "unsupportedSingletonPreferredVariantId": "pack-sand",
+      "expressedColorOrder": [
+        "Navy",
+        "Natural"
+      ],
+      "publicColorText": "My first color choice is Navy. I also like Natural, in that order.",
+      "eligibleIndifferentVariantIds": [
+        "pack-sand",
+        "pack-slate-blue",
+        "pack-forest"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-014-counterfactual",
+      "productId": "pack",
+      "unsupportedSingletonPreferredVariantId": "pack-sand",
+      "expressedColorOrder": [
+        "Navy",
+        "Natural"
+      ],
+      "publicColorText": "My first color choice is Navy. I also like Natural, in that order.",
+      "eligibleIndifferentVariantIds": [
+        "pack-sand",
+        "pack-slate-blue",
+        "pack-forest"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-015-base",
+      "productId": "sneakers",
+      "unsupportedSingletonPreferredVariantId": "sneakers-off-white",
+      "expressedColorOrder": [
+        "Ochre",
+        "Cream"
+      ],
+      "publicColorText": "I am drawn to Ochre first, then to Cream.",
+      "eligibleIndifferentVariantIds": [
+        "sneakers-off-white",
+        "sneakers-charcoal",
+        "sneakers-olive"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-018-base",
+      "productId": "towel",
+      "unsupportedSingletonPreferredVariantId": "towel-sage-stripe",
+      "expressedColorOrder": [
+        "Steel blue",
+        "Rust band"
+      ],
+      "publicColorText": "Color-wise, Steel blue leads for me and Rust band is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "towel-sage-stripe",
+        "towel-blue-stripe",
+        "towel-clay-stripe"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-018-counterfactual",
+      "productId": "towel",
+      "unsupportedSingletonPreferredVariantId": "towel-sage-stripe",
+      "expressedColorOrder": [
+        "Steel blue",
+        "Rust band"
+      ],
+      "publicColorText": "Color-wise, Steel blue leads for me and Rust band is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "towel-sage-stripe",
+        "towel-blue-stripe",
+        "towel-clay-stripe"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-019-base",
+      "productId": "notebook",
+      "unsupportedSingletonPreferredVariantId": "notebook-terracotta",
+      "expressedColorOrder": [
+        "Graphite",
+        "Cobalt"
+      ],
+      "publicColorText": "The order I like for colors is Graphite, then Cobalt.",
+      "eligibleIndifferentVariantIds": [
+        "notebook-terracotta",
+        "notebook-navy",
+        "notebook-olive"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-022-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Olive",
+        "Olive band"
+      ],
+      "publicColorText": "I keep returning to Olive; Olive band is also a color I like.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-022-counterfactual",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Olive",
+        "Olive band"
+      ],
+      "publicColorText": "I keep returning to Olive; Olive band is also a color I like.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-023-base",
+      "productId": "mug",
+      "unsupportedSingletonPreferredVariantId": "mug-sage",
+      "expressedColorOrder": [
+        "Natural",
+        "Rust"
+      ],
+      "publicColorText": "I enjoy Natural most and would also consider Rust.",
+      "eligibleIndifferentVariantIds": [
+        "mug-sage",
+        "mug-ivory",
+        "mug-cobalt"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-026-base",
+      "productId": "mug",
+      "unsupportedSingletonPreferredVariantId": "mug-sage",
+      "expressedColorOrder": [
+        "Ocean blue",
+        "Slate blue"
+      ],
+      "publicColorText": "The color that appeals most is Ocean blue; my next preference is Slate blue.",
+      "eligibleIndifferentVariantIds": [
+        "mug-sage",
+        "mug-ivory",
+        "mug-cobalt"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-026-counterfactual",
+      "productId": "mug",
+      "unsupportedSingletonPreferredVariantId": "mug-sage",
+      "expressedColorOrder": [
+        "Ocean blue",
+        "Slate blue"
+      ],
+      "publicColorText": "The color that appeals most is Ocean blue; my next preference is Slate blue.",
+      "eligibleIndifferentVariantIds": [
+        "mug-sage",
+        "mug-ivory",
+        "mug-cobalt"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-031-base",
+      "productId": "notebook",
+      "unsupportedSingletonPreferredVariantId": "notebook-terracotta",
+      "expressedColorOrder": [
+        "Ivory",
+        "Graphite"
+      ],
+      "publicColorText": "I am drawn to Ivory first, then to Graphite.",
+      "eligibleIndifferentVariantIds": [
+        "notebook-terracotta",
+        "notebook-navy",
+        "notebook-olive"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-034-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Olive band",
+        "Olive"
+      ],
+      "publicColorText": "Color-wise, Olive band leads for me and Olive is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-034-counterfactual",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Olive band",
+        "Olive"
+      ],
+      "publicColorText": "Color-wise, Olive band leads for me and Olive is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-035-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Navy band",
+        "Ochre"
+      ],
+      "publicColorText": "The order I like for colors is Navy band, then Ochre.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-039-base",
+      "productId": "notebook",
+      "unsupportedSingletonPreferredVariantId": "notebook-terracotta",
+      "expressedColorOrder": [
+        "Graphite",
+        "Slate blue"
+      ],
+      "publicColorText": "I enjoy Graphite most and would also consider Slate blue.",
+      "eligibleIndifferentVariantIds": [
+        "notebook-terracotta",
+        "notebook-navy",
+        "notebook-olive"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-042-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Olive",
+        "Amber"
+      ],
+      "publicColorText": "The color that appeals most is Olive; my next preference is Amber.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-042-counterfactual",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Olive",
+        "Amber"
+      ],
+      "publicColorText": "The color that appeals most is Olive; my next preference is Amber.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-046-base",
+      "productId": "mug",
+      "unsupportedSingletonPreferredVariantId": "mug-sage",
+      "expressedColorOrder": [
+        "Oatmeal",
+        "Navy"
+      ],
+      "publicColorText": "My first color choice is Oatmeal. I also like Navy, in that order.",
+      "eligibleIndifferentVariantIds": [
+        "mug-sage",
+        "mug-ivory",
+        "mug-cobalt"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-046-counterfactual",
+      "productId": "mug",
+      "unsupportedSingletonPreferredVariantId": "mug-sage",
+      "expressedColorOrder": [
+        "Oatmeal",
+        "Navy"
+      ],
+      "publicColorText": "My first color choice is Oatmeal. I also like Navy, in that order.",
+      "eligibleIndifferentVariantIds": [
+        "mug-sage",
+        "mug-ivory",
+        "mug-cobalt"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-050-base",
+      "productId": "organizer",
+      "unsupportedSingletonPreferredVariantId": "organizer-ochre",
+      "expressedColorOrder": [
+        "Sand",
+        "Blue stripe"
+      ],
+      "publicColorText": "Color-wise, Sand leads for me and Blue stripe is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "organizer-ochre",
+        "organizer-navy",
+        "organizer-sage"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-050-counterfactual",
+      "productId": "organizer",
+      "unsupportedSingletonPreferredVariantId": "organizer-ochre",
+      "expressedColorOrder": [
+        "Sand",
+        "Blue stripe"
+      ],
+      "publicColorText": "Color-wise, Sand leads for me and Blue stripe is the next option.",
+      "eligibleIndifferentVariantIds": [
+        "organizer-ochre",
+        "organizer-navy",
+        "organizer-sage"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-054-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Amber",
+        "Olive"
+      ],
+      "publicColorText": "I keep returning to Amber; Olive is also a color I like.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-054-counterfactual",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Amber",
+        "Olive"
+      ],
+      "publicColorText": "I keep returning to Amber; Olive is also a color I like.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-055-base",
+      "productId": "tote",
+      "unsupportedSingletonPreferredVariantId": "tote-olive",
+      "expressedColorOrder": [
+        "Tortoise",
+        "Steel blue"
+      ],
+      "publicColorText": "I enjoy Tortoise most and would also consider Steel blue.",
+      "eligibleIndifferentVariantIds": [
+        "tote-olive",
+        "tote-natural",
+        "tote-navy"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-062-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Blue stripe",
+        "Sand"
+      ],
+      "publicColorText": "My first color choice is Blue stripe. I also like Sand, in that order.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-062-counterfactual",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Blue stripe",
+        "Sand"
+      ],
+      "publicColorText": "My first color choice is Blue stripe. I also like Sand, in that order.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    },
+    {
+      "profileId": "functional-v3-profile-063-base",
+      "productId": "bottle",
+      "unsupportedSingletonPreferredVariantId": "bottle-graphite",
+      "expressedColorOrder": [
+        "Clay stripe",
+        "Charcoal"
+      ],
+      "publicColorText": "I am drawn to Clay stripe first, then to Charcoal.",
+      "eligibleIndifferentVariantIds": [
+        "bottle-graphite",
+        "bottle-cream",
+        "bottle-steel-blue"
+      ]
+    }
+  ],
+  "pairReview": [
+    {
+      "pairId": "functional-v3-001",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-002",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-003",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-004",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-005",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-006",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-007",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-008",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-009",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-010",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-011",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-012",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-013",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-014",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-015",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-016",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-017",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-018",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-019",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-020",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-021",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-022",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-023",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-024",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-025",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-026",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-027",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-028",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-029",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-030",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-031",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-032",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-033",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-034",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-035",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-036",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-037",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-038",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-039",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-040",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-041",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-042",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-043",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-044",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-045",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-046",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-047",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-048",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-049",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-050",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-051",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-052",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-053",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-054",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-055",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-056",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-057",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-058",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-059",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-060",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "hardRequirements",
+        "persona.background",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    },
+    {
+      "pairId": "functional-v3-061",
+      "kind": "priority-order-swap",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-062",
+      "kind": "view-to-owned-history-only",
+      "actualChangedFields": [
+        "publicHistory.eventType"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-063",
+      "kind": "explicit-owned-replacement",
+      "actualChangedFields": [
+        "persona.background"
+      ],
+      "budgetAlsoChanges": false
+    },
+    {
+      "pairId": "functional-v3-064",
+      "kind": "color-preference-or-hard-color-release",
+      "actualChangedFields": [
+        "itemBudget",
+        "persona.colorPreferences"
+      ],
+      "budgetAlsoChanges": true
+    }
+  ],
+  "profileSemanticReview": [
+    {
+      "profileId": "functional-v3-profile-001-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "notebook": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 24,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-001-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "notebook": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 24,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-002-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "notebook": 2,
+        "bottle": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-002-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "bottle": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug",
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-003-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "blanket": 3,
+        "lamp": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug",
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 64,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-003-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "blanket": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug",
+        "pack"
+      ],
+      "explicitReplacementIds": [
+        "mug"
+      ],
+      "budget": 64,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-004-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "lamp": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 64,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Ivory"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-004-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "lamp": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 64,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-005-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 3,
+        "bottle": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 73,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-005-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "bottle": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 73,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-006-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 3,
+        "bottle": 2,
+        "lunchbox": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 73,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-006-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "lunchbox": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket",
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 73,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-007-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-007-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 3,
+        "headphones": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "pack"
+      ],
+      "explicitReplacementIds": [
+        "pack"
+      ],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-008-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 3,
+        "sweatshirt": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 77,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Forest"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-008-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 3,
+        "sweatshirt": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 72,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-009-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "notebook": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 39,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-009-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "notebook": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 39,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-010-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "lamp": 2,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 79,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-010-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lamp": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "notebook",
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 79,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-011-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lamp": 2,
+        "headphones": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "notebook",
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 104,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-011-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "headphones": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "notebook",
+        "pack"
+      ],
+      "explicitReplacementIds": [
+        "notebook"
+      ],
+      "budget": 104,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-012-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 41,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Navy"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-012-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 26,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-013-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "jacket": 3,
+        "sneakers": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 153,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-013-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "jacket": 2,
+        "sneakers": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 153,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-014-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "jacket": 3,
+        "tote": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 153,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-014-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "tote": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket",
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 153,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-015-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "sneakers": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket",
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 153,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-015-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "jacket": 3,
+        "bottle": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket",
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [
+        "jacket"
+      ],
+      "budget": 153,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-016-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "jacket": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sneakers"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 153,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Forest"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-016-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "jacket": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sneakers"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 128,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-017-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "towel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-017-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-018-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "lunchbox": 2,
+        "towel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-018-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lunchbox": 3,
+        "towel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "bottle",
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-019-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "notebook": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "bottle",
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-019-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "bottle": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "bottle",
+        "tote"
+      ],
+      "explicitReplacementIds": [
+        "bottle"
+      ],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-020-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "headphones": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Graphite"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-020-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "headphones": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-021-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "tote": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 47,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-021-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "tote": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 47,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-022-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "tote": 3,
+        "lunchbox": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 47,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-022-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "lunchbox": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket",
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 47,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-023-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "blanket": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel",
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 63,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-023-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "tote": 3,
+        "blanket": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel",
+        "tote"
+      ],
+      "explicitReplacementIds": [
+        "tote"
+      ],
+      "budget": 63,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-024-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "tote": 3,
+        "sneakers": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 101,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Olive"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-024-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "tote": 3,
+        "sneakers": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 96,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-025-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "blanket": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sunglasses"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 73,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-025-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "blanket": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sunglasses"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 73,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-026-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "blanket": 3,
+        "lamp": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 79,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-026-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "lamp": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket",
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 79,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-027-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lamp": 2,
+        "sweatshirt": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket",
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 87,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-027-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "blanket": 3,
+        "sweatshirt": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket",
+        "jacket"
+      ],
+      "explicitReplacementIds": [
+        "blanket"
+      ],
+      "budget": 87,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-028-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "blanket": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 73,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-028-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "blanket": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 58,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-029-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "lamp": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "bottle"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-029-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "lamp": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "bottle"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-030-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "blanket": 2,
+        "lamp": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-030-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "blanket": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp",
+        "lunchbox"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-031-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "headphones": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp",
+        "sunglasses"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 114,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-031-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lamp": 3,
+        "headphones": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp",
+        "sunglasses"
+      ],
+      "explicitReplacementIds": [
+        "lamp"
+      ],
+      "budget": 114,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-032-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "lamp": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Ivory"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-032-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "lamp": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 64,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-033-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "lunchbox": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-033-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "lunchbox": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-034-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "tote": 2,
+        "lunchbox": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "towel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 42,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-034-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "tote": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "towel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 42,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-035-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-035-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lunchbox": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "tote"
+      ],
+      "explicitReplacementIds": [
+        "lunchbox"
+      ],
+      "budget": 36,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-036-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "lunchbox": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 32,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-036-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "lunchbox": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 32,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-037-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-037-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-038-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "headphones": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-038-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "headphones",
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-039-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "sweatshirt": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "headphones",
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-039-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 3,
+        "sweatshirt": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "headphones",
+        "organizer"
+      ],
+      "explicitReplacementIds": [
+        "headphones"
+      ],
+      "budget": 94,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-040-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 3,
+        "duffel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "notebook"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 94,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Sand"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-040-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 3,
+        "duffel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "notebook"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-041-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "sneakers": 3,
+        "towel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 111,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-041-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "sneakers": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 111,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-042-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "sneakers": 3,
+        "sunglasses": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 111,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-042-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "sunglasses": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug",
+        "sneakers"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 111,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-043-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "jacket": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket",
+        "sneakers"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 143,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-043-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "jacket": 2,
+        "sneakers": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket",
+        "sneakers"
+      ],
+      "explicitReplacementIds": [
+        "sneakers"
+      ],
+      "budget": 143,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-044-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "tote": 2,
+        "sneakers": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "headphones"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 111,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Olive"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-044-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "tote": 2,
+        "sneakers": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "headphones"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 96,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-045-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "sweatshirt": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "towel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 97,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-045-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 3,
+        "sweatshirt": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "towel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 97,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-046-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "headphones": 2,
+        "sweatshirt": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 114,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-046-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "mug": 2,
+        "headphones": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 114,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-047-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "blanket": 3,
+        "lamp": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt",
+        "towel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 97,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-047-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "blanket": 2,
+        "sweatshirt": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt",
+        "towel"
+      ],
+      "explicitReplacementIds": [
+        "sweatshirt"
+      ],
+      "budget": 97,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-048-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "sweatshirt": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 97,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Forest"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-048-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "sweatshirt": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 72,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-049-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "duffel": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 84,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-049-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "duffel": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 84,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-050-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "duffel": 3,
+        "organizer": 2,
+        "towel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 84,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-050-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "organizer": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel",
+        "pack"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 84,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-051-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel",
+        "lamp"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 84,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-051-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "duffel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel",
+        "lamp"
+      ],
+      "explicitReplacementIds": [
+        "duffel"
+      ],
+      "budget": 84,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-052-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 2,
+        "duffel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Sand"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-052-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "headphones": 2,
+        "duffel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "blanket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 89,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-053-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "tote": 2,
+        "sunglasses": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 53,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-053-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "tote": 3,
+        "sunglasses": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 53,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-054-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "sneakers": 2,
+        "sunglasses": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "headphones"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 101,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-054-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "sneakers": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "headphones",
+        "sunglasses"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 101,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-055-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "tote": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug",
+        "sunglasses"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 53,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-055-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "sunglasses": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "mug",
+        "sunglasses"
+      ],
+      "explicitReplacementIds": [
+        "sunglasses"
+      ],
+      "budget": 53,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-056-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "sunglasses": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 53,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-056-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "sunglasses": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "duffel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 48,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-057-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "bottle"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 83,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-057-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "pack": 3,
+        "organizer": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "bottle"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 83,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-058-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "headphones": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 104,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-058-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "headphones": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "jacket",
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 104,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-059-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "duffel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "organizer"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 99,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-059-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "duffel": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "lunchbox",
+        "organizer"
+      ],
+      "explicitReplacementIds": [
+        "organizer"
+      ],
+      "budget": 99,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-060-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 41,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Navy"
+        }
+      ],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-060-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "notebook": 2,
+        "organizer": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "tote"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 26,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-061-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sneakers"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 61,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-061-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 3,
+        "towel": 2
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sneakers"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 61,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-062-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "duffel": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sneakers"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 109,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-062-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "duffel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sneakers",
+        "towel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 109,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-063-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "bottle": 2,
+        "sneakers": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "pack",
+        "towel"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 121,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-063-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "sneakers": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "pack",
+        "towel"
+      ],
+      "explicitReplacementIds": [
+        "towel"
+      ],
+      "budget": 121,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-064-base",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lunchbox": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 57,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    },
+    {
+      "profileId": "functional-v3-profile-064-counterfactual",
+      "independentlyAdjudicatedPositiveGrades": {
+        "lunchbox": 2,
+        "towel": 3
+      },
+      "whole16GradeVectorMatches": true,
+      "purchaseOwnedIds": [
+        "sweatshirt"
+      ],
+      "explicitReplacementIds": [],
+      "budget": 32,
+      "hardRequirements": [],
+      "unsupportedFunctionOrProductAttributeFound": false
+    }
+  ],
+  "limitations": [
+    {
+      "finding": "12/16 color contrasts also lower itemBudget. Positive products stay eligible, so labels are supported, but they are not isolated color-only experiments.",
+      "action": "Retain honest color/constraint wording; do not attribute any learned change solely to color."
+    },
+    {
+      "finding": "The205–294token compact preflight text is different from the actual full-catalog choice prompt. Actual inspected inputs_v2.build_messages uses pilot_v1.SYSTEM, which explicitly allows replacement or repeat purchase when requested.",
+      "action": "Replacement-prefix concern resolved by actual source inspection; do not use compact preflight token counts for full training prompt or claim a new full-prompt tokenizer check from this audit."
+    },
+    {
+      "finding": "Some soft-only language says another shade is unnecessary, e.g.011-base Navy unavailable for lamp. An arbitrary Ivory preferred label is especially unsupported.",
+      "action": "Keep source bytes frozen; in new version represent no matching offered preference as empty preferred set or explicit eligible indifference, not fabricated singleton preference."
+    },
+    {
+      "finding": "272 positive labels include 144 secondary labels but grade2 collapses second and third ordered needs in history-base rows.",
+      "action": "Treat grade2 as useful stated secondary; no exact total ranking of these tied items is established."
+    },
+    {
+      "finding": "All128 rows have one eligible primary and at least one eligible secondary; budgets permit allpositives.",
+      "action": "This packet does not establish empty-set abstention or tradeoff learning; no unseen-catalog or human-conversion claims."
+    }
+  ],
+  "publicIsolation": {
+    "inferenceRequestKeys": [
+      "hardRequirements",
+      "itemBudget",
+      "persona",
+      "publicHistory",
+      "query"
+    ],
+    "targetGoldKeysInRequest": false,
+    "outerIdsMustNotBeEncoded": true,
+    "observedHistoryProductVariantIdsAreLegitimatePublicFacts": true,
+    "formatterDropsEventIdsProductVariantIdsAbsoluteDates": true,
+    "nativeTrainerInputNotInspected": false,
+    "actualChoicePromptBuilderSourceInspected": true,
+    "actualChoicePromptOmitsOpaqueIdsButIncludesPublicDates": true,
+    "actualNativeTrainingNotRun": true
+  },
+  "frozenDataModified": false,
+  "evaluationFilesRead": false,
+  "trainingPerformed": false
+}

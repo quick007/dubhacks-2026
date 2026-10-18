@@ -1,0 +1,42 @@
+{
+  "version": "persona-lexical-choice-combined-promotion-gate.v2",
+  "status": "frozen-before-adapter-fit-query-gate-fit-and-new-private-evaluation",
+  "scope": "Authored synthetic requests against the same sixteen public products; no human conversion or unseen-catalog claim.",
+  "independentPacketManifestSha256": "2a0801c73440dfbcea50f73c0c1b2de3a96abc8c975caf8d54e92010a84fe312",
+  "core": {
+    "cases": 32,
+    "canonicalOrderIsPrimary": true,
+    "reversedOrderIsReportedSeparately": true,
+    "primaryGrade3Top1Minimum": 20,
+    "novelGradeAtLeast2Top1Minimum": 24,
+    "gradeAtLeast2CoverageTop3Minimum": 28,
+    "budgetHardConstraintOrSourceFactViolationsMaximum": 0,
+    "applyThresholdsToBoth": ["raw-learned-lexical-decision", "actual-query-gated-serving-pipeline"],
+    "primaryMustStrictlyExceed": ["TRAIN-popularity", "latest-owned-repeat", "owned-only-public-context", "shuffled-public-profile", "frozen-base-lexical-decision"],
+    "controls": "Input ablations retain the observed query, budget and hard requirements. Combined controls use the same query gate and v5 query branch. Purchase-history-removed is report-only."
+  },
+  "replacementDiagnostic": {"cases": 4, "primaryTop1Minimum": 3, "separateFromCoreDenominator": true},
+  "knownHistoryDiagnostic": {"pairs": 10, "rawOwnedProductDemotionsMinimum": 8, "novelAfterPurchaseTop1Minimum": 8, "developmentOnly": true},
+  "queryIntentGate": {
+    "input": "Same existing frozen-Qwen4096 query vector and exact request_text as v5; no background, history, person ID or private labels.",
+    "architecture": "4096-to-1 linear sigmoid",
+    "seed": 20261019, "updates": 250, "optimizer": "AdamW", "learningRate": 0.03, "weightDecay": 0.001,
+    "objective": "Class-balanced binary cross entropy; fixed final step; TRAIN-only broad versus specific intent.",
+    "fusion": "(1-pSpecific)*softmax(personaScores) + pSpecific*(v5Scores + 0.05*softmax(personaScores))",
+    "specificQueryRegression": "Historical32 public queries across ten public profiles, with their actual merged constraints; preserve v5 semantics and exact-name guards. Report as development regression, not unseen evidence."
+  },
+  "mechanicalRequirements": [
+    "Exact native-versus-feature loss, logits and A/B gradients before fit and with actual learned weights after fit.",
+    "Measured target-free serving inference/cache-path parity; gradient-mode parity alone is insufficient.",
+    "All927 base tensors unchanged, real optimizer updates, checkpoint reload parity and immutable source/data pins.",
+    "All adapter/query-gate/control predictions frozen before private quality annotations are parsed.",
+    "No target, grade, teacher or dummy supervised weights in serving inputs or public feature metadata."
+  ],
+  "liveRequirements": [
+    "Review all ten authored demo profiles at original and default browse queries; Bob's sofa context places a throw in the first three.",
+    "Real browser switching, query, cart, checkout and stale-response checks; source-bound variants and images; fresh neural copy.",
+    "Measure complete useful visible first-three readiness separately from full six-card completion, including decoded images and all required fresh copy.",
+    "Document actual cache eligibility, withheld/shortfall fields and failures; no physical-paint or human-conversion claim."
+  ],
+  "failurePolicy": "Preserve failed attempts and do not lower thresholds or create an accepted/default serving profile without both offline and live acceptance."
+}

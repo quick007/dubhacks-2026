@@ -1,0 +1,56 @@
+{
+  "version": "authored-public-persona-train-expansion.v3",
+  "createdAt": "2026-10-18T10:28:30.093121+00:00",
+  "status": "frozen-before-request-authorship",
+  "source": "experiments/ranker/pretrained/synthetic_history_v1/catalog-binding.json",
+  "sourceSha256": "bdd7e2f5f5bc41c147830b5ecd03b550794a237ad633d4e4233688ec223b8450",
+  "groups": 64,
+  "baseRequests": 64,
+  "counterfactualRequests": 64,
+  "totalTrainRequests": 128,
+  "split": "TRAIN ONLY; no evaluation examples, labels, wording or outcomes read",
+  "design": [
+    "16sourceproducts \u00d74 distinct functional situations;64different base backgrounds and secondary pairings",
+    "16priority swaps;16history-only view-to-purchase contrasts;16explicit replacement contrasts;16color/constraint contrasts",
+    "At least61distinct broad query strings including Browse the store; same query within each pair",
+    "History-only counterfactual background intentionally unchanged to isolate event type; other language authored by group",
+    "History4\u20136chronologically ordered events; purchase position/distractors/view-cart order vary across groups",
+    "No opaque profile/group/target identifiers in inference DTO; required event IDs are removed by existing public formatter",
+    "Only source-supported name/category functions; no invented capacities/materials/technology claims",
+    "Grade3 primary and grade2 sensible secondary must satisfy public budget/hard requirements; owned0 unless explicit replacement",
+    "Grade0 is outside this request, owned or ineligible, not universally irrelevant",
+    "No fit until CPU validation and independent audit"
+  ],
+  "schema": {
+    "public": [
+      "profileId",
+      "userGroupId",
+      "sessionId",
+      "request"
+    ],
+    "inferenceRequest": [
+      "query",
+      "itemBudget",
+      "hardRequirements",
+      "persona.background",
+      "persona.colorPreferences",
+      "publicHistory"
+    ],
+    "labelsSeparate": [
+      "profileId",
+      "relevanceGrades",
+      "preferredVariantIds",
+      "acceptableVariantIds",
+      "alreadyOwnedProductIds",
+      "replacementAllowedProductIds",
+      "rationale",
+      "judgmentSource"
+    ]
+  },
+  "counterfactualNotes": {
+    "priority-order-swap": "Both needs remain; grade3/2 swap",
+    "view-to-owned-history-only": "Only observed event type changes view\u2192purchase; conditional priorities move to first unmet need",
+    "explicit-owned-replacement": "Identical purchase history; public replacement intent authorizes owned product",
+    "color-preference-or-hard-color-release": "Functional grades fixed; canonical preferred variants change; hard color only where both positives share actual color"
+  }
+}

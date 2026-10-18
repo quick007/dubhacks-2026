@@ -1,0 +1,92 @@
+{
+  "version": "persona-choice-lora-cpu-feasibility.v1",
+  "nativeCalls": 0,
+  "optimizerUpdates": 0,
+  "privateLabelsParsed": false,
+  "tokenizerOnlyDiagnostic": true,
+  "routingChoiceNotFrozen": "A-P measured provisionally; lexical public product-bound route pilot pending",
+  "sourceSha256": {
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_qwen_choice_pilot_v1.py": "d9f5401bf24a05d7a2baf63f0e98dc907d43d10f67f7bba863dd7ee47e9b44b9",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_persona_qwen_fit_v1.py": "ef04f3e06702fd69317c67eb6a06ab854749321090887296c9ab8ce923ee0fac",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/store_copy_fit_v2.py": "7f63b9ac18f9142910694499b18c1a5427d4b2da13f0dc3be20860fb44b89968",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/semantic_copy_gradient_features.py": "1abf395953c35abd961d0c0330a61f5161f41f967ecc154326c696f3728ae8bb",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/semantic_copy_tokens.py": "1da9b33f036b28b46ffb71ceb45f696c60f9dff0541511379c58e74a2d7835b1",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/models/qwen3_5.py": "851449fd9989d6bf4b3c4fed92ddc3be5f1e781eb2246f89c54d7eff2518d9c6",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/lib/python3.14/site-packages/mlx_lm/tuner/lora.py": "4d3a8edab111d4ddba33398ba8700203db7b61621c39e9c348fdd50e57278b45",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/0435ae3f4b3c8b907f7359a2f8f7150d316f3435": "a96942cb6a8a1d3f1d17514d81a1925d04362a6a3233b389d13012211baaa9f8",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/.cache/huggingface/hub/models--mlx-community--Qwen3.5-9B-4bit/blobs/d366fa524ccd8f4ed93a67c7857597dc56172b92": "dd023913fb87cfdae27fb11dcf695117c925833796ccac3c64117d6652d8ff1e",
+    "/Users/lukas/Documents/Projects/dubhacks-persona-integration/experiments/ranker/pretrained/synthetic_history_train_contrasts_v2/profiles.train.public.json": "88e202b7225b5e3d9686a798ec418cbe9df785c8b24b09581e925016e934df1b"
+  },
+  "localModel": {
+    "revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "shards": {
+      "model-00001-of-00002.safetensors": {
+        "bytes": 5349771222,
+        "present": true
+      },
+      "model-00002-of-00002.safetensors": {
+        "bytes": 600449850,
+        "present": true
+      }
+    },
+    "freshWeightByteHashesNotPerformed": true
+  },
+  "installedRuntime": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.32.2",
+    "transformers": "5.20.1"
+  },
+  "actualPublicTrainTokenizerAudit": {
+    "profiles": 320,
+    "ordersPerProfile": 2,
+    "prompts": 640,
+    "minTokens": 1019,
+    "maxTokens": 1471,
+    "totalPromptTokens": 787196,
+    "completeInputCap": 2048,
+    "truncatedPrompts": 0,
+    "all16RouteBoundaryChecksPassedPerPrompt": true,
+    "lastPromptTokenIds": [
+      25
+    ]
+  },
+  "proposedNativeShape": {
+    "prefix": "exact full public promptTokenIds[:-1]",
+    "completeSuffix": "promptTokenIds[-1:]",
+    "x": [
+      1,
+      1,
+      12288
+    ],
+    "h": [
+      1,
+      1,
+      4096
+    ],
+    "y": [
+      1,
+      1,
+      4096
+    ],
+    "hostFloat32BytesPerRow": 81920,
+    "projected640RowHostBytes": 52428800,
+    "projectionNotMeasured": true
+  },
+  "memorySnapshot": {
+    "totalBytes": 25769803776,
+    "availableBytes": 11058266112,
+    "percent": 57.1,
+    "scope": "current host snapshot; not native peak or reserved headroom"
+  },
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "readyToTrain": false,
+  "requiredBeforeTraining": [
+    "resolve lexical-vs-position routing from separately audited pilot",
+    "audit curated128TRAIN+320source overlap/group boundaries and max-grade target sets",
+    "new exact single-next-token native/auxiliary/archive logit loss A/B-gradient gate with nonzero B",
+    "927 frozen base hashes and full cache state proof before/after trained adapter",
+    "freeze precise source/data/routing/update schedule before optimizer",
+    "root-owned exclusive GPU window and memory/deadline preflight"
+  ]
+}

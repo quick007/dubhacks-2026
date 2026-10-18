@@ -1,0 +1,15 @@
+{
+  "version": "query-intent-independent-audit-preflight.v3",
+  "sourceSha256": {
+    "experiments/ranker/pretrained/store_query_intent_audit_v3.py": "aeb83de941339e852b70b12433aaec91629f091bf8bc6313a367dc24dfb356d0",
+    "experiments/ranker/pretrained/test_store_query_intent_audit_v3.py": "928e37483c92d68ca5f0e875be13bd20d023e1b990b0827f7f4d53ae0f91205d",
+    "experiments/ranker/pretrained/store_query_intent_gate_v3.py": "d988ab5fa1e24dabffc62996c51e4e8ab0ad4563f834ca757107d0a4ab430226",
+    "experiments/ranker/pretrained/store_query_intent_diagnostics_v2.py": "199f858f5a502d344e8ab9887289b7573a767b5fa2fe5bb23d1728c3ffe0f321"
+  },
+  "expectedTRAINPlanSha256": "25fdb0c976dc3b6e01e826e7f30ea63fc65e3fbb85f56f24f4c83e8538703232",
+  "actualTRAINFitOrReplayExecuted": false,
+  "qualityEvaluationFilesRead": false,
+  "syntheticUnitTestsPassed": 6,
+  "auditProof": "Independently seeded model; direct checkpoint-vs-initial weight/bias differences; exact saved/reload prediction parity; independent BCE; replay250actualoptimizersteps and requirebitwise finalparameters/loss snapshots. Replayproves declaredprocedure reproducibility, notdirecthistoricalinstrumentation.",
+  "executeAfterNativeAndCPUFitOnly": true
+}

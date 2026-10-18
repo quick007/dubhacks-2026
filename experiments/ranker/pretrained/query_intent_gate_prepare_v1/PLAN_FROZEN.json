@@ -1,0 +1,23 @@
+{
+  "version": "query-intent-linear.v1",
+  "planSha256": "395560319da2beea39530c354bb9d2040361279ebc492f3db3c606e424ff4b73",
+  "recipe": {
+    "seed": 20261019,
+    "dimensions": 4096,
+    "hiddenLayers": 0,
+    "steps": 250,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "threads": 1,
+    "loss": "0.5 mean broad BCE +0.5 mean specific BCE",
+    "selection": "fixed final250steps only; no evaluation/threshold tuning",
+    "feature": "existing v5 final4096 L2-normalized raw query vector before learned ranking head",
+    "probability": "sigmoid linear output, specific=1; no hard routing threshold",
+    "runtimeText": "request_text(ranking_input(checked_context_request(public_request, actual_catalog)[0]))",
+    "memoryGiB": 7,
+    "maxTokens": 512,
+    "maxNativeSeconds": 300
+  },
+  "nativeExecuted": false,
+  "optimizerUpdates": 0
+}
