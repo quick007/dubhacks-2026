@@ -1,0 +1,362 @@
+{
+  "version": "persona-choice-last16-features.v2",
+  "status": "exact-gate-passed",
+  "caseId": "fresh-choice-67bea0926bf5-a-canonical",
+  "sourceSha256": "16656aefd43f2f8b9cec8438bdfcf64ad11b4131eb4684db5c609d2140756418",
+  "contract": {
+    "routeTokenIds": [
+      49755,
+      3641,
+      8129,
+      25372,
+      16002,
+      84503,
+      2430,
+      27056,
+      3618,
+      41581,
+      64923,
+      22787,
+      8697,
+      57364,
+      53979,
+      41198
+    ],
+    "targetWeights": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "promptTokenIdsSha256": "3b550d2f781d6a523087e3d136746d4ef56754a5f7ad09a384654d67a2fae591",
+    "prefixTokenIdsSha256": "8bc4cd6fbf96d957a49af0e004a788b5d4bb0782827444c381df093124063c6a",
+    "inputTargetTokens": 0,
+    "supervisedPositions": 1,
+    "loss": "soft-target route-conditional CE from full frozen native LM projection",
+    "caseId": "fresh-choice-67bea0926bf5-a-canonical"
+  },
+  "nativeUpdates": 0,
+  "nonzeroB": true,
+  "sourceStateHashBefore": "edef49a10ea5004cf75c2fc2e885c41fe181aee5e9feea3428d492e739060185",
+  "adapterBefore": {
+    "lora_a": {
+      "shape": [
+        12288,
+        4
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "cdccb60a60faef0a089fd9e533b2f2572567952da8b9c9cc37cdfa48766cdbc2"
+    },
+    "lora_b": {
+      "shape": [
+        4,
+        4096
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "aca7e1989d16ce4ea29d1f94ccb127500e8c47a4fdea1bd4a185c42eefd53c3e"
+    }
+  },
+  "arms": {
+    "direct": {
+      "loss": 0.13162803649902344,
+      "lossTensor": {
+        "shape": [],
+        "dtype": "mlx.core.float32",
+        "sha256": "9b1aaa99ecfd275ea3576142fc4aecbd47ced26c282f5a71120f4c697b65c657"
+      },
+      "gradientTensors": {
+        "lora_a": {
+          "shape": [
+            12288,
+            4
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "9e87f2c0cc86002e050040593a77341e1a6873337de8e7ffda6bd075c79b49e7"
+        },
+        "lora_b": {
+          "shape": [
+            4,
+            4096
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "bb0a030b7a762e3f4530fa3450c8a6d81683edf62b7de8bd913061aa0355ffca"
+        }
+      },
+      "routeLogits": [
+        19.125,
+        12.0625,
+        12.3125,
+        10.25,
+        14.125,
+        9.3125,
+        10.6875,
+        7.03125,
+        11.9375,
+        14.25,
+        16.875,
+        15.0,
+        10.875,
+        8.5625,
+        12.5,
+        7.0625
+      ],
+      "routeLogitsTensor": {
+        "shape": [
+          16
+        ],
+        "dtype": "mlx.core.float32",
+        "sha256": "6c7398356f80181bc1bdc13bdf10fd7b9b7c073c91769a0160b00d603055d833"
+      }
+    },
+    "auxiliaryNative": {
+      "loss": 0.13162803649902344,
+      "lossTensor": {
+        "shape": [],
+        "dtype": "mlx.core.float32",
+        "sha256": "9b1aaa99ecfd275ea3576142fc4aecbd47ced26c282f5a71120f4c697b65c657"
+      },
+      "gradientTensors": {
+        "lora_a": {
+          "shape": [
+            12288,
+            4
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "9e87f2c0cc86002e050040593a77341e1a6873337de8e7ffda6bd075c79b49e7"
+        },
+        "lora_b": {
+          "shape": [
+            4,
+            4096
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "bb0a030b7a762e3f4530fa3450c8a6d81683edf62b7de8bd913061aa0355ffca"
+        }
+      },
+      "routeLogits": [
+        19.125,
+        12.0625,
+        12.3125,
+        10.25,
+        14.125,
+        9.3125,
+        10.6875,
+        7.03125,
+        11.9375,
+        14.25,
+        16.875,
+        15.0,
+        10.875,
+        8.5625,
+        12.5,
+        7.0625
+      ],
+      "routeLogitsTensor": {
+        "shape": [
+          16
+        ],
+        "dtype": "mlx.core.float32",
+        "sha256": "6c7398356f80181bc1bdc13bdf10fd7b9b7c073c91769a0160b00d603055d833"
+      }
+    },
+    "frozenFeatures": {
+      "loss": 0.13162803649902344,
+      "lossTensor": {
+        "shape": [],
+        "dtype": "mlx.core.float32",
+        "sha256": "9b1aaa99ecfd275ea3576142fc4aecbd47ced26c282f5a71120f4c697b65c657"
+      },
+      "gradientTensors": {
+        "lora_a": {
+          "shape": [
+            12288,
+            4
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "9e87f2c0cc86002e050040593a77341e1a6873337de8e7ffda6bd075c79b49e7"
+        },
+        "lora_b": {
+          "shape": [
+            4,
+            4096
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "bb0a030b7a762e3f4530fa3450c8a6d81683edf62b7de8bd913061aa0355ffca"
+        }
+      },
+      "routeLogits": [
+        19.125,
+        12.0625,
+        12.3125,
+        10.25,
+        14.125,
+        9.3125,
+        10.6875,
+        7.03125,
+        11.9375,
+        14.25,
+        16.875,
+        15.0,
+        10.875,
+        8.5625,
+        12.5,
+        7.0625
+      ],
+      "routeLogitsTensor": {
+        "shape": [
+          16
+        ],
+        "dtype": "mlx.core.float32",
+        "sha256": "6c7398356f80181bc1bdc13bdf10fd7b9b7c073c91769a0160b00d603055d833"
+      }
+    }
+  },
+  "projection": "full pinned native quantized LM head then16 gather; no dequantized row shortcut",
+  "comparisons": {
+    "nativeVsAuxiliary": {
+      "exact": true,
+      "loss": {
+        "shapeExact": true,
+        "dtypeExact": true,
+        "arrayExact": true,
+        "maxAbsDifference": 0.0
+      },
+      "gradients": {
+        "lora_a": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        },
+        "lora_b": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        }
+      },
+      "routeLogitsExact": true
+    },
+    "auxiliaryVsFeatures": {
+      "exact": true,
+      "loss": {
+        "shapeExact": true,
+        "dtypeExact": true,
+        "arrayExact": true,
+        "maxAbsDifference": 0.0
+      },
+      "gradients": {
+        "lora_a": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        },
+        "lora_b": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        }
+      },
+      "routeLogitsExact": true
+    },
+    "nativeVsFeatures": {
+      "exact": true,
+      "loss": {
+        "shapeExact": true,
+        "dtypeExact": true,
+        "arrayExact": true,
+        "maxAbsDifference": 0.0
+      },
+      "gradients": {
+        "lora_a": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        },
+        "lora_b": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        }
+      },
+      "routeLogitsExact": true
+    }
+  },
+  "tapCalls": {
+    "x": 1,
+    "h": 1,
+    "y": 1
+  },
+  "featureTensors": {
+    "x": {
+      "shape": [
+        1,
+        16,
+        12288
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "sha256": "cb46387549eb6f27ebc02ee2e2cb83251a0e80b6408a7212a8c969f6d6b0b1e6"
+    },
+    "h": {
+      "shape": [
+        1,
+        16,
+        4096
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "sha256": "c574fdfec67f61c49964712616d396fe554b556b42a3c43b352aea7b97736a9f"
+    },
+    "y": {
+      "shape": [
+        1,
+        16,
+        4096
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "sha256": "472a068dcaef0dc4814e7ee2a1542471e7098af2789f7b95bf171febe29a95da"
+    }
+  },
+  "sourceStateHashAfter": "edef49a10ea5004cf75c2fc2e885c41fe181aee5e9feea3428d492e739060185",
+  "sourceStatePreserved": true,
+  "adapterAfter": {
+    "lora_a": {
+      "shape": [
+        12288,
+        4
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "cdccb60a60faef0a089fd9e533b2f2572567952da8b9c9cc37cdfa48766cdbc2"
+    },
+    "lora_b": {
+      "shape": [
+        4,
+        4096
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "aca7e1989d16ce4ea29d1f94ccb127500e8c47a4fdea1bd4a185c42eefd53c3e"
+    }
+  },
+  "adapterPreserved": true,
+  "memory": {
+    "mlxActiveBytes": 5208058582,
+    "mlxPeakBytes": 6046273826,
+    "mlxCacheBytes": 132989294,
+    "processBudgetBytes": 7516192768
+  }
+}

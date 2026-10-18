@@ -1,0 +1,137 @@
+{
+  "version": "store-persona-warm-browser-probe.v1",
+  "origin": "http://127.0.0.1:4313",
+  "endpoint": "http://127.0.0.1:8767/personalize",
+  "developmentDemo": true,
+  "qualityGatePassed": false,
+  "modelPromotion": false,
+  "acceptedProfile": false,
+  "publicPeople": "experiments/ranker/pretrained/synthetic_history_v1/demo-people.json",
+  "schedule": [
+    {
+      "index": 0,
+      "kind": "bare-navigation",
+      "personId": "bob",
+      "query": "Browse the store",
+      "navigation": "goto",
+      "preScrolled": false
+    },
+    {
+      "index": 1,
+      "kind": "loaded-profile-switch",
+      "personId": "maya",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 2,
+      "kind": "loaded-profile-switch",
+      "personId": "priya",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 3,
+      "kind": "loaded-profile-switch",
+      "personId": "lena",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 4,
+      "kind": "loaded-profile-switch",
+      "personId": "june",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 5,
+      "kind": "loaded-profile-switch",
+      "personId": "grace",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 6,
+      "kind": "loaded-profile-switch",
+      "personId": "sam",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 7,
+      "kind": "loaded-profile-switch",
+      "personId": "ana",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 8,
+      "kind": "loaded-profile-switch",
+      "personId": "rosa",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 9,
+      "kind": "loaded-profile-switch",
+      "personId": "felix",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 10,
+      "kind": "loaded-profile-switch",
+      "personId": "bob",
+      "query": "Browse the store",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 11,
+      "kind": "first-work-bag-query",
+      "personId": "bob",
+      "query": "work bag",
+      "navigation": null,
+      "preScrolled": true
+    },
+    {
+      "index": 12,
+      "kind": "same-query-reload",
+      "personId": "bob",
+      "query": "work bag",
+      "navigation": "reload",
+      "preScrolled": false
+    }
+  ],
+  "fixedRequests": 13,
+  "profileDenominator": 10,
+  "viewport": {
+    "width": 1280,
+    "height": 960
+  },
+  "deviceScaleFactor": 1,
+  "headed": true,
+  "timeoutMs": 30000,
+  "bodySettlementMs": 5000,
+  "execution": "CPU plan by default. --run and a NEW --out directory required. Existing installed Chrome and ready explicit technically verified development-demo adapter only; actual quality failed and model promotion remains false; never starts servers or model workers.",
+  "workload": "One bare URL navigation at actual initial scroll. Then10 different public profile selections in one loaded collection, pre-scroll before each. Profile clock is real option click; actual public summary/recent3 history panel is read then real Escape dismisses popover before useful visibility (this capture/dismiss overhead is included). EndBob, submit work bag via real search form, then reload that route for another genuine POST. No route/fetch/text injection or forced same-hash request.",
+  "timing": "Native startup and browser launch excluded. Browser actual fetch→endpoint is common model-request clock; action→endpoint and navigation→endpoint separately retained. Existing React/two-rAF mirror plus actual geometry and image complete/decode; no physical paint claim. Passive clone overhead is part of this instrumented workload; body settlement occurs after UI endpoints.",
+  "cache": "NEW browser context starts HTTP cache cold for bare navigation. Loaded switches/search reuse same browser cache. Reload is HTTP-cache eligible with browser scroll restoration recorded, not a second cold navigation. Every query including reload must execute fresh B1 (cacheHit false/native1). Ten public Browse color/context features are preencoded before READY; startup encodes/time are separate from request time. Color cache is32entry exact full text including actual query; whole-prompt rankXHY cache is separate and also includes query. Actual cache/projection/body/gradient counters are retained. All10 public context features may already be precomputed; first work-bag is a separately measured new query, with actual color/rank cache misses or hits reported independently. Reload has identical public payload and a unique request ID; fresh LoRA scoring/learned color variants/neural copy required even on feature cache hits.",
+  "visibility": "Initial viewport reports actual useful-card count and first3 only if truly fully visible. Loaded first3 requires current request accepted10 fields, three whole cards/titles/copy and decoded primary images, with no open popover or intersecting fixed switcher. The actual .person-trigger rectangle is checked against the whole card bounding rectangle plus title, each copy paragraph, clipped primary image and Add button when present; any intersection rejects useful visibility. This strict whole-card policy also rejects overlap in otherwise unused card space. Full6 requires accepted20 fields and six decoded primary images separately; six-card visibility is never implied. Shortfalls/zero results remain explicit, never padded.",
+  "renderedFieldScope": "Six cards generate20 server fields (2section headings+18card fields); actual UI renders first heading+18card fields=19. Second section heading remains backend-only, never claimed rendered. First3 generate/render10. Initial viewport useful-card count is actual and may be0; no above-fold3 success is inferred from full6 completion.",
+  "facts": "All actual copy fields and DOM strings are retained. Canonical public catalog validates original name, price, chosen variant/color and image-source identity; every accepted-field total and DOM copy string is checked. Each selected card visible DOM price must equal both its canonical price and actual payload itemPrice, with missing prices rejected. This is not a free-text semantic factuality or unseen-personalization-quality evaluation; no private labels or answers are read.",
+  "candidateAdmission": "Explicit --candidate-receipt plus --candidate-sha256; explicit development admission preserving the actual failed quality audit and passed mechanical evidence; same per-request public/factual/guard analyzer as HTTP probe v2. No accepted profile or default promotion is written. Source/backend pins and startup checked before/after. CPU public prompt tokenization/audit runs after UI/body endpoints, outside latency timers and between measured requests; no native model loaded by probe.",
+  "functional": "After all13 timing requests pass, separate actual Bob→Maya→Bob cancellation arm (2 model starts) plus Bob add/cart/simulated checkout→Maya empty cart→Bob restored cart arm (2 model starts,1 local simulated checkout). Their raw requests/failures are retained and excluded from fixed10 latency percentiles; no request interception or artificial service delays. If middle request/checkout finishes before switch, report race as not exercised, not a cancellation pass.",
+  "sourceBindingLimit": "Actual fresh base-query encodingMeasurement text SHA and token length are checked against independent public formatting/tokenization. Actual LoRA prompt token SHA is independently recomputed by CPU tokenizer from public fields. Native rank/body/projection/gradient/query/color counters preserved, never derived from timing.",
+  "summary": "Nearest-rank p50/p95 only for the complete fixed10 loaded-switch denominator. First navigation/search/reload are separate single arms, no percentiles. Null failures/shortfalls retained; no replacements or success-only percentiles. Stop remaining requests on invalid/unsettled response protocol."
+}
