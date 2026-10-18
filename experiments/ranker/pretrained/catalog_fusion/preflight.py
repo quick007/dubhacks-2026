@@ -81,11 +81,12 @@ def inventory(dataset, model, max_tokens=512):
         if not ids or len(ids) > max_tokens:
             raise ValueError(f"{row['role']} input has {len(ids)} tokens; limit {max_tokens}. Refusing truncation.")
         records.append({key: value for key, value in row.items() if key != "text"} |
-                       {"textSha256": digest(row["text"]), "tokenSha256": digest(canonical(ids)), "tokens": len(ids),
+                       {"textSha256": digest(row["text"]), "tokenSha256": digest(canonical(ids)), "tokenIds": ids, "tokens": len(ids),
                         "batchShape": [1, len(ids)], "wholeSequenceForwardTokens": len(ids)})
     return {"representation": REPRESENTATION, "cpuOnly": True, "nativeForwards": 0,
             "modelPath": str(model), "modelRevision": REVISION, "quantization": quantization,
             "inputHashes": hashes, "tokenizerSha256": file_digest(model / "tokenizer.json"),
+            "configSha256": file_digest(model / "config.json"),
             "chatTemplateSha256": file_digest(model / "chat_template.jinja"),
             "promptFormat": "raw catalog_text/request_text strings; no chat wrapper or special-token insertion",
             "inputSourceSha256": file_digest(Path(__file__).with_name("inputs.py")),

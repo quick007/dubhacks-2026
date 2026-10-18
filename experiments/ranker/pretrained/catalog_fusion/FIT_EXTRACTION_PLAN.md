@@ -60,7 +60,12 @@ The extraction adapter must compare its actual native tokenizer IDs exactly to
 the preflight IDs before each forward. A mismatch stops extraction; it must not
 be hidden by merely accepting the same token count.
 
-## Native stage: explicit bounded adapter, still to implement/run
+## Native stage: implemented bounded adapter, not yet run in this lane
+
+`runner.py`, `runtime.py`, `fit_runner.py` and `evaluate.py` implement the stages
+below. Run the command in README only after the serialized native slot is free.
+CPU tests inject an explicitly marked stub; their results are not native features
+or model quality evidence. `runner --help` does not load MLX or model weights.
 
 Use one already pinned `FrozenBackbone` from `pretrained/backbone.py` in one
 foreground process, `max_length=512`, `memory_gib=6`. This reuses its frozen/eval

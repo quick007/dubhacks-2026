@@ -1,9 +1,11 @@
-# Catalog fusion CPU preparation
+# Catalog fusion experiment
 
 This package implements the proposed `catalog-user-fusion-v1` input contract,
 32,786-parameter rank-four scorer, train-only objective boundary, checkpoint
-checksums, and complete-roster image mapping. It is preparation only. There are no
-native features, trained project checkpoints, quality results, or speed claims.
+checksums, complete-roster image mapping and an executable extraction/fit runner.
+The runner has not been executed natively by this preparation lane. There are no
+new native features, trained project checkpoints, quality results or speed claims
+from the CPU tests.
 Existing joint heads and their results remain a separate representation.
 Actual project training, backbone/model outputs, native feature extraction and
 fresh-request encoding latencies are unmeasured by this package. Checkpoint
@@ -12,7 +14,7 @@ saving uses exclusive creation and refuses to overwrite an existing artifact.
 Run the synthetic CPU contracts from the repository root:
 
 ```sh
-.tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.catalog_fusion.test_catalog_fusion -v
+.tools/pretrained-venv/bin/python -m unittest discover -s experiments/ranker/pretrained/catalog_fusion -t . -v
 ```
 
 The CPU-only `preflight` module inventories the real public corpus with the
@@ -20,6 +22,36 @@ already local tokenizer, without loading weights or labels. See
 [FIT_EXTRACTION_PLAN.md](FIT_EXTRACTION_PLAN.md) for exact available paths,
 observed token bounds, artifact sizes and a bounded native-extraction/real-fit
 handoff. Native extraction and actual project fitting remain unexecuted here.
+
+Run the actual experiment only in the serialized native lane, with a **new**
+output directory:
+
+```sh
+.tools/pretrained-venv/bin/python -m experiments.ranker.pretrained.catalog_fusion.runner --out data/ranker/pretrained/catalog-user-fusion-v1-attempt-1
+```
+
+This verifies the local pinned weights, checks exact CPU/native tokenizer IDs,
+extracts B=1 whole-input features, fits full fusion and a separate item-prior
+control using training targets only, saves/reloads/freezes both checkpoints,
+then extracts/evaluates held-out replay requests. The existing 6 GiB guard and
+512-token cap are fixed; active **and observed cumulative MLX peak** are checked
+after load and before/after every encode. Limits and the 80-epoch schedule are
+in `runner.LIMITS` and `fit_runner.FIT_CONFIG`. Existing output directories and
+checkpoints are refused. Failures retain partial artifacts plus `FAILED.json`;
+there is no retry loop, download, worker or automatic memory increase.
+
+`report.json` contains full/random/prior/permuted-query quality with raw and
+guarded decisions, oracle-/selected-/all-candidate presentation denominators,
+fit gradients/updates/reload receipts and actual per-query catalog hit/miss,
+fresh-query and CPU score/mask/grid timings. Per-feature `.pt`/JSON files retain
+exact keys, serialized/vector checksums, provenance and native timing/memory.
+`CHECKPOINTS_FROZEN.json` must verify before held-out target files are opened.
+Execution commit, source status/hashes, interpreter and runtime package versions
+are retained. The native model is unloaded during fitting and reloaded for
+held-out extraction; those load costs are reported separately. No copy is
+generated. Candidate-count grid probes on the four-candidate fixture do not
+establish 12-/24-card quality. A/B/A and matched fresh-native extraction parity
+remain unmeasured; saved artifact bytes are checked exactly.
 
 `inputs.catalog_text` uses the existing `clean_product`/`variant_text` allowlists.
 `request_text` encodes fresh public context and the same cutoff-filtered latest
@@ -61,7 +93,8 @@ symlink redirection and duplicate/mismatched memberships, and returns input
 hashes. `training_loss` matches the existing mean-variant best-product CE and
 informative compatible-presentation CE. It is a low-level function: its caller
 must use the train-only loader and verified features. There is deliberately no
-project fitting command or automatic data discovery.
+automatic data discovery; the explicit runner owns fixed fitting and the
+separate post-freeze evaluator boundary.
 
 Next steps require a separately authorized native run with the same pinned
 quantized backbone/tokenizer, explicit bounded memory guard, exact prompt/token
