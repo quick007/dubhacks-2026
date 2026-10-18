@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "c5196ec0-926e-43f3-a778-379979c94d0b",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "headphones",
+          "variantId": "headphones-sand",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "c5196ec0-926e-43f3-a778-379979c94d0b",
+        "receiptId": "demo-45347cd82469f875471ae5f52b6ad37f",
+        "createdAt": "2026-10-18T08:46:27.547601Z",
+        "items": [
+          {
+            "productId": "headphones",
+            "variantId": "headphones-sand",
+            "quantity": 1,
+            "unitPrice": 89,
+            "lineTotal": 89
+          }
+        ],
+        "subtotal": 89,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 89,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/c5196ec0-926e-43f3-a778-379979c94d0b",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "c5196ec0-926e-43f3-a778-379979c94d0b",
+        "receiptId": "demo-45347cd82469f875471ae5f52b6ad37f",
+        "createdAt": "2026-10-18T08:46:27.547601Z",
+        "items": [
+          {
+            "productId": "headphones",
+            "variantId": "headphones-sand",
+            "quantity": 1,
+            "unitPrice": 89,
+            "lineTotal": 89
+          }
+        ],
+        "subtotal": 89,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 89,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "c5196ec0-926e-43f3-a778-379979c94d0b",
+    "receiptId": "demo-45347cd82469f875471ae5f52b6ad37f"
+  },
+  "errors": []
+}

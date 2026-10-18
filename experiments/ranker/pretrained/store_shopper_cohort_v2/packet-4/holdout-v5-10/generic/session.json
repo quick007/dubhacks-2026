@@ -1,0 +1,221 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v5-10",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v5-10-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v5-10",
+    "personaSplit": "held-out",
+    "seed": 2026102310
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "10555688-76f5-49fa-a30e-e921f30686c0",
+    "contextId": "2980c0eb-c62f-4a43-91a5-5e3804d64015",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v5-10-generic-screenshot-png",
+      "holdout-v5-10-generic-trace-zip",
+      "holdout-v5-10-generic-browser-observations-json",
+      "holdout-v5-10-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T08:45:27.392Z",
+  "elapsedMs": 17849.366540999996,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v5-10-generic-step-0",
+        "runId": "holdout-v5-10-generic",
+        "sequence": 0,
+        "at": "2026-10-18T08:45:28.458Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 1066.0778329999885,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-10-generic-step-1",
+        "runId": "holdout-v5-10-generic",
+        "sequence": 1,
+        "at": "2026-10-18T08:45:33.128Z",
+        "kind": "action",
+        "message": "round sunglasses with explicit UV-protection certification, at most $55"
+      },
+      "elapsedMs": 5736.394124999992,
+      "action": {
+        "type": "search",
+        "query": "round sunglasses with explicit UV-protection certification, at most $55"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-10-generic-step-2",
+        "runId": "holdout-v5-10-generic",
+        "sequence": 2,
+        "at": "2026-10-18T08:45:39.317Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 11924.769332999975,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-10-generic-step-3",
+        "runId": "holdout-v5-10-generic",
+        "sequence": 3,
+        "at": "2026-10-18T08:45:45.242Z",
+        "kind": "action",
+        "message": "The round sunglasses are $48, but explicit UV-protection certification is not provided in the visible product information. I cannot verify the required certification, so I decline without ordering."
+      },
+      "elapsedMs": 17849.365040999983,
+      "action": {
+        "type": "abandon",
+        "target": "The round sunglasses are $48, but explicit UV-protection certification is not provided in the visible product information. I cannot verify the required certification, so I decline without ordering."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v5-10-generic-screenshot-png",
+        "runId": "holdout-v5-10-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T08:45:45.661Z"
+      },
+      "status": "captured",
+      "sha256": "80309b3ed7a4343295b329d16eade601172a2c9227286264e9a9d61d6d6acaac",
+      "bytes": 991802,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-10-generic-trace-zip",
+        "runId": "holdout-v5-10-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T08:45:45.661Z"
+      },
+      "status": "captured",
+      "sha256": "2b09256d4e4eaeadc0baf315cbe8c417221d57809cf3e5aa67a93c778f96aa43",
+      "bytes": 5318669,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-10-generic-browser-observations-json",
+        "runId": "holdout-v5-10-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:45:45.661Z"
+      },
+      "status": "captured",
+      "sha256": "9a0b6bcbc3708cc73745227e3eb32cba247818bb6e342b175a8ffead1d62567e",
+      "bytes": 21298,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-10-generic-checkout-receipt-json",
+        "runId": "holdout-v5-10-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:45:45.664Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v5-10-generic-screenshot-png",
+          "holdout-v5-10-generic-trace-zip",
+          "holdout-v5-10-generic-browser-observations-json",
+          "holdout-v5-10-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v5-10-generic-screenshot-png",
+          "holdout-v5-10-generic-trace-zip",
+          "holdout-v5-10-generic-browser-observations-json",
+          "holdout-v5-10-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "required-fact",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v5-10-generic-screenshot-png",
+          "holdout-v5-10-generic-trace-zip",
+          "holdout-v5-10-generic-browser-observations-json",
+          "holdout-v5-10-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
