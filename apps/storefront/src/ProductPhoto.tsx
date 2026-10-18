@@ -5,11 +5,13 @@ export function ProductPhoto({
   id,
   alt = image.alt,
   loading = "lazy",
+  position,
 }: {
   image: ProductImage;
   id?: string;
   alt?: string;
   loading?: "lazy" | "eager";
+  position?: string;
 }) {
   const tile = image.tile;
   const width = tile ? Math.max(tile.columns, tile.rows * tile.sheetAspect) * 100 : 100;
@@ -32,7 +34,7 @@ export function ProductPhoto({
                 left: `${-(tile.index % tile.columns) * (width / tile.columns) - (width / tile.columns - 100) / 2}%`,
                 top: `${-Math.floor(tile.index / tile.columns) * (height / tile.rows) - (height / tile.rows - 100) / 2}%`,
               }
-            : { objectPosition: image.position }
+            : { objectPosition: position ?? image.position }
         }
       />
     </span>

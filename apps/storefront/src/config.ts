@@ -42,7 +42,7 @@ export function parseVariantConfig(search: string): VariantConfig {
 export const PRODUCTS = [
   {
     id: "mug",
-    name: "Trail mug",
+    name: "Trail Mug",
     category: "For the slow mornings",
     price: 24,
     color: "sage",
@@ -50,7 +50,7 @@ export const PRODUCTS = [
   },
   {
     id: "pack",
-    name: "Everyday daypack",
+    name: "Everyday Daypack",
     category: "Pack a smaller plan",
     price: 68,
     color: "sand",
@@ -58,7 +58,7 @@ export const PRODUCTS = [
   },
   {
     id: "notebook",
-    name: "Pocket field notes",
+    name: "Pocket Field Notes",
     category: "Keep a good thought",
     price: 12,
     color: "clay",
@@ -66,7 +66,7 @@ export const PRODUCTS = [
   },
   {
     id: "jacket",
-    name: "Everywhere rain jacket",
+    name: "Everywhere Rain Jacket",
     category: "Waterproof hooded shell",
     price: 128,
     color: "sage",

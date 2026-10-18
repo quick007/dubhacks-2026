@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { SlidersHorizontalIcon } from "@hugeicons/core-free-icons";
 import { DEFAULT_CONFIG, type VariantConfig } from "./config";
 
 const THEMES = [
@@ -52,21 +54,26 @@ export function DemoControls({
 
   return (
     <div className="demo-controls">
-      <button type="button" className="demo-button" popoverTarget="demo-controls" aria-label="Color preferences">
-        <span className="theme-swatch current-theme" aria-hidden="true" />
-        Color preferences
+      <button
+        type="button"
+        className="demo-button"
+        popoverTarget="demo-controls"
+        aria-label="All filters"
+      >
+        <HugeiconsIcon icon={SlidersHorizontalIcon} size={22} aria-hidden="true" />
+        All filters
       </button>
       <div
         id="demo-controls"
         className="demo-popover"
         popover="auto"
         role="group"
-        aria-label="Color preferences"
+        aria-label="All filters"
       >
-        <span className="demo-title">Color preferences</span>
+        <span className="demo-title">All filters</span>
         <div className="demo-section">
-          <span className="theme-label">Store color</span>
-          <div className="theme-options" role="group" aria-label="Store color">
+          <span className="theme-label">Store theme</span>
+          <div className="theme-options" role="group" aria-label="Store theme">
             {THEMES.map((option) => (
               <button
                 type="button"
@@ -74,7 +81,11 @@ export function DemoControls({
                 aria-pressed={theme === option.id}
                 onClick={() => setTheme(option.id)}
               >
-                <span className="theme-swatch" style={{ background: option.color }} aria-hidden="true" />
+                <span
+                  className="theme-swatch"
+                  style={{ background: option.color }}
+                  aria-hidden="true"
+                />
                 {option.label}
               </button>
             ))}
@@ -135,7 +146,11 @@ export function DemoControls({
             ))}
           </div>
         </div>
-        <button type="button" className="demo-reset" onClick={() => onChange({ ...DEFAULT_CONFIG })}>
+        <button
+          type="button"
+          className="demo-reset"
+          onClick={() => onChange({ ...DEFAULT_CONFIG })}
+        >
           Reset demo settings
         </button>
       </div>

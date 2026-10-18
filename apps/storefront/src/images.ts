@@ -36,6 +36,7 @@ function studioImages(productId: Product["id"], name: string): ProductImage[] {
     },
     tags: ["product", label.toLowerCase()],
     position: `${index * 50}% center`,
+    tile: { columns: 3, rows: 1, index, sheetAspect: 3 },
   }));
 }
 
@@ -209,6 +210,34 @@ const originalImages = {
 };
 
 const stillLifePresentations: Record<(typeof ADDITIONAL_PRODUCTS)[number]["id"], Presentation> = {
+  crossbody: {
+    subject: "product",
+    background: "wood",
+    tone: "natural",
+    composition: "full-product",
+  },
+  sleeve: { subject: "product", background: "wood", tone: "natural", composition: "full-product" },
+  washbag: {
+    subject: "product",
+    background: "textured",
+    tone: "natural",
+    composition: "full-product",
+  },
+  overshirt: {
+    subject: "product",
+    background: "wood",
+    tone: "natural",
+    composition: "full-product",
+  },
+  scarf: { subject: "product", background: "wood", tone: "natural", composition: "full-product" },
+  cushion: {
+    subject: "product",
+    background: "location",
+    tone: "natural",
+    composition: "full-product",
+  },
+  flask: { subject: "product", background: "wood", tone: "natural", composition: "full-product" },
+  wallet: { subject: "product", background: "wood", tone: "natural", composition: "full-product" },
   umbrella: {
     subject: "product",
     background: "textured",
@@ -289,6 +318,7 @@ const additionalImages: [string, ProductImage[]][] = ADDITIONAL_PRODUCTS.map((pr
       alt: `${product.name} on a plain ivory studio background`,
       context: "studio",
       position: "0% center",
+      tile: { columns: 3, rows: 1, index: 0, sheetAspect: 3 },
       tags: ["product-only", "studio", ...product.searchTerms],
       presentation: {
         subject: "product",
@@ -304,6 +334,7 @@ const additionalImages: [string, ProductImage[]][] = ADDITIONAL_PRODUCTS.map((pr
       alt: product.stillLife,
       context: "studio",
       position: "50% center",
+      tile: { columns: 3, rows: 1, index: 1, sheetAspect: 3 },
       tags: ["product-only", "still-life", ...product.searchTerms],
       presentation: stillLifePresentations[product.id],
     },
@@ -314,6 +345,7 @@ const additionalImages: [string, ProductImage[]][] = ADDITIONAL_PRODUCTS.map((pr
       alt: product.lifestyle,
       context: product.context,
       position: "100% center",
+      tile: { columns: 3, rows: 1, index: 2, sheetAspect: 3 },
       tags: ["in-use", product.scenario, ...product.searchTerms],
       presentation: {
         subject: "in-use",
@@ -410,8 +442,23 @@ export function selectProductImage(productId: Product["id"], context: ImageConte
 
 // Mix natural product arrangements with scenes in use across the storefront.
 const stillLifeLeads = new Set<string>([
-  "mug", "notebook", "bottle", "blanket", "headphones", "sneakers",
-  "duffel", "sunglasses", "stand", "cubes", "planter", "lunchbox",
+  "sleeve",
+  "washbag",
+  "cushion",
+  "flask",
+  "wallet",
+  "mug",
+  "notebook",
+  "bottle",
+  "blanket",
+  "headphones",
+  "sneakers",
+  "duffel",
+  "sunglasses",
+  "stand",
+  "cubes",
+  "planter",
+  "lunchbox",
 ]);
 
 export function selectShowcaseImage(
@@ -419,13 +466,20 @@ export function selectShowcaseImage(
   context: ImageContext,
   images = PRODUCT_IMAGES[productId],
 ): ProductImage {
-  const naturalStillLife = images.find((image) =>
-    image.presentation.subject === "product" && image.presentation.background !== "plain" &&
-    image.presentation.composition !== "detail",
+  if (productId === "organizer") return images[1] ?? images[0];
+  const naturalStillLife = images.find(
+    (image) =>
+      image.presentation.subject === "product" &&
+      image.presentation.background !== "plain" &&
+      image.presentation.composition !== "detail",
   );
   const lifestyle = images.filter((image) => image.presentation.subject === "in-use");
-  return (stillLifeLeads.has(productId) ? naturalStillLife : undefined) ??
+  return (
+    (stillLifeLeads.has(productId) ? naturalStillLife : undefined) ??
     lifestyle.find((image) => image.context === context) ??
     lifestyle.find((image) => image.context === "everyday") ??
-    lifestyle[0] ?? naturalStillLife ?? images[0];
+    lifestyle[0] ??
+    naturalStillLife ??
+    images[0]
+  );
 }

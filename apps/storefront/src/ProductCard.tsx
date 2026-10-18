@@ -3,6 +3,7 @@ import { Add01Icon } from "@hugeicons/core-free-icons";
 import type { Product } from "./config";
 import type { ImageContext } from "./images";
 import { ProductGallery } from "./ProductGallery";
+import { productDetail } from "./product-details";
 import { PRODUCT_VARIANTS, getProductVariant } from "./variants";
 
 export function ProductCard({
@@ -21,11 +22,17 @@ export function ProductCard({
   const variant = getProductVariant(product.id, variantId);
   return (
     <article className="product" id={`product-${product.id}`}>
-      <ProductGallery key={`${product.id}:${context}`} product={product} variant={variant} context={context} />
+      <ProductGallery
+        key={`${product.id}:${context}`}
+        product={product}
+        variant={variant}
+        context={context}
+      />
       <div className="product-heading">
         <h3>{product.name}</h3>
         <span>${product.price}</span>
       </div>
+      <p className="product-detail">{productDetail(product)}</p>
       <div className="product-colors" role="group" aria-label={`${product.name} colors`}>
         {PRODUCT_VARIANTS[product.id].map((option) => (
           <button

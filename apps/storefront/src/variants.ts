@@ -4,13 +4,8 @@ import { NEW_PRODUCTS } from "./catalog-new-products";
 import galleryLayouts from "./color-gallery-layouts.json";
 
 type ColorOption = readonly [name: string, swatch: string];
-const COLOR_OPTIONS: Record<Product["id"], readonly ColorOption[]> = {
-  umbrella: NEW_PRODUCTS[0].colorOptions,
-  cap: NEW_PRODUCTS[1].colorOptions,
-  speaker: NEW_PRODUCTS[2].colorOptions,
-  stand: NEW_PRODUCTS[3].colorOptions,
-  cubes: NEW_PRODUCTS[4].colorOptions,
-  planter: NEW_PRODUCTS[5].colorOptions,
+const COLOR_OPTIONS: Record<string, readonly ColorOption[]> = {
+  ...Object.fromEntries(NEW_PRODUCTS.map((product) => [product.id, product.colorOptions])),
   mug: [
     ["Sage", "#819374"],
     ["Ivory", "#ded7c7"],

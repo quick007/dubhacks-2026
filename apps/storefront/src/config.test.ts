@@ -18,7 +18,7 @@ void test("search intent selects relevant products and environments", () => {
     ["HIKING gear", "pack", "outdoors"],
     ["work bag", "pack", "city"],
     ["journaling", "notebook", "studio"],
-    ["camping coffee", "mug", "outdoors"],
+    ["camping coffee", "flask", "outdoors"],
     ["notebook for work", "notebook", "city"],
     ["rain jacket for campus", "jacket", "campus"],
     ["family park", "pack", "family"],

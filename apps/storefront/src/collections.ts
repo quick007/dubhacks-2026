@@ -5,18 +5,22 @@ export const COLLECTIONS: { id: string; label: string; productIds: readonly Prod
   {
     id: "bags",
     label: "Bags & travel",
-    productIds: ["pack", "tote", "duffel", "organizer", "cubes"],
+    productIds: ["pack", "tote", "duffel", "organizer", "cubes", "crossbody", "sleeve", "washbag"],
   },
-  { id: "clothing", label: "Clothing", productIds: ["jacket", "sneakers", "sweatshirt", "cap"] },
+  {
+    id: "clothing",
+    label: "Clothing",
+    productIds: ["jacket", "sneakers", "sweatshirt", "cap", "overshirt"],
+  },
   {
     id: "home",
     label: "Home & desk",
-    productIds: ["notebook", "lamp", "blanket", "stand", "planter"],
+    productIds: ["notebook", "lamp", "blanket", "stand", "planter", "cushion"],
   },
-  { id: "food", label: "Food & drink", productIds: ["mug", "bottle", "lunchbox"] },
+  { id: "food", label: "Food & drink", productIds: ["mug", "bottle", "lunchbox", "flask"] },
   {
     id: "accessories",
     label: "Accessories",
-    productIds: ["sunglasses", "towel", "headphones", "umbrella", "speaker"],
+    productIds: ["sunglasses", "towel", "headphones", "umbrella", "speaker", "scarf", "wallet"],
   },
 ];

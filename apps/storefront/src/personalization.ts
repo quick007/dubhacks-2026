@@ -54,7 +54,7 @@ const contexts: {
       "class",
       "classes",
     ],
-    headline: "Ready for the next chapter.",
+    headline: "Ready for the next chapter",
     collection: "For life on campus",
     note: "campus days",
     boosts: { pack: 3, notebook: 2, jacket: 1 },

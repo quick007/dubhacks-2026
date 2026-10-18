@@ -3,7 +3,7 @@ import { NEW_PRODUCTS } from "./catalog-new-products";
 export const ADDITIONAL_PRODUCTS = [
   {
     id: "bottle",
-    name: "Everyday steel bottle",
+    name: "Everyday Steel Bottle",
     category: "Stainless steel bottle",
     price: 36,
     color: "sage",
@@ -16,7 +16,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "tote",
-    name: "Market canvas tote",
+    name: "Market Canvas Tote",
     category: "Cotton canvas carryall",
     price: 42,
     color: "sage",
@@ -29,7 +29,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "blanket",
-    name: "Woven everyday throw",
+    name: "Woven Everyday Throw",
     category: "Cotton throw blanket",
     price: 58,
     color: "clay",
@@ -42,7 +42,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "lamp",
-    name: "Portable table light",
+    name: "Portable Table Light",
     category: "Cordless table lamp",
     price: 64,
     color: "sand",
@@ -55,7 +55,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "lunchbox",
-    name: "Steel lunch box",
+    name: "Steel Lunch Box",
     category: "Steel box with bamboo lid",
     price: 32,
     color: "sage",
@@ -68,7 +68,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "headphones",
-    name: "Everyday over-ear headphones",
+    name: "Everyday Over-Ear Headphones",
     category: "Cushioned over-ear headphones",
     price: 89,
     color: "sage",
@@ -81,7 +81,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "sneakers",
-    name: "Everyday canvas sneakers",
+    name: "Everyday Canvas Sneakers",
     category: "Canvas low-top sneakers",
     price: 96,
     color: "sand",
@@ -94,7 +94,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "sweatshirt",
-    name: "Soft cotton crewneck",
+    name: "Soft Cotton Crewneck",
     category: "Cotton crewneck sweatshirt",
     price: 72,
     color: "sand",
@@ -107,7 +107,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "duffel",
-    name: "Weekender duffel",
+    name: "Weekender Duffel",
     category: "Canvas travel bag",
     price: 84,
     color: "clay",
@@ -121,7 +121,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "sunglasses",
-    name: "Everyday round sunglasses",
+    name: "Everyday Round Sunglasses",
     category: "Round acetate sunglasses",
     price: 48,
     color: "clay",
@@ -134,7 +134,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "organizer",
-    name: "Zip essentials pouch",
+    name: "Zip Essentials Pouch",
     category: "Canvas organizer pouch",
     price: 26,
     color: "sand",
@@ -147,7 +147,7 @@ export const ADDITIONAL_PRODUCTS = [
   },
   {
     id: "towel",
-    name: "Everywhere cotton towel",
+    name: "Everywhere Cotton Towel",
     category: "Striped cotton towel",
     price: 28,
     color: "sage",
