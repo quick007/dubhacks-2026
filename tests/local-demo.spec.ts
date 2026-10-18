@@ -38,12 +38,15 @@ test.beforeEach(async ({ request }) => {
     .toBe(true);
 });
 
-test("dashboard runs deterministic synthetic comparisons across both persona splits", async ({
+test("deck runs shoppers, tells the featured shopper's story and shows the held-out result", async ({
   page,
   request,
 }) => {
-  await page.goto("/");
-  await page.getByRole("button", { name: "Run mock comparison" }).click();
+  await page.goto("/#title");
+  await expect(page.getByRole("button", { name: /Run a round/ })).toHaveCount(0);
+  await page.getByRole("button", { name: /Slide \d+: All sessions/ }).click();
+  await page.getByRole("button", { name: /Run a round/ }).click();
+  await page.getByRole("button", { name: "Slide 1: Title", exact: true }).click();
   await expect
     .poll(
       async () => {
@@ -55,10 +58,20 @@ test("dashboard runs deterministic synthetic comparisons across both persona spl
       },
       { timeout: 30_000 },
     )
-    .toBeGreaterThanOrEqual(8);
-  await expect(page.getByTestId("comparison")).toContainText(/held-out/i);
-  await expect(page.getByTestId("comparison")).toContainText(/development/i);
-  await expect(page.getByTestId("run-card").first()).toContainText("completed");
+    .toBeGreaterThanOrEqual(20);
+  await expect(page.getByRole("list", { name: "What shoppers search for" })).toBeVisible();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.getByRole("heading", { name: /^Meet / })).toBeVisible();
+  await page.goto("/#sessions");
+  await expect(page.getByText("Running at once")).toBeVisible();
+  await page.goto("/#results");
+  await expect(page.getByText("new shoppers bought something that fits")).toBeVisible({
+    timeout: 10_000,
+  });
+  await page.goto("/#struggle");
+  await expect(page.locator("main img").first()).toBeVisible();
+  await page.getByRole("button", { name: "See every step" }).click();
+  await expect(page.getByRole("dialog")).toContainText("Task failed");
 });
 
 test("local storefront only submits a fake demo order", async ({ page }) => {
