@@ -30,7 +30,7 @@ export function plan(){return{version:'store-persona-browser-probe.v1',origin:OR
   workload:'One bare URL navigation at actual initial scroll. Then10 different public profile selections in one loaded collection, pre-scroll before each. Profile clock is real option click; real Escape dismisses popover before useful visibility. EndBob, submit work bag via real search form, then reload that route for another genuine POST. No route/fetch/text injection or forced same-hash request.',
   timing:'Native startup and browser launch excluded. Browser actual fetch→endpoint is common model-request clock; action→endpoint and navigation→endpoint separately retained. Existing React/two-rAF mirror plus actual geometry and image complete/decode; no physical paint claim. Passive clone overhead is part of this instrumented workload; body settlement occurs after UI endpoints.',
   cache:'NEW browser context starts HTTP cache cold for bare navigation. Loaded switches/search reuse same browser cache. Reload is HTTP-cache eligible with browser scroll restoration recorded, not a second cold navigation. Native query/context cache state is actual raw provenance, never assumed cold. All10 public context features may already be precomputed; first work-bag means first query in this probe, not guaranteed native cache miss. Reload has identical public payload and a unique request ID; fresh rank/variants/neural copy required even on feature cache hits.',
-  visibility:'Initial viewport reports actual useful-card count and first3 only if truly fully visible. Loaded first3 requires current request accepted10 fields, three whole cards/titles/copy and decoded primary images, with no open popover or intersecting fixed switcher. Full6 requires accepted20 fields and six decoded primary images separately; six-card visibility is never implied. Shortfalls/zero results remain explicit, never padded.',
+  visibility:'Initial viewport reports actual useful-card count and first3 only if truly fully visible. Loaded first3 requires current request accepted10 fields, three whole cards/titles/copy and decoded primary images, with no open popover or intersecting fixed switcher. The actual .person-trigger rectangle is checked against the whole card bounding rectangle plus title, each copy paragraph, clipped primary image and Add button when present; any intersection rejects useful visibility. This strict whole-card policy also rejects overlap in otherwise unused card space. Full6 requires accepted20 fields and six decoded primary images separately; six-card visibility is never implied. Shortfalls/zero results remain explicit, never padded.',
   facts:'All actual copy fields and DOM strings are retained. Canonical public catalog validates original name, price, chosen variant/color and image-source identity; every accepted-field total and DOM copy string is checked. Each selected card visible DOM price must equal both its canonical price and actual payload itemPrice, with missing prices rejected. This is not a free-text semantic factuality or unseen-personalization-quality evaluation; no private labels or answers are read.',
   summary:'Nearest-rank p50/p95 only for the complete fixed10 loaded-switch denominator. First navigation/search/reload are separate single arms, no percentiles. Null failures/shortfalls retained; no replacements or success-only percentiles. Stop remaining requests on invalid/unsettled response protocol.'};}
 
@@ -83,10 +83,19 @@ export function installPersonaReadiness(settings={navigation:true,query:null}){
     sourceAttr:articles[i]?.querySelector('.product-art img')?.getAttribute('src')??null}}))};
   const popup=document.querySelector('.person-popover');const popupVisible=Boolean(popup&&popup.getClientRects().length);
   const trigger=document.querySelector('.person-trigger');const triggerRect=trigger?.getBoundingClientRect();
+  for(const [i,card] of snap.cards.entries()){
+   const add=articles[i]?.querySelector('.add-button');const addRect=add?.getBoundingClientRect?.()??null;
+   const checks={card:Boolean(overlap(card.rect,triggerRect)),title:Boolean(overlap(card.titleRect,triggerRect)),
+    body:(card.statusParagraphs??[]).map(p=>Boolean(overlap(p.rect,triggerRect))),
+    primaryImage:Boolean(overlap(card.image?.clippedPrimaryRect,triggerRect)),addButton:addRect?Boolean(overlap(addRect,triggerRect)):null};
+   card.switcherOcclusion={policy:'strict-whole-card-and-content-rectangle-intersection',overlaps:checks,
+    addButtonRect:addRect?{left:addRect.left,right:addRect.right,top:addRect.top,bottom:addRect.bottom}:null,
+    noObscuringOverlap:!checks.card&&!checks.title&&!checks.body.some(Boolean)&&!checks.primaryImage&&checks.addButton!==true};
+  }
   const useful=card=>card.rect?.fullyWithinViewport&&card.titleRect?.fullyWithinViewport&&Boolean(card.title)
    &&card.statusParagraphs?.length>=2&&card.statusParagraphs.every(p=>p.rect?.fullyWithinViewport)
    &&card.image?.clippedPrimaryRect?.fullyWithinViewport&&card.image.complete&&card.image.naturalWidth>0&&card.image.decodeStatus==='decoded'
-   &&!popupVisible&&!overlap(card.rect,triggerRect);
+   &&!popupVisible&&card.switcherOcclusion.noObscuringOverlap;
   const count=snap.cards.filter(useful).length;const at=performance.now();
   state.last={at,devicePixelRatio:window.devicePixelRatio,input:document.getElementById('shop-search')?.value??null,
    popupVisible,actualUsefulCards:count,switcherRect:triggerRect?{left:triggerRect.left,right:triggerRect.right,top:triggerRect.top,bottom:triggerRect.bottom}:null,snapshot:snap};

@@ -20,15 +20,15 @@ function snapshot(){return{domCardCount:16,scrollY:500,cards:facts.slice(0,6).ma
  displayPrice:`$${p.price}`,rect:geometry(),titleRect:geometry(),statusParagraphs:[{text:'Actual fixture badge',rect:geometry()},{text:'Actual fixture copy',rect:geometry()}],
  image:{src:`http://127.0.0.1:4313${p.variants[0].imageUrls[0]}`,complete:true,naturalWidth:100,decodeStatus:'decoded',clippedPrimaryRect:geometry(),alt:p.variants[0].imageAlts[0]}}))};}
 function observer(settings={navigation:true,query:'Browse the store'}){
- let now=100,popup=false;const queue=[],listeners={};const mirrors=[];const snap=snapshot();
+ let now=100,popup=false,triggerRect={left:1000,right:1100,top:900,bottom:950};const queue=[],listeners={};const mirrors=[];const snap=snapshot();
  const window={devicePixelRatio:1,__candidateProbe:{last:snap}};
  const document={addEventListener:(name,fn)=>listeners[name]=fn,documentElement:{getAttribute:()=>JSON.stringify(mirrors)},
-  querySelectorAll:()=>snap.cards.map(c=>({querySelector:selector=>selector==='.product-heading > span'?{textContent:c.displayPrice}:{getAttribute:name=>name==='alt'?c.image.alt:c.image.src}})),
-  querySelector:selector=>selector==='.person-popover'?(popup?{getClientRects:()=>[{}]}:null):{getBoundingClientRect:()=>({left:1000,right:1100,top:900,bottom:950})},
+  querySelectorAll:()=>snap.cards.map(c=>({querySelector:selector=>selector==='.product-heading > span'?{textContent:c.displayPrice}:selector==='.add-button'?(c.addButtonRect?{getBoundingClientRect:()=>c.addButtonRect}:null):{getAttribute:name=>name==='alt'?c.image.alt:c.image.src}})),
+  querySelector:selector=>selector==='.person-popover'?(popup?{getClientRects:()=>[{}]}:null):{getBoundingClientRect:()=>triggerRect},
   getElementById:()=>({value:''})};
  vm.runInNewContext(`(${installPersonaReadiness.toString()})(${JSON.stringify(settings)})`,
   {window,document,location:{hash:'#collection'},scrollY:500,URLSearchParams,performance:{now:()=>now},requestAnimationFrame:fn=>queue.push(fn)});
- return{window,mirrors,listeners,snap,popup(value){popup=value;},tick(){now+=10;queue.shift()?.();},fresh(){
+ return{window,mirrors,listeners,snap,popup(value){popup=value;},trigger(value){triggerRect=value;},tick(){now+=10;queue.shift()?.();},fresh(){
   for(const event of events())mirrors.push({startTime:110,duration:20,detail:{stage:event.type,requestId:'new',requiredFields:event.requiredFields,acceptedFields:event.acceptedFields,withheldFields:event.withheldFields}});
  }};
 }
@@ -132,4 +132,38 @@ test('visible DOM price must match both canonical catalog and actual payload; mi
  assert.equal(imageFacts(snap,wrongPayload,facts).passed,false);
  const o=observer();o.fresh();o.tick();
  assert.equal(o.window.__personaReadiness.firstThree.snapshot.cards[0].displayPrice,`$${facts[0].price}`);
+});
+
+
+test('closed popup cannot hide fixed-trigger overlap: third-card intersection blocks useful3',()=>{
+ const o=observer();o.fresh();
+ const third=o.snap.cards[2];const thirdRect={...geometry(),left:220,right:320};
+ third.rect=thirdRect;third.titleRect=thirdRect;third.image.clippedPrimaryRect=thirdRect;
+ third.statusParagraphs.forEach(p=>p.rect=thirdRect);
+ third.addButtonRect={left:220,right:320,top:70,bottom:100};
+ o.trigger({left:240,right:280,top:80,bottom:95});
+ for(let i=0;i<6;i++)o.tick();
+ const state=o.window.__personaReadiness;
+ assert.equal(state.last.popupVisible,false);assert.equal(state.firstThree,null);assert.ok(state.fullSix);
+ const receipt=state.last.snapshot.cards[2].switcherOcclusion;
+ assert.equal(receipt.overlaps.card,true);assert.equal(receipt.overlaps.title,true);
+ assert.equal(receipt.overlaps.primaryImage,true);assert.deepEqual([...receipt.overlaps.body],[true,true]);
+ assert.equal(receipt.overlaps.addButton,true);assert.equal(receipt.noObscuringOverlap,false);
+ assert.equal(state.last.snapshot.cards[0].switcherOcclusion.noObscuringOverlap,true);
+ assert.equal(state.last.switcherRect.left,240);
+ const clear=observer();clear.fresh();clear.tick();assert.ok(clear.window.__personaReadiness.firstThree);
+});
+
+test('strict whole-card space and an available Add button also reject overlap independently',()=>{
+ for(const part of ['card-space','add-button']){
+  const o=observer();o.fresh();const third=o.snap.cards[2];
+  third.rect={...geometry(),left:220,right:320};
+  if(part==='card-space')o.trigger({left:240,right:280,top:80,bottom:95});
+  else{third.addButtonRect={left:220,right:320,top:110,bottom:140};o.trigger({left:240,right:280,top:115,bottom:130});}
+  o.tick();const state=o.window.__personaReadiness,receipt=state.last.snapshot.cards[2].switcherOcclusion;
+  assert.equal(receipt.overlaps.title,false);assert.equal(receipt.overlaps.primaryImage,false);
+  assert.equal(receipt.overlaps.card,part==='card-space');
+  assert.equal(receipt.overlaps.addButton,part==='add-button'?true:null);
+  assert.equal(receipt.noObscuringOverlap,false);assert.equal(state.firstThree,null);
+ }
 });

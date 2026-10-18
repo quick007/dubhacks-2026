@@ -1,22 +1,23 @@
 {
   "version": "store-persona-browser-probe-preparation.v1",
-  "createdAt": "2026-10-18T09:55:04.690367+00:00",
+  "createdAt": "2026-10-18T10:01:14.626429+00:00",
   "status": "source-only-cpu-prepared-not-executed",
   "checks": {
     "syntax": "passed",
-    "newCpuTestsPassed": 10,
-    "combinedCpuTestsPassed": 28,
+    "newCpuTestsPassed": 12,
+    "combinedCpuTestsPassed": 30,
     "browserLaunched": false,
     "gpuUsed": false,
     "nativeRequestsMade": 0,
-    "gitActions": false
+    "gitActions": true,
+    "gitScope": "Only parent-authorized exact four probe/preparation paths; no push or merge"
   },
   "run": "node experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs --run --out NEW_OUTPUT_DIRECTORY [--manifest ACTUAL_PERSONA_INTEGRATION_MANIFEST]",
   "releaseRequired": "Parent executes only after accepted model and ALL BROWSER IDLE; no automatic launch",
   "hashes": {
-    "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs": "997434e862157de7b4ca56c15553d07b429446059f96b0ee129ed2f4e7e0bd53",
-    "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs": "e2e783529ec7de65edb20c53240f2811dce10d325d3a72e04ab2c91925458104",
-    "experiments/ranker/pretrained/STORE_PERSONA_BROWSER_PROBE_V1_PLAN.json": "db5a2137288fb996ddcd64bf2fb12b1419d5c9854dbcbbc7540fc6dcb4303342"
+    "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs": "8a15441a7e0f5c94e241c383d341217645cc73cf1df2107b1e8135ccd4581f63",
+    "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs": "900e6d5168cb8ad8e5a6f92d7da5188645e565eb1d71869f9146db43f4b57aeb",
+    "experiments/ranker/pretrained/STORE_PERSONA_BROWSER_PROBE_V1_PLAN.json": "068e95105b89e4d420928cceb3948aa57f116bb1f89b3a14f2815c326a28c92e"
   },
   "notes": [
     "13 fixed actual app requests, 10 public profile switches + bare navigation + first work bag search + true same-query reload",
@@ -26,15 +27,15 @@
     "No modifications to frontend or legacy benchmarks"
   ],
   "sourceChangeBeforeFirstRun": {
-    "reason": "Parent requested direct rendered selected-card price text; pinning ProductCard source alone was insufficient",
+    "reason": "Parent requested explicit fixed person-trigger overlap receipts and meaningful overlap tests before any actual browser run",
     "previousPreparation": {
       "version": "store-persona-browser-probe-preparation.v1",
-      "createdAt": "2026-10-18T09:53:15.058081+00:00",
+      "createdAt": "2026-10-18T09:55:04.690367+00:00",
       "status": "source-only-cpu-prepared-not-executed",
       "checks": {
         "syntax": "passed",
-        "newCpuTestsPassed": 9,
-        "combinedCpuTestsPassed": 27,
+        "newCpuTestsPassed": 10,
+        "combinedCpuTestsPassed": 28,
         "browserLaunched": false,
         "gpuUsed": false,
         "nativeRequestsMade": 0,
@@ -43,9 +44,9 @@
       "run": "node experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs --run --out NEW_OUTPUT_DIRECTORY [--manifest ACTUAL_PERSONA_INTEGRATION_MANIFEST]",
       "releaseRequired": "Parent executes only after accepted model and ALL BROWSER IDLE; no automatic launch",
       "hashes": {
-        "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs": "80705aefd387932b02ee034938c4010eafd010948fc957d421e21ff8cdb84482",
-        "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs": "ad13c5d387f55bb4b6642c1e42884a8d8d0af1c68eba67719513f88f92700272",
-        "experiments/ranker/pretrained/STORE_PERSONA_BROWSER_PROBE_V1_PLAN.json": "5ba085244906ad16888c5c92e932e86356def5619234909fbef100c03355e48a"
+        "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs": "997434e862157de7b4ca56c15553d07b429446059f96b0ee129ed2f4e7e0bd53",
+        "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs": "e2e783529ec7de65edb20c53240f2811dce10d325d3a72e04ab2c91925458104",
+        "experiments/ranker/pretrained/STORE_PERSONA_BROWSER_PROBE_V1_PLAN.json": "db5a2137288fb996ddcd64bf2fb12b1419d5c9854dbcbbc7540fc6dcb4303342"
       },
       "notes": [
         "13 fixed actual app requests, 10 public profile switches + bare navigation + first work bag search + true same-query reload",
@@ -53,9 +54,42 @@
         "Real search form retains existing smooth scroll to hero; first3 useful endpoint may legitimately be null",
         "3 second bounded post-complete image observation; geometry misses remain null and all fixed profiles retained, invalid/unsettled response stops later requests",
         "No modifications to frontend or legacy benchmarks"
-      ]
+      ],
+      "sourceChangeBeforeFirstRun": {
+        "reason": "Parent requested direct rendered selected-card price text; pinning ProductCard source alone was insufficient",
+        "previousPreparation": {
+          "version": "store-persona-browser-probe-preparation.v1",
+          "createdAt": "2026-10-18T09:53:15.058081+00:00",
+          "status": "source-only-cpu-prepared-not-executed",
+          "checks": {
+            "syntax": "passed",
+            "newCpuTestsPassed": 9,
+            "combinedCpuTestsPassed": 27,
+            "browserLaunched": false,
+            "gpuUsed": false,
+            "nativeRequestsMade": 0,
+            "gitActions": false
+          },
+          "run": "node experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs --run --out NEW_OUTPUT_DIRECTORY [--manifest ACTUAL_PERSONA_INTEGRATION_MANIFEST]",
+          "releaseRequired": "Parent executes only after accepted model and ALL BROWSER IDLE; no automatic launch",
+          "hashes": {
+            "experiments/ranker/pretrained/store_persona_browser_probe_v1.mjs": "80705aefd387932b02ee034938c4010eafd010948fc957d421e21ff8cdb84482",
+            "experiments/ranker/pretrained/test_store_persona_browser_probe_v1.mjs": "ad13c5d387f55bb4b6642c1e42884a8d8d0af1c68eba67719513f88f92700272",
+            "experiments/ranker/pretrained/STORE_PERSONA_BROWSER_PROBE_V1_PLAN.json": "5ba085244906ad16888c5c92e932e86356def5619234909fbef100c03355e48a"
+          },
+          "notes": [
+            "13 fixed actual app requests, 10 public profile switches + bare navigation + first work bag search + true same-query reload",
+            "No native cold-context assumption; record query/context cache flags and source kind",
+            "Real search form retains existing smooth scroll to hero; first3 useful endpoint may legitimately be null",
+            "3 second bounded post-complete image observation; geometry misses remain null and all fixed profiles retained, invalid/unsettled response stops later requests",
+            "No modifications to frontend or legacy benchmarks"
+          ]
+        },
+        "actualBrowserOrNativeOutcomesBeforeChange": false,
+        "newBehavior": "Capture actual DOM price text; compare all selected-card prices against canonical catalog AND actual payload at complete React observation and useful image endpoints; missing/mismatched prices fail protocol"
+      }
     },
     "actualBrowserOrNativeOutcomesBeforeChange": false,
-    "newBehavior": "Capture actual DOM price text; compare all selected-card prices against canonical catalog AND actual payload at complete React observation and useful image endpoints; missing/mismatched prices fail protocol"
+    "newBehavior": "Record actual trigger rectangle intersections for whole card, title, every copy paragraph, clipped primary image and Add button when present; any overlap rejects useful visibility. Strict whole-card bounding rectangle rule also rejects overlap in unused card space. Full6 decode completion remains separate."
   }
 }
