@@ -449,3 +449,27 @@ package/build/test checks, concise run instructions and normal remote main
 verification. Integrate candidate work only after the cohort finishes. Preserve
 failed candidates and retain the current model unless measured evidence merits
 promotion. The earlier CPU bridge with fake protocol vectors is not training.
+
+## Isolated persona preparation, 2026-10-18 09:40 UTC
+
+The active cohort remains frozen; 92/120 receipts are saved with two retained
+timeouts, one per arm. Wait for the harness's explicit ALLBROWSERIDLE signal,
+then gracefully stop owned native4200 and verify its shutdown927 proof before
+starting another native job. Keep checkout4331 alive for final independent GETs.
+
+The isolated branch now preserves the persona UI, authored public seed, real
+Tiger readback, TRAIN-only purchase contrasts, weak first fit, independent
+audits and guarded launcher. Latest local commit574d05a; nothing merged into
+the frozen storefront. The first CPU context head fit TRAIN159/160 primary
+choices but only1/40 development primary choices and0/10 history demotions;
+it is explicitly not promoted. All source archives and checkpoints remain local.
+
+The next predeclared candidate uses432 genuine frozen-Qwen public-context
+forwards, then250 fixed CPU updates over320 TRAIN rows. Preparation v4 SHA
+71c9cabc533083e726cfd5938fed9e2cacf88e4ef841b102b4dc3a73ba619c35
+and its source/data pins are verified. The fresh32 independent packet remains
+unscored. Root promotion gate SHA89e243b2444eea4516b420491c1c70a18a5b115a686d1fc0f1324f4cd061aa4f
+freezes20/32 primary,24/32 novel-relevant and28/32 strong top-three minimums,
+baseline contribution, factual checks and separate live-store acceptance.
+Runtime portability tests pass: a moved checkpoint uses its adjacent exact-hash
+public context cache, with no fallback to the original worktree path.
