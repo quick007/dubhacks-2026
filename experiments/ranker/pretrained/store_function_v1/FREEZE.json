@@ -1,0 +1,209 @@
+{
+  "version": "actual-store-function-adaptation.v1",
+  "sourceHashes": {
+    "store_function_adaptation.py": "87009b5f7a958a86b8b90e67ee2b3e01f76f2b2d5b5683588170abde0393d0b9",
+    "store_function_eval_v1.json": "55eb12fc85b4d87289bdea71dad1b4c8b5cb55f31d762c06c39a47131868e377",
+    "store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+    "store_model_bridge.py": "91124b1793bf9960761547f0feb4c1e8609593bd70f4f7abf3c1b97c40c38eaf",
+    "catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "jacket_inputs.py": "f71d6964dc41868bae86d47d3ed9d1b918de16ac851f77cd097701907c09260b",
+    "catalog_fusion/generalization_v2.py": "a4802adbac9eaff3dddc5ef2ec1859c981392f881b1516f90141f7f192dc604c",
+    "catalog_fusion/semantic_factors.py": "fb376a4effc2508460d6b5189f61ab75d0ba23afbc3f89deb5e1fa46ba7e6090",
+    "test_store_function_adaptation.py": "529533073acf77bc60fcc08b12b479a4951bd874642f7380ddcb8156112a7c43"
+  },
+  "files": {
+    "catalog.json": "61e121b7141d085661976a9c72cde595802e5748a91c64b79744ccc8fbe8db40",
+    "public-cases.json": "b03e1ace415f5644aa07b7dea322df917e1406dd90db4767903f0d874a07d44b",
+    "train-labels.json": "58e3dd4fc70e36349d402346f1c4d3cf47bf68996e51fec818480431b2627907",
+    "evaluation-labels.json": "0e8fb19da0904deeb0050b5964607f994a478384e40fc377ec25bc1f5c553381",
+    "guard-probes.json": "1d45b174586acc10a29e105299d81295fd06a384151bbfc6eb98fa90021db7e8",
+    "external-actions.json": "00cf3cfb43170efa863fe1de24fbea64f96ce55957f42d805dd274b6f7a89e0e"
+  },
+  "counts": {
+    "products": 16,
+    "trainQueries": 32,
+    "evaluationQueries": 16,
+    "nativeForwards": 64,
+    "evaluationPairs": 8
+  },
+  "schedule": {
+    "seed": 728,
+    "steps": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "epsilon": 1e-08,
+    "threads": 1,
+    "memoryGiB": 6,
+    "maxTokens": 512,
+    "nativeForwards": 64,
+    "nativeSeconds": 180,
+    "dimensions": 4096,
+    "classes": 16,
+    "parameters": 131104
+  },
+  "classVocabulary": [
+    "mug",
+    "daypack",
+    "field-notes",
+    "rain-shell",
+    "bottle",
+    "tote",
+    "throw",
+    "table-light",
+    "lunch-box",
+    "headphones",
+    "sneakers",
+    "crewneck",
+    "duffel",
+    "sunglasses",
+    "organizer-pouch",
+    "towel"
+  ],
+  "atomSupportGap": {
+    "vocabulary": [
+      "compact",
+      "durable",
+      "laptop-sleeve",
+      "lightweight",
+      "organizer",
+      "roomy",
+      "water-resistant"
+    ],
+    "exactDeclaredPositiveAtomsByProduct": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        "organizer"
+      ],
+      []
+    ],
+    "distinctFocusedProductTexts": 2,
+    "emptyAtomProducts": 15,
+    "interpretation": "literal public fact audit only, not negative truth labels; no waterproof/water-resistant or bag/roomy substitutions",
+    "frozenSevenFactorServingCompatibilityEstablished": false
+  },
+  "bridge": {
+    "modelInputSha256": "205572ed535b6f40cd56ede51208c348ad05998ad4d205f193a8b5bfe3e79fb7",
+    "bridgeSha256": "91124b1793bf9960761547f0feb4c1e8609593bd70f4f7abf3c1b97c40c38eaf",
+    "currentSourcesMatchPinnedInputs": true,
+    "sourceReceipts": [
+      {
+        "bytes": 2781,
+        "gitBlob": "2c263a1697d11dad639daf013985591271bfd718",
+        "path": "apps/storefront/src/config.ts",
+        "sha256": "dc496877b87032ac88a682d9f46adecd6d3c6e5fcb2e8875c9f06df795e6bb89"
+      },
+      {
+        "bytes": 5647,
+        "gitBlob": "afe066b0811d8fff25338d76400d74f9ef67c5df",
+        "path": "apps/storefront/src/catalog-expansion.ts",
+        "sha256": "694f22afb2b5dace9a35d742d91d0fab381edab94c5b6b5a5d6c6d962a4d7735"
+      },
+      {
+        "bytes": 4436,
+        "gitBlob": "46a51724c974134b78d172356e2543c3b65b7a86",
+        "path": "apps/storefront/src/variants.ts",
+        "sha256": "09bb4d47fb5c4e644c023421dda20323a58791156451061a1c5790244fb62ee3"
+      },
+      {
+        "bytes": 10175,
+        "gitBlob": "7c7f2fa74af1720eb3cbaaf17c0988d2e95a684d",
+        "path": "apps/storefront/src/images.ts",
+        "sha256": "bbb72c2ef95fa9c00a968551e66e27f274e579c8811e72ecc0b0449ea28ff527"
+      },
+      {
+        "bytes": 2672,
+        "gitBlob": "92ab5df46cc52ac4f3c30005b5a894b8d3f967e9",
+        "path": "apps/storefront/src/color-gallery-layouts.json",
+        "sha256": "a04ce992c5b17c1703480acbcb753797f290a318a2f576bda044adce3d3f17b8"
+      },
+      {
+        "bytes": 4230,
+        "gitBlob": "596b957f5aa8359efb000af8812b579001ef9cdd",
+        "path": "apps/storefront/src/personalization.ts",
+        "sha256": "ddc5b14e85c26c0a0a85c140698f106d20db45feee366c6ccba691334bc93758"
+      },
+      {
+        "bytes": 800,
+        "gitBlob": "06f4da0bf1e384e9fbb804dedbc288163fc9208b",
+        "path": "apps/storefront/src/shipping.ts",
+        "sha256": "34f8469704bf2a4589073084407457d09eb6f9bdbe9cb4cc32c4c944a4f112c8"
+      },
+      {
+        "bytes": 1066,
+        "gitBlob": "e415ac579f50dfe6fec6a69f2e8c9118a58b4ee1",
+        "path": "apps/storefront/src/ProductPhoto.tsx",
+        "sha256": "5f39422337a129d66ef964c8f5de5971f7265d4414eddf911066cb2377f89010"
+      },
+      {
+        "bytes": 1964,
+        "gitBlob": "0ebcb521db211801ef14a9442696fa4ecb524a94",
+        "path": "apps/storefront/src/ProductGallery.tsx",
+        "sha256": "6401fa84349509b43c7f02af91e6e18b9e8dd9d94b35f97670a2122658527766"
+      },
+      {
+        "bytes": 1947,
+        "gitBlob": "4c8f306898d2b2ff776417dfac619c7a786e7b96",
+        "path": "apps/storefront/src/ProductCard.tsx",
+        "sha256": "64f5efe59a6b94bd67c6c1ca10edad9c23c9ef8e8c18ca9111f285acf4f717b2"
+      },
+      {
+        "bytes": 6996,
+        "gitBlob": "aaf72515ce673133fd9538988982d282e15d3bcc",
+        "path": "packages/contracts/src/index.ts",
+        "sha256": "4658681da785a9522878dd699ed0d560649ffb4d6191e31f76c546f146e62218"
+      },
+      {
+        "bytes": 346,
+        "gitBlob": "3c9f8773766f98d3e011bcf61945ab0159e96c03",
+        "path": "packages/contracts/src/local.ts",
+        "sha256": "4ff59fa231b7f2532772836cde217ea4b6db1d6180a213f842950c13b660cd5e"
+      },
+      {
+        "bytes": 326,
+        "gitBlob": "09d19b0978ec51855206c7c8eeb088e624d4c849",
+        "path": "packages/contracts/package.json",
+        "sha256": "92eec1b3944d5eead61026bb96203779165d8b6068cd5771bb91e22f001957af"
+      },
+      {
+        "bytes": 10102,
+        "gitBlob": "8a1a20ee403a62572e8f6957fdf0c9d9067f36ec",
+        "path": "apps/api/fixtures/catalog.json",
+        "sha256": "8a92b613d55b74c6758fe1a18a5d6cd5c58540b095002ea6770dd22c57cb3432"
+      },
+      {
+        "bytes": 6572,
+        "gitBlob": "0765fc2fe727b645eedf763069c9352a5448b75d",
+        "path": "apps/storefront/fixtures/shopper-personas.json",
+        "sha256": "29b2865c844eea13d55b7d659ca4e2e37c0f46e54ce40dbdfe9a409d4dfb5651"
+      }
+    ]
+  },
+  "limitations": [
+    "All16 catalog identities and all16 public functions TRAIN-seen; request paraphrase adaptation only.",
+    "Hand-authored synthetic public preference cases; independent reviewer supplied evaluation wording before features, not sealed human tasks.",
+    "Product labels encode public function only; no image attractiveness, latent persona, conversion or hidden preference labels.",
+    "Stock/size unknown; item price does not establish delivery price; unsupported hard requirements abstain.",
+    "No image decision, copy generation, learned grouping, complete-page or UI evidence.",
+    "Price and product wording are class-correlated; no nuisance decorrelation claim.",
+    "Closed16-function classifier; arbitrary unmatched intent has no validated abstention threshold.",
+    "CPU review: extraction precedes fit; evaluation uses cached query vectors. Timings are separate components, not a contiguous fresh-request endpoint."
+  ],
+  "nativeExecuted": false,
+  "trainingExecuted": false
+}

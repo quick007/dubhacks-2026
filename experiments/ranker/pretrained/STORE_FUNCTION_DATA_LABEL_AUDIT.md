@@ -1,0 +1,32 @@
+# Actual-store function adaptation: independent data and label audit
+
+The frozen store supports a useful **16-product known-catalog adaptation experiment**. The seven old backpack attributes are unsuitable for this task: only the organizer intersects them, so they cannot express the other 15 product functions. New full public-text features and fresh public supervision can address this limited task without changing the backbone or inventing store attributes.
+
+The independently authored evaluation file is `store_function_eval_v1.json`, SHA-256 `55eb12fc85b4d87289bdea71dad1b4c8b5cb55f31d762c06c39a47131868e377`. It contains 16 cases, one target per actual product, arranged into eight pairs. Every request has the same task string, one differing observed-use preference, no budget, and no hard requirements. Each pair therefore changes only the public preference. Both targets must be correct; a selection flip alone is insufficient.
+
+| Pair | Public functions distinguished | Authoritative support |
+|---|---|---|
+| 1 | Drinking cup / carrying water | Trail mug name; steel bottle name/category and water search term |
+| 2 | Everyday backpack / weekend travel bag | Everyday daypack name; weekender name, travel-bag category and weekend term |
+| 3 | Write a note / organize loose cables | Pocket field notes name; zip pouch name, organizer category, cables term |
+| 4 | Hooded rain layer / cotton crew-neck top | Waterproof hooded shell category; cotton crewneck sweatshirt category |
+| 5 | Carry groceries / carry a packed meal | Canvas carryall category and groceries term; lunch-box name and meal term |
+| 6 | Sofa throw / towel after swimming | Cotton throw blanket category; cotton towel category and swimming term |
+| 7 | Cordless table illumination / over-ear listening | Cordless table-lamp category; over-ear headphones category and music/listen terms |
+| 8 | Canvas low-top footwear / round acetate eyewear | Canvas low-top sneakers category; round acetate sunglasses category |
+
+Each label retains the exact source field values and a narrow rationale in external `publicSupport`. A mug-to-cup or notes-to-writing judgment uses ordinary semantic equivalence; it is not a pixel-derived attribute or a click/conversion observation. These labels are manually authored public-function supervision, not production user preference ground truth. Target index, case ID, split, rationale, source values and audit metadata must be excluded from predictive query text. Public product names/category/search terms are legitimate product evidence. No scenario ID, persona biography, image route, asset filename, gallery crop, ranking outcome or hidden preference is needed.
+
+The inspected authoritative source files are `apps/storefront/src/config.ts`, `catalog-expansion.ts`, `personalization.ts`, and `shipping.ts`, together with the authenticated `store_catalog_v1/model_inputs.json`. The proposal's product evidence is the primary public name/category/itemPrice/searchTerms, rather than the separate declared image descriptions. The first four imported products have empty `searchTerms`; names/categories still support their basic functions. The frontend's keyword boosts are a separate demo policy and cannot be called learned labels or independent preference truth.
+
+Unsupported claims are deliberately excluded: heat/cold retention, leakproofing, UV protection, noise cancellation, battery runtime, carrying capacity, comfort/fit, sizes, stock and per-item delivery cost. The jacket's public category explicitly supports “waterproof hooded shell,” but the old API's size and inventory fixtures do not become facts about this store. Base requests with no stock requirement may rank candidates without asserting availability; a hard stock or size requirement cannot be proven and must fail closed. A hard color constraint needs actual color-variant evidence and later exact action binding, not a product-level invented color.
+
+Budget rules must state whether they bound item price or a cart total. `shipping.ts` defines $5 otherwise and free strictly above $50 when shipping is displayed; a hidden quote is omitted and does not establish free delivery. The evaluation's `itemBudget` is null. Separate CPU guard probes should cover inclusive item-budget boundaries, impossible budgets, unsupported stock/sizes, exact colors, malformed numeric/type inputs and actual catalog membership. Passing those probes demonstrates deterministic guard behavior, not learned constraint extraction.
+
+The preparation agent's proposed training uses two task phrases for each of all 16 products, with separate 4096→16 role heads and a fixed training schedule. Every class/product is intentionally observed in training; the catalog head has only one product example per class. This may be effective for the fixed store, but it does not test unseen products or causal disentanglement of category from name, price or other fixed metadata. Price varies across product classes and can act as an identity cue. Catalog IDs must stay external, yet using the real product names is appropriate for this adaptation task.
+
+Evaluation holds out these preference strings only. It does not hold out product classes, functions or catalog facts. Phrases inevitably share ordinary category words with product evidence; “paraphrase test” must not become “unseen semantic domain” or “sealed product generalization.” The exact evaluation file was finished before native adaptation feature extraction or training; future reuse after evaluation is an inspected replay. Fixed fit steps must not be selected from evaluation performance, and failed cases must not be relabeled or dropped.
+
+The appropriate initial claim is: learned scoring of all 16 actual catalog products responds to these explicit observed-use preferences, under separately tested deterministic constraints. Preserve all 16 scores and the full product ordering. Any top24 request has at least an eight-product shortfall in this store. New image selection, stock verification, rich user history, negative preference understanding, unsupported-function abstention, fresh product copy and complete-page timing remain separate evidence requirements. No GPU, model call, fit, UI/API edit or pinned short-copy source change was performed in this audit lane.
+
+The adaptation module and its final frozen data/source packet will receive a separate implementation-boundary review before any native launch; this file audits label provenance and scope, not an unexecuted implementation.

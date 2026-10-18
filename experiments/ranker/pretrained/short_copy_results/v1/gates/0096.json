@@ -1,0 +1,312 @@
+{
+  "status": "exact-gate-passed",
+  "mechanism": "native value_and_grad auxiliary outputs; full suffix features",
+  "sourceSha256": "1abf395953c35abd961d0c0330a61f5161f41f967ecc154326c696f3728ae8bb",
+  "sourceBasis": {
+    "auxiliaryContract": "mlx/core/__init__.pyi:4695-4735; scalar first, arbitrary auxiliary outputs",
+    "nnWrapper": "mlx/nn/utils.py:27-35; preserves mx.value_and_grad value tree",
+    "gradientModeBoundary": "https://github.com/ml-explore/mlx/blob/v0.32.4/mlx/fast.cpp#L871-L885",
+    "auxiliaryStopGradient": "https://github.com/ml-explore/mlx/blob/v0.32.4/mlx/transforms.cpp#L694-L706",
+    "interpretation": "Source motivates this new probe; it does not establish the cause of prior mismatches."
+  },
+  "runtime": {
+    "mlx": "0.32.4",
+    "mlx-lm": "0.32.2",
+    "numpy": "2.5.4"
+  },
+  "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "rowId": "copy-5",
+  "caseId": "short-copy-5b99609ca171667e10",
+  "nativeUpdates": 0,
+  "nonzeroB": true,
+  "trainingPermission": "probe only; no full fit",
+  "earlierInferenceFeatureFailures": "retained strict failures; not superseded by this probe",
+  "contract": {
+    "predictionStart": 556,
+    "supervisedTokenCount": 9,
+    "promptTokens": 557,
+    "teacherInputTokens": 565,
+    "fullTokens": 566,
+    "stopTokenId": 248046,
+    "stopToken": "<|im_end|>",
+    "eosReceipt": {
+      "eosTokenIds": [
+        248046
+      ],
+      "eosTokenId": [
+        248046
+      ],
+      "acceptedEosTokenIds": [
+        248046
+      ],
+      "stopDeclaredBy": [
+        "eos_token_ids",
+        "eos_token_id"
+      ]
+    },
+    "promptSha256": "962db9a0b533c86ce047012af8c73e1fa96320bca3e8e83f299935e43568cf0e",
+    "modelInputSha256": "86876f86d6460b34a25761cfe2030b48778e766dafc466535e598443dc058955",
+    "predictionStartInBranch": 202,
+    "sourceTokenSha256": "75dd47ae26e061bccb946d3bde68d50262bcbd6ae0ced262282d72628f67929c",
+    "sourceTokens": 354
+  },
+  "sourceStateHashBefore": "f74cbbefca6c7cd7f7fd8e1a367e302163aee20987ef74696ac854685076c710",
+  "sourceStateHashScope": "native cache class and complete .state tree; metadata compatibility proof remains separately required",
+  "adapterBefore": {
+    "lora_a": {
+      "shape": [
+        12288,
+        4
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "49569b6d06a914670610510f7f0934daff3de40785c506e0b037e07cac887217"
+    },
+    "lora_b": {
+      "shape": [
+        4,
+        4096
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "e116d3d12122a7218d9da7c082a2e1ef454f73bcdd5ebc56f6f778d34b91b79f"
+    }
+  },
+  "arms": {
+    "direct": {
+      "loss": 1.8722907304763794,
+      "lossTensor": {
+        "shape": [],
+        "dtype": "mlx.core.float32",
+        "sha256": "47a7704ddc1a7058cfc2a8315a3be68c0d8c67f9ff33f8d6f6d495ea902fba7f"
+      },
+      "gradientTensors": {
+        "lora_a": {
+          "shape": [
+            12288,
+            4
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "0c617e607fe3eb35f4e0a2757800a059ea54888fcd0c3a932ec8454a0ba4757b"
+        },
+        "lora_b": {
+          "shape": [
+            4,
+            4096
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "16eb2d85f1476aa5e01f7fe578db291fd5666c63567dfd543b67e0d528d4296d"
+        }
+      }
+    },
+    "auxiliaryNative": {
+      "loss": 1.8722907304763794,
+      "lossTensor": {
+        "shape": [],
+        "dtype": "mlx.core.float32",
+        "sha256": "47a7704ddc1a7058cfc2a8315a3be68c0d8c67f9ff33f8d6f6d495ea902fba7f"
+      },
+      "gradientTensors": {
+        "lora_a": {
+          "shape": [
+            12288,
+            4
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "0c617e607fe3eb35f4e0a2757800a059ea54888fcd0c3a932ec8454a0ba4757b"
+        },
+        "lora_b": {
+          "shape": [
+            4,
+            4096
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "16eb2d85f1476aa5e01f7fe578db291fd5666c63567dfd543b67e0d528d4296d"
+        }
+      }
+    },
+    "frozenFeatures": {
+      "loss": 1.8722907304763794,
+      "lossTensor": {
+        "shape": [],
+        "dtype": "mlx.core.float32",
+        "sha256": "47a7704ddc1a7058cfc2a8315a3be68c0d8c67f9ff33f8d6f6d495ea902fba7f"
+      },
+      "gradientTensors": {
+        "lora_a": {
+          "shape": [
+            12288,
+            4
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "0c617e607fe3eb35f4e0a2757800a059ea54888fcd0c3a932ec8454a0ba4757b"
+        },
+        "lora_b": {
+          "shape": [
+            4,
+            4096
+          ],
+          "dtype": "mlx.core.float32",
+          "sha256": "16eb2d85f1476aa5e01f7fe578db291fd5666c63567dfd543b67e0d528d4296d"
+        }
+      }
+    }
+  },
+  "featureContract": {
+    "shapes": {
+      "x": [
+        1,
+        211,
+        12288
+      ],
+      "h": [
+        1,
+        211,
+        4096
+      ],
+      "y": [
+        1,
+        211,
+        4096
+      ]
+    },
+    "dtypes": {
+      "x": "mlx.core.bfloat16",
+      "h": "mlx.core.bfloat16",
+      "y": "mlx.core.bfloat16"
+    },
+    "suffixTokens": 211,
+    "targetTokens": 9,
+    "predictionStartInBranch": 202
+  },
+  "featureTensors": {
+    "x": {
+      "shape": [
+        1,
+        211,
+        12288
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "sha256": "a98aa87c3bd14d04d667d9d774389fcb88a5717819e1789f5a89b04d22181557"
+    },
+    "h": {
+      "shape": [
+        1,
+        211,
+        4096
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "sha256": "85973f5c9c1093ac92923df5c0388a837b4bae0046fab7b7aa8afbcdc178c171"
+    },
+    "y": {
+      "shape": [
+        1,
+        211,
+        4096
+      ],
+      "dtype": "mlx.core.bfloat16",
+      "sha256": "9ca50931e681db557147d8aabece76b1d0b8ce7fb72075686280dc4fc6ff0c7b"
+    }
+  },
+  "comparisons": {
+    "nativeVsAuxiliaryNative": {
+      "exact": true,
+      "loss": {
+        "shapeExact": true,
+        "dtypeExact": true,
+        "arrayExact": true,
+        "maxAbsDifference": 0.0
+      },
+      "gradients": {
+        "lora_a": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        },
+        "lora_b": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        }
+      }
+    },
+    "auxiliaryNativeVsFrozenFeatures": {
+      "exact": true,
+      "loss": {
+        "shapeExact": true,
+        "dtypeExact": true,
+        "arrayExact": true,
+        "maxAbsDifference": 0.0
+      },
+      "gradients": {
+        "lora_a": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        },
+        "lora_b": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        }
+      }
+    },
+    "nativeVsFrozenFeatures": {
+      "exact": true,
+      "loss": {
+        "shapeExact": true,
+        "dtypeExact": true,
+        "arrayExact": true,
+        "maxAbsDifference": 0.0
+      },
+      "gradients": {
+        "lora_a": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        },
+        "lora_b": {
+          "shapeExact": true,
+          "dtypeExact": true,
+          "arrayExact": true,
+          "maxAbsDifference": 0.0
+        }
+      }
+    }
+  },
+  "tapCalls": {
+    "x": 1,
+    "h": 1,
+    "y": 1
+  },
+  "sourceStateHashAfter": "f74cbbefca6c7cd7f7fd8e1a367e302163aee20987ef74696ac854685076c710",
+  "adapterAfter": {
+    "lora_a": {
+      "shape": [
+        12288,
+        4
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "49569b6d06a914670610510f7f0934daff3de40785c506e0b037e07cac887217"
+    },
+    "lora_b": {
+      "shape": [
+        4,
+        4096
+      ],
+      "dtype": "mlx.core.float32",
+      "sha256": "e116d3d12122a7218d9da7c082a2e1ef454f73bcdd5ebc56f6f778d34b91b79f"
+    }
+  },
+  "sourceStatePreserved": true,
+  "adapterPreserved": true,
+  "memory": {
+    "mlxActiveBytes": 5167278602,
+    "mlxPeakBytes": 5843631262,
+    "mlxCacheBytes": 131745794,
+    "processBudgetBytes": 7516192768
+  }
+}

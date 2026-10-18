@@ -1,0 +1,574 @@
+{
+  "status": "passed",
+  "scope": "independent CPU receipt/checkpoint/strict-reassembly audit; no native model execution",
+  "reportSha256": "0fdcfae187933de20bb756c1b271c8951f684dc05d063a451aaef502d8c1ed74",
+  "checkpointSha256": "85ce8215add1d4ce561441d6972c8e2958dbb73966bd89f53595ef65b7fddb57",
+  "checks": 9488,
+  "issues": [],
+  "nativeGateRows": 240,
+  "actualOptimizerUpdates": 240,
+  "fixedQualityArms": 24,
+  "actualRawFieldRows": 480,
+  "nativeFinishReasons": {
+    "stop": 474,
+    "length": 6
+  },
+  "supersedesAudit": "SHORT_COPY_FIT_V1_INDEPENDENT_AUDIT.json; V1 audit assumed every sampled row ended at EOS and wrongly classified six correctly reported cap truncations as integrity issues. V2 checks honest stop/length receipts; strict quality still rejects every truncated field. No native evidence or validators changed.",
+  "sampledTokensIncludingEOS": 4577,
+  "actualArchivePlusMetadataBytes": 1844548247,
+  "fieldQuality": {
+    "dev/prior-STB/width-3": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 16,
+      "acceptedHeadings": 2,
+      "acceptedVisibleBadges": 9,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 8
+    },
+    "dev/prior-STB/width-6": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 15,
+      "acceptedHeadings": 1,
+      "acceptedVisibleBadges": 9,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 8
+    },
+    "dev/new-C/width-3": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 12,
+      "acceptedHeadings": 2,
+      "acceptedVisibleBadges": 12,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 5
+    },
+    "dev/new-C/width-6": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 12,
+      "acceptedHeadings": 2,
+      "acceptedVisibleBadges": 12,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 5
+    },
+    "test/prior-STB/width-3": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 18,
+      "acceptedHeadings": 3,
+      "acceptedVisibleBadges": 12,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 5
+    },
+    "test/prior-STB/width-6": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 18,
+      "acceptedHeadings": 3,
+      "acceptedVisibleBadges": 12,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 6
+    },
+    "test/new-C/width-3": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 15,
+      "acceptedHeadings": 3,
+      "acceptedVisibleBadges": 12,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 8
+    },
+    "test/new-C/width-6": {
+      "attempts": 3,
+      "validFirst3": 0,
+      "validFull6": 0,
+      "acceptedTitles": 13,
+      "acceptedHeadings": 4,
+      "acceptedVisibleBadges": 12,
+      "acceptedExactNONE": 6,
+      "acceptedBodies": 8
+    }
+  },
+  "rejectionCategories": {
+    "dev/prior-STB/width-3": {
+      "outside_factual_or_generic_lexicon": 10,
+      "unsupported-or-missing-heading": 4,
+      "unsupported-missing-nonnovel-or-unresponsive-title": 2,
+      "attribute_not_in_selected_product_tags": 1,
+      "unsupported-or-unresponsive-badge": 3,
+      "unsupported_claim_terms": 1
+    },
+    "dev/prior-STB/width-6": {
+      "unsupported-or-missing-heading": 5,
+      "outside_factual_or_generic_lexicon": 10,
+      "unsupported-missing-nonnovel-or-unresponsive-title": 3,
+      "attribute_not_in_selected_product_tags": 1,
+      "unsupported-or-unresponsive-badge": 3,
+      "unsupported_claim_terms": 1
+    },
+    "dev/new-C/width-3": {
+      "unsupported-or-missing-heading": 4,
+      "attribute_not_in_selected_product_tags": 11,
+      "outside_factual_or_generic_lexicon": 11,
+      "body-independent-observed-support-missing": 8,
+      "unsupported-missing-nonnovel-or-unresponsive-title": 6,
+      "supported_observable_preference_not_demonstrated": 4
+    },
+    "dev/new-C/width-6": {
+      "unsupported-or-missing-heading": 4,
+      "attribute_not_in_selected_product_tags": 11,
+      "outside_factual_or_generic_lexicon": 11,
+      "body-independent-observed-support-missing": 8,
+      "unsupported-missing-nonnovel-or-unresponsive-title": 6,
+      "supported_observable_preference_not_demonstrated": 4
+    },
+    "test/prior-STB/width-3": {
+      "attribute_not_in_selected_product_tags": 1,
+      "outside_factual_or_generic_lexicon": 13,
+      "unsupported-or-missing-heading": 3
+    },
+    "test/prior-STB/width-6": {
+      "attribute_not_in_selected_product_tags": 1,
+      "outside_factual_or_generic_lexicon": 12,
+      "unsupported-or-missing-heading": 3
+    },
+    "test/new-C/width-3": {
+      "body-independent-observed-support-missing": 9,
+      "unfinished": 3,
+      "unsupported-or-missing-heading": 3,
+      "unsupported-missing-nonnovel-or-unresponsive-title": 3,
+      "generation_truncated_or_missing_stop": 3,
+      "title_or_copy_length": 3,
+      "supported_observable_preference_not_demonstrated": 1,
+      "native-sampled-cap-or-EOS-receipt": 3,
+      "attribute_not_in_selected_product_tags": 3,
+      "outside_factual_or_generic_lexicon": 3
+    },
+    "test/new-C/width-6": {
+      "body-independent-observed-support-missing": 9,
+      "unfinished": 3,
+      "unsupported-or-missing-heading": 2,
+      "unsupported-missing-nonnovel-or-unresponsive-title": 5,
+      "generation_truncated_or_missing_stop": 3,
+      "title_or_copy_length": 3,
+      "supported_observable_preference_not_demonstrated": 2,
+      "native-sampled-cap-or-EOS-receipt": 3,
+      "attribute_not_in_selected_product_tags": 3,
+      "outside_factual_or_generic_lexicon": 3
+    }
+  },
+  "summary": {
+    "dev/prior-STB/width-3": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        7139.417874976061,
+        7435.453291982412,
+        6895.25441697333
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        11899.397375062108,
+        11812.737541971728,
+        11826.091832946986
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    },
+    "dev/prior-STB/width-6": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        9420.886332984082,
+        8112.516000051983,
+        9522.698209038936
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        10624.345124932006,
+        10388.491249992512,
+        11377.275542006828
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    },
+    "dev/new-C/width-3": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        7015.085374936461,
+        6605.08525010664,
+        7190.358916996047
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        11617.868916946463,
+        11217.598207993433,
+        11728.158583049662
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    },
+    "dev/new-C/width-6": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        7132.8239580616355,
+        7786.629665992223,
+        8292.73300000932
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        10055.850166012533,
+        10203.366665984504,
+        10409.506500000134
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    },
+    "test/prior-STB/width-3": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        7483.5779999848455,
+        7431.660792091861,
+        7343.5624580597505
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        12048.33612497896,
+        12561.850834055804,
+        13220.59000004083
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    },
+    "test/prior-STB/width-6": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        10159.357374999672,
+        9896.873124991544,
+        8856.234333012253
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        11291.205540997908,
+        12309.627708047628,
+        11579.92829196155
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    },
+    "test/new-C/width-3": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        6928.23054199107,
+        8085.50600009039,
+        6912.47345902957
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        11098.644874989986,
+        13425.454542040825,
+        12167.20270900987
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    },
+    "test/new-C/width-6": {
+      "fixedCases": 3,
+      "completed": 3,
+      "validThreeCardResults": 0,
+      "validThreeCardRateFixedDenominator": 0.0,
+      "validSixCardResults": 0,
+      "validSixCardRateFixedDenominator": 0.0,
+      "failed": 0,
+      "unattempted": 0,
+      "inProgress": 0,
+      "attemptFirstSectionReadyMs": [
+        7005.408041062765,
+        10474.260041955858,
+        8322.822542046197
+      ],
+      "validFirstSectionReadyMs": [],
+      "attemptFullCompletionMs": [
+        9911.80650005117,
+        12104.84120901674,
+        11216.991708031856
+      ],
+      "validFullCompletionMs": [],
+      "lockedDecisions": true,
+      "rankingQualityClaim": false,
+      "browserPaintClaim": false
+    }
+  },
+  "examples": [
+    {
+      "caseId": "short-copy-69788a1e31832d3c1f",
+      "split": "dev",
+      "width": 3,
+      "validFirst3": false,
+      "validFull6": false,
+      "firstReadyMs": 7015.085374936461,
+      "fullReadyMs": 11617.868916946463,
+      "rawFields": {
+        "S1": "Every daypack choice for everyday travel.",
+        "T1": "Walinor 13L Daypack for adjustable travel",
+        "B1": "adjustable choice",
+        "C1": "A compact daypack for everyday travel.",
+        "T2": "Qorilan 20L Daypack for adjustable travel",
+        "B2": "adjustable choice",
+        "C2": "A compact daypack for everyday travel.",
+        "T3": "Zeliris 27L Daypack for adjustable travel",
+        "B3": "adjustable choice",
+        "C3": "A compact daypack for everyday travel.",
+        "S2": "foldable travel choices",
+        "T4": "Zelinor 34L Daypack for adjustable travel",
+        "B4": "foldable choice",
+        "C4": "A compact daypack for everyday travel.",
+        "T5": "Tavuris 14L Daypack for everyday travel",
+        "B5": "NONE",
+        "C5": "A compact daypack for everyday travel.",
+        "T6": "Walimar 21L Daypack for everyday travel",
+        "B6": "NONE",
+        "C6": "A compressible daypack for everyday travel."
+      },
+      "firstRejections": [
+        "core:S1:unsupported-or-missing-heading",
+        "C1:attribute_not_in_selected_product_tags:compact",
+        "C1:outside_factual_or_generic_lexicon:compact",
+        "C2:attribute_not_in_selected_product_tags:compact",
+        "C2:outside_factual_or_generic_lexicon:compact",
+        "C1:body-independent-observed-support-missing",
+        "C2:body-independent-observed-support-missing",
+        "C3:body-independent-observed-support-missing"
+      ],
+      "secondRejections": [
+        "core:S1:unsupported-or-missing-heading",
+        "core:T1:unsupported-missing-nonnovel-or-unresponsive-title",
+        "C1:attribute_not_in_selected_product_tags:compact",
+        "C1:outside_factual_or_generic_lexicon:compact",
+        "C1:supported_observable_preference_not_demonstrated",
+        "C2:attribute_not_in_selected_product_tags:compact",
+        "C2:outside_factual_or_generic_lexicon:compact",
+        "C1:body-independent-observed-support-missing"
+      ]
+    },
+    {
+      "caseId": "short-copy-69788a1e31832d3c1f",
+      "split": "dev",
+      "width": 6,
+      "validFirst3": false,
+      "validFull6": false,
+      "firstReadyMs": 7132.8239580616355,
+      "fullReadyMs": 10055.850166012533,
+      "rawFields": {
+        "S1": "Every daypack choice for everyday travel.",
+        "T1": "Walinor 13L Daypack for adjustable travel",
+        "B1": "adjustable choice",
+        "C1": "A compact daypack for everyday travel.",
+        "T2": "Qorilan 20L Daypack for adjustable travel",
+        "B2": "adjustable choice",
+        "C2": "A compact daypack for everyday travel.",
+        "T3": "Zeliris 27L Daypack for adjustable travel",
+        "B3": "adjustable choice",
+        "C3": "A compact daypack for everyday travel.",
+        "S2": "foldable travel choices",
+        "T4": "Zelinor 34L Daypack for adjustable travel",
+        "B4": "foldable choice",
+        "C4": "A compact daypack for everyday travel.",
+        "T5": "Tavuris 14L Daypack for everyday travel",
+        "B5": "NONE",
+        "C5": "A compact daypack for everyday travel.",
+        "T6": "Walimar 21L Daypack for everyday travel",
+        "B6": "NONE",
+        "C6": "A compressible daypack for everyday travel."
+      },
+      "firstRejections": [
+        "core:S1:unsupported-or-missing-heading",
+        "C1:attribute_not_in_selected_product_tags:compact",
+        "C1:outside_factual_or_generic_lexicon:compact",
+        "C2:attribute_not_in_selected_product_tags:compact",
+        "C2:outside_factual_or_generic_lexicon:compact",
+        "C1:body-independent-observed-support-missing",
+        "C2:body-independent-observed-support-missing",
+        "C3:body-independent-observed-support-missing"
+      ],
+      "secondRejections": [
+        "core:S1:unsupported-or-missing-heading",
+        "core:T1:unsupported-missing-nonnovel-or-unresponsive-title",
+        "C1:attribute_not_in_selected_product_tags:compact",
+        "C1:outside_factual_or_generic_lexicon:compact",
+        "C1:supported_observable_preference_not_demonstrated",
+        "C2:attribute_not_in_selected_product_tags:compact",
+        "C2:outside_factual_or_generic_lexicon:compact",
+        "C1:body-independent-observed-support-missing"
+      ]
+    },
+    {
+      "caseId": "short-copy-18bebe450c31e1f0de",
+      "split": "test",
+      "width": 3,
+      "validFirst3": false,
+      "validFull6": false,
+      "firstReadyMs": 6928.23054199107,
+      "fullReadyMs": 11098.644874989986,
+      "rawFields": {
+        "S1": "Everyday travel choices",
+        "T1": "Zelilan 31L Daypack for roomy travel",
+        "B1": "roomy choice",
+        "C1": "A compact daypack for everyday travel.",
+        "T2": "Nerimar 38L Daypack for roomy travel",
+        "B2": "roomy choice",
+        "C2": "A compressible daypack for everyday travel.",
+        "T3": "Tavumar 18L Daypack for roomy travel",
+        "B3": "roomy choice",
+        "C3": "A structured daypack for everyday travel.",
+        "S2": "Everyday travel choices",
+        "T4": "Waliris 25L Daypack for padded travel",
+        "B4": "padded choice",
+        "C4": "A compact daypack for everyday travel.",
+        "T5": "Walilan 32L Daypack for everyday travel",
+        "B5": "NONE",
+        "C5": "A expandable daypack for everyday travel.",
+        "T6": "Vesuven 39L Daypack for everyday travel",
+        "B6": "NONE",
+        "C6": "A packable daypack for everyday travel."
+      },
+      "firstRejections": [
+        "C1:body-independent-observed-support-missing",
+        "C2:body-independent-observed-support-missing",
+        "C3:body-independent-observed-support-missing"
+      ],
+      "secondRejections": [
+        "C1:body-independent-observed-support-missing"
+      ]
+    },
+    {
+      "caseId": "short-copy-18bebe450c31e1f0de",
+      "split": "test",
+      "width": 6,
+      "validFirst3": false,
+      "validFull6": false,
+      "firstReadyMs": 7005.408041062765,
+      "fullReadyMs": 9911.80650005117,
+      "rawFields": {
+        "S1": "Everyday travel choices",
+        "T1": "Zelilan 31L Daypack for roomy travel",
+        "B1": "roomy choice",
+        "C1": "A compact daypack for everyday travel.",
+        "T2": "Nerimar 38L Daypack for roomy travel",
+        "B2": "roomy choice",
+        "C2": "A compressible daypack for everyday travel.",
+        "T3": "Tavumar 18L Daypack for roomy travel",
+        "B3": "roomy choice",
+        "C3": "A structured daypack for everyday travel.",
+        "S2": "Everyday travel choices",
+        "T4": "Waliris 25L Daypack for padded travel",
+        "B4": "padded choice",
+        "C4": "A compact daypack for everyday travel.",
+        "T5": "Walilan 32L Daypack for everyday travel",
+        "B5": "NONE",
+        "C5": "A expandable daypack for everyday travel.",
+        "T6": "Vesuven 39L Daypack for everyday travel",
+        "B6": "NONE",
+        "C6": "A packable daypack for everyday travel."
+      },
+      "firstRejections": [
+        "C1:body-independent-observed-support-missing",
+        "C2:body-independent-observed-support-missing",
+        "C3:body-independent-observed-support-missing"
+      ],
+      "secondRejections": [
+        "C1:body-independent-observed-support-missing"
+      ]
+    }
+  ],
+  "totalRunWallMs": 972864.0554579906,
+  "memory": {
+    "mlxActiveBytes": 5039090198,
+    "mlxPeakBytes": 6626986154,
+    "mlxCacheBytes": 70306432,
+    "processBudgetBytes": 7516192768
+  },
+  "limitations": [
+    "Runtime frozen927-tensor equality is authenticated producer evidence; this CPU audit does not execute a second native tensor hash job.",
+    "Existing dev/test catalogs were inspected; quality is copy-only under locked selections, not sealed generalization or integrated ranking.",
+    "Readiness measures actual serialized model payload, not browser paint.",
+    "Native work wall starts at run() entry; Python/module startup is excluded."
+  ]
+}

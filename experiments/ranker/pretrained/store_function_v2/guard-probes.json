@@ -1,0 +1,128 @@
+[
+  {
+    "caseId": "inclusive-24-mug",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": 24,
+      "hardRequirements": [
+        {
+          "attribute": "category",
+          "value": "For the slow mornings"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": [
+      0
+    ]
+  },
+  {
+    "caseId": "below-mug-price",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": 23,
+      "hardRequirements": [
+        {
+          "attribute": "category",
+          "value": "For the slow mornings"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": []
+  },
+  {
+    "caseId": "rain-category",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": 128,
+      "hardRequirements": [
+        {
+          "attribute": "category",
+          "value": "Waterproof hooded shell"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": [
+      3
+    ]
+  },
+  {
+    "caseId": "rain-budget-shortfall",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": 127,
+      "hardRequirements": [
+        {
+          "attribute": "category",
+          "value": "Waterproof hooded shell"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": []
+  },
+  {
+    "caseId": "known-cobalt",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": null,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Cobalt"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": [
+      0
+    ]
+  },
+  {
+    "caseId": "unknown-color",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": null,
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Unlisted neon"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": []
+  },
+  {
+    "caseId": "stock-unknown",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": null,
+      "hardRequirements": [
+        {
+          "attribute": "stock",
+          "value": "in-stock"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": []
+  },
+  {
+    "caseId": "size-unknown",
+    "request": {
+      "query": "Apply only my explicit hard constraints.",
+      "preferences": [],
+      "itemBudget": null,
+      "hardRequirements": [
+        {
+          "attribute": "size",
+          "value": "M"
+        }
+      ]
+    },
+    "expectedEligibleProductIndices": []
+  }
+]
