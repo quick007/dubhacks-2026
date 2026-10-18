@@ -196,3 +196,29 @@ is not a replacement for observed-profile/history reasoning. Unknown/negative/
 contradictorypreferences and hiddenpersona inference were not trained/evaluated.
 Hard public constraints remain outside learned scores. No larger model was
 substituted to disguise these data/coverage limitations.
+
+
+## Focused ranking wider-pool development replay, completed
+
+Execution3ca08b2 reuses the exact frozen focused-v2 learned checkpoint
+(c1adca343738d5d00f606587bdb03c5bb15f08c8e97751d3858e4fd621a50bd3).
+No fitting occurred. Sixty real B1 forwards cover36products and24requests.
+Learned choices are24/24 correct and12/12 preference pairs both correct with
+changed selection, versus prior2/24 and random0/24. All144 learned grid
+components obey hard guards. This is the previously inspected synthetic
+fresh_eval_v1 development replay that informed representation/data changes,
+not a new sealed holdout or actual-store/native-copy certification.
+
+The actual fresh-query plus36verified warm catalog reads, learned head, guards
+and both top12/top24 readouts median is124.137ms. Cold catalog build4.232s,
+resident model load2.370s, whole child process13.382s, peak4.649GB. Images,
+generated copy and browser/full-page rendering are excluded. Public positive
+preference/tag preparation, hard guards, tie ordering and grouping remain
+deterministic; trained4096-to-seven atom projections provide learned scores.
+
+FOCUSED_RANK_TRANSFER_RESULTS.md/.json independently audit all60featurevectors,
+checkpoint receipts,360roster views and unchanged raw outputs. The original
+features remain in data/ranker/pretrained/focused-rank-transfer-v1. Raw predictions,
+receipts and all three small checkpoints are preserved byte-for-byte under
+focused_rank_transfer_results/v1 with COPY_RECEIPT.json. The concurrent
+short-copy-fit-v1 experiment is still running; no copy result is implied here.

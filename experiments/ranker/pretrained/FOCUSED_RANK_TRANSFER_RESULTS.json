@@ -1,0 +1,162 @@
+{
+  "auditStatus": "passed",
+  "auditMode": "CPU read-only; no native/model fit",
+  "inputOutputFileCount": 132,
+  "sourceCommit": "3ca08b274e6dedff2772ab9480621fdd1fc5b965",
+  "packetSha256": "02055b7f4d4612398f6bf947eb78cab072298b6b59e4f0da9165235757fe99bd",
+  "artifactHashes": {
+    "report.json": "dcb86e7faf918182f10082c9285b8ad9ed331b6e6a5d0b38c6fbf7f028ca5c44",
+    "PREDICTIONS_FROZEN.json": "dd4b19689ff23dbb0652014be26ccf1fd4b97504fe9e19867306e6138c07dd59",
+    "predictions.json": "fd9c9297fabb086fe504837319e8f68762ddda6d4e24f81411a8649c3c49a58b",
+    "model-verification.json": "e703e9e809b5b724cc19969c826303d0c709b7f3e40bbb774fbc169d551c8f58",
+    "process-wall.json": "a1d8f8f14f890cd26729e78626bdee52d7e29a097ec228ffaef4c8f68e18aeee"
+  },
+  "checks": {
+    "featuresVerified": 60,
+    "serializedFeatureFilesVerified": 120,
+    "checkpointHeadsVerified": 3,
+    "nativeB1Receipts": 60,
+    "publicTokensVerified": 1310,
+    "fixedRequests": 24,
+    "productPreferencePairs": 12,
+    "armRosterViewsRecomputed": 360,
+    "rawProbabilityAndScoreScalarsRecomputed": 35400,
+    "selectedSlotComplianceChecksPerArm": {
+      "learned": 2592,
+      "prior": 2592,
+      "random": 2592,
+      "opposing-query": 2592,
+      "public-tag-oracle": 2592
+    },
+    "outputImmutableBeforeAfter": true,
+    "privateFreezeOrdering": "source protocol and saved freeze receipt verified; audit cannot reconstruct historical file-open events"
+  },
+  "quality": {
+    "learned": {
+      "fixedRequests": 24,
+      "uniqueGoldCorrect": 24,
+      "hardCompliance": {
+        "violations": 0,
+        "checkedGridComponents": 144
+      },
+      "preferencePairs": 12,
+      "pairChoiceChanges": 12,
+      "pairBothCorrect": 12,
+      "meanNdcg": {
+        "12": 0.9957541164953149,
+        "24": 0.9954054636940746
+      }
+    },
+    "prior": {
+      "fixedRequests": 24,
+      "uniqueGoldCorrect": 2,
+      "hardCompliance": {
+        "violations": 0,
+        "checkedGridComponents": 144
+      },
+      "preferencePairs": 12,
+      "pairChoiceChanges": 0,
+      "pairBothCorrect": 0,
+      "meanNdcg": {
+        "12": 0.5791826125366787,
+        "24": 0.687479420211414
+      }
+    },
+    "random": {
+      "fixedRequests": 24,
+      "uniqueGoldCorrect": 0,
+      "hardCompliance": {
+        "violations": 0,
+        "checkedGridComponents": 144
+      },
+      "preferencePairs": 12,
+      "pairChoiceChanges": 0,
+      "pairBothCorrect": 0,
+      "meanNdcg": {
+        "12": 0.35709422816190645,
+        "24": 0.5454766141395061
+      }
+    },
+    "opposing-query": {
+      "fixedRequests": 24,
+      "uniqueGoldCorrect": 0,
+      "hardCompliance": {
+        "violations": 0,
+        "checkedGridComponents": 144
+      },
+      "preferencePairs": 12,
+      "pairChoiceChanges": 12,
+      "pairBothCorrect": 0,
+      "meanNdcg": {
+        "12": 0.3950512000856665,
+        "24": 0.5875420848645888
+      }
+    },
+    "public-tag-oracle": {
+      "fixedRequests": 24,
+      "uniqueGoldCorrect": 24,
+      "hardCompliance": {
+        "violations": 0,
+        "checkedGridComponents": 144
+      },
+      "preferencePairs": 12,
+      "pairChoiceChanges": 12,
+      "pairBothCorrect": 12,
+      "meanNdcg": {
+        "12": 1.0,
+        "24": 1.0
+      }
+    }
+  },
+  "timing": {
+    "medianMs": {
+      "freshQueryNativeMs": 115.92943698633462,
+      "querySaveVerifyMs": 117.02506203437224,
+      "verifiedWarmCatalog36Ms": 7.028750027529895,
+      "headMs": 0.19535399042069912,
+      "guardsTop12Top24Ms": 0.04858296597376466,
+      "queryWarmCatalogHeadGuardsTop12Top24Ms": 124.13710402324796
+    },
+    "requestEndpointRangeMs": [
+      119.71895897295326,
+      125.510000041686
+    ],
+    "timerAccountingResidualRangeMs": [
+      0.0006671762093901634,
+      0.0018749851733446121
+    ],
+    "coldCatalogEncodeSaveVerifyMs": 4231.813583988696,
+    "residentLoadSeconds": 2.369863749947399,
+    "runPhaseWallSeconds": 10.033356082974933,
+    "wholeChildProcessWallSeconds": 13.3819450000301,
+    "weightVerificationSeconds": 2.417906375019811
+  },
+  "memory": {
+    "mlxActiveBytes": 4465912330,
+    "mlxPeakBytes": 4649075650,
+    "mlxCacheBytes": 134375640,
+    "processBudgetBytes": 6442450944
+  },
+  "focusedExactTextOverlapOccurrences": {
+    "catalog": {
+      "train": 9,
+      "validation": 3,
+      "test": 3
+    },
+    "request": {
+      "train": 2,
+      "validation": 10,
+      "test": 6
+    }
+  },
+  "limitations": [
+    "Inspected old fresh_eval_v1 replay, not unseen/sealed test; no fit or new labels.",
+    "Focused positive-atom task only; budget/stock/shipping guards remain deterministic.",
+    "24 requests repeat12 preference sets across image styles; no image action is evaluated.",
+    "Head rows canonicalized by product ID before GEMM; scores rebound to roster for exact rotation invariance.",
+    "Product-only component timing; no copy, grouping, browser or full-page claim.",
+    "No confidence interval or general population claim from this correlated inspected synthetic replay.",
+    "totalRunWallSeconds begins after head verification/copy and FeatureStore setup; wholeChildProcessWallSeconds includes imports, prepare, full shard verification, load, native and evaluation.",
+    "Performance endpoint is product-ranking component with verified disk cache, not complete rendered cards, copy, image choices or full page."
+  ]
+}
