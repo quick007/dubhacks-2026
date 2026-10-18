@@ -17,6 +17,13 @@ export type LocalCopyCard = {
   selectedColor: string;
 };
 export type LocalCopySection = { heading: string | null; cards: LocalCopyCard[] };
+export type LocalCopySource = {
+  kind: "fresh-native" | "fresh-parallel-head" | "generated-earlier" | "mixed-native-cache" | "no-generation";
+  generatedEarlier: boolean;
+  freshPerRequestGeneration: boolean;
+  maxAgeMs?: number;
+  noEligibleProducts?: boolean;
+};
 export type LocalRankEvent = {
   type: "rank";
   requestId: string;
@@ -35,6 +42,7 @@ export type LocalCopyEvent = {
   acceptedFields: number;
   withheldFields: number;
   requiredFields: number;
+  copySource?: LocalCopySource;
 };
 export type LocalErrorEvent = { type: "error"; requestId?: string; message: string };
 export type LocalModelEvent = LocalRankEvent | LocalCopyEvent | LocalErrorEvent;
@@ -92,6 +100,21 @@ function nullableText(value: unknown, limit: number): string | null {
   return value === null ? null : text(value, limit);
 }
 
+function copySource(value: unknown): LocalCopySource {
+  const source = object(value);
+  const flags = { "fresh-native": [false, true], "fresh-parallel-head": [false, true],
+    "generated-earlier": [true, false], "mixed-native-cache": [true, true], "no-generation": [false, false] } as const;
+  if (typeof source.kind !== "string" || !Object.hasOwn(flags, source.kind)) throw new Error("Unknown local model copy source.");
+  const kind = source.kind as LocalCopySource["kind"];
+  const [generatedEarlier, freshPerRequestGeneration] = flags[kind];
+  if (source.generatedEarlier !== generatedEarlier || source.freshPerRequestGeneration !== freshPerRequestGeneration) {
+    throw new Error("Inconsistent local model generation provenance.");
+  }
+  return { kind, generatedEarlier, freshPerRequestGeneration,
+    ...(kind === "no-generation" ? { noEligibleProducts: source.noEligibleProducts === true } : {}),
+    ...(source.maxAgeMs === undefined ? {} : { maxAgeMs: number(source.maxAgeMs) }) };
+}
+
 export function parseLocalModelEvent(value: unknown): LocalModelEvent {
   const event = object(value);
   if (event.type === "error") return { type: "error", ...(event.requestId === undefined ? {} : { requestId: text(event.requestId, 200) }), message: text(event.message) };
@@ -138,7 +161,12 @@ export function parseLocalModelEvent(value: unknown): LocalModelEvent {
   if (requiredFields !== sections.length + seen.size * 3 || acceptedFields + withheldFields !== requiredFields) throw new Error("Local model field totals differ from its payload.");
   const actualAccepted = sections.reduce((n, s) => n + Number(s.heading !== null) + s.cards.reduce((m, c) => m + Number(c.title !== null) + Number(c.badge !== null) + Number(c.bodyCopy !== null), 0), 0);
   if (actualAccepted !== acceptedFields) throw new Error("Local model fresh field count differs from its payload.");
+  if (event.copySource !== undefined && object(event.copySource).kind === "no-generation"
+    && (requiredFields !== 0 || sections.length !== 0 || object(event.copySource).noEligibleProducts !== true)) {
+    throw new Error("No-generation copy must be an empty eligible result.");
+  }
   return { type: event.type, requestId, sections, acceptedFields, withheldFields, requiredFields,
+    ...(event.copySource === undefined ? {} : { copySource: copySource(event.copySource) }),
     timing: { readyMs: number(timing.readyMs), copyMs: number(timing.copyMs) } };
 }
 
@@ -202,9 +230,13 @@ export function localModelStatus(state: LocalModelState): string {
   if (!rank) return "Local model is starting…";
   const timing = `Order ${(rank.timing.rankMs / 1000).toFixed(2)} s`;
   const provenance = "Local model · Learned product order · Existing storefront gallery";
-  if (!state.copy) return `${provenance} · ${timing} · Writing fresh copy…${rank.shortfall ? ` ${rank.selectedProductIds.length} eligible products.` : ""}`;
+  if (!state.copy) return `${provenance} · ${timing} · Preparing model copy…${rank.shortfall ? ` ${rank.selectedProductIds.length} eligible products.` : ""}`;
   const endpoint = state.copy.type === "firstThree" ? "First cards" : "Complete copy";
   const firstTiming = state.copy.type === "complete" && state.firstThreeReadyMs !== null
     ? ` · First cards ${(state.firstThreeReadyMs / 1000).toFixed(2)} s` : "";
-  return `${provenance} · ${timing}${firstTiming} · ${endpoint} ${(state.copy.timing.readyMs / 1000).toFixed(2)} s · ${state.copy.acceptedFields}/${state.copy.requiredFields} fresh fields${state.copy.withheldFields ? ` · ${state.copy.withheldFields} withheld` : ""}${rank.shortfall ? ` · ${rank.selectedProductIds.length} eligible products` : ""}`;
+  const fieldLabel = state.copy.copySource?.kind === "no-generation" ? "fields · No eligible products; no text generated"
+    : state.copy.copySource?.kind === "generated-earlier" ? "fields generated earlier"
+    : state.copy.copySource?.kind === "mixed-native-cache" ? "cached and new model fields"
+    : state.copy.copySource?.kind === "fresh-parallel-head" ? "fresh learned fields · Catalog-trained text" : "fresh fields";
+  return `${provenance} · ${timing}${firstTiming} · ${endpoint} ${(state.copy.timing.readyMs / 1000).toFixed(2)} s · ${state.copy.acceptedFields}/${state.copy.requiredFields} ${fieldLabel}${state.copy.withheldFields ? ` · ${state.copy.withheldFields} withheld` : ""}${rank.shortfall ? ` · ${rank.selectedProductIds.length} eligible products` : ""}`;
 }

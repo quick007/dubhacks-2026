@@ -54,6 +54,7 @@ export function beginLocalModelPerformance(generation: number, isCurrent: () => 
           acceptedFields: event.type === "rank" ? null : event.acceptedFields,
           withheldFields: event.type === "rank" ? null : event.withheldFields,
           requiredFields: event.type === "rank" ? null : event.requiredFields,
+          copySource: event.type === "rank" ? null : event.copySource ?? { kind: "fresh-native", generatedEarlier: false, freshPerRequestGeneration: true },
           fieldCountScope: "server accepted/withheld fields; shopper variant changes and viewport visibility are not measured",
           nativeTiming: event.timing, requestStartScope: startScope,
           readinessScope: "React DOM commit followed by two requestAnimationFrame callbacks; after-paint opportunity only",

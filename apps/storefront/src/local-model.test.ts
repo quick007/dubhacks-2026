@@ -160,3 +160,30 @@ void test("product copy disappears on a shopper variant change; price and cart a
   assert.equal(selected, PRODUCT_VARIANTS.mug[1].id);
   assert.equal(add.props.className, "add-button");
 });
+
+void test("copy provenance distinguishes cached, mixed, and fresh learned text", () => {
+  for (const [kind, generatedEarlier, freshPerRequestGeneration, label] of [
+    ["generated-earlier", true, false, "fields generated earlier"],
+    ["mixed-native-cache", true, true, "cached and new model fields"],
+    ["fresh-parallel-head", false, true, "fresh learned fields"],
+    ["fresh-native", false, true, "fresh fields"],
+  ] as const) {
+    const event = parseLocalModelEvent({ ...copy(), copySource: { kind, generatedEarlier, freshPerRequestGeneration, maxAgeMs: 123 } });
+    assert.equal((event as LocalCopyEvent).copySource?.kind, kind);
+    const state = applyLocalModelEvent(applyLocalModelEvent(beginLocalModelRequest(INITIAL_LOCAL_MODEL_STATE, "q"), rank(), "q"), event, "q");
+    assert.match(localModelStatus(state), new RegExp(label));
+    if (kind === "generated-earlier") assert.doesNotMatch(localModelStatus(state), /fresh/i);
+    assert.throws(() => parseLocalModelEvent({ ...copy(), copySource: { kind, generatedEarlier: !generatedEarlier, freshPerRequestGeneration } }), /provenance/);
+  }
+  assert.throws(() => parseLocalModelEvent({ ...copy(), copySource: { kind: "template" } }), /source/);
+  assert.throws(() => parseLocalModelEvent({ ...copy(), copySource: { kind: "generated-earlier", generatedEarlier: true, freshPerRequestGeneration: false, maxAgeMs: -1 } }));
+  assert.equal(Object.hasOwn(parseLocalModelEvent(copy()), "copySource"), false);
+});
+
+void test("no-generation provenance is reserved for empty hard-constraint results", () => {
+  const source = { kind: "no-generation", generatedEarlier: false, freshPerRequestGeneration: false, noEligibleProducts: true };
+  const empty = { ...copy(), sections: [], acceptedFields: 0, requiredFields: 0, withheldFields: 0, copySource: source };
+  assert.equal((parseLocalModelEvent(empty) as LocalCopyEvent).copySource?.kind, "no-generation");
+  assert.throws(() => parseLocalModelEvent({ ...copy(), copySource: source }), /empty eligible/);
+  assert.throws(() => parseLocalModelEvent({ ...empty, copySource: { ...source, noEligibleProducts: false } }));
+});
