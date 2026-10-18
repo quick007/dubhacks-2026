@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 from .boundary import guard_reasons, visible_history
-from .fusion import supported_preferences, _field_claim_errors, _normalized
+from .fusion import supported_preferences, _field_claim_errors, _normalized, identity_errors
 
 VERSION = 'page-plan.v1'
 
@@ -138,6 +138,8 @@ def validate_page_plan(plan, request, catalog, require_complete=False):
                     raise ValueError('Unknown generation provenance')
                 if value['text'] is not None and (not isinstance(value['text'],str) or len(value['text'])>90 or _field_claim_errors(value['text'],product,catalog)):
                     raise ValueError('Unfactual/oversized generated card field')
+                if name=='title' and value['source']=='generated' and identity_errors(value['text'],product,catalog):
+                    raise ValueError('Generated title lacks selected product identity')
                 if require_complete and value['source']=='pending':raise ValueError('Incomplete generated card field')
         # Heading attributes apply to every card; only common tags are allowed.
         common=set.intersection(*(set(catalog[pid]['tags']) for pid in pids)) if pids else set()

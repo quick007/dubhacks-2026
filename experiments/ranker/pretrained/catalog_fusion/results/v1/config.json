@@ -1,0 +1,74 @@
+{
+  "representation": "catalog-user-fusion-v1",
+  "evidenceSource": "native-frozen-qwen",
+  "execution": {
+    "atUtc": "2026-10-18T00:12:39.374923+00:00",
+    "commit": "e9fb4afc11e489220c747f5f7d03f9d10754a3b6",
+    "relevantSourceStatus": [],
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "executable": "/Users/lukas/Documents/Projects/dubhacks-2026/.tools/pretrained-venv/bin/python",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "torch": "2.14.1",
+      "mlx": "0.32.4",
+      "mlx-lm": "0.32.2",
+      "tokenizers": "0.23.3",
+      "numpy": "2.5.4",
+      "psutil": "7.2.2"
+    },
+    "argv": [
+      "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py",
+      "--out",
+      "data/ranker/pretrained/catalog-user-fusion-v1-attempt-1"
+    ],
+    "nativeGuard": "fixed 6 GiB active AND observed cumulative MLX peak, checked after load and before/after encode"
+  },
+  "fit": {
+    "seed": 728,
+    "rank": 4,
+    "dimension": 4096,
+    "epochs": 80,
+    "learningRate": 0.03,
+    "weightDecay": 0.001,
+    "cpuThreads": 1,
+    "maxSecondsPerArm": 60,
+    "selection": "fixed attempt; no validation/test outcome selection"
+  },
+  "limits": {
+    "memoryGiB": 6,
+    "maxTokens": 512,
+    "pilotSeconds": 120,
+    "trainingExtractionSeconds": 600,
+    "totalExtractionWorkSeconds": 900
+  },
+  "inputHashes": {
+    "catalog.json": "4780ccaafd6be8398b39e95222dfd23ef17f6c51892ae9397982458a0644419d",
+    "public/train.jsonl": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+    "public/validation.jsonl": "2d2f2c82bbc19baeea95b6e7d476afa4265148a2a22e29f4fa6af2edd215c780",
+    "public/test.jsonl": "f4af5b9f19737857741b51876e1f447c680cba3ba6b983697f5c975a4ec1ecfb",
+    "public/diagnostics.jsonl": "b116f59db6589e6f6642fce4812b73749b26e84c23628cd81f5b52edc06c3f30"
+  },
+  "trainHashes": {
+    "public/train.jsonl": "68462a7f446e5e84946fceaf3a662295e8c28585c5164b25608945d9b50d4b1f",
+    "labels/train.jsonl": "63401d6e306e9f5fa3b14588f758979ff5f5d99be6354826e61432603751a726"
+  },
+  "sourceHashes": {
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/__init__.py": "9ddde600627078efed2fdd0c808d9d94b5a43294864c9799457bd7614f552d81",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/evaluate.py": "7fca20ccddafa4780a42df489e7226bc81abc11d55bdc2e8cf65b5403b52c3b5",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/fit_runner.py": "3e5312b85112f45350a5892e4f29b04337c32cce59787a469f7469059da44f55",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runner.py": "79b87e6a55f621be111489a1200bebf025f2f4de315168d97d49bdfb37e0aca3",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/runtime.py": "3a78696a20c347cb4273d0705485a07e3a364b8ab9ecab1281cce43a9a945fa1",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/scorer.py": "6f05a92f2054e079a2b1a8a27ef958bdea2ac14ec180c0fda9d1aecfbc3c6fbb",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_catalog_fusion.py": "6f04e348a7d7eb25c4c1a96ff43e0a8e0f1a3a368e5acb9473cbc81bd2961a1d",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_preflight.py": "c6147eeb18b326547fc6d9244fbd5f98e15045e7697d8680bff39b0e90eab195",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/test_runner.py": "1875213c30c92030f018482fb7af1700702f2d6b3c29c75491d0b5f70185c9f0",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/catalog_fusion/training.py": "e3e3a910cb6c019257f58834348019012ea046c803390a145572ea28b6124cd7",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/boundary.py": "a36c54e1b682cb6940e51b9544b6a3d83e236e2dc9bebd04a805cd5040a23a1e"
+  },
+  "generatesCopy": false,
+  "freshQueryRequired": true,
+  "featureRepresentationDiffersFromJointReadouts": true
+}

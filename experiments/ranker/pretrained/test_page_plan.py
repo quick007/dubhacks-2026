@@ -44,6 +44,9 @@ class PagePlanTests(unittest.TestCase):
         section['heading']={'text':'Everyday travel choices','source':'generated'}
         section['products'][0]['title']={'text':'Compact travel pack','source':'generated'}
         self.assertTrue(validate_page_plan(plan,self.request,self.catalog,True))
+        section['products'][0]['title']['text']='Your compact travel companion'
+        with self.assertRaisesRegex(ValueError,'identity'):
+            validate_page_plan(plan,self.request,self.catalog,True)
         section['products'][0]['title']['text']='Free shipping tomorrow'
         with self.assertRaises(ValueError):validate_page_plan(plan,self.request,self.catalog,True)
 
