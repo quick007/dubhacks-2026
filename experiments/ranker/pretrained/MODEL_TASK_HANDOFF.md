@@ -37,11 +37,11 @@ under `focused_rank_transfer_results/v1`; original60featurevectors remain at
 
 ## Factual-copy experiment at migration boundary
 
-The sole active run is `data/ranker/pretrained/short-copy-fit-v1`; root will
-replace this paragraph with final status after the existing worker finishes.
+The prior run `data/ranker/pretrained/short-copy-fit-v1` is completed.
+Its workers32633/32623 were absent at clean-restart process inventory.
 Execution source2baf1e2; frozen preflight `SHORT_COPY_PREFLIGHT_V2.json`,
 SHA-25656b62d8cbc469aa66595cdf6a6a8c65b620b5548a21596a24ce85bbefff319e2.
-No subsequent native experiment is authorized before migration.
+The clean replacement task explicitly authorizes subsequent local experiments.
 
 All240 exact native/auxiliary loss and A/B-gradient gates passed before fitting;
 all240 fixed Adam updates completed.65,536 trainable FP32 A/B parameters affect
@@ -116,3 +116,26 @@ its source/provenance controls pass. Keep all failures and original checkpoints,
 use ordinary scoped main commits/pushes, and preserve the actual quality/latency
 boundary. Do not promote an adapter from faster invalid attempts. Perceptron
 remains deferred.
+
+
+## Clean replacement checkpoint (supersedes queued statements above)
+
+Main167295f is pushed. All old checkpoints and candidates remain intact.
+Actual16-store v3 completed64 native inputs and80+80 CPU head updates:
+12/16 top1,16/16top6,4/8 both-correct pairs. Independent audit exactly reproduces
+all optimizer steps/final tensors. Median203.702ms contiguous serialized ranking
+endpoint excludes copy/browser. All8 separate guard probes pass. New resident
+rank/action seam completes24 native queries:16 score/order replays exact,
+4 copy-adapter-disabled score/action rows exact and4 policy probes pass
+(exactname, budget exclusion, Cobalt binding, unknown-stock abstention). It is
+model-side integration; React/API files were not changed.
+
+Actual-store old-adapter copy transfer completed6 requests:0/6 valid first3 and
+0/6 full6; invalid-attempt medians4.980/6.227s. Matched-width controls and927 frozen
+hashes pass. All120 fields decode/reassemble exactly on CPU. No promotion.
+
+The new balanced source-conditioned v2 copy data/runner is frozen and tokenizer-
+preflighted (25 CPU tests); native320-gate/320-update/24-arm run is next.
+Final preflight STORE_COPY_FIT_V2_PREFLIGHT_V1.json SHA
+cd8ead6445ac7785c90dfcfb0c15f6999e35a2da4c54530a59106db87cbb1cbd.
+Read latest ledger/reports for progress; preserve incomplete/failed runs.

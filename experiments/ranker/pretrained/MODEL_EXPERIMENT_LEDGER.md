@@ -295,3 +295,29 @@ native policychecks pass (exactname,budget,colorvariant,stockunknown),5CPUtests
 pass. Median174.942ms includes freshquery,16verifiedcatalogloads,guards,source
 freshness and actualactionserialization; excludesgeneratedcopy/UIpaint. Separate
 endpoint/run; no203.702→174.942speedupclaim. See ACTUAL_STORE_RANK_SESSION_V1_RESULTS.md.
+
+
+## Actual-store source-conditioned copy v2, frozen before native work
+
+Preparation is complete:16 TRAIN requests/320 fields and8 evaluation requests/
+160 fields. Every product occurs6/3 times; TRAIN uses2 colors three times each,
+evaluation uses its third declared color. All32 TRAIN and16 evaluation product/
+color states are disjoint.96 unique TRAIN titles and96 bodies cover six
+constructions per product. Badges now generate factual selected-color phrases;
+category slogans cannot be repurposed as attributes. A new bounded relational
+validator handles exact identity/color/item-price claims and decimal prices;
+it is not comprehensive semantic proof and does not rewrite old validator results.
+All288 CPU fact swaps reject stale targets and accept changed-fact targets.
+
+25 combined runner/data CPU tests pass. Exact ordinary-chat tokenizer preflight
+passes: root≤329 TRAIN/333 EVAL tokens, suffix≤79/78; no truncation; projected
+uncompressed TRAIN host features1,420,738,560bytes (under5GiB). Final preflight
+SHAcd8ead6445ac7785c90dfcfb0c15f6999e35a2da4c54530a59106db87cbb1cbd.
+Source7f63b9ac18f9142910694499b18c1a5427d4b2da13f0dc3be20860fb44b89968.
+Native plan:320 exact nonzero-control gates, restoring true initial zeroB after
+each;320 seeded shuffled Adam updates from frozen base;927 frozen tensor hashes;
+exact checkpoint reload and original-archive learned parity;24 fixed width6 arms
+(8 requests × frozen/failed-daypack/new-store). All20 fields remain sampled,
+including10 complete first3 fields; no serving target/template/fallback or2-card
+substitution. Copy-stage endpoints include fresh root and validation/serialization,
+exclude ranking and UI/browser paint. Native execution is queued at this receipt.

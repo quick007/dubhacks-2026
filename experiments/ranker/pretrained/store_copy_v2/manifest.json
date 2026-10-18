@@ -1,0 +1,426 @@
+{
+  "datasetVersion": "actual-store-source-conditioned-copy.v2",
+  "frozenBeforeNative": true,
+  "sourceSha256": "ac424d601d8dc97d480d3c22ed0175de002e46281c7c35f9054f00bb32a8082e",
+  "dependencySha256": {
+    "store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b",
+    "store_model_bridge.py": "91124b1793bf9960761547f0feb4c1e8609593bd70f4f7abf3c1b97c40c38eaf"
+  },
+  "sourceDataSha256": {
+    "model_inputs.json": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468",
+    "external_mapping.json": "eaae73bc158c71b19f0b22a6854246b7450316d0f1ca60dd7969b02ebbf95937",
+    "IMPORT_RECEIPT.json": "9e87c057b71b2e4b6ca6200484a310631fe30de95bcd2f0549943e325567f7da"
+  },
+  "modelInputSha256": "205572ed535b6f40cd56ede51208c348ad05998ad4d205f193a8b5bfe3e79fb7",
+  "fileSha256": {
+    "cases.eval.jsonl": "b78a0bd88d50a553e0d2a2ffbdd0ff6c71c6295c934f7fda2bc257cfcf84c33e",
+    "cases.train.jsonl": "dd9ddadcdc4b73128d4dbe56600276066a3ac58dd5a016b3b4c44b14aa401108",
+    "fields.eval.jsonl": "5eeb68eec83e3b909a23dbf535c45a00c39c5bffb1d9dd95f445b2234cf04017",
+    "fields.train.jsonl": "9804779ca3788b204d28ba3afd6e7f11484ba653d9737f35bd59564e90e132d6"
+  },
+  "fieldOrder": [
+    "S1",
+    "T1",
+    "B1",
+    "C1",
+    "T2",
+    "B2",
+    "C2",
+    "T3",
+    "B3",
+    "C3",
+    "S2",
+    "T4",
+    "B4",
+    "C4",
+    "T5",
+    "B5",
+    "C5",
+    "T6",
+    "B6",
+    "C6"
+  ],
+  "caps": {
+    "S": 16,
+    "T": 24,
+    "B": 8,
+    "C": 32
+  },
+  "fullSixOutputCap": 416,
+  "firstThreeOutputCap": 208,
+  "coverage": {
+    "bindingSplit": {
+      "claim": "known product identities with held-out product/color bindings, not unseen color meanings or products",
+      "evalStates": 16,
+      "heldOutColorIndexByProduct": {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 0,
+        "4": 1,
+        "5": 2,
+        "6": 0,
+        "7": 1,
+        "8": 2,
+        "9": 0,
+        "10": 1,
+        "11": 2,
+        "12": 0,
+        "13": 1,
+        "14": 2,
+        "15": 0
+      },
+      "overlap": 0,
+      "trainStates": 32
+    },
+    "eval": {
+      "allTeacherFirstThreeAndFullSixPass": true,
+      "bodyClaimCoverage": {
+        "identity": 48,
+        "itemPrice": 48,
+        "selectedColor": 48
+      },
+      "cards": 48,
+      "cases": 8,
+      "constructionCounts": {
+        "badge": {
+          "0": 16,
+          "1": 16,
+          "2": 16
+        },
+        "copy": {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 8,
+          "4": 8,
+          "5": 8
+        },
+        "heading": {
+          "0": 2,
+          "1": 2,
+          "2": 2,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2
+        },
+        "title": {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 8,
+          "4": 8,
+          "5": 8
+        }
+      },
+      "fieldCounts": {
+        "badge": 48,
+        "copy": 48,
+        "heading": 16,
+        "title": 48
+      },
+      "fields": 160,
+      "productColorOccurrences": {
+        "0": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "1": {
+          "0": 0,
+          "1": 3,
+          "2": 0
+        },
+        "2": {
+          "0": 0,
+          "1": 0,
+          "2": 3
+        },
+        "3": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "4": {
+          "0": 0,
+          "1": 3,
+          "2": 0
+        },
+        "5": {
+          "0": 0,
+          "1": 0,
+          "2": 3
+        },
+        "6": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "7": {
+          "0": 0,
+          "1": 3,
+          "2": 0
+        },
+        "8": {
+          "0": 0,
+          "1": 0,
+          "2": 3
+        },
+        "9": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "10": {
+          "0": 0,
+          "1": 3,
+          "2": 0
+        },
+        "11": {
+          "0": 0,
+          "1": 0,
+          "2": 3
+        },
+        "12": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "13": {
+          "0": 0,
+          "1": 3,
+          "2": 0
+        },
+        "14": {
+          "0": 0,
+          "1": 0,
+          "2": 3
+        },
+        "15": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "productOccurrences": {
+        "0": 3,
+        "1": 3,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 3,
+        "6": 3,
+        "7": 3,
+        "8": 3,
+        "9": 3,
+        "10": 3,
+        "11": 3,
+        "12": 3,
+        "13": 3,
+        "14": 3,
+        "15": 3
+      },
+      "requiredColorBadges": 48,
+      "uniqueTargets": {
+        "badge": 33,
+        "copy": 48,
+        "heading": 8,
+        "title": 48
+      }
+    },
+    "train": {
+      "allTeacherFirstThreeAndFullSixPass": true,
+      "bodyClaimCoverage": {
+        "identity": 96,
+        "itemPrice": 96,
+        "selectedColor": 96
+      },
+      "cards": 96,
+      "cases": 16,
+      "constructionCounts": {
+        "badge": {
+          "0": 32,
+          "1": 32,
+          "2": 32
+        },
+        "copy": {
+          "0": 16,
+          "1": 16,
+          "2": 16,
+          "3": 16,
+          "4": 16,
+          "5": 16
+        },
+        "heading": {
+          "0": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4,
+          "4": 4,
+          "5": 4,
+          "6": 4,
+          "7": 4
+        },
+        "title": {
+          "0": 16,
+          "1": 16,
+          "2": 16,
+          "3": 16,
+          "4": 16,
+          "5": 16
+        }
+      },
+      "fieldCounts": {
+        "badge": 96,
+        "copy": 96,
+        "heading": 32,
+        "title": 96
+      },
+      "fields": 320,
+      "productColorOccurrences": {
+        "0": {
+          "0": 0,
+          "1": 3,
+          "2": 3
+        },
+        "1": {
+          "0": 3,
+          "1": 0,
+          "2": 3
+        },
+        "2": {
+          "0": 3,
+          "1": 3,
+          "2": 0
+        },
+        "3": {
+          "0": 0,
+          "1": 3,
+          "2": 3
+        },
+        "4": {
+          "0": 3,
+          "1": 0,
+          "2": 3
+        },
+        "5": {
+          "0": 3,
+          "1": 3,
+          "2": 0
+        },
+        "6": {
+          "0": 0,
+          "1": 3,
+          "2": 3
+        },
+        "7": {
+          "0": 3,
+          "1": 0,
+          "2": 3
+        },
+        "8": {
+          "0": 3,
+          "1": 3,
+          "2": 0
+        },
+        "9": {
+          "0": 0,
+          "1": 3,
+          "2": 3
+        },
+        "10": {
+          "0": 3,
+          "1": 0,
+          "2": 3
+        },
+        "11": {
+          "0": 3,
+          "1": 3,
+          "2": 0
+        },
+        "12": {
+          "0": 0,
+          "1": 3,
+          "2": 3
+        },
+        "13": {
+          "0": 3,
+          "1": 0,
+          "2": 3
+        },
+        "14": {
+          "0": 3,
+          "1": 3,
+          "2": 0
+        },
+        "15": {
+          "0": 0,
+          "1": 3,
+          "2": 3
+        }
+      },
+      "productOccurrences": {
+        "0": 6,
+        "1": 6,
+        "2": 6,
+        "3": 6,
+        "4": 6,
+        "5": 6,
+        "6": 6,
+        "7": 6,
+        "8": 6,
+        "9": 6,
+        "10": 6,
+        "11": 6,
+        "12": 6,
+        "13": 6,
+        "14": 6,
+        "15": 6
+      },
+      "requiredColorBadges": 96,
+      "uniqueTargets": {
+        "badge": 66,
+        "copy": 96,
+        "heading": 8,
+        "title": 96
+      }
+    }
+  },
+  "counterfactualAudit": {
+    "syntheticDiagnosticOnly": true,
+    "nativeGenerationPerformed": false,
+    "checked": {
+      "name": 96,
+      "selectedColor": 144,
+      "itemPrice": 48
+    },
+    "staleTargetsRejected": {
+      "name": 96,
+      "selectedColor": 144,
+      "itemPrice": 48
+    },
+    "factUpdatedTargetsAccepted": {
+      "name": 96,
+      "selectedColor": 144,
+      "itemPrice": 48
+    },
+    "limitation": "Tests gate sensitivity and offline target binding, not model responsiveness; synthetic facts never served."
+  },
+  "nativeExecution": false,
+  "tokenizationPerformed": false,
+  "trainingPerformed": false,
+  "teacherPolicy": "synthetic offline targets only; no target string or constructor in inference inputs or native fallback",
+  "prefixFormat": "ordinary native chat: one shared public user turn then independent bound field user turn",
+  "badgePolicy": "fresh selected-color badge required when declared color supplied; NONE only for explicit absent badge-color fact",
+  "limitations": [
+    "Balanced locked copy fixtures; no learned ranking, color, image or grouping supervision.",
+    "Known product identities; eval holds product/color bindings and authored query wording, not color meanings.",
+    "Evaluation authoring is synthetic and inspected; not sealed human quality or unseen product generalization.",
+    "Bounded typed relational grammar rejects some true alternative English; not comprehensive semantic proof.",
+    "Category slogans cannot be decomposed into attributes; this pilot copies no category claims.",
+    "No native model/tokenizer/fit or browser/render timing has been run.",
+    "CPU fact swaps validate contract sensitivity, not native source conditioning."
+  ]
+}
