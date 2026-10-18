@@ -22,6 +22,14 @@ export function useRoute() {
     }
   }, []);
 
+  // A committed search should reveal its results, including repeat submissions
+  // and history navigation. Wait for the shop section to exist after render.
+  useEffect(() => {
+    if (route.page === "shop" && route.query) {
+      document.getElementById("collection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [route]);
+
   const navigate = useCallback((next: StorefrontRoute, options?: { replace?: boolean }) => {
     const hash = routeHash(next);
     if (window.location.hash !== hash) {

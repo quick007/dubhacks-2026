@@ -1,0 +1,902 @@
+{
+  "version": "search-results-navigation-polish.v1",
+  "realUxBug": true,
+  "cause": "Submitted search navigated to hero; card copy and Add controls remained below the viewport despite completed inference. Post-render search-route navigation now reveals the existing results section. No layout or model changes.",
+  "fixSource": "apps/storefront/src/use-route.ts",
+  "before": {
+    "rawReport": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/search-navigation-before-v1/report.json",
+    "sha256": "2a53d6a63445fa7b16405cd20f3f63689328cdd306eb4b9c14558bd0b9f6e971",
+    "summary": {
+      "fixedDenominator": 10,
+      "recorded": 10,
+      "queries": [
+        "a lamp for quiet reading",
+        "a notebook for class notes",
+        "a bottle for daily water",
+        "a bag for a short trip",
+        "a towel for pool days",
+        "something for listening on the train",
+        "a light jacket for rainy walks",
+        "a soft layer for evenings",
+        "a container for lunch",
+        "a mug for my morning drink"
+      ],
+      "firstThree": {
+        "fixedDenominator": 10,
+        "valid": 0,
+        "rawMs": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "p50Ms": null,
+        "p95Ms": null,
+        "estimator": "nearest-rank; fixed10 complete only"
+      },
+      "fullSix": {
+        "fixedDenominator": 10,
+        "valid": 10,
+        "rawMs": [
+          314.60000002384186,
+          444.39999997615814,
+          427.90000009536743,
+          430,
+          429.89999997615814,
+          432.59999990463257,
+          413,
+          413.2000000476837,
+          416.7000000476837,
+          415.09999990463257
+        ],
+        "p50Ms": 416.7000000476837,
+        "p95Ms": 444.39999997615814,
+        "estimator": "nearest-rank; fixed10 complete only"
+      },
+      "scope": "Ten distinct actual query edits on known public Bob profile; separate from original profile-switch denominator and HTTP-only cold new-profile arm"
+    },
+    "geometry": {
+      "scrollY": 86,
+      "usefulCards": 0,
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "firstThreeCards": [
+        {
+          "rect": {
+            "x": 40,
+            "y": 427.1953125,
+            "width": 381.328125,
+            "height": 685.3359375,
+            "top": 427.1953125,
+            "bottom": 1112.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": false
+          },
+          "titleRect": {
+            "x": 40,
+            "y": 886.5234375,
+            "width": 110.90625,
+            "height": 19,
+            "top": 886.5234375,
+            "bottom": 905.5234375,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "paragraphs": [
+            {
+              "text": "Trail mug",
+              "rect": {
+                "x": 40,
+                "y": 916.5234375,
+                "width": 381.328125,
+                "height": 16.5,
+                "top": 916.5234375,
+                "bottom": 933.0234375,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Ivory selected",
+              "rect": {
+                "x": 40,
+                "y": 965.5234375,
+                "width": 381.328125,
+                "height": 16.5,
+                "top": 965.5234375,
+                "bottom": 982.0234375,
+                "intersectsViewport": false,
+                "fullyWithinViewport": false
+              }
+            },
+            {
+              "text": "Shown in Ivory at $24.00.",
+              "rect": {
+                "x": 40,
+                "y": 990.0234375,
+                "width": 381.328125,
+                "height": 16.5,
+                "top": 990.0234375,
+                "bottom": 1006.5234375,
+                "intersectsViewport": false,
+                "fullyWithinViewport": false
+              }
+            }
+          ],
+          "image": {
+            "src": "http://127.0.0.1:4313/products/optimized/responsive/mug-tabletop.jpg.w1152.webp",
+            "loading": "lazy",
+            "complete": true,
+            "naturalWidth": 1144,
+            "naturalHeight": 381,
+            "imageRect": {
+              "x": -341.328125,
+              "y": 427.1953125,
+              "width": 1143.984375,
+              "height": 381.328125,
+              "top": 427.1953125,
+              "bottom": 808.5234375,
+              "intersectsViewport": true,
+              "fullyWithinViewport": false
+            },
+            "clippedPrimaryRect": {
+              "x": 40,
+              "y": 427.1953125,
+              "width": 381.328125,
+              "height": 381.328125,
+              "top": 427.1953125,
+              "bottom": 808.5234375,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "decodeStatus": "decoded",
+            "decodedAt": 50007.799999952316,
+            "decodeError": null,
+            "alt": "Trail mug in ivory \u2014 still life",
+            "sourceAttr": "/products/optimized/responsive/mug-tabletop.jpg.w1152.webp"
+          },
+          "addButtonRect": {
+            "left": 40,
+            "right": 421.328125,
+            "top": 1068.53125,
+            "bottom": 1112.53125
+          }
+        },
+        {
+          "rect": {
+            "x": 449.328125,
+            "y": 427.1953125,
+            "width": 381.3359375,
+            "height": 685.3359375,
+            "top": 427.1953125,
+            "bottom": 1112.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": false
+          },
+          "titleRect": {
+            "x": 449.328125,
+            "y": 886.53125,
+            "width": 202.8671875,
+            "height": 19,
+            "top": 886.53125,
+            "bottom": 905.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "paragraphs": [
+            {
+              "text": "Woven everyday throw",
+              "rect": {
+                "x": 449.328125,
+                "y": 916.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 916.53125,
+                "bottom": 933.03125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Moss selected",
+              "rect": {
+                "x": 449.328125,
+                "y": 965.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 965.53125,
+                "bottom": 982.03125,
+                "intersectsViewport": false,
+                "fullyWithinViewport": false
+              }
+            },
+            {
+              "text": "Shown in Moss at $58.00.",
+              "rect": {
+                "x": 449.328125,
+                "y": 990.03125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 990.03125,
+                "bottom": 1006.53125,
+                "intersectsViewport": false,
+                "fullyWithinViewport": false
+              }
+            }
+          ],
+          "image": {
+            "src": "http://127.0.0.1:4313/products/optimized/responsive/blanket-moss-gallery.jpg.w1152.webp",
+            "loading": "lazy",
+            "complete": true,
+            "naturalWidth": 1144,
+            "naturalHeight": 381,
+            "imageRect": {
+              "x": 67.9921875,
+              "y": 427.1953125,
+              "width": 1144.0078125,
+              "height": 381.3359375,
+              "top": 427.1953125,
+              "bottom": 808.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "clippedPrimaryRect": {
+              "x": 449.328125,
+              "y": 427.1953125,
+              "width": 381.3359375,
+              "height": 381.3359375,
+              "top": 427.1953125,
+              "bottom": 808.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "decodeStatus": "decoded",
+            "decodedAt": 50366.299999952316,
+            "decodeError": null,
+            "alt": "Woven everyday throw in moss \u2014 still life",
+            "sourceAttr": "/products/optimized/responsive/blanket-moss-gallery.jpg.w1152.webp"
+          },
+          "addButtonRect": {
+            "left": 449.328125,
+            "right": 830.6640625,
+            "top": 1068.53125,
+            "bottom": 1112.53125
+          }
+        },
+        {
+          "rect": {
+            "x": 858.6640625,
+            "y": 427.1953125,
+            "width": 381.3359375,
+            "height": 685.3359375,
+            "top": 427.1953125,
+            "bottom": 1112.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": false
+          },
+          "titleRect": {
+            "x": 858.6640625,
+            "y": 886.53125,
+            "width": 203.671875,
+            "height": 19,
+            "top": 886.53125,
+            "bottom": 905.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "paragraphs": [
+            {
+              "text": "Soft cotton crewneck",
+              "rect": {
+                "x": 858.6640625,
+                "y": 916.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 916.53125,
+                "bottom": 933.03125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Forest selected",
+              "rect": {
+                "x": 858.6640625,
+                "y": 965.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 965.53125,
+                "bottom": 982.03125,
+                "intersectsViewport": false,
+                "fullyWithinViewport": false
+              }
+            },
+            {
+              "text": "Shown in Forest at $72.00.",
+              "rect": {
+                "x": 858.6640625,
+                "y": 990.03125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 990.03125,
+                "bottom": 1006.53125,
+                "intersectsViewport": false,
+                "fullyWithinViewport": false
+              }
+            }
+          ],
+          "image": {
+            "src": "http://127.0.0.1:4313/products/optimized/responsive/sweatshirt-forest-gallery.jpg.w1152.webp",
+            "loading": "lazy",
+            "complete": true,
+            "naturalWidth": 1144,
+            "naturalHeight": 381,
+            "imageRect": {
+              "x": 477.328125,
+              "y": 427.1953125,
+              "width": 1144.0078125,
+              "height": 381.3359375,
+              "top": 427.1953125,
+              "bottom": 808.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": false
+            },
+            "clippedPrimaryRect": {
+              "x": 858.6640625,
+              "y": 427.1953125,
+              "width": 381.3359375,
+              "height": 381.3359375,
+              "top": 427.1953125,
+              "bottom": 808.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "decodeStatus": "decoded",
+            "decodedAt": 50366.299999952316,
+            "decodeError": null,
+            "alt": "Soft cotton crewneck in forest \u2014 still life",
+            "sourceAttr": "/products/optimized/responsive/sweatshirt-forest-gallery.jpg.w1152.webp"
+          },
+          "addButtonRect": {
+            "left": 858.6640625,
+            "right": 1240,
+            "top": 1068.53125,
+            "bottom": 1112.53125
+          }
+        }
+      ]
+    },
+    "sourceSha256": {
+      "apps/storefront/src/use-route.ts": "f928fdf654789efe3cd802f464ce731d7cdabfd95f9a05a6c63bd2fd14d65f5d",
+      "apps/storefront/src/main.tsx": "b8ab479d7723ab9f665c974f12fc4afcad220cec03ad0f695344026c6aa70183",
+      "apps/storefront/src/styles.css": "98d4fee4ee5a8e9bc343998b2f049225323c0b00aa3013c3a932fe8f66b54390",
+      "experiments/ranker/pretrained/store_persona_adapter_engine_v4.py": "1d977c06fa2d4a7db75ab5ec07e8de6604fec3716fa77b057a2e21024fa97b48",
+      "experiments/ranker/pretrained/store_persona_adapter_runtime_v4.py": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d",
+      "experiments/ranker/pretrained/store_persona_factorized_browser_probe_v1.mjs": "c80c1ef217e78cada81a71904dc47b256c9be04e7a774f858a2ee788243eb671",
+      "scripts/verify-search-results-navigation.mjs": "54ddb53b7d8cbe4844e3c5235d4b8ea6470b0476eeb5fb0e28194c289a3f86bb"
+    }
+  },
+  "after": {
+    "rawReport": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/search-navigation-after-v1/report.json",
+    "sha256": "801e289f10bbbd46bee875ca9252846b6dcfe32d43bbfc7654ad66b38da022f5",
+    "summary": {
+      "fixedDenominator": 10,
+      "recorded": 10,
+      "queries": [
+        "a lamp for quiet reading",
+        "a notebook for class notes",
+        "a bottle for daily water",
+        "a bag for a short trip",
+        "a towel for pool days",
+        "something for listening on the train",
+        "a light jacket for rainy walks",
+        "a soft layer for evenings",
+        "a container for lunch",
+        "a mug for my morning drink"
+      ],
+      "firstThree": {
+        "fixedDenominator": 10,
+        "valid": 10,
+        "rawMs": [
+          311.7999999523163,
+          395.39999997615814,
+          315.3000000715256,
+          333.7999999523163,
+          333.5,
+          331.60000002384186,
+          332.5,
+          332.39999997615814,
+          317.90000009536743,
+          333.59999990463257
+        ],
+        "p50Ms": 332.39999997615814,
+        "p95Ms": 395.39999997615814,
+        "estimator": "nearest-rank; fixed10 complete only"
+      },
+      "fullSix": {
+        "fixedDenominator": 10,
+        "valid": 10,
+        "rawMs": [
+          311.7999999523163,
+          413.60000002384186,
+          331.90000009536743,
+          350.5,
+          350.2000000476837,
+          348.39999997615814,
+          349.40000009536743,
+          351,
+          334.60000002384186,
+          350.2999999523163
+        ],
+        "p50Ms": 349.40000009536743,
+        "p95Ms": 413.60000002384186,
+        "estimator": "nearest-rank; fixed10 complete only"
+      },
+      "scope": "Ten distinct actual query edits on known public Bob profile; separate from original profile-switch denominator and HTTP-only cold new-profile arm"
+    },
+    "geometry": {
+      "scrollY": 417,
+      "usefulCards": 3,
+      "viewport": {
+        "width": 1280,
+        "height": 960
+      },
+      "firstThreeCards": [
+        {
+          "rect": {
+            "x": 40,
+            "y": 96.1953125,
+            "width": 381.328125,
+            "height": 685.3359375,
+            "top": 96.1953125,
+            "bottom": 781.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "titleRect": {
+            "x": 40,
+            "y": 555.5234375,
+            "width": 110.90625,
+            "height": 19,
+            "top": 555.5234375,
+            "bottom": 574.5234375,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "paragraphs": [
+            {
+              "text": "Trail mug",
+              "rect": {
+                "x": 40,
+                "y": 585.5234375,
+                "width": 381.328125,
+                "height": 16.5,
+                "top": 585.5234375,
+                "bottom": 602.0234375,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Ivory selected",
+              "rect": {
+                "x": 40,
+                "y": 634.5234375,
+                "width": 381.328125,
+                "height": 16.5,
+                "top": 634.5234375,
+                "bottom": 651.0234375,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Shown in Ivory at $24.00.",
+              "rect": {
+                "x": 40,
+                "y": 659.0234375,
+                "width": 381.328125,
+                "height": 16.5,
+                "top": 659.0234375,
+                "bottom": 675.5234375,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            }
+          ],
+          "image": {
+            "src": "http://127.0.0.1:4313/products/optimized/responsive/mug-tabletop.jpg.w1152.webp",
+            "loading": "lazy",
+            "complete": true,
+            "naturalWidth": 1144,
+            "naturalHeight": 381,
+            "imageRect": {
+              "x": -341.328125,
+              "y": 96.1953125,
+              "width": 1143.984375,
+              "height": 381.328125,
+              "top": 96.1953125,
+              "bottom": 477.5234375,
+              "intersectsViewport": true,
+              "fullyWithinViewport": false
+            },
+            "clippedPrimaryRect": {
+              "x": 40,
+              "y": 96.1953125,
+              "width": 381.328125,
+              "height": 381.328125,
+              "top": 96.1953125,
+              "bottom": 477.5234375,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "decodeStatus": "decoded",
+            "decodedAt": 28587.699999928474,
+            "decodeError": null,
+            "alt": "Trail mug in ivory \u2014 still life",
+            "sourceAttr": "/products/optimized/responsive/mug-tabletop.jpg.w1152.webp"
+          },
+          "addButtonRect": {
+            "left": 40,
+            "right": 421.328125,
+            "top": 737.53125,
+            "bottom": 781.53125
+          }
+        },
+        {
+          "rect": {
+            "x": 449.328125,
+            "y": 96.1953125,
+            "width": 381.3359375,
+            "height": 685.3359375,
+            "top": 96.1953125,
+            "bottom": 781.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "titleRect": {
+            "x": 449.328125,
+            "y": 555.53125,
+            "width": 202.8671875,
+            "height": 19,
+            "top": 555.53125,
+            "bottom": 574.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "paragraphs": [
+            {
+              "text": "Woven everyday throw",
+              "rect": {
+                "x": 449.328125,
+                "y": 585.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 585.53125,
+                "bottom": 602.03125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Moss selected",
+              "rect": {
+                "x": 449.328125,
+                "y": 634.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 634.53125,
+                "bottom": 651.03125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Shown in Moss at $58.00.",
+              "rect": {
+                "x": 449.328125,
+                "y": 659.03125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 659.03125,
+                "bottom": 675.53125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            }
+          ],
+          "image": {
+            "src": "http://127.0.0.1:4313/products/optimized/responsive/blanket-moss-gallery.jpg.w1152.webp",
+            "loading": "lazy",
+            "complete": true,
+            "naturalWidth": 1144,
+            "naturalHeight": 381,
+            "imageRect": {
+              "x": 67.9921875,
+              "y": 96.1953125,
+              "width": 1144.0078125,
+              "height": 381.3359375,
+              "top": 96.1953125,
+              "bottom": 477.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "clippedPrimaryRect": {
+              "x": 449.328125,
+              "y": 96.1953125,
+              "width": 381.3359375,
+              "height": 381.3359375,
+              "top": 96.1953125,
+              "bottom": 477.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "decodeStatus": "decoded",
+            "decodedAt": 28877.899999976158,
+            "decodeError": null,
+            "alt": "Woven everyday throw in moss \u2014 still life",
+            "sourceAttr": "/products/optimized/responsive/blanket-moss-gallery.jpg.w1152.webp"
+          },
+          "addButtonRect": {
+            "left": 449.328125,
+            "right": 830.6640625,
+            "top": 737.53125,
+            "bottom": 781.53125
+          }
+        },
+        {
+          "rect": {
+            "x": 858.6640625,
+            "y": 96.1953125,
+            "width": 381.3359375,
+            "height": 685.3359375,
+            "top": 96.1953125,
+            "bottom": 781.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "titleRect": {
+            "x": 858.6640625,
+            "y": 555.53125,
+            "width": 203.671875,
+            "height": 19,
+            "top": 555.53125,
+            "bottom": 574.53125,
+            "intersectsViewport": true,
+            "fullyWithinViewport": true
+          },
+          "paragraphs": [
+            {
+              "text": "Soft cotton crewneck",
+              "rect": {
+                "x": 858.6640625,
+                "y": 585.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 585.53125,
+                "bottom": 602.03125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Forest selected",
+              "rect": {
+                "x": 858.6640625,
+                "y": 634.53125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 634.53125,
+                "bottom": 651.03125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            },
+            {
+              "text": "Shown in Forest at $72.00.",
+              "rect": {
+                "x": 858.6640625,
+                "y": 659.03125,
+                "width": 381.3359375,
+                "height": 16.5,
+                "top": 659.03125,
+                "bottom": 675.53125,
+                "intersectsViewport": true,
+                "fullyWithinViewport": true
+              }
+            }
+          ],
+          "image": {
+            "src": "http://127.0.0.1:4313/products/optimized/responsive/sweatshirt-forest-gallery.jpg.w1152.webp",
+            "loading": "lazy",
+            "complete": true,
+            "naturalWidth": 1144,
+            "naturalHeight": 381,
+            "imageRect": {
+              "x": 477.328125,
+              "y": 96.1953125,
+              "width": 1144.0078125,
+              "height": 381.3359375,
+              "top": 96.1953125,
+              "bottom": 477.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": false
+            },
+            "clippedPrimaryRect": {
+              "x": 858.6640625,
+              "y": 96.1953125,
+              "width": 381.3359375,
+              "height": 381.3359375,
+              "top": 96.1953125,
+              "bottom": 477.53125,
+              "intersectsViewport": true,
+              "fullyWithinViewport": true
+            },
+            "decodeStatus": "decoded",
+            "decodedAt": 28877.899999976158,
+            "decodeError": null,
+            "alt": "Soft cotton crewneck in forest \u2014 still life",
+            "sourceAttr": "/products/optimized/responsive/sweatshirt-forest-gallery.jpg.w1152.webp"
+          },
+          "addButtonRect": {
+            "left": 858.6640625,
+            "right": 1240,
+            "top": 737.53125,
+            "bottom": 781.53125
+          }
+        }
+      ]
+    },
+    "sourceSha256": {
+      "apps/storefront/src/use-route.ts": "03c359c949754f7777753d4fbbba90c625e4a5861a219edbe6c8344242afb865",
+      "apps/storefront/src/main.tsx": "b8ab479d7723ab9f665c974f12fc4afcad220cec03ad0f695344026c6aa70183",
+      "apps/storefront/src/styles.css": "98d4fee4ee5a8e9bc343998b2f049225323c0b00aa3013c3a932fe8f66b54390",
+      "experiments/ranker/pretrained/store_persona_adapter_engine_v4.py": "1d977c06fa2d4a7db75ab5ec07e8de6604fec3716fa77b057a2e21024fa97b48",
+      "experiments/ranker/pretrained/store_persona_adapter_runtime_v4.py": "14cab55a410709664a9d8fbc181a83e48baa6d9fca8ff599ca24ab198abe207d",
+      "experiments/ranker/pretrained/store_persona_factorized_browser_probe_v1.mjs": "c80c1ef217e78cada81a71904dc47b256c9be04e7a774f858a2ee788243eb671",
+      "scripts/verify-search-results-navigation.mjs": "54ddb53b7d8cbe4844e3c5235d4b8ea6470b0476eeb5fb0e28194c289a3f86bb"
+    }
+  },
+  "nativePidUnchanged": 91663,
+  "launcherPidPreserved": 91659,
+  "startupExactAcrossBothRuns": true,
+  "allTenModelRequestScoresRankingsAndCopyExact": true,
+  "parityChecks": [
+    {
+      "query": "a lamp for quiet reading",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a notebook for class notes",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a bottle for daily water",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a bag for a short trip",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a towel for pool days",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "something for listening on the train",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a light jacket for rainy walks",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a soft layer for evenings",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a container for lunch",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    },
+    {
+      "query": "a mug for my morning drink",
+      "requestsExact": true,
+      "fullOrderExact": true,
+      "selectedIdsAndVariantsExact": true,
+      "allNeuralCopySectionsExact": true,
+      "allScoreVectorsExact": true,
+      "beforeFreshQuery": true,
+      "afterFreshQuery": true,
+      "protocolsPassed": true
+    }
+  ],
+  "browsersClosed": true,
+  "noModelWeightsOrRuntimeCodeChanged": true,
+  "noModelRestartOrTraining": true,
+  "modelPromotion": false,
+  "v4IndependentQualityUnvalidated": true,
+  "timingCaveat": "After-fix browser timings describe this run, not faster model inference. Before-run visibility timeouts created different between-request idle intervals. All inference outputs are exact and every request freshly encodes its query. Initial hero without a submitted query is unchanged.",
+  "copies": [
+    {
+      "source": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/search-navigation-before-v1/submitted-search.png",
+      "destination": "before.png",
+      "sha256": "d59b1990742d5e203d666f241b01c520f7c311266ecb1f685b4137d39b5f1791"
+    },
+    {
+      "source": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/search-navigation-after-v1/submitted-search.png",
+      "destination": "after.png",
+      "sha256": "ca7e354ecb263105db00e09fb5d6bd490d2b8095c0e66ea5e2854903fb1376a1"
+    }
+  ]
+}

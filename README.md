@@ -56,7 +56,8 @@ presentation with the existing results receiver on port 4311, run
 `DEV_API_ORIGIN=http://127.0.0.1:4311 PORT=4310 pnpm --filter @storefront/web dev`
 and open <http://127.0.0.1:4310>. The immutable report is
 `store-shopper-checkout-cohort-v2-final`; its actual-browser acceptance passed
-[50 checks](experiments/ranker/pretrained/store_cohort_presentation_acceptance_v2/report.json).
+[50 checks](experiments/ranker/pretrained/store_cohort_presentation_search_polish_v1/report.json),
+repeated after the search navigation correction.
 
 The explicit `?legacy=1` dashboard retains **All sessions** and **Run a round**
 for deterministic mock comparisons. The separate legacy Playwright adapter
@@ -137,12 +138,21 @@ request still performed a fresh Qwen query forward, fresh ranking projection,
 learned color choice and fresh copy predictions. Ten loaded, pre-scrolled profile
 switches reached three fully visible factual cards with decoded images in
 335.5 ms median (649.0 ms p95). Six-card copy and decoded images completed in
-351.2 ms median. Ten distinct typed queries on a known profile completed six-card
-copy and decoded images in 413.5 ms median (463.4 ms p95). Actual search scrolling
-left no complete first-three visibility endpoint in those ten cases; the initial
-hero also showed zero complete useful cards. Full six-card completion does not
-mean all six cards were visible. The service generated 20 fields; the UI renders
-19 strings. Startup, browser launch and physical paint are excluded.
+351.2 ms median. In that earlier UI, ten distinct typed queries completed six-card
+copy and decoded images in 413.5 ms median (463.4 ms p95), but search scrolling
+left card copy and controls below the viewport. Those original misses remain
+preserved. The initial browsing hero also showed zero complete useful cards.
+Full six-card completion does not mean all six cards were visible. The service
+generates 20 fields; the UI renders 19 strings. Startup, browser launch and
+physical paint are excluded.
+
+Submitted searches now reveal the results section after navigation commits.
+The [focused navigation check](experiments/ranker/pretrained/store_search_navigation_polish_v1/report.json)
+on the same running model changed visible-three success from 0/10 to 10/10:
+332.4 ms median, 395.4 ms p95 with decoded images. Full-six completion was
+349.4 ms median, 413.6 ms p95. All ten requests, scores, rankings and generated
+copy matched exactly before/after. This fixes search visibility; it does not
+show faster inference or improved model quality. The initial hero is unchanged.
 
 The [saved measurements](experiments/ranker/pretrained/persona_factorized_results/v1/browser-derived-summary.json)
 retain all fixed requests and misses. V4 caches pure public persona/history

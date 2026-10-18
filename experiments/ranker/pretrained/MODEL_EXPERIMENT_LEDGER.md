@@ -1,5 +1,28 @@
 # Model experiment ledger
 
+## Search navigation polish, 2026-10-18 13:29 UTC
+
+A real UX bug was confirmed: search submission scrolled to the hero. At the
+960px viewport the first card title started around886.5px and Add controls ended
+at1112.5px, below the screen despite completed inference. A post-render query-route
+effect in use-route.ts now reveals the existing collection. No styling, model
+weights, inference source, public request schema or serving process was changed.
+
+Same native91663 and launcher91659 throughout. Fixed ten-search before/after:
+visible3 0/10→10/10; after p50/p95 332.4/395.4ms, decoded full6 349.4/413.6ms.
+All ten actual requests, score vectors, ranked IDs/variants and neural copy are
+exactly equal. Endpoint timeouts/idle intervals differ, so do not claim inference
+acceleration. Original raw failures and all old receipts remain unchanged. The
+initial no-query hero remains unchanged. Model quality/promotion caveats remain.
+
+76 storefront tests and typecheck/build passed. Fresh actual presentation render
+passed50 checks across all5 slides with strict Tiger source and no model calls.
+README URLs4313/4312/4310 return200; native is ready with queue0. Evidence:
+store_search_navigation_polish_v1/{report,live-check}.json and before/after PNGs;
+store_cohort_presentation_search_polish_v1/report.json. The running launcher and
+all checkpoints remain preserved.
+
+
 ## Current integration checkpoint, 2026-10-18 13:15 UTC
 
 Left ready for recording: launcher91659, native91663/8767, persona UI92022/4313.
