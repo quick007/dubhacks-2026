@@ -15,3 +15,15 @@ apps/api/storefront-api
 # Local Python experiment cache; datasets/checkpoints already live under ignored data/.
 __pycache__/
 *.pyc
+
+# Local checkpoints and feature arrays; experiment inventories preserve their hashes.
+*.pt
+*.safetensors
+*.npz
+
+# Raw browser captures remain local. Published evidence is preserved in the
+# versioned store_candidate_browser_results/v2 and store_fast_measurement_results/v1 archives.
+experiments/ranker/pretrained/store_candidate_browser_probe_results_*/
+experiments/ranker/pretrained/store_candidate_collection_probe_results_*/
+experiments/ranker/pretrained/store_paired_incremental_probe_results_*/
+experiments/ranker/pretrained/store_candidate_browser_results/v1/

@@ -59,6 +59,9 @@ analysis proposes separately labeled TRAIN-only auxiliary facts and copy
 alignment supervision. No augmented fit has run. The compact fresh-AR diagnostic
 is prepared but deferred behind the useful fast path; its older binding must be
 reviewed before any native run. DFlash remains research without installation.
+The historical compact-copy launcher still pins v6 and refuses newer serving
+sources. Its two CPU-only preparations and three late AR request receipts are
+retained separately; neither preparation executed native inference.
 
 ## Evidence scope
 
