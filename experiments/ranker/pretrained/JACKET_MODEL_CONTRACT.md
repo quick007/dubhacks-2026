@@ -41,9 +41,12 @@ copy/page success can be claimed. Tokens remain autoregressive within each field
 Legacy backpack source/checkpoint/result hashes are preserved. New jacket callers
 must use this versioned path instead of passing nested facts into the old flat
 `boundary.clean_product` or old `catalog_fusion.inputs.catalog_text`. No live
-storefront/API/shopper integration was added. Main's real storefront remains
-mug/pack/notebook; this jacket import is pinned to teammate design branch commit
-`65b5896b28d4901b95a691fd68436e79ad264e61`.
+storefront/API/shopper inference integration was added. After the normal merge
+of teammate main `d8af475`, the actual storefront has 16 products, color variants
+and gallery assets. That catalog is separate from this six-jacket import, which
+remains pinned to design branch commit
+`65b5896b28d4901b95a691fd68436e79ad264e61`. New actual-store catalog work must
+use its own source receipt and cannot inherit jacket-domain quality claims.
 
 Validation: 21 targeted CPU tests and an independent corruption audit cover
 integrity/types, external ID separation, all ten shortfalls, hard-mask precedence,
