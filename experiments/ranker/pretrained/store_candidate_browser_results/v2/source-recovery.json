@@ -1,0 +1,34 @@
+{
+  "version": "browser-historical-source-recovery.v1",
+  "scope": "Exact byte hashes equal original browser plan source hashes. Live/original files unchanged. No complete transitive source graph claim.",
+  "inputSnapshots": [
+    "recovered-source/input-snapshot/ProductPhoto.tsx"
+  ],
+  "blobs": [
+    {
+      "expectedSha256": "5f39422337a129d66ef964c8f5de5971f7265d4414eddf911066cb2377f89010",
+      "bytes": 1066,
+      "recoveredPath": "recovered-source/5f39422337a129d66ef964c8f5de5971f7265d4414eddf911066cb2377f89010/ProductPhoto.tsx",
+      "method": "git-show-exact-committed-blob",
+      "gitCommit": "ba2b942c83e9e710414b290442acbf0bcd394bd1",
+      "gitPath": "apps/storefront/src/ProductPhoto.tsx",
+      "command": [
+        "git",
+        "show",
+        "ba2b942c83e9e710414b290442acbf0bcd394bd1:apps/storefront/src/ProductPhoto.tsx"
+      ]
+    },
+    {
+      "expectedSha256": "aba27a310adfc4214b787ef7e1f48377e76dd578883a4496328fea20c1541ac9",
+      "bytes": 1548,
+      "recoveredPath": "recovered-source/aba27a310adfc4214b787ef7e1f48377e76dd578883a4496328fea20c1541ac9/ProductPhoto.tsx",
+      "method": "single-import-byte-substitution",
+      "inputSnapshot": "recovered-source/input-snapshot/ProductPhoto.tsx",
+      "inputOriginalPath": "apps/storefront/src/ProductPhoto.tsx",
+      "inputSha256": "82e67036f498801a28f0676245edf52091e45d86915bb277d701be21e17a2c00",
+      "replaceFrom": "./product-responsive-runtime",
+      "replaceTo": "./product-responsive-source",
+      "replacementCount": 1
+    }
+  ]
+}

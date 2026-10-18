@@ -1,6 +1,10 @@
-/** No replay imports, observers, storage or timers on the default store path. */
-export const demoTraceEnabled = typeof window !== "undefined"
-  && new URLSearchParams(window.location.search).get("trace") === "demo";
+import { shoppingTelemetryConfig } from "./shopping-telemetry-config";
+/** Deployment configured collection; ordinary development builds remain inert. */
+export const automaticTelemetryConfig = typeof window === "undefined" ? null
+  : shoppingTelemetryConfig(import.meta.env ?? {}, window.location);
+// Keep the already-pinned main hook gate stable; the name also covers automatic mode.
+export const demoTraceEnabled = automaticTelemetryConfig !== null || (typeof window !== "undefined"
+  && new URLSearchParams(window.location.search).get("trace") === "demo");
 export type TraceAction = "search" | "selection" | "cart-add" | "cart-clear" | "checkout-success";
 export type TraceFields = { productId?: string; variantId?: string; count?: number; source?: "submit" | "example" | "clear" };
 export type TraceContext = { mode: "baseline" | "local-model"; order: "popular" | "budget" | "history"; shipping: boolean };

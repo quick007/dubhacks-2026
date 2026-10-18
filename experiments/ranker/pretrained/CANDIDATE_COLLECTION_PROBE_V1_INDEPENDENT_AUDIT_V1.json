@@ -1,0 +1,231 @@
+{
+  "version": "candidate-collection-probe-independent-audit.v1",
+  "execution": "CPU/read-only evidence review; no browser/GPU/native/service/runtime source edits",
+  "inputSha256": {
+    "experiments/ranker/pretrained/store_candidate_collection_probe_v1.mjs": "badd6718b64e69d819534de0c3228f8bc10778707141a5c65934692fd361262e",
+    "experiments/ranker/pretrained/test_store_candidate_collection_probe_v1.mjs": "c677ac7a831cc6c90b8546e3d3799ba5a09cb7ffa2182c5d6e2be22f5c1880e9",
+    "experiments/ranker/pretrained/store_candidate_browser_probe_v1.mjs": "3893f863b41fef840fb1e9538f83f5e96726b55f05031ea78bd91b7787f94f16",
+    "experiments/ranker/pretrained/store_candidate_collection_probe_results_v1_attempt_1/report.json": "c79c6beba16080c68a337c0112fa3d60d1687acb89ab05a5b2a56a5ae8c8e712",
+    "experiments/ranker/pretrained/store_candidate_collection_probe_results_v1_attempt_1/source/store_candidate_collection_probe_v1.mjs": "11bb3124d7e24110fff4f6e5973aa86780a697b99d78b51d3b8187d0af87882d",
+    "experiments/ranker/pretrained/store_candidate_collection_probe_results_v1_attempt_1/source/store_candidate_browser_probe_v1.mjs": "3893f863b41fef840fb1e9538f83f5e96726b55f05031ea78bd91b7787f94f16",
+    "experiments/ranker/pretrained/store_candidate_collection_probe_results_v1_attempt_2/report.json": "1cd166c9e27b2e8624bc7989d906ae7200422ef90c84364d2b95ffffc9cbbfd2"
+  },
+  "sourceHashMatchesCurrent": {
+    "experiments/ranker/pretrained/store_candidate_collection_probe_v1.mjs": true,
+    "experiments/ranker/pretrained/store_candidate_browser_probe_v1.mjs": true,
+    "apps/storefront/src/local-model-performance.ts": true,
+    "apps/storefront/src/ShopView.tsx": true,
+    "apps/storefront/src/ProductCard.tsx": true
+  },
+  "unitTests": {
+    "command": "node --test experiments/ranker/pretrained/test_store_candidate_collection_probe_v1.mjs",
+    "passed": 8
+  },
+  "independentChecks": {
+    "archiveProtocolBodiesGeometryTimingBarriersScreenshotsSummary": 68,
+    "canonicalSourceFactsLexicalAndSelectedImagePaths": 204,
+    "total": 272,
+    "allPassed": true
+  },
+  "attempt1": {
+    "fixedDenominator": 4,
+    "protocolAndVisibleValidated": 3,
+    "invalidQueryIndex": 1,
+    "invalidQuery": "a bottle for drinking water",
+    "validatedTimingsMs": [
+      269.5,
+      null,
+      253.90000009536743,
+      245.20000004768372
+    ],
+    "reason": "Q2 captured response body missing and POST ERR_ABORTED; raw visible/native field status does not validate this timed browser trial. Preserve null, no pooling with attempt2."
+  },
+  "attempt2": {
+    "fixedDenominator": 4,
+    "attempted": 4,
+    "protocolPassed": 4,
+    "fullyVisibleThreeGeometryDomFactsDecodePass": 4,
+    "completeTwentyFieldsPassed": 4,
+    "cdpAndActualFetchCloneBodyEqualityPassed": 4,
+    "uniqueScoredRequestIds": 4,
+    "singleDocument": true,
+    "nativeRequestsIncludingBootstrap": 5,
+    "medianEffectToVisibleThreeMs": 237.95000004768372,
+    "scoredPageErrors": 0,
+    "scoredRequestFailures": 0,
+    "bodyParseErrors": 0,
+    "pendingBeforeNextQuery": 0,
+    "trials": [
+      {
+        "index": 0,
+        "query": "a light for my bedside table",
+        "requestId": "238a4ba5-0cd6-481f-8278-e6c7485efeaf",
+        "effectToThreeVisibleCopyAndDecodedImagesMs": 253.19999992847443,
+        "dispatchToEffectMs": 10.5,
+        "dispatchToThreeVisibleMs": 263.6999999284744,
+        "topProductId": "lamp",
+        "notebookRank": 13,
+        "semanticTop1Reasonable": true,
+        "scoredPageErrors": [],
+        "requestFailures": [],
+        "bodySha256": "1ae7720e4fc5bfa531d596bb6d8702f0e6f2d3f2badd82a928d81d5f90811091",
+        "cdpClonePathsAgree": true,
+        "cdpSettlement": {
+          "settled": true,
+          "started": 1,
+          "outcomes": [
+            "fulfilled"
+          ]
+        },
+        "cloneSettlement": {
+          "settled": true
+        },
+        "fullyWithinViewportFirstThree": [
+          true,
+          true,
+          true
+        ],
+        "allFirstThreeImagesDecoded": true,
+        "scrollY": 460.5,
+        "snapshotObservedAt": 1129.1000000238419,
+        "visibilityEndpointObservedAt": 1129.2999999523163
+      },
+      {
+        "index": 1,
+        "query": "a bottle for drinking water",
+        "requestId": "7b0acccb-7fbf-4511-a0d2-6fe262d4eb30",
+        "effectToThreeVisibleCopyAndDecodedImagesMs": 238.90000009536743,
+        "dispatchToEffectMs": 9.299999952316284,
+        "dispatchToThreeVisibleMs": 248.20000004768372,
+        "topProductId": "bottle",
+        "notebookRank": 16,
+        "semanticTop1Reasonable": true,
+        "scoredPageErrors": [],
+        "requestFailures": [],
+        "bodySha256": "fc653b5277d0c8022095f8dc483aa8cb762c9be7f6ee61d3a4c4af177b57fcbb",
+        "cdpClonePathsAgree": true,
+        "cdpSettlement": {
+          "settled": true,
+          "started": 1,
+          "outcomes": [
+            "fulfilled"
+          ]
+        },
+        "cloneSettlement": {
+          "settled": true
+        },
+        "fullyWithinViewportFirstThree": [
+          true,
+          true,
+          true
+        ],
+        "allFirstThreeImagesDecoded": true,
+        "scrollY": 460.5,
+        "snapshotObservedAt": 1579.1000000238419,
+        "visibilityEndpointObservedAt": 1579.2000000476837
+      },
+      {
+        "index": 2,
+        "query": "a notebook for quick notes",
+        "requestId": "35fc93d5-2490-4aaa-82d6-0354d3b331b5",
+        "effectToThreeVisibleCopyAndDecodedImagesMs": 223.89999997615814,
+        "dispatchToEffectMs": 7.700000047683716,
+        "dispatchToThreeVisibleMs": 231.60000002384186,
+        "topProductId": "organizer",
+        "notebookRank": 13,
+        "semanticTop1Reasonable": false,
+        "scoredPageErrors": [],
+        "requestFailures": [],
+        "bodySha256": "a9aa71b1bb1b23e00155e4cd0876ae7eea156063da92ebb7279d5a7b78c32515",
+        "cdpClonePathsAgree": true,
+        "cdpSettlement": {
+          "settled": true,
+          "started": 1,
+          "outcomes": [
+            "fulfilled"
+          ]
+        },
+        "cloneSettlement": {
+          "settled": true
+        },
+        "fullyWithinViewportFirstThree": [
+          true,
+          true,
+          true
+        ],
+        "allFirstThreeImagesDecoded": true,
+        "scrollY": 460.5,
+        "snapshotObservedAt": 1995.8999999761581,
+        "visibilityEndpointObservedAt": 1996
+      },
+      {
+        "index": 3,
+        "query": "a bag for carrying my things",
+        "requestId": "8ede9321-2f1b-40fd-8333-2cff87a4a834",
+        "effectToThreeVisibleCopyAndDecodedImagesMs": 237,
+        "dispatchToEffectMs": 10.5,
+        "dispatchToThreeVisibleMs": 247.5,
+        "topProductId": "pack",
+        "notebookRank": 8,
+        "semanticTop1Reasonable": true,
+        "scoredPageErrors": [],
+        "requestFailures": [],
+        "bodySha256": "3bb30cdd2652a3ceb08daadd378962925796ed575558821ad68102fa54080674",
+        "cdpClonePathsAgree": true,
+        "cdpSettlement": {
+          "settled": true,
+          "started": 1,
+          "outcomes": [
+            "fulfilled"
+          ]
+        },
+        "cloneSettlement": {
+          "settled": true
+        },
+        "fullyWithinViewportFirstThree": [
+          true,
+          true,
+          true
+        ],
+        "allFirstThreeImagesDecoded": true,
+        "scrollY": 460.5,
+        "snapshotObservedAt": 2411.5,
+        "visibilityEndpointObservedAt": 2411.5
+      }
+    ]
+  },
+  "bootstrap": {
+    "unscored": true,
+    "pageErrors": [
+      {
+        "atNodeMs": 716.11825,
+        "name": "Error",
+        "message": "WebSocket closed without opened.",
+        "stack": "Error: WebSocket closed without opened.\n    at WebSocket.<anonymous> (http://127.0.0.1:4312/@vite/client:225:30)"
+      }
+    ],
+    "note": "Captured stack locates this run bootstrap WebSocket error in @vite/client:225:30. No scored-query page error was recorded; do not call whole session error-free."
+  },
+  "quality": {
+    "top1ReasonableQueries": 3,
+    "denominator": 4,
+    "judgment": "explicit qualitative function matching on inspected known-catalog queries, not human conversion or unseen generalization",
+    "notebookMiss": "organizer/pouch first; notebook13th, outside first6. Do not call all4 preference-sensitive useful passes.",
+    "copy": "canonical product identity, actual variant/color, item price and short factual fields pass independent offline source checks; rejected/fallback text not silently counted."
+  },
+  "measurementScope": [
+    "One loaded page after an unscored bootstrap, pre-scroll to collection before every query, fixed order; cannot pool with cold navigation or zero-scroll hero results",
+    "Clock starts at model hook effect; query dispatch-to-effect delay is separately derived in trials; no click-to-effect claim",
+    "Observer uses existing two-rAF mirror, DOM rectangle checks and successful image decode; not physical paint, hit-test/occlusion proof or a trace",
+    "Passive actual-fetch Response.clone arrayBuffer overhead and snapshot polling overhead are included; no extra model POST or response/text replacement",
+    "Both actual response paths were settled before subsequent dispatch; actual raw CDP and clone body hashes agree all4",
+    "16DOMproducts remain; only first3entire cards are in this measured visible endpoint, full6copy is also validated separately",
+    "Original bootstrap and failed attempt1 evidence remain preserved; no favorable trial dropped from denominator"
+  ],
+  "sourceLimits": [
+    "Five probe/UI source hashes pinned and verified; parser/ProductPhoto/use-local-model/native engine not fully inventoried by probe; raw native checkpoint/feature provenance retained",
+    "Canonical selected image URL matches declared actual variant gallery path; pixels were not audited for material/color truth",
+    "One screenshot visually spot-checked; all4 screenshot byte hashes and all4 three-card geometry records verified"
+  ],
+  "claim": "Four factual visible-three-card/decode readiness trials at237.95ms median from effect in loaded pre-scrolled collection;3/4 reasonable top1 relevance; no cold-navigation/physical-paint/unseen-quality claim"
+}

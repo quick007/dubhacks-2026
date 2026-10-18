@@ -1,0 +1,675 @@
+{
+  "heads": {
+    "learned": {
+      "file": "learned.pt",
+      "sha256": "5d07673e51450bbbbb1803c8a44ef99721b39fd3b1ae92edb9168e27a1377d6b",
+      "metadata": {
+        "queryMembers": [
+          "train-00-0",
+          "train-00-1",
+          "train-01-0",
+          "train-01-1",
+          "train-02-0",
+          "train-02-1",
+          "train-03-0",
+          "train-03-1",
+          "train-04-0",
+          "train-04-1",
+          "train-05-0",
+          "train-05-1",
+          "train-06-0",
+          "train-06-1",
+          "train-07-0",
+          "train-07-1",
+          "train-08-0",
+          "train-08-1",
+          "train-09-0",
+          "train-09-1",
+          "train-10-0",
+          "train-10-1",
+          "train-11-0",
+          "train-11-1",
+          "train-12-0",
+          "train-12-1",
+          "train-13-0",
+          "train-13-1",
+          "train-14-0",
+          "train-14-1",
+          "train-15-0",
+          "train-15-1",
+          "v5-train-00-0",
+          "v5-train-00-1",
+          "v5-train-00-2",
+          "v5-train-00-3",
+          "v5-train-01-0",
+          "v5-train-01-1",
+          "v5-train-01-2",
+          "v5-train-01-3",
+          "v5-train-02-0",
+          "v5-train-02-1",
+          "v5-train-02-2",
+          "v5-train-02-3",
+          "v5-train-03-0",
+          "v5-train-03-1",
+          "v5-train-03-2",
+          "v5-train-03-3",
+          "v5-train-04-0",
+          "v5-train-04-1",
+          "v5-train-04-2",
+          "v5-train-04-3",
+          "v5-train-05-0",
+          "v5-train-05-1",
+          "v5-train-05-2",
+          "v5-train-05-3",
+          "v5-train-06-0",
+          "v5-train-06-1",
+          "v5-train-06-2",
+          "v5-train-06-3",
+          "v5-train-07-0",
+          "v5-train-07-1",
+          "v5-train-07-2",
+          "v5-train-07-3",
+          "v5-train-08-0",
+          "v5-train-08-1",
+          "v5-train-08-2",
+          "v5-train-08-3",
+          "v5-train-09-0",
+          "v5-train-09-1",
+          "v5-train-09-2",
+          "v5-train-09-3",
+          "v5-train-10-0",
+          "v5-train-10-1",
+          "v5-train-10-2",
+          "v5-train-10-3",
+          "v5-train-11-0",
+          "v5-train-11-1",
+          "v5-train-11-2",
+          "v5-train-11-3",
+          "v5-train-12-0",
+          "v5-train-12-1",
+          "v5-train-12-2",
+          "v5-train-12-3",
+          "v5-train-13-0",
+          "v5-train-13-1",
+          "v5-train-13-2",
+          "v5-train-13-3",
+          "v5-train-14-0",
+          "v5-train-14-1",
+          "v5-train-14-2",
+          "v5-train-14-3",
+          "v5-train-15-0",
+          "v5-train-15-1",
+          "v5-train-15-2",
+          "v5-train-15-3"
+        ],
+        "catalogMembers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "meanSha256": {
+          "query": "3e3dcb10d7e5260fbb943de3a7b861b0362514bf9ef4a4574daeb1b4dbc6083e",
+          "catalog": "fb437268cb722d3a8a51f36db91fe685d274acb7781f7affd22645641af4e47b"
+        },
+        "vocabulary": [
+          "mug",
+          "daypack",
+          "field-notes",
+          "rain-shell",
+          "bottle",
+          "tote",
+          "throw",
+          "table-light",
+          "lunch-box",
+          "headphones",
+          "sneakers",
+          "crewneck",
+          "duffel",
+          "sunglasses",
+          "organizer-pouch",
+          "towel"
+        ],
+        "config": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "threads": 1,
+          "dimensions": 4096,
+          "classes": 16,
+          "maxTokens": 512,
+          "memoryGiB": 6,
+          "reusedFeatures": 48,
+          "newTrainForwards": 64,
+          "newEvaluationForwards": 32,
+          "newNativeForwards": 96,
+          "totalFeatureVectors": 144,
+          "objective": "mean(query96-class cross entropy, catalog16-identity cross entropy); balanced6 TRAIN rows/function",
+          "selection": "one fixed final80-step checkpoint; no eval-driven schedule/early stop",
+          "permutedQueryOffset": 17,
+          "permutationClaim": "fixed public row rotation, no target consulted; actual same-target rate reported postfreeze",
+          "controls": [
+            "frozen-v3",
+            "prior",
+            "random",
+            "permuted-query"
+          ],
+          "runtimeCompatibility": "same FunctionHead/v3 request and softmax scoring; original StoreRankSession64-forward report guard requires NEW explicit serving adapter; do not fake64"
+        },
+        "packetSha256": "047cdbc3dea0121513ef35d73111af030a724aee2f8eff8ea8664aebc8962015",
+        "trainTargetsSha256": "40452923e26ddcf0f929cbd496f3e333942bab8ec10b6dd02365365a616dd722",
+        "trainingScope": "known16 catalog,96 public single-function TRAIN paraphrases; no hidden profiles"
+      }
+    },
+    "random": {
+      "file": "random.pt",
+      "sha256": "f4b730d3f02418925a6e9615d14d02043bc348535db2b7ebb9c8618abb7dfd13",
+      "metadata": {
+        "queryMembers": [
+          "train-00-0",
+          "train-00-1",
+          "train-01-0",
+          "train-01-1",
+          "train-02-0",
+          "train-02-1",
+          "train-03-0",
+          "train-03-1",
+          "train-04-0",
+          "train-04-1",
+          "train-05-0",
+          "train-05-1",
+          "train-06-0",
+          "train-06-1",
+          "train-07-0",
+          "train-07-1",
+          "train-08-0",
+          "train-08-1",
+          "train-09-0",
+          "train-09-1",
+          "train-10-0",
+          "train-10-1",
+          "train-11-0",
+          "train-11-1",
+          "train-12-0",
+          "train-12-1",
+          "train-13-0",
+          "train-13-1",
+          "train-14-0",
+          "train-14-1",
+          "train-15-0",
+          "train-15-1",
+          "v5-train-00-0",
+          "v5-train-00-1",
+          "v5-train-00-2",
+          "v5-train-00-3",
+          "v5-train-01-0",
+          "v5-train-01-1",
+          "v5-train-01-2",
+          "v5-train-01-3",
+          "v5-train-02-0",
+          "v5-train-02-1",
+          "v5-train-02-2",
+          "v5-train-02-3",
+          "v5-train-03-0",
+          "v5-train-03-1",
+          "v5-train-03-2",
+          "v5-train-03-3",
+          "v5-train-04-0",
+          "v5-train-04-1",
+          "v5-train-04-2",
+          "v5-train-04-3",
+          "v5-train-05-0",
+          "v5-train-05-1",
+          "v5-train-05-2",
+          "v5-train-05-3",
+          "v5-train-06-0",
+          "v5-train-06-1",
+          "v5-train-06-2",
+          "v5-train-06-3",
+          "v5-train-07-0",
+          "v5-train-07-1",
+          "v5-train-07-2",
+          "v5-train-07-3",
+          "v5-train-08-0",
+          "v5-train-08-1",
+          "v5-train-08-2",
+          "v5-train-08-3",
+          "v5-train-09-0",
+          "v5-train-09-1",
+          "v5-train-09-2",
+          "v5-train-09-3",
+          "v5-train-10-0",
+          "v5-train-10-1",
+          "v5-train-10-2",
+          "v5-train-10-3",
+          "v5-train-11-0",
+          "v5-train-11-1",
+          "v5-train-11-2",
+          "v5-train-11-3",
+          "v5-train-12-0",
+          "v5-train-12-1",
+          "v5-train-12-2",
+          "v5-train-12-3",
+          "v5-train-13-0",
+          "v5-train-13-1",
+          "v5-train-13-2",
+          "v5-train-13-3",
+          "v5-train-14-0",
+          "v5-train-14-1",
+          "v5-train-14-2",
+          "v5-train-14-3",
+          "v5-train-15-0",
+          "v5-train-15-1",
+          "v5-train-15-2",
+          "v5-train-15-3"
+        ],
+        "catalogMembers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "meanSha256": {
+          "query": "3e3dcb10d7e5260fbb943de3a7b861b0362514bf9ef4a4574daeb1b4dbc6083e",
+          "catalog": "fb437268cb722d3a8a51f36db91fe685d274acb7781f7affd22645641af4e47b"
+        },
+        "vocabulary": [
+          "mug",
+          "daypack",
+          "field-notes",
+          "rain-shell",
+          "bottle",
+          "tote",
+          "throw",
+          "table-light",
+          "lunch-box",
+          "headphones",
+          "sneakers",
+          "crewneck",
+          "duffel",
+          "sunglasses",
+          "organizer-pouch",
+          "towel"
+        ],
+        "config": {
+          "seed": 728,
+          "steps": 80,
+          "learningRate": 0.03,
+          "weightDecay": 0.001,
+          "threads": 1,
+          "dimensions": 4096,
+          "classes": 16,
+          "maxTokens": 512,
+          "memoryGiB": 6,
+          "reusedFeatures": 48,
+          "newTrainForwards": 64,
+          "newEvaluationForwards": 32,
+          "newNativeForwards": 96,
+          "totalFeatureVectors": 144,
+          "objective": "mean(query96-class cross entropy, catalog16-identity cross entropy); balanced6 TRAIN rows/function",
+          "selection": "one fixed final80-step checkpoint; no eval-driven schedule/early stop",
+          "permutedQueryOffset": 17,
+          "permutationClaim": "fixed public row rotation, no target consulted; actual same-target rate reported postfreeze",
+          "controls": [
+            "frozen-v3",
+            "prior",
+            "random",
+            "permuted-query"
+          ],
+          "runtimeCompatibility": "same FunctionHead/v3 request and softmax scoring; original StoreRankSession64-forward report guard requires NEW explicit serving adapter; do not fake64"
+        },
+        "packetSha256": "047cdbc3dea0121513ef35d73111af030a724aee2f8eff8ea8664aebc8962015",
+        "trainTargetsSha256": "40452923e26ddcf0f929cbd496f3e333942bab8ec10b6dd02365365a616dd722",
+        "trainingScope": "known16 catalog,96 public single-function TRAIN paraphrases; no hidden profiles"
+      }
+    }
+  },
+  "trainingLosses": [
+    {
+      "step": 1,
+      "loss": 2.7719295024871826
+    },
+    {
+      "step": 2,
+      "loss": 1.689436912536621
+    },
+    {
+      "step": 3,
+      "loss": 0.9161807298660278
+    },
+    {
+      "step": 4,
+      "loss": 0.4933158755302429
+    },
+    {
+      "step": 5,
+      "loss": 0.2801242470741272
+    },
+    {
+      "step": 6,
+      "loss": 0.16548582911491394
+    },
+    {
+      "step": 7,
+      "loss": 0.10020048171281815
+    },
+    {
+      "step": 8,
+      "loss": 0.06207550689578056
+    },
+    {
+      "step": 9,
+      "loss": 0.039625152945518494
+    },
+    {
+      "step": 10,
+      "loss": 0.026249289512634277
+    },
+    {
+      "step": 11,
+      "loss": 0.018082326278090477
+    },
+    {
+      "step": 12,
+      "loss": 0.012922815978527069
+    },
+    {
+      "step": 13,
+      "loss": 0.009541500359773636
+    },
+    {
+      "step": 14,
+      "loss": 0.00724754435941577
+    },
+    {
+      "step": 15,
+      "loss": 0.005642884410917759
+    },
+    {
+      "step": 16,
+      "loss": 0.004490178544074297
+    },
+    {
+      "step": 17,
+      "loss": 0.0036428836174309254
+    },
+    {
+      "step": 18,
+      "loss": 0.0030074967071413994
+    },
+    {
+      "step": 19,
+      "loss": 0.0025224455166608095
+    },
+    {
+      "step": 20,
+      "loss": 0.0021463099401444197
+    },
+    {
+      "step": 21,
+      "loss": 0.001850406057201326
+    },
+    {
+      "step": 22,
+      "loss": 0.0016146039124578238
+    },
+    {
+      "step": 23,
+      "loss": 0.0014244688209146261
+    },
+    {
+      "step": 24,
+      "loss": 0.0012695008190348744
+    },
+    {
+      "step": 25,
+      "loss": 0.0011419547954574227
+    },
+    {
+      "step": 26,
+      "loss": 0.0010359955485910177
+    },
+    {
+      "step": 27,
+      "loss": 0.0009472486563026905
+    },
+    {
+      "step": 28,
+      "loss": 0.0008723500068299472
+    },
+    {
+      "step": 29,
+      "loss": 0.0008086938760243356
+    },
+    {
+      "step": 30,
+      "loss": 0.0007542340899817646
+    },
+    {
+      "step": 31,
+      "loss": 0.0007073769811540842
+    },
+    {
+      "step": 32,
+      "loss": 0.0006668099667876959
+    },
+    {
+      "step": 33,
+      "loss": 0.000631496834103018
+    },
+    {
+      "step": 34,
+      "loss": 0.0006006479379720986
+    },
+    {
+      "step": 35,
+      "loss": 0.0005735731683671474
+    },
+    {
+      "step": 36,
+      "loss": 0.0005496972589753568
+    },
+    {
+      "step": 37,
+      "loss": 0.0005285587394610047
+    },
+    {
+      "step": 38,
+      "loss": 0.0005097826360724866
+    },
+    {
+      "step": 39,
+      "loss": 0.0004930631839670241
+    },
+    {
+      "step": 40,
+      "loss": 0.00047806286602281034
+    },
+    {
+      "step": 41,
+      "loss": 0.00046463633771054447
+    },
+    {
+      "step": 42,
+      "loss": 0.0004525495460256934
+    },
+    {
+      "step": 43,
+      "loss": 0.0004416384035721421
+    },
+    {
+      "step": 44,
+      "loss": 0.00043176833423785865
+    },
+    {
+      "step": 45,
+      "loss": 0.00042279009358026087
+    },
+    {
+      "step": 46,
+      "loss": 0.00041464867535978556
+    },
+    {
+      "step": 47,
+      "loss": 0.00040721381083130836
+    },
+    {
+      "step": 48,
+      "loss": 0.0004004230722784996
+    },
+    {
+      "step": 49,
+      "loss": 0.0003941995382774621
+    },
+    {
+      "step": 50,
+      "loss": 0.00038847376708872616
+    },
+    {
+      "step": 51,
+      "loss": 0.000383185688406229
+    },
+    {
+      "step": 52,
+      "loss": 0.0003783030842896551
+    },
+    {
+      "step": 53,
+      "loss": 0.0003738054365385324
+    },
+    {
+      "step": 54,
+      "loss": 0.00036962280864827335
+    },
+    {
+      "step": 55,
+      "loss": 0.00036573465331457555
+    },
+    {
+      "step": 56,
+      "loss": 0.0003621094219852239
+    },
+    {
+      "step": 57,
+      "loss": 0.00035872473381459713
+    },
+    {
+      "step": 58,
+      "loss": 0.00035555087379179895
+    },
+    {
+      "step": 59,
+      "loss": 0.0003525841748341918
+    },
+    {
+      "step": 60,
+      "loss": 0.00034977050381712615
+    },
+    {
+      "step": 61,
+      "loss": 0.0003471249947324395
+    },
+    {
+      "step": 62,
+      "loss": 0.00034462203620932996
+    },
+    {
+      "step": 63,
+      "loss": 0.00034226171555928886
+    },
+    {
+      "step": 64,
+      "loss": 0.0003400018031243235
+    },
+    {
+      "step": 65,
+      "loss": 0.0003378498659003526
+    },
+    {
+      "step": 66,
+      "loss": 0.00033580511808395386
+    },
+    {
+      "step": 67,
+      "loss": 0.00033385350252501667
+    },
+    {
+      "step": 68,
+      "loss": 0.0003319786919746548
+    },
+    {
+      "step": 69,
+      "loss": 0.00033017955138348043
+    },
+    {
+      "step": 70,
+      "loss": 0.0003284424019511789
+    },
+    {
+      "step": 71,
+      "loss": 0.0003267610736656934
+    },
+    {
+      "step": 72,
+      "loss": 0.0003251442394685
+    },
+    {
+      "step": 73,
+      "loss": 0.00032358133466914296
+    },
+    {
+      "step": 74,
+      "loss": 0.0003220768121536821
+    },
+    {
+      "step": 75,
+      "loss": 0.0003205951361451298
+    },
+    {
+      "step": 76,
+      "loss": 0.0003191581054124981
+    },
+    {
+      "step": 77,
+      "loss": 0.00031777197727933526
+    },
+    {
+      "step": 78,
+      "loss": 0.0003164124791510403
+    },
+    {
+      "step": 79,
+      "loss": 0.00031507594394497573
+    },
+    {
+      "step": 80,
+      "loss": 0.0003137716557830572
+    }
+  ],
+  "evaluationLabelsRead": false
+}

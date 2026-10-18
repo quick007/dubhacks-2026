@@ -18,7 +18,8 @@ function fixture(directory: string, actions: AgentAction[], options: { hanging?:
   observationOverrides?: { url?: string; observedAtPerformanceMs?: number; modelStatusText?: string; readiness?: unknown[] }[] } = {}) {
   let index = 0, browserCloses = 0, agentCloses = 0;
   const observations = { text: "Fixture page, not browser execution", controls: [{ ref: "control-1", role: "button", name: "Fixture" }],
-    url: "http://127.0.0.1:4312/", screenshotBase64: "", observedAtPerformanceMs: 0, modelStatusText: "", cartItemCount: 0, cartEmpty: options.cartEmpty ?? true, readiness: [] };
+    url: "http://127.0.0.1:4312/", screenshotBase64: "", observedAtPerformanceMs: 0, modelStatusText: "", cartItemCount: 0,
+    viewport: { scrollY: 0, height: 960, documentHeight: 2400 }, cartEmpty: options.cartEmpty ?? true, readiness: [] };
   const selected = { originalName: "Everyday steel bottle", catalogPrice: 36, selectedColor: "Graphite", quantity: 1 as const };
   const dependencies: SessionDependencies = {
     openBrowser: async () => ({ browserVersion: "fixture-only", contextId: "fixture-context", tabId: "fixture-tab",

@@ -69,6 +69,15 @@ class DemoContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Delivered-cost'):
             checked_request({'query': 'something delivered under $25'})
 
+    def test_delivery_alias_budget_is_not_silently_treated_as_item_only(self):
+        for phrase in ('including delivery', 'with delivery', 'including shipping', 'delivery included'):
+            with self.subTest(phrase=phrase), self.assertRaisesRegex(ValueError, 'Delivered-cost'):
+                checked_request({'query': f'a mug under $30 {phrase}'})
+            with self.subTest(typed=phrase), self.assertRaisesRegex(ValueError, 'Delivered-cost'):
+                checked_request({'query': f'a mug {phrase}', 'itemBudget': 30})
+        request, _ = checked_request({'query': 'a mug with delivery'})
+        self.assertIsNone(request['itemBudget'])
+
     def test_unknown_stock_size_fail_closed_and_colors_bind_actual_variant(self):
         for query in ('something in stock', 'a jacket size M'):
             request, policy = checked_request({'query': query})

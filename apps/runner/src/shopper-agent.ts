@@ -8,7 +8,8 @@ import type { ShopperAssignment } from "./shopper-contract.js";
 export type AgentAction = { type: "click"; ref: string } | { type: "search"; query: string }
   | { type: "scroll"; direction: "up" | "down" } | { type: "abandon"; reason: string };
 export type ShopperObservation = { text: string; screenshotBase64: string;
-  controls: { ref: string; role: string; name: string }[]; url: string; cartItemCount?: number };
+  controls: { ref: string; role: string; name: string }[]; url: string; cartItemCount?: number;
+  viewport?: { scrollY: number; height: number; documentHeight: number } };
 export interface ShopperAgent {
   decide(observation: ShopperObservation, remaining: { actions: number; wallMs: number }): Promise<AgentAction>;
   close(): Promise<void>;

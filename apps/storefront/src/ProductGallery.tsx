@@ -50,7 +50,7 @@ export function ProductGallery({
               aria-controls={`${product.id}-photo`}
               onClick={() => setSelectedLabel(view.label)}
             >
-              <ProductPhoto image={view} alt="" />
+              <ProductPhoto image={view} alt="" thumbnail />
             </button>
           ))}
         </div>

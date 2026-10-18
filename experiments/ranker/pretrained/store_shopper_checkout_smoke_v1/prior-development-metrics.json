@@ -1,0 +1,1485 @@
+{
+  "version": "shopper-synthetic-metrics.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "fixedCases": 10,
+  "fixedSessions": 20,
+  "currency": "USD",
+  "sourceEvidenceReverified": false,
+  "sourceVersion": "shopper-evidence-aggregate.v1",
+  "prespecifiedEligibility": {
+    "satisfiable": 8,
+    "known-empty": 1,
+    "unverifiable-required-fact": 1
+  },
+  "primaryOutcome": "Intent-correct success: verified valid fake checkout or independently justified and evidenced abstention",
+  "checkoutEvidencePolicy": "Legacy independent-DOM receipt evidence; server order confirmation is not established by this report",
+  "arms": {
+    "generic": {
+      "assigned": 10,
+      "recorded": 10,
+      "observedFakeCheckouts": 6,
+      "verifiedPurchases": 6,
+      "intentCorrectSuccess": {
+        "numerator": 8,
+        "denominator": 10,
+        "rate": 0.8,
+        "interval95": {
+          "level": 0.95,
+          "method": "Wilson score",
+          "lower": 0.49016247153664183,
+          "upper": 0.9433178485456247
+        }
+      },
+      "syntheticConversion": {
+        "numerator": 6,
+        "denominator": 10,
+        "rate": 0.6,
+        "interval95": {
+          "level": 0.95,
+          "method": "Wilson score",
+          "lower": 0.31267376973365824,
+          "upper": 0.8318196702937638
+        }
+      },
+      "revenue": {
+        "currency": "USD",
+        "quantityPerPurchase": 1,
+        "totalCents": 20400,
+        "revenuePerAssignedSessionCents": 2040,
+        "nonpurchaseSessions": 4
+      },
+      "allServerConfirmedOrders": {
+        "evaluated": false,
+        "count": 0,
+        "assigned": 10,
+        "rate": null,
+        "interval95": null,
+        "merchandiseSubtotalCents": 0,
+        "merchandiseRevenuePerAssignedSessionCents": 0,
+        "shippingKnown": false,
+        "shippingCents": null,
+        "knownShippingCents": 0,
+        "shippingKnownOrders": 0,
+        "shippingUnknownOrders": 0,
+        "scope": "Server-confirmed quantity-one orders, including confirmed orders excluded from valid-purchase scoring; revenue is merchandise subtotal only. Hidden shipping remains unknown, never an observed zero charge."
+      },
+      "outcomes": {
+        "completed": 6,
+        "abandoned": 3,
+        "constraint-failure": 0,
+        "timeout": 1,
+        "technical-failure": 0,
+        "unattempted": 0,
+        "invalid-sidecar": 0
+      },
+      "abstentions": {
+        "observed": 3,
+        "verifiedExpected": 2
+      },
+      "interruptions": 0,
+      "technicalFailuresExcludingInterruptions": 0,
+      "purchaseExclusions": {
+        "budget-unverified-or-exceeded": 1,
+        "choice-evidence-unverified": 4,
+        "choice-not-independent-dom": 4,
+        "hard-constraints-unmet-or-unknown": 4,
+        "invalid-unit-price-or-quantity": 4,
+        "no-observed-checkout": 4,
+        "not-completed": 4,
+        "not-formal": 1,
+        "unacceptable-gold-selection": 4
+      },
+      "preference": {
+        "observedChecks": {
+          "met": 5,
+          "notMet": 0,
+          "unknown": 3,
+          "total": 8,
+          "unavailableSessions": 0
+        },
+        "verifiedPurchasedMetChecks": 5,
+        "verifiedPurchasedMetChecksPerAssignedSession": 0.5,
+        "purchasedMetFractionPerAssignedSession": 0.5,
+        "purchasedMetFractionAmongPurchasersWithSpecifiedPreferences": 1,
+        "purchasersWithSpecifiedPreferences": 5,
+        "purchasersWithoutSpecifiedPreferences": 1,
+        "purchasedUnknownChecks": 0,
+        "scoreDefinition": "For each assigned slot: verified purchase ? met preference checks / specified preference checks : 0; slots with no specified preferences score 0. Unknown checks remain in the fraction denominator; no-preference counts are disclosed."
+      },
+      "effort": {
+        "observedSteps": {
+          "count": 10,
+          "total": 70,
+          "mean": 7,
+          "minimum": 3,
+          "median": 7.5,
+          "p95": 11.099999999999998,
+          "maximum": 12,
+          "values": [
+            6,
+            12,
+            10,
+            3,
+            8,
+            7,
+            8,
+            8,
+            3,
+            5
+          ]
+        },
+        "fullyTimedSteps": {
+          "count": 10,
+          "total": 70,
+          "mean": 7,
+          "minimum": 3,
+          "median": 7.5,
+          "p95": 11.099999999999998,
+          "maximum": 12,
+          "values": [
+            6,
+            12,
+            10,
+            3,
+            8,
+            7,
+            8,
+            8,
+            3,
+            5
+          ]
+        },
+        "measuredSessionElapsedMs": {
+          "count": 10,
+          "total": 513157.9125840001,
+          "mean": 51315.79125840001,
+          "minimum": 12814.846334000002,
+          "median": 48735.00141699999,
+          "p95": 98649.03536409995,
+          "maximum": 120000.046333,
+          "values": [
+            33183.68333300005,
+            72553.355291,
+            57883.822999999975,
+            120000.046333,
+            49983.745167000045,
+            41977.589542,
+            47844.25583399998,
+            49625.747,
+            12814.846334000002,
+            27290.82075000007
+          ]
+        },
+        "excludedSessionTiming": []
+      },
+      "browserReadinessMs": {
+        "rank": {
+          "count": 0,
+          "total": 0,
+          "mean": null,
+          "minimum": null,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "values": []
+        },
+        "firstThree": {
+          "count": 0,
+          "total": 0,
+          "mean": null,
+          "minimum": null,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "values": []
+        },
+        "complete": {
+          "count": 0,
+          "total": 0,
+          "mean": null,
+          "minimum": null,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "values": []
+        }
+      },
+      "prespecifiedFeasibleCheckout": {
+        "numerator": 6,
+        "denominator": 8,
+        "rate": 0.75,
+        "interval95": {
+          "level": 0.95,
+          "method": "Wilson score",
+          "lower": 0.40927543031016883,
+          "upper": 0.9285207872478909
+        }
+      }
+    },
+    "local-model": {
+      "assigned": 10,
+      "recorded": 10,
+      "observedFakeCheckouts": 5,
+      "verifiedPurchases": 5,
+      "intentCorrectSuccess": {
+        "numerator": 7,
+        "denominator": 10,
+        "rate": 0.7,
+        "interval95": {
+          "level": 0.95,
+          "method": "Wilson score",
+          "lower": 0.39677814746114537,
+          "upper": 0.8922087325936989
+        }
+      },
+      "syntheticConversion": {
+        "numerator": 5,
+        "denominator": 10,
+        "rate": 0.5,
+        "interval95": {
+          "level": 0.95,
+          "method": "Wilson score",
+          "lower": 0.236593090512564,
+          "upper": 0.7634069094874361
+        }
+      },
+      "revenue": {
+        "currency": "USD",
+        "quantityPerPurchase": 1,
+        "totalCents": 14000,
+        "revenuePerAssignedSessionCents": 1400,
+        "nonpurchaseSessions": 5
+      },
+      "allServerConfirmedOrders": {
+        "evaluated": false,
+        "count": 0,
+        "assigned": 10,
+        "rate": null,
+        "interval95": null,
+        "merchandiseSubtotalCents": 0,
+        "merchandiseRevenuePerAssignedSessionCents": 0,
+        "shippingKnown": false,
+        "shippingCents": null,
+        "knownShippingCents": 0,
+        "shippingKnownOrders": 0,
+        "shippingUnknownOrders": 0,
+        "scope": "Server-confirmed quantity-one orders, including confirmed orders excluded from valid-purchase scoring; revenue is merchandise subtotal only. Hidden shipping remains unknown, never an observed zero charge."
+      },
+      "outcomes": {
+        "completed": 5,
+        "abandoned": 3,
+        "constraint-failure": 0,
+        "timeout": 1,
+        "technical-failure": 1,
+        "unattempted": 0,
+        "invalid-sidecar": 0
+      },
+      "abstentions": {
+        "observed": 3,
+        "verifiedExpected": 2
+      },
+      "interruptions": 1,
+      "technicalFailuresExcludingInterruptions": 0,
+      "purchaseExclusions": {
+        "budget-unverified-or-exceeded": 2,
+        "choice-evidence-unverified": 4,
+        "choice-not-independent-dom": 4,
+        "evidence-unverified": 1,
+        "hard-constraints-unmet-or-unknown": 4,
+        "invalid-unit-price-or-quantity": 4,
+        "no-observed-checkout": 5,
+        "not-completed": 5,
+        "not-formal": 2,
+        "unacceptable-gold-selection": 5
+      },
+      "preference": {
+        "observedChecks": {
+          "met": 5,
+          "notMet": 0,
+          "unknown": 3,
+          "total": 8,
+          "unavailableSessions": 0
+        },
+        "verifiedPurchasedMetChecks": 4,
+        "verifiedPurchasedMetChecksPerAssignedSession": 0.4,
+        "purchasedMetFractionPerAssignedSession": 0.4,
+        "purchasedMetFractionAmongPurchasersWithSpecifiedPreferences": 1,
+        "purchasersWithSpecifiedPreferences": 4,
+        "purchasersWithoutSpecifiedPreferences": 1,
+        "purchasedUnknownChecks": 0,
+        "scoreDefinition": "For each assigned slot: verified purchase ? met preference checks / specified preference checks : 0; slots with no specified preferences score 0. Unknown checks remain in the fraction denominator; no-preference counts are disclosed."
+      },
+      "effort": {
+        "observedSteps": {
+          "count": 10,
+          "total": 91,
+          "mean": 9.1,
+          "minimum": 1,
+          "median": 8.5,
+          "p95": 18.099999999999998,
+          "maximum": 19,
+          "values": [
+            17,
+            8,
+            19,
+            1,
+            10,
+            8,
+            9,
+            10,
+            3,
+            6
+          ]
+        },
+        "fullyTimedSteps": {
+          "count": 9,
+          "total": 90,
+          "mean": 10,
+          "minimum": 3,
+          "median": 9,
+          "p95": 18.2,
+          "maximum": 19,
+          "values": [
+            17,
+            8,
+            19,
+            10,
+            8,
+            9,
+            10,
+            3,
+            6
+          ]
+        },
+        "measuredSessionElapsedMs": {
+          "count": 9,
+          "total": 533227.897957,
+          "mean": 59247.54421744444,
+          "minimum": 12532.153374999994,
+          "median": 51171.56675000001,
+          "p95": 114369.80144220001,
+          "maximum": 120002.277459,
+          "values": [
+            105921.08741700003,
+            44816.56704099999,
+            120002.277459,
+            58926.17404100002,
+            44710.14083299998,
+            51171.56675000001,
+            63629.79620800001,
+            12532.153374999994,
+            31518.13483300002
+          ]
+        },
+        "excludedSessionTiming": [
+          {
+            "caseId": "shopper-pair-04",
+            "precision": "estimated",
+            "status": "recorded"
+          }
+        ]
+      },
+      "browserReadinessMs": {
+        "rank": {
+          "count": 10,
+          "total": 2303.5,
+          "mean": 230.35,
+          "minimum": 213.5,
+          "median": 232.60000002384186,
+          "p95": 246.1149999976158,
+          "maximum": 249.39999997615814,
+          "values": [
+            232.09999990463257,
+            233.30000007152557,
+            232.70000004768372,
+            215.69999992847443,
+            232.5,
+            218.89999997615814,
+            249.39999997615814,
+            213.5,
+            233.30000007152557,
+            242.10000002384186
+          ]
+        },
+        "firstThree": {
+          "count": 8,
+          "total": 33961.59999990463,
+          "mean": 4245.199999988079,
+          "minimum": 2183.399999976158,
+          "median": 4896.449999988079,
+          "p95": 5409.575000005961,
+          "maximum": 5450.700000047684,
+          "values": [
+            5333.199999928474,
+            5450.700000047684,
+            5001,
+            3767.2999999523163,
+            2433.100000023842,
+            4933.899999976158,
+            2183.399999976158,
+            4859
+          ]
+        },
+        "complete": {
+          "count": 10,
+          "total": 37257.300000190735,
+          "mean": 3725.7300000190735,
+          "minimum": 213.70000004768372,
+          "median": 4583.899999976158,
+          "p95": 6068.549999999999,
+          "maximum": 6384,
+          "values": [
+            5683,
+            6384,
+            5334.100000023842,
+            3833.899999976158,
+            2499.8000000715256,
+            5333.899999976158,
+            2266.600000023842,
+            213.70000004768372,
+            233.39999997615814,
+            5474.900000095367
+          ]
+        }
+      },
+      "prespecifiedFeasibleCheckout": {
+        "numerator": 5,
+        "denominator": 8,
+        "rate": 0.625,
+        "interval95": {
+          "level": 0.95,
+          "method": "Wilson score",
+          "lower": 0.30574239460262737,
+          "upper": 0.8631557141764026
+        }
+      }
+    }
+  },
+  "pairedDifferences": {
+    "intentCorrectSuccess": {
+      "difference": -0.1,
+      "lower": -0.3,
+      "upper": 0,
+      "level": 0.95,
+      "method": "Paired case percentile bootstrap",
+      "pairs": 10,
+      "seed": 20261018,
+      "replicates": 20000,
+      "direction": "local-model minus generic",
+      "localWins": 0,
+      "genericWins": 1,
+      "ties": 9,
+      "absolutePercentagePoints": -10,
+      "lowerPercentagePoints": -30,
+      "upperPercentagePoints": 0
+    },
+    "conversion": {
+      "difference": -0.1,
+      "lower": -0.3,
+      "upper": 0,
+      "level": 0.95,
+      "method": "Paired case percentile bootstrap",
+      "pairs": 10,
+      "seed": 20261018,
+      "replicates": 20000,
+      "direction": "local-model minus generic",
+      "localWins": 0,
+      "genericWins": 1,
+      "ties": 9,
+      "absolutePercentagePoints": -10,
+      "lowerPercentagePoints": -30,
+      "upperPercentagePoints": 0
+    },
+    "revenuePerSessionCents": {
+      "difference": -640,
+      "lower": -1920,
+      "upper": 0,
+      "level": 0.95,
+      "method": "Paired case percentile bootstrap",
+      "pairs": 10,
+      "seed": 20261018,
+      "replicates": 20000,
+      "direction": "local-model minus generic",
+      "localWins": 0,
+      "genericWins": 1,
+      "ties": 9
+    },
+    "purchasedPreferenceFraction": {
+      "difference": -0.1,
+      "lower": -0.3,
+      "upper": 0,
+      "level": 0.95,
+      "method": "Paired case percentile bootstrap",
+      "pairs": 10,
+      "seed": 20261018,
+      "replicates": 20000,
+      "direction": "local-model minus generic",
+      "localWins": 0,
+      "genericWins": 1,
+      "ties": 9
+    }
+  },
+  "feasibleCheckoutPairedDifference": {
+    "difference": -0.125,
+    "lower": -0.375,
+    "upper": 0,
+    "level": 0.95,
+    "method": "Paired case percentile bootstrap",
+    "pairs": 8,
+    "seed": 20261018,
+    "replicates": 20000,
+    "direction": "local-model minus generic"
+  },
+  "serverConfirmedPairedDifferences": null,
+  "pairs": [
+    {
+      "caseId": "shopper-pair-01",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-01",
+        "arm": "generic",
+        "runId": "shopper-pair-01-generic",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 1200,
+        "exclusions": [],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 0
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 6,
+        "comparableSteps": 6,
+        "elapsedMs": 33183.68333300005,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-01",
+        "arm": "local-model",
+        "runId": "shopper-pair-01-local-model",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 1200,
+        "exclusions": [],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 0
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 17,
+        "comparableSteps": 17,
+        "elapsedMs": 105921.08741700003,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "0aa80289-77a8-4448-9821-fa9e05bf91c5",
+            "durationMs": 232.09999990463257
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "0aa80289-77a8-4448-9821-fa9e05bf91c5",
+            "durationMs": 5333.199999928474
+          },
+          {
+            "stage": "complete",
+            "requestId": "0aa80289-77a8-4448-9821-fa9e05bf91c5",
+            "durationMs": 5683
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-02",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-02",
+        "arm": "generic",
+        "runId": "shopper-pair-02-generic",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 3600,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 12,
+        "comparableSteps": 12,
+        "elapsedMs": 72553.355291,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-02",
+        "arm": "local-model",
+        "runId": "shopper-pair-02-local-model",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 3600,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 8,
+        "comparableSteps": 8,
+        "elapsedMs": 44816.56704099999,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+            "durationMs": 233.30000007152557
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+            "durationMs": 5450.700000047684
+          },
+          {
+            "stage": "complete",
+            "requestId": "18bf1940-31bb-4ae1-9f8f-badfe767f170",
+            "durationMs": 6384
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-03",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-03",
+        "arm": "generic",
+        "runId": "shopper-pair-03-generic",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 6400,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 10,
+        "comparableSteps": 10,
+        "elapsedMs": 57883.822999999975,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-03",
+        "arm": "local-model",
+        "runId": "shopper-pair-03-local-model",
+        "status": "recorded",
+        "outcome": "timeout",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "not-formal",
+          "budget-unverified-or-exceeded",
+          "unacceptable-gold-selection"
+        ],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 19,
+        "comparableSteps": 19,
+        "elapsedMs": 120002.277459,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "31a1f727-3f86-4305-9296-841adcb11be5",
+            "durationMs": 232.70000004768372
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "31a1f727-3f86-4305-9296-841adcb11be5",
+            "durationMs": 5001
+          },
+          {
+            "stage": "complete",
+            "requestId": "31a1f727-3f86-4305-9296-841adcb11be5",
+            "durationMs": 5334.100000023842
+          }
+        ]
+      },
+      "differences": {
+        "conversion": -1,
+        "intentCorrectSuccess": -1,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": -6400,
+        "purchasedPreferenceFraction": -1
+      }
+    },
+    {
+      "caseId": "shopper-pair-04",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-04",
+        "arm": "generic",
+        "runId": "shopper-pair-04-generic",
+        "status": "recorded",
+        "outcome": "timeout",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "not-formal",
+          "budget-unverified-or-exceeded",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 1,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 3,
+        "comparableSteps": 3,
+        "elapsedMs": 120000.046333,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-04",
+        "arm": "local-model",
+        "runId": "shopper-pair-04-local-model",
+        "status": "recorded",
+        "outcome": "technical-failure",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "not-formal",
+          "budget-unverified-or-exceeded",
+          "evidence-unverified",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 1,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": true,
+        "observedSteps": 1,
+        "comparableSteps": null,
+        "elapsedMs": null,
+        "timingPrecision": "estimated",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-05",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-05",
+        "arm": "generic",
+        "runId": "shopper-pair-05-generic",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 2600,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 8,
+        "comparableSteps": 8,
+        "elapsedMs": 49983.745167000045,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-05",
+        "arm": "local-model",
+        "runId": "shopper-pair-05-local-model",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 2600,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 10,
+        "comparableSteps": 10,
+        "elapsedMs": 58926.17404100002,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "a723f019-67c0-4708-92b1-7ccc1d404b91",
+            "durationMs": 215.69999992847443
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "a723f019-67c0-4708-92b1-7ccc1d404b91",
+            "durationMs": 3767.2999999523163
+          },
+          {
+            "stage": "complete",
+            "requestId": "a723f019-67c0-4708-92b1-7ccc1d404b91",
+            "durationMs": 3833.899999976158
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-06",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-06",
+        "arm": "generic",
+        "runId": "shopper-pair-06-generic",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 2400,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 7,
+        "comparableSteps": 7,
+        "elapsedMs": 41977.589542,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-06",
+        "arm": "local-model",
+        "runId": "shopper-pair-06-local-model",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 2400,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 8,
+        "comparableSteps": 8,
+        "elapsedMs": 44710.14083299998,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+            "durationMs": 232.5
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+            "durationMs": 2433.100000023842
+          },
+          {
+            "stage": "complete",
+            "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+            "durationMs": 2499.8000000715256
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-07",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-07",
+        "arm": "generic",
+        "runId": "shopper-pair-07-generic",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 4200,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 8,
+        "comparableSteps": 8,
+        "elapsedMs": 47844.25583399998,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-07",
+        "arm": "local-model",
+        "runId": "shopper-pair-07-local-model",
+        "status": "recorded",
+        "outcome": "completed",
+        "observedCheckout": true,
+        "purchase": true,
+        "revenueCents": 4200,
+        "exclusions": [],
+        "preference": {
+          "met": 1,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 1,
+        "abstained": false,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 9,
+        "comparableSteps": 9,
+        "elapsedMs": 51171.56675000001,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "151f27b7-b979-44f7-b0a3-45d179e3daf5",
+            "durationMs": 218.89999997615814
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "151f27b7-b979-44f7-b0a3-45d179e3daf5",
+            "durationMs": 4933.899999976158
+          },
+          {
+            "stage": "complete",
+            "requestId": "151f27b7-b979-44f7-b0a3-45d179e3daf5",
+            "durationMs": 5333.899999976158
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-08",
+      "eligibility": "satisfiable",
+      "generic": {
+        "caseId": "shopper-pair-08",
+        "arm": "generic",
+        "runId": "shopper-pair-08-generic",
+        "status": "recorded",
+        "outcome": "abandoned",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 1,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": true,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 8,
+        "comparableSteps": 8,
+        "elapsedMs": 49625.747,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-08",
+        "arm": "local-model",
+        "runId": "shopper-pair-08-local-model",
+        "status": "recorded",
+        "outcome": "abandoned",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 1,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": true,
+        "correctAbstention": false,
+        "interrupted": false,
+        "observedSteps": 10,
+        "comparableSteps": 10,
+        "elapsedMs": 63629.79620800001,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "6f27fe9b-d988-48f7-a7d9-ad7a4e33939b",
+            "durationMs": 249.39999997615814
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "6f27fe9b-d988-48f7-a7d9-ad7a4e33939b",
+            "durationMs": 2183.399999976158
+          },
+          {
+            "stage": "complete",
+            "requestId": "6f27fe9b-d988-48f7-a7d9-ad7a4e33939b",
+            "durationMs": 2266.600000023842
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-09",
+      "eligibility": "known-empty",
+      "generic": {
+        "caseId": "shopper-pair-09",
+        "arm": "generic",
+        "runId": "shopper-pair-09-generic",
+        "status": "recorded",
+        "outcome": "abandoned",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 0
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": true,
+        "correctAbstention": true,
+        "interrupted": false,
+        "observedSteps": 3,
+        "comparableSteps": 3,
+        "elapsedMs": 12814.846334000002,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-09",
+        "arm": "local-model",
+        "runId": "shopper-pair-09-local-model",
+        "status": "recorded",
+        "outcome": "abandoned",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 0,
+          "total": 0
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": true,
+        "correctAbstention": true,
+        "interrupted": false,
+        "observedSteps": 3,
+        "comparableSteps": 3,
+        "elapsedMs": 12532.153374999994,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "ed53ab14-ba6d-4466-99b8-383d27d4717e",
+            "durationMs": 213.5
+          },
+          {
+            "stage": "complete",
+            "requestId": "ed53ab14-ba6d-4466-99b8-383d27d4717e",
+            "durationMs": 213.70000004768372
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    },
+    {
+      "caseId": "shopper-pair-10",
+      "eligibility": "unverifiable-required-fact",
+      "generic": {
+        "caseId": "shopper-pair-10",
+        "arm": "generic",
+        "runId": "shopper-pair-10-generic",
+        "status": "recorded",
+        "outcome": "abandoned",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 1,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": true,
+        "correctAbstention": true,
+        "interrupted": false,
+        "observedSteps": 5,
+        "comparableSteps": 5,
+        "elapsedMs": 27290.82075000007,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": []
+      },
+      "local-model": {
+        "caseId": "shopper-pair-10",
+        "arm": "local-model",
+        "runId": "shopper-pair-10-local-model",
+        "status": "recorded",
+        "outcome": "abandoned",
+        "observedCheckout": false,
+        "purchase": false,
+        "revenueCents": 0,
+        "exclusions": [
+          "no-observed-checkout",
+          "not-completed",
+          "choice-not-independent-dom",
+          "choice-evidence-unverified",
+          "unacceptable-gold-selection",
+          "hard-constraints-unmet-or-unknown",
+          "invalid-unit-price-or-quantity"
+        ],
+        "preference": {
+          "met": 0,
+          "notMet": 0,
+          "unknown": 1,
+          "total": 1
+        },
+        "purchasedPreferenceCredit": 0,
+        "abstained": true,
+        "correctAbstention": true,
+        "interrupted": false,
+        "observedSteps": 6,
+        "comparableSteps": 6,
+        "elapsedMs": 31518.13483300002,
+        "timingPrecision": "measured-monotonic",
+        "serverConfirmed": false,
+        "serverMerchandiseRevenueCents": 0,
+        "serverShippingCents": null,
+        "readiness": [
+          {
+            "stage": "rank",
+            "requestId": "2ff32d2e-3cd8-4619-bf81-e616c80b5ff4",
+            "durationMs": 233.30000007152557
+          },
+          {
+            "stage": "complete",
+            "requestId": "2ff32d2e-3cd8-4619-bf81-e616c80b5ff4",
+            "durationMs": 233.39999997615814
+          },
+          {
+            "stage": "rank",
+            "requestId": "5af82fb6-831e-43e8-b9ad-d64d58202513",
+            "durationMs": 242.10000002384186
+          },
+          {
+            "stage": "firstThree",
+            "requestId": "5af82fb6-831e-43e8-b9ad-d64d58202513",
+            "durationMs": 4859
+          },
+          {
+            "stage": "complete",
+            "requestId": "5af82fb6-831e-43e8-b9ad-d64d58202513",
+            "durationMs": 5474.900000095367
+          }
+        ]
+      },
+      "differences": {
+        "conversion": 0,
+        "intentCorrectSuccess": 0,
+        "serverConfirmedConversion": 0,
+        "allServerRevenuePerSessionCents": 0,
+        "revenuePerSessionCents": 0,
+        "purchasedPreferenceFraction": 0
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic fixed scenario panel, not human conversion lift or independent identically distributed customers.",
+    "Descriptive Wilson intervals and a paired case bootstrap show finite-panel uncertainty; they do not establish population effects, causal lift, or generalization. Small samples can produce degenerate bootstrap intervals.",
+    "Every assigned slot remains in conversion and revenue denominators; nonpurchases, missing slots, invalid evidence, interruptions and timeouts contribute zero revenue.",
+    "Purchases require validated aggregate gold/constraint/catalog checks plus verified independent-DOM fake checkout, formal protocol and budget. This analyzer consumes those recorded checks; it does not rehash artifacts or independently rescore gold/catalog.",
+    "Preference credits count only verified purchases. Unobserved checks are not fabricated, unknown checks do not earn credit, and no-preference cases are reported separately.",
+    "Comparable elapsed times require measured monotonic total runtime and a known start. Estimated, upper-bound and missing timings are excluded; partial observed step counts remain separately visible.",
+    "Browser readiness is a verified after-paint opportunity measure, not physical paint, image transfer, native GPU latency or end-to-end shopper latency."
+  ],
+  "sourceReports": 1,
+  "sources": [
+    {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_sol_full_v1/aggregate-audited.json",
+      "sha256": "1627692633af8232b985a2809bc438a39a659f9914bc1d98c53d90b95b1553a1"
+    }
+  ],
+  "packetSources": [
+    {
+      "path": "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_shopper_eval_v1",
+      "evaluatorGoldSha256": "942354dcd845b9211ad4dbcfbc15a99ee9b80c7a3b68c1dccc637199bd9cdee6",
+      "manifestSha256": "6c4ad6f71efc0244562e0d806c42ee5145e0866e9d6ac2b945a25991e58a830a"
+    }
+  ],
+  "serverIndexSource": null
+}

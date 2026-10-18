@@ -1,0 +1,193 @@
+{
+  "schema": "fieldwork.shopping-context-model-verification.v1",
+  "scope": "observational-context-only-positive-choice",
+  "actualData": "Two previously verified automatic browser synthetic sessions exported from Tiger; no real customer choices established",
+  "input": "data/shopping-choices-synthetic-v2.jsonl",
+  "snapshots": {
+    "default": {
+      "packet": "data/shopping-context-default-v2",
+      "manifestSha256": "d5f3906a5d764fd232120656568aa2c062663450007864c912d65e497bc9a477",
+      "inputSha256": "2a8526f6698a7c0ecea23f3c5aa62fe4ce61f807c75b6d22292558ab9dab7d25",
+      "inputChoices": 4,
+      "acceptedChoices": 0,
+      "excludedNonProductionReal": 4,
+      "allowSynthetic": false,
+      "sessionCount": 0,
+      "splitCounts": {
+        "test": 0,
+        "train": 0,
+        "validation": 0
+      },
+      "fileSha256": {
+        "catalog.json": "424bad332f94649bb9cacc10c7adfaad6cb3d7c9f6213b19b0e407f1194c36e0",
+        "cpu-consumer-check.json": "4662e2e0d66a0d0da3a382185ac4902e8f8e72f6a0177e36d46f7b1985a16cb5",
+        "encoder-records.json": "a21e5ae64b6100369aabf1a5714ae4a9577d8721dac1b2b4936fc885a496e649",
+        "provenance.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "public-cases.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "routing.json": "5d69ed9cf1fd030b632ecf5b964b5f24ec2718aaf7b26efecdab8a8becdb5504",
+        "test-labels.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "train-labels.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "validation-labels.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "independentSerializedConsumer": {
+        "status": "skipped-no-training-rows",
+        "trainingRows": 0,
+        "nativeEncoded": false,
+        "trainingExecuted": false,
+        "featureSource": "synthetic-protocol-only-cpu"
+      }
+    },
+    "synthetic": {
+      "packet": "data/shopping-context-synthetic-v2",
+      "manifestSha256": "9eb896add068cde4b52f068e5b42c7ec68232530c02f96f1a938eaff47fd888d",
+      "inputSha256": "2a8526f6698a7c0ecea23f3c5aa62fe4ce61f807c75b6d22292558ab9dab7d25",
+      "inputChoices": 4,
+      "acceptedChoices": 4,
+      "excludedNonProductionReal": 0,
+      "allowSynthetic": true,
+      "sessionCount": 2,
+      "splitCounts": {
+        "test": 0,
+        "train": 4,
+        "validation": 0
+      },
+      "fileSha256": {
+        "catalog.json": "424bad332f94649bb9cacc10c7adfaad6cb3d7c9f6213b19b0e407f1194c36e0",
+        "cpu-consumer-check.json": "a8842c08c861db0ddf18b077530340f14a691d31e5c44e3bd8c78a6fabc1b9d4",
+        "encoder-records.json": "ef418396255d72a762ad4706604fc95664e6d8ea5460cdceae806e8f3a1663b1",
+        "provenance.json": "e17493b755d42c075bdb0dfe133dbb565b7cbb3637d055e2a324fecc0cba564a",
+        "public-cases.json": "b3af5d780a6457ffe820ed0e16e0e59ae8d8aed6e227d7db85d5c1b61cc960c8",
+        "routing.json": "5d69ed9cf1fd030b632ecf5b964b5f24ec2718aaf7b26efecdab8a8becdb5504",
+        "test-labels.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "train-labels.json": "50884328163545619cf60ea5629fcaae7b7c375e2aed05c6f9564b720a7c7562",
+        "validation-labels.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      "independentSerializedConsumer": {
+        "status": "passed",
+        "consumer": "store_function_adaptation.fit_inputs",
+        "trainingRows": 4,
+        "queryShape": [
+          4,
+          4096
+        ],
+        "catalogShape": [
+          16,
+          4096
+        ],
+        "targetShape": [
+          4
+        ],
+        "validationTestRequestsLoaded": 0,
+        "requestLoads": 4,
+        "featureSource": "synthetic-protocol-only-cpu",
+        "nativeEncoded": false,
+        "trainingExecuted": false,
+        "predictionQualityMeasured": false
+      }
+    }
+  },
+  "crossSplitFixture": {
+    "evidenceSource": "synthetic protocol-only unit fixture",
+    "splitCounts": {
+      "train": 1,
+      "validation": 1,
+      "test": 1
+    },
+    "consumer": {
+      "status": "passed",
+      "consumer": "store_function_adaptation.fit_inputs",
+      "trainingRows": 1,
+      "queryShape": [
+        1,
+        4096
+      ],
+      "catalogShape": [
+        16,
+        4096
+      ],
+      "targetShape": [
+        1
+      ],
+      "validationTestRequestsLoaded": 0,
+      "requestLoads": 1,
+      "featureSource": "synthetic-protocol-only-cpu",
+      "nativeEncoded": false,
+      "trainingExecuted": false,
+      "predictionQualityMeasured": false
+    }
+  },
+  "sourcePins": {
+    "adapter": {
+      "path": "apps/api/scripts/shopping_model_input.py",
+      "sha256": "ad18dfac964ed36d5aeb8e572aea96d8713b639bf924a137b4086ae2b36143f2"
+    },
+    "catalog": {
+      "path": "experiments/ranker/pretrained/store_function_v5/catalog.json",
+      "sha256": "61e121b7141d085661976a9c72cde595802e5748a91c64b79744ccc8fbe8db40"
+    },
+    "choiceSchema": {
+      "path": "apps/api/scripts/shopping-choice.v1.schema.json",
+      "sha256": "175529a2340a71906b66806f747962fdcfaddc7ac42866b5fb7e631ca4206fee"
+    },
+    "consumer": {
+      "path": "experiments/ranker/pretrained/store_function_adaptation.py",
+      "sha256": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d"
+    },
+    "encoderInputs": {
+      "path": "experiments/ranker/pretrained/catalog_fusion/inputs.py",
+      "sha256": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114"
+    },
+    "intakeCatalog": {
+      "path": "apps/api/internal/shoppingevents/catalog.json",
+      "sha256": "1194e2718ea4df463bdba5dc56933fac206303b0bb5306e0ba7eed57de36ff2a"
+    },
+    "mapping": {
+      "path": "experiments/ranker/pretrained/store_catalog_v1/external_mapping.json",
+      "sha256": "eaae73bc158c71b19f0b22a6854246b7450316d0f1ca60dd7969b02ebbf95937"
+    },
+    "publicCatalog": {
+      "path": "experiments/ranker/pretrained/store_catalog_v1/model_inputs.json",
+      "sha256": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468"
+    },
+    "runtime": {
+      "path": "experiments/ranker/pretrained/catalog_fusion/runtime.py",
+      "sha256": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f"
+    },
+    "snapshotImporter": {
+      "path": "experiments/ranker/pretrained/store_catalog_v1.py",
+      "sha256": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b"
+    },
+    "snapshotRawExport": {
+      "path": "experiments/ranker/pretrained/store_catalog_v1/runtime_export.json",
+      "sha256": "1f5bff7df9075beab1cda7e81aa52bfbc741b9b5a7bc4e0be629f568a80347ac"
+    },
+    "snapshotReceipt": {
+      "path": "experiments/ranker/pretrained/store_catalog_v1/IMPORT_RECEIPT.json",
+      "sha256": "9e87c057b71b2e4b6ca6200484a310631fe30de95bcd2f0549943e325567f7da"
+    }
+  },
+  "checks": {
+    "pythonUnitTestsPassed": 8,
+    "choiceBuilderNodeTestsPassed": 5,
+    "allSixteenProductIndicesVerified": true,
+    "targetDoesNotEnterRequestText": true,
+    "snapshotOrderAndProjectionVerifiedBy": "store_catalog_v1.load_snapshot",
+    "reorderedMappingModelInputsAndRawExportRejected": true,
+    "rewrittenPerFileReceiptCannotBypassIndependentPins": true,
+    "strictBooleanSyntheticPermission": true,
+    "privateExclusiveOutputAndSerializedTamperRejection": true
+  },
+  "limits": {
+    "queryObserved": false,
+    "semanticIntentSupervision": false,
+    "negativeLabelsInferred": false,
+    "nativeEncoded": false,
+    "featureVectors": "deterministic fake 4096-dimensional CPU protocol fixtures, never native/model evidence",
+    "trainingExecuted": false,
+    "predictionQualityMeasured": false,
+    "servingModelChanged": false,
+    "currentV5DriverCompatible": false,
+    "productionDeploymentPerformed": false
+  },
+  "remaining": "Approved production deployment/configuration and real cohort; separately versioned native feature extraction and observational training objective/evaluation; explicit serving promotion"
+}

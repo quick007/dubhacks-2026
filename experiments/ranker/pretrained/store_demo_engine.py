@@ -52,7 +52,7 @@ def checked_request(value):
     query = value.get('query')
     if type(query) is not str or not query.strip() or len(query) > 2000:
         raise ValueError('query must contain 1–2000 characters')
-    if re.search(r'\b(?:delivered|including shipping|with shipping|delivery included|shipping included)\b', query, re.I) and (
+    if re.search(r'\b(?:delivered|(?:including|with)\s+(?:shipping|delivery)|(?:delivery|shipping)\s+included)\b', query, re.I) and (
             value.get('itemBudget') is not None or BUDGET_CLAUSE.search(query)):
         raise ValueError('Delivered-cost budgets are unsupported; itemBudget covers item price only')
     requirements = value.get('hardRequirements', [])
@@ -359,7 +359,8 @@ def decode_rows(bb, state, jobs, width, first_ready, cancelled):
 class ResidentDemoEngine:
     """Thread-affine native engine. Service owns the lock for this whole lifetime."""
     def __init__(self, *, rank_run=DEFAULT_RANK, copy_run=DEFAULT_COPY, output=DEFAULT_OUTPUT,
-                 width=10, memory_gib=7, integration_manifest=None):
+                 width=10, memory_gib=7, integration_manifest=None, catalog_binding_factory=None,
+                 rank_session_factory=None):
         initialization_started = time.perf_counter()
         from .store_hybrid_benchmark_v2 import completed_adapter
         from .semantic_copy_feature_fit import MODEL, verify_model_files
@@ -373,13 +374,15 @@ class ResidentDemoEngine:
         fit, checkpoint = completed_adapter(copy_run)
         self.copy_sha = fit['checkpoint']['sha256']
         self.model_verification = verify_model_files(fit['preflight']['modelFiles'])
-        self.binding = DemoCatalogBinding() if integration_manifest is None else DemoCatalogBinding(integration_manifest)
+        binding_factory = DemoCatalogBinding if catalog_binding_factory is None else catalog_binding_factory
+        self.binding = binding_factory() if integration_manifest is None else binding_factory(integration_manifest)
         import mlx.core as mx
         from mlx_lm.generate import generation_stream
         from mlx_lm.tuner.lora import LoRALinear
         from .backbone import FrozenBackbone
         from .evidence_plan import REVISION
         self.stream_context = mx.stream(generation_stream); self.stream_context.__enter__()
+        self._native_stream_exited = False
         self.bb = FrozenBackbone(MODEL, REVISION, 4096, memory_gib)
         self.before_hashes = parameter_hashes(self.bb.model.language_model)
         if len(self.before_hashes) != 927:
@@ -388,7 +391,8 @@ class ResidentDemoEngine:
         self.bb.model.layers[-1].mlp.down_proj = self.adapter
         self.adapter.load_weights(list(mx.load(str(checkpoint)).items()), strict=False)
         self.adapter.freeze(); self.bb.model.eval(); mx.eval(self.adapter.parameters()); mx.synchronize()
-        self.session = StoreRankSession(self.bb, rank_run, source_validator=self.binding.assert_current_sources)
+        session_factory = StoreRankSession if rank_session_factory is None else rank_session_factory
+        self.session = session_factory(self.bb, rank_run, source_validator=self.binding.assert_current_sources)
         from .store_copy_wide_v2 import guard_memory
         guard_memory(self.bb)
         self.startup = {'rankCheckpointSha256': self.session.head_sha, 'copyCheckpointSha256': self.copy_sha,
@@ -396,19 +400,33 @@ class ResidentDemoEngine:
             'engineInitializationMs': (time.perf_counter() - initialization_started) * 1000,
             'initializationScope': 'engine constructor including source/checkpoint verification, model load, frozen hashes and catalog head; excludes process imports, worker lock wait and browser',
             'memory': self.bb.runtime_memory(), 'width': width, 'nativeFallback': False}
+        if hasattr(self.session, 'startup_provenance'):
+            self.startup['rankSessionProvenance'] = self.session.startup_provenance
         (self.output / 'startup.json').write_text(json.dumps(self.startup, indent=2) + '\n')
 
     def close(self):
+        if hasattr(self, '_native_closed_receipt'):
+            return deepcopy(self._native_closed_receipt)
         from .semantic_copy_training import parameter_hashes
         from .semantic_copy_feature_fit import digest
         from mlx_lm.generate import generation_stream
-        after = {k.replace('.31.mlp.down_proj.linear.', '.31.mlp.down_proj.'): value
-            for k, value in parameter_hashes(self.bb.model.language_model).items()}
-        receipt = {'frozen927HashesUnchanged': after == self.before_hashes,
-            'copyCheckpointUnchanged': digest(self.copy_run / 'adapter.safetensors') == self.copy_sha,
-            'memory': self.bb.runtime_memory()}
-        (self.output / 'shutdown.json').write_text(json.dumps(receipt, indent=2) + '\n')
-        self.bb.mx.synchronize(generation_stream); self.stream_context.__exit__(None, None, None)
+        try:
+            after = {k.replace('.31.mlp.down_proj.linear.', '.31.mlp.down_proj.'): value
+                for k, value in parameter_hashes(self.bb.model.language_model).items()}
+            receipt = {'frozen927HashesUnchanged': after == self.before_hashes,
+                'copyCheckpointUnchanged': digest(self.copy_run / 'adapter.safetensors') == self.copy_sha,
+                'memory': self.bb.runtime_memory()}
+            (self.output / 'shutdown.json').write_text(json.dumps(receipt, indent=2) + '\n')
+        finally:
+            try:
+                self.bb.mx.synchronize(generation_stream)
+            finally:
+                if not getattr(self, '_native_stream_exited', False):
+                    try:
+                        self.stream_context.__exit__(None, None, None)
+                    finally:
+                        self._native_stream_exited = True
+        self._native_closed_receipt = deepcopy(receipt)
         return receipt
 
     def personalize(self, value, request_id, started, emit, cancelled):

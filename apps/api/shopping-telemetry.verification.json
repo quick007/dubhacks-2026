@@ -1,0 +1,98 @@
+{
+  "schema": "fieldwork.shopping-pipeline-verification.v1",
+  "classification": {
+    "environment": "test",
+    "traffic": "synthetic"
+  },
+  "productionDeploymentPerformed": false,
+  "backendSchema": "shopping_events",
+  "browser": {
+    "automaticWithoutStart": true,
+    "rebuiltBackendProducts": 16,
+    "privacyCanariesPassed": true,
+    "optOutStopsCollection": true,
+    "persistedOptOutNoRecorderOrUpload": true,
+    "doNotTrackNoRecorderOrUpload": true,
+    "modelCalls": 0,
+    "pageErrors": []
+  },
+  "finalBatch": {
+    "batchId": "9ff5d0b9-fe4d-4a44-87a9-e2eabbce70af",
+    "sessionId": "beb24180-b54a-4e34-a03c-987168e0b215",
+    "observationCount": 17,
+    "acceptedEnvelopeSha256": "2735355141b8a6ff2b21da84368ddb629f395e62464b17888db41cda51aa615d",
+    "cloudObservationDigestMatchesLocal": true,
+    "cloudRetryIdempotent": true,
+    "replayEventCount": 29,
+    "cloudReplayMatchesLocal": true,
+    "replaySha256": "c402f6635958898d4674f3a6a8df29d58e5469f1c8bd414115fff03396b0d04f",
+    "replayDigestMethod": "SHA256 UTF8 JSON.stringify with recursively Object.keys.sort() sorted objects and preserved array order; no HTML escaping",
+    "replayExpiresAt": "2026-10-19T07:45:37.874486Z"
+  },
+  "exports": {
+    "defaultProductionReal": {
+      "schema": "fieldwork.training-export.v1",
+      "observationSchema": "fieldwork.training-observation.v1",
+      "since": "2020-01-01T00:00:00Z",
+      "until": "2026-10-18T07:47:03.926871Z",
+      "includeSynthetic": false,
+      "batches": 0,
+      "rows": 0,
+      "sessions": 0,
+      "splits": {
+        "test": 0,
+        "train": 0,
+        "validation": 0
+      },
+      "replayIncluded": false
+    },
+    "explicitSynthetic": {
+      "schema": "fieldwork.training-export.v1",
+      "observationSchema": "fieldwork.training-observation.v1",
+      "since": "2020-01-01T00:00:00Z",
+      "until": "2026-10-18T07:47:04.967553Z",
+      "includeSynthetic": true,
+      "batches": 2,
+      "rows": 34,
+      "sessions": 2,
+      "splits": {
+        "test": 0,
+        "train": 34,
+        "validation": 0
+      },
+      "replayIncluded": false
+    },
+    "defaultChoiceBuilder": {
+      "schema": "fieldwork.shopping-choice-export.v1",
+      "inputSha256": "28508767e77d71ea25f86d0f1da9b373964cada11cdb87d6d8f5292d533273f0",
+      "inputObservations": 34,
+      "examples": 0,
+      "allowSynthetic": false,
+      "derivation": "explicit-positive-choice.v1",
+      "splitVersion": "fieldwork.session-split.v1",
+      "negativeLabelsInferred": false,
+      "replayIncluded": false
+    },
+    "explicitSyntheticChoiceBuilder": {
+      "schema": "fieldwork.shopping-choice-export.v1",
+      "inputSha256": "28508767e77d71ea25f86d0f1da9b373964cada11cdb87d6d8f5292d533273f0",
+      "inputObservations": 34,
+      "examples": 4,
+      "allowSynthetic": true,
+      "derivation": "explicit-positive-choice.v1",
+      "splitVersion": "fieldwork.session-split.v1",
+      "negativeLabelsInferred": false,
+      "replayIncluded": false
+    }
+  },
+  "pendingBatches": 0,
+  "replayIncludedInTraining": false,
+  "negativePreferenceLabelsInferred": false,
+  "realPurchaseObserved": false,
+  "tests": [
+    "go test -race ./...",
+    "go vet ./...",
+    "go build .",
+    "node --test scripts/shopping-training.test.mjs"
+  ]
+}

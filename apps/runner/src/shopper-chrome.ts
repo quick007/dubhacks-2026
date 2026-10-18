@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { appendFile, mkdir } from "node:fs/promises";
+import { appendFile, mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { chromium, type Browser, type BrowserContext, type ElementHandle, type Page } from "playwright";
 import { SHOPPER_ALLOWED_ORIGINS } from "./shopper-contract.js";
@@ -20,6 +20,12 @@ export class ChromeShopperBrowser {
   private controlSequence = 0;
   private closed = false;
   private logFailure: Error | null = null;
+  private checkoutEvidence: { schema: string; synthetic: true;
+    post: { url: string; httpStatus: number; request: unknown; body: unknown } | null;
+    get: { url: string; httpStatus: number; body: unknown } | null;
+    confirmation: { visible: boolean; checkoutId: string | null; receiptId: string | null }; errors: string[] } = {
+      schema: "shopper-demo-checkout-evidence.v1", synthetic: true, post: null, get: null,
+      confirmation: { visible: false, checkoutId: null, receiptId: null }, errors: [] };
   private constructor(private browser: Browser, private context: BrowserContext, private page: Page,
     private artifactDirectory: string, private origin: string, private armSearch: string) {
     this.browserVersion = browser.version();
@@ -135,6 +141,7 @@ export class ChromeShopperBrowser {
       let readiness: unknown[] = [];
       try { const parsed: unknown = JSON.parse(document.documentElement.getAttribute("data-local-model-readiness") ?? "[]"); if (Array.isArray(parsed)) readiness = parsed; } catch { /* absent or malformed mirror */ }
       return { text: texts.join("\n"), observedAtPerformanceMs: performance.now(),
+        viewport: { scrollY, height: innerHeight, documentHeight: document.documentElement.scrollHeight },
         modelStatusText: document.querySelector('.collection [role="status"]')?.textContent?.trim() ?? "",
         cartItemCount: Number(document.querySelector(".cart-count")?.textContent?.trim() ?? "0"),
         cartEmpty: !document.querySelector(".cart-count")
@@ -202,7 +209,38 @@ export class ChromeShopperBrowser {
         kind = "add-to-cart";
       } else if (target === "View cart") kind = "open-cart";
       else if (target.includes(" color: ")) kind = "choose-variant";
-      await control.click();
+      if (kind === "confirm-demo-order") {
+        const responseReady = this.page.waitForResponse((response) => response.request().method() === "POST"
+          && new URL(response.url()).origin === this.origin && new URL(response.url()).pathname === "/api/demo-checkout",
+        { timeout: 15000 });
+        try {
+          await control.click();
+          const response = await responseReady;
+          const bytes = await response.body();
+          if (bytes.length > 64 * 1024) throw new Error("Demo checkout response exceeds evidence bound");
+          const body = JSON.parse(bytes.toString("utf8"));
+          this.checkoutEvidence.post = { url: response.url(), httpStatus: response.status(), request: response.request().postDataJSON(), body };
+          if (response.status() !== 202 || typeof body?.receipt?.checkoutId !== "string"
+            || !/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(body.receipt.checkoutId)) {
+            throw new Error("Demo checkout server did not confirm an order receipt");
+          }
+          const url = `${this.origin}/api/demo-checkout/${body.receipt.checkoutId}`;
+          const readback = await this.page.request.get(url, { maxRedirects: 0, timeout: 10000 });
+          const readbackBytes = await readback.body();
+          if (readbackBytes.length > 64 * 1024) throw new Error("Demo checkout readback exceeds evidence bound");
+          this.checkoutEvidence.get = { url, httpStatus: readback.status(), body: JSON.parse(readbackBytes.toString("utf8")) };
+          await this.page.getByRole("heading", { name: "Demo order confirmed", exact: true }).waitFor({ state: "visible", timeout: 5000 });
+          this.checkoutEvidence.confirmation = await this.page.evaluate(() => ({
+            visible: document.querySelector(".confirmation h1")?.textContent?.trim() === "Demo order confirmed",
+            checkoutId: document.querySelector("main")?.getAttribute("data-demo-checkout-id") ?? null,
+            receiptId: document.querySelector("main")?.getAttribute("data-demo-receipt-id") ?? null,
+          }));
+        } catch (error) {
+          this.checkoutEvidence.errors.push(error instanceof Error ? error.message : String(error));
+          await responseReady.catch(() => {});
+          throw error;
+        }
+      } else await control.click();
       if (kind === "open-cart") selected = await this.cartSelection();
     }
     await this.clearControls();
@@ -217,6 +255,8 @@ export class ChromeShopperBrowser {
     if (this.closed) return;
     this.closed = true;
     let failure: unknown;
+    try { await writeFile(join(this.artifactDirectory, "checkout-receipt.json"), JSON.stringify(this.checkoutEvidence, null, 2) + "\n", { flag: "wx" }); }
+    catch (error) { failure = error; }
     try { await this.page.screenshot({ path: join(this.artifactDirectory, "screenshot.png") }); }
     catch (error) { failure = error; }
     try { await this.context.tracing.stop({ path: join(this.artifactDirectory, "trace.zip") }); }

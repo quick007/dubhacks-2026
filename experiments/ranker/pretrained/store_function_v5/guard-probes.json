@@ -1,0 +1,148 @@
+[
+  {
+    "caseId": "inclusive-0",
+    "request": {
+      "query": "Trail mug",
+      "itemBudget": 24
+    },
+    "expectedFirst": 0
+  },
+  {
+    "caseId": "exclusive-0",
+    "request": {
+      "query": "Trail mug under $24"
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "inclusive-2",
+    "request": {
+      "query": "Pocket field notes",
+      "itemBudget": 12
+    },
+    "expectedFirst": 2
+  },
+  {
+    "caseId": "exclusive-2",
+    "request": {
+      "query": "Pocket field notes under $12"
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "inclusive-4",
+    "request": {
+      "query": "Everyday steel bottle",
+      "itemBudget": 36
+    },
+    "expectedFirst": 4
+  },
+  {
+    "caseId": "exclusive-4",
+    "request": {
+      "query": "Everyday steel bottle under $36"
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "inclusive-8",
+    "request": {
+      "query": "Steel lunch box",
+      "itemBudget": 32
+    },
+    "expectedFirst": 8
+  },
+  {
+    "caseId": "exclusive-8",
+    "request": {
+      "query": "Steel lunch box under $32"
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "stock-unknown",
+    "request": {
+      "query": "a notebook in stock"
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "size-unknown",
+    "request": {
+      "query": "sneakers",
+      "hardRequirements": [
+        {
+          "attribute": "size",
+          "value": "M"
+        }
+      ]
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "unknown-color",
+    "request": {
+      "query": "browse",
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Unlisted violet"
+        }
+      ]
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "contradictory-colors",
+    "request": {
+      "query": "browse",
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Sage"
+        },
+        {
+          "attribute": "color",
+          "value": "Ivory"
+        }
+      ]
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "price-one",
+    "request": {
+      "query": "browse",
+      "itemBudget": 1
+    },
+    "expectedEmpty": true
+  },
+  {
+    "caseId": "known-color",
+    "request": {
+      "query": "Trail mug",
+      "hardRequirements": [
+        {
+          "attribute": "color",
+          "value": "Cobalt"
+        }
+      ]
+    },
+    "expectedFirst": 0,
+    "expectedColor": "Cobalt"
+  },
+  {
+    "caseId": "delivery-budget-unsupported",
+    "request": {
+      "query": "a mug delivered under $30"
+    },
+    "expectedRequestError": true
+  },
+  {
+    "caseId": "exact-notebook",
+    "request": {
+      "query": "Pocket field notes"
+    },
+    "expectedFirst": 2
+  }
+]

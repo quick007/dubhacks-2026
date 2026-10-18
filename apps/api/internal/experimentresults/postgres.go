@@ -55,6 +55,9 @@ func NewPostgres(dsn string) (*Postgres, error) {
 	return &Postgres{c}, nil
 }
 func (p *Postgres) CertificateVerified() bool { return !p.config.TLSConfig.InsecureSkipVerify }
+
+// Open reuses the validated TLS configuration for other isolated server-side repositories.
+func (p *Postgres) Open(ctx context.Context) (*pgx.Conn, error) { return p.connection(ctx) }
 func (p *Postgres) connection(ctx context.Context) (*pgx.Conn, error) {
 	return pgx.ConnectConfig(ctx, p.config.Copy())
 }

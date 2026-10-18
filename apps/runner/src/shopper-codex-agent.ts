@@ -65,7 +65,7 @@ export class CodexShopperAgent implements ShopperAgent {
   private child: ReturnType<typeof spawn> | undefined;
   private stopped = false;
   private turn = 0;
-  private history: { action: AgentAction; observedPage: string }[] = [];
+  private history: { action: AgentAction; viewport: ShopperObservation["viewport"]; cartItemCount: number | null }[] = [];
   constructor(private binary: string, private model: string, private assignment: ShopperAssignment,
     private log: (event: unknown) => void) {
     this.directory = mkdtemp(path.join(os.tmpdir(), "codex-shopper-"));
@@ -77,9 +77,11 @@ export class CodexShopperAgent implements ShopperAgent {
     const sequence = ++this.turn, image = path.join(directory, `screen-${sequence}.png`), schema = path.join(directory, "action-schema.json");
     await writeFile(image, Buffer.from(observation.screenshotBase64, "base64"));
     await writeFile(schema, JSON.stringify(actionSchema));
-    const prompt = JSON.stringify({ task: "Act as the assigned synthetic shopper using the attached current Chrome screenshot and visible controls. Return one next action. All executedActions below already succeeded in the browser. An Add to cart action adds another unit; it does not open checkout. Quantity one is required: after adding one qualifying item, find the cart control (scroll if needed), inspect the cart, then confirm only the fake demo order. Do not add the same item repeatedly. Do not call tools, access files, use shell or search outside the storefront. No repository or evaluator access. No real payment/purchase. Only public query may enter store search. Inspect actual visible product/color/price and stop if hard facts cannot be verified.",
+    const prompt = JSON.stringify({ task: "Act as the assigned synthetic shopper using the attached current Chrome screenshot and visible controls. Return one next action. All executedActions below already succeeded in the browser. An Add to cart action adds another unit; it does not open checkout. Quantity one is required: after adding one qualifying item, find the cart control (scroll if needed), inspect the cart, then confirm only the fake demo order. Do not add the same item repeatedly. viewport.scrollY is the actual distance from the page top, not a product hint; one upward scroll may leave you below the header. Use the observed scroll positions to avoid reversing direction repeatedly without reaching the intended area. Do not call tools, access files, use shell or search outside the storefront. No repository or evaluator access. No real payment/purchase. Only public query may enter store search. Inspect actual visible product/color/price and stop if hard facts cannot be verified.",
       assignment: this.assignment, executedActions: this.history.map((item) => item.action),
-      observation: { text: observation.text, controls: observation.controls, url: observation.url, cartItemCount: observation.cartItemCount ?? null }, remaining });
+      previousDecisionViews: this.history.slice(-4).map(({ viewport, cartItemCount, action }) => ({ viewport: viewport ?? null, cartItemCount, action })),
+      observation: { text: observation.text, controls: observation.controls, url: observation.url, viewport: observation.viewport ?? null,
+        cartItemCount: observation.cartItemCount ?? null }, remaining });
     const args = ["--no-daemon", "exec", "--ignore-user-config", "--ephemeral", "--sandbox", "read-only", "--skip-git-repo-check",
       "--model", this.model, "--json", "--color", "never", "--output-schema", schema, "--image", image,
       "--config", "features.shell_tool=false", "--config", "features.apps=false", "--config", "features.multi_agent=false",
@@ -111,7 +113,7 @@ export class CodexShopperAgent implements ShopperAgent {
       });
       child.stdin!.end(prompt);
     });
-    this.history.push({ action: result, observedPage: observation.text.slice(0, 24000) });
+    this.history.push({ action: result, viewport: observation.viewport, cartItemCount: observation.cartItemCount ?? null });
     this.log({ type: "codex-decision-finish", model: this.model, sequence, action: result });
     return result;
   }

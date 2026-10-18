@@ -132,6 +132,10 @@ export async function executeShopperSession(packetDirectory: string, packet: Pac
     captureArtifact(directory, runId, "trace.zip", "trace", "application/zip"),
     captureArtifact(directory, runId, "browser-observations.json", "result", "application/json"),
   ]);
+  try {
+    await access(path.join(directory, "checkout-receipt.json"));
+    artifacts.push(await captureArtifact(directory, runId, "checkout-receipt.json", "result", "application/json"));
+  } catch { /* Existing external providers and historical receipts may not expose server checkout evidence. */ }
   const evidence = artifacts.filter((a) => a.status === "captured").map((a) => a.artifact.id);
   // The independent catalog is first opened AFTER the shopper and browser have stopped.
   const binding = JSON.parse(await readFile(path.join(packetDirectory, "catalog-binding.json"), "utf8"));
@@ -186,7 +190,7 @@ export async function executeShopperSession(packetDirectory: string, packet: Pac
   }
   const session: ShopperSession = {
     contractVersion: SHOPPER_CONTRACT_VERSION, caseId: c.caseId, arm,
-    run: { id: runId, experimentId: "actual-store-isolated-shopper-v1", personaId: c.caseId, personaSplit: c.split, seed: c.seed },
+    run: { id: runId, experimentId: packet.experimentId ?? "actual-store-isolated-shopper-v1", personaId: c.caseId, personaSplit: c.split, seed: c.seed },
     browser: { name: "Chrome", headed: true, actualNavigation: !!browser, version: browser?.browserVersion ?? null, automation: "playwright-chrome" },
     isolation: browser ? { kind: "fresh-storage-context", tabId: browser.tabId, contextId: browser.contextId, sharedStorage: false,
       storageCleared: true, initialCartEmpty, evidenceArtifactIds: evidence, note: "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child" }
