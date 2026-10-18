@@ -30,7 +30,7 @@ export function latencySeries(): Series[] {
   return [
     {
       id: "ours",
-      label: "Current local · warm backend",
+      label: "Our Model",
       detail: "Six-card personalization",
       ours: true,
       ms: currentWarm.rawMs,
