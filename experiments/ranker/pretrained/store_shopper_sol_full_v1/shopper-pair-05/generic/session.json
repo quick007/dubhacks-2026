@@ -1,0 +1,272 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-05",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-05-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-05",
+    "personaSplit": "development",
+    "seed": 2026101805
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "413d3a93-7319-488a-8555-945588bf0027",
+    "contextId": "d3d2fd23-32f2-44d5-ab17-5eca23a291b3",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-05-generic-screenshot-png",
+      "shopper-pair-05-generic-trace-zip",
+      "shopper-pair-05-generic-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T04:44:46.980Z",
+  "elapsedMs": 49983.745167000045,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-0",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 0,
+        "at": "2026-10-18T04:44:47.913Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 933.4200000000419,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-1",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 1,
+        "at": "2026-10-18T04:44:53.875Z",
+        "kind": "action",
+        "message": "a zipped pouch for cables up to $30"
+      },
+      "elapsedMs": 6894.824333000055,
+      "action": {
+        "type": "search",
+        "query": "a zipped pouch for cables up to $30"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-2",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 2,
+        "at": "2026-10-18T04:44:59.601Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 12620.373792000057,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-3",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 3,
+        "at": "2026-10-18T04:45:07.772Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 20791.743792000052,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "organizer",
+        "variantId": "organizer-ochre"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-4",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 4,
+        "at": "2026-10-18T04:45:13.785Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 26804.870542000048,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-5",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 5,
+        "at": "2026-10-18T04:45:20.305Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 33325.17512500001,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-6",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 6,
+        "at": "2026-10-18T04:45:30.762Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 43781.83258300001,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-05-generic-step-7",
+        "runId": "shopper-pair-05-generic",
+        "sequence": 7,
+        "at": "2026-10-18T04:45:36.964Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 49983.72700000001,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-05-generic-screenshot-png",
+        "runId": "shopper-pair-05-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:45:37.758Z"
+      },
+      "status": "captured",
+      "sha256": "71c64d9fb295be1bfb2212f55f25ff756e12441d184d2072c12510a72476a0ae",
+      "bytes": 32811,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-05-generic-trace-zip",
+        "runId": "shopper-pair-05-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:45:37.758Z"
+      },
+      "status": "captured",
+      "sha256": "ac19afac00e0b67fd8baf2605ce98ea880bdacb9f30b564579e2a22c9063e88e",
+      "bytes": 28561871,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-05-generic-browser-observations-json",
+        "runId": "shopper-pair-05-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:45:37.758Z"
+      },
+      "status": "captured",
+      "sha256": "87c1a3df00a384db90c4d22df7c4850a1870b469470ebd4863c52512b10476db",
+      "bytes": 43333,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Zip essentials pouch",
+    "selectedColor": "Ochre",
+    "catalogPrice": 26,
+    "quantity": 1,
+    "productId": "organizer",
+    "variantId": "organizer-ochre",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "shopper-pair-05-generic-step-3",
+      "shopper-pair-05-generic-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "shopper-pair-05-generic-screenshot-png",
+      "shopper-pair-05-generic-trace-zip",
+      "shopper-pair-05-generic-browser-observations-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "26",
+        "evidenceArtifactIds": [
+          "shopper-pair-05-generic-screenshot-png",
+          "shopper-pair-05-generic-trace-zip",
+          "shopper-pair-05-generic-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "met",
+        "observed": "[\"cable-organizer\"]",
+        "evidenceArtifactIds": [
+          "shopper-pair-05-generic-screenshot-png",
+          "shopper-pair-05-generic-trace-zip",
+          "shopper-pair-05-generic-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
