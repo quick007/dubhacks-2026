@@ -39,3 +39,44 @@ test("fetch explicitly selects Tiger and an immutable report; failure never prod
   const value = await fetchPresentationResults("cohort-fixture", { fetchImpl }); assert.equal(value.source, "tiger");
   await assert.rejects(fetchPresentationResults("cohort-fixture", { fetchImpl: async () => new Response("{}", { status: 503 }) }), /503/);
 });
+
+/** A stalled HTTP request that behaves like fetch when its signal is aborted. */
+const pendingFetch: typeof fetch = async (_url, init) => {
+  const signal = init?.signal;
+  assert.ok(signal, "A pending presentation request needs cancellation");
+  return new Promise<Response>((_resolve, reject) => {
+    if (signal.aborted) reject(signal.reason);
+    else signal.addEventListener("abort", () => reject(signal.reason), { once: true });
+  });
+};
+
+test("deadline rejects a stalled request even while its caller remains active", { concurrency: false, timeout: 1000 }, async (t) => {
+  const deadline = new AbortController(), caller = new AbortController();
+  t.mock.method(AbortSignal, "timeout", () => deadline.signal);
+  try {
+    const request = fetchPresentationResults("cohort-fixture", { signal: caller.signal, fetchImpl: pendingFetch });
+    const expired = new DOMException("Presentation deadline expired", "TimeoutError");
+    deadline.abort(expired);
+    await assert.rejects(request, (error) => error === expired);
+    assert.equal(caller.signal.aborted, false);
+  } finally { t.mock.restoreAll(); }
+});
+
+test("caller cancellation rejects a stalled request before its deadline", { concurrency: false, timeout: 1000 }, async (t) => {
+  const deadline = new AbortController(), caller = new AbortController();
+  t.mock.method(AbortSignal, "timeout", () => deadline.signal);
+  try {
+    const request = fetchPresentationResults("cohort-fixture", { signal: caller.signal, fetchImpl: pendingFetch });
+    const cancelled = new DOMException("Selected report changed", "AbortError");
+    caller.abort(cancelled);
+    await assert.rejects(request, (error) => error === cancelled);
+    assert.equal(deadline.signal.aborted, false);
+  } finally { t.mock.restoreAll(); }
+});
+
+test("an explicitly empty report ID rejects before making any fetch", async () => {
+  let fetched = false;
+  const fetchImpl: typeof fetch = async () => { fetched = true; throw new Error("Unexpected request"); };
+  await assert.rejects(fetchPresentationResults("", { fetchImpl }), /safe immutable report ID/);
+  assert.equal(fetched, false);
+});

@@ -1,0 +1,109 @@
+{
+  "version": "presentation-integration-review.v1",
+  "status": "CPU source/projection/contract checks PASS after three fixes; final cohort data and browser acceptance pending",
+  "scope": {
+    "final120CohortDataRead": false,
+    "activeFrozenCohortTouched": false,
+    "browserGpuOrGitActions": false,
+    "runtimeSourceEditsByReviewer": false,
+    "authorizedTestFileEdited": "apps/web/src/lib/presentation-results.test.ts",
+    "verificationOnlyNewFile": "experiments/ranker/pretrained/STORE_PRESENTATION_INTEGRATION_REVIEW_V1.json"
+  },
+  "sourceSha256AtReview": {
+    "apps/web/src/App.tsx": "d5a6c764faea40f6da036550377d29b2e1736f652643071a7729f4df2216d69b",
+    "apps/web/src/CohortPresentation.tsx": "fbcdf4a304d788e04a02e1014d5cfbe79ba2ba25f95c31ceef9acbbb8fc0ef47",
+    "apps/web/src/lib/presentation-results.ts": "356d425581cab70ad4bb1d0acc8913ec7e2babdb694bbaf98ebff5e7de7c04aa",
+    "apps/web/src/lib/presentation-results.test.ts": "283b94a76a5fd611ce27fbde0f2d9cc8a048aea7629fcb0363bf2243fc5563cd",
+    "apps/web/src/slides/CohortResultsSlide.tsx": "237ca1c22ed512f255c61391fb4b613075e14dd2ab367dce328dcbabb3c24b2c",
+    "apps/web/src/slides/ModelSlide.tsx": "e90ddb9445d53e302c55a2f4e6231116d5792d3bacd58d97b3bb569d12417c6c",
+    "apps/web/src/slides/SpeedSlide.tsx": "fb22b706ae371a268ee9ecd80abe04ec5de0a0814c225996ee662f9a77e5a401",
+    "apps/web/src/fieldwork/current-model.json": "e85148e152328da6193f6f5570a4e0c50d355d68eb5d28d0bc74f9e2613a9a93",
+    "scripts/prepare-current-model-presentation.mjs": "529ffa05b30364b51cf68e6a8af9f5e558ed7a3d21a833b31906b1af15a75554",
+    "apps/api/internal/experimentresults/presentation.go": "ff3714200d3b256d498123c712770723e9d06ed33ae951beb8d2ac806e8efcb9",
+    "apps/api/internal/experimentresults/cohort.go": "772090bd17789057100e8056045f80494cf81918baae1138404b69a9f4c33456",
+    "apps/api/scripts/checkout-cohort-export.mjs": "25a6934d8a4f34ec9993652bf67f3d74c9253357abf2c40fcc5ff8d173303a9a",
+    "apps/runner/src/shopper-metrics.ts": "36ea48e705774d118ce9e707ce9aad620f2bc66b0e8aabdb476cb04b48e4e352"
+  },
+  "resolvedFindings": [
+    {
+      "id": "P1-empty-explicit-report-fell-into-legacy",
+      "before": "Truthy reportId branch routed ?report= to LegacyApp, which has mock actions.",
+      "after": "App branches on params.has(report), keyed by selected ID; invalidempty ID reaches strict helper rejection.",
+      "verification": "Source reviewed; new emptyID rejection test confirms fetch not called. Actual empty-query-route browser acceptance deferred."
+    },
+    {
+      "id": "P2-previous-report-render-on-prop-change",
+      "before": "Old result state could render before effect clears it when selected reportId changes.",
+      "after": "Keyed remount plus render requires result.reportId===reportId; effect cleanup aborts old requests and guards late promise completion.",
+      "verification": "Source reviewed, no component/SSR tests or browser run introduced."
+    },
+    {
+      "id": "P2-caller-signal-disabled-client-deadline",
+      "before": "Caller AbortController replaced helper fallback timeout, leaving mounted request without client deadline.",
+      "after": "AbortSignal.any combines caller cancellation and10000ms deadline.",
+      "verification": "Two independent controlled-signal fetch rejection tests pass without wallclock delay; each other signal remains active. Scoped mocks restored."
+    }
+  ],
+  "executedChecks": [
+    {
+      "command": "node --import tsx --test apps/web/src/lib/presentation-results.test.ts",
+      "exitCode": 0,
+      "tests": 6,
+      "passed": 6,
+      "failed": 0,
+      "scope": "Existing immutableTiger/synthetic/denominator/rate/failure tests plus controlled deadline/callerabort and emptyID rejection."
+    },
+    {
+      "command": "node scripts/prepare-current-model-presentation.mjs --check",
+      "exitCode": 0,
+      "sources": 3,
+      "scope": "Read-only exact generated JSON comparison with audited current sources."
+    }
+  ],
+  "cohortFieldMapping": {
+    "fixedDenominator": "60assigned per arm,60paired cases/120sessions; unattempted/failure slots remain in denominator. No final observed counts asserted here.",
+    "primarySuccess": "intentCorrectSuccess.numerator/60, analyzer counts valid purchase OR correct formal expected abstention; matches mettheirgoal includingchoosingnothing.",
+    "validCheckouts": "verifiedPurchases, strict formal/evidence/catalog/hardconstraint/budget/visibleconfirmation/serverreceipt checks; distinct from correctabstentions.",
+    "validMerchandiseValue": "revenue.totalCents, excludes purchases failing scoring gates; USD merchandise value only.",
+    "allAcceptedOrderValue": "allServerConfirmedOrders.merchandiseSubtotalCents includes serverconfirmed orders even if UI/scoring failed; not a fit or realrevenue claim.",
+    "humanClaim": "UI explicitly60paired synthetic shoppers, serverconfirmed simulated orders and merchandiseonly; no humanconversionlift.",
+    "trustBoundary": "Frontend validates version/IDs/fractions/60denominator/provenance shape; backend binds120roster/sixsources/serverreceipt/readback; exporter rehashes and reruns CPU analyzer. Frontend/API do not independently re-evaluate private shopper gold."
+  },
+  "strictTiger": {
+    "fetch": "ExactreportId with source=tiger, no-store, credentialsomit, redirecterror, referreromit, callerabort+deadline.",
+    "server": "Presentation defaults toTiger and directly queries repository with5second bounded context; no localspool/mockfallback.",
+    "oldSmoke": "validateCohort rejects legacy20slot reports with422; existing backend test reviewed, not rerun in this CPU-light task.",
+    "missingUnavailable": "404/503 remain error/loading state; no fabricatedzero or priorreport substitute.",
+    "immutableBinding": "Response reportId must equal requested; experimentID/digest/receivedAt/synthetic source checked."
+  },
+  "measuredModelProjection": {
+    "rankCases": 32,
+    "catalogProducts": 16,
+    "priorTop1": 14,
+    "currentTop1": 29,
+    "priorTop6": 29,
+    "currentTop6": 32,
+    "rankScope": "Knowncatalog wordings heldout of fixedv5fit, not unseenproducts.",
+    "loadedBrowserPairs": 20,
+    "localFirst3P50Ms": 281.10000002384186,
+    "localFirst3P95Ms": 297.6999999284744,
+    "genericP50Ms": 64.30000007152557,
+    "pairedIncrementalP50Ms": 217.39999997615814,
+    "browserScope": "Loaded/pre-scrolled first3entirecards, visiblecopy and decodedprimaryimages, cacheeligible. Not physicalpaint/coldnavigation/click-to-ready.",
+    "serverSixP50Ms": 192.7846249891445,
+    "serverSixP95Ms": 202.37033301964402,
+    "serverScope": "Separate backend-only warm freshquery/rank/copy6cards20fields/guards/serialization excludesbrowser/images/startup. Not presented as fullUI latency.",
+    "historicalSpeedSlide": "Explicit historical16request rankingonly CodexCLIclient comparison; copy/images/rendering excluded and CLIoverhead/directAPI limitation displayed. Separate from current browser figures.",
+    "projectionEvidenceSha256": {
+      "experiments/ranker/pretrained/function_v5_audit_v1/INDEPENDENT_AUDIT.json": "4a1badedf9e179eaf375394ff02e49faee63a82b64a19472e738f2d9d6b62ee9",
+      "experiments/ranker/pretrained/STORE_PAIRED_INCREMENTAL_PROBE_V1_INDEPENDENT_AUDIT.json": "4ad9a63c0fc2ae95eef569553bfba138dafbbfdd89d9f9a8b5573ad7979e508e",
+      "experiments/ranker/pretrained/STORE_FAST_PATH_PROFILE_V1_INDEPENDENT_REVIEW.json": "c91b80545a4078fd79605bbcb095e117641ed4dd9712471cabd9e0a1ef1db62c"
+    }
+  },
+  "remainingAcceptance": [
+    "Finalized actualcohort export must complete and be acknowledged/read freshly fromTiger before final report can render.",
+    "Aftercohort release, verify actual reportURL, ?report= rejection, oldsmoke422, unavailable/missingreport state and reportID transitions in browser.",
+    "No visual/browser/layout or actualcohort success/revenue result certified by this source-only audit.",
+    "Existing StakesSlide external research claims/citations were not independently re-reviewed in this bounded integration task."
+  ]
+}

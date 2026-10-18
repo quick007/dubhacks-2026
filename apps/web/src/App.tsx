@@ -46,8 +46,9 @@ const labels: Record<SlideId, string> = {
 const featuredSlides = new Set<SlideId>(["meet", "struggle", "fix", "retest"]);
 
 export function App() {
-  const reportId = new URLSearchParams(window.location.search).get("report");
-  return reportId ? <CohortPresentation reportId={reportId} /> : <LegacyApp />;
+  const params = new URLSearchParams(window.location.search);
+  const reportId = params.get("report") ?? "";
+  return params.has("report") ? <CohortPresentation key={reportId} reportId={reportId} /> : <LegacyApp />;
 }
 
 function LegacyApp() {

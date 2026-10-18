@@ -85,8 +85,10 @@ export function parsePresentationResults(input: unknown, expectedReportId: strin
 
 export async function fetchPresentationResults(reportId: string, options: { signal?: AbortSignal; fetchImpl?: typeof fetch } = {}) {
   requireValue(id.test(reportId), "Choose a safe immutable report ID");
+  const timeout = AbortSignal.timeout(10000);
+  const signal = options.signal ? AbortSignal.any([options.signal, timeout]) : timeout;
   const response = await (options.fetchImpl ?? fetch)(`/api/experiment-results/presentation?reportId=${encodeURIComponent(reportId)}&source=tiger`,
-    { signal: options.signal ?? AbortSignal.timeout(10000), cache: "no-store", credentials: "omit", redirect: "error", referrerPolicy: "no-referrer" });
+    { signal, cache: "no-store", credentials: "omit", redirect: "error", referrerPolicy: "no-referrer" });
   requireValue(response.ok, `Tiger presentation results unavailable (HTTP ${response.status})`);
   return parsePresentationResults(await response.json(), reportId);
 }
