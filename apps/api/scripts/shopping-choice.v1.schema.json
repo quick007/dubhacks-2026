@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fieldwork positive shopping choice training input v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "split", "provenance", "context", "candidates", "chosen", "choiceScope", "signal", "negativeLabels", "realPurchaseObserved", "selectionMechanism"],
+  "properties": {
+    "schema": {"const": "fieldwork.shopping-choice.v1"},
+    "split": {"enum": ["train", "validation", "test"]},
+    "provenance": {
+      "type": "object",
+      "required": ["sessionId", "batchId", "eventId", "sourceSha256", "catalogEventId", "catalogBatchId", "catalogSourceSha256", "classification", "receivedAt", "splitVersion", "derivation"],
+      "properties": {"derivation": {"const": "explicit-positive-choice.v1"}, "splitVersion": {"const": "fieldwork.session-split.v1"}}
+    },
+    "context": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "order", "shipping", "modelVersion"],
+      "properties": {
+        "mode": {"enum": ["baseline", "local-model"]},
+        "order": {"enum": ["popular", "budget", "history"]},
+        "shipping": {"type": "boolean"},
+        "modelVersion": {"type": ["string", "null"], "maxLength": 64}
+      }
+    },
+    "candidates": {"type": "array", "minItems": 1, "maxItems": 16, "items": {"type": "object", "required": ["productId", "variantId", "position"], "additionalProperties": false, "properties": {"productId": {"type": "string"}, "variantId": {"type": "string"}, "position": {"type": "integer", "minimum": 0, "maximum": 15}}}},
+    "chosen": {"type": "object", "additionalProperties": false, "required": ["productId", "variantId"], "properties": {"productId": {"type": "string"}, "variantId": {"type": "string"}}},
+    "signal": {"enum": ["selection", "cart-add"]},
+    "choiceScope": {"enum": ["rendered-variant", "product-with-observed-variant-change"]},
+    "negativeLabels": {"type": "array", "maxItems": 0},
+    "realPurchaseObserved": {"const": false},
+    "selectionMechanism": {"const": "observational-not-randomized"}
+  }
+}

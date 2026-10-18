@@ -28,7 +28,8 @@ func ConfigFromEnv() (Config, error) {
 		if err != nil || u.Host == "" || u.User != nil || u.Path != "" || u.RawQuery != "" || u.Fragment != "" || !oneOf(u.Scheme, "http", "https") {
 			return c, fmt.Errorf("exact shopping telemetry origins required")
 		}
-		if c.Environment == "production" && (u.Scheme != "https" || oneOf(u.Hostname(), "localhost", "127.0.0.1", "::1") || strings.HasSuffix(u.Hostname(), ".localhost")) {
+		hostname := strings.ToLower(u.Hostname())
+		if c.Environment == "production" && (u.Scheme != "https" || oneOf(hostname, "localhost", "127.0.0.1", "::1") || strings.HasSuffix(hostname, ".localhost")) {
 			return c, fmt.Errorf("production telemetry requires a trusted HTTPS public origin")
 		}
 		c.Origins = append(c.Origins, origin)

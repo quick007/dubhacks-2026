@@ -55,7 +55,11 @@ func (p *Postgres) Put(ctx context.Context, s Saved, replay *Replay) error {
 	if err != nil {
 		return err
 	}
-	defer tx.Rollback(context.Background())
+	defer func() {
+		rollback, cancel := context.WithTimeout(context.Background(), time.Second)
+		defer cancel()
+		_ = tx.Rollback(rollback)
+	}()
 	var existing string
 	err = tx.QueryRow(ctx, `SELECT sha256 FROM shopping_events.batches WHERE batch_id=$1`, s.Batch.BatchID).Scan(&existing)
 	if err == nil {

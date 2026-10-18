@@ -149,7 +149,7 @@ func (s *Service) sweep(ctx context.Context) error {
 	// persistence and observation receipt persistence. Observation bytes remain.
 	files, _ := os.ReadDir(s.dir)
 	for _, file := range files {
-		if strings.HasSuffix(file.Name(), ".replay") {
+		if strings.HasSuffix(file.Name(), ".replay") || strings.HasPrefix(file.Name(), ".shopping-") {
 			if info, err := file.Info(); err == nil && time.Since(info.ModTime()) >= 24*time.Hour {
 				_ = os.Remove(filepath.Join(s.dir, file.Name()))
 			}

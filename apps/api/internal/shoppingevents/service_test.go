@@ -233,3 +233,79 @@ func TestTrainingExclusionsAndWholeSessionSplit(t *testing.T) {
 		}
 	}
 }
+
+func TestTrustedServerEnvironmentConfiguration(t *testing.T) {
+	for _, key := range []string{"SHOPPING_TELEMETRY_ENABLED", "SHOPPING_TELEMETRY_ENVIRONMENT", "SHOPPING_TELEMETRY_ORIGINS", "SHOPPING_TELEMETRY_ALLOW_SYNTHETIC"} {
+		t.Setenv(key, "")
+	}
+	if c, err := ConfigFromEnv(); err != nil || c.Enabled {
+		t.Fatal("default must be disabled")
+	}
+	t.Setenv("SHOPPING_TELEMETRY_ENABLED", "1")
+	t.Setenv("SHOPPING_TELEMETRY_ENVIRONMENT", "production")
+	for _, origin := range []string{"http://shop.example", "https://localhost", "https://LOCALHOST", "https://shop.localhost", "https://shop.example/path", "https://user@shop.example"} {
+		t.Setenv("SHOPPING_TELEMETRY_ORIGINS", origin)
+		if _, err := ConfigFromEnv(); err == nil {
+			t.Fatal("untrusted production origin", origin)
+		}
+	}
+	t.Setenv("SHOPPING_TELEMETRY_ORIGINS", "https://shop.example")
+	c, err := ConfigFromEnv()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !c.permits(Batch{Classification: Classification{"production", "real"}}) || c.permits(Batch{Classification: Classification{"test", "real"}}) || c.permits(Batch{Classification: Classification{"production", "synthetic"}}) {
+		t.Fatal("classification policy")
+	}
+	t.Setenv("SHOPPING_TELEMETRY_ENVIRONMENT", "test")
+	t.Setenv("SHOPPING_TELEMETRY_ORIGINS", "http://127.0.0.1:4329")
+	if _, err = ConfigFromEnv(); err == nil {
+		t.Fatal("test must require explicit synthetic flag")
+	}
+	t.Setenv("SHOPPING_TELEMETRY_ALLOW_SYNTHETIC", "1")
+	if c, err = ConfigFromEnv(); err != nil || !c.permits(Batch{Classification: Classification{"test", "synthetic"}}) {
+		t.Fatal(err)
+	}
+}
+
+type blockedRepository struct{ started chan struct{} }
+
+func (b *blockedRepository) Put(ctx context.Context, _ Saved, _ *Replay) error {
+	select {
+	case b.started <- struct{}{}:
+	default:
+	}
+	<-ctx.Done()
+	return ctx.Err()
+}
+func (b *blockedRepository) Prune(context.Context) error { return nil }
+func TestCloudWaitDoesNotBlockIntakeAndShutdownCancelsWorker(t *testing.T) {
+	repository := &blockedRepository{started: make(chan struct{}, 1)}
+	service, err := New(t.TempDir(), Config{Enabled: true, Environment: "test", AllowSynthetic: true}, repository)
+	if err != nil {
+		t.Fatal(err)
+	}
+	batch, digest := decode(t, fixture(t))
+	done := make(chan error, 1)
+	go func() { _, err := service.Accept(batch, digest); done <- err }()
+	select {
+	case err = <-done:
+		if err != nil {
+			t.Fatal(err)
+		}
+	case <-time.After(2 * time.Second):
+		t.Fatal("cloud blocked local receipt")
+	}
+	select {
+	case <-repository.started:
+	case <-time.After(2 * time.Second):
+		t.Fatal("worker did not start")
+	}
+	closed := make(chan struct{})
+	go func() { service.Close(); close(closed) }()
+	select {
+	case <-closed:
+	case <-time.After(2 * time.Second):
+		t.Fatal("shutdown did not cancel cloud wait")
+	}
+}
