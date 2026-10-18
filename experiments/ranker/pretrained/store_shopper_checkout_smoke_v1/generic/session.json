@@ -1,0 +1,290 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-02",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-02-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-02",
+    "personaSplit": "development",
+    "seed": 2026101802
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "ad87b8d3-2518-40b6-ba2a-06798a10304b",
+    "contextId": "0fd1a896-44c9-4ccf-9642-df825194b760",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-02-generic-screenshot-png",
+      "shopper-pair-02-generic-trace-zip",
+      "shopper-pair-02-generic-browser-observations-json",
+      "shopper-pair-02-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T08:19:27.996Z",
+  "elapsedMs": 37223.3665,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-0",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 0,
+        "at": "2026-10-18T08:19:28.985Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 989.0504999999999,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-1",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 1,
+        "at": "2026-10-18T08:19:34.153Z",
+        "kind": "action",
+        "message": "a bottle for drinking water under $40"
+      },
+      "elapsedMs": 6156.632584,
+      "action": {
+        "type": "search",
+        "query": "a bottle for drinking water under $40"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-2",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 2,
+        "at": "2026-10-18T08:19:41.934Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 13938.165041999999,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-3",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 3,
+        "at": "2026-10-18T08:19:46.551Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 18555.2535,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "bottle",
+        "variantId": "bottle-graphite"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-4",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 4,
+        "at": "2026-10-18T08:19:51.533Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 23536.925584,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-5",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 5,
+        "at": "2026-10-18T08:19:56.575Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 28579.022958999998,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-6",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 6,
+        "at": "2026-10-18T08:20:00.966Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 32970.209,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-02-generic-step-7",
+        "runId": "shopper-pair-02-generic",
+        "sequence": 7,
+        "at": "2026-10-18T08:20:05.220Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 37223.358374999996,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-02-generic-screenshot-png",
+        "runId": "shopper-pair-02-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T08:20:05.643Z"
+      },
+      "status": "captured",
+      "sha256": "3cebcda2b4ac96be86ebff12aa30a676cfb28447767a3c8141fad838fe0aec5d",
+      "bytes": 32725,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-02-generic-trace-zip",
+        "runId": "shopper-pair-02-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T08:20:05.644Z"
+      },
+      "status": "captured",
+      "sha256": "7cb195f61b92fd6dde1118a9cd3bb25e7af0b627ecdcf864a77eb2801bc76fd1",
+      "bytes": 8515015,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-02-generic-browser-observations-json",
+        "runId": "shopper-pair-02-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:20:05.644Z"
+      },
+      "status": "captured",
+      "sha256": "5d652ebe690a4813fe2a12a1a9391abc75c0e11c861a8a714d433a1583a7484d",
+      "bytes": 44032,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-02-generic-checkout-receipt-json",
+        "runId": "shopper-pair-02-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T08:20:05.648Z"
+      },
+      "status": "captured",
+      "sha256": "d0230bdf1d9b15c6218846e25b071d5da06ad9f5cf1bc91b47472d8137b9319a",
+      "bytes": 2120,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday steel bottle",
+    "selectedColor": "Graphite",
+    "catalogPrice": 36,
+    "quantity": 1,
+    "productId": "bottle",
+    "variantId": "bottle-graphite",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "shopper-pair-02-generic-step-3",
+      "shopper-pair-02-generic-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "shopper-pair-02-generic-screenshot-png",
+      "shopper-pair-02-generic-trace-zip",
+      "shopper-pair-02-generic-browser-observations-json",
+      "shopper-pair-02-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "36",
+        "evidenceArtifactIds": [
+          "shopper-pair-02-generic-screenshot-png",
+          "shopper-pair-02-generic-trace-zip",
+          "shopper-pair-02-generic-browser-observations-json",
+          "shopper-pair-02-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "met",
+        "observed": "[\"drinking-water bottle\"]",
+        "evidenceArtifactIds": [
+          "shopper-pair-02-generic-screenshot-png",
+          "shopper-pair-02-generic-trace-zip",
+          "shopper-pair-02-generic-browser-observations-json",
+          "shopper-pair-02-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

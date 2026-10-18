@@ -8,6 +8,8 @@ export function CartView({
   total,
   onPlaceOrder,
   onContinue,
+  checkoutPending = false,
+  checkoutError = "",
 }: {
   lines: CartLine[];
   subtotal: number;
@@ -15,6 +17,8 @@ export function CartView({
   total: number;
   onPlaceOrder: () => void;
   onContinue: () => void;
+  checkoutPending?: boolean;
+  checkoutError?: string;
 }) {
   return (
     <section className="cart-page">
@@ -55,12 +59,13 @@ export function CartView({
             )}
           </div>
           <p className="demo-note">No payment required. Nothing will be shipped.</p>
-          <button className="primary-button" onClick={onPlaceOrder}>
-            Place demo order
+          {checkoutError && <p role="alert">{checkoutError}</p>}
+          <button className="primary-button" onClick={onPlaceOrder} disabled={checkoutPending}>
+            {checkoutPending ? "Confirming demo order…" : "Place demo order"}
           </button>
         </>
       )}
-      <button className="text-button" onClick={onContinue}>
+      <button className="text-button" onClick={onContinue} disabled={checkoutPending}>
         Continue browsing
       </button>
     </section>

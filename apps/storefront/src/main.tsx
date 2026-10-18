@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ShoppingCart01Icon } from "@hugeicons/core-free-icons";
@@ -22,6 +22,7 @@ import type { StorefrontRoute } from "./routes";
 import { localModelEnabled, preserveLocalModelSearch } from "./local-model";
 import { useLocalModel } from "./use-local-model";
 import { demoTraceEnabled, traceContext, traceEvent, traceProducts } from "./session-trace-bridge";
+import { confirmDemoCheckout, type DemoCheckoutReceipt } from "./demo-checkout-client";
 import "./styles.css";
 
 const TraceControls = lazy(() => import("./TraceControls"));
@@ -37,6 +38,11 @@ function App() {
   );
   const [added, setAdded] = useState("");
   const [searchInput, setSearchInput] = useState(route.query);
+  const [checkoutPending, setCheckoutPending] = useState(false);
+  const [checkoutError, setCheckoutError] = useState("");
+  const [checkoutReceipt, setCheckoutReceipt] = useState<DemoCheckoutReceipt | null>(null);
+  const checkoutId = useRef(crypto.randomUUID());
+  const checkoutInFlight = useRef(false);
 
   useEffect(() => {
     setSearchInput(route.query);
@@ -66,8 +72,8 @@ function App() {
   const subtotal = cartLines.reduce((sum, line) => sum + line.subtotal, 0);
   const quote = shippingQuote(subtotal, config.showShipping);
   const total = orderTotal(subtotal, quote);
-  // A shared or restored #confirmed link without cart contents falls back to the cart.
-  const page = route.page === "confirmed" && cart.length === 0 ? "cart" : route.page;
+  // A restored link needs both cart contents and a server-confirmed receipt.
+  const page = route.page === "confirmed" && (cart.length === 0 || !checkoutReceipt) ? "cart" : route.page;
 
   useEffect(() => {
     document.title =
@@ -102,6 +108,7 @@ function App() {
   }
 
   function applyConfig(next: VariantConfig) {
+    if (next.showShipping !== config.showShipping) resetCheckout();
     setConfig(next);
     const search = preserveLocalModelSearch(serializeVariantConfig(next), window.location.search);
     window.history.replaceState(
@@ -109,6 +116,32 @@ function App() {
       "",
       `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`,
     );
+  }
+
+  function resetCheckout() {
+    checkoutId.current = crypto.randomUUID();
+    setCheckoutReceipt(null);
+    setCheckoutError("");
+  }
+
+  async function placeDemoOrder() {
+    if (checkoutInFlight.current) return;
+    checkoutInFlight.current = true;
+    const id = checkoutId.current;
+    setCheckoutPending(true); setCheckoutError("");
+    try {
+      const receipt = await confirmDemoCheckout(cart, config.showShipping, id);
+      if (checkoutId.current !== id) return;
+      setCheckoutReceipt(receipt);
+      traceEvent("checkout-success", { count: cart.length });
+      navigate({ ...route, page: "confirmed" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch {
+      if (checkoutId.current === id) setCheckoutError("Demo checkout could not be confirmed. Please try again.");
+    } finally {
+      checkoutInFlight.current = false;
+      setCheckoutPending(false);
+    }
   }
 
   return (
@@ -140,7 +173,7 @@ function App() {
           </button>
         </div>
       </header>
-      <main>
+      <main data-demo-checkout-id={checkoutReceipt?.checkoutId} data-demo-receipt-id={checkoutReceipt?.receiptId}>
         {page === "shop" && (
           <ShopView
             config={config}
@@ -179,6 +212,7 @@ function App() {
               setSelectedVariants((items) => ({ ...items, [productId]: variantId }));
             }}
             onAdd={(product, variantId, colorName) => {
+              resetCheckout();
               traceEvent("cart-add", { productId: product.id, variantId, count: cart.length + 1 });
               setCart((items) => [...items, { productId: product.id, variantId }]);
               setAdded(`${product.name} (${colorName}) added to cart.`);
@@ -191,11 +225,9 @@ function App() {
             subtotal={subtotal}
             quote={quote}
             total={total}
-            onPlaceOrder={() => {
-              traceEvent("checkout-success", { count: cart.length });
-              navigate({ ...route, page: "confirmed" });
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            checkoutPending={checkoutPending}
+            checkoutError={checkoutError}
+            onPlaceOrder={() => { void placeDemoOrder(); }}
             onContinue={() => goToCollection({})}
           />
         )}
@@ -206,6 +238,7 @@ function App() {
             quote={quote}
             total={total}
             onBackToCollection={() => {
+              resetCheckout();
               traceEvent("cart-clear", { count: 0 });
               setCart([]);
               setAdded("");
