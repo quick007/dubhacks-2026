@@ -191,6 +191,7 @@ def run(packet_path, out):
     verification = verify_model_files(model_input_receipt())
     import mlx.core as mx
     from mlx.utils import tree_flatten
+    from mlx_lm.generate import generation_stream
     from mlx_lm.tuner.lora import LoRALinear
     from ..backbone import FrozenBackbone
     from ..branch_local_copy import prepare_root
@@ -244,7 +245,10 @@ def run(packet_path, out):
                         state, preparation = prepare_root(bb, root); original = state_hash(state['cache'])
                         decoder_call_start = (time.perf_counter() - started) * 1000
                         with message_suffixes(): rows, timing = decode_rows(bb, state, jobs, width, prefill_step_size=256)
-                        mx.synchronize(); bb.check_memory()
+                        # BatchGenerator may queue its next step on this stream.
+                        # Fence it explicitly before memory and readiness clocks;
+                        # close()'s wired-limit cleanup fence is conditional.
+                        mx.synchronize(generation_stream); bb.check_memory()
                         if state_hash(state['cache']) != original: raise AssertionError('Fresh same-mode root mutated')
                         result = assemble_payload(rows, case['plan'], case['request'], case['catalog'], require_native_receipts=True)
                         encoded = json.dumps(result['payload'], sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False).encode()

@@ -12,11 +12,27 @@ human conversion lift or a production storefront integration.
 | `catalog-user-fusion-paired-v1-attempt-1` | Completed 80 CPU steps for full head and 80 for independent prior | Raw-feature head had zero preference-driven product flips, including training. Saved full/prior/random checkpoints; not promoted. |
 | `catalog-user-fusion-centered-v1-attempt-1` | Completed 80 CPU steps per full/prior fit | Train-only role means restore conditional image-style choices: validation 32/32, test 48/48. Product pairs remain 0/4 and 0/6 both correct. Not a complete-view result. |
 | `catalog-user-semantic-factors-v1-attempt-1` | Completed 80 CPU steps per full/prior fit; full product model has 57,358 trainable parameters | Learned seven-atom sigmoid factors pass validation 8/8 and test 12/12 product choices, all paired interventions correct. Shuffled-query product controls fall to 1/8 and 4/12. Image checkpoint is byte-identical to centered-v1. Inspected synthetic replay, pending fresh transfer evaluation. |
-| `semantic-copy-feature-fit-v1` | Separate prospective run: requires 504 exact extraction gates **before** any of its 504 planned globally shuffled updates | Live stage/counts are in its `data/ranker/pretrained/.../results.json`. A gate executes three loss/gradient comparisons and is never counted as an optimizer update. Only a completed fit can supply the next adapter checkpoint. |
+| `semantic-copy-feature-fit-v1` | Completed 504 exact extraction gates, then 504 real globally shuffled optimizer updates, 65,536 final-down LoRA parameters | Saved and exactly reloaded `data/ranker/pretrained/semantic-copy-feature-fit-v1/adapter.safetensors`. Dev pages 0→2/3; test pages 0→3/3; trained titles 18/18 in each split. Peak MLX 6,360,122,248 bytes. |
+| `semantic-copy-learned-probe-v1` | Zero updates; one exact learned-parameter control row | Native loss/A/B gradients match both recaptured and original archived features exactly; full source cache and frozen language tensors unchanged. |
 
 The earlier 140/336 copy-update progress belongs to the now-completed direct
 fit. A later 183/504 or similar zero-update report belongs to the separate
-feature-extraction stage of the new fit. They are different runs.
+feature-extraction stage of the new fit, which subsequently completed all 504
+updates. They are different runs; both checkpoints and reports are preserved.
+
+The new fit's complete report contains all twelve frozen/learned evaluation
+arms and all 504 per-row gate receipts. All 504 stored feature archives passed
+independent checksum, shape, dtype and finite-value verification. The learned
+checkpoint SHA-256 is `0b0aeda377a9c9ad7eb37b529c139dac84bc5acd4bb559176d40245865ffe1b2`.
+All 927 frozen language tensor hashes are unchanged. The reported fit/extraction/
+evaluation wall time is 779.472 seconds and excludes earlier startup token/file
+verification; whole-process startup wall time was not separately captured.
+Five valid learned pages have median 11.342 seconds and range 11.099–11.725.
+Frozen controls have no valid-page latency sample. These times include the full
+rank context encoding but use locked fixture decisions; they are copy-stage
+measurements, not newly measured ranking or complete visible-card endpoints.
+The one learned dev rejection is `Structured travel choices` where the selected
+section's universal attribute intersection is empty. Validation was not weakened.
 
 The direct fit's all-attempt completion medians were dev 9.290→8.832 seconds
 and test 9.648→9.468 seconds (frozen→learned). With zero valid pages, there is
