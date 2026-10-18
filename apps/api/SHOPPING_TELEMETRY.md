@@ -7,7 +7,8 @@ The pipeline is:
 1. Frontend emits `fieldwork.shopping-batch.v1` to `POST /api/shopping-events`.
 2. Backend writes an atomic local receipt and returns `202`; the asynchronous worker commits an immutable Tiger batch and unique event receipts.
 3. A local maintenance command exports versioned observations with provenance and stable whole-session splits.
-4. A deterministic builder joins explicit choices to their preceding catalog views to produce `fieldwork.shopping-choice.v1` JSONL for a later model-training job.
+4. A deterministic builder joins explicit choices to their preceding catalog views to produce `fieldwork.shopping-choice.v1` JSONL.
+5. A [CPU model-input bridge](SHOPPING_MODEL_INPUT.md) maps public IDs to verified catalog indices, prepares context-only requests and separate targets, and exercises the actual training input helper. Native training and serving promotion remain separate work.
 
 ## Configuration and environment boundaries
 
