@@ -102,6 +102,21 @@ class RunnerTests(unittest.TestCase):
     def setUpClass(cls):
         torch.set_num_threads(1)
 
+    def test_existing_store_is_readonly_and_still_verifies_bytes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);dataset=root/'dataset';dataset.mkdir()
+            preflight=synthetic_dataset(dataset)
+            row=next(iter(corpus_rows(dataset,preflight).values()))
+            store=FeatureStore(root/'features',provenance())
+            values=normalized(1,19074)
+            store.save(row,values,{'scope':'CPU fixture'})
+            reopened=FeatureStore.open_existing(root/'features',provenance())
+            self.assertTrue(torch.equal(reopened.load(row)[0],values))
+            with self.assertRaisesRegex(ValueError,'Read-only'):reopened.save(row,values,{})
+            data,_=reopened.paths(row['role'],row['member'])
+            data.write_bytes(data.read_bytes()+b'changed')
+            with self.assertRaisesRegex(ValueError,'checksum'):reopened.load(row)
+
     def test_complete_pipeline_freezes_before_private_reads_and_marks_cpu_stub(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

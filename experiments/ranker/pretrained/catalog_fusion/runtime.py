@@ -123,9 +123,19 @@ class FeatureStore:
     """Immutable per-member vectors; warm hits still verify current keys/bytes."""
     def __init__(self, root, provenance):
         self.root, self.provenance = Path(root), provenance
+        self.readonly = False
         self.root.mkdir(exist_ok=False)
         for role in ("catalog", "request"):
             (self.root / role).mkdir()
+
+    @classmethod
+    def open_existing(cls, root, provenance):
+        """Read-only verified reuse; every hit still checks content and bytes."""
+        store = cls.__new__(cls)
+        store.root, store.provenance, store.readonly = Path(root), provenance, True
+        if not all((store.root / role).is_dir() for role in ('catalog','request')):
+            raise ValueError('Existing feature store is incomplete')
+        return store
 
     def paths(self, role, member):
         base = self.root / role / digest(canonical(member))
@@ -154,6 +164,7 @@ class FeatureStore:
         return data.exists()
 
     def save(self, row, values, timing):
+        if self.readonly:raise ValueError('Read-only feature store cannot save')
         keys, spec = self.expected(row)
         values = values.detach().clone()
         receipt = {"representation": REPRESENTATION, "role": row["role"], "members": list(keys),
