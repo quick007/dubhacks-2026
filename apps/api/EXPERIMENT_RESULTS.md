@@ -88,3 +88,5 @@ node ../../scripts/go.mjs vet ./...
 ```
 
 The real saved Sol smoke aggregate was also exercised through local HTTP handlers with cloud sync disabled: two recorded timeouts, eighteen unattempted sessions, zero formal sessions, identical retry accepted and changed evidence rejected. This transport check makes no shopper-success claim.
+
+After explicit upload approval, both immutable `store-shopper-sol-smoke-v1` and `store-shopper-sol-smoke-v2` were uploaded and read back from Tiger Data. A fresh empty local archive returned `source:"tiger"` for runs, comparison, and latency; remote history found both snapshots. Cloud digests matched the accepted local digests, repeated PostgreSQL writes succeeded without changing identity, and pending reports reached zero. V1 preserves two timeouts/zero formal sessions; v2 preserves two completed simulated checkouts/two formal sessions. Each still contains eighteen unattempted slots. See [experiment-results-verification.json](experiment-results-verification.json) for the credential-free verification record. These smoke observations do not establish conversion lift.

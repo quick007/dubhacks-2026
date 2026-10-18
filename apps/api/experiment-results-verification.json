@@ -1,0 +1,42 @@
+{
+  "version": "experiment-results-verification.v1",
+  "schema": "experiment_results.reports",
+  "migration": "001_experiment_results.sql",
+  "tlsRequired": true,
+  "tlsMode": "require",
+  "certificateVerified": false,
+  "localDurabilityVerified": true,
+  "cloudReadbackVerified": true,
+  "localAndCloudRetriesIdempotent": true,
+  "changedLocalEvidenceRejected": true,
+  "remoteQueryViewsVerifiedWithEmptyLocalArchive": ["runs", "comparison", "latency", "reports"],
+  "pendingReportsAfterVerification": 0,
+  "tests": ["go test -race ./...", "go vet ./..."],
+  "reports": [
+    {
+      "reportId": "store-shopper-sol-smoke-v1",
+      "experimentId": "actual-store-isolated-shopper-v1",
+      "envelopeSha256": "d60e065a880c1151090514a0070b1ea43ab066f9bd36cf6cc54bbb7e0fa101e3",
+      "fixedSessions": 20,
+      "recorded": 2,
+      "timeouts": 2,
+      "formalRecorded": 0,
+      "unattempted": 18
+    },
+    {
+      "reportId": "store-shopper-sol-smoke-v2",
+      "experimentId": "actual-store-isolated-shopper-v1",
+      "envelopeSha256": "6f9ad8779239e61211aed6263849627e5f99324aafb2c3c36ffe000d6f0fa6b2",
+      "fixedSessions": 20,
+      "recorded": 2,
+      "completedSimulatedCheckouts": 2,
+      "formalRecorded": 2,
+      "unattempted": 18,
+      "genericActions": 12,
+      "localModelActions": 8
+    }
+  ],
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "comparativeLiftClaim": false
+}

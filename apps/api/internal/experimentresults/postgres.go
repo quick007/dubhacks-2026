@@ -73,11 +73,15 @@ func (p *Postgres) Put(ctx context.Context, s Saved) error {
 	if err != nil {
 		return err
 	}
+	receivedAt, err := time.Parse(time.RFC3339Nano, s.ReceivedAt)
+	if err != nil {
+		return fmt.Errorf("invalid receipt timestamp")
+	}
 	var id string
 	err = c.QueryRow(ctx, `INSERT INTO experiment_results.reports(report_id,experiment_id,sha256,received_at,payload)
 VALUES($1,$2,$3,$4,$5::jsonb)
 ON CONFLICT(report_id) DO UPDATE SET report_id=EXCLUDED.report_id
-WHERE experiment_results.reports.sha256=EXCLUDED.sha256 RETURNING report_id`, s.ReportID, s.ExperimentID, s.Digest, s.ReceivedAt, string(payload)).Scan(&id)
+WHERE experiment_results.reports.sha256=EXCLUDED.sha256 RETURNING report_id`, s.ReportID, s.ExperimentID, s.Digest, receivedAt, string(payload)).Scan(&id)
 	if errors.Is(err, pgx.ErrNoRows) {
 		return ErrConflict
 	}
