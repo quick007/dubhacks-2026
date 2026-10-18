@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "dev:personalized": "node scripts/dev-personalized.mjs --run",
-    "dev:personalized:demo": "node scripts/dev-personalized-factorized.mjs --run --receipt data/ranker/pretrained/persona-factorized-development-admission-v4-attempt-1/receipt.json --receipt-sha256 a8681bd3a57b621540eac0786b183a8dfffa2fc0ebd8f36ed40359ece16e4928",
+    "dev:personalized:demo": "node scripts/dev-personalized-expanded.mjs --run --receipt data/ranker/pretrained/persona-factorized-development-admission-v4-attempt-1/receipt.json --receipt-sha256 a8681bd3a57b621540eac0786b183a8dfffa2fc0ebd8f36ed40359ece16e4928 --integration-manifest experiments/ranker/pretrained/store_expanded_integration_v2/manifest.json --integration-manifest-sha256 971f30d146415abffac4b0aee59827b04d7c06458a38ae9bcd0cd22d46539088 --expanded-copy-run data/ranker/pretrained/expanded-parallel-copy-fit-v1-attempt-1 --expanded-copy-manifest-sha256 2279a7997a63678892368445a357d9c8f65402b14fee4a4c933ff4c91b40b1f5",
     "dev:personalized:warm": "node scripts/dev-personalized-preencoded.mjs --run --receipt data/ranker/pretrained/persona-preencoded-development-admission-v3-attempt-1/receipt.json --receipt-sha256 af33c1ff447835bcc63e0132b97dbe3b334936beb2136aea9741369e7f66a2cf",
     "dev:personalized:uncached": "node scripts/dev-personalized-development.mjs --run --receipt data/ranker/pretrained/persona-development-admission-v1-attempt-1/receipt.json --receipt-sha256 d774bc8e0e5dcd09bee705c4658817e07703201bd72888dc4577c94d3b12fa58",
     "typecheck": "pnpm -r typecheck",
@@ -39,7 +39,8 @@
     "pretrained:benchmark:fusion": "node scripts/pretrained.mjs fusion-benchmark",
     "pretrained:route:train": "node scripts/pretrained.mjs route-train",
     "pretrained:route:benchmark": "node scripts/pretrained.mjs route-benchmark",
-    "pretrained:test:routing": "node scripts/pretrained.mjs test-routing"
+    "pretrained:test:routing": "node scripts/pretrained.mjs test-routing",
+    "dev:personalized:factorized": "node scripts/dev-personalized-factorized.mjs --run --receipt data/ranker/pretrained/persona-factorized-development-admission-v4-attempt-1/receipt.json --receipt-sha256 a8681bd3a57b621540eac0786b183a8dfffa2fc0ebd8f36ed40359ece16e4928"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",

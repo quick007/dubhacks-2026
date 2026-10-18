@@ -1,0 +1,49 @@
+{
+  "version": "expanded-public-fact-parallel-copy.v1",
+  "status": "started",
+  "scope": "TRAIN-ALL expanded public catalog synthetic copy; no heldout quality claim",
+  "config": {
+    "maxSteps": 2000,
+    "checkEvery": 100,
+    "learningRate": 0.004,
+    "weightDecay": 0.0001,
+    "width": 128,
+    "seed": 7211,
+    "cpuThreads": 1,
+    "stop": "all supervised fields exact including learned EOS, at fixed100-step checks; otherwise final2000"
+  },
+  "packetPreparedSha256": "1e33dd58e42ae5fedec28f348f6f7c9f1350295bc9a0ed17da68c5d4eaa65392",
+  "featureBundleSha256": "569c4af5fc5b6524cef4d07619f8601f6bc3a3ee84296832cf548a3e2832b81f",
+  "nativeFeatureProvenance": {
+    "evidenceSource": "native-frozen-qwen",
+    "modelRevision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "copyAdapterEnabled": false,
+    "rankAdapterEnabled": false,
+    "nativeForwards": 105,
+    "truncatedRows": 0,
+    "catalogSha256": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d",
+    "frozenTensorCount": 927,
+    "frozen927HashesUnchanged": true,
+    "shutdownVerified": true,
+    "nativeReceiptFile": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/report.json",
+    "nativeReceiptSha256": "09a67f18d62074475e3400ffee71ee9cb3d9a8d9d6e56fa79638de0a0b1c7cfc"
+  },
+  "heldoutQualityClaim": false,
+  "nativeForwardsDuringFit": 0,
+  "optimizerUpdates": 0,
+  "sourceSha256": {
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_expanded_parallel_copy_v1.py": "e1891273cd59a743885909b7fa385a74b1e12be3854e8523c21f9e144c302cf8",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_parallel_text_data_v1.py": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_parallel_text_head_v1.py": "dd534fed7a956ac34c3533976f274ccf0aa1f564516ab9b86c36c2e87f8fa3d8",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_copy_data_v2.py": "ac424d601d8dc97d480d3c22ed0175de002e46281c7c35f9054f00bb32a8082e",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_catalog_v1.py": "7dca3e1bcedc40c21f0ac877a6635cf7715206b92039a8ba4702fce71c282a8b"
+  },
+  "inputSha256": {
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/expanded_parallel_copy_prepare_v1/PREPARED.json": "1e33dd58e42ae5fedec28f348f6f7c9f1350295bc9a0ed17da68c5d4eaa65392",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/expanded_parallel_copy_prepare_v1/packet.TRAIN.json": "138db042416d1c9abb305ac9e9afa28b112e5d47cfcef79ff0346bc2dc239695",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/expanded_parallel_copy_prepare_v1/public-records.json": "f713523194d5d30739ec240480b7f270d784015cedb8d510b00e587d9fa841bf",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/packages/contracts/data/expanded-store-catalog-v1.json": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/features.pt": "569c4af5fc5b6524cef4d07619f8601f6bc3a3ee84296832cf548a3e2832b81f",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/expanded-native-features-v1-attempt-2/report.json": "09a67f18d62074475e3400ffee71ee9cb3d9a8d9d6e56fa79638de0a0b1c7cfc"
+  }
+}
