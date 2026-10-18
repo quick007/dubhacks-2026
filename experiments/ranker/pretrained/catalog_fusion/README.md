@@ -1,5 +1,55 @@
 # Catalog fusion experiment
 
+The paired raw-feature attempt's query-path saturation is documented in
+[CATALOG_FUSION_CENTERED_DESIGN.md](../CATALOG_FUSION_CENTERED_DESIGN.md) and
+`CATALOG_FUSION_PAIRED_GEOMETRY_AUDIT.json`. A single CPU-only conditioning
+ablation is prepared in `centered_runner.py`: means from exactly the 28 training
+queries and 42 unique training candidate variants, followed by fixed-epsilon
+centering/L2 normalization and the unchanged rank-four tanh scorer. Frozen means
+live in a distinct checkpoint format; no raw native cache entries are changed.
+
+`centered_v1_prepare/plan.json` is a statistics/config-only review artifact. A
+genuine fit requires its checksum plus unchanged input/statistics/source hashes:
+
+```sh
+.tools/pretrained-venv/bin/python -m experiments.ranker.pretrained.catalog_fusion.centered_runner --prepare-only --out NEW_PREPARATION_DIRECTORY
+```
+
+After source/plan review, run once using `--plan PATH --reviewed-plan-sha256 SHA
+--out NEW_RUN_DIRECTORY`. It uses existing verified raw vectors and zero native
+forwards, with the same fixed 80-epoch full/prior/random/permutation comparison.
+Held-out vector values/targets are loaded after checkpoint freeze. The prepared
+ablation has not been fitted in this lane. Three-card above-fold complete views
+and full storefront completion remain separate, unmeasured generation contracts.
+
+The first genuine native run is independently audited in
+[CATALOG_FUSION_ATTEMPT_1_AUDIT.md](../CATALOG_FUSION_ATTEMPT_1_AUDIT.md).
+It verifies execution/artifacts but does not establish learned personalization;
+the scorer is not promoted. The next data-only freeze is
+[`paired_v1/FREEZE.json`](paired_v1/FREEZE.json), with 28/8/12 new queries on
+unchanged old train/validation/test catalog partitions. Every family crosses two
+observable product preferences with both compatible image styles, forcing
+product/image target changes under identical masks. All seven tag atoms have
+positive training coverage. Old catalog/test outcomes are replay evidence;
+five validation and seven test preference/style signatures overlap old public
+contexts. These fresh request holdouts are not a sealed or untouched catalog test.
+
+`paired_runner` verifies all old catalog feature keys/checksums read-only, then
+performs **only 48 fresh query forwards**, the same fixed full/prior fits, and
+post-freeze held-out/pair evaluation. A CPU preflight is available with
+`--preflight-only`. The actual serialized native command binds the reviewed data:
+
+```sh
+.tools/pretrained-venv/bin/python -m experiments.ranker.pretrained.catalog_fusion.paired_runner --out data/ranker/pretrained/catalog-user-fusion-paired-v1-attempt-1 --reviewed-freeze-sha256 1e7238f090c21c83dc2715f5b402dc8b9c84cfe9b30e334d4efdae11fdbbed54
+```
+
+The data was frozen/reviewed before a genuine next fit. CPU stub tests are
+orchestration evidence only. The new runner reports ordinary raw/guarded quality,
+product both-correct/choice-change pairs and all-candidate/oracle/selected image
+both-correct/style-change pairs. A prior cannot satisfy both opposite labels in
+any controlled pair. No catalog native forward, response reuse, copy generation,
+hyperparameter sweep or fresh human-utility claim is part of this attempt.
+
 This package implements the proposed `catalog-user-fusion-v1` input contract,
 32,786-parameter rank-four scorer, train-only objective boundary, checkpoint
 checksums, complete-roster image mapping and an executable extraction/fit runner.

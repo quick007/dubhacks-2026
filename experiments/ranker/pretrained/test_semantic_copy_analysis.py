@@ -3,7 +3,7 @@ import copy
 import unittest
 
 from .semantic_copy_analysis import DATA, analyze, pending, records, render
-from .scheduler_identity_experiment import assemble_values
+from .scheduler_identity_experiment import assemble_values_legacy_v1 as assemble_values
 
 
 class SemanticCopyAnalysisTests(unittest.TestCase):

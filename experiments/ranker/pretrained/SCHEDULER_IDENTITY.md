@@ -94,3 +94,10 @@ Global peak MLX:6,362,874,212bytes under the7,516,192,768-byte seven-GiB guard. 
 Scheduler-owned identity is a viable serialization mechanism, not a factual or personalization solution. Keep it experimental and preserve the best manifest reference. The next copy experiment should directly address semantic field binding: title identity and required observed support, universal-only heading attributes and approved-title novelty. A separately declared constrained semantic decoder or trained grounding adapter would test that mechanism more directly than another label-prompt dialect. It must retain genuine new wording, every required product/field and held-out complete-page evaluation; no template/fallback can be counted as fresh generated success.
 
 The optional CPU catalog-fusion preparation is a different representation/training lane. No model features were extracted and no project fit or ranking-speed claim was made. A new trained checkpoint, sealed full-grid ranking/image evaluation and cold/warm/fresh-user conditioning measurements remain prerequisites. Faster head scoring alone cannot be credited with complete fresh-copy latency.
+
+
+## Prospective strict values v2
+
+`assemble_values` now rejects malformed raw values in returned field provenance as well as page status. A multiline heading, title or badge can no longer retain a valid first line as generated text. Any other field label injected by a malformed row is also rejected. Counts, accepted title alignment and required-NONE correctness follow the rejected plan; raw/wire text, original audit and rejection evidence remain intact. No output is trimmed, repaired or retried.
+
+Historical analyzers explicitly use `assemble_values_legacy_v1` to reproduce saved accounting; original reports and page pass rates are unchanged. New serving/experiments use strict values v2. The saved branch-local audit separately identifies the three old malformed badges previously counted as generated. Regression tests cover malformed headings/titles/badges, required NONE and injected different labels.

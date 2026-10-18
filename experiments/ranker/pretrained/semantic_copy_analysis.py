@@ -97,7 +97,7 @@ def field_details(rows, replay, case):
 
 def analyze(report, cases, source_hashes=None):
     """Reject changed saved metrics; never patch a saved arm or use teacher text."""
-    from .scheduler_identity_experiment import assemble_values
+    from .scheduler_identity_experiment import assemble_values_legacy_v1 as assemble_values
     from .fusion import TITLE_IDENTITY_POLICY
     expected = {}
     for split in SPLITS:

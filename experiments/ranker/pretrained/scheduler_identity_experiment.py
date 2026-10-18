@@ -50,13 +50,52 @@ def encode_value_rows(rows):
     return result,failures
 
 
-def assemble_values(rows,plan,request,catalog):
+def assemble_values_legacy_v1(rows,plan,request,catalog):
+    """Frozen historical accounting for explicit replay only, never new serving."""
     from .parallel_decode import assemble
     encoded,failures=encode_value_rows(rows);result=assemble(encoded,plan,request,catalog)
     if failures:
         result['quality']['allFieldsFulfilled']=False
         result['quality']['rejections']+=failures
     return {**result,'wireRows':encoded,'valueProtocolRejections':failures}
+
+
+def assemble_values(rows,plan,request,catalog):
+    """Reject malformed raw values in field provenance as well as page status.
+
+    Keep the exact raw/wire text and original audit for diagnosis. The labeled
+    parser may read a valid first line of a malformed value, so it cannot alone
+    establish that this scheduler-owned field was generated successfully.
+    """
+    result=assemble_values_legacy_v1(rows,plan,request,catalog)
+    sections=result['pagePlan']['sections']
+    cards=[card for section in sections for card in section['products']]
+    rejected=set()
+    for row in result['wireRows']:
+        if not row['valueProtocolRejections']:continue
+        rejected.add(row['schedulerFieldIdentity'])
+        # A malformed row can inject a syntactically valid different label.
+        # Neither that injected value nor this row's first line has provenance.
+        rejected.update(match[1] for line in row['text'].splitlines()
+            if (match:=re.fullmatch(r'(S\d+|T\d+|B\d+): (.+)',line.strip())))
+    for field in rejected:
+        index=int(field[1:])-1
+        if index<0:continue
+        if field[0]=='S' and index<len(sections):
+            sections[index]['heading']={'text':None,'source':'rejected'}
+        elif field[0] in ('T','B') and index<len(cards):
+            cards[index]['title' if field[0]=='T' else 'badge']={'text':None,'source':'rejected'}
+    quality=result['quality']
+    quality['newTitleCount']=sum(c['title']['source']=='generated' for c in cards)
+    quality['generatedBadgeCount']=sum(c['badge']['source']=='generated' for c in cards)
+    quality['generatedHeadingCount']=sum(s['heading']['source']=='generated' for s in sections)
+    supported=[(i,c) for i,c in enumerate(cards,1) if c['approvedFactIds']]
+    quality['titleObservedAlignmentRate']=(sum(c['title']['source']=='generated' for _,c in supported)/len(supported)
+        if supported else None)
+    no_support=[i for i,c in enumerate(cards,1) if not c['approvedFactIds']]
+    if any('B'+str(i) in rejected for i in no_support):quality['correctNone']=False
+    result['valueProtocolVersion']='strict-values-v2'
+    return result
 
 
 def mechanisms(rows,plan,catalog,values_only):
