@@ -1,0 +1,331 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-06",
+  "arm": "local-model",
+  "run": {
+    "id": "shopper-pair-06-local-model",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-06",
+    "personaSplit": "development",
+    "seed": 2026101806
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "c6723fe6-c7a7-418d-a223-fa4496a511cc",
+    "contextId": "9b943662-f2f2-4d29-afc5-5b96c783c73c",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-06-local-model-screenshot-png",
+      "shopper-pair-06-local-model-trace-zip",
+      "shopper-pair-06-local-model-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T04:43:01.644Z",
+  "elapsedMs": 44710.14083299998,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-0",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T04:43:02.604Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 959.7669579999929,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-1",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T04:43:09.067Z",
+        "kind": "action",
+        "message": "a mug in Cobalt up to $24"
+      },
+      "elapsedMs": 7423.659791999991,
+      "action": {
+        "type": "search",
+        "query": "a mug in Cobalt up to $24"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-2",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T04:43:15.858Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 14213.899917000002,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-3",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T04:43:22.324Z",
+        "kind": "action",
+        "message": "Trail mug color: Cobalt"
+      },
+      "elapsedMs": 20680.413833000028,
+      "action": {
+        "type": "inspect",
+        "target": "Trail mug color: Cobalt"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-4",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 4,
+        "at": "2026-10-18T04:43:28.393Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 26749.306083000003,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "mug",
+        "variantId": "mug-cobalt"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-5",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 5,
+        "at": "2026-10-18T04:43:35.991Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 34346.84625000003,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-6",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 6,
+        "at": "2026-10-18T04:43:41.432Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 39787.86166700002,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-06-local-model-step-7",
+        "runId": "shopper-pair-06-local-model",
+        "sequence": 7,
+        "at": "2026-10-18T04:43:46.354Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 44710.137791999994,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-06-local-model-screenshot-png",
+        "runId": "shopper-pair-06-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:43:47.080Z"
+      },
+      "status": "captured",
+      "sha256": "1284c22eee4bdc5838e2025adf186c45d102ff8fdd3059fbaf748bf1971642a5",
+      "bytes": 32807,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-06-local-model-trace-zip",
+        "runId": "shopper-pair-06-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:43:47.080Z"
+      },
+      "status": "captured",
+      "sha256": "e73bf2846043b06b72b90c6fb39a98001225055ee4a464d0539a009ad66e95a2",
+      "bytes": 27166440,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-06-local-model-browser-observations-json",
+        "runId": "shopper-pair-06-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:43:47.080Z"
+      },
+      "status": "captured",
+      "sha256": "3939a9f11fbb1f86d26e56cfc820d1a62aaed2a9e0c1389107249f9e549af6f5",
+      "bytes": 94385,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Trail mug",
+    "selectedColor": "Cobalt",
+    "catalogPrice": 24,
+    "quantity": 1,
+    "productId": "mug",
+    "variantId": "mug-cobalt",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "shopper-pair-06-local-model-step-4",
+      "shopper-pair-06-local-model-step-6"
+    ],
+    "evidenceArtifactIds": [
+      "shopper-pair-06-local-model-screenshot-png",
+      "shopper-pair-06-local-model-trace-zip",
+      "shopper-pair-06-local-model-browser-observations-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "24",
+        "evidenceArtifactIds": [
+          "shopper-pair-06-local-model-screenshot-png",
+          "shopper-pair-06-local-model-trace-zip",
+          "shopper-pair-06-local-model-browser-observations-json"
+        ]
+      },
+      {
+        "needId": "selected-color",
+        "status": "met",
+        "observed": "\"Cobalt\"",
+        "evidenceArtifactIds": [
+          "shopper-pair-06-local-model-screenshot-png",
+          "shopper-pair-06-local-model-trace-zip",
+          "shopper-pair-06-local-model-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "met",
+        "observed": "[\"drinking-mug\"]",
+        "evidenceArtifactIds": [
+          "shopper-pair-06-local-model-screenshot-png",
+          "shopper-pair-06-local-model-trace-zip",
+          "shopper-pair-06-local-model-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+        "startTimeMs": 6980.599999904633,
+        "durationMs": 232.5,
+        "capturedAtElapsedMs": 7699.342875000002,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-06-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+        "startTimeMs": 6980.599999904633,
+        "durationMs": 2433.100000023842,
+        "capturedAtElapsedMs": 14376.785500000027,
+        "acceptedFields": 7,
+        "withheldFields": 0,
+        "requiredFields": 7,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-06-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "03bc3705-3c36-4c5b-8bbf-fe83ceea7598",
+        "startTimeMs": 6980.599999904633,
+        "durationMs": 2499.8000000715256,
+        "capturedAtElapsedMs": 14376.785583000019,
+        "acceptedFields": 7,
+        "withheldFields": 0,
+        "requiredFields": 7,
+        "source": "data-local-model-readiness",
+        "artifactId": "shopper-pair-06-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
