@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node ../../scripts/go.mjs run .",
+    "dev": "node --env-file-if-exists=../../.env ../../scripts/go.mjs run .",
     "build": "node ../../scripts/go.mjs build -o ../../.cache/bin/storefront-api .",
     "typecheck": "node ../../scripts/go.mjs vet ./...",
     "test": "node ../../scripts/go.mjs test ./...",
