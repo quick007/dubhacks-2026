@@ -1,0 +1,70 @@
+{
+  "version": "known-store-v5-cpu-preparation.v1",
+  "createdAtUtc": "2026-10-18T07:35:09.601083+00:00",
+  "status": "ready-for-parent-owned-native-pilot-not-promoted",
+  "nativeExecution": false,
+  "preflightSha256": "be5e5eb4b2f79e0827f90583178866d1d08ad06cb116990e190cd5301efef56f",
+  "dataFreezeSha256": "a7a0e64f094f7574671c91a70af33525068b81f9e5cb0a184660ef38eafa8e75",
+  "driverSha256": "57628e9be018d2de263802a1b962947478181740e60e74a7e380f4ac675b33ea",
+  "dataBuilderSha256": "e6018c04c4a6f518b4366d95d79ac7c4d4c89d8f02b42abe381bf8b2b9daa52d",
+  "independentEvalSeedSha256": "b8197bdd16837e701ef59f7ddb24ef5a793d010d1e3bb2e77468dd9709ca9ac9",
+  "independentEvalAuthor": "/root/fit_review; authored before reading new v5 TRAIN phrases",
+  "counts": {
+    "catalog": 16,
+    "train": 96,
+    "eval": 32,
+    "reusedVectors": 48,
+    "newNativeForwards": 96,
+    "totalVectors": 144,
+    "guardControls": 16,
+    "knownLanguageGapDiagnostics": 1
+  },
+  "tokenRange": [
+    64,
+    103
+  ],
+  "cpuTests": {
+    "passed": 9,
+    "nativeEncoderUsed": false,
+    "command": ".tools/pretrained-venv/bin/python -m unittest experiments.ranker.pretrained.test_store_function_v5 -q"
+  },
+  "priorV4Context": {
+    "reportSha256": "86c22732b51bac7cdd16adb49d57301308ba1f0d0a849f2961f221afc6108e86",
+    "semanticNonemptyHitAtOne": 14,
+    "nonemptyDenominator": 21,
+    "bothTargetSetsPairsRecovered": 1,
+    "pairDenominator": 8,
+    "directComparisonClaim": false,
+    "reason": "v4 changes schema, sigmoid/BCE objective and task scope; v5 tests frozen v3 on same fresh32 instead"
+  },
+  "reviewGoals": {
+    "freshTopOneAtLeast": "28/32",
+    "freshTargetInTopSix": "32/32",
+    "perFunctionTopOneAtLeast": "1/2 for every function",
+    "guardChecks": "16/16",
+    "controlGap": "learned top1 exceeds prior/random/permuted-query; compare exact same new eval with frozen v3",
+    "latency": "fresh rank/action payload median <=300ms on same M5; excludes copy/browser; no guarantee"
+  },
+  "runtimeCompatibility": "same FunctionHead/v3 request and softmax scoring; original StoreRankSession64-forward report guard requires NEW explicit serving adapter; do not fake64",
+  "sourceSha256": {
+    "store_function_adaptation_v5.py": "57628e9be018d2de263802a1b962947478181740e60e74a7e380f4ac675b33ea",
+    "store_function_data_v5.py": "e6018c04c4a6f518b4366d95d79ac7c4d4c89d8f02b42abe381bf8b2b9daa52d",
+    "store_function_adaptation.py": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+    "store_rank_session.py": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0",
+    "store_demo_engine.py": "a1e52eebc7ea90103d27309b5d960ae4676db28c4e207ccec3ebaa3a3564639c",
+    "store_demo_catalog.py": "f1240656d1b7b07f0776186c2046361a081c6a553587ede4462f8aa2b6b6cb86",
+    "catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "store_copy_fit_v2.py": "7f63b9ac18f9142910694499b18c1a5427d4b2da13f0dc3be20860fb44b89968",
+    "semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc"
+  },
+  "limitations": [
+    "All16 product identities and functions are TRAIN seen; synthetic known-catalog paraphrases.",
+    "Eval wording written separately before extraction; author knows public catalog, not a sealed human sample.",
+    "Single-function softmax only; no learned multi-need, profile history, negative preference or OOD abstention claim.",
+    "Deterministic item-price/color/unknown-stock/size guards separately tested. Known parser gap: including delivery is not recognized, unlike delivered/including shipping; separately reported, no general delivered-cost NLP claim.",
+    "Observed notebook/browser failures motivate data breadth but are not new unseen evaluation."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "version": "known-store-v5-cpu-preparation.v2",
+  "status": "ready-for-parent-owned-native-pilot-not-promoted",
+  "nativeExecuted": false,
+  "preflightSha256": "eb6420492f63f141fd61c92c40e75c66b0f6dab241458cd9b96747bdaa09904f",
+  "driverSha256": "59a76f16d421c1d98d62a594f60e3453fcc13502ca6689a93b29872ec53fa1f0",
+  "priorPreflightPreserved": {
+    "file": "experiments/ranker/pretrained/store_function_v5_prepare_v1/preflight.json",
+    "sha256": "be5e5eb4b2f79e0827f90583178866d1d08ad06cb116990e190cd5301efef56f",
+    "sourceSnapshot": "experiments/ranker/pretrained/store_function_v5_prepare_v1/SOURCE_SNAPSHOT.json"
+  },
+  "datasetFreezeSha256": "a7a0e64f094f7574671c91a70af33525068b81f9e5cb0a184660ef38eafa8e75",
+  "independentEvalSeedSha256": "b8197bdd16837e701ef59f7ddb24ef5a793d010d1e3bb2e77468dd9709ca9ac9",
+  "catalogBinding": {
+    "module": "experiments.ranker.pretrained.store_demo_image_binding_v1",
+    "class": "ImageDeliveryCatalogBinding",
+    "manifestVersion": "actual-store-render-image-delivery.v1",
+    "helperSourceSha256": {
+      "scripts/prepare-product-webp.mjs": "50d4962f9a4886905aa704ab5acd26060c8b4acf4a495fd476eb1dbee02c000f",
+      "scripts/prepare-product-responsive-webp.mjs": "48ae7d92938bdf8eaaaec4d5504465a7b567b4b2881a382ad57181145ec4a3c2"
+    },
+    "policy": "explicit chosen verifier; original strict rules unchanged, no fallback"
+  },
+  "integrationManifestSha256": "ee3c4ac6549809b9eb9f21c19085f24fbfedf9a6418f7b846a2528a317a3a11a",
+  "rawExportSha256": "fa440e919e1f36890a1c97d8e05ea01bd4ce46811eaed57c0dc61db7b049a0d8",
+  "modelInputSha256": "205572ed535b6f40cd56ede51208c348ad05998ad4d205f193a8b5bfe3e79fb7",
+  "cachedVectorsReverified": 48,
+  "newNativeForwards": 96,
+  "totalFeatureVectors": 144,
+  "trainSteps": 80,
+  "evalQueries": 32,
+  "tokenRange": [
+    64,
+    103
+  ],
+  "cpuTests": {
+    "suitePassed": 10,
+    "additionalStrictDefaultRejectionPassed": 1,
+    "total": 11,
+    "gpuExecution": false
+  },
+  "sourceSha256": {
+    "store_function_adaptation_v5.py": "59a76f16d421c1d98d62a594f60e3453fcc13502ca6689a93b29872ec53fa1f0",
+    "store_function_data_v5.py": "e6018c04c4a6f518b4366d95d79ac7c4d4c89d8f02b42abe381bf8b2b9daa52d",
+    "store_function_adaptation.py": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+    "store_rank_session.py": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0",
+    "store_demo_engine.py": "929c988e0819f9657f48be19d3c4fa550c4099cf7959357611ed522450ca5a74",
+    "store_demo_catalog.py": "f1240656d1b7b07f0776186c2046361a081c6a553587ede4462f8aa2b6b6cb86",
+    "store_demo_image_binding_v1.py": "693308beeaf56824c80bc29e9580b5dc53c94e16f3c7bdcfd7c9cd31890a0b48",
+    "catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "store_copy_fit_v2.py": "7f63b9ac18f9142910694499b18c1a5427d4b2da13f0dc3be20860fb44b89968",
+    "semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc"
+  },
+  "runtimeCompatibility": "same FunctionHead/v3 request and softmax scoring; original StoreRankSession64-forward report guard requires NEW explicit serving adapter; do not fake64",
+  "limitations": [
+    "All16 product identities and functions are TRAIN seen; synthetic known-catalog paraphrases.",
+    "Eval wording written separately before extraction; author knows public catalog, not a sealed human sample.",
+    "Single-function softmax only; no learned multi-need, profile history, negative preference or OOD abstention claim.",
+    "Deterministic item-price/color/unknown-stock/size guards separately tested. Known parser gap: including delivery is not recognized, unlike delivered/including shipping; separately reported, no general delivered-cost NLP claim.",
+    "Observed notebook/browser failures motivate data breadth but are not new unseen evaluation."
+  ]
+}

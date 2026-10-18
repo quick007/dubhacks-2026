@@ -213,8 +213,11 @@ class CandidateDemoEngine(ResidentDemoEngine):
             self.startup.update(candidateVersion=VERSION, copyMode=mode, copyCandidate=self.copy_metadata,
                 candidateSourcesSha256=self.candidate_sources, nativeFreshBackend='store_demo_service CLI remains available')
             (self.output / 'startup.json').write_text(json.dumps(self.startup, indent=2) + '\n')
-        except BaseException:
-            super().close()
+        except BaseException as error:
+            try:
+                super().close()
+            except BaseException as cleanup_error:
+                error.add_note('Native initialization cleanup failed: ' + str(cleanup_error))
             raise
 
     def _assert_candidate(self):
@@ -293,6 +296,7 @@ class CandidateDemoEngine(ResidentDemoEngine):
         def event(kind, **body):
             if cancelled():
                 raise RequestCancelled('Cancelled before candidate event serialization')
+            self._assert_candidate()
             result = {'type': kind, 'requestId': request_id, **body}
             canonical(result)
             result.setdefault('timing', {})['readyMs'] = (time.perf_counter() - started) * 1000
@@ -313,6 +317,8 @@ class CandidateDemoEngine(ResidentDemoEngine):
                 'copy': self.copy_metadata, 'images': IMAGE_POLICY, 'hiddenProfileInputs': False,
                 'timingScope': TIMING_SCOPE, 'candidateMode': self.mode,
                 'qualityScope': 'TRAIN-ALL catalog demo; no heldout generalization claim' if self.mode == 'parallel' else 'verified original native field validation; cache hits generated earlier'}
+            if hasattr(self.session, 'startup_provenance'):
+                provenance['rankSession'] = deepcopy(self.session.startup_provenance)
             receipt.update(ranking=ranked, finalOrder=order, guards=guards, cards=cards, provenance=provenance)
             metadata, _ = public_sections(cards, [], self.session.products)
             shared = {'eligibleCount': len(order), 'shortfall': max(0, 6 - len(cards)), 'provenance': provenance}

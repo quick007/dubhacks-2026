@@ -1,0 +1,33 @@
+{
+  "scope": "Isolated minified browser ESM library builds; all exports retained, no app integration/navigation claim",
+  "toolchain": "installed vite alias @voidzero-dev/vite-plus-core1.3.0",
+  "config": {
+    "configFile": false,
+    "write": false,
+    "minify": true,
+    "format": "es",
+    "RAYON_NUM_THREADS": 1
+  },
+  "entries": {
+    "auditManifestResolver": {
+      "entry": "apps/storefront/src/product-responsive-source.ts",
+      "minifiedEsmBytes": 156042,
+      "gzipBytes": 37645,
+      "brotliBytes": 29641,
+      "sha256": "f5d22e01f5df9b827221650ae6fe823c1772e51fbeae0e5aec9df74682d0004e"
+    },
+    "compactResolver": {
+      "entry": "apps/storefront/src/product-responsive-runtime.ts",
+      "minifiedEsmBytes": 4703,
+      "gzipBytes": 1231,
+      "brotliBytes": 1103,
+      "sha256": "9e6abf5c4ada9cc700c08f68ece199d4a5bf0a62a5b67eb48a99ea49645c5623"
+    }
+  },
+  "reduction": {
+    "minifiedEsmBytes": 151339,
+    "minifiedEsmPercent": 96.98606785352662,
+    "gzipBytes": 36414,
+    "gzipPercent": 96.7299774206402
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "version": "store-function-v5-independent-preflight-review.v1",
+  "nativeExecutedByReviewer": false,
+  "status": "no-remaining-code-blocker-for-isolated-pilot; not-promoted",
+  "sourceSha256": {
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_function_data_v5.py": "e6018c04c4a6f518b4366d95d79ac7c4d4c89d8f02b42abe381bf8b2b9daa52d",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_function_adaptation_v5.py": "57628e9be018d2de263802a1b962947478181740e60e74a7e380f4ac675b33ea",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/test_store_function_v5.py": "a1386abcac8101295e19c55a09ecdf8fe24376600ec923dd1169cc8af9274c4a",
+    "/Users/lukas/Documents/Projects/dubhacks-2026/experiments/ranker/pretrained/store_function_v5_eval_seed_v1.json": "b8197bdd16837e701ef59f7ddb24ef5a793d010d1e3bb2e77468dd9709ca9ac9"
+  },
+  "driverPinnedSources": {
+    "store_function_adaptation_v5.py": "57628e9be018d2de263802a1b962947478181740e60e74a7e380f4ac675b33ea",
+    "store_function_data_v5.py": "e6018c04c4a6f518b4366d95d79ac7c4d4c89d8f02b42abe381bf8b2b9daa52d",
+    "store_function_adaptation.py": "6dd5cfad08aa2c3368b96ec237d62e749147745c5fb368fe475157602989860d",
+    "store_rank_session.py": "baa459958338693bdc5bc9654ea5e014f075d4860db3f3cdad69d11e88dfd4a0",
+    "store_demo_engine.py": "a1e52eebc7ea90103d27309b5d960ae4676db28c4e207ccec3ebaa3a3564639c",
+    "store_demo_catalog.py": "f1240656d1b7b07f0776186c2046361a081c6a553587ede4462f8aa2b6b6cb86",
+    "catalog_fusion/runtime.py": "373282d356f7f2142f5bb3e57f2943d2d2e2f5ce68bd841425c260424ef19a7f",
+    "catalog_fusion/inputs.py": "8cddb4d20c29bbc2c4e12459d23d3d7d0ba4f9fcce6c496002a768beb3ea4114",
+    "catalog_fusion/preflight.py": "54dda05429a93360b1c50e8b6b9b45e5bac62cbedf95eaab21e6cc6fad60adf1",
+    "store_copy_fit_v2.py": "7f63b9ac18f9142910694499b18c1a5427d4b2da13f0dc3be20860fb44b89968",
+    "semantic_copy_training.py": "af040956b899bd9fb0158d014fdefe1e10d7647cba026b7ad7e704167f841c9e",
+    "backbone.py": "551dd6204419b2cee7b6f98cbc8ea239ca371cac6d2cf992bb7838f2d657aedc"
+  },
+  "cpuTests": {
+    "command": ".tools/pretrained-venv/bin/python -B -m unittest experiments.ranker.pretrained.test_store_function_v5 -q",
+    "passed": 9,
+    "testedBeforeFinalMetadataOnlySourceInventoryAddition": true
+  },
+  "data": {
+    "trainQueries": 96,
+    "trainTargetsByProduct": {
+      "0": 6,
+      "1": 6,
+      "2": 6,
+      "3": 6,
+      "4": 6,
+      "5": 6,
+      "6": 6,
+      "7": 6,
+      "8": 6,
+      "9": 6,
+      "10": 6,
+      "11": 6,
+      "12": 6,
+      "13": 6,
+      "14": 6,
+      "15": 6
+    },
+    "evaluationQueries": 32,
+    "evaluationTargetsByProduct": {
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 2,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 2
+    },
+    "independentEvalAuthor": "fit_review; wrote frozen seed from public catalog before reading v5 TRAIN phrases/code; later reviewed TRAIN after seed freeze",
+    "evalSeedSha256": "b8197bdd16837e701ef59f7ddb24ef5a793d010d1e3bb2e77468dd9709ca9ac9",
+    "trainEvalRequestsDistinct": 128,
+    "requestFormat": "Choose a product for my stated use. + whole utterance preference + null itemBudget + empty hardRequirements",
+    "publicSupportAllLabelsMatchesCatalog": true,
+    "scope": "Known16 synthetic product-function paraphrases; public catalog seen, no hidden personas, no unseen humans/newcatalog claim"
+  },
+  "features": {
+    "reusedCatalog": 16,
+    "reusedOriginalTrain": 32,
+    "newTrainForwards": 64,
+    "newEvaluationForwards": 32,
+    "newNativeForwards": 96,
+    "totalVectors": 144,
+    "reusePolicy": "Exact old text/member/token/model provenance; feature store validates hashes/key/shape;96 original feature/receipt files pinned; fresh model hashes rechecked before extraction"
+  },
+  "fitBoundary": "One fixed80step TRAIN-only FunctionHead CE fit, no eval inputs/labels or adaptive early stopping. Head artifacts frozen before fresh eval; predictions frozen before evaluation labels parsed in native execution.",
+  "controls": {
+    "arms": [
+      "frozen-v3",
+      "prior",
+      "random",
+      "permuted-query"
+    ],
+    "predeclaredPermutationOffset": 17,
+    "sameTargetPairsInActualEvalSeed": 0
+  },
+  "fixedReviewIssues": [
+    "real180s main-thread lifecycle alarm, removed before integrity cleanup",
+    "fixed32 evaluation roster/activeRecord/failure receipts, nativeForwardcount after successful encode independent of archive success",
+    "dataset FREEZE/allfile/integration pins beforefit/prediction-labelparse/final",
+    "old32 labeltarget digest tied to original learned checkpoint; support labels match currentpubliccatalog",
+    "failed native CLI exits nonzero",
+    "critical deadline/927hash/rawfeature helper source inventory included"
+  ],
+  "primaryDeterministicGuards": {
+    "cases": 16,
+    "passed": 16,
+    "learned": false
+  },
+  "knownLimit": {
+    "query": "a mug under $30 including delivery",
+    "observed": "existing parser accepts item-price interpretation rather than reject unsupported delivered-cost intent",
+    "retention": "frozen known-language-gaps.json diagnostic; original finding not hidden; separate from16 recognized-language guard cases",
+    "promotionImplication": "Do not imply universal delivery-budget compliance. Fix serving parser under coordinated source/asset refresh before making that claim."
+  },
+  "remainingNativeEvidence": [
+    "Actual96newforward/144vector roster and feature receipts",
+    "927basehash invariance and clean close under shared lock",
+    "frozen prediction/control/endpoint replay plus independently interpreted known-catalog relevance",
+    "fresh rank+actions timings exclude copy/browser/images; explicit new serving adapter must accept true96forward report rather than fake old64"
+  ]
+}

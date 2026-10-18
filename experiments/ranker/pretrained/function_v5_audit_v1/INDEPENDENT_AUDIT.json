@@ -1,0 +1,297 @@
+{
+  "version": "function-v5-native-independent-audit.v1",
+  "nativeExecutedByReviewer": false,
+  "originalFilesUnchanged": 310,
+  "checks": {
+    "original": 2,
+    "pins": 120,
+    "boundary": 17,
+    "roster": 7,
+    "features": 288,
+    "reuse": 96,
+    "native": 292,
+    "heads": 5,
+    "replay": 1,
+    "endpoints": 96,
+    "ranking": 160,
+    "results": 231,
+    "guards": 1,
+    "timing": 1
+  },
+  "totalChecks": 1317,
+  "originalReportSha256": "cac2ba0ea15809b5ca6ddbc0037966d9809c56973fc51bb8ec8b2b5b9f0d77d5",
+  "correctedReportSha256": "aa7e433a9a289deff6efa8ac8f92d8d77d461ed1affa2dea3b457fec3cbc1e70",
+  "correctedResultsSha256": "4078fb7ba043670f56c94974156c673f67e490332e364dd0e20d2213567a3c7b",
+  "diagnosticRowsChanged": 105,
+  "results": {
+    "learned": {
+      "cases": 32,
+      "topOneCorrect": 29,
+      "targetInTopSix": 32
+    },
+    "random": {
+      "cases": 32,
+      "topOneCorrect": 2,
+      "targetInTopSix": 13
+    },
+    "frozen-v3": {
+      "cases": 32,
+      "topOneCorrect": 14,
+      "targetInTopSix": 29
+    },
+    "prior": {
+      "cases": 32,
+      "topOneCorrect": 2,
+      "targetInTopSix": 12
+    },
+    "permuted-query": {
+      "cases": 32,
+      "topOneCorrect": 1,
+      "targetInTopSix": 13
+    }
+  },
+  "learnedMisses": [
+    {
+      "caseId": "v5-eval-13",
+      "target": 6,
+      "actualTopOne": 14,
+      "targetRank": 4
+    },
+    {
+      "caseId": "v5-eval-14",
+      "target": 7,
+      "actualTopOne": 8,
+      "targetRank": 2
+    },
+    {
+      "caseId": "v5-eval-23",
+      "target": 11,
+      "actualTopOne": 9,
+      "targetRank": 5
+    }
+  ],
+  "paired": {
+    "improved": 16,
+    "regressed": 1,
+    "bothCorrect": 13,
+    "bothWrong": 2
+  },
+  "timing": {
+    "recordedMedianFreshEncodeThroughSerializedActionsMs": 1357.223916973453,
+    "medianEvaluationEncodeTotalMs": 201.26924948999658,
+    "scope": "Rank experiment includes feature/report archives, catalog verification and repeated load_snapshot provenance/asset checks; no copy/UI/browser; not live serving latency; snapshot phase not separately timed"
+  },
+  "knownLanguageGaps": [
+    {
+      "caseId": "including-delivery-alias",
+      "passed": false,
+      "selected": [
+        0,
+        2,
+        14,
+        15
+      ],
+      "guards": {
+        "base": [
+          {
+            "eligible": true,
+            "reasons": [],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": true,
+            "reasons": [],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": false,
+            "reasons": [
+              "item_budget"
+            ],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": true,
+            "reasons": [],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          },
+          {
+            "eligible": true,
+            "reasons": [],
+            "unsupported": [],
+            "learned": false,
+            "budgetScope": "item-price-only"
+          }
+        ],
+        "additionalReasons": [
+          [],
+          [
+            "exclusive-item-budget"
+          ],
+          [],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [
+            "exclusive-item-budget"
+          ],
+          [],
+          []
+        ],
+        "exactNamePolicy": {
+          "applied": false,
+          "policy": "whole public product name after removing recognized dollar ceiling; hard guards first; abstain if exact identity ineligible",
+          "matchedProductIndices": [],
+          "learned": false
+        },
+        "budgetSource": "query-exclusive",
+        "budgetExclusive": true,
+        "waterproofRequired": false,
+        "constraintParserScope": "typed hard constraints, explicit dollar ceilings and unnegated literal waterproof only; other free text is ranking preference"
+      }
+    }
+  ],
+  "frozen927Integrity": "Producer receipt true; archived source hashes show actual before/after comparison. CPU audit does not recreate native hashes.",
+  "noEvalLeakageEvidence": "96 TRAIN-only membership/target digest/means verified; fixed80 source; head freeze precedes evaluation features; hash-linked prediction freeze precedes label parse in archived source. Not a syscall-level access attestation.",
+  "recommendation": "Useful known16 single-function ranking candidate for explicit integration/live testing, with all48copy bindings already TRAIN seen; not automatic promotion, unseen generalization, broad profile personalization, or latency success.",
+  "remainingLimits": [
+    "3/32 top-one misses remain, ranks4/2/5; minimum one correct per function",
+    "Including-delivery parser gap remains explicitly recorded",
+    "Recorded1.357s rank endpoint misses300ms review goal; independently measure lean live adapter rather than subtract unmeasured overhead",
+    "Copy/browser/visible readiness were not rerun with v5 head"
+  ]
+}

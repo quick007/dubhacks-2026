@@ -1,0 +1,46 @@
+{
+  "version": "function-v5-verification-package.v1",
+  "nativeExecuted": false,
+  "trainingExecuted": false,
+  "cpuCheckpointInferenceOnly": true,
+  "originalFilesUnchanged": 310,
+  "independentReplayChecks": 1317,
+  "focusedRegression": {
+    "beforeFix": "FAILED: expected per-case ranks2/14, got16/16",
+    "afterFix": "PASS, includes reversed label order"
+  },
+  "currentFutureTests": {
+    "passed": 13,
+    "failed": 0,
+    "batches": [
+      {
+        "count": 8,
+        "seconds": 22.565
+      },
+      {
+        "count": 5,
+        "seconds": 1.463
+      }
+    ],
+    "excluded": [
+      "test_train_fit_no_eval_arguments_fixed80_and_safe_checkpoint_reload: engineered fit intentionally not rerun under no-retraining audit scope"
+    ],
+    "fixtureUpdate": "future mutable tests now explicitly target integration_v10/current image binding; stale integration_v9 rejection separately required; historical native v9 artifacts untouched"
+  },
+  "earlierStaleFixtureAttempt": {
+    "passed": 2,
+    "errors": 3,
+    "reason": "Historical integration_v9 correctly rejected by advanced live v3 image binder. Parent authorized updating future test fixtures to v10. All affected current tests subsequently pass."
+  },
+  "commands": {
+    "regression": ".tools/pretrained-venv/bin/python -B -m unittest experiments.ranker.pretrained.test_store_function_v5.FunctionV5Tests.test_miss_rank_uses_each_case_target_and_is_independent_of_label_order",
+    "replay": ".tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.function_v5_audit_v1.AUDIT_NATIVE_FUNCTION_V5",
+    "package": ".tools/pretrained-venv/bin/python -B -m experiments.ranker.pretrained.function_v5_audit_v1.PACKAGE_FUNCTION_V5"
+  },
+  "sourceSha256": {
+    "experiments/ranker/pretrained/store_function_adaptation_v5.py": "3961b97a5d06d0708b7038b90b7034f5b2909883bef401e391643cd2a7d4df43",
+    "experiments/ranker/pretrained/test_store_function_v5.py": "23deb4888af47394c4bbe121a7e4f813ae402ae3140560559b471d4204e2c30a",
+    "experiments/ranker/pretrained/function_v5_audit_v1/AUDIT_NATIVE_FUNCTION_V5.py": "62be0bd9367edd27c0d71202ccbdc5039c670810e6bdaae80a406079021ca8eb",
+    "experiments/ranker/pretrained/function_v5_audit_v1/PACKAGE_FUNCTION_V5.py": "f7fcdfa14ac2e6663169d2d173a54deb49d67d715e5578eebd8044f1dc03dcb1"
+  }
+}

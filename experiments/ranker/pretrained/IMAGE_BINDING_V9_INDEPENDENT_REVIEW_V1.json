@@ -1,0 +1,86 @@
+{
+  "version": "image-binding-v9-independent-review.v1",
+  "reviewExecution": "CPU/read-only; no browser/nativeGPU/service/runtime source edits",
+  "status": "current-v9-binding-and-v3-preflight-pass",
+  "sourceSha256": {
+    "experiments/ranker/pretrained/store_demo_image_binding_v1.py": "27a578476ed6c91515c803800647a8b6bb1d9552ecaf7b7b7d2087f44dbfb41d",
+    "experiments/ranker/pretrained/store_demo_catalog.py": "f1240656d1b7b07f0776186c2046361a081c6a553587ede4462f8aa2b6b6cb86",
+    "experiments/ranker/pretrained/store_demo_engine.py": "929c988e0819f9657f48be19d3c4fa550c4099cf7959357611ed522450ca5a74",
+    "experiments/ranker/pretrained/store_candidate_engine_v1.py": "c41f7d8da721cb76cfe1bae133f4f11f0a96f43591652562c52abc85cb46f311",
+    "experiments/ranker/pretrained/store_candidate_image_service_v1.py": "f3292ce1edb1cce4d54954fa65367f7c967e6ab7b9f5d751f21d832b8e8a4a4c",
+    "experiments/ranker/pretrained/test_store_demo_image_binding_v1.py": "9c54ddd0a790bb7cc336618b95a8ddc1795e96bfa823fecb3a9cc6bec6cdc120",
+    "experiments/ranker/pretrained/store_demo_integration_v9/manifest.json": "471f7c341986af21368972876463daf0056a913868b168dd9c65ada4af2f1bd3",
+    "experiments/ranker/pretrained/store_function_v5_prepare_v3/preflight.json": "047cdbc3dea0121513ef35d73111af030a724aee2f8eff8ea8664aebc8962015",
+    "experiments/ranker/pretrained/store_function_v5_prepare_v2/preflight.json": "eb6420492f63f141fd61c92c40e75c66b0f6dab241458cd9b96747bdaa09904f",
+    "experiments/ranker/pretrained/store_function_v5_prepare_v2/SOURCE_SNAPSHOT.json": "22b2d18dc0ce6069a483c08e04e1f91094e14760305eb7f50876810b325924d6"
+  },
+  "tests": {
+    "combinedBinderBaseCandidateTests": 33,
+    "result": "passed",
+    "nonfatalTestWarnings": "temporary fake HTTP403/400 test HTTPError handles report ResourceWarning on implicit cleanup"
+  },
+  "actualChecks": {
+    "v9ManifestAccepted": true,
+    "v8OldImageVersionReceiptRejected": "Explicit reviewed image-delivery receipt required",
+    "unknownAuxiliarySourceRejected": true,
+    "personaTruthInferenceTrueRejected": true,
+    "currentAPIFixturePathReadTextForbiddenDuringSuccessfulBinding": true,
+    "runtimeExportExactlyMatchesSnapshot": true,
+    "canonicalModelInputsHashMatches": true,
+    "defaultStrictBinderSourceUnchanged": true
+  },
+  "auxiliaryException": {
+    "apps/api/fixtures/catalog.json": "b4259f0bf3fddbb907cad1c0c713f1a9d1287c6928620b580c6209e4e5be80bc"
+  },
+  "apiFixtureAudit": {
+    "source": "apps/api/fixtures/catalog.json",
+    "currentSha256": "b4259f0bf3fddbb907cad1c0c713f1a9d1287c6928620b580c6209e4e5be80bc",
+    "originalSnapshotSha256": "8a92b613d55b74c6758fe1a18a5d6cd5c58540b095002ea6770dd22c57cb3432",
+    "currentExperiment": "fieldwork-study",
+    "currentPersonaCount": 16,
+    "historicalSnapshotTaskCount": 10,
+    "currentFixturePersonaTruthPassedToInference": false,
+    "historicalSnapshotTasksRetainedAsProvenanceOnly": true,
+    "publicProductExportAndModelFactsExactlyUnchanged": true,
+    "scope": "Upstream API mock scenario changed; native product/query encoders consume no fixture persona goals or task labels."
+  },
+  "runtimeBoundary": {
+    "APIKeys": [
+      "experiment",
+      "personas",
+      "variants"
+    ],
+    "APIProductsKeyPresent": false,
+    "currentPersonaCount": 16,
+    "historicalSnapshotTasks": 10,
+    "requestEncoder": "exact public query/preferences/itemBudget/hardRequirements only",
+    "catalogEncoder": "name/category/itemPrice/searchTerms + declared colors only",
+    "copyEncoder": "selected name/category/itemPrice/color + fixed public style; no personas/history/task labels",
+    "historicalTasks": "archived provenance only; neither current nor historical fixture goals enter model serialization",
+    "bindingFactory": "ResidentDemoEngine defaults to original DemoCatalogBinding; only explicit ImageCandidateDemoEngine selects ImageDeliveryCatalogBinding"
+  },
+  "v5PreflightV3": {
+    "sha256": "047cdbc3dea0121513ef35d73111af030a724aee2f8eff8ea8664aebc8962015",
+    "reproducesExactly": true,
+    "archiveV2FilesVerified": 16,
+    "oldPinnedModules": 13,
+    "oldVerificationScripts": 2,
+    "recordsTokensConfigDatasetFreezeFilesModelProvenanceReusedPinsExactlySameV2ToV3": true,
+    "featureRecords": 144,
+    "newNativeForwards": 96,
+    "reusedFeatures": 48,
+    "totalFeatureVectors": 144,
+    "evalLabelsParsedByPreflight": false
+  },
+  "provenanceHardeningFollowup": {
+    "finding": "Image service lifetime candidate source inventory omits image entry/binder and verification-script bytes, while v5 preflight does pin them.",
+    "currentImpact": "Current exact reviewed v9 manifest/data/source pins pass. Manifest itself and frontend source drift fail. This is not a current model/input mismatch.",
+    "suggestedScope": "At a coordinated future source revision, store explicit image-policy helper/entry/script startup hashes and check them per request/close. Do not edit live frozen sources during a measurement lifetime."
+  },
+  "limits": [
+    "No browser/performance claim independently reviewed in this binding-only task",
+    "Current actual v9 receipt is exact reviewed input; this is not an adversarial approval of arbitrary user-authored manifests",
+    "Current public model/copy weights remain known-catalog; API held-out persona partition does not make this an unseen-model evaluation",
+    "Original assets verified by existing derivative checkers; no new learned/pixel image-selection claim"
+  ]
+}
