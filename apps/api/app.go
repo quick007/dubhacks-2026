@@ -15,6 +15,7 @@ import (
 	"storefront/api/internal/contracts"
 	"storefront/api/internal/experimentresults"
 	"storefront/api/internal/scenario"
+	"storefront/api/internal/shoppingevents"
 	"strings"
 	"sync"
 	"time"
@@ -45,6 +46,7 @@ type AppOptions struct {
 type App struct {
 	store       *Store
 	results     *experimentresults.Service
+	shopping    *shoppingevents.Service
 	queue       *JobQueue
 	mux         *http.ServeMux
 	releaseLock func()
@@ -102,12 +104,36 @@ func NewApp(options AppOptions) (*App, error) {
 		release()
 		return nil, err
 	}
-	app := &App{store: store, results: results, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario), mux: http.NewServeMux(), releaseLock: release}
+	shoppingConfig, err := shoppingevents.ConfigFromEnv()
+	if err != nil {
+		results.Close()
+		store.db.Close()
+		release()
+		return nil, err
+	}
+	var shoppingRepo shoppingevents.Repository
+	if shoppingConfig.Enabled && os.Getenv("TIGER_DATABASE_URL") != "" {
+		shoppingRepo, err = shoppingevents.NewPostgres(os.Getenv("TIGER_DATABASE_URL"))
+		if err != nil {
+			results.Close()
+			store.db.Close()
+			release()
+			return nil, err
+		}
+	}
+	shopping, err := shoppingevents.New(filepath.Join(dataDir, "shopping-events"), shoppingConfig, shoppingRepo)
+	if err != nil {
+		results.Close()
+		store.db.Close()
+		release()
+		return nil, err
+	}
+	app := &App{store: store, results: results, shopping: shopping, queue: newQueue(store, options.QueueCapacity, options.MockStepDelay, options.WorkspaceRoot, mockScenario), mux: http.NewServeMux(), releaseLock: release}
 	app.routes()
 	return app, nil
 }
 func (a *App) Close() {
-	a.closeOnce.Do(func() { a.queue.close(); a.results.Close(); a.store.db.Close(); a.releaseLock() })
+	a.closeOnce.Do(func() { a.queue.close(); a.results.Close(); a.shopping.Close(); a.store.db.Close(); a.releaseLock() })
 }
 func (a *App) ServeHTTP(w http.ResponseWriter, r *http.Request) { a.mux.ServeHTTP(w, r) }
 func jsonResponse(w http.ResponseWriter, status int, body any) {
@@ -121,6 +147,7 @@ func jsonError(w http.ResponseWriter, status int, err error) {
 }
 func (a *App) routes() {
 	a.results.Register(a.mux)
+	a.shopping.Register(a.mux)
 	a.mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) { jsonResponse(w, 200, map[string]bool{"ok": true}) })
 	a.mux.HandleFunc("GET /api/catalog", func(w http.ResponseWriter, r *http.Request) {
 		catalog, err := a.store.catalog()
