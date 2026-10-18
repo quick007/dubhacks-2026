@@ -9,11 +9,13 @@ from .test_page_plan import PagePlanTests
 class EvidencePlanTests(PagePlanTests):
     def test_generated_title_heading_and_correct_none(self):
         plan=self.plan()
-        text='S1: Everyday travel choices\nT1: Your compact travel companion\nB1: NONE'
+        text='S1: Everyday travel choices\nT1: Your compact travel pack\nB1: NONE'
         completed,quality=validate_generated(text,'stop',plan,self.request,self.catalog)
         self.assertTrue(quality['allFieldsFulfilled'])
         self.assertTrue(quality['correctNone'])
         self.assertEqual(completed['sections'][0]['products'][0]['title']['source'],'generated')
+        _,generic=validate_generated(text.replace('Your compact travel pack','Your compact travel companion'),'stop',plan,self.request,self.catalog)
+        self.assertIn('T1:missing_selected_product_identity',generic['rejections'])
         _,bad=validate_generated(text.replace('NONE','Compact travel'),'stop',plan,self.request,self.catalog)
         self.assertFalse(bad['allFieldsFulfilled'])
         _,truncated=validate_generated(text,'length',plan,self.request,self.catalog)
