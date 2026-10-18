@@ -1,0 +1,257 @@
+{
+  "schema": "shopper-optional-controls-summary.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "independentFreshCohort": false,
+  "pooledWithMain": false,
+  "groups": [
+    {
+      "kind": "aa",
+      "fixedAssignedSessions": 4,
+      "recorded": 4,
+      "unattempted": 0,
+      "invalidOrInterrupted": 0,
+      "timeouts": 0,
+      "technicalFailures": 0,
+      "abstentions": 0,
+      "rows": [
+        {
+          "runId": "holdout-v2-02-aa-A",
+          "caseId": "holdout-v2-02",
+          "clusterId": "holdout-v2-02",
+          "label": "A",
+          "arm": "generic",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 5800,
+          "validPurchaseRevenueCents": 5800
+        },
+        {
+          "runId": "holdout-v2-02-aa-B",
+          "caseId": "holdout-v2-02",
+          "clusterId": "holdout-v2-02",
+          "label": "B",
+          "arm": "generic",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 5800,
+          "validPurchaseRevenueCents": 5800
+        },
+        {
+          "runId": "holdout-v3-06-aa-A",
+          "caseId": "holdout-v3-06",
+          "clusterId": "holdout-v3-06",
+          "label": "A",
+          "arm": "generic",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 6400,
+          "validPurchaseRevenueCents": 6400
+        },
+        {
+          "runId": "holdout-v3-06-aa-B",
+          "caseId": "holdout-v3-06",
+          "clusterId": "holdout-v3-06",
+          "label": "B",
+          "arm": "generic",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 6400,
+          "validPurchaseRevenueCents": 6400
+        }
+      ],
+      "pairs": [
+        {
+          "caseId": "holdout-v2-02",
+          "clusterId": "holdout-v2-02",
+          "firstRunId": "holdout-v2-02-aa-A",
+          "secondRunId": "holdout-v2-02-aa-B",
+          "direction": "B minus A (both generic)",
+          "intentCorrectDifference": 0,
+          "validPurchaseDifference": 0,
+          "validPurchaseRevenueCentsDifference": 0
+        },
+        {
+          "caseId": "holdout-v3-06",
+          "clusterId": "holdout-v3-06",
+          "firstRunId": "holdout-v3-06-aa-A",
+          "secondRunId": "holdout-v3-06-aa-B",
+          "direction": "B minus A (both generic)",
+          "intentCorrectDifference": 0,
+          "validPurchaseDifference": 0,
+          "validPurchaseRevenueCentsDifference": 0
+        }
+      ],
+      "byLabel": {
+        "A": {
+          "assigned": 2,
+          "intentCorrect": 2,
+          "validPurchases": 2,
+          "serverConfirmed": 2,
+          "visibleCheckoutConfirmed": 2,
+          "serverAcceptedMerchandiseRevenueCents": 12200,
+          "serverAcceptedMerchandiseRevenueCentsPerAssignedSession": 6100,
+          "validPurchaseRevenueCents": 12200,
+          "validPurchaseRevenueCentsPerAssignedSession": 6100
+        },
+        "B": {
+          "assigned": 2,
+          "intentCorrect": 2,
+          "validPurchases": 2,
+          "serverConfirmed": 2,
+          "visibleCheckoutConfirmed": 2,
+          "serverAcceptedMerchandiseRevenueCents": 12200,
+          "serverAcceptedMerchandiseRevenueCentsPerAssignedSession": 6100,
+          "validPurchaseRevenueCents": 12200,
+          "validPurchaseRevenueCentsPerAssignedSession": 6100
+        }
+      },
+      "secondVersusFirst": {
+        "intentWins": 0,
+        "intentLosses": 0,
+        "intentTies": 2
+      },
+      "caution": "Two scenario clusters only; descriptive sanity/repeatability evidence, no precise noise-rate or uplift claim. Repeats retain original clusters."
+    },
+    {
+      "kind": "repeats",
+      "fixedAssignedSessions": 4,
+      "recorded": 4,
+      "unattempted": 0,
+      "invalidOrInterrupted": 0,
+      "timeouts": 0,
+      "technicalFailures": 0,
+      "abstentions": 0,
+      "rows": [
+        {
+          "runId": "holdout-v2-01-repeat-generic",
+          "caseId": "holdout-v2-01",
+          "clusterId": "holdout-v2-01",
+          "label": "generic",
+          "arm": "generic",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 6800,
+          "validPurchaseRevenueCents": 6800
+        },
+        {
+          "runId": "holdout-v2-01-repeat-local-model",
+          "caseId": "holdout-v2-01",
+          "clusterId": "holdout-v2-01",
+          "label": "local-model",
+          "arm": "local-model",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 6800,
+          "validPurchaseRevenueCents": 6800
+        },
+        {
+          "runId": "holdout-v3-03-repeat-generic",
+          "caseId": "holdout-v3-03",
+          "clusterId": "holdout-v3-03",
+          "label": "generic",
+          "arm": "generic",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 12800,
+          "validPurchaseRevenueCents": 12800
+        },
+        {
+          "runId": "holdout-v3-03-repeat-local-model",
+          "caseId": "holdout-v3-03",
+          "clusterId": "holdout-v3-03",
+          "label": "local-model",
+          "arm": "local-model",
+          "status": "recorded",
+          "outcome": "completed",
+          "intentCorrect": true,
+          "validPurchase": true,
+          "serverConfirmed": true,
+          "visibleCheckoutConfirmed": true,
+          "serverAcceptedMerchandiseRevenueCents": 12800,
+          "validPurchaseRevenueCents": 12800
+        }
+      ],
+      "pairs": [
+        {
+          "caseId": "holdout-v2-01",
+          "clusterId": "holdout-v2-01",
+          "firstRunId": "holdout-v2-01-repeat-generic",
+          "secondRunId": "holdout-v2-01-repeat-local-model",
+          "direction": "local-model minus generic (repeat only)",
+          "intentCorrectDifference": 0,
+          "validPurchaseDifference": 0,
+          "validPurchaseRevenueCentsDifference": 0
+        },
+        {
+          "caseId": "holdout-v3-03",
+          "clusterId": "holdout-v3-03",
+          "firstRunId": "holdout-v3-03-repeat-generic",
+          "secondRunId": "holdout-v3-03-repeat-local-model",
+          "direction": "local-model minus generic (repeat only)",
+          "intentCorrectDifference": 0,
+          "validPurchaseDifference": 0,
+          "validPurchaseRevenueCentsDifference": 0
+        }
+      ],
+      "byLabel": {
+        "generic": {
+          "assigned": 2,
+          "intentCorrect": 2,
+          "validPurchases": 2,
+          "serverConfirmed": 2,
+          "visibleCheckoutConfirmed": 2,
+          "serverAcceptedMerchandiseRevenueCents": 19600,
+          "serverAcceptedMerchandiseRevenueCentsPerAssignedSession": 9800,
+          "validPurchaseRevenueCents": 19600,
+          "validPurchaseRevenueCentsPerAssignedSession": 9800
+        },
+        "local-model": {
+          "assigned": 2,
+          "intentCorrect": 2,
+          "validPurchases": 2,
+          "serverConfirmed": 2,
+          "visibleCheckoutConfirmed": 2,
+          "serverAcceptedMerchandiseRevenueCents": 19600,
+          "serverAcceptedMerchandiseRevenueCentsPerAssignedSession": 9800,
+          "validPurchaseRevenueCents": 19600,
+          "validPurchaseRevenueCentsPerAssignedSession": 9800
+        }
+      },
+      "secondVersusFirst": {
+        "intentWins": 0,
+        "intentLosses": 0,
+        "intentTies": 2
+      },
+      "caution": "Two scenario clusters only; descriptive sanity/repeatability evidence, no precise noise-rate or uplift claim. Repeats retain original clusters."
+    }
+  ]
+}

@@ -1,0 +1,1526 @@
+{
+  "version": "shopper-evidence-aggregate.v1",
+  "auxiliarySchema": "shopper-optional-controls-aggregate.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "controlKind": "repeats",
+  "fixedSessions": 4,
+  "fixedCases": 2,
+  "independentFreshCohort": false,
+  "pooledWithMain": false,
+  "catalogSnapshotSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+  "stopReason": "roster-finished",
+  "rows": [
+    {
+      "caseId": "holdout-v2-01",
+      "arm": "generic",
+      "expectedRunId": "holdout-v2-01-repeat-generic",
+      "path": "holdout-v2-01/generic/session.json",
+      "controlLabel": "generic",
+      "clusterId": "holdout-v2-01",
+      "status": "recorded",
+      "formalStatus": "recorded",
+      "errors": [],
+      "sidecarSha256": "a3402a8043d656886d3a74a8ac723fa7f24aedcc43063ae31662e01906be77d6",
+      "session": {
+        "contractVersion": "shopper-session.v1",
+        "caseId": "holdout-v2-01",
+        "arm": "generic",
+        "run": {
+          "id": "holdout-v2-01-repeat-generic",
+          "experimentId": "actual-store-repeat-v2",
+          "personaId": "holdout-v2-01",
+          "personaSplit": "held-out",
+          "seed": 2026102001
+        },
+        "browser": {
+          "name": "Chrome",
+          "headed": true,
+          "actualNavigation": true,
+          "version": "155.0.8059.82",
+          "automation": "playwright-chrome"
+        },
+        "isolation": {
+          "kind": "fresh-storage-context",
+          "tabId": "c2460d69-0f96-4ba8-b347-913489e0c98d",
+          "contextId": "b0393c95-0cbb-4713-982c-218db425bf15",
+          "sharedStorage": false,
+          "storageCleared": true,
+          "initialCartEmpty": true,
+          "evidenceArtifactIds": [
+            "holdout-v2-01-repeat-generic-screenshot-png",
+            "holdout-v2-01-repeat-generic-trace-zip",
+            "holdout-v2-01-repeat-generic-browser-observations-json",
+            "holdout-v2-01-repeat-generic-checkout-receipt-json"
+          ],
+          "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+        },
+        "entryUrl": "http://127.0.0.1:4312/",
+        "startedAt": "2026-10-18T10:01:12.117Z",
+        "elapsedMs": 30370.668124999997,
+        "timingPrecision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "protocol": {
+          "passed": true,
+          "deviations": []
+        },
+        "status": "completed",
+        "error": null,
+        "realPurchase": false,
+        "fakeOrderConfirmed": true,
+        "steps": [
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-generic-step-0",
+              "runId": "holdout-v2-01-repeat-generic",
+              "sequence": 0,
+              "at": "2026-10-18T10:01:13.062Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 944.836083000002,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-generic-step-1",
+              "runId": "holdout-v2-01-repeat-generic",
+              "sequence": 1,
+              "at": "2026-10-18T10:01:18.236Z",
+              "kind": "action",
+              "message": "a backpack for bringing a sketchbook on the bus, at most $75"
+            },
+            "elapsedMs": 6118.637583000003,
+            "action": {
+              "type": "search",
+              "query": "a backpack for bringing a sketchbook on the bus, at most $75"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-generic-step-2",
+              "runId": "holdout-v2-01-repeat-generic",
+              "sequence": 2,
+              "at": "2026-10-18T10:01:23.373Z",
+              "kind": "action",
+              "message": "Everyday daypack color: Forest"
+            },
+            "elapsedMs": 11255.23324999999,
+            "action": {
+              "type": "inspect",
+              "target": "Everyday daypack color: Forest"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-generic-step-3",
+              "runId": "holdout-v2-01-repeat-generic",
+              "sequence": 3,
+              "at": "2026-10-18T10:01:28.619Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 16501.73662499999,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "pack",
+              "variantId": "pack-forest"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-generic-step-4",
+              "runId": "holdout-v2-01-repeat-generic",
+              "sequence": 4,
+              "at": "2026-10-18T10:01:33.526Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 21408.358999999997,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-generic-step-5",
+              "runId": "holdout-v2-01-repeat-generic",
+              "sequence": 5,
+              "at": "2026-10-18T10:01:38.256Z",
+              "kind": "action",
+              "message": "View cart"
+            },
+            "elapsedMs": 26137.97783300001,
+            "action": {
+              "type": "open-cart",
+              "target": "View cart"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-generic-step-6",
+              "runId": "holdout-v2-01-repeat-generic",
+              "sequence": 6,
+              "at": "2026-10-18T10:01:42.488Z",
+              "kind": "action",
+              "message": "Place demo order"
+            },
+            "elapsedMs": 30370.663040999993,
+            "action": {
+              "type": "confirm-demo-order",
+              "target": "Place demo order"
+            }
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-generic-screenshot-png",
+              "runId": "holdout-v2-01-repeat-generic",
+              "kind": "screenshot",
+              "path": "screenshot.png",
+              "mimeType": "image/png",
+              "createdAt": "2026-10-18T10:01:42.909Z"
+            },
+            "status": "captured",
+            "sha256": "fabf359110e7350644ce64b8dd2b67ea66da252d3f4cce26e74503d054c35b4b",
+            "bytes": 32557,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-generic-trace-zip",
+              "runId": "holdout-v2-01-repeat-generic",
+              "kind": "trace",
+              "path": "trace.zip",
+              "mimeType": "application/zip",
+              "createdAt": "2026-10-18T10:01:42.909Z"
+            },
+            "status": "captured",
+            "sha256": "95ae193af8ce091fe18795d080db6bee1cff82af92644cdc7f9f99f64d8d5987",
+            "bytes": 8460892,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-generic-browser-observations-json",
+              "runId": "holdout-v2-01-repeat-generic",
+              "kind": "result",
+              "path": "browser-observations.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:01:42.909Z"
+            },
+            "status": "captured",
+            "sha256": "674c90fddb74d3723b7d321e9d1417d1bbee84b77466565d31d6e3f36a00f3c4",
+            "bytes": 36557,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-generic-checkout-receipt-json",
+              "runId": "holdout-v2-01-repeat-generic",
+              "kind": "result",
+              "path": "checkout-receipt.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:01:42.913Z"
+            },
+            "status": "captured",
+            "sha256": "97ecc60bafc954d80b8a8c49416b3a5a27f49231af52d47a1e5a62c7143e94c7",
+            "bytes": 2100,
+            "error": null
+          }
+        ],
+        "choice": {
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "catalogPrice": 68,
+          "quantity": 1,
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "observationSource": "independent-dom",
+          "sourceStepIds": [
+            "holdout-v2-01-repeat-generic-step-3",
+            "holdout-v2-01-repeat-generic-step-5"
+          ],
+          "evidenceArtifactIds": [
+            "holdout-v2-01-repeat-generic-screenshot-png",
+            "holdout-v2-01-repeat-generic-trace-zip",
+            "holdout-v2-01-repeat-generic-browser-observations-json",
+            "holdout-v2-01-repeat-generic-checkout-receipt-json"
+          ]
+        },
+        "verification": {
+          "verifierId": "independent-catalog-verifier-v1",
+          "independentOfShopperAgent": true,
+          "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+          "hardConstraints": [
+            {
+              "needId": "function",
+              "status": "met",
+              "observed": "[\"carry-bag\"]",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-generic-screenshot-png",
+                "holdout-v2-01-repeat-generic-trace-zip",
+                "holdout-v2-01-repeat-generic-browser-observations-json",
+                "holdout-v2-01-repeat-generic-checkout-receipt-json"
+              ]
+            },
+            {
+              "needId": "item-price",
+              "status": "met",
+              "observed": "68",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-generic-screenshot-png",
+                "holdout-v2-01-repeat-generic-trace-zip",
+                "holdout-v2-01-repeat-generic-browser-observations-json",
+                "holdout-v2-01-repeat-generic-checkout-receipt-json"
+              ]
+            },
+            {
+              "needId": "back-carried",
+              "status": "met",
+              "observed": "true",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-generic-screenshot-png",
+                "holdout-v2-01-repeat-generic-trace-zip",
+                "holdout-v2-01-repeat-generic-browser-observations-json",
+                "holdout-v2-01-repeat-generic-checkout-receipt-json"
+              ]
+            }
+          ],
+          "preferences": [
+            {
+              "needId": "preferred-color",
+              "status": "met",
+              "observed": "\"Forest\"",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-generic-screenshot-png",
+                "holdout-v2-01-repeat-generic-trace-zip",
+                "holdout-v2-01-repeat-generic-browser-observations-json",
+                "holdout-v2-01-repeat-generic-checkout-receipt-json"
+              ]
+            }
+          ]
+        },
+        "model": {
+          "status": "not-enabled",
+          "readiness": []
+        },
+        "fallback": {
+          "used": false,
+          "kind": "none",
+          "reason": null
+        }
+      },
+      "outcome": "completed",
+      "artifacts": [
+        {
+          "artifactId": "holdout-v2-01-repeat-generic-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v2-01-repeat-generic-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v2-01-repeat-generic-browser-observations-json",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v2-01-repeat-generic-checkout-receipt-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": true,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "budgetRespected": true,
+        "missingEvidenceKinds": []
+      },
+      "eligibilityStatus": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v2-01",
+      "arm": "local-model",
+      "expectedRunId": "holdout-v2-01-repeat-local-model",
+      "path": "holdout-v2-01/local-model/session.json",
+      "controlLabel": "local-model",
+      "clusterId": "holdout-v2-01",
+      "status": "recorded",
+      "formalStatus": "recorded",
+      "errors": [],
+      "sidecarSha256": "17d08455b2a6bb05181ebafba8cb8852b7a16f8a655133aa80a8d6c9e08c4e8d",
+      "session": {
+        "contractVersion": "shopper-session.v1",
+        "caseId": "holdout-v2-01",
+        "arm": "local-model",
+        "run": {
+          "id": "holdout-v2-01-repeat-local-model",
+          "experimentId": "actual-store-repeat-v2",
+          "personaId": "holdout-v2-01",
+          "personaSplit": "held-out",
+          "seed": 2026102001
+        },
+        "browser": {
+          "name": "Chrome",
+          "headed": true,
+          "actualNavigation": true,
+          "version": "155.0.8059.82",
+          "automation": "playwright-chrome"
+        },
+        "isolation": {
+          "kind": "fresh-storage-context",
+          "tabId": "a0478497-8ce6-4486-98a2-e44f0a703aa8",
+          "contextId": "f674dd94-01f8-49cb-8254-63d3e2fcbab1",
+          "sharedStorage": false,
+          "storageCleared": true,
+          "initialCartEmpty": true,
+          "evidenceArtifactIds": [
+            "holdout-v2-01-repeat-local-model-screenshot-png",
+            "holdout-v2-01-repeat-local-model-trace-zip",
+            "holdout-v2-01-repeat-local-model-browser-observations-json",
+            "holdout-v2-01-repeat-local-model-checkout-receipt-json"
+          ],
+          "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+        },
+        "entryUrl": "http://127.0.0.1:4312/?model=local",
+        "startedAt": "2026-10-18T10:01:43.125Z",
+        "elapsedMs": 66826.707708,
+        "timingPrecision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "protocol": {
+          "passed": true,
+          "deviations": []
+        },
+        "status": "completed",
+        "error": null,
+        "realPurchase": false,
+        "fakeOrderConfirmed": true,
+        "steps": [
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-0",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 0,
+              "at": "2026-10-18T10:01:44.068Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 943.2520829999994,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/?model=local"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-1",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 1,
+              "at": "2026-10-18T10:01:52.600Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 9474.790125,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-2",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 2,
+              "at": "2026-10-18T10:01:58.549Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 15423.789333000022,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-3",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 3,
+              "at": "2026-10-18T10:02:03.465Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 20340.254083000007,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-4",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 4,
+              "at": "2026-10-18T10:02:11.867Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 28741.50791700001,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-5",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 5,
+              "at": "2026-10-18T10:02:17.843Z",
+              "kind": "action",
+              "message": "Everyday daypack color: Forest"
+            },
+            "elapsedMs": 34717.46862500001,
+            "action": {
+              "type": "inspect",
+              "target": "Everyday daypack color: Forest"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-6",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 6,
+              "at": "2026-10-18T10:02:22.290Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 39165.250625000015,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "pack",
+              "variantId": "pack-forest"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-7",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 7,
+              "at": "2026-10-18T10:02:26.967Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 43841.87991700001,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-8",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 8,
+              "at": "2026-10-18T10:02:31.582Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 48456.85500000001,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-9",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 9,
+              "at": "2026-10-18T10:02:36.299Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 53173.859,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-10",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 10,
+              "at": "2026-10-18T10:02:40.964Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 57838.956167,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-11",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 11,
+              "at": "2026-10-18T10:02:45.844Z",
+              "kind": "action",
+              "message": "View cart"
+            },
+            "elapsedMs": 62718.85795800001,
+            "action": {
+              "type": "open-cart",
+              "target": "View cart"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-01-repeat-local-model-step-12",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "sequence": 12,
+              "at": "2026-10-18T10:02:49.952Z",
+              "kind": "action",
+              "message": "Place demo order"
+            },
+            "elapsedMs": 66826.70533300002,
+            "action": {
+              "type": "confirm-demo-order",
+              "target": "Place demo order"
+            }
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-local-model-screenshot-png",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "kind": "screenshot",
+              "path": "screenshot.png",
+              "mimeType": "image/png",
+              "createdAt": "2026-10-18T10:02:50.545Z"
+            },
+            "status": "captured",
+            "sha256": "fabf359110e7350644ce64b8dd2b67ea66da252d3f4cce26e74503d054c35b4b",
+            "bytes": 32557,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-local-model-trace-zip",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "kind": "trace",
+              "path": "trace.zip",
+              "mimeType": "application/zip",
+              "createdAt": "2026-10-18T10:02:50.545Z"
+            },
+            "status": "captured",
+            "sha256": "a17e3ee7418410c48a6b8ec413f7e390bc56460709a904584e6cac04d046765a",
+            "bytes": 15580698,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-local-model-browser-observations-json",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "kind": "result",
+              "path": "browser-observations.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:02:50.545Z"
+            },
+            "status": "captured",
+            "sha256": "d71ccfff4dd81305840a91e187c355fd19fd569d8fbd2a417d8a145c6c11d0b9",
+            "bytes": 101800,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v2-01-repeat-local-model-checkout-receipt-json",
+              "runId": "holdout-v2-01-repeat-local-model",
+              "kind": "result",
+              "path": "checkout-receipt.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:02:50.552Z"
+            },
+            "status": "captured",
+            "sha256": "3cc50bebfc90f9244e859fbc68ac17bb61099ef420280b222a3fcaf8bb868e59",
+            "bytes": 2102,
+            "error": null
+          }
+        ],
+        "choice": {
+          "originalName": "Everyday daypack",
+          "selectedColor": "Forest",
+          "catalogPrice": 68,
+          "quantity": 1,
+          "productId": "pack",
+          "variantId": "pack-forest",
+          "observationSource": "independent-dom",
+          "sourceStepIds": [
+            "holdout-v2-01-repeat-local-model-step-6",
+            "holdout-v2-01-repeat-local-model-step-11"
+          ],
+          "evidenceArtifactIds": [
+            "holdout-v2-01-repeat-local-model-screenshot-png",
+            "holdout-v2-01-repeat-local-model-trace-zip",
+            "holdout-v2-01-repeat-local-model-browser-observations-json",
+            "holdout-v2-01-repeat-local-model-checkout-receipt-json"
+          ]
+        },
+        "verification": {
+          "verifierId": "independent-catalog-verifier-v1",
+          "independentOfShopperAgent": true,
+          "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+          "hardConstraints": [
+            {
+              "needId": "function",
+              "status": "met",
+              "observed": "[\"carry-bag\"]",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-local-model-screenshot-png",
+                "holdout-v2-01-repeat-local-model-trace-zip",
+                "holdout-v2-01-repeat-local-model-browser-observations-json",
+                "holdout-v2-01-repeat-local-model-checkout-receipt-json"
+              ]
+            },
+            {
+              "needId": "item-price",
+              "status": "met",
+              "observed": "68",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-local-model-screenshot-png",
+                "holdout-v2-01-repeat-local-model-trace-zip",
+                "holdout-v2-01-repeat-local-model-browser-observations-json",
+                "holdout-v2-01-repeat-local-model-checkout-receipt-json"
+              ]
+            },
+            {
+              "needId": "back-carried",
+              "status": "met",
+              "observed": "true",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-local-model-screenshot-png",
+                "holdout-v2-01-repeat-local-model-trace-zip",
+                "holdout-v2-01-repeat-local-model-browser-observations-json",
+                "holdout-v2-01-repeat-local-model-checkout-receipt-json"
+              ]
+            }
+          ],
+          "preferences": [
+            {
+              "needId": "preferred-color",
+              "status": "met",
+              "observed": "\"Forest\"",
+              "evidenceArtifactIds": [
+                "holdout-v2-01-repeat-local-model-screenshot-png",
+                "holdout-v2-01-repeat-local-model-trace-zip",
+                "holdout-v2-01-repeat-local-model-browser-observations-json",
+                "holdout-v2-01-repeat-local-model-checkout-receipt-json"
+              ]
+            }
+          ]
+        },
+        "model": {
+          "status": "not-observed",
+          "readiness": []
+        },
+        "fallback": {
+          "used": false,
+          "kind": "none",
+          "reason": null
+        }
+      },
+      "outcome": "completed",
+      "artifacts": [
+        {
+          "artifactId": "holdout-v2-01-repeat-local-model-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v2-01-repeat-local-model-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v2-01-repeat-local-model-browser-observations-json",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v2-01-repeat-local-model-checkout-receipt-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": true,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "budgetRespected": true,
+        "missingEvidenceKinds": []
+      },
+      "eligibilityStatus": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v3-03",
+      "arm": "generic",
+      "expectedRunId": "holdout-v3-03-repeat-generic",
+      "path": "holdout-v3-03/generic/session.json",
+      "controlLabel": "generic",
+      "clusterId": "holdout-v3-03",
+      "status": "recorded",
+      "formalStatus": "recorded",
+      "errors": [],
+      "sidecarSha256": "398b09b03eee2d2bf4618168b441f0576feafd2a412f1afee3fa1812a718f9c0",
+      "session": {
+        "contractVersion": "shopper-session.v1",
+        "caseId": "holdout-v3-03",
+        "arm": "generic",
+        "run": {
+          "id": "holdout-v3-03-repeat-generic",
+          "experimentId": "actual-store-repeat-v2",
+          "personaId": "holdout-v3-03",
+          "personaSplit": "held-out",
+          "seed": 2026102103
+        },
+        "browser": {
+          "name": "Chrome",
+          "headed": true,
+          "actualNavigation": true,
+          "version": "155.0.8059.82",
+          "automation": "playwright-chrome"
+        },
+        "isolation": {
+          "kind": "fresh-storage-context",
+          "tabId": "678b5549-a231-4b85-8996-1e88404d5f09",
+          "contextId": "e68dc570-fef0-47a9-bf6d-546731c24390",
+          "sharedStorage": false,
+          "storageCleared": true,
+          "initialCartEmpty": true,
+          "evidenceArtifactIds": [
+            "holdout-v3-03-repeat-generic-screenshot-png",
+            "holdout-v3-03-repeat-generic-trace-zip",
+            "holdout-v3-03-repeat-generic-browser-observations-json",
+            "holdout-v3-03-repeat-generic-checkout-receipt-json"
+          ],
+          "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+        },
+        "entryUrl": "http://127.0.0.1:4312/",
+        "startedAt": "2026-10-18T10:02:50.850Z",
+        "elapsedMs": 33207.45129200001,
+        "timingPrecision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "protocol": {
+          "passed": true,
+          "deviations": []
+        },
+        "status": "completed",
+        "error": null,
+        "realPurchase": false,
+        "fakeOrderConfirmed": true,
+        "steps": [
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-generic-step-0",
+              "runId": "holdout-v3-03-repeat-generic",
+              "sequence": 0,
+              "at": "2026-10-18T10:02:51.821Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 971.508542000025,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-generic-step-1",
+              "runId": "holdout-v3-03-repeat-generic",
+              "sequence": 1,
+              "at": "2026-10-18T10:02:57.593Z",
+              "kind": "action",
+              "message": "a rain jacket for getting between buildings, at most $135"
+            },
+            "elapsedMs": 6742.909583000001,
+            "action": {
+              "type": "search",
+              "query": "a rain jacket for getting between buildings, at most $135"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-generic-step-2",
+              "runId": "holdout-v3-03-repeat-generic",
+              "sequence": 2,
+              "at": "2026-10-18T10:03:02.512Z",
+              "kind": "action",
+              "message": "Everywhere rain jacket color: Ochre"
+            },
+            "elapsedMs": 11662.082417000027,
+            "action": {
+              "type": "inspect",
+              "target": "Everywhere rain jacket color: Ochre"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-generic-step-3",
+              "runId": "holdout-v3-03-repeat-generic",
+              "sequence": 3,
+              "at": "2026-10-18T10:03:07.656Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 16805.867,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "jacket",
+              "variantId": "jacket-ochre"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-generic-step-4",
+              "runId": "holdout-v3-03-repeat-generic",
+              "sequence": 4,
+              "at": "2026-10-18T10:03:12.724Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 21873.57150000002,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-generic-step-5",
+              "runId": "holdout-v3-03-repeat-generic",
+              "sequence": 5,
+              "at": "2026-10-18T10:03:20.035Z",
+              "kind": "action",
+              "message": "View cart"
+            },
+            "elapsedMs": 29184.812083000026,
+            "action": {
+              "type": "open-cart",
+              "target": "View cart"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-generic-step-6",
+              "runId": "holdout-v3-03-repeat-generic",
+              "sequence": 6,
+              "at": "2026-10-18T10:03:24.058Z",
+              "kind": "action",
+              "message": "Place demo order"
+            },
+            "elapsedMs": 33207.44687500002,
+            "action": {
+              "type": "confirm-demo-order",
+              "target": "Place demo order"
+            }
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-generic-screenshot-png",
+              "runId": "holdout-v3-03-repeat-generic",
+              "kind": "screenshot",
+              "path": "screenshot.png",
+              "mimeType": "image/png",
+              "createdAt": "2026-10-18T10:03:24.493Z"
+            },
+            "status": "captured",
+            "sha256": "522027535d69ce92006059f5bac0d069b630f72c20a8395f5d57bcc071ac5b46",
+            "bytes": 32851,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-generic-trace-zip",
+              "runId": "holdout-v3-03-repeat-generic",
+              "kind": "trace",
+              "path": "trace.zip",
+              "mimeType": "application/zip",
+              "createdAt": "2026-10-18T10:03:24.494Z"
+            },
+            "status": "captured",
+            "sha256": "190219af33b1f951f1ae874b2803f295b3f0c9f6381dcfa077fd46501704f2e0",
+            "bytes": 8896781,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-generic-browser-observations-json",
+              "runId": "holdout-v3-03-repeat-generic",
+              "kind": "result",
+              "path": "browser-observations.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:03:24.494Z"
+            },
+            "status": "captured",
+            "sha256": "52cedad0b5d74ff5d0142ad18af35589a1b75c18b4717ea64c78874db0d26098",
+            "bytes": 36130,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-generic-checkout-receipt-json",
+              "runId": "holdout-v3-03-repeat-generic",
+              "kind": "result",
+              "path": "checkout-receipt.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:03:24.498Z"
+            },
+            "status": "captured",
+            "sha256": "44ba07ffb9d85d8d1fc2b2c2416e77907e318c8de6fe553026166ddb5e5e7f7b",
+            "bytes": 2119,
+            "error": null
+          }
+        ],
+        "choice": {
+          "originalName": "Everywhere rain jacket",
+          "selectedColor": "Ochre",
+          "catalogPrice": 128,
+          "quantity": 1,
+          "productId": "jacket",
+          "variantId": "jacket-ochre",
+          "observationSource": "independent-dom",
+          "sourceStepIds": [
+            "holdout-v3-03-repeat-generic-step-3",
+            "holdout-v3-03-repeat-generic-step-5"
+          ],
+          "evidenceArtifactIds": [
+            "holdout-v3-03-repeat-generic-screenshot-png",
+            "holdout-v3-03-repeat-generic-trace-zip",
+            "holdout-v3-03-repeat-generic-browser-observations-json",
+            "holdout-v3-03-repeat-generic-checkout-receipt-json"
+          ]
+        },
+        "verification": {
+          "verifierId": "independent-catalog-verifier-v1",
+          "independentOfShopperAgent": true,
+          "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+          "hardConstraints": [
+            {
+              "needId": "function",
+              "status": "met",
+              "observed": "[\"rain-jacket\"]",
+              "evidenceArtifactIds": [
+                "holdout-v3-03-repeat-generic-screenshot-png",
+                "holdout-v3-03-repeat-generic-trace-zip",
+                "holdout-v3-03-repeat-generic-browser-observations-json",
+                "holdout-v3-03-repeat-generic-checkout-receipt-json"
+              ]
+            },
+            {
+              "needId": "item-price",
+              "status": "met",
+              "observed": "128",
+              "evidenceArtifactIds": [
+                "holdout-v3-03-repeat-generic-screenshot-png",
+                "holdout-v3-03-repeat-generic-trace-zip",
+                "holdout-v3-03-repeat-generic-browser-observations-json",
+                "holdout-v3-03-repeat-generic-checkout-receipt-json"
+              ]
+            }
+          ],
+          "preferences": [
+            {
+              "needId": "preferred-color",
+              "status": "met",
+              "observed": "\"Ochre\"",
+              "evidenceArtifactIds": [
+                "holdout-v3-03-repeat-generic-screenshot-png",
+                "holdout-v3-03-repeat-generic-trace-zip",
+                "holdout-v3-03-repeat-generic-browser-observations-json",
+                "holdout-v3-03-repeat-generic-checkout-receipt-json"
+              ]
+            }
+          ]
+        },
+        "model": {
+          "status": "not-enabled",
+          "readiness": []
+        },
+        "fallback": {
+          "used": false,
+          "kind": "none",
+          "reason": null
+        }
+      },
+      "outcome": "completed",
+      "artifacts": [
+        {
+          "artifactId": "holdout-v3-03-repeat-generic-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v3-03-repeat-generic-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v3-03-repeat-generic-browser-observations-json",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v3-03-repeat-generic-checkout-receipt-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": true,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "budgetRespected": true,
+        "missingEvidenceKinds": []
+      },
+      "eligibilityStatus": "satisfiable"
+    },
+    {
+      "caseId": "holdout-v3-03",
+      "arm": "local-model",
+      "expectedRunId": "holdout-v3-03-repeat-local-model",
+      "path": "holdout-v3-03/local-model/session.json",
+      "controlLabel": "local-model",
+      "clusterId": "holdout-v3-03",
+      "status": "recorded",
+      "formalStatus": "recorded",
+      "errors": [],
+      "sidecarSha256": "60d6f3c8021a04ab529c6fbdb9e817a7a4b0b1c850c0dd750f75e00935ae28c3",
+      "session": {
+        "contractVersion": "shopper-session.v1",
+        "caseId": "holdout-v3-03",
+        "arm": "local-model",
+        "run": {
+          "id": "holdout-v3-03-repeat-local-model",
+          "experimentId": "actual-store-repeat-v2",
+          "personaId": "holdout-v3-03",
+          "personaSplit": "held-out",
+          "seed": 2026102103
+        },
+        "browser": {
+          "name": "Chrome",
+          "headed": true,
+          "actualNavigation": true,
+          "version": "155.0.8059.82",
+          "automation": "playwright-chrome"
+        },
+        "isolation": {
+          "kind": "fresh-storage-context",
+          "tabId": "f92cd7c0-1bcf-4f53-8e9a-857f9e713987",
+          "contextId": "108edb65-1004-46eb-ae87-bb03a88d8c61",
+          "sharedStorage": false,
+          "storageCleared": true,
+          "initialCartEmpty": true,
+          "evidenceArtifactIds": [
+            "holdout-v3-03-repeat-local-model-screenshot-png",
+            "holdout-v3-03-repeat-local-model-trace-zip",
+            "holdout-v3-03-repeat-local-model-browser-observations-json",
+            "holdout-v3-03-repeat-local-model-checkout-receipt-json"
+          ],
+          "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+        },
+        "entryUrl": "http://127.0.0.1:4312/?model=local",
+        "startedAt": "2026-10-18T10:03:24.794Z",
+        "elapsedMs": 39109.88541699998,
+        "timingPrecision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "protocol": {
+          "passed": true,
+          "deviations": []
+        },
+        "status": "completed",
+        "error": null,
+        "realPurchase": false,
+        "fakeOrderConfirmed": true,
+        "steps": [
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-0",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 0,
+              "at": "2026-10-18T10:03:25.756Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 962.2799590000068,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/?model=local"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-1",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 1,
+              "at": "2026-10-18T10:03:30.818Z",
+              "kind": "action",
+              "message": "a rain jacket for getting between buildings, at most $135"
+            },
+            "elapsedMs": 6024.362792,
+            "action": {
+              "type": "search",
+              "query": "a rain jacket for getting between buildings, at most $135"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-2",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 2,
+              "at": "2026-10-18T10:03:35.783Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 10989.205625000002,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-3",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 3,
+              "at": "2026-10-18T10:03:40.788Z",
+              "kind": "action",
+              "message": "Everywhere rain jacket color: Ochre"
+            },
+            "elapsedMs": 15993.606334000011,
+            "action": {
+              "type": "inspect",
+              "target": "Everywhere rain jacket color: Ochre"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-4",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 4,
+              "at": "2026-10-18T10:03:45.469Z",
+              "kind": "action",
+              "message": "Add to cart"
+            },
+            "elapsedMs": 20674.40304200002,
+            "action": {
+              "type": "add-to-cart",
+              "productId": "jacket",
+              "variantId": "jacket-ochre"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-5",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 5,
+              "at": "2026-10-18T10:03:50.482Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 25687.527917,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-6",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 6,
+              "at": "2026-10-18T10:03:55.094Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 30299.691333999974,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-7",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 7,
+              "at": "2026-10-18T10:03:59.526Z",
+              "kind": "action",
+              "message": "View cart"
+            },
+            "elapsedMs": 34731.630166999996,
+            "action": {
+              "type": "open-cart",
+              "target": "View cart"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-03-repeat-local-model-step-8",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "sequence": 8,
+              "at": "2026-10-18T10:04:03.904Z",
+              "kind": "action",
+              "message": "Place demo order"
+            },
+            "elapsedMs": 39109.882584000006,
+            "action": {
+              "type": "confirm-demo-order",
+              "target": "Place demo order"
+            }
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-local-model-screenshot-png",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "kind": "screenshot",
+              "path": "screenshot.png",
+              "mimeType": "image/png",
+              "createdAt": "2026-10-18T10:04:04.360Z"
+            },
+            "status": "captured",
+            "sha256": "522027535d69ce92006059f5bac0d069b630f72c20a8395f5d57bcc071ac5b46",
+            "bytes": 32851,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-local-model-trace-zip",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "kind": "trace",
+              "path": "trace.zip",
+              "mimeType": "application/zip",
+              "createdAt": "2026-10-18T10:04:04.360Z"
+            },
+            "status": "captured",
+            "sha256": "51c3a27db8e2f4c1a318cc7b094384fc72904a4154c4ab9cb67ccf933eea0ce2",
+            "bytes": 9672162,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-local-model-browser-observations-json",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "kind": "result",
+              "path": "browser-observations.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:04:04.360Z"
+            },
+            "status": "captured",
+            "sha256": "41b70891f871fe25eb282ba251943d502149e9deb2aff3909b7a2957b430f6d0",
+            "bytes": 130412,
+            "error": null
+          },
+          {
+            "artifact": {
+              "id": "holdout-v3-03-repeat-local-model-checkout-receipt-json",
+              "runId": "holdout-v3-03-repeat-local-model",
+              "kind": "result",
+              "path": "checkout-receipt.json",
+              "mimeType": "application/json",
+              "createdAt": "2026-10-18T10:04:04.365Z"
+            },
+            "status": "captured",
+            "sha256": "2ee09d3bf508fa758020bce65edf962f972a6eec26c4ba132b64049b61b3339d",
+            "bytes": 2119,
+            "error": null
+          }
+        ],
+        "choice": {
+          "originalName": "Everywhere rain jacket",
+          "selectedColor": "Ochre",
+          "catalogPrice": 128,
+          "quantity": 1,
+          "productId": "jacket",
+          "variantId": "jacket-ochre",
+          "observationSource": "independent-dom",
+          "sourceStepIds": [
+            "holdout-v3-03-repeat-local-model-step-4",
+            "holdout-v3-03-repeat-local-model-step-7"
+          ],
+          "evidenceArtifactIds": [
+            "holdout-v3-03-repeat-local-model-screenshot-png",
+            "holdout-v3-03-repeat-local-model-trace-zip",
+            "holdout-v3-03-repeat-local-model-browser-observations-json",
+            "holdout-v3-03-repeat-local-model-checkout-receipt-json"
+          ]
+        },
+        "verification": {
+          "verifierId": "independent-catalog-verifier-v1",
+          "independentOfShopperAgent": true,
+          "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+          "hardConstraints": [
+            {
+              "needId": "function",
+              "status": "met",
+              "observed": "[\"rain-jacket\"]",
+              "evidenceArtifactIds": [
+                "holdout-v3-03-repeat-local-model-screenshot-png",
+                "holdout-v3-03-repeat-local-model-trace-zip",
+                "holdout-v3-03-repeat-local-model-browser-observations-json",
+                "holdout-v3-03-repeat-local-model-checkout-receipt-json"
+              ]
+            },
+            {
+              "needId": "item-price",
+              "status": "met",
+              "observed": "128",
+              "evidenceArtifactIds": [
+                "holdout-v3-03-repeat-local-model-screenshot-png",
+                "holdout-v3-03-repeat-local-model-trace-zip",
+                "holdout-v3-03-repeat-local-model-browser-observations-json",
+                "holdout-v3-03-repeat-local-model-checkout-receipt-json"
+              ]
+            }
+          ],
+          "preferences": [
+            {
+              "needId": "preferred-color",
+              "status": "met",
+              "observed": "\"Ochre\"",
+              "evidenceArtifactIds": [
+                "holdout-v3-03-repeat-local-model-screenshot-png",
+                "holdout-v3-03-repeat-local-model-trace-zip",
+                "holdout-v3-03-repeat-local-model-browser-observations-json",
+                "holdout-v3-03-repeat-local-model-checkout-receipt-json"
+              ]
+            }
+          ]
+        },
+        "model": {
+          "status": "complete",
+          "readiness": [
+            {
+              "name": "fieldwork.local-model.rank.after-paint-opportunity",
+              "stage": "rank",
+              "requestId": "69da1e90-31c2-4dbc-8d5e-29b3f80234f8",
+              "startTimeMs": 5565.100000023842,
+              "durationMs": 285.7999999523163,
+              "capturedAtElapsedMs": 6396.550708999974,
+              "acceptedFields": null,
+              "withheldFields": null,
+              "requiredFields": null,
+              "source": "data-local-model-readiness",
+              "artifactId": "holdout-v3-03-repeat-local-model-browser-observations-json",
+              "scope": "after-paint-opportunity",
+              "physicalPaintMeasured": false,
+              "imageTransferMeasured": false
+            },
+            {
+              "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+              "stage": "firstThree",
+              "requestId": "69da1e90-31c2-4dbc-8d5e-29b3f80234f8",
+              "startTimeMs": 5565.100000023842,
+              "durationMs": 298.2999999523163,
+              "capturedAtElapsedMs": 6396.553958999983,
+              "acceptedFields": 10,
+              "withheldFields": 0,
+              "requiredFields": 10,
+              "source": "data-local-model-readiness",
+              "artifactId": "holdout-v3-03-repeat-local-model-browser-observations-json",
+              "scope": "after-paint-opportunity",
+              "physicalPaintMeasured": false,
+              "imageTransferMeasured": false
+            },
+            {
+              "name": "fieldwork.local-model.complete.after-paint-opportunity",
+              "stage": "complete",
+              "requestId": "69da1e90-31c2-4dbc-8d5e-29b3f80234f8",
+              "startTimeMs": 5565.100000023842,
+              "durationMs": 298.2999999523163,
+              "capturedAtElapsedMs": 6396.554333999986,
+              "acceptedFields": 20,
+              "withheldFields": 0,
+              "requiredFields": 20,
+              "source": "data-local-model-readiness",
+              "artifactId": "holdout-v3-03-repeat-local-model-browser-observations-json",
+              "scope": "after-paint-opportunity",
+              "physicalPaintMeasured": false,
+              "imageTransferMeasured": false
+            }
+          ]
+        },
+        "fallback": {
+          "used": false,
+          "kind": "none",
+          "reason": null
+        }
+      },
+      "outcome": "completed",
+      "artifacts": [
+        {
+          "artifactId": "holdout-v3-03-repeat-local-model-screenshot-png",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v3-03-repeat-local-model-trace-zip",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v3-03-repeat-local-model-browser-observations-json",
+          "verified": true,
+          "error": null
+        },
+        {
+          "artifactId": "holdout-v3-03-repeat-local-model-checkout-receipt-json",
+          "verified": true,
+          "error": null
+        }
+      ],
+      "evaluator": {
+        "acceptableSelection": true,
+        "expectedOutcomeMet": true,
+        "allHardConstraintsMet": true,
+        "evidenceVerified": true,
+        "budgetRespected": true,
+        "missingEvidenceKinds": []
+      },
+      "eligibilityStatus": "satisfiable"
+    }
+  ]
+}

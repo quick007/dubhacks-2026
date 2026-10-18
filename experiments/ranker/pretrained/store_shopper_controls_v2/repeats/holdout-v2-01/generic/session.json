@@ -1,0 +1,297 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v2-01",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v2-01-repeat-generic",
+    "experimentId": "actual-store-repeat-v2",
+    "personaId": "holdout-v2-01",
+    "personaSplit": "held-out",
+    "seed": 2026102001
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "c2460d69-0f96-4ba8-b347-913489e0c98d",
+    "contextId": "b0393c95-0cbb-4713-982c-218db425bf15",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v2-01-repeat-generic-screenshot-png",
+      "holdout-v2-01-repeat-generic-trace-zip",
+      "holdout-v2-01-repeat-generic-browser-observations-json",
+      "holdout-v2-01-repeat-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T10:01:12.117Z",
+  "elapsedMs": 30370.668124999997,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "completed",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": true,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v2-01-repeat-generic-step-0",
+        "runId": "holdout-v2-01-repeat-generic",
+        "sequence": 0,
+        "at": "2026-10-18T10:01:13.062Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 944.836083000002,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-01-repeat-generic-step-1",
+        "runId": "holdout-v2-01-repeat-generic",
+        "sequence": 1,
+        "at": "2026-10-18T10:01:18.236Z",
+        "kind": "action",
+        "message": "a backpack for bringing a sketchbook on the bus, at most $75"
+      },
+      "elapsedMs": 6118.637583000003,
+      "action": {
+        "type": "search",
+        "query": "a backpack for bringing a sketchbook on the bus, at most $75"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-01-repeat-generic-step-2",
+        "runId": "holdout-v2-01-repeat-generic",
+        "sequence": 2,
+        "at": "2026-10-18T10:01:23.373Z",
+        "kind": "action",
+        "message": "Everyday daypack color: Forest"
+      },
+      "elapsedMs": 11255.23324999999,
+      "action": {
+        "type": "inspect",
+        "target": "Everyday daypack color: Forest"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-01-repeat-generic-step-3",
+        "runId": "holdout-v2-01-repeat-generic",
+        "sequence": 3,
+        "at": "2026-10-18T10:01:28.619Z",
+        "kind": "action",
+        "message": "Add to cart"
+      },
+      "elapsedMs": 16501.73662499999,
+      "action": {
+        "type": "add-to-cart",
+        "productId": "pack",
+        "variantId": "pack-forest"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-01-repeat-generic-step-4",
+        "runId": "holdout-v2-01-repeat-generic",
+        "sequence": 4,
+        "at": "2026-10-18T10:01:33.526Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 21408.358999999997,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-01-repeat-generic-step-5",
+        "runId": "holdout-v2-01-repeat-generic",
+        "sequence": 5,
+        "at": "2026-10-18T10:01:38.256Z",
+        "kind": "action",
+        "message": "View cart"
+      },
+      "elapsedMs": 26137.97783300001,
+      "action": {
+        "type": "open-cart",
+        "target": "View cart"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-01-repeat-generic-step-6",
+        "runId": "holdout-v2-01-repeat-generic",
+        "sequence": 6,
+        "at": "2026-10-18T10:01:42.488Z",
+        "kind": "action",
+        "message": "Place demo order"
+      },
+      "elapsedMs": 30370.663040999993,
+      "action": {
+        "type": "confirm-demo-order",
+        "target": "Place demo order"
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v2-01-repeat-generic-screenshot-png",
+        "runId": "holdout-v2-01-repeat-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T10:01:42.909Z"
+      },
+      "status": "captured",
+      "sha256": "fabf359110e7350644ce64b8dd2b67ea66da252d3f4cce26e74503d054c35b4b",
+      "bytes": 32557,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-01-repeat-generic-trace-zip",
+        "runId": "holdout-v2-01-repeat-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T10:01:42.909Z"
+      },
+      "status": "captured",
+      "sha256": "95ae193af8ce091fe18795d080db6bee1cff82af92644cdc7f9f99f64d8d5987",
+      "bytes": 8460892,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-01-repeat-generic-browser-observations-json",
+        "runId": "holdout-v2-01-repeat-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T10:01:42.909Z"
+      },
+      "status": "captured",
+      "sha256": "674c90fddb74d3723b7d321e9d1417d1bbee84b77466565d31d6e3f36a00f3c4",
+      "bytes": 36557,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-01-repeat-generic-checkout-receipt-json",
+        "runId": "holdout-v2-01-repeat-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T10:01:42.913Z"
+      },
+      "status": "captured",
+      "sha256": "97ecc60bafc954d80b8a8c49416b3a5a27f49231af52d47a1e5a62c7143e94c7",
+      "bytes": 2100,
+      "error": null
+    }
+  ],
+  "choice": {
+    "originalName": "Everyday daypack",
+    "selectedColor": "Forest",
+    "catalogPrice": 68,
+    "quantity": 1,
+    "productId": "pack",
+    "variantId": "pack-forest",
+    "observationSource": "independent-dom",
+    "sourceStepIds": [
+      "holdout-v2-01-repeat-generic-step-3",
+      "holdout-v2-01-repeat-generic-step-5"
+    ],
+    "evidenceArtifactIds": [
+      "holdout-v2-01-repeat-generic-screenshot-png",
+      "holdout-v2-01-repeat-generic-trace-zip",
+      "holdout-v2-01-repeat-generic-browser-observations-json",
+      "holdout-v2-01-repeat-generic-checkout-receipt-json"
+    ]
+  },
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "met",
+        "observed": "[\"carry-bag\"]",
+        "evidenceArtifactIds": [
+          "holdout-v2-01-repeat-generic-screenshot-png",
+          "holdout-v2-01-repeat-generic-trace-zip",
+          "holdout-v2-01-repeat-generic-browser-observations-json",
+          "holdout-v2-01-repeat-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "met",
+        "observed": "68",
+        "evidenceArtifactIds": [
+          "holdout-v2-01-repeat-generic-screenshot-png",
+          "holdout-v2-01-repeat-generic-trace-zip",
+          "holdout-v2-01-repeat-generic-browser-observations-json",
+          "holdout-v2-01-repeat-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "back-carried",
+        "status": "met",
+        "observed": "true",
+        "evidenceArtifactIds": [
+          "holdout-v2-01-repeat-generic-screenshot-png",
+          "holdout-v2-01-repeat-generic-trace-zip",
+          "holdout-v2-01-repeat-generic-browser-observations-json",
+          "holdout-v2-01-repeat-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "preferred-color",
+        "status": "met",
+        "observed": "\"Forest\"",
+        "evidenceArtifactIds": [
+          "holdout-v2-01-repeat-generic-screenshot-png",
+          "holdout-v2-01-repeat-generic-trace-zip",
+          "holdout-v2-01-repeat-generic-browser-observations-json",
+          "holdout-v2-01-repeat-generic-checkout-receipt-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

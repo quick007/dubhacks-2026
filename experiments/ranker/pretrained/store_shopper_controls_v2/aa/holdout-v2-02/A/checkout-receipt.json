@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "bfb0c272-46f9-4bec-a38c-82a9c9bfe19a",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "blanket",
+          "variantId": "blanket-ocean-blue",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "bfb0c272-46f9-4bec-a38c-82a9c9bfe19a",
+        "receiptId": "demo-3bbc863d347f69164bf9f86ccb44f69f",
+        "createdAt": "2026-10-18T09:59:37.469724Z",
+        "items": [
+          {
+            "productId": "blanket",
+            "variantId": "blanket-ocean-blue",
+            "quantity": 1,
+            "unitPrice": 58,
+            "lineTotal": 58
+          }
+        ],
+        "subtotal": 58,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 58,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/bfb0c272-46f9-4bec-a38c-82a9c9bfe19a",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "bfb0c272-46f9-4bec-a38c-82a9c9bfe19a",
+        "receiptId": "demo-3bbc863d347f69164bf9f86ccb44f69f",
+        "createdAt": "2026-10-18T09:59:37.469724Z",
+        "items": [
+          {
+            "productId": "blanket",
+            "variantId": "blanket-ocean-blue",
+            "quantity": 1,
+            "unitPrice": 58,
+            "lineTotal": 58
+          }
+        ],
+        "subtotal": 58,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 58,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "bfb0c272-46f9-4bec-a38c-82a9c9bfe19a",
+    "receiptId": "demo-3bbc863d347f69164bf9f86ccb44f69f"
+  },
+  "errors": []
+}

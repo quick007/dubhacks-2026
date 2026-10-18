@@ -1,0 +1,3659 @@
+{
+  "schema": "shopper-final-raw-failure-review.v1",
+  "synthetic": true,
+  "humanConversionClaim": false,
+  "createdAt": "2026-10-18T10:05:44.036Z",
+  "scope": {
+    "source": "six original final-1792312952539-6376.json reports",
+    "selectionRule": "Every row whose raw evaluator.expectedOutcomeMet is exactly false; no arm filtering and no audited-score input",
+    "fixedPairs": 60,
+    "fixedSessions": 120,
+    "recordedRowsScanned": 120,
+    "booleanExpectedOutcomesScanned": 120,
+    "rawExpectedOutcomeTrue": 116,
+    "rawExpectedOutcomeFalse": 4,
+    "selectedFailureRunIds": [
+      "holdout-v2-05-generic",
+      "holdout-v2-09-local-model",
+      "holdout-v3-07-generic",
+      "holdout-v3-07-local-model"
+    ],
+    "negativeReviewerFilesRead": false,
+    "sourceScoresChanged": false,
+    "rescoringPerformed": false,
+    "browserNetworkModelGpuCalls": 0
+  },
+  "summary": {
+    "failuresByArm": {
+      "generic": 2,
+      "local-model": 2
+    },
+    "timeoutsByArm": {
+      "generic": 1,
+      "local-model": 1
+    },
+    "positiveCaseAbstentionsByArm": {
+      "generic": 1,
+      "local-model": 1
+    },
+    "phases": {
+      "shopper-decision-pending-after-successful-search": 1,
+      "repeated-viewport-scanning-without-terminal-abstention": 1,
+      "pre-cart-hard-constraint-verification-abstention": 2
+    },
+    "evidence": {
+      "selectedSessionSidecars": 4,
+      "sidecarHashesAndEmbeddedSessionsMatched": 4,
+      "capturedArtifactsHashAndBytesVerified": 16,
+      "traceZipCRCChecksPassed": 4,
+      "browserRecordConsistencyChecksPassed": 4,
+      "capturedCheckoutPosts": 0,
+      "capturedVisibleConfirmations": 0
+    }
+  },
+  "reports": [
+    {
+      "packetKey": "packet-1",
+      "report": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/final-1792312952539-6376.json",
+      "sha256": "9252fd088e29acf360c1180fee0888155d56018ab1aec9efc389e6ac53e2d795",
+      "assigned": 20,
+      "recorded": 20,
+      "expectedOutcomeFalse": 2,
+      "failedRunIds": [
+        "holdout-v2-05-generic",
+        "holdout-v2-09-local-model"
+      ]
+    },
+    {
+      "packetKey": "packet-2",
+      "report": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/final-1792312952539-6376.json",
+      "sha256": "dd284a6d896be29bbce85ffa3a770fbac3c3df74cef83f160712375af8bb78bf",
+      "assigned": 20,
+      "recorded": 20,
+      "expectedOutcomeFalse": 2,
+      "failedRunIds": [
+        "holdout-v3-07-generic",
+        "holdout-v3-07-local-model"
+      ]
+    },
+    {
+      "packetKey": "packet-3",
+      "report": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-3/final-1792312952539-6376.json",
+      "sha256": "042f48a53329e43722caa394dfbd5f5412507dd731f010b46923c876dde3c527",
+      "assigned": 20,
+      "recorded": 20,
+      "expectedOutcomeFalse": 0,
+      "failedRunIds": []
+    },
+    {
+      "packetKey": "packet-4",
+      "report": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-4/final-1792312952539-6376.json",
+      "sha256": "e7334fa7d5289fb5b362706222175aa29d3c9f6cb357603e5a42034f3c0a8a02",
+      "assigned": 20,
+      "recorded": 20,
+      "expectedOutcomeFalse": 0,
+      "failedRunIds": []
+    },
+    {
+      "packetKey": "packet-5",
+      "report": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-5/final-1792312952539-6376.json",
+      "sha256": "a0afa2f066bb6dace9b5299ea23d7bfa4f25025b0b49dd6a02528ca9dc42430f",
+      "assigned": 20,
+      "recorded": 20,
+      "expectedOutcomeFalse": 0,
+      "failedRunIds": []
+    },
+    {
+      "packetKey": "packet-6",
+      "report": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-6/final-1792312952539-6376.json",
+      "sha256": "ae384f61cca78dae47cedf3200f5cd5c26e09a183491089dcc597afbcd9cb27b",
+      "assigned": 20,
+      "recorded": 20,
+      "expectedOutcomeFalse": 0,
+      "failedRunIds": []
+    }
+  ],
+  "pinnedImplementationSources": [
+    {
+      "path": "apps/storefront/src/catalog-expansion.ts",
+      "sha256": "694f22afb2b5dace9a35d742d91d0fab381edab94c5b6b5a5d6c6d962a4d7735",
+      "bytes": 5647,
+      "expectedSha256": "694f22afb2b5dace9a35d742d91d0fab381edab94c5b6b5a5d6c6d962a4d7735",
+      "matchesFrozenExecutionPlan": true
+    },
+    {
+      "path": "apps/storefront/src/ProductCard.tsx",
+      "sha256": "0ab0de77256aecc58d9258525bdeb40539efce1ff7c9620bc4fc39b697f9a527",
+      "bytes": 2436,
+      "expectedSha256": "0ab0de77256aecc58d9258525bdeb40539efce1ff7c9620bc4fc39b697f9a527",
+      "matchesFrozenExecutionPlan": true
+    },
+    {
+      "path": "apps/storefront/src/ShopView.tsx",
+      "sha256": "b30f066c6658c703868d3a358e7d452bd7ca7b88dcc716208e52b8874a303c75",
+      "bytes": 5026,
+      "expectedSha256": "b30f066c6658c703868d3a358e7d452bd7ca7b88dcc716208e52b8874a303c75",
+      "matchesFrozenExecutionPlan": true
+    },
+    {
+      "path": "apps/storefront/src/ProductGallery.tsx",
+      "sha256": "f5976a52ddb7fc9bc611b15e1833812fbcf345c6be548cb07a2020ac3683a9bc",
+      "bytes": 1974,
+      "expectedSha256": "f5976a52ddb7fc9bc611b15e1833812fbcf345c6be548cb07a2020ac3683a9bc",
+      "matchesFrozenExecutionPlan": true
+    },
+    {
+      "path": "apps/storefront/src/ProductPhoto.tsx",
+      "sha256": "82e67036f498801a28f0676245edf52091e45d86915bb277d701be21e17a2c00",
+      "bytes": 1549,
+      "expectedSha256": "82e67036f498801a28f0676245edf52091e45d86915bb277d701be21e17a2c00",
+      "matchesFrozenExecutionPlan": true
+    },
+    {
+      "path": "apps/storefront/src/CartView.tsx",
+      "sha256": "b03e672835650e62b20f3909a0b3533262ff34feb8f7f2302979502dd1658417",
+      "bytes": 2113,
+      "expectedSha256": "b03e672835650e62b20f3909a0b3533262ff34feb8f7f2302979502dd1658417",
+      "matchesFrozenExecutionPlan": true
+    },
+    {
+      "path": "apps/runner/src/shopper-chrome.ts",
+      "sha256": "ff049d2c94fc7451025ec98e20f89f5cfe126481b932fa776a72cdc1d50f6b2b",
+      "bytes": 17369,
+      "expectedSha256": "ff049d2c94fc7451025ec98e20f89f5cfe126481b932fa776a72cdc1d50f6b2b",
+      "matchesFrozenExecutionPlan": true
+    },
+    {
+      "path": "apps/runner/src/shopper-codex-agent.ts",
+      "sha256": "c65f484027258e3f8f888cfe222348c02ac415a66ccd298f7fd1be147b724e92",
+      "bytes": 10156,
+      "expectedSha256": "c65f484027258e3f8f888cfe222348c02ac415a66ccd298f7fd1be147b724e92",
+      "matchesFrozenExecutionPlan": true
+    }
+  ],
+  "taskVisibilityFindings": [
+    {
+      "id": "canvas-travel-bag-hard-constraint-not-observed",
+      "status": "supported-operational-mismatch-in-both-recorded-arms",
+      "caseId": "holdout-v3-07",
+      "affectedRunIds": [
+        "holdout-v3-07-generic",
+        "holdout-v3-07-local-model"
+      ],
+      "privateHardConstraint": {
+        "id": "travel-form",
+        "label": "The product must visibly identify as a canvas travel bag.",
+        "attribute": "category",
+        "operator": "equals",
+        "value": "Canvas travel bag"
+      },
+      "evaluatorCatalogFacts": {
+        "productId": "duffel",
+        "originalName": "Weekender duffel",
+        "itemPrice": 84,
+        "category": "Canvas travel bag",
+        "functions": [
+          "carry-bag"
+        ],
+        "acceptableSandVariant": "duffel-sand"
+      },
+      "recordedVisibleFacts": [
+        "Weekender duffel",
+        "Displayed item price $84",
+        "Sand selected",
+        "Add to cart control"
+      ],
+      "missingRecordedFact": "No saved observation text or control name identifies the Weekender duffel as Canvas travel bag.",
+      "sourceExplanation": "The execution-pinned catalog-expansion.ts includes category Canvas travel bag. The execution-pinned ProductCard.tsx renders name/title, price, optional generated title/badge/bodyCopy, color, and Add to cart; it never renders product.category. ShopView delegates cards to ProductCard. ProductGallery/Photo display imagery and image metadata; that is not material-verification text in the saved viewport observations.",
+      "assessment": "Catalog-level feasibility used by evaluator gold is not the same as shopper-observable feasibility for the explicit visible-category hard constraint in these recorded sessions. Both positive-case abstentions must be disclosed with that limitation when interpreting task success.",
+      "scoreTreatment": "Retain both raw expectedOutcomeMet=false outcomes. No new success, score adjustment, task rewrite, prompt tuning, or counterfactual estimate is made.",
+      "limits": [
+        "This establishes a mismatch between the explicit visible hard constraint and the facts present in these two saved sessions, not proof about every imaginable unvisited interaction.",
+        "Source image briefs or alt metadata and the appearance of canvas-like fabric do not supply independently verified material in this review.",
+        "Private/evaluator facts were examined by this result reviewer only, after the cohort; they are not supplied to shoppers."
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "packetKey": "packet-1",
+      "caseId": "holdout-v2-05",
+      "arm": "generic",
+      "runId": "holdout-v2-05-generic",
+      "rawReport": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/final-1792312952539-6376.json",
+      "rawReportSha256": "9252fd088e29acf360c1180fee0888155d56018ab1aec9efc389e6ac53e2d795",
+      "sourceExpectedOutcomeMet": false,
+      "sourceOutcome": "timeout",
+      "sourceFormalStatus": "unattempted",
+      "sourceEvaluator": {
+        "acceptableSelection": false,
+        "expectedOutcomeMet": false,
+        "allHardConstraintsMet": false,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": false
+      },
+      "scoreChanges": [],
+      "evidence": {
+        "sidecar": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/session.json",
+          "sha256": "fbb32d4085d69ed058759a4d1ce44f57e82d5ab6266459c2d3dd3715398eb238",
+          "bytes": 5965,
+          "hashMatchesRawReport": true,
+          "embeddedSessionMatches": true
+        },
+        "artifacts": [
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/screenshot.png",
+            "sha256": "a4a015fb378ad68a624a947837afab5e51cc12b25ec0c7222080d95429081b69",
+            "bytes": 682215,
+            "artifactId": "holdout-v2-05-generic-screenshot-png",
+            "kind": "screenshot",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/trace.zip",
+            "sha256": "b13bbfc497b7da409e4d7e7eeb3f18d43f62a153b6526e064b89b5e2ca8cd7af",
+            "bytes": 3065536,
+            "artifactId": "holdout-v2-05-generic-trace-zip",
+            "kind": "trace",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/browser-observations.json",
+            "sha256": "f556128f1ffeba782a3472887cad2fbc9826f91adc232a8cbae16c6f3309c5a7",
+            "bytes": 10854,
+            "artifactId": "holdout-v2-05-generic-browser-observations-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/checkout-receipt.json",
+            "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+            "bytes": 213,
+            "artifactId": "holdout-v2-05-generic-checkout-receipt-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          }
+        ],
+        "traceZip": {
+          "crcIntegrity": "passed",
+          "members": 75,
+          "traceEventFiles": 1,
+          "networkEventFiles": 1
+        },
+        "browserRecords": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/browser-observations.json",
+          "sha256": "f556128f1ffeba782a3472887cad2fbc9826f91adc232a8cbae16c6f3309c5a7",
+          "consistency": {
+            "status": "passed",
+            "errors": [],
+            "notes": [],
+            "normalizedSteps": 2,
+            "unknownStepTimes": 0,
+            "agentActions": 1,
+            "completedBrowserResults": 1,
+            "abandonments": 0,
+            "pendingAction": null,
+            "savedObservations": 2,
+            "finalState": {
+              "lastObservation": {
+                "elapsedMs": 6554.063457999844,
+                "url": "http://127.0.0.1:4312/#collection?q=canvas+sneakers+for+everyday+outfits%2C+at+most+%24100",
+                "cartItemCount": 0,
+                "cartEmpty": true
+              },
+              "lastBrowserResult": {
+                "kind": "search",
+                "confirmationVisible": false
+              },
+              "observedChoicePresent": false,
+              "visibleConfirmations": 0,
+              "note": "Last observation may precede the final action. Confirmation is a saved browser-result claim; pixels and server orders are independently unverified here."
+            }
+          }
+        },
+        "checkout": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/checkout-receipt.json",
+          "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+          "postRecorded": false,
+          "getRecorded": false,
+          "visibleConfirmationRecorded": false,
+          "recordedErrors": []
+        },
+        "privateInstructions": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v2/shopper-instructions.json",
+          "sha256": "075360c05577bd942c50d0cf3eddfa74bcdf7e00a227f71026201d288960dbf0",
+          "jsonSelector": "caseId=holdout-v2-05"
+        },
+        "evaluatorGold": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v2/evaluator-gold.json",
+          "sha256": "ec20141d1d021ecad02ec7f17be9990848c2255d3c162c3f1f823b2349567c4b",
+          "jsonSelector": "caseId=holdout-v2-05"
+        },
+        "catalogBinding": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v2/catalog-binding.json",
+          "sha256": "5f0a9f3c317f826216e9fdde9ec0ad9e7ebb3ce605da15bda305e12bea03dfca",
+          "catalogSnapshotSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c"
+        }
+      },
+      "timing": {
+        "elapsedMs": 120002.22241700022,
+        "precision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "error": "Shopper exhausted the wall-clock budget",
+        "normalizedSteps": 2,
+        "lastNormalizedStep": {
+          "event": {
+            "id": "holdout-v2-05-generic-step-1",
+            "runId": "holdout-v2-05-generic",
+            "sequence": 1,
+            "at": "2026-10-18T09:22:34.295Z",
+            "kind": "action",
+            "message": "canvas sneakers for everyday outfits, at most $100"
+          },
+          "elapsedMs": 6226.691292000003,
+          "action": {
+            "type": "search",
+            "query": "canvas sneakers for everyday outfits, at most $100"
+          }
+        },
+        "pendingDecision": [
+          {
+            "sequence": 2,
+            "startedAtElapsedMs": 6554.502667000052,
+            "noRecordedFinish": true,
+            "elapsedUntilSessionOutcomeMs": 113447.71975000016,
+            "evidenceJsonPointer": "/logs/6"
+          }
+        ]
+      },
+      "observedActions": {
+        "completed": [
+          {
+            "event": {
+              "id": "holdout-v2-05-generic-step-0",
+              "runId": "holdout-v2-05-generic",
+              "sequence": 0,
+              "at": "2026-10-18T09:22:29.044Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 976.1406669998541,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-05-generic-step-1",
+              "runId": "holdout-v2-05-generic",
+              "sequence": 1,
+              "at": "2026-10-18T09:22:34.295Z",
+              "kind": "action",
+              "message": "canvas sneakers for everyday outfits, at most $100"
+            },
+            "elapsedMs": 6226.691292000003,
+            "action": {
+              "type": "search",
+              "query": "canvas sneakers for everyday outfits, at most $100"
+            }
+          }
+        ],
+        "raw": [
+          {
+            "type": "agent-action",
+            "elapsedMs": 6126.17737499997,
+            "action": {
+              "type": "search",
+              "query": "canvas sneakers for everyday outfits, at most $100"
+            },
+            "logIndex": 3
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 6226.69299999997,
+            "stepSequence": 1,
+            "result": {
+              "kind": "search",
+              "target": "canvas sneakers for everyday outfits, at most $100",
+              "confirmationVisible": false
+            },
+            "logIndex": 4
+          }
+        ],
+        "addToCartCount": 0,
+        "openCartCount": 0,
+        "confirmCount": 0
+      },
+      "observations": {
+        "count": 2,
+        "allRecordedCartsEmpty": true,
+        "uniqueVisibleTextRecords": [
+          {
+            "visibleTextSha256": "b61e859d159b5d8509af05477057c4f1448f0e8a8d1593465d3cefca83ff6165",
+            "text": "Demo store · No real orders or payments\nfieldwork\n®\nDemo\nView cart\nGood things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nCollection",
+            "firstLogIndex": 0,
+            "firstElapsedMs": 1273.8312499998137,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "f6c45a7f198629626c5925b00a84a4969d94c5ca2aecd4a5729682666652766a",
+            "text": "Good things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nPicked for your search\nSuggestions for “canvas sneakers for everyday outfits, at most $100”\nClear search\nEveryday canvas sneakers\n$\n96\nOff-white\nAdd to cart\nTrail mug\n$\n24\nSage\nAdd to cart\nEveryday daypack\n$\n68\nSand\nAdd to cart",
+            "firstLogIndex": 5,
+            "firstElapsedMs": 6554.063457999844,
+            "occurrences": 1
+          }
+        ],
+        "timeline": [
+          {
+            "logIndex": 0,
+            "elapsedMs": 1273.8312499998137,
+            "visibleTextSha256": "b61e859d159b5d8509af05477057c4f1448f0e8a8d1593465d3cefca83ff6165",
+            "viewport": {
+              "scrollY": 0,
+              "height": 960,
+              "documentHeight": 4489
+            },
+            "url": "http://127.0.0.1:4312/#collection",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 5,
+            "elapsedMs": 6554.063457999844,
+            "visibleTextSha256": "f6c45a7f198629626c5925b00a84a4969d94c5ca2aecd4a5729682666652766a",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=canvas+sneakers+for+everyday+outfits%2C+at+most+%24100",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          }
+        ]
+      },
+      "privateNeeds": {
+        "goal": "Choose canvas low-top footwear. Prefer Olive. This demo purchase only requires the displayed color, not an unstated shoe size or fit guarantee.",
+        "hardConstraints": [
+          {
+            "id": "function",
+            "label": "Choose the requested basic product type/function: footwear.",
+            "attribute": "functions",
+            "operator": "includes",
+            "value": "footwear"
+          },
+          {
+            "id": "item-price",
+            "label": "Displayed item price must be at most $100; delivery is outside the budget.",
+            "attribute": "itemPrice",
+            "operator": "at-most",
+            "value": 100
+          }
+        ],
+        "preferences": [
+          {
+            "id": "preferred-color",
+            "label": "Prefer the visible color named Olive; another color is acceptable if needed.",
+            "attribute": "selectedColor",
+            "operator": "equals",
+            "value": "Olive"
+          }
+        ]
+      },
+      "evaluatorFacts": {
+        "caseId": "holdout-v2-05",
+        "candidateFunctionProductIds": [
+          "sneakers"
+        ],
+        "acceptableProductIds": [
+          "sneakers"
+        ],
+        "acceptableVariantIds": [
+          "sneakers-off-white",
+          "sneakers-charcoal",
+          "sneakers-olive"
+        ],
+        "eligibilityStatus": "satisfiable",
+        "requiredOutcome": "choose-one-and-confirm-fake-order",
+        "noSubstitutionForExactName": false,
+        "unknownRequiredAttributes": [],
+        "support": [
+          {
+            "productId": "sneakers",
+            "originalName": "Everyday canvas sneakers",
+            "itemPrice": 96,
+            "category": "Canvas low-top sneakers",
+            "publicFunctionLabels": [
+              "footwear"
+            ],
+            "interpretation": "Evaluator-only ordinary semantic function annotation from public product identity; not a recommender alias."
+          }
+        ]
+      },
+      "publicQuery": "canvas sneakers for everyday outfits, at most $100",
+      "sourceModelStatus": "not-enabled",
+      "sourceFallback": {
+        "used": false,
+        "kind": "none",
+        "reason": null
+      },
+      "classification": {
+        "observedFailurePhase": "shopper-decision-pending-after-successful-search",
+        "terminalCondition": "wall-clock-timeout",
+        "confidence": "high for recorded phase; underlying decision stall cause unknown",
+        "observedFacts": [
+          "Search returned Everyday canvas sneakers at displayed $96; Olive color control was available in the saved last observation.",
+          "Only initial navigation and assigned search completed. The second shopper decision started at 6554.502667 ms and has no recorded finish before the 120002.222417 ms timeout.",
+          "No cart add, checkout step, or captured order POST/GET/visible confirmation occurred."
+        ],
+        "unknownRootCauses": [
+          "The records do not distinguish a slow model response, service/transport wait, CLI stall, or another cause inside the unfinished decision.",
+          "Visible qualifying cards establish an opportunity, not that a subsequent shopper action or checkout would have succeeded."
+        ],
+        "notEstablished": [
+          "Browser rendering failure",
+          "A recommender selection failure",
+          "An API outage or retry count"
+        ]
+      },
+      "keyEvidence": [
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/browser-observations.json",
+          "jsonPointer": "/logs/5",
+          "visibleExcerpt": "Everyday canvas sneakers\n$\n96\nOff-white\nAdd to cart",
+          "controls": [
+            "Everyday canvas sneakers color: Olive"
+          ]
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/browser-observations.json",
+          "jsonPointer": "/logs/6",
+          "description": "Second decision started; no matching finish in this saved log"
+        }
+      ]
+    },
+    {
+      "packetKey": "packet-1",
+      "caseId": "holdout-v2-09",
+      "arm": "local-model",
+      "runId": "holdout-v2-09-local-model",
+      "rawReport": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/final-1792312952539-6376.json",
+      "rawReportSha256": "9252fd088e29acf360c1180fee0888155d56018ab1aec9efc389e6ac53e2d795",
+      "sourceExpectedOutcomeMet": false,
+      "sourceOutcome": "timeout",
+      "sourceFormalStatus": "unattempted",
+      "sourceEvaluator": {
+        "acceptableSelection": false,
+        "expectedOutcomeMet": false,
+        "allHardConstraintsMet": false,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": false
+      },
+      "scoreChanges": [],
+      "evidence": {
+        "sidecar": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/session.json",
+          "sha256": "7e7e3424df00c1696930f38761ea369698c0ff1defbfb392edaeaa538bb397f2",
+          "bytes": 15088,
+          "hashMatchesRawReport": true,
+          "embeddedSessionMatches": true
+        },
+        "artifacts": [
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/screenshot.png",
+            "sha256": "723db94e5be5b528b58efc37e3a1840968543d77384e1e12d980afefb86f6fc7",
+            "bytes": 692777,
+            "artifactId": "holdout-v2-09-local-model-screenshot-png",
+            "kind": "screenshot",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/trace.zip",
+            "sha256": "4f6367078204e011cbd9f0b42ecd07d0acbb8ce906be31b707986cd47de76b11",
+            "bytes": 25492858,
+            "artifactId": "holdout-v2-09-local-model-trace-zip",
+            "kind": "trace",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/browser-observations.json",
+            "sha256": "78000fcb4db48cc3080e4ba9185c969497f1dd41acf23f64f42c5f90765450b6",
+            "bytes": 361649,
+            "artifactId": "holdout-v2-09-local-model-browser-observations-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/checkout-receipt.json",
+            "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+            "bytes": 213,
+            "artifactId": "holdout-v2-09-local-model-checkout-receipt-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          }
+        ],
+        "traceZip": {
+          "crcIntegrity": "passed",
+          "members": 366,
+          "traceEventFiles": 1,
+          "networkEventFiles": 1
+        },
+        "browserRecords": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/browser-observations.json",
+          "sha256": "78000fcb4db48cc3080e4ba9185c969497f1dd41acf23f64f42c5f90765450b6",
+          "consistency": {
+            "status": "passed",
+            "errors": [],
+            "notes": [],
+            "normalizedSteps": 22,
+            "unknownStepTimes": 0,
+            "agentActions": 21,
+            "completedBrowserResults": 21,
+            "abandonments": 0,
+            "pendingAction": null,
+            "savedObservations": 22,
+            "finalState": {
+              "lastObservation": {
+                "elapsedMs": 119648.54312500008,
+                "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+                "cartItemCount": 0,
+                "cartEmpty": true
+              },
+              "lastBrowserResult": {
+                "kind": "inspect",
+                "confirmationVisible": false
+              },
+              "observedChoicePresent": false,
+              "visibleConfirmations": 0,
+              "note": "Last observation may precede the final action. Confirmation is a saved browser-result claim; pixels and server orders are independently unverified here."
+            }
+          }
+        },
+        "checkout": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/checkout-receipt.json",
+          "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+          "postRecorded": false,
+          "getRecorded": false,
+          "visibleConfirmationRecorded": false,
+          "recordedErrors": []
+        },
+        "privateInstructions": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v2/shopper-instructions.json",
+          "sha256": "075360c05577bd942c50d0cf3eddfa74bcdf7e00a227f71026201d288960dbf0",
+          "jsonSelector": "caseId=holdout-v2-09"
+        },
+        "evaluatorGold": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v2/evaluator-gold.json",
+          "sha256": "ec20141d1d021ecad02ec7f17be9990848c2255d3c162c3f1f823b2349567c4b",
+          "jsonSelector": "caseId=holdout-v2-09"
+        },
+        "catalogBinding": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v2/catalog-binding.json",
+          "sha256": "5f0a9f3c317f826216e9fdde9ec0ad9e7ebb3ce605da15bda305e12bea03dfca",
+          "catalogSnapshotSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c"
+        }
+      },
+      "timing": {
+        "elapsedMs": 120001.52604200016,
+        "precision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "error": "Shopper exhausted the wall-clock budget",
+        "normalizedSteps": 22,
+        "lastNormalizedStep": {
+          "event": {
+            "id": "holdout-v2-09-local-model-step-21",
+            "runId": "holdout-v2-09-local-model",
+            "sequence": 21,
+            "at": "2026-10-18T09:15:11.413Z",
+            "kind": "action",
+            "message": "up"
+          },
+          "elapsedMs": 119469.89491700009,
+          "action": {
+            "type": "inspect",
+            "target": "up"
+          }
+        },
+        "pendingDecision": [
+          {
+            "sequence": 22,
+            "startedAtElapsedMs": 119649.01437500003,
+            "noRecordedFinish": true,
+            "elapsedUntilSessionOutcomeMs": 352.5116670001298,
+            "evidenceJsonPointer": "/logs/106"
+          }
+        ]
+      },
+      "observedActions": {
+        "completed": [
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-0",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 0,
+              "at": "2026-10-18T09:13:12.921Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 978.8354589999653,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/?model=local"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-1",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 1,
+              "at": "2026-10-18T09:13:17.797Z",
+              "kind": "action",
+              "message": "a lunch container for a packed meal, strictly below $32"
+            },
+            "elapsedMs": 5854.7201670000795,
+            "action": {
+              "type": "search",
+              "query": "a lunch container for a packed meal, strictly below $32"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-2",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 2,
+              "at": "2026-10-18T09:13:22.447Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 10505.272834000178,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-3",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 3,
+              "at": "2026-10-18T09:13:27.920Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 15977.700625000056,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-4",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 4,
+              "at": "2026-10-18T09:13:32.898Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 20956.282041999977,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-5",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 5,
+              "at": "2026-10-18T09:13:37.667Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 25725.056542000035,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-6",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 6,
+              "at": "2026-10-18T09:13:43.013Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 31071.35979200015,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-7",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 7,
+              "at": "2026-10-18T09:13:47.498Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 35556.03904199996,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-8",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 8,
+              "at": "2026-10-18T09:13:52.251Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 40308.56625000015,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-9",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 9,
+              "at": "2026-10-18T09:13:57.400Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 45457.76604200015,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-10",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 10,
+              "at": "2026-10-18T09:14:02.466Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 50523.65416699997,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-11",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 11,
+              "at": "2026-10-18T09:14:07.284Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 55342.01704200008,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-12",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 12,
+              "at": "2026-10-18T09:14:12.399Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 60456.26041700016,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-13",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 13,
+              "at": "2026-10-18T09:14:18.467Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 66524.36250000005,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-14",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 14,
+              "at": "2026-10-18T09:14:23.932Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 71989.16237500007,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-15",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 15,
+              "at": "2026-10-18T09:14:32.733Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 80790.44412500015,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-16",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 16,
+              "at": "2026-10-18T09:14:37.311Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 85368.68637500005,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-17",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 17,
+              "at": "2026-10-18T09:14:52.295Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 100352.40608400013,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-18",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 18,
+              "at": "2026-10-18T09:14:56.779Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 104836.48770900001,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-19",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 19,
+              "at": "2026-10-18T09:15:00.996Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 109052.92412500014,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-20",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 20,
+              "at": "2026-10-18T09:15:05.980Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 114037.00962500018,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v2-09-local-model-step-21",
+              "runId": "holdout-v2-09-local-model",
+              "sequence": 21,
+              "at": "2026-10-18T09:15:11.413Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 119469.89491700009,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          }
+        ],
+        "raw": [
+          {
+            "type": "agent-action",
+            "elapsedMs": 5745.160750000039,
+            "action": {
+              "type": "search",
+              "query": "a lunch container for a packed meal, strictly below $32"
+            },
+            "logIndex": 3
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 5854.721374999965,
+            "stepSequence": 1,
+            "result": {
+              "kind": "search",
+              "target": "a lunch container for a packed meal, strictly below $32",
+              "confirmationVisible": false
+            },
+            "logIndex": 4
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 10464.921792000066,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 8
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 10505.274124999996,
+            "stepSequence": 2,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 9
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 15933.136000000173,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 13
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 15977.702042000135,
+            "stepSequence": 3,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 14
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 20913.532875000034,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 18
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 20956.283500000136,
+            "stepSequence": 4,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 19
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 25673.023000000045,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 23
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 25725.058959000045,
+            "stepSequence": 5,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 24
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 31017.153374999994,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 28
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 31071.36079200008,
+            "stepSequence": 6,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 29
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 35504.03625000012,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 33
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 35556.03979200008,
+            "stepSequence": 7,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 34
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 40264.63904200005,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 38
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 40308.568209000165,
+            "stepSequence": 8,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 39
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 45411.59491700004,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 43
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 45457.76708400017,
+            "stepSequence": 9,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 44
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 50478.92100000009,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 48
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 50523.65583400009,
+            "stepSequence": 10,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 49
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 55291.20550000016,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 53
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 55342.01845900016,
+            "stepSequence": 11,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 54
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 60405.434375000186,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 58
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 60456.261834000004,
+            "stepSequence": 12,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 59
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 66472.96420900011,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 63
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 66524.36404200015,
+            "stepSequence": 13,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 64
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 71936.7444170001,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 68
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 71989.16358399997,
+            "stepSequence": 14,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 69
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 80733.46279200003,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 73
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 80790.44541699998,
+            "stepSequence": 15,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 74
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 85329.74537500017,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 78
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 85368.68716700003,
+            "stepSequence": 16,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 79
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 100302.74854200007,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 83
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 100352.40741700004,
+            "stepSequence": 17,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 84
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 104792.13816700014,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 88
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 104836.48895899998,
+            "stepSequence": 18,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 89
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 109011.36116700014,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 93
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 109052.92541699996,
+            "stepSequence": 19,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 94
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 113988.83962500002,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 98
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 114037.01104200003,
+            "stepSequence": 20,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 99
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 119428.38795900019,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 103
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 119469.89629200008,
+            "stepSequence": 21,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 104
+          }
+        ],
+        "addToCartCount": 0,
+        "openCartCount": 0,
+        "confirmCount": 0
+      },
+      "observations": {
+        "count": 22,
+        "allRecordedCartsEmpty": true,
+        "uniqueVisibleTextRecords": [
+          {
+            "visibleTextSha256": "1fe8b48d36208cf0733dcba39817bac78908b54b38154d926b8e6e4f83b6755c",
+            "text": "Demo store · No real orders or payments\nfieldwork\n®\nDemo\nView cart\nGood things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nCollection\nLocal model is ordering products…",
+            "firstLogIndex": 0,
+            "firstElapsedMs": 1314.062334000133,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "e53aafe13b554abab4c01eea21674623a4a4260a796c5b8a882bbef0cfd0383a",
+            "text": "Good things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nYour selected collection\nLocal model is ordering products; last available result shown…\nClear search\nPocket field notes in Terracotta\n$\n12\nPocket field notes\nTerracotta selected\nShown in Terracotta at $12.00.\nSteel lunch box in Olive band\n$\n32\nSteel lunch box\nOlive band selected\nShown in Olive band at $32.00.\nPortable table light in Ivory\n$\n64\nPortable table light\nIvory selected\nShown in Ivory at $64.00.",
+            "firstLogIndex": 5,
+            "firstElapsedMs": 6224.060750000179,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "text": "Zip essentials pouch in Ochre\n$\n26\nZip essentials pouch\nOchre selected\nShown in Ochre at $26.00.\nOchre\nAdd to cart\nTrail mug in Sage\n$\n24\nTrail mug\nSage selected\nShown in Sage at $24.00.\nSage\nAdd to cart\nPocket field notes in Terracotta\n$\n12\nPocket field notes\nTerracotta selected\nShown in Terracotta at $12.00.\nTerracotta\nAdd to cart\nEverywhere cotton towel in Sage stripe\n$\n28",
+            "firstLogIndex": 10,
+            "firstElapsedMs": 10655.119959000032,
+            "occurrences": 10
+          },
+          {
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "text": "Good things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nYour selected collection\nLocal model · Learned product order · Existing storefront gallery · Order 0.30 s · First cards 0.31 s · Complete copy 0.32 s · 13/14 fresh learned fields · Catalog-trained text · 1 withheld · 4 eligible products\nClear search\nZip essentials pouch in Ochre\n$\n26\nZip essentials pouch\nOchre selected\nTrail mug in Sage\n$\n24\nTrail mug\nSage selected\nPocket field notes in Terracotta\n$\n12\nPocket field notes\nTerracotta selected",
+            "firstLogIndex": 15,
+            "firstElapsedMs": 16168.508875000058,
+            "occurrences": 10
+          }
+        ],
+        "timeline": [
+          {
+            "logIndex": 0,
+            "elapsedMs": 1314.062334000133,
+            "visibleTextSha256": "1fe8b48d36208cf0733dcba39817bac78908b54b38154d926b8e6e4f83b6755c",
+            "viewport": {
+              "scrollY": 0,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 5,
+            "elapsedMs": 6224.060750000179,
+            "visibleTextSha256": "e53aafe13b554abab4c01eea21674623a4a4260a796c5b8a882bbef0cfd0383a",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 4643
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 10,
+            "elapsedMs": 10655.119959000032,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 15,
+            "elapsedMs": 16168.508875000058,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 20,
+            "elapsedMs": 21103.511209000135,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 25,
+            "elapsedMs": 25918.94874999998,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 30,
+            "elapsedMs": 31221.47604200011,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 35,
+            "elapsedMs": 35732.63937500003,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 40,
+            "elapsedMs": 40454.59079200006,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 45,
+            "elapsedMs": 45636.54479199997,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 50,
+            "elapsedMs": 50671.29829200008,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 55,
+            "elapsedMs": 55628.29533400014,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 60,
+            "elapsedMs": 60603.177584000165,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 65,
+            "elapsedMs": 66700.94100000011,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 70,
+            "elapsedMs": 72137.06491700001,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 75,
+            "elapsedMs": 80970.58537500002,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 80,
+            "elapsedMs": 85521.741959,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 85,
+            "elapsedMs": 100515.35191700002,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 90,
+            "elapsedMs": 104985.47579200007,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 95,
+            "elapsedMs": 109216.06700000004,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 100,
+            "elapsedMs": 114185.13629200007,
+            "visibleTextSha256": "8facf1aeda29da38aee8366b927fdae98c7a05dc9093bd3dad9e4b6642e9a8a8",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 105,
+            "elapsedMs": 119648.54312500008,
+            "visibleTextSha256": "0fd980b96f9f3dabd1726f91d54de99829db2343b9ce3fd4ad26791236b7e81f",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 2100
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+lunch+container+for+a+packed+meal%2C+strictly+below+%2432",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          }
+        ]
+      },
+      "privateNeeds": {
+        "goal": "Find a packed-meal container only if its displayed item price is strictly below $32. Do not substitute an unrelated cheaper item. If none qualifies, decline without ordering.",
+        "hardConstraints": [
+          {
+            "id": "function",
+            "label": "Choose the requested basic product type/function: packed-meal container.",
+            "attribute": "functions",
+            "operator": "includes",
+            "value": "packed-meal container"
+          },
+          {
+            "id": "item-price",
+            "label": "Displayed item price must be strictly below $32; delivery is outside the budget.",
+            "attribute": "itemPrice",
+            "operator": "less-than",
+            "value": 32
+          }
+        ],
+        "preferences": []
+      },
+      "evaluatorFacts": {
+        "caseId": "holdout-v2-09",
+        "candidateFunctionProductIds": [
+          "lunchbox"
+        ],
+        "acceptableProductIds": [],
+        "acceptableVariantIds": [],
+        "eligibilityStatus": "known-empty",
+        "requiredOutcome": "justified-abstention-no-purchase",
+        "noSubstitutionForExactName": false,
+        "unknownRequiredAttributes": [],
+        "support": [
+          {
+            "productId": "lunchbox",
+            "originalName": "Steel lunch box",
+            "itemPrice": 32,
+            "category": "Steel box with bamboo lid",
+            "publicFunctionLabels": [
+              "packed-meal container"
+            ],
+            "interpretation": "Evaluator-only ordinary semantic function annotation from public product identity; not a recommender alias."
+          }
+        ]
+      },
+      "publicQuery": "a lunch container for a packed meal, strictly below $32",
+      "sourceModelStatus": "complete",
+      "sourceFallback": {
+        "used": true,
+        "kind": "last-safe-model",
+        "reason": "Local model is ordering products; last available result shown…"
+      },
+      "classification": {
+        "observedFailurePhase": "repeated-viewport-scanning-without-terminal-abstention",
+        "terminalCondition": "wall-clock-timeout",
+        "confidence": "high for recorded action loop; internal decision cause unknown",
+        "observedFacts": [
+          "The negative assignment required a packed-meal container strictly below $32. Evaluator catalog contains one packed-meal container at exactly $32.",
+          "A transient last-available result showed Steel lunch box at $32. The completed assigned-query result showed four cheaper products of other named types; later observations alternate between the same upper/lower text states.",
+          "After search, the shopper completed twenty alternating down/up scrolls, then decision22 began with about352 ms remaining. It never emitted an abandon, cart add, or checkout action.",
+          "Saved local-model readiness reached complete; the receipt retains the earlier last-safe-model fallback disclosure. This timeout is not evidence that the recommender remained loading for120 seconds."
+        ],
+        "unknownRootCauses": [
+          "Saved actions do not expose why the shopper repeated the same two viewports or failed to conclude that no qualifying lunch container was shown.",
+          "The influence of the transient fallback, candidate filtering, or model-status text on the shopper cannot be causally separated from this one session."
+        ],
+        "notEstablished": [
+          "A correct or justified abstention: no terminal abstain decision was made",
+          "A model service outage",
+          "A purchased constraint-violating substitute"
+        ]
+      },
+      "keyEvidence": [
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/browser-observations.json",
+          "jsonPointer": "/logs/5",
+          "visibleExcerpt": "Steel lunch box in Olive band\n$\n32"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/browser-observations.json",
+          "description": "20 completed alternating scroll actions, all recorded carts empty; normalized steps and observation timeline above identify every occurrence"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/browser-observations.json",
+          "jsonPointer": "/logs/106",
+          "description": "Decision22 started after final completed scroll; no recorded finish"
+        }
+      ],
+      "negativeAuditBoundary": "This review records a technical timeout, not a label-blind justification verdict. The independent24-negative audit remains separate."
+    },
+    {
+      "packetKey": "packet-2",
+      "caseId": "holdout-v3-07",
+      "arm": "generic",
+      "runId": "holdout-v3-07-generic",
+      "rawReport": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/final-1792312952539-6376.json",
+      "rawReportSha256": "dd284a6d896be29bbce85ffa3a770fbac3c3df74cef83f160712375af8bb78bf",
+      "sourceExpectedOutcomeMet": false,
+      "sourceOutcome": "abandoned",
+      "sourceFormalStatus": "recorded",
+      "sourceEvaluator": {
+        "acceptableSelection": false,
+        "expectedOutcomeMet": false,
+        "allHardConstraintsMet": false,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": true
+      },
+      "scoreChanges": [],
+      "evidence": {
+        "sidecar": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/session.json",
+          "sha256": "cc3f146678237eeba5df9b009acb42728e31f885cbd2ad3afddef0b321249eec",
+          "bytes": 9180,
+          "hashMatchesRawReport": true,
+          "embeddedSessionMatches": true
+        },
+        "artifacts": [
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/screenshot.png",
+            "sha256": "6934de47b7044eaa4ca89dae2291d53b948fae815d83b27fa004d3f2fb29c236",
+            "bytes": 893518,
+            "artifactId": "holdout-v3-07-generic-screenshot-png",
+            "kind": "screenshot",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/trace.zip",
+            "sha256": "6a4a7843d290dffe8d6a67dff82b5dbf5d5b849116d6cf38b2f664dad885bdd1",
+            "bytes": 13369244,
+            "artifactId": "holdout-v3-07-generic-trace-zip",
+            "kind": "trace",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/browser-observations.json",
+            "sha256": "d484e77f0e210c5d430623f9b172ce1bff9a5ccf9da5c0bf3785b44dd1db2f5c",
+            "bytes": 60208,
+            "artifactId": "holdout-v3-07-generic-browser-observations-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/checkout-receipt.json",
+            "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+            "bytes": 213,
+            "artifactId": "holdout-v3-07-generic-checkout-receipt-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          }
+        ],
+        "traceZip": {
+          "crcIntegrity": "passed",
+          "members": 186,
+          "traceEventFiles": 1,
+          "networkEventFiles": 1
+        },
+        "browserRecords": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/browser-observations.json",
+          "sha256": "d484e77f0e210c5d430623f9b172ce1bff9a5ccf9da5c0bf3785b44dd1db2f5c",
+          "consistency": {
+            "status": "passed",
+            "errors": [],
+            "notes": [],
+            "normalizedSteps": 9,
+            "unknownStepTimes": 0,
+            "agentActions": 8,
+            "completedBrowserResults": 7,
+            "abandonments": 1,
+            "pendingAction": null,
+            "savedObservations": 8,
+            "finalState": {
+              "lastObservation": {
+                "elapsedMs": 40494.1540000001,
+                "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+                "cartItemCount": 0,
+                "cartEmpty": true
+              },
+              "lastBrowserResult": {
+                "kind": "inspect",
+                "confirmationVisible": false
+              },
+              "observedChoicePresent": false,
+              "visibleConfirmations": 0,
+              "note": "Last observation may precede the final action. Confirmation is a saved browser-result claim; pixels and server orders are independently unverified here."
+            }
+          }
+        },
+        "checkout": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/checkout-receipt.json",
+          "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+          "postRecorded": false,
+          "getRecorded": false,
+          "visibleConfirmationRecorded": false,
+          "recordedErrors": []
+        },
+        "privateInstructions": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/shopper-instructions.json",
+          "sha256": "035f15079f9241148aea61de5a566f35e872827eb064819ff455509e1778fd0a",
+          "jsonSelector": "caseId=holdout-v3-07"
+        },
+        "evaluatorGold": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/evaluator-gold.json",
+          "sha256": "237c482cc0f31ab5fbd15b311d180582293b748b37de746e547d50e3ac027809",
+          "jsonSelector": "caseId=holdout-v3-07"
+        },
+        "catalogBinding": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/catalog-binding.json",
+          "sha256": "5f0a9f3c317f826216e9fdde9ec0ad9e7ebb3ce605da15bda305e12bea03dfca",
+          "catalogSnapshotSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c"
+        }
+      },
+      "timing": {
+        "elapsedMs": 46408.00925000012,
+        "precision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "error": null,
+        "normalizedSteps": 9,
+        "lastNormalizedStep": {
+          "event": {
+            "id": "holdout-v3-07-generic-step-8",
+            "runId": "holdout-v3-07-generic",
+            "sequence": 8,
+            "at": "2026-10-18T09:45:28.905Z",
+            "kind": "action",
+            "message": "The Weekender duffel is visibly $84 in Sand, but the visible product information does not verify that it is a canvas travel bag. I cannot confirm all hard constraints."
+          },
+          "elapsedMs": 46408.00383399986,
+          "action": {
+            "type": "abandon",
+            "target": "The Weekender duffel is visibly $84 in Sand, but the visible product information does not verify that it is a canvas travel bag. I cannot confirm all hard constraints."
+          }
+        },
+        "pendingDecision": []
+      },
+      "observedActions": {
+        "completed": [
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-0",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 0,
+              "at": "2026-10-18T09:44:43.534Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 1037.594792000018,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-1",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 1,
+              "at": "2026-10-18T09:44:48.674Z",
+              "kind": "action",
+              "message": "a duffel for an overnight train journey, at most $88"
+            },
+            "elapsedMs": 6177.118416999932,
+            "action": {
+              "type": "search",
+              "query": "a duffel for an overnight train journey, at most $88"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-2",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 2,
+              "at": "2026-10-18T09:44:53.322Z",
+              "kind": "action",
+              "message": "Weekender duffel color: Sand"
+            },
+            "elapsedMs": 10825.074041999876,
+            "action": {
+              "type": "inspect",
+              "target": "Weekender duffel color: Sand"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-3",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 3,
+              "at": "2026-10-18T09:44:59.217Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 16720.486000000034,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-4",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 4,
+              "at": "2026-10-18T09:45:04.806Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 22308.94245899981,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-5",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 5,
+              "at": "2026-10-18T09:45:10.536Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 28039.518833999988,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-6",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 6,
+              "at": "2026-10-18T09:45:16.616Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 34118.923959000036,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-7",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 7,
+              "at": "2026-10-18T09:45:22.685Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 40187.878083999734,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-generic-step-8",
+              "runId": "holdout-v3-07-generic",
+              "sequence": 8,
+              "at": "2026-10-18T09:45:28.905Z",
+              "kind": "action",
+              "message": "The Weekender duffel is visibly $84 in Sand, but the visible product information does not verify that it is a canvas travel bag. I cannot confirm all hard constraints."
+            },
+            "elapsedMs": 46408.00383399986,
+            "action": {
+              "type": "abandon",
+              "target": "The Weekender duffel is visibly $84 in Sand, but the visible product information does not verify that it is a canvas travel bag. I cannot confirm all hard constraints."
+            }
+          }
+        ],
+        "raw": [
+          {
+            "type": "agent-action",
+            "elapsedMs": 6057.772833999712,
+            "action": {
+              "type": "search",
+              "query": "a duffel for an overnight train journey, at most $88"
+            },
+            "logIndex": 3
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 6177.12070899969,
+            "stepSequence": 1,
+            "result": {
+              "kind": "search",
+              "target": "a duffel for an overnight train journey, at most $88",
+              "confirmationVisible": false
+            },
+            "logIndex": 4
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 10749.583875000011,
+            "action": {
+              "type": "click",
+              "ref": "control-42"
+            },
+            "logIndex": 8
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 10825.075166999828,
+            "stepSequence": 2,
+            "result": {
+              "kind": "choose-variant",
+              "target": "Weekender duffel color: Sand",
+              "confirmationVisible": false
+            },
+            "logIndex": 9
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 16669.79162500007,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 13
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 16720.487958999816,
+            "stepSequence": 3,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 14
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 22245.940208999906,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 18
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 22308.943709000014,
+            "stepSequence": 4,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 19
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 27978.017833999824,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 23
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 28039.51995899994,
+            "stepSequence": 5,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 24
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 34067.51691700006,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 28
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 34118.92516699992,
+            "stepSequence": 6,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 29
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 40129.6416249997,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 33
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 40187.878999999724,
+            "stepSequence": 7,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 34
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 46407.975250000134,
+            "action": {
+              "type": "abandon",
+              "reason": "The Weekender duffel is visibly $84 in Sand, but the visible product information does not verify that it is a canvas travel bag. I cannot confirm all hard constraints."
+            },
+            "logIndex": 38
+          }
+        ],
+        "addToCartCount": 0,
+        "openCartCount": 0,
+        "confirmCount": 0
+      },
+      "observations": {
+        "count": 8,
+        "allRecordedCartsEmpty": true,
+        "uniqueVisibleTextRecords": [
+          {
+            "visibleTextSha256": "b61e859d159b5d8509af05477057c4f1448f0e8a8d1593465d3cefca83ff6165",
+            "text": "Demo store · No real orders or payments\nfieldwork\n®\nDemo\nView cart\nGood things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nCollection",
+            "firstLogIndex": 0,
+            "firstElapsedMs": 1429.8620839999057,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "53e1100c2d96434bddd26f1a5fd15ea530832b93b0f28d3139eb04676e1f3897",
+            "text": "Made for your daily rhythm.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nFor the daily commute\nSuggestions for “a duffel for an overnight train journey, at most $88” — ordered for the daily commute\nClear search\nWeekender duffel\n$\n84\nCharcoal\nAdd to cart\nEveryday daypack\n$\n68\nSand\nAdd to cart\nEverywhere rain jacket\n$\n128\nForest\nAdd to cart",
+            "firstLogIndex": 5,
+            "firstElapsedMs": 6530.856083999854,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "c6592681b0d5180627280597d251979c64f7c4af592236b39afb4467d7150030",
+            "text": "Made for your daily rhythm.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nFor the daily commute\nSuggestions for “a duffel for an overnight train journey, at most $88” — ordered for the daily commute\nClear search\nWeekender duffel\n$\n84\nSand\nAdd to cart\nEveryday daypack\n$\n68\nSand\nAdd to cart\nEverywhere rain jacket\n$\n128\nForest\nAdd to cart",
+            "firstLogIndex": 10,
+            "firstElapsedMs": 11132.938000000082,
+            "occurrences": 3
+          },
+          {
+            "visibleTextSha256": "a266a73178e79d8751967a30a263d5a82c8ab20a16197d8992935ef08744a7c3",
+            "text": "Weekender duffel\n$\n84\nSand\nAdd to cart\nEveryday daypack\n$\n68\nSand\nAdd to cart\nEverywhere rain jacket\n$\n128\nForest\nAdd to cart\nPocket field notes\n$\n12\nTerracotta\nAdd to cart\nTrail mug\n$\n24\nSage\nAdd to cart\nEveryday steel bottle\n$\n36\nGraphite\nAdd to cart",
+            "firstLogIndex": 15,
+            "firstElapsedMs": 17061.27787499968,
+            "occurrences": 3
+          }
+        ],
+        "timeline": [
+          {
+            "logIndex": 0,
+            "elapsedMs": 1429.8620839999057,
+            "visibleTextSha256": "b61e859d159b5d8509af05477057c4f1448f0e8a8d1593465d3cefca83ff6165",
+            "viewport": {
+              "scrollY": 0,
+              "height": 960,
+              "documentHeight": 4489
+            },
+            "url": "http://127.0.0.1:4312/#collection",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 5,
+            "elapsedMs": 6530.856083999854,
+            "visibleTextSha256": "53e1100c2d96434bddd26f1a5fd15ea530832b93b0f28d3139eb04676e1f3897",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 10,
+            "elapsedMs": 11132.938000000082,
+            "visibleTextSha256": "c6592681b0d5180627280597d251979c64f7c4af592236b39afb4467d7150030",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 15,
+            "elapsedMs": 17061.27787499968,
+            "visibleTextSha256": "a266a73178e79d8751967a30a263d5a82c8ab20a16197d8992935ef08744a7c3",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 20,
+            "elapsedMs": 22615.305958999787,
+            "visibleTextSha256": "c6592681b0d5180627280597d251979c64f7c4af592236b39afb4467d7150030",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 25,
+            "elapsedMs": 28358.952792000026,
+            "visibleTextSha256": "a266a73178e79d8751967a30a263d5a82c8ab20a16197d8992935ef08744a7c3",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 30,
+            "elapsedMs": 34430.39941699989,
+            "visibleTextSha256": "c6592681b0d5180627280597d251979c64f7c4af592236b39afb4467d7150030",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 35,
+            "elapsedMs": 40494.1540000001,
+            "visibleTextSha256": "a266a73178e79d8751967a30a263d5a82c8ab20a16197d8992935ef08744a7c3",
+            "viewport": {
+              "scrollY": 767,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          }
+        ]
+      },
+      "privateNeeds": {
+        "goal": "Choose a travel duffel rather than a backpack or small organizer. Prefer Sand. Do not infer airline compliance, measured capacity or water resistance.",
+        "hardConstraints": [
+          {
+            "id": "function",
+            "label": "Choose the requested basic product type/function: carry-bag.",
+            "attribute": "functions",
+            "operator": "includes",
+            "value": "carry-bag"
+          },
+          {
+            "id": "item-price",
+            "label": "Displayed item price must be at most $88; delivery is outside the budget.",
+            "attribute": "itemPrice",
+            "operator": "at-most",
+            "value": 88
+          },
+          {
+            "id": "travel-form",
+            "label": "The product must visibly identify as a canvas travel bag.",
+            "attribute": "category",
+            "operator": "equals",
+            "value": "Canvas travel bag"
+          }
+        ],
+        "preferences": [
+          {
+            "id": "preferred-color",
+            "label": "Prefer the visible color named Sand; another color is acceptable if needed.",
+            "attribute": "selectedColor",
+            "operator": "equals",
+            "value": "Sand"
+          }
+        ]
+      },
+      "evaluatorFacts": {
+        "caseId": "holdout-v3-07",
+        "candidateFunctionProductIds": [
+          "duffel"
+        ],
+        "acceptableProductIds": [
+          "duffel"
+        ],
+        "acceptableVariantIds": [
+          "duffel-charcoal",
+          "duffel-sand",
+          "duffel-olive"
+        ],
+        "eligibilityStatus": "satisfiable",
+        "requiredOutcome": "choose-one-and-confirm-fake-order",
+        "noSubstitutionForExactName": false,
+        "unknownRequiredAttributes": [],
+        "support": [
+          {
+            "productId": "duffel",
+            "originalName": "Weekender duffel",
+            "itemPrice": 84,
+            "category": "Canvas travel bag",
+            "publicFunctionLabels": [
+              "carry-bag"
+            ],
+            "interpretation": "Evaluator-only ordinary semantic function annotation from public product identity; not a recommender alias."
+          }
+        ]
+      },
+      "publicQuery": "a duffel for an overnight train journey, at most $88",
+      "sourceModelStatus": "not-enabled",
+      "sourceFallback": {
+        "used": false,
+        "kind": "none",
+        "reason": null
+      },
+      "classification": {
+        "observedFailurePhase": "pre-cart-hard-constraint-verification-abstention",
+        "terminalCondition": "agent-abandoned-with-explicit-missing-material-category-reason",
+        "confidence": "high for stated reason and recorded textual visibility; no claim of exhaustive possible-store-state proof",
+        "observedFacts": [
+          "The shopper found the Weekender duffel, displayed $84, and explicitly selected Sand.",
+          "Private hard travel-form requires the product to visibly identify as a Canvas travel bag. Neither text nor control names in any saved observation state that category for this product.",
+          "The final abandon reason explicitly cites inability to verify the Canvas travel bag condition. There was no cart add or checkout attempt.",
+          "Frozen evaluator catalog/public catalog source identify the duffel category as Canvas travel bag and permit the Sand variant; those evaluator facts were not rendered in the saved shopper observations."
+        ],
+        "unknownRootCauses": [
+          "Internal reasoning beyond the emitted factual abandon reason is unavailable.",
+          "Saved viewport text is not a complete semantic interpretation of screenshots or proof about every unvisited store state. Material cannot be established here from picture texture or a product name."
+        ],
+        "notEstablished": [
+          "The duffel violates the evaluator catalog facts",
+          "A new successful outcome",
+          "An arm-specific copy defect: both arms show the same operational issue"
+        ]
+      },
+      "abandonReason": "The Weekender duffel is visibly $84 in Sand, but the visible product information does not verify that it is a canvas travel bag. I cannot confirm all hard constraints.",
+      "taskVisibilityFindingId": "canvas-travel-bag-hard-constraint-not-observed",
+      "keyEvidence": [
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/browser-observations.json",
+          "jsonPointer": "/logs/10",
+          "visibleExcerpt": "Weekender duffel\n$\n84\nSand\nAdd to cart"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/session.json",
+          "jsonPointer": "/steps/8/action/target",
+          "description": "Explicit missing Canvas travel bag justification"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/shopper-instructions.json",
+          "jsonSelector": "caseId=holdout-v3-07; privateShopperNeeds.hardConstraints[id=travel-form]",
+          "description": "Visible identification requirement"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/catalog-binding.json",
+          "jsonSelector": "catalogSnapshot.products[productId=duffel]",
+          "description": "Evaluator-only binding includes category Canvas travel bag"
+        }
+      ],
+      "evaluatorCatalogProduct": {
+        "productId": "duffel",
+        "originalName": "Weekender duffel",
+        "itemPrice": 84,
+        "facts": {
+          "category": "Canvas travel bag",
+          "searchTerms": [
+            "duffel",
+            "weekender",
+            "travel",
+            "luggage",
+            "weekend"
+          ],
+          "functions": [
+            "carry-bag"
+          ],
+          "isBackpack": false,
+          "waterproofDeclared": false,
+          "originalName": "Weekender duffel"
+        },
+        "variants": [
+          {
+            "variantId": "duffel-charcoal",
+            "selectedColor": "Charcoal"
+          },
+          {
+            "variantId": "duffel-sand",
+            "selectedColor": "Sand"
+          },
+          {
+            "variantId": "duffel-olive",
+            "selectedColor": "Olive"
+          }
+        ]
+      }
+    },
+    {
+      "packetKey": "packet-2",
+      "caseId": "holdout-v3-07",
+      "arm": "local-model",
+      "runId": "holdout-v3-07-local-model",
+      "rawReport": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/final-1792312952539-6376.json",
+      "rawReportSha256": "dd284a6d896be29bbce85ffa3a770fbac3c3df74cef83f160712375af8bb78bf",
+      "sourceExpectedOutcomeMet": false,
+      "sourceOutcome": "abandoned",
+      "sourceFormalStatus": "recorded",
+      "sourceEvaluator": {
+        "acceptableSelection": false,
+        "expectedOutcomeMet": false,
+        "allHardConstraintsMet": false,
+        "evidenceVerified": true,
+        "missingEvidenceKinds": [],
+        "budgetRespected": true
+      },
+      "scoreChanges": [],
+      "evidence": {
+        "sidecar": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/session.json",
+          "sha256": "03a3e2a41de9b8527c3e65b95e964931eeb90a27ed4dcad0b80fc1325ea2a9e0",
+          "bytes": 11326,
+          "hashMatchesRawReport": true,
+          "embeddedSessionMatches": true
+        },
+        "artifacts": [
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/screenshot.png",
+            "sha256": "2dbe2ee6df0cb28f429263ae6f2a9d9ca68e8ade5507466d48ac34dc5533cf2f",
+            "bytes": 760455,
+            "artifactId": "holdout-v3-07-local-model-screenshot-png",
+            "kind": "screenshot",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/trace.zip",
+            "sha256": "f44d6faef3f27099352bbfbee8c7060331f8ed14673e8da2ed92ed2aad8830d0",
+            "bytes": 11793958,
+            "artifactId": "holdout-v3-07-local-model-trace-zip",
+            "kind": "trace",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/browser-observations.json",
+            "sha256": "36c353ef7c5dc5f47c5d1d78b988c82b24034b690aa763e0ebf08b485612c9cc",
+            "bytes": 117507,
+            "artifactId": "holdout-v3-07-local-model-browser-observations-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          },
+          {
+            "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/checkout-receipt.json",
+            "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+            "bytes": 213,
+            "artifactId": "holdout-v3-07-local-model-checkout-receipt-json",
+            "kind": "result",
+            "declaredStatus": "captured",
+            "hashAndByteCountVerified": true
+          }
+        ],
+        "traceZip": {
+          "crcIntegrity": "passed",
+          "members": 185,
+          "traceEventFiles": 1,
+          "networkEventFiles": 1
+        },
+        "browserRecords": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/browser-observations.json",
+          "sha256": "36c353ef7c5dc5f47c5d1d78b988c82b24034b690aa763e0ebf08b485612c9cc",
+          "consistency": {
+            "status": "passed",
+            "errors": [],
+            "notes": [],
+            "normalizedSteps": 9,
+            "unknownStepTimes": 0,
+            "agentActions": 8,
+            "completedBrowserResults": 7,
+            "abandonments": 1,
+            "pendingAction": null,
+            "savedObservations": 8,
+            "finalState": {
+              "lastObservation": {
+                "elapsedMs": 39088.87754100002,
+                "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488&c=bags",
+                "cartItemCount": 0,
+                "cartEmpty": true
+              },
+              "lastBrowserResult": {
+                "kind": "inspect",
+                "confirmationVisible": false
+              },
+              "observedChoicePresent": false,
+              "visibleConfirmations": 0,
+              "note": "Last observation may precede the final action. Confirmation is a saved browser-result claim; pixels and server orders are independently unverified here."
+            }
+          }
+        },
+        "checkout": {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/checkout-receipt.json",
+          "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+          "postRecorded": false,
+          "getRecorded": false,
+          "visibleConfirmationRecorded": false,
+          "recordedErrors": []
+        },
+        "privateInstructions": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/shopper-instructions.json",
+          "sha256": "035f15079f9241148aea61de5a566f35e872827eb064819ff455509e1778fd0a",
+          "jsonSelector": "caseId=holdout-v3-07"
+        },
+        "evaluatorGold": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/evaluator-gold.json",
+          "sha256": "237c482cc0f31ab5fbd15b311d180582293b748b37de746e547d50e3ac027809",
+          "jsonSelector": "caseId=holdout-v3-07"
+        },
+        "catalogBinding": {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/catalog-binding.json",
+          "sha256": "5f0a9f3c317f826216e9fdde9ec0ad9e7ebb3ce605da15bda305e12bea03dfca",
+          "catalogSnapshotSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c"
+        }
+      },
+      "timing": {
+        "elapsedMs": 46720.54808300035,
+        "precision": {
+          "sessionElapsed": "measured-monotonic",
+          "stepElapsed": "measured-monotonic",
+          "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+        },
+        "error": null,
+        "normalizedSteps": 9,
+        "lastNormalizedStep": {
+          "event": {
+            "id": "holdout-v3-07-local-model-step-8",
+            "runId": "holdout-v3-07-local-model",
+            "sequence": 8,
+            "at": "2026-10-18T09:46:16.429Z",
+            "kind": "action",
+            "message": "The Weekender duffel is $84 in Sand, but the visible details do not verify that it is a Canvas travel bag."
+          },
+          "elapsedMs": 46720.544166000094,
+          "action": {
+            "type": "abandon",
+            "target": "The Weekender duffel is $84 in Sand, but the visible details do not verify that it is a Canvas travel bag."
+          }
+        },
+        "pendingDecision": []
+      },
+      "observedActions": {
+        "completed": [
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-0",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 0,
+              "at": "2026-10-18T09:45:30.665Z",
+              "kind": "navigation",
+              "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+            },
+            "elapsedMs": 956.6728330003098,
+            "action": {
+              "type": "navigate",
+              "url": "http://127.0.0.1:4312/?model=local"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-1",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 1,
+              "at": "2026-10-18T09:45:35.540Z",
+              "kind": "action",
+              "message": "a duffel for an overnight train journey, at most $88"
+            },
+            "elapsedMs": 5831.722041000146,
+            "action": {
+              "type": "search",
+              "query": "a duffel for an overnight train journey, at most $88"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-2",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 2,
+              "at": "2026-10-18T09:45:40.243Z",
+              "kind": "action",
+              "message": "Bags & travel"
+            },
+            "elapsedMs": 10534.786083000246,
+            "action": {
+              "type": "inspect",
+              "target": "Bags & travel"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-3",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 3,
+              "at": "2026-10-18T09:45:45.071Z",
+              "kind": "action",
+              "message": "Weekender duffel color: Sand"
+            },
+            "elapsedMs": 15363.105166000314,
+            "action": {
+              "type": "inspect",
+              "target": "Weekender duffel color: Sand"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-4",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 4,
+              "at": "2026-10-18T09:45:51.202Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 21493.796083000023,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-5",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 5,
+              "at": "2026-10-18T09:45:56.632Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 26923.143041000236,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-6",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 6,
+              "at": "2026-10-18T09:46:03.631Z",
+              "kind": "action",
+              "message": "up"
+            },
+            "elapsedMs": 33922.750416000374,
+            "action": {
+              "type": "inspect",
+              "target": "up"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-7",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 7,
+              "at": "2026-10-18T09:46:08.630Z",
+              "kind": "action",
+              "message": "down"
+            },
+            "elapsedMs": 38921.69650000008,
+            "action": {
+              "type": "inspect",
+              "target": "down"
+            }
+          },
+          {
+            "event": {
+              "id": "holdout-v3-07-local-model-step-8",
+              "runId": "holdout-v3-07-local-model",
+              "sequence": 8,
+              "at": "2026-10-18T09:46:16.429Z",
+              "kind": "action",
+              "message": "The Weekender duffel is $84 in Sand, but the visible details do not verify that it is a Canvas travel bag."
+            },
+            "elapsedMs": 46720.544166000094,
+            "action": {
+              "type": "abandon",
+              "target": "The Weekender duffel is $84 in Sand, but the visible details do not verify that it is a Canvas travel bag."
+            }
+          }
+        ],
+        "raw": [
+          {
+            "type": "agent-action",
+            "elapsedMs": 5714.403541000094,
+            "action": {
+              "type": "search",
+              "query": "a duffel for an overnight train journey, at most $88"
+            },
+            "logIndex": 3
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 5831.7230830001645,
+            "stepSequence": 1,
+            "result": {
+              "kind": "search",
+              "target": "a duffel for an overnight train journey, at most $88",
+              "confirmationVisible": false
+            },
+            "logIndex": 4
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 10466.06650000019,
+            "action": {
+              "type": "click",
+              "ref": "control-32"
+            },
+            "logIndex": 8
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 10534.78770800028,
+            "stepSequence": 2,
+            "result": {
+              "kind": "inspect",
+              "target": "Bags & travel",
+              "confirmationVisible": false
+            },
+            "logIndex": 9
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 15297.943416000344,
+            "action": {
+              "type": "click",
+              "ref": "control-61"
+            },
+            "logIndex": 13
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 15363.106875000056,
+            "stepSequence": 3,
+            "result": {
+              "kind": "choose-variant",
+              "target": "Weekender duffel color: Sand",
+              "confirmationVisible": false
+            },
+            "logIndex": 14
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 21444.39591600001,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 18
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 21493.797541000415,
+            "stepSequence": 4,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 19
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 26871.015083000064,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 23
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 26923.144500000402,
+            "stepSequence": 5,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 24
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 33881.24262500042,
+            "action": {
+              "type": "scroll",
+              "direction": "up"
+            },
+            "logIndex": 28
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 33922.75158300018,
+            "stepSequence": 6,
+            "result": {
+              "kind": "inspect",
+              "target": "up",
+              "confirmationVisible": false
+            },
+            "logIndex": 29
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 38871.5927500003,
+            "action": {
+              "type": "scroll",
+              "direction": "down"
+            },
+            "logIndex": 33
+          },
+          {
+            "type": "browser-result",
+            "elapsedMs": 38921.69766600011,
+            "stepSequence": 7,
+            "result": {
+              "kind": "inspect",
+              "target": "down",
+              "confirmationVisible": false
+            },
+            "logIndex": 34
+          },
+          {
+            "type": "agent-action",
+            "elapsedMs": 46720.514708000235,
+            "action": {
+              "type": "abandon",
+              "reason": "The Weekender duffel is $84 in Sand, but the visible details do not verify that it is a Canvas travel bag."
+            },
+            "logIndex": 38
+          }
+        ],
+        "addToCartCount": 0,
+        "openCartCount": 0,
+        "confirmCount": 0
+      },
+      "observations": {
+        "count": 8,
+        "allRecordedCartsEmpty": true,
+        "uniqueVisibleTextRecords": [
+          {
+            "visibleTextSha256": "1fe8b48d36208cf0733dcba39817bac78908b54b38154d926b8e6e4f83b6755c",
+            "text": "Demo store · No real orders or payments\nfieldwork\n®\nDemo\nView cart\nGood things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nCollection\nLocal model is ordering products…",
+            "firstLogIndex": 0,
+            "firstElapsedMs": 1282.9686250002123,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "e53aafe13b554abab4c01eea21674623a4a4260a796c5b8a882bbef0cfd0383a",
+            "text": "Good things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nYour selected collection\nLocal model is ordering products; last available result shown…\nClear search\nPocket field notes in Terracotta\n$\n12\nPocket field notes\nTerracotta selected\nShown in Terracotta at $12.00.\nSteel lunch box in Olive band\n$\n32\nSteel lunch box\nOlive band selected\nShown in Olive band at $32.00.\nPortable table light in Ivory\n$\n64\nPortable table light\nIvory selected\nShown in Ivory at $64.00.",
+            "firstLogIndex": 5,
+            "firstElapsedMs": 6174.456916000228,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "c4c3579db084e38651c4a71588cd5efa34a5355d09a7d873cc41645bbd1fb8a2",
+            "text": "Good things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nBags & travel\nLocal model · Learned product order · Existing storefront gallery · Order 0.35 s · First cards 0.35 s · Complete copy 0.36 s · 20/20 fresh learned fields · Catalog-trained text\nClear search\nWeekender duffel in Charcoal\n$\n84\nWeekender duffel\nCharcoal selected\nShown in Charcoal at $84.00.\nCharcoal\nEveryday daypack in Sand\n$\n68\nEveryday daypack\nSand selected\nShown in Sand at $68.00.\nSand\nMarket canvas tote in Olive\n$\n42\nMarket canvas tote\nOlive selected\nShown in Olive at $42.00.\nOlive",
+            "firstLogIndex": 10,
+            "firstElapsedMs": 10720.321083000395,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "1784a7077557a3f5183558413ae7fdf3321a44237604a87a95411c32fc0dd27e",
+            "text": "Bags & travel\nLocal model · Learned product order · Existing storefront gallery · Order 0.35 s · First cards 0.35 s · Complete copy 0.36 s · 20/20 fresh learned fields · Catalog-trained text\nClear search\nWeekender duffel\n$\n84\nSand\nAdd to cart\nEveryday daypack in Sand\n$\n68\nEveryday daypack\nSand selected\nShown in Sand at $68.00.\nSand\nAdd to cart\nMarket canvas tote in Olive\n$\n42\nMarket canvas tote\nOlive selected\nShown in Olive at $42.00.\nOlive\nAdd to cart",
+            "firstLogIndex": 15,
+            "firstElapsedMs": 15543.269290999975,
+            "occurrences": 1
+          },
+          {
+            "visibleTextSha256": "fd1dc66644ac9b6176d90030711ef508b7c6e61c7fb9cce4a89c661242ec2d77",
+            "text": "Demo store · No real orders or payments\nfieldwork\n®\nDemo\nView cart\nGood things. Wherever life takes you.\nWhat are you looking for?\nSearch\nAll products\nBags & travel\nClothing\nHome & desk\nFood & drink\nAccessories\nBags & travel\nLocal model · Learned product order · Existing storefront gallery · Order 0.35 s · First cards 0.35 s · Complete copy 0.36 s · 20/20 fresh learned fields · Catalog-trained text\nClear search",
+            "firstLogIndex": 20,
+            "firstElapsedMs": 21709.872958000284,
+            "occurrences": 2
+          },
+          {
+            "visibleTextSha256": "d8a7e7024dc1574fc3b3613f5477e4a843d50ae294945e20f425992a8c024ee4",
+            "text": "Weekender duffel\n$\n84\nSand\nAdd to cart\nEveryday daypack in Sand\n$\n68\nEveryday daypack\nSand selected\nShown in Sand at $68.00.\nSand\nAdd to cart\nMarket canvas tote in Olive\n$\n42\nMarket canvas tote\nOlive selected\nShown in Olive at $42.00.\nOlive\nAdd to cart",
+            "firstLogIndex": 25,
+            "firstElapsedMs": 27088.793500000145,
+            "occurrences": 2
+          }
+        ],
+        "timeline": [
+          {
+            "logIndex": 0,
+            "elapsedMs": 1282.9686250002123,
+            "visibleTextSha256": "1fe8b48d36208cf0733dcba39817bac78908b54b38154d926b8e6e4f83b6755c",
+            "viewport": {
+              "scrollY": 0,
+              "height": 960,
+              "documentHeight": 4511
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 5,
+            "elapsedMs": 6174.456916000228,
+            "visibleTextSha256": "e53aafe13b554abab4c01eea21674623a4a4260a796c5b8a882bbef0cfd0383a",
+            "viewport": {
+              "scrollY": 127,
+              "height": 960,
+              "documentHeight": 4643
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 10,
+            "elapsedMs": 10720.321083000395,
+            "visibleTextSha256": "c4c3579db084e38651c4a71588cd5efa34a5355d09a7d873cc41645bbd1fb8a2",
+            "viewport": {
+              "scrollY": 158.5,
+              "height": 960,
+              "documentHeight": 2020
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488&c=bags",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 15,
+            "elapsedMs": 15543.269290999975,
+            "visibleTextSha256": "1784a7077557a3f5183558413ae7fdf3321a44237604a87a95411c32fc0dd27e",
+            "viewport": {
+              "scrollY": 452,
+              "height": 960,
+              "documentHeight": 2020
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488&c=bags",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 20,
+            "elapsedMs": 21709.872958000284,
+            "visibleTextSha256": "fd1dc66644ac9b6176d90030711ef508b7c6e61c7fb9cce4a89c661242ec2d77",
+            "viewport": {
+              "scrollY": 0,
+              "height": 960,
+              "documentHeight": 2020
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488&c=bags",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 25,
+            "elapsedMs": 27088.793500000145,
+            "visibleTextSha256": "d8a7e7024dc1574fc3b3613f5477e4a843d50ae294945e20f425992a8c024ee4",
+            "viewport": {
+              "scrollY": 640,
+              "height": 960,
+              "documentHeight": 2020
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488&c=bags",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 30,
+            "elapsedMs": 34102.08920800034,
+            "visibleTextSha256": "fd1dc66644ac9b6176d90030711ef508b7c6e61c7fb9cce4a89c661242ec2d77",
+            "viewport": {
+              "scrollY": 0,
+              "height": 960,
+              "documentHeight": 2020
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488&c=bags",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          },
+          {
+            "logIndex": 35,
+            "elapsedMs": 39088.87754100002,
+            "visibleTextSha256": "d8a7e7024dc1574fc3b3613f5477e4a843d50ae294945e20f425992a8c024ee4",
+            "viewport": {
+              "scrollY": 640,
+              "height": 960,
+              "documentHeight": 2020
+            },
+            "url": "http://127.0.0.1:4312/?model=local#collection?q=a+duffel+for+an+overnight+train+journey%2C+at+most+%2488&c=bags",
+            "cartEmpty": true,
+            "cartItemCount": 0
+          }
+        ]
+      },
+      "privateNeeds": {
+        "goal": "Choose a travel duffel rather than a backpack or small organizer. Prefer Sand. Do not infer airline compliance, measured capacity or water resistance.",
+        "hardConstraints": [
+          {
+            "id": "function",
+            "label": "Choose the requested basic product type/function: carry-bag.",
+            "attribute": "functions",
+            "operator": "includes",
+            "value": "carry-bag"
+          },
+          {
+            "id": "item-price",
+            "label": "Displayed item price must be at most $88; delivery is outside the budget.",
+            "attribute": "itemPrice",
+            "operator": "at-most",
+            "value": 88
+          },
+          {
+            "id": "travel-form",
+            "label": "The product must visibly identify as a canvas travel bag.",
+            "attribute": "category",
+            "operator": "equals",
+            "value": "Canvas travel bag"
+          }
+        ],
+        "preferences": [
+          {
+            "id": "preferred-color",
+            "label": "Prefer the visible color named Sand; another color is acceptable if needed.",
+            "attribute": "selectedColor",
+            "operator": "equals",
+            "value": "Sand"
+          }
+        ]
+      },
+      "evaluatorFacts": {
+        "caseId": "holdout-v3-07",
+        "candidateFunctionProductIds": [
+          "duffel"
+        ],
+        "acceptableProductIds": [
+          "duffel"
+        ],
+        "acceptableVariantIds": [
+          "duffel-charcoal",
+          "duffel-sand",
+          "duffel-olive"
+        ],
+        "eligibilityStatus": "satisfiable",
+        "requiredOutcome": "choose-one-and-confirm-fake-order",
+        "noSubstitutionForExactName": false,
+        "unknownRequiredAttributes": [],
+        "support": [
+          {
+            "productId": "duffel",
+            "originalName": "Weekender duffel",
+            "itemPrice": 84,
+            "category": "Canvas travel bag",
+            "publicFunctionLabels": [
+              "carry-bag"
+            ],
+            "interpretation": "Evaluator-only ordinary semantic function annotation from public product identity; not a recommender alias."
+          }
+        ]
+      },
+      "publicQuery": "a duffel for an overnight train journey, at most $88",
+      "sourceModelStatus": "complete",
+      "sourceFallback": {
+        "used": true,
+        "kind": "last-safe-model",
+        "reason": "Local model is ordering products; last available result shown…"
+      },
+      "classification": {
+        "observedFailurePhase": "pre-cart-hard-constraint-verification-abstention",
+        "terminalCondition": "agent-abandoned-with-explicit-missing-material-category-reason",
+        "confidence": "high for stated reason and recorded textual visibility; no claim of exhaustive possible-store-state proof",
+        "observedFacts": [
+          "The shopper found the Weekender duffel, displayed $84, and explicitly selected Sand.",
+          "Private hard travel-form requires the product to visibly identify as a Canvas travel bag. Neither text nor control names in any saved observation state that category for this product.",
+          "The final abandon reason explicitly cites inability to verify the Canvas travel bag condition. There was no cart add or checkout attempt.",
+          "Frozen evaluator catalog/public catalog source identify the duffel category as Canvas travel bag and permit the Sand variant; those evaluator facts were not rendered in the saved shopper observations."
+        ],
+        "unknownRootCauses": [
+          "Internal reasoning beyond the emitted factual abandon reason is unavailable.",
+          "Saved viewport text is not a complete semantic interpretation of screenshots or proof about every unvisited store state. Material cannot be established here from picture texture or a product name."
+        ],
+        "notEstablished": [
+          "The duffel violates the evaluator catalog facts",
+          "A new successful outcome",
+          "An arm-specific copy defect: both arms show the same operational issue"
+        ]
+      },
+      "abandonReason": "The Weekender duffel is $84 in Sand, but the visible details do not verify that it is a Canvas travel bag.",
+      "taskVisibilityFindingId": "canvas-travel-bag-hard-constraint-not-observed",
+      "keyEvidence": [
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/browser-observations.json",
+          "jsonPointer": "/logs/15",
+          "visibleExcerpt": "Weekender duffel\n$\n84\nSand\nAdd to cart"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/session.json",
+          "jsonPointer": "/steps/8/action/target",
+          "description": "Explicit missing Canvas travel bag justification"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/shopper-instructions.json",
+          "jsonSelector": "caseId=holdout-v3-07; privateShopperNeeds.hardConstraints[id=travel-form]",
+          "description": "Visible identification requirement"
+        },
+        {
+          "path": "experiments/ranker/pretrained/store_shopper_eval_v3/catalog-binding.json",
+          "jsonSelector": "catalogSnapshot.products[productId=duffel]",
+          "description": "Evaluator-only binding includes category Canvas travel bag"
+        }
+      ],
+      "evaluatorCatalogProduct": {
+        "productId": "duffel",
+        "originalName": "Weekender duffel",
+        "itemPrice": 84,
+        "facts": {
+          "category": "Canvas travel bag",
+          "searchTerms": [
+            "duffel",
+            "weekender",
+            "travel",
+            "luggage",
+            "weekend"
+          ],
+          "functions": [
+            "carry-bag"
+          ],
+          "isBackpack": false,
+          "waterproofDeclared": false,
+          "originalName": "Weekender duffel"
+        },
+        "variants": [
+          {
+            "variantId": "duffel-charcoal",
+            "selectedColor": "Charcoal"
+          },
+          {
+            "variantId": "duffel-sand",
+            "selectedColor": "Sand"
+          },
+          {
+            "variantId": "duffel-olive",
+            "selectedColor": "Olive"
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic shopper outcomes; no human conversion-lift interpretation.",
+    "Observed phases are classified from hashed recorder logs and normalized steps. Internal model/service root causes remain unknown unless recorded.",
+    "ZIP CRC and file hashes establish saved-byte integrity, not that logs are complete or truthful; no trace replay or pixel semantic assessment was performed.",
+    "Captured checkout evidence has null POST/GET and false visible confirmation for these four rows. This is not a query of the live order service.",
+    "This raw-failure review is independent of the separately blinded24-negative audit and does not include or inspect its map, payload, or verdicts."
+  ],
+  "sourceFiles": [
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/cohort-plan.json",
+      "sha256": "4c1deff586b1a9a23b5b757b1bbec6d56dc514f50adbb30e29ec5c620c29580d",
+      "bytes": 142570
+    },
+    {
+      "path": "apps/storefront/src/catalog-expansion.ts",
+      "sha256": "694f22afb2b5dace9a35d742d91d0fab381edab94c5b6b5a5d6c6d962a4d7735",
+      "bytes": 5647
+    },
+    {
+      "path": "apps/storefront/src/ProductCard.tsx",
+      "sha256": "0ab0de77256aecc58d9258525bdeb40539efce1ff7c9620bc4fc39b697f9a527",
+      "bytes": 2436
+    },
+    {
+      "path": "apps/storefront/src/ShopView.tsx",
+      "sha256": "b30f066c6658c703868d3a358e7d452bd7ca7b88dcc716208e52b8874a303c75",
+      "bytes": 5026
+    },
+    {
+      "path": "apps/storefront/src/ProductGallery.tsx",
+      "sha256": "f5976a52ddb7fc9bc611b15e1833812fbcf345c6be548cb07a2020ac3683a9bc",
+      "bytes": 1974
+    },
+    {
+      "path": "apps/storefront/src/ProductPhoto.tsx",
+      "sha256": "82e67036f498801a28f0676245edf52091e45d86915bb277d701be21e17a2c00",
+      "bytes": 1549
+    },
+    {
+      "path": "apps/storefront/src/CartView.tsx",
+      "sha256": "b03e672835650e62b20f3909a0b3533262ff34feb8f7f2302979502dd1658417",
+      "bytes": 2113
+    },
+    {
+      "path": "apps/runner/src/shopper-chrome.ts",
+      "sha256": "ff049d2c94fc7451025ec98e20f89f5cfe126481b932fa776a72cdc1d50f6b2b",
+      "bytes": 17369
+    },
+    {
+      "path": "apps/runner/src/shopper-codex-agent.ts",
+      "sha256": "c65f484027258e3f8f888cfe222348c02ac415a66ccd298f7fd1be147b724e92",
+      "bytes": 10156
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/final-1792312952539-6376.json",
+      "sha256": "9252fd088e29acf360c1180fee0888155d56018ab1aec9efc389e6ac53e2d795",
+      "bytes": 274784
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v2/manifest.json",
+      "sha256": "6c44c00b1e709b92f5767b48fa8ca7558259393a42a32dc37b6352e555f2f3d7",
+      "bytes": 2163
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v2/shopper-instructions.json",
+      "sha256": "075360c05577bd942c50d0cf3eddfa74bcdf7e00a227f71026201d288960dbf0",
+      "bytes": 10396
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v2/evaluator-gold.json",
+      "sha256": "ec20141d1d021ecad02ec7f17be9990848c2255d3c162c3f1f823b2349567c4b",
+      "bytes": 8327
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v2/catalog-binding.json",
+      "sha256": "5f0a9f3c317f826216e9fdde9ec0ad9e7ebb3ce605da15bda305e12bea03dfca",
+      "bytes": 17214
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v2/public-observations.json",
+      "sha256": "6fadbed8c167f33f9da8396af5e4e4fae622c60cbe0071d49153fd94a5fb87b4",
+      "bytes": 2033
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/session.json",
+      "sha256": "fbb32d4085d69ed058759a4d1ce44f57e82d5ab6266459c2d3dd3715398eb238",
+      "bytes": 5965
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/screenshot.png",
+      "sha256": "a4a015fb378ad68a624a947837afab5e51cc12b25ec0c7222080d95429081b69",
+      "bytes": 682215
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/trace.zip",
+      "sha256": "b13bbfc497b7da409e4d7e7eeb3f18d43f62a153b6526e064b89b5e2ca8cd7af",
+      "bytes": 3065536
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/browser-observations.json",
+      "sha256": "f556128f1ffeba782a3472887cad2fbc9826f91adc232a8cbae16c6f3309c5a7",
+      "bytes": 10854
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-05/generic/checkout-receipt.json",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/session.json",
+      "sha256": "7e7e3424df00c1696930f38761ea369698c0ff1defbfb392edaeaa538bb397f2",
+      "bytes": 15088
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/screenshot.png",
+      "sha256": "723db94e5be5b528b58efc37e3a1840968543d77384e1e12d980afefb86f6fc7",
+      "bytes": 692777
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/trace.zip",
+      "sha256": "4f6367078204e011cbd9f0b42ecd07d0acbb8ce906be31b707986cd47de76b11",
+      "bytes": 25492858
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/browser-observations.json",
+      "sha256": "78000fcb4db48cc3080e4ba9185c969497f1dd41acf23f64f42c5f90765450b6",
+      "bytes": 361649
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-1/holdout-v2-09/local-model/checkout-receipt.json",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/final-1792312952539-6376.json",
+      "sha256": "dd284a6d896be29bbce85ffa3a770fbac3c3df74cef83f160712375af8bb78bf",
+      "bytes": 273249
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v3/manifest.json",
+      "sha256": "4ef372641a8d77ef1d37326656e09e41e57f980a93852d13c4b9bb6f8665ec30",
+      "bytes": 1967
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v3/shopper-instructions.json",
+      "sha256": "035f15079f9241148aea61de5a566f35e872827eb064819ff455509e1778fd0a",
+      "bytes": 10375
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v3/evaluator-gold.json",
+      "sha256": "237c482cc0f31ab5fbd15b311d180582293b748b37de746e547d50e3ac027809",
+      "bytes": 8137
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v3/catalog-binding.json",
+      "sha256": "5f0a9f3c317f826216e9fdde9ec0ad9e7ebb3ce605da15bda305e12bea03dfca",
+      "bytes": 17214
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v3/public-observations.json",
+      "sha256": "f0d7e82643e7b61dc89bfcc656d871e9213e990b9e08b06a31c6924ee1f6feb5",
+      "bytes": 2016
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/session.json",
+      "sha256": "cc3f146678237eeba5df9b009acb42728e31f885cbd2ad3afddef0b321249eec",
+      "bytes": 9180
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/screenshot.png",
+      "sha256": "6934de47b7044eaa4ca89dae2291d53b948fae815d83b27fa004d3f2fb29c236",
+      "bytes": 893518
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/trace.zip",
+      "sha256": "6a4a7843d290dffe8d6a67dff82b5dbf5d5b849116d6cf38b2f664dad885bdd1",
+      "bytes": 13369244
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/browser-observations.json",
+      "sha256": "d484e77f0e210c5d430623f9b172ce1bff9a5ccf9da5c0bf3785b44dd1db2f5c",
+      "bytes": 60208
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/generic/checkout-receipt.json",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/session.json",
+      "sha256": "03a3e2a41de9b8527c3e65b95e964931eeb90a27ed4dcad0b80fc1325ea2a9e0",
+      "bytes": 11326
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/screenshot.png",
+      "sha256": "2dbe2ee6df0cb28f429263ae6f2a9d9ca68e8ade5507466d48ac34dc5533cf2f",
+      "bytes": 760455
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/trace.zip",
+      "sha256": "f44d6faef3f27099352bbfbee8c7060331f8ed14673e8da2ed92ed2aad8830d0",
+      "bytes": 11793958
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/browser-observations.json",
+      "sha256": "36c353ef7c5dc5f47c5d1d78b988c82b24034b690aa763e0ebf08b485612c9cc",
+      "bytes": 117507
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-2/holdout-v3-07/local-model/checkout-receipt.json",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-3/final-1792312952539-6376.json",
+      "sha256": "042f48a53329e43722caa394dfbd5f5412507dd731f010b46923c876dde3c527",
+      "bytes": 280962
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v4/manifest.json",
+      "sha256": "ddfd54f570a56b112a340158d5222523b7d7832ba39cb537f876706e827036f2",
+      "bytes": 1967
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-4/final-1792312952539-6376.json",
+      "sha256": "e7334fa7d5289fb5b362706222175aa29d3c9f6cb357603e5a42034f3c0a8a02",
+      "bytes": 268749
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v5/manifest.json",
+      "sha256": "04534265bb79be20b39d0952c15cc24462ce3d93f80f59834200a658e6e89cab",
+      "bytes": 1967
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-5/final-1792312952539-6376.json",
+      "sha256": "a0afa2f066bb6dace9b5299ea23d7bfa4f25025b0b49dd6a02528ca9dc42430f",
+      "bytes": 285429
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v6/manifest.json",
+      "sha256": "2bf215ec4b1d9f37136b91ab01a91e23c8a3ba57d09bbdcbf2527719cbfa1ee9",
+      "bytes": 1967
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_cohort_v2/packet-6/final-1792312952539-6376.json",
+      "sha256": "ae384f61cca78dae47cedf3200f5cd5c26e09a183491089dcc597afbcd9cb27b",
+      "bytes": 278428
+    },
+    {
+      "path": "experiments/ranker/pretrained/store_shopper_eval_v7/manifest.json",
+      "sha256": "dce21d8d475780c20525bb768c94c65536cb3636bee8d79cea1d2f0b090c5460",
+      "bytes": 1967
+    }
+  ],
+  "sourceHashesReverifiedBeforeWrite": true
+}
