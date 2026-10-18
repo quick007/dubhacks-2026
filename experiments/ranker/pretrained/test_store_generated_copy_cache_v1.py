@@ -13,7 +13,7 @@ import unittest
 from .store_catalog_v1 import load_snapshot
 from .store_copy_data_v2 import target_values
 from .store_generated_copy_cache_v1 import (GeneratedCopyCache, NativeGenerationRequired,
-    catalog_card, personalize_with_cache, producer_spec, warm_plan)
+    catalog_card, hashed, personalize_with_cache, producer_spec, warm_plan)
 from .store_demo_engine import demo_layout
 
 
@@ -151,6 +151,33 @@ class GeneratedCopyCacheTests(unittest.TestCase):
         generated = self.generated(cards); generated['rows'][0]['messages'][0]['content'] += ' target leak'
         with self.assertRaisesRegex(ValueError, 'serving prompt'):
             self.cache.record_generation(cards, generated)
+
+    def test_rehashed_entry_must_match_original_raw_attempt_cost_and_identity(self):
+        cards = self.plan['groups'][0]['cards']
+        self.cache.record_generation(cards, self.generated(cards))
+        _, _, descriptors = self.cache.descriptors(cards)
+        descriptor = next(d for d in descriptors if d['kind'] == 'card')
+        path = self.cache.root / 'entries' / (descriptor['key'] + '.json')
+        original = json.loads(path.read_text())
+        mutations = {
+            'cost': lambda entry: entry.__setitem__('coldGenerationMs', 1),
+            'timestamp': lambda entry: entry.__setitem__('completedAt', self.now.isoformat()),
+            'producer': lambda entry: entry['provenance'].__setitem__('nativeWidth', 20),
+            'raw-text': lambda entry: entry['rawRows'][0].__setitem__('text', 'Forged text'),
+            'raw-token': lambda entry: entry['rawRows'][0]['tokenIds'].append(6),
+            'original-slot': lambda entry: entry['rawRows'][0].__setitem__('rowId', 'title-6'),
+            'validation': lambda entry: entry.__setitem__('validationAtGeneration', []),
+            'attempt-path': lambda entry: entry.__setitem__('attemptFile', '../manifest.json'),
+        }
+        for name, mutate in mutations.items():
+            with self.subTest(name=name):
+                envelope = deepcopy(original); mutate(envelope['entry'])
+                envelope['sha256'] = hashed(envelope['entry'])
+                path.write_text(json.dumps(envelope))
+                with self.assertRaises(ValueError):
+                    self.cache.resolve(cards)
+        path.write_text(json.dumps(original))
+        self.assertEqual(self.cache.resolve(cards)['cache']['initialHits'], 8)
 
     def test_learned_rank_composition_respects_public_guards_and_does_not_pad_shortfalls(self):
         cards = self.plan['groups'][0]['cards']; self.cache.record_generation(cards, self.generated(cards))

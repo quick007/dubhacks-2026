@@ -1,0 +1,401 @@
+{
+  "version": "parallel-text-cache-independent-cpu-audit.v1",
+  "nativeExecution": false,
+  "gpuActions": 0,
+  "status": "no-remaining-code-blocker-for-isolated-experiment; quality-not-promoted",
+  "sourceSha256": {
+    "store_parallel_text_data_v1.py": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+    "store_parallel_text_head_v1.py": "dd534fed7a956ac34c3533976f274ccf0aa1f564516ab9b86c36c2e87f8fa3d8",
+    "store_parallel_text_run_v1.py": "e56271c6cf6dbc48318be7139b8eec4458a26c09f794ba2055b8d9eac66606f7",
+    "test_store_parallel_text_data_v1.py": "05e1ca447b120ca7279a674a09c8a2b895b408dfb54976a0900477862e81e5b6",
+    "test_store_parallel_text_head_v1.py": "67cc3c3cf57acf0baa7382a2a019b6ea59eaff0379bdadf7db58b05a7b310fdb",
+    "test_store_parallel_text_run_v1.py": "d9af15ee1845a150355cd5e4126e7c4125ac65d6cc847cf7b601b8e7b02b2265",
+    "store_generated_copy_cache_v1.py": "a5c372b7b1a80a156bbb4e30e08e2d407d9a4a24b275eabcd03d52c7e1a65c62",
+    "store_generated_copy_cache_run_v1.py": "7a828bd37c4cf2124c1a021d90127e3782bb7947bf6db12ce68d0b06e26ae904",
+    "test_store_generated_copy_cache_v1.py": "817aad6341ad1d8e7e63f2da0c2a58dd47cdc93055a93c4a1cb9dd5417f4a4b7",
+    "test_store_generated_copy_cache_run_v1.py": "c8ed302917867aa9ed81b37c97c511ea6329552b7363ea010c4c2ab991b46653"
+  },
+  "tests": {
+    "helperDataHead": 27,
+    "drivers": 18,
+    "total": 45,
+    "result": "passed",
+    "interpreter": ".tools/pretrained-venv/bin/python -B"
+  },
+  "verifiedBoundaries": [
+    "TRAIN-only optimization; eval labels used only final reporting",
+    "runtime receives public facts/features/style, no teacher strings/case IDs/gold/private personas",
+    "native feature extraction requires48 complete B1 frozen-base4096 unit-L2 features, adapter disabled",
+    "learned EOS required; missing EOS/PAD/unknown feature rejects without repair",
+    "all six-card evaluation views retain20fields; full readiness includes fresh query encoding, validation and serialization",
+    "cache hits disclosed generated-earlier; cold generation charged separately and preserved; no hit fresh claim",
+    "cache producer/fact/action/prompt/checkpoint/tokenizer namespace invalidation; raw entries now tied to immutable native attempt"
+  ],
+  "fixedFindings": [
+    {
+      "finding": "cache envelope hash and raw archive hash did not bind entry rawRows/cost/time/provenance together",
+      "owner": "fit_review",
+      "fix": "reconstruct original archived descriptor; exact rawRows, cost, timestamps, provenance and validation comparison; content-addressed attempt filename required",
+      "regression": "8 rehashed-envelope alterations fail closed"
+    },
+    {
+      "finding": "prepared packet audit JSON int-key vs string-key comparison prevented load",
+      "owner": "parallel_text_head",
+      "fix": "normalize expected audit JSON key representation without replacing original packet"
+    },
+    {
+      "finding": "texthead failure receipts omitted case identity and shrank denominator; warmup unbounded",
+      "owner": "parallel_text_head",
+      "fix": "fixed32 roster, failed/unattempted accounting, archived failed requests and warmup deadline"
+    },
+    {
+      "finding": "cache driver outer request deadline, native text/token binding and posthoc label freshness incomplete",
+      "owner": "copy_fit_runner",
+      "fix": "whole-path deadline, actual tokenizer decode/EOS checks, rehash pinned sidecars before posthoc scoring, critical helper source pins"
+    }
+  ],
+  "dataCaveats": {
+    "publicFeatureBindings": 48,
+    "trainBindings": 34,
+    "heldoutColorBindings": 14,
+    "trainLabelRows": 402,
+    "evalLabelRows": 210,
+    "heldoutSixCardCases": 42,
+    "globalSlotWordMissingPositiveTrain": [
+      [
+        1,
+        "Steel"
+      ],
+      [
+        2,
+        "Everyday"
+      ],
+      [
+        2,
+        "Portable"
+      ],
+      [
+        3,
+        "Sage"
+      ],
+      [
+        3,
+        "Slate"
+      ],
+      [
+        3,
+        "daypack"
+      ],
+      [
+        3,
+        "steel"
+      ],
+      [
+        3,
+        "table"
+      ],
+      [
+        4,
+        "Charcoal"
+      ],
+      [
+        4,
+        "Forest"
+      ],
+      [
+        4,
+        "Steel"
+      ],
+      [
+        4,
+        "blue"
+      ],
+      [
+        4,
+        "bottle"
+      ],
+      [
+        4,
+        "light"
+      ],
+      [
+        5,
+        "$36.00"
+      ],
+      [
+        5,
+        "$64.00"
+      ],
+      [
+        5,
+        "$68.00"
+      ],
+      [
+        7,
+        "$36.00"
+      ],
+      [
+        7,
+        "$64.00"
+      ],
+      [
+        7,
+        "$68.00"
+      ]
+    ],
+    "conditionedSlotWordMissingPositiveTrain": [
+      [
+        "badge",
+        "browse",
+        1,
+        "Steel"
+      ],
+      [
+        "badge",
+        "compact",
+        0,
+        "Steel"
+      ],
+      [
+        "badge",
+        "plain",
+        0,
+        "Steel"
+      ],
+      [
+        "copy",
+        "browse",
+        2,
+        "Steel"
+      ],
+      [
+        "copy",
+        "browse",
+        7,
+        "$36.00"
+      ],
+      [
+        "copy",
+        "browse",
+        7,
+        "$64.00"
+      ],
+      [
+        "copy",
+        "browse",
+        7,
+        "$68.00"
+      ],
+      [
+        "copy",
+        "compact",
+        0,
+        "Steel"
+      ],
+      [
+        "copy",
+        "compact",
+        4,
+        "$36.00"
+      ],
+      [
+        "copy",
+        "compact",
+        4,
+        "$64.00"
+      ],
+      [
+        "copy",
+        "compact",
+        4,
+        "$68.00"
+      ],
+      [
+        "copy",
+        "plain",
+        2,
+        "Steel"
+      ],
+      [
+        "copy",
+        "plain",
+        5,
+        "$36.00"
+      ],
+      [
+        "copy",
+        "plain",
+        5,
+        "$64.00"
+      ],
+      [
+        "copy",
+        "plain",
+        5,
+        "$68.00"
+      ],
+      [
+        "title",
+        "browse",
+        0,
+        "Steel"
+      ],
+      [
+        "title",
+        "browse",
+        2,
+        "Everyday"
+      ],
+      [
+        "title",
+        "browse",
+        2,
+        "Portable"
+      ],
+      [
+        "title",
+        "browse",
+        3,
+        "daypack"
+      ],
+      [
+        "title",
+        "browse",
+        3,
+        "steel"
+      ],
+      [
+        "title",
+        "browse",
+        3,
+        "table"
+      ],
+      [
+        "title",
+        "browse",
+        4,
+        "bottle"
+      ],
+      [
+        "title",
+        "browse",
+        4,
+        "light"
+      ],
+      [
+        "title",
+        "compact",
+        3,
+        "Sage"
+      ],
+      [
+        "title",
+        "compact",
+        3,
+        "Slate"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "Charcoal"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "Forest"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "Steel"
+      ],
+      [
+        "title",
+        "compact",
+        4,
+        "blue"
+      ],
+      [
+        "title",
+        "plain",
+        3,
+        "Sage"
+      ],
+      [
+        "title",
+        "plain",
+        3,
+        "Slate"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "Charcoal"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "Forest"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "Steel"
+      ],
+      [
+        "title",
+        "plain",
+        4,
+        "blue"
+      ]
+    ],
+    "globalAffectedEvalFieldsByKind": {
+      "title": 15,
+      "copy": 6,
+      "badge": 1
+    },
+    "conditionedAffectedEvalFieldsByKind": {
+      "title": 15,
+      "copy": 9,
+      "badge": 3
+    },
+    "interpretation": "Global lexical coverage is not per-output-slot positive coverage. All product identities occur in TRAIN. Poor fit does not isolate backbone/head capacity."
+  },
+  "grammarCounterexamples": [
+    {
+      "text": "Shown in Graphite at $36.00. at at at.",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "rejections": []
+    },
+    {
+      "text": "Graphite at $36.00.",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "rejections": [
+        "missing-color-price-relation"
+      ]
+    }
+  ],
+  "remainingPromotionRequirements": [
+    "Inspect actual native source/token/forward/optimizer/checkpoint and shutdown receipts",
+    "Independently assess fluency and source factuality; lexical/fact gates and title/body proxies are not comprehensive quality proof",
+    "Report known-catalog heldout-color recombination separately from unseen generalization",
+    "Report cache hits as generated earlier and measure complete payload readiness; no browser paint/network/images claim",
+    "Cache driver tokenizer fault path is code-reviewed but its current injected-generate CPU suite does not execute the actual native_generate tokenizer checker"
+  ]
+}

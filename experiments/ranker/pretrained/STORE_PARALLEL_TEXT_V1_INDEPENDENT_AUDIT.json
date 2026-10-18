@@ -1,0 +1,1178 @@
+{
+  "version": "store-parallel-text-independent-data-audit.v1",
+  "scope": "CPU source/teacher/lexical-position audit only; no native fit, vectors, GPU or serving changes; v1 frozen packet unchanged",
+  "provenance": {
+    "packetManifestSha256": "6a4197799ff625bc500e3e7fc524e583c61b3ae561f65fd0eeca886a1e234235",
+    "packetFileHashes": {
+      "public-feature-contract.json": "7785ef37e0325622a994f4e2fd4ed9d9ab6b09c5b7349db4f0187b4d864b8561",
+      "vocabulary.json": "78adb936120687cd90ba1e93f7ff5c5f72985bdaa435d99255a154fdd6870514",
+      "audit.json": "44bf3d94f49ce0e7bf4902cc9b6f7b694d3f33af74c5e7ad4edda1f08acd2308",
+      "labels.train.json": "1c4cb6a6ffb9e1e8c1cd5dad48950f899ec35800ab7d3034e6ecd6126c76c5c8",
+      "cases.train.json": "b0203d7dcdfcc5071c832968b42afc5832fca4ea5fae833475a8925fb2fc0d48",
+      "labels.eval.json": "94eabc6d61c37de1b1298ea1e7757d2a560ed30fc1fd54c6cbdd5e393b5ce826",
+      "cases.eval.json": "aae6f7d7b4d8885589f4f6ba965b404a81649f95dcc8f1a422bf12c75124c3ac"
+    },
+    "dataSourceSha256": "275689a6a1015f02fb43113fcd242d64b71db39dee8eda406bdd8377f4f6c1be",
+    "headSourceSha256": "dd534fed7a956ac34c3533976f274ccf0aa1f564516ab9b86c36c2e87f8fa3d8",
+    "catalogBytesSha256": "dea9866bb96dc82cec729875c8e680197d223573cbd5d0a07aab583a39c74468"
+  },
+  "checks": {
+    "sourceBindingsCatalogExact": 48,
+    "teacherRowsChecked": 612,
+    "factualTeacherRejections": 0,
+    "sameInputConflictingTargets": 0,
+    "trainBindings": 34,
+    "evalBindings": 14,
+    "bindingOverlap": 0,
+    "allProductIdentitiesTrainSeen": true,
+    "heldoutProducts": 0,
+    "evalWordsWithoutAnyTrainPositive": 0,
+    "evalSlotWordPairsWithoutTrainPositive": 20,
+    "evalKindStyleSlotWordPairsWithoutTrainPositive": 35,
+    "affectedEvalRows": 22,
+    "affectedByKind": {
+      "title": 15,
+      "copy": 6,
+      "badge": 1
+    },
+    "maximumTeacherLexicalTokens": 9,
+    "slotsIncludingEOS": 14
+  },
+  "splitStatistics": {
+    "train": {
+      "rows": 402,
+      "kindCounts": {
+        "title": 102,
+        "badge": 102,
+        "copy": 102,
+        "section": 96
+      },
+      "styleCounts": {
+        "plain": 134,
+        "browse": 134,
+        "compact": 134
+      },
+      "lexicalTokens": 1659,
+      "eosTargets": 402,
+      "eosFractionOfSupervisedTokenLossTerms": 0.1950509461426492,
+      "eosSlotHistogramZeroBased": {
+        "2": 81,
+        "3": 123,
+        "4": 33,
+        "5": 76,
+        "6": 48,
+        "7": 7,
+        "8": 27,
+        "9": 7
+      },
+      "ignoredSlotsForEveryTarget": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "pricePositiveSupervisionCounts": {
+        "$24.00": 6,
+        "$68.00": 6,
+        "$12.00": 6,
+        "$128.00": 6,
+        "$36.00": 6,
+        "$42.00": 6,
+        "$58.00": 6,
+        "$64.00": 6,
+        "$32.00": 6,
+        "$89.00": 6,
+        "$96.00": 6,
+        "$72.00": 6,
+        "$84.00": 6,
+        "$48.00": 9,
+        "$26.00": 6,
+        "$28.00": 9
+      },
+      "genericSectionTargetCounts": {
+        "Your selected collection": 16,
+        "More selected choices": 16,
+        "Browse these choices": 16,
+        "Explore the collection": 16,
+        "Selected store choices": 16,
+        "Current store selection": 16
+      }
+    },
+    "eval": {
+      "rows": 210,
+      "kindCounts": {
+        "title": 42,
+        "badge": 42,
+        "copy": 42,
+        "section": 84
+      },
+      "styleCounts": {
+        "plain": 70,
+        "browse": 70,
+        "compact": 70
+      },
+      "lexicalTokens": 825,
+      "eosTargets": 210,
+      "eosFractionOfSupervisedTokenLossTerms": 0.2028985507246377,
+      "eosSlotHistogramZeroBased": {
+        "2": 30,
+        "3": 98,
+        "4": 13,
+        "5": 31,
+        "6": 20,
+        "7": 4,
+        "8": 10,
+        "9": 4
+      },
+      "ignoredSlotsForEveryTarget": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "pricePositiveSupervisionCounts": {
+        "$24.00": 3,
+        "$68.00": 3,
+        "$12.00": 3,
+        "$128.00": 3,
+        "$36.00": 3,
+        "$42.00": 3,
+        "$58.00": 3,
+        "$64.00": 3,
+        "$32.00": 3,
+        "$89.00": 3,
+        "$96.00": 3,
+        "$72.00": 3,
+        "$84.00": 3,
+        "$26.00": 3
+      },
+      "genericSectionTargetCounts": {
+        "Your selected collection": 14,
+        "More selected choices": 14,
+        "Browse these choices": 14,
+        "Explore the collection": 14,
+        "Selected store choices": 14,
+        "Current store selection": 14
+      }
+    }
+  },
+  "unseenEvalSlotWordPairs": [
+    {
+      "slot": 1,
+      "word": "Steel",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 2,
+      "word": "Everyday",
+      "evalOccurrences": 2
+    },
+    {
+      "slot": 2,
+      "word": "Portable",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 3,
+      "word": "Sage",
+      "evalOccurrences": 2
+    },
+    {
+      "slot": 3,
+      "word": "Slate",
+      "evalOccurrences": 2
+    },
+    {
+      "slot": 3,
+      "word": "daypack",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 3,
+      "word": "steel",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 3,
+      "word": "table",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 4,
+      "word": "Charcoal",
+      "evalOccurrences": 2
+    },
+    {
+      "slot": 4,
+      "word": "Forest",
+      "evalOccurrences": 4
+    },
+    {
+      "slot": 4,
+      "word": "Steel",
+      "evalOccurrences": 2
+    },
+    {
+      "slot": 4,
+      "word": "blue",
+      "evalOccurrences": 2
+    },
+    {
+      "slot": 4,
+      "word": "bottle",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 4,
+      "word": "light",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 5,
+      "word": "$36.00",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 5,
+      "word": "$64.00",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 5,
+      "word": "$68.00",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 7,
+      "word": "$36.00",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 7,
+      "word": "$64.00",
+      "evalOccurrences": 1
+    },
+    {
+      "slot": 7,
+      "word": "$68.00",
+      "evalOccurrences": 1
+    }
+  ],
+  "affectedEvalRows": [
+    {
+      "rowId": "p0-c0-plain-title",
+      "kind": "title",
+      "style": "plain",
+      "facts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "teacherText": "Trail mug in Sage",
+      "unseenSlotWords": [
+        {
+          "slot": 3,
+          "word": "Sage",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p0-c0-compact-title",
+      "kind": "title",
+      "style": "compact",
+      "facts": {
+        "name": "Trail mug",
+        "category": "For the slow mornings",
+        "itemPrice": 24,
+        "selectedColor": "Sage"
+      },
+      "teacherText": "Trail mug, Sage",
+      "unseenSlotWords": [
+        {
+          "slot": 3,
+          "word": "Sage",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p1-c1-plain-title",
+      "kind": "title",
+      "style": "plain",
+      "facts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Everyday daypack in Slate blue",
+      "unseenSlotWords": [
+        {
+          "slot": 3,
+          "word": "Slate",
+          "positiveTrainExamplesAtThisSlot": 0
+        },
+        {
+          "slot": 4,
+          "word": "blue",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p1-c1-plain-copy",
+      "kind": "copy",
+      "style": "plain",
+      "facts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Shown in Slate blue at $68.00.",
+      "unseenSlotWords": [
+        {
+          "slot": 5,
+          "word": "$68.00",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p1-c1-browse-title",
+      "kind": "title",
+      "style": "browse",
+      "facts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Slate blue Everyday daypack",
+      "unseenSlotWords": [
+        {
+          "slot": 2,
+          "word": "Everyday",
+          "positiveTrainExamplesAtThisSlot": 0
+        },
+        {
+          "slot": 3,
+          "word": "daypack",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p1-c1-browse-copy",
+      "kind": "copy",
+      "style": "browse",
+      "facts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Color: Slate blue. Item: $68.00.",
+      "unseenSlotWords": [
+        {
+          "slot": 7,
+          "word": "$68.00",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p1-c1-compact-title",
+      "kind": "title",
+      "style": "compact",
+      "facts": {
+        "name": "Everyday daypack",
+        "category": "Pack a smaller plan",
+        "itemPrice": 68,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Everyday daypack, Slate blue",
+      "unseenSlotWords": [
+        {
+          "slot": 3,
+          "word": "Slate",
+          "positiveTrainExamplesAtThisSlot": 0
+        },
+        {
+          "slot": 4,
+          "word": "blue",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p3-c0-plain-title",
+      "kind": "title",
+      "style": "plain",
+      "facts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "teacherText": "Everywhere rain jacket in Forest",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Forest",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p3-c0-compact-title",
+      "kind": "title",
+      "style": "compact",
+      "facts": {
+        "name": "Everywhere rain jacket",
+        "category": "Waterproof hooded shell",
+        "itemPrice": 128,
+        "selectedColor": "Forest"
+      },
+      "teacherText": "Everywhere rain jacket, Forest",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Forest",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p4-c2-plain-title",
+      "kind": "title",
+      "style": "plain",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Steel blue"
+      },
+      "teacherText": "Everyday steel bottle in Steel blue",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Steel",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p4-c2-plain-copy",
+      "kind": "copy",
+      "style": "plain",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Steel blue"
+      },
+      "teacherText": "Shown in Steel blue at $36.00.",
+      "unseenSlotWords": [
+        {
+          "slot": 5,
+          "word": "$36.00",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p4-c2-browse-title",
+      "kind": "title",
+      "style": "browse",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Steel blue"
+      },
+      "teacherText": "Steel blue Everyday steel bottle",
+      "unseenSlotWords": [
+        {
+          "slot": 2,
+          "word": "Everyday",
+          "positiveTrainExamplesAtThisSlot": 0
+        },
+        {
+          "slot": 3,
+          "word": "steel",
+          "positiveTrainExamplesAtThisSlot": 0
+        },
+        {
+          "slot": 4,
+          "word": "bottle",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p4-c2-browse-badge",
+      "kind": "badge",
+      "style": "browse",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Steel blue"
+      },
+      "teacherText": "In Steel blue",
+      "unseenSlotWords": [
+        {
+          "slot": 1,
+          "word": "Steel",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p4-c2-browse-copy",
+      "kind": "copy",
+      "style": "browse",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Steel blue"
+      },
+      "teacherText": "Color: Steel blue. Item: $36.00.",
+      "unseenSlotWords": [
+        {
+          "slot": 7,
+          "word": "$36.00",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p4-c2-compact-title",
+      "kind": "title",
+      "style": "compact",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Steel blue"
+      },
+      "teacherText": "Everyday steel bottle, Steel blue",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Steel",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p7-c1-plain-copy",
+      "kind": "copy",
+      "style": "plain",
+      "facts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Shown in Slate blue at $64.00.",
+      "unseenSlotWords": [
+        {
+          "slot": 5,
+          "word": "$64.00",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p7-c1-browse-title",
+      "kind": "title",
+      "style": "browse",
+      "facts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Slate blue Portable table light",
+      "unseenSlotWords": [
+        {
+          "slot": 2,
+          "word": "Portable",
+          "positiveTrainExamplesAtThisSlot": 0
+        },
+        {
+          "slot": 3,
+          "word": "table",
+          "positiveTrainExamplesAtThisSlot": 0
+        },
+        {
+          "slot": 4,
+          "word": "light",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p7-c1-browse-copy",
+      "kind": "copy",
+      "style": "browse",
+      "facts": {
+        "name": "Portable table light",
+        "category": "Cordless table lamp",
+        "itemPrice": 64,
+        "selectedColor": "Slate blue"
+      },
+      "teacherText": "Color: Slate blue. Item: $64.00.",
+      "unseenSlotWords": [
+        {
+          "slot": 7,
+          "word": "$64.00",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p10-c1-plain-title",
+      "kind": "title",
+      "style": "plain",
+      "facts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Charcoal"
+      },
+      "teacherText": "Everyday canvas sneakers in Charcoal",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Charcoal",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p10-c1-compact-title",
+      "kind": "title",
+      "style": "compact",
+      "facts": {
+        "name": "Everyday canvas sneakers",
+        "category": "Canvas low-top sneakers",
+        "itemPrice": 96,
+        "selectedColor": "Charcoal"
+      },
+      "teacherText": "Everyday canvas sneakers, Charcoal",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Charcoal",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p11-c2-plain-title",
+      "kind": "title",
+      "style": "plain",
+      "facts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Forest"
+      },
+      "teacherText": "Soft cotton crewneck in Forest",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Forest",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    },
+    {
+      "rowId": "p11-c2-compact-title",
+      "kind": "title",
+      "style": "compact",
+      "facts": {
+        "name": "Soft cotton crewneck",
+        "category": "Cotton crewneck sweatshirt",
+        "itemPrice": 72,
+        "selectedColor": "Forest"
+      },
+      "teacherText": "Soft cotton crewneck, Forest",
+      "unseenSlotWords": [
+        {
+          "slot": 4,
+          "word": "Forest",
+          "positiveTrainExamplesAtThisSlot": 0
+        }
+      ]
+    }
+  ],
+  "sourceBindings": [
+    {
+      "featureKey": "1f91693cbfe0ec7eb94c809d0a4fc22e20fe8f0c750796da477436e977a1eafb",
+      "name": "Trail mug",
+      "color": "Sage",
+      "price": 24,
+      "catalogIndex": 0
+    },
+    {
+      "featureKey": "87b61caaba34655775dad5be4504dd97774cd98f6b655e7adbf58aa05303ea65",
+      "name": "Trail mug",
+      "color": "Ivory",
+      "price": 24,
+      "catalogIndex": 0
+    },
+    {
+      "featureKey": "0a76f892ed9ce222dad3ee6fb2027b4b19eb048615ddf0de34ce576fa3112a20",
+      "name": "Trail mug",
+      "color": "Cobalt",
+      "price": 24,
+      "catalogIndex": 0
+    },
+    {
+      "featureKey": "257cf582a19a0147e855491dc7d0d318e520cee1f67852fd8c4b5ec77459512a",
+      "name": "Everyday daypack",
+      "color": "Sand",
+      "price": 68,
+      "catalogIndex": 1
+    },
+    {
+      "featureKey": "89f3748f0d1774d525cc3bcf7982882729ac63de11620d527cbd7b16072beb8b",
+      "name": "Everyday daypack",
+      "color": "Slate blue",
+      "price": 68,
+      "catalogIndex": 1
+    },
+    {
+      "featureKey": "f35ce28979effe33666aabc0d689b031e40baaffabc0c4d265d3299cd056a7ec",
+      "name": "Everyday daypack",
+      "color": "Forest",
+      "price": 68,
+      "catalogIndex": 1
+    },
+    {
+      "featureKey": "b1c1ce0c314bd90434f81b5a5df7406eb68db6300e65a5b9f1c115ba0b5cd6cc",
+      "name": "Pocket field notes",
+      "color": "Terracotta",
+      "price": 12,
+      "catalogIndex": 2
+    },
+    {
+      "featureKey": "50caad6787725aadf5d28a31f22f899e706e9270e7a58a77007cfb1e90ed9295",
+      "name": "Pocket field notes",
+      "color": "Navy",
+      "price": 12,
+      "catalogIndex": 2
+    },
+    {
+      "featureKey": "eeef00a336accb76569b266215d18f86464a5049218d021498570f438041ceea",
+      "name": "Pocket field notes",
+      "color": "Olive",
+      "price": 12,
+      "catalogIndex": 2
+    },
+    {
+      "featureKey": "ea37f99d95afc0bc89e882cd1c101bfc9e08a44001af3515ce84af4958f3f38e",
+      "name": "Everywhere rain jacket",
+      "color": "Forest",
+      "price": 128,
+      "catalogIndex": 3
+    },
+    {
+      "featureKey": "cd11435045658f0dbbb16f011ce3a35087e78547540408e34f82379e5d68e87b",
+      "name": "Everywhere rain jacket",
+      "color": "Navy",
+      "price": 128,
+      "catalogIndex": 3
+    },
+    {
+      "featureKey": "770afc4daf536a4574f83b6f3e19c6fac7ca22b3950b992847afc9b5dde82e1e",
+      "name": "Everywhere rain jacket",
+      "color": "Ochre",
+      "price": 128,
+      "catalogIndex": 3
+    },
+    {
+      "featureKey": "c1d5fa9a0b3bfdb944d797d5a39331db9353953c9548b3fb84f9440b6493cf19",
+      "name": "Everyday steel bottle",
+      "color": "Graphite",
+      "price": 36,
+      "catalogIndex": 4
+    },
+    {
+      "featureKey": "8bc1c30fe6db8a8d826f0c0c1eacaebeb9ae645775f94456c90910ca73b805fa",
+      "name": "Everyday steel bottle",
+      "color": "Cream",
+      "price": 36,
+      "catalogIndex": 4
+    },
+    {
+      "featureKey": "0298858e11435256b33540bbe7c7bd158fa7b407151fa0d393d769a3f125969b",
+      "name": "Everyday steel bottle",
+      "color": "Steel blue",
+      "price": 36,
+      "catalogIndex": 4
+    },
+    {
+      "featureKey": "bd7e8c98818f0879fb6fcca8a57e679e2798d3bea11ce2ec58210b014c7c154d",
+      "name": "Market canvas tote",
+      "color": "Olive",
+      "price": 42,
+      "catalogIndex": 5
+    },
+    {
+      "featureKey": "c0b6fbc9bb1ae1c5f48420ada27f764028f60ba1fb4ba3bf608e63f5e7f90680",
+      "name": "Market canvas tote",
+      "color": "Natural",
+      "price": 42,
+      "catalogIndex": 5
+    },
+    {
+      "featureKey": "a43382b20752db475a03200a1dc671a4b25758b9415e42c273b961d0acb0e565",
+      "name": "Market canvas tote",
+      "color": "Navy",
+      "price": 42,
+      "catalogIndex": 5
+    },
+    {
+      "featureKey": "fdbcfa749119042a0647bb5c2c5d43d94c641ce7ec7c64d2989e070ec7538b9a",
+      "name": "Woven everyday throw",
+      "color": "Rust",
+      "price": 58,
+      "catalogIndex": 6
+    },
+    {
+      "featureKey": "62e35ba67ce1cf6cac7cffb8855137de1442f2916bcabab9311b1b024dc6ce3d",
+      "name": "Woven everyday throw",
+      "color": "Ocean blue",
+      "price": 58,
+      "catalogIndex": 6
+    },
+    {
+      "featureKey": "6e4eaead77ec5b0da78972d7b7899a90bf6860e9e396bf05ad8e915c8171bf0d",
+      "name": "Woven everyday throw",
+      "color": "Moss",
+      "price": 58,
+      "catalogIndex": 6
+    },
+    {
+      "featureKey": "dadfcdc7c235331cc14a8eb175edfeb3a160772af59134e5e8ebddb4ac26bc77",
+      "name": "Portable table light",
+      "color": "Ivory",
+      "price": 64,
+      "catalogIndex": 7
+    },
+    {
+      "featureKey": "b569d98526de618ded91d0bacbb92c6abe07f15b39893bafcd4633f2de4d41af",
+      "name": "Portable table light",
+      "color": "Slate blue",
+      "price": 64,
+      "catalogIndex": 7
+    },
+    {
+      "featureKey": "de3578ef8f5d2e981ef796a22eefb77f808450a4099e121e16d18e9c25996841",
+      "name": "Portable table light",
+      "color": "Terracotta",
+      "price": 64,
+      "catalogIndex": 7
+    },
+    {
+      "featureKey": "7a08810c2ec5cd0dc9496554b63b7eb9c73862547d97b52ce07bffef51bb72e0",
+      "name": "Steel lunch box",
+      "color": "Olive band",
+      "price": 32,
+      "catalogIndex": 8
+    },
+    {
+      "featureKey": "c45456705583a77002a1bcb40090da9597bd5de193be7bc94f840f8d337e87ba",
+      "name": "Steel lunch box",
+      "color": "Navy band",
+      "price": 32,
+      "catalogIndex": 8
+    },
+    {
+      "featureKey": "7daf4691815be6201694aca73b2ac6488c8c6677dcfb4f2b0000cabecddeb3d2",
+      "name": "Steel lunch box",
+      "color": "Rust band",
+      "price": 32,
+      "catalogIndex": 8
+    },
+    {
+      "featureKey": "53baeab75584da54da15d650476914bf2b65f70240450ab883f7597094cd5036",
+      "name": "Everyday over-ear headphones",
+      "color": "Navy",
+      "price": 89,
+      "catalogIndex": 9
+    },
+    {
+      "featureKey": "68e8c5ac021f28dbc6879b4e1f23174c2079b08be68d19438199a12a674f5c34",
+      "name": "Everyday over-ear headphones",
+      "color": "Sand",
+      "price": 89,
+      "catalogIndex": 9
+    },
+    {
+      "featureKey": "694cf7963ef93f7d8ff209f3ca74fc052c07c4518d78c46a9f0787b461bd3105",
+      "name": "Everyday over-ear headphones",
+      "color": "Graphite",
+      "price": 89,
+      "catalogIndex": 9
+    },
+    {
+      "featureKey": "6147646a569e39a8e3897cf3a090de0c716bafc97e8caaab28f5d4ca8d88ba4f",
+      "name": "Everyday canvas sneakers",
+      "color": "Off-white",
+      "price": 96,
+      "catalogIndex": 10
+    },
+    {
+      "featureKey": "cbd6395431c623c35ee359ceb46e45b8eb3db1df385222c3c33a82c5c547942a",
+      "name": "Everyday canvas sneakers",
+      "color": "Charcoal",
+      "price": 96,
+      "catalogIndex": 10
+    },
+    {
+      "featureKey": "37511c9ed5c62b31c5750fc6908731b4410c75f9477921bf0bb502fe8d44828c",
+      "name": "Everyday canvas sneakers",
+      "color": "Olive",
+      "price": 96,
+      "catalogIndex": 10
+    },
+    {
+      "featureKey": "35734995106071477325d9e7c7699be83b36dec7d953b0a4b7c687939844996c",
+      "name": "Soft cotton crewneck",
+      "color": "Oatmeal",
+      "price": 72,
+      "catalogIndex": 11
+    },
+    {
+      "featureKey": "b6d34dd81d24ed4b26ca13d8d318cbef10f91699df99dad6090ae635a1acf7a1",
+      "name": "Soft cotton crewneck",
+      "color": "Slate blue",
+      "price": 72,
+      "catalogIndex": 11
+    },
+    {
+      "featureKey": "f7e7b1ce864b111f7ce60bc61bab55eb76f73912c3fe97c6b5fe2982d08c33d2",
+      "name": "Soft cotton crewneck",
+      "color": "Forest",
+      "price": 72,
+      "catalogIndex": 11
+    },
+    {
+      "featureKey": "be15f02cfdd2b74b337e4683ac3ca1d67d17df79ecd93c4736b59065cc93cfcb",
+      "name": "Weekender duffel",
+      "color": "Charcoal",
+      "price": 84,
+      "catalogIndex": 12
+    },
+    {
+      "featureKey": "6f0aae2a12a90d18a731448c09d7819deb2acede08db71c26cc7ef1c788189b5",
+      "name": "Weekender duffel",
+      "color": "Sand",
+      "price": 84,
+      "catalogIndex": 12
+    },
+    {
+      "featureKey": "7ffc4a5c61850e3c9696ea309ce1c4ab1f82a6efb504cf7f28fa2a20094f2f92",
+      "name": "Weekender duffel",
+      "color": "Olive",
+      "price": 84,
+      "catalogIndex": 12
+    },
+    {
+      "featureKey": "897543900eb77893c2b89a7989405c6ac487e021db2e7487404e8c723922f006",
+      "name": "Everyday round sunglasses",
+      "color": "Tortoise",
+      "price": 48,
+      "catalogIndex": 13
+    },
+    {
+      "featureKey": "b3cab9f880e88b82c04c44ff48c4e9c1909b824d96519121648f0c830e003811",
+      "name": "Everyday round sunglasses",
+      "color": "Black",
+      "price": 48,
+      "catalogIndex": 13
+    },
+    {
+      "featureKey": "eff405a57c52d24750c32fe17a8f9004f72310a84aeb200170904db90936945c",
+      "name": "Everyday round sunglasses",
+      "color": "Amber",
+      "price": 48,
+      "catalogIndex": 13
+    },
+    {
+      "featureKey": "bc83c810fa00e394c59e6a646dcbe194b92a5f963afc2dc0f5e79a149547e497",
+      "name": "Zip essentials pouch",
+      "color": "Ochre",
+      "price": 26,
+      "catalogIndex": 14
+    },
+    {
+      "featureKey": "b439130de03498e94048d1f5f45fd34a9b34300fb30d62f5c8d490a62e59553a",
+      "name": "Zip essentials pouch",
+      "color": "Navy",
+      "price": 26,
+      "catalogIndex": 14
+    },
+    {
+      "featureKey": "10b661e9995365ba144382b34b388fac3311f5ac7416afae10dff332f02bee05",
+      "name": "Zip essentials pouch",
+      "color": "Sage",
+      "price": 26,
+      "catalogIndex": 14
+    },
+    {
+      "featureKey": "9b91334c04e48ec57c0203d463ab483f5ff3338e50f739d95ad40cd0523d3f76",
+      "name": "Everywhere cotton towel",
+      "color": "Sage stripe",
+      "price": 28,
+      "catalogIndex": 15
+    },
+    {
+      "featureKey": "b158861a6fbff96979f974eb5c35e7d1a2908e58ac4a5dae7087c32a0a81c285",
+      "name": "Everywhere cotton towel",
+      "color": "Blue stripe",
+      "price": 28,
+      "catalogIndex": 15
+    },
+    {
+      "featureKey": "fb99c0cbcbb74b6a550064763209d0613d66d4dc0481ff41543d338274b1fd4d",
+      "name": "Everywhere cotton towel",
+      "color": "Clay stripe",
+      "price": 28,
+      "catalogIndex": 15
+    }
+  ],
+  "usefulnessVersusGateProbes": [
+    {
+      "kind": "copy",
+      "rawText": "Graphite at $36.00.",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [
+        "missing-color-price-relation"
+      ],
+      "independentJudgment": "Useful factual short caption; narrow grammar rejects."
+    },
+    {
+      "kind": "copy",
+      "rawText": "Graphite, $36.00.",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [
+        "missing-color-price-relation"
+      ],
+      "independentJudgment": "Source-compatible concise price/color caption; relation explicit only through card context."
+    },
+    {
+      "kind": "title",
+      "rawText": "Graphite steel bottle",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [
+        "missing-or-repeated-bound-fact"
+      ],
+      "independentJudgment": "Useful factual adapted title with canonical name subtitle; v1 full-name requirement rejects."
+    },
+    {
+      "kind": "badge",
+      "rawText": "Graphite",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [],
+      "independentJudgment": "Source-compatible concise badge; accepted without exact teacher match."
+    },
+    {
+      "kind": "copy",
+      "rawText": "Shown in Graphite at $36.00. at at at.",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [],
+      "independentJudgment": "Repetitive unusable tail; gate accepts, needs independent usability audit."
+    },
+    {
+      "kind": "badge",
+      "rawText": "Graphite selected selected selected",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [],
+      "independentJudgment": "Repetitive badge; gate accepts, needs independent usability audit."
+    },
+    {
+      "kind": "copy",
+      "rawText": "Shown in Graphite at $35.00.",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [
+        "wrong-or-missing-item-price"
+      ],
+      "independentJudgment": "Wrong price correctly rejected."
+    },
+    {
+      "kind": "copy",
+      "rawText": "Shown in Cream at $36.00.",
+      "facts": {
+        "name": "Everyday steel bottle",
+        "category": "Stainless steel bottle",
+        "itemPrice": 36,
+        "selectedColor": "Graphite"
+      },
+      "frozenV1GateRejections": [
+        "missing-or-repeated-bound-fact"
+      ],
+      "independentJudgment": "Wrong selected color correctly rejected."
+    }
+  ],
+  "dataAndArchitectureInterpretation": [
+    "Independent output classifier per position receives only negative gradients for a token never positive in that slot. Global lexical coverage does not establish learned positional compositionality.",
+    "All16prices are identity-associated TRAIN-seen dollar tokens,6or9positivecopytargets each; no novel price or source-price-swap generalization is established.",
+    "34TRAIN versus14EVAL product-color bindings; sunglasses/towel allcolorsTRAIN.42evalsix-cardcases are correlated circular recombinations, not42independentnewusers.",
+    "Section targets are six fixed phrases repeated96TRAIN/84EVALrows; kind-stratified denominators prevent easy headings from masking product-field failures.",
+    "EOS~20percent supervisedtokens; max9lexical+EOS has4unusedtailslots. MissingEOS/capfailure is not evidence that teachers were truncated.",
+    "Public full-fact Qwen vectors have declared48binding-specific inputs; semantic identity/color/price readout must be measured on native vectors, not assumed from contract or engineered name/color word sums.",
+    "No target strings, split IDs or private persona fields occur in public feature texts; kind/style/section conditioning is explicit and not contradictory."
+  ],
+  "boundedRecommendations": [
+    "Preserve v1 packet and first fixed native fit; report source-factual/useful alternatives separately from teacher exact match and existing lexical gates.",
+    "Separatev2 train-only teacher augmentation: apply the same predeclared bounded public-fact phrase/prefix/reordering repertoire to every retainedTRAINbinding; widen token-position coverage without selecting frames or labels from EVALteachers. Freeze beforevectors/fit; maintainheldoutbindingboundary.",
+    "Alternative separatev2 architecture: share lexical classifier across all slot positions, conditioned on learned position embeddings and source/kind/style. It still predicts all slots in one pass, but word supervision can transfer across positions; this is not proof of factual generalization.",
+    "Beforecapacityclaims, measure TRAIN native-feature identity/color/price separability and within-product color differences under a predeclared heldout-combination protocol; preserve raw features/checksums and no target input.",
+    "For user2to5wordcaptions with canonicalidentity/price metadata, use a separately versioned source-factual usefulness evaluation; do not require v1teacherphrase or silently relax frozen gates. Audit accepted repetition and withheld truthfulshortcaptions."
+  ]
+}

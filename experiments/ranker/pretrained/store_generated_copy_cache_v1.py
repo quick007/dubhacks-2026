@@ -154,9 +154,41 @@ class GeneratedCopyCache:
         envelope = json.loads(path.read_text()); entry = envelope['entry']
         if envelope['sha256'] != hashed(entry) or entry['keyBasis'] != descriptor['keyBasis'] or entry['key'] != descriptor['key']:
             raise ValueError('Cached native entry or its prompt/fact provenance changed')
+        attempt_name = entry['attemptFile']
+        if (type(attempt_name) is not str or not attempt_name.endswith('.json')
+                or len(attempt_name) != 69):
+            raise ValueError('Exact content-addressed native attempt filename required')
+        digest_value(attempt_name[:-5])
         attempt_path = self.root / 'attempts' / entry['attemptFile']
         if sha(attempt_path) != entry['attemptSha256']:
             raise ValueError('Original raw native generation archive changed')
+        attempt = json.loads(attempt_path.read_text())
+        if (attempt_name != hashed(attempt) + '.json' or attempt.get('version') != VERSION + '/attempt'
+                or attempt.get('bindingSha256') != self.binding_sha
+                or attempt.get('selectionPolicy') != self.spec['cacheSelection']):
+            raise ValueError('Native attempt content identity/binding/selection policy differs')
+        generation = attempt['generation']
+        if any(entry[key] != generation[key] for key in (
+                'startedAt', 'completedAt', 'coldGenerationMs', 'provenance')):
+            raise ValueError('Cached native generation cost/timestamp/provenance differs from original attempt')
+        # The envelope hash detects accidental edits; the immutable attempt is
+        # the source of truth for actual text/tokens and their original slots.
+        _, _, original_descriptors = self.descriptors(attempt['cards'])
+        original = next((item for item in original_descriptors if item['key'] == descriptor['key']), None)
+        if original is None or original['keyBasis'] != descriptor['keyBasis']:
+            raise ValueError('Cached key is absent from original native card/fact bindings')
+        original_rows = {row['fields'][0]: row for row in generation['rows']}
+        expected_rows = [original_rows[job['fields'][0]] for job in original['jobs']]
+        if entry['rawRows'] != expected_rows:
+            raise ValueError('Cached raw text/token/field receipt differs from original native attempt')
+        expected_validation = []
+        for row in expected_rows:
+            field = row['fields'][0]
+            card = None if field[0] == 'S' else attempt['cards'][int(field[1:]) - 1]
+            expected_validation.append({'fieldKind': field[0], 'rejections': practical_rejections(
+                field, row.get('text'), card, self.products, row=row)})
+        if entry['validationAtGeneration'] != expected_validation:
+            raise ValueError('Cached generation validation differs from original native attempt')
         return entry
 
     def record_generation(self, cards, generated):
