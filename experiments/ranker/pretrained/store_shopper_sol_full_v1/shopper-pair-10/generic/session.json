@@ -1,0 +1,229 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "shopper-pair-10",
+  "arm": "generic",
+  "run": {
+    "id": "shopper-pair-10-generic",
+    "experimentId": "actual-store-isolated-shopper-v1",
+    "personaId": "shopper-pair-10",
+    "personaSplit": "development",
+    "seed": 2026101810
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "cefb6faf-d3f3-4e3d-beec-d90f1f0ed5df",
+    "contextId": "e4c02fb8-734f-49ae-a905-fcbea368e915",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "shopper-pair-10-generic-screenshot-png",
+      "shopper-pair-10-generic-trace-zip",
+      "shopper-pair-10-generic-browser-observations-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T04:48:26.033Z",
+  "elapsedMs": 27290.82075000007,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "shopper-pair-10-generic-step-0",
+        "runId": "shopper-pair-10-generic",
+        "sequence": 0,
+        "at": "2026-10-18T04:48:26.933Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 899.4874169999966,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-10-generic-step-1",
+        "runId": "shopper-pair-10-generic",
+        "sequence": 1,
+        "at": "2026-10-18T04:48:33.143Z",
+        "kind": "action",
+        "message": "a waterproof jacket in stock up to $130"
+      },
+      "elapsedMs": 7109.782958000083,
+      "action": {
+        "type": "search",
+        "query": "a waterproof jacket in stock up to $130"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-10-generic-step-2",
+        "runId": "shopper-pair-10-generic",
+        "sequence": 2,
+        "at": "2026-10-18T04:48:39.245Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 13212.243791999994,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-10-generic-step-3",
+        "runId": "shopper-pair-10-generic",
+        "sequence": 3,
+        "at": "2026-10-18T04:48:47.294Z",
+        "kind": "action",
+        "message": "up"
+      },
+      "elapsedMs": 21260.503041999997,
+      "action": {
+        "type": "inspect",
+        "target": "up"
+      }
+    },
+    {
+      "event": {
+        "id": "shopper-pair-10-generic-step-4",
+        "runId": "shopper-pair-10-generic",
+        "sequence": 4,
+        "at": "2026-10-18T04:48:53.324Z",
+        "kind": "action",
+        "message": "The Forest Everywhere rain jacket is $128, but public product information shown does not explicitly verify current stock or declare it waterproof. No item was added and no order was placed."
+      },
+      "elapsedMs": 27290.817500000005,
+      "action": {
+        "type": "abandon",
+        "target": "The Forest Everywhere rain jacket is $128, but public product information shown does not explicitly verify current stock or declare it waterproof. No item was added and no order was placed."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "shopper-pair-10-generic-screenshot-png",
+        "runId": "shopper-pair-10-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T04:48:54.109Z"
+      },
+      "status": "captured",
+      "sha256": "932a7abaa169e4bb7167f1ed991620bb6f412fc7fe8a4487096ace8dc367575a",
+      "bytes": 796346,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-10-generic-trace-zip",
+        "runId": "shopper-pair-10-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T04:48:54.109Z"
+      },
+      "status": "captured",
+      "sha256": "7a1983c1413345fb81fd6cba79db065a1c72a7e90b3a2c81463b025a61894869",
+      "bytes": 26325360,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "shopper-pair-10-generic-browser-observations-json",
+        "runId": "shopper-pair-10-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T04:48:54.109Z"
+      },
+      "status": "captured",
+      "sha256": "648f8aa94f6ef8e9013c88c318245ebcda61ece16b9d001254547b8cf9becd7a",
+      "bytes": 27677,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-10-generic-screenshot-png",
+          "shopper-pair-10-generic-trace-zip",
+          "shopper-pair-10-generic-browser-observations-json"
+        ]
+      },
+      {
+        "needId": "waterproof-evidence",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-10-generic-screenshot-png",
+          "shopper-pair-10-generic-trace-zip",
+          "shopper-pair-10-generic-browser-observations-json"
+        ]
+      },
+      {
+        "needId": "stock-evidence",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-10-generic-screenshot-png",
+          "shopper-pair-10-generic-trace-zip",
+          "shopper-pair-10-generic-browser-observations-json"
+        ]
+      }
+    ],
+    "preferences": [
+      {
+        "needId": "basic-function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "shopper-pair-10-generic-screenshot-png",
+          "shopper-pair-10-generic-trace-zip",
+          "shopper-pair-10-generic-browser-observations-json"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}
