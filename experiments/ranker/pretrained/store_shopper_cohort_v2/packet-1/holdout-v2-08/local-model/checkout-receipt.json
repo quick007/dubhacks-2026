@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "f624a78d-ba41-4674-ac9f-1ceedda29fbf",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "towel",
+          "variantId": "towel-blue-stripe",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "f624a78d-ba41-4674-ac9f-1ceedda29fbf",
+        "receiptId": "demo-a273df697f6ea519c4fb38ee5a42ecde",
+        "createdAt": "2026-10-18T09:31:25.789818Z",
+        "items": [
+          {
+            "productId": "towel",
+            "variantId": "towel-blue-stripe",
+            "quantity": 1,
+            "unitPrice": 28,
+            "lineTotal": 28
+          }
+        ],
+        "subtotal": 28,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 28,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/f624a78d-ba41-4674-ac9f-1ceedda29fbf",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "f624a78d-ba41-4674-ac9f-1ceedda29fbf",
+        "receiptId": "demo-a273df697f6ea519c4fb38ee5a42ecde",
+        "createdAt": "2026-10-18T09:31:25.789818Z",
+        "items": [
+          {
+            "productId": "towel",
+            "variantId": "towel-blue-stripe",
+            "quantity": 1,
+            "unitPrice": 28,
+            "lineTotal": 28
+          }
+        ],
+        "subtotal": 28,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 28,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "f624a78d-ba41-4674-ac9f-1ceedda29fbf",
+    "receiptId": "demo-a273df697f6ea519c4fb38ee5a42ecde"
+  },
+  "errors": []
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "0a0810f3-4933-4029-b784-3efd7bdf496d",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "jacket",
+          "variantId": "jacket-ochre",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "0a0810f3-4933-4029-b784-3efd7bdf496d",
+        "receiptId": "demo-b238ef04fe3c8a35d0f310bd568426ff",
+        "createdAt": "2026-10-18T09:39:02.997723Z",
+        "items": [
+          {
+            "productId": "jacket",
+            "variantId": "jacket-ochre",
+            "quantity": 1,
+            "unitPrice": 128,
+            "lineTotal": 128
+          }
+        ],
+        "subtotal": 128,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 128,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/0a0810f3-4933-4029-b784-3efd7bdf496d",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "0a0810f3-4933-4029-b784-3efd7bdf496d",
+        "receiptId": "demo-b238ef04fe3c8a35d0f310bd568426ff",
+        "createdAt": "2026-10-18T09:39:02.997723Z",
+        "items": [
+          {
+            "productId": "jacket",
+            "variantId": "jacket-ochre",
+            "quantity": 1,
+            "unitPrice": 128,
+            "lineTotal": 128
+          }
+        ],
+        "subtotal": 128,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 128,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "0a0810f3-4933-4029-b784-3efd7bdf496d",
+    "receiptId": "demo-b238ef04fe3c8a35d0f310bd568426ff"
+  },
+  "errors": []
+}

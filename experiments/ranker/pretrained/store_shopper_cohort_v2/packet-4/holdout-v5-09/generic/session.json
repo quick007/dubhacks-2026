@@ -1,0 +1,195 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v5-09",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v5-09-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v5-09",
+    "personaSplit": "held-out",
+    "seed": 2026102309
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "b4957bc1-e549-464f-99c9-b345373cbdc6",
+    "contextId": "2e30fdd3-e521-49e0-aac4-874f8b398c52",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v5-09-generic-screenshot-png",
+      "holdout-v5-09-generic-trace-zip",
+      "holdout-v5-09-generic-browser-observations-json",
+      "holdout-v5-09-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:35:01.874Z",
+  "elapsedMs": 11311.898374999873,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v5-09-generic-step-0",
+        "runId": "holdout-v5-09-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:35:02.761Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 887.8816249999218,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-09-generic-step-1",
+        "runId": "holdout-v5-09-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:35:07.527Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 5653.836916999891,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-09-generic-step-2",
+        "runId": "holdout-v5-09-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:35:13.186Z",
+        "kind": "action",
+        "message": "The notebook, Pocket field notes, is priced at $12, which is not strictly below $12. Declining without ordering."
+      },
+      "elapsedMs": 11311.892959000077,
+      "action": {
+        "type": "abandon",
+        "target": "The notebook, Pocket field notes, is priced at $12, which is not strictly below $12. Declining without ordering."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v5-09-generic-screenshot-png",
+        "runId": "holdout-v5-09-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:35:13.607Z"
+      },
+      "status": "captured",
+      "sha256": "000a307bf420823064f7579c00da6de42525c7b9ce8a66f79fe4cfd32e7370d1",
+      "bytes": 1082145,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-09-generic-trace-zip",
+        "runId": "holdout-v5-09-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:35:13.607Z"
+      },
+      "status": "captured",
+      "sha256": "2327c0b9055eadec0298d10c548545adf904a7d7a98d54ab595e6951033ba2ed",
+      "bytes": 3045222,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-09-generic-browser-observations-json",
+        "runId": "holdout-v5-09-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:35:13.607Z"
+      },
+      "status": "captured",
+      "sha256": "71dd10e972fbc10a01d4a24a9ae9637d9aa4edc7d6606b054eafa97f4b6cfb97",
+      "bytes": 12842,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-09-generic-checkout-receipt-json",
+        "runId": "holdout-v5-09-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:35:13.608Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v5-09-generic-screenshot-png",
+          "holdout-v5-09-generic-trace-zip",
+          "holdout-v5-09-generic-browser-observations-json",
+          "holdout-v5-09-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v5-09-generic-screenshot-png",
+          "holdout-v5-09-generic-trace-zip",
+          "holdout-v5-09-generic-browser-observations-json",
+          "holdout-v5-09-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

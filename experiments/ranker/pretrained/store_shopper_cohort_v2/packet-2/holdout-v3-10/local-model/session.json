@@ -1,0 +1,270 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v3-10",
+  "arm": "local-model",
+  "run": {
+    "id": "holdout-v3-10-local-model",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v3-10",
+    "personaSplit": "held-out",
+    "seed": 2026102110
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "2ae95b30-6a2a-4108-aa80-3af63b652524",
+    "contextId": "efd8e76c-13a2-4069-8ebe-b7b46a922428",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v3-10-local-model-screenshot-png",
+      "holdout-v3-10-local-model-trace-zip",
+      "holdout-v3-10-local-model-browser-observations-json",
+      "holdout-v3-10-local-model-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T09:34:31.894Z",
+  "elapsedMs": 16417.606999999844,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v3-10-local-model-step-0",
+        "runId": "holdout-v3-10-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T09:34:32.852Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 957.6002500001341,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-10-local-model-step-1",
+        "runId": "holdout-v3-10-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T09:34:38.084Z",
+        "kind": "action",
+        "message": "canvas sneakers with an explicitly listed EU 40 size, at most $100"
+      },
+      "elapsedMs": 6189.936249999795,
+      "action": {
+        "type": "search",
+        "query": "canvas sneakers with an explicitly listed EU 40 size, at most $100"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-10-local-model-step-2",
+        "runId": "holdout-v3-10-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T09:34:42.465Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 10570.933042000048,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v3-10-local-model-step-3",
+        "runId": "holdout-v3-10-local-model",
+        "sequence": 3,
+        "at": "2026-10-18T09:34:48.312Z",
+        "kind": "action",
+        "message": "The canvas sneakers are $96, but visible product information offers only color selections. EU 40 is not explicitly listed or selectable, so I cannot verify the required size and will not order."
+      },
+      "elapsedMs": 16417.601875000168,
+      "action": {
+        "type": "abandon",
+        "target": "The canvas sneakers are $96, but visible product information offers only color selections. EU 40 is not explicitly listed or selectable, so I cannot verify the required size and will not order."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v3-10-local-model-screenshot-png",
+        "runId": "holdout-v3-10-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:34:48.772Z"
+      },
+      "status": "captured",
+      "sha256": "f274e72763e5f71369868a5961c9751ae2dd6bd45a7a045df30c241907c60fd9",
+      "bytes": 1029891,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-10-local-model-trace-zip",
+        "runId": "holdout-v3-10-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:34:48.772Z"
+      },
+      "status": "captured",
+      "sha256": "f980dd84d549e8c6dd9cfc76eeb571eb6b59c817cabde410d8ef6c4f34e63899",
+      "bytes": 5902277,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-10-local-model-browser-observations-json",
+        "runId": "holdout-v3-10-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:34:48.772Z"
+      },
+      "status": "captured",
+      "sha256": "495f40e4d9d47126c04d580bdb8a62fa9916ded046bb36c90f63e74ca959e0ba",
+      "bytes": 40447,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v3-10-local-model-checkout-receipt-json",
+        "runId": "holdout-v3-10-local-model",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:34:48.775Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v3-10-local-model-screenshot-png",
+          "holdout-v3-10-local-model-trace-zip",
+          "holdout-v3-10-local-model-browser-observations-json",
+          "holdout-v3-10-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v3-10-local-model-screenshot-png",
+          "holdout-v3-10-local-model-trace-zip",
+          "holdout-v3-10-local-model-browser-observations-json",
+          "holdout-v3-10-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "size-evidence",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v3-10-local-model-screenshot-png",
+          "holdout-v3-10-local-model-trace-zip",
+          "holdout-v3-10-local-model-browser-observations-json",
+          "holdout-v3-10-local-model-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "complete",
+    "readiness": [
+      {
+        "name": "fieldwork.local-model.rank.after-paint-opportunity",
+        "stage": "rank",
+        "requestId": "07e20d47-6a38-444c-8bc3-71580247bbf6",
+        "startTimeMs": 5731.600000023842,
+        "durationMs": 297.5,
+        "capturedAtElapsedMs": 6564.332541999873,
+        "acceptedFields": null,
+        "withheldFields": null,
+        "requiredFields": null,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v3-10-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.firstThree.after-paint-opportunity",
+        "stage": "firstThree",
+        "requestId": "07e20d47-6a38-444c-8bc3-71580247bbf6",
+        "startTimeMs": 5731.600000023842,
+        "durationMs": 297.5,
+        "capturedAtElapsedMs": 6564.332917000167,
+        "acceptedFields": 10,
+        "withheldFields": 0,
+        "requiredFields": 10,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v3-10-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      },
+      {
+        "name": "fieldwork.local-model.complete.after-paint-opportunity",
+        "stage": "complete",
+        "requestId": "07e20d47-6a38-444c-8bc3-71580247bbf6",
+        "startTimeMs": 5731.600000023842,
+        "durationMs": 297.60000002384186,
+        "capturedAtElapsedMs": 6564.332959000021,
+        "acceptedFields": 20,
+        "withheldFields": 0,
+        "requiredFields": 20,
+        "source": "data-local-model-readiness",
+        "artifactId": "holdout-v3-10-local-model-browser-observations-json",
+        "scope": "after-paint-opportunity",
+        "physicalPaintMeasured": false,
+        "imageTransferMeasured": false
+      }
+    ]
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

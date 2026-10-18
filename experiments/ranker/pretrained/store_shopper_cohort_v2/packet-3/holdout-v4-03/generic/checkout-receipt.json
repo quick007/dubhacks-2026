@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "ce3b3aeb-6219-45fa-bd1f-120da6c7c9ac",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "mug",
+          "variantId": "mug-cobalt",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "ce3b3aeb-6219-45fa-bd1f-120da6c7c9ac",
+        "receiptId": "demo-ddc2a05ce532e4ff685c24ea8165ed98",
+        "createdAt": "2026-10-18T09:36:27.58715Z",
+        "items": [
+          {
+            "productId": "mug",
+            "variantId": "mug-cobalt",
+            "quantity": 1,
+            "unitPrice": 24,
+            "lineTotal": 24
+          }
+        ],
+        "subtotal": 24,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 24,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/ce3b3aeb-6219-45fa-bd1f-120da6c7c9ac",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "ce3b3aeb-6219-45fa-bd1f-120da6c7c9ac",
+        "receiptId": "demo-ddc2a05ce532e4ff685c24ea8165ed98",
+        "createdAt": "2026-10-18T09:36:27.58715Z",
+        "items": [
+          {
+            "productId": "mug",
+            "variantId": "mug-cobalt",
+            "quantity": 1,
+            "unitPrice": 24,
+            "lineTotal": 24
+          }
+        ],
+        "subtotal": 24,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 24,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "ce3b3aeb-6219-45fa-bd1f-120da6c7c9ac",
+    "receiptId": "demo-ddc2a05ce532e4ff685c24ea8165ed98"
+  },
+  "errors": []
+}

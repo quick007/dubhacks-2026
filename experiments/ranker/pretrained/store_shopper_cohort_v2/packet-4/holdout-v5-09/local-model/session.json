@@ -1,0 +1,195 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v5-09",
+  "arm": "local-model",
+  "run": {
+    "id": "holdout-v5-09-local-model",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v5-09",
+    "personaSplit": "held-out",
+    "seed": 2026102309
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "8508f203-ad4a-4568-b792-d7824b11cf4f",
+    "contextId": "c08583fe-75f9-48a6-a396-3d54578c48c3",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v5-09-local-model-screenshot-png",
+      "holdout-v5-09-local-model-trace-zip",
+      "holdout-v5-09-local-model-browser-observations-json",
+      "holdout-v5-09-local-model-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/?model=local",
+  "startedAt": "2026-10-18T09:34:49.058Z",
+  "elapsedMs": 12192.109166000038,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v5-09-local-model-step-0",
+        "runId": "holdout-v5-09-local-model",
+        "sequence": 0,
+        "at": "2026-10-18T09:34:50.042Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 984.3797909999266,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/?model=local"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-09-local-model-step-1",
+        "runId": "holdout-v5-09-local-model",
+        "sequence": 1,
+        "at": "2026-10-18T09:34:55.300Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 6241.915916000027,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v5-09-local-model-step-2",
+        "runId": "holdout-v5-09-local-model",
+        "sequence": 2,
+        "at": "2026-10-18T09:35:01.250Z",
+        "kind": "action",
+        "message": "The visible Pocket field notes notebook costs $12.00, which is not strictly below $12. No qualifying notebook price is verified, so I decline without ordering."
+      },
+      "elapsedMs": 12192.105165999848,
+      "action": {
+        "type": "abandon",
+        "target": "The visible Pocket field notes notebook costs $12.00, which is not strictly below $12. No qualifying notebook price is verified, so I decline without ordering."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v5-09-local-model-screenshot-png",
+        "runId": "holdout-v5-09-local-model",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:35:01.671Z"
+      },
+      "status": "captured",
+      "sha256": "ebc99f88412522f74b28d20619c67a2249a648d4420895a6bb498d1375595e24",
+      "bytes": 1116774,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-09-local-model-trace-zip",
+        "runId": "holdout-v5-09-local-model",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:35:01.671Z"
+      },
+      "status": "captured",
+      "sha256": "1998bbe4acb996c4777eef496ecc0ee0940a6a85ca8b57400356c8a448fc0d50",
+      "bytes": 3104059,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-09-local-model-browser-observations-json",
+        "runId": "holdout-v5-09-local-model",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:35:01.671Z"
+      },
+      "status": "captured",
+      "sha256": "159e70fe6b5821fc3c36df166fce79ec96dc5b2de1ff9e3eb9c2e530902b76dc",
+      "bytes": 14426,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v5-09-local-model-checkout-receipt-json",
+        "runId": "holdout-v5-09-local-model",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:35:01.673Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v5-09-local-model-screenshot-png",
+          "holdout-v5-09-local-model-trace-zip",
+          "holdout-v5-09-local-model-browser-observations-json",
+          "holdout-v5-09-local-model-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v5-09-local-model-screenshot-png",
+          "holdout-v5-09-local-model-trace-zip",
+          "holdout-v5-09-local-model-browser-observations-json",
+          "holdout-v5-09-local-model-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "not-observed",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "contractVersion": "shopper-session.v1",
+  "caseId": "holdout-v2-10",
+  "arm": "generic",
+  "run": {
+    "id": "holdout-v2-10-generic",
+    "experimentId": "actual-store-heldout-shopper-v2",
+    "personaId": "holdout-v2-10",
+    "personaSplit": "held-out",
+    "seed": 2026102010
+  },
+  "browser": {
+    "name": "Chrome",
+    "headed": true,
+    "actualNavigation": true,
+    "version": "155.0.8059.82",
+    "automation": "playwright-chrome"
+  },
+  "isolation": {
+    "kind": "fresh-storage-context",
+    "tabId": "d8a698c8-dccf-4145-aeb8-e0d4a55e9f7a",
+    "contextId": "e2e0b7d7-ef05-4a44-ba0e-a0e7d6c64d34",
+    "sharedStorage": false,
+    "storageCleared": true,
+    "initialCartEmpty": true,
+    "evidenceArtifactIds": [
+      "holdout-v2-10-generic-screenshot-png",
+      "holdout-v2-10-generic-trace-zip",
+      "holdout-v2-10-generic-browser-observations-json",
+      "holdout-v2-10-generic-checkout-receipt-json"
+    ],
+    "note": "New headed Chrome process and unshared context; 1280x960 viewport; independent shopper child"
+  },
+  "entryUrl": "http://127.0.0.1:4312/",
+  "startedAt": "2026-10-18T09:36:46.250Z",
+  "elapsedMs": 17727.438541000243,
+  "timingPrecision": {
+    "sessionElapsed": "measured-monotonic",
+    "stepElapsed": "measured-monotonic",
+    "source": "Node performance.now from Chrome navigation dispatch through observed outcome; excludes cleanup/scoring"
+  },
+  "protocol": {
+    "passed": true,
+    "deviations": []
+  },
+  "status": "abandoned",
+  "error": null,
+  "realPurchase": false,
+  "fakeOrderConfirmed": false,
+  "steps": [
+    {
+      "event": {
+        "id": "holdout-v2-10-generic-step-0",
+        "runId": "holdout-v2-10-generic",
+        "sequence": 0,
+        "at": "2026-10-18T09:36:47.140Z",
+        "kind": "navigation",
+        "message": "Navigated a fresh isolated headed Chrome context to assigned storefront"
+      },
+      "elapsedMs": 889.4461659998633,
+      "action": {
+        "type": "navigate",
+        "url": "http://127.0.0.1:4312/"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-10-generic-step-1",
+        "runId": "holdout-v2-10-generic",
+        "sequence": 1,
+        "at": "2026-10-18T09:36:52.581Z",
+        "kind": "action",
+        "message": "over-ear headphones with explicitly confirmed stock, at most $95"
+      },
+      "elapsedMs": 6330.584375000093,
+      "action": {
+        "type": "search",
+        "query": "over-ear headphones with explicitly confirmed stock, at most $95"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-10-generic-step-2",
+        "runId": "holdout-v2-10-generic",
+        "sequence": 2,
+        "at": "2026-10-18T09:36:58.267Z",
+        "kind": "action",
+        "message": "down"
+      },
+      "elapsedMs": 12016.804458000232,
+      "action": {
+        "type": "inspect",
+        "target": "down"
+      }
+    },
+    {
+      "event": {
+        "id": "holdout-v2-10-generic-step-3",
+        "runId": "holdout-v2-10-generic",
+        "sequence": 3,
+        "at": "2026-10-18T09:37:03.978Z",
+        "kind": "action",
+        "message": "The $89 Everyday over-ear headphones meet the product and price requirements, but visible product information does not explicitly confirm current stock. Declining without ordering."
+      },
+      "elapsedMs": 17727.434166000225,
+      "action": {
+        "type": "abandon",
+        "target": "The $89 Everyday over-ear headphones meet the product and price requirements, but visible product information does not explicitly confirm current stock. Declining without ordering."
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": {
+        "id": "holdout-v2-10-generic-screenshot-png",
+        "runId": "holdout-v2-10-generic",
+        "kind": "screenshot",
+        "path": "screenshot.png",
+        "mimeType": "image/png",
+        "createdAt": "2026-10-18T09:37:04.433Z"
+      },
+      "status": "captured",
+      "sha256": "14e6e6bca0b6faf5bd3171ca672b7225945b524ae51db9a822b32bdbb1066491",
+      "bytes": 964915,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-10-generic-trace-zip",
+        "runId": "holdout-v2-10-generic",
+        "kind": "trace",
+        "path": "trace.zip",
+        "mimeType": "application/zip",
+        "createdAt": "2026-10-18T09:37:04.433Z"
+      },
+      "status": "captured",
+      "sha256": "8b16dfb1c5289681fd2a9f6fba26577b2d11cc8fb2001fcf9a2a3ac9ddfe9398",
+      "bytes": 4925450,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-10-generic-browser-observations-json",
+        "runId": "holdout-v2-10-generic",
+        "kind": "result",
+        "path": "browser-observations.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:37:04.433Z"
+      },
+      "status": "captured",
+      "sha256": "246a493a246e76c1880ee18a17ecb748c3d111a214e6196972955cdbf2f34f0c",
+      "bytes": 21249,
+      "error": null
+    },
+    {
+      "artifact": {
+        "id": "holdout-v2-10-generic-checkout-receipt-json",
+        "runId": "holdout-v2-10-generic",
+        "kind": "result",
+        "path": "checkout-receipt.json",
+        "mimeType": "application/json",
+        "createdAt": "2026-10-18T09:37:04.436Z"
+      },
+      "status": "captured",
+      "sha256": "5bc25c2061f56a523d5b46fd19a529b60a2f22a418de896d9305dbf484a73f34",
+      "bytes": 213,
+      "error": null
+    }
+  ],
+  "choice": null,
+  "verification": {
+    "verifierId": "independent-catalog-verifier-v1",
+    "independentOfShopperAgent": true,
+    "catalogSha256": "b9f5284c825617170b5a3c3035c2490dc4a12a762a1e366a00c4637a5094406c",
+    "hardConstraints": [
+      {
+        "needId": "function",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v2-10-generic-screenshot-png",
+          "holdout-v2-10-generic-trace-zip",
+          "holdout-v2-10-generic-browser-observations-json",
+          "holdout-v2-10-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "item-price",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v2-10-generic-screenshot-png",
+          "holdout-v2-10-generic-trace-zip",
+          "holdout-v2-10-generic-browser-observations-json",
+          "holdout-v2-10-generic-checkout-receipt-json"
+        ]
+      },
+      {
+        "needId": "stock-evidence",
+        "status": "unknown",
+        "observed": "No independently supplied catalog fact",
+        "evidenceArtifactIds": [
+          "holdout-v2-10-generic-screenshot-png",
+          "holdout-v2-10-generic-trace-zip",
+          "holdout-v2-10-generic-browser-observations-json",
+          "holdout-v2-10-generic-checkout-receipt-json"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "model": {
+    "status": "not-enabled",
+    "readiness": []
+  },
+  "fallback": {
+    "used": false,
+    "kind": "none",
+    "reason": null
+  }
+}

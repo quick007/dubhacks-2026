@@ -1,0 +1,79 @@
+{
+  "schema": "shopper-demo-checkout-evidence.v1",
+  "synthetic": true,
+  "post": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout",
+    "httpStatus": 202,
+    "request": {
+      "schema": "fieldwork.demo-checkout.v1",
+      "checkoutId": "51e9c5ec-217a-4b98-9609-be53f08079b6",
+      "shippingVisible": false,
+      "items": [
+        {
+          "productId": "sweatshirt",
+          "variantId": "sweatshirt-forest",
+          "quantity": 1
+        }
+      ]
+    },
+    "body": {
+      "duplicate": false,
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "51e9c5ec-217a-4b98-9609-be53f08079b6",
+        "receiptId": "demo-8289c2f6a4c1de73bce95dd2b4649609",
+        "createdAt": "2026-10-18T09:29:57.522983Z",
+        "items": [
+          {
+            "productId": "sweatshirt",
+            "variantId": "sweatshirt-forest",
+            "quantity": 1,
+            "unitPrice": 72,
+            "lineTotal": 72
+          }
+        ],
+        "subtotal": 72,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 72,
+        "realPurchase": false
+      }
+    }
+  },
+  "get": {
+    "url": "http://127.0.0.1:4312/api/demo-checkout/51e9c5ec-217a-4b98-9609-be53f08079b6",
+    "httpStatus": 200,
+    "body": {
+      "receipt": {
+        "schema": "fieldwork.demo-checkout-receipt.v1",
+        "checkoutId": "51e9c5ec-217a-4b98-9609-be53f08079b6",
+        "receiptId": "demo-8289c2f6a4c1de73bce95dd2b4649609",
+        "createdAt": "2026-10-18T09:29:57.522983Z",
+        "items": [
+          {
+            "productId": "sweatshirt",
+            "variantId": "sweatshirt-forest",
+            "quantity": 1,
+            "unitPrice": 72,
+            "lineTotal": 72
+          }
+        ],
+        "subtotal": 72,
+        "shipping": {
+          "status": "hidden",
+          "cost": null
+        },
+        "total": 72,
+        "realPurchase": false
+      }
+    }
+  },
+  "confirmation": {
+    "visible": true,
+    "checkoutId": "51e9c5ec-217a-4b98-9609-be53f08079b6",
+    "receiptId": "demo-8289c2f6a4c1de73bce95dd2b4649609"
+  },
+  "errors": []
+}
