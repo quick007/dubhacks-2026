@@ -12,7 +12,7 @@ When shipping details are visible, the cart restates the same fixture terms as t
 
 The demo keeps the same product, price and cart identity while changing the context in which it is shown. Search wording expresses an interest in a use case; it does not establish who a person is.
 
-The catalog now has 16 products. The daypack and rain jacket remain the detailed multi-context examples. Twelve additional versatile products broaden the range of shopping tasks, materials, prices and presentation candidates.
+The catalog now has 22 products. Six recent additions are a folding umbrella, cotton cap, portable speaker, phone stand, packing cubes and ceramic planter, each with three colors and a three-photo gallery. The daypack and rain jacket remain the detailed multi-context examples. Twelve additional versatile products broaden the range of shopping tasks, materials, prices and presentation candidates.
 
 | Product                | City commute       | Campus                  | Family days                 | Trails             | Other views                            |
 | ---------------------- | ------------------ | ----------------------- | --------------------------- | ------------------ | -------------------------------------- |
@@ -23,7 +23,7 @@ The catalog now has 16 products. The daypack and rain jacket remain the detailed
 
 ## Try it
 
-Start the shop and submit a phrase such as `rain jacket for campus`, `work bag`, `hiking gear` or `family park`, or pick one of the example chips below the search field. The headline, collection heading, ordering and lead image change together. Every photo remains available through the thumbnails: the strip is a single tab stop and the arrow keys (plus Home and End) move between views. Clearing the search restores the baseline headline and order, with product-focused still-life photos leading each product gallery (textured/tabletop settings where available, otherwise the studio view). Studio, detail and alternate-setting views remain available through thumbnails.
+Start the shop and submit a phrase such as `rain jacket for campus`, `work bag`, `hiking gear` or `family park`, or pick one of the example chips below the search field. The headline, collection heading, ordering and lead image change together. Every photo remains available through the thumbnails: the strip is a single tab stop and the arrow keys (plus Home and End) move between views. Clearing the search restores the baseline headline and order, with the second gallery image leading each product, as selected for the storefront display. Studio, detail and alternate-setting views remain available through thumbnails.
 
 The search policy is a local deterministic keyword demo, not a model or measured personalization result. A product-specific term outweighs a contextual ranking boost. Unknown queries preserve the baseline. Current search state stays in memory for this visit; there is no browsing-history collection or external inference request.
 

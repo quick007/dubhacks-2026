@@ -52,18 +52,18 @@ export function DemoControls({
 
   return (
     <div className="demo-controls">
-      <button type="button" className="demo-button" popoverTarget="demo-controls" aria-label="Demo controls">
+      <button type="button" className="demo-button" popoverTarget="demo-controls" aria-label="Color preferences">
         <span className="theme-swatch current-theme" aria-hidden="true" />
-        Demo
+        Color preferences
       </button>
       <div
         id="demo-controls"
         className="demo-popover"
         popover="auto"
         role="group"
-        aria-label="Demo controls"
+        aria-label="Color preferences"
       >
-        <span className="demo-title">Demo controls</span>
+        <span className="demo-title">Color preferences</span>
         <div className="demo-section">
           <span className="theme-label">Store color</span>
           <div className="theme-options" role="group" aria-label="Store color">

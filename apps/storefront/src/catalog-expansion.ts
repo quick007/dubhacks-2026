@@ -1,4 +1,5 @@
 // Fixture products and image briefs. Selection remains the model team's responsibility.
+import { NEW_PRODUCTS } from "./catalog-new-products";
 export const ADDITIONAL_PRODUCTS = [
   {
     id: "bottle",
@@ -158,4 +159,5 @@ export const ADDITIONAL_PRODUCTS = [
     context: "outdoors",
     scenario: "active-routine",
   },
+  ...NEW_PRODUCTS,
 ] as const;

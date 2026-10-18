@@ -1,17 +1,10 @@
 import { useEffect, useRef } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Search01Icon } from "@hugeicons/core-free-icons";
+import { Search01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import type { Product, VariantConfig } from "./config";
 import type { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { ProductCard } from "./ProductCard";
-
-const EXAMPLE_SEARCHES = [
-  "Rain jacket for campus",
-  "Work bag",
-  "Family park",
-  "Hiking gear",
-];
 
 export function ShopView({
   config,
@@ -23,7 +16,6 @@ export function ShopView({
   selectedVariants,
   onSearchInput,
   onSearchSubmit,
-  onExampleSearch,
   onClearSearch,
   onCollectionChange,
   onVariantChange,
@@ -58,7 +50,33 @@ export function ShopView({
   return (
     <>
       <section className="hero">
-        <h1 tabIndex={-1}>{experience.headline}</h1>
+        <div className="hero-copy">
+          <h1 tabIndex={-1}>{experience.headline}</h1>
+          <a
+            className="hero-shop-link"
+            href="#collection"
+            onClick={(event) => {
+              event.preventDefault();
+              document
+                .getElementById("collection")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          >
+            Shop the collection
+            <HugeiconsIcon icon={ArrowRight01Icon} size={20} aria-hidden="true" />
+          </a>
+        </div>
+        <div className="hero-visual">
+          <img
+            src="/products/mug-everyday.jpg"
+            alt="A quiet morning with the Trail mug in a sunlit kitchen"
+            width={1254}
+            height={1254}
+            fetchPriority="high"
+          />
+        </div>
+      </section>
+      <div className="shop-navigation">
         <form
           className="shop-search"
           role="search"
@@ -67,13 +85,15 @@ export function ShopView({
             onSearchSubmit();
           }}
         >
-          <label htmlFor="shop-search">What are you looking for?</label>
+          <label className="search-label" htmlFor="shop-search">
+            Search the collection
+          </label>
           <div className="search-field">
             <HugeiconsIcon icon={Search01Icon} size={22} aria-hidden="true" />
             <input
               id="shop-search"
               type="search"
-              placeholder="Try a rain jacket for campus or a work bag"
+              placeholder="Search the collection"
               value={searchInput}
               maxLength={200}
               onChange={(event) => onSearchInput(event.target.value)}
@@ -81,16 +101,6 @@ export function ShopView({
             <button type="submit">Search</button>
           </div>
         </form>
-        <div className="example-searches" role="group" aria-label="Example searches">
-          <span className="example-label" aria-hidden="true">
-            Try
-          </span>
-          {EXAMPLE_SEARCHES.map((example) => (
-            <button type="button" key={example} onClick={() => onExampleSearch(example)}>
-              {example}
-            </button>
-          ))}
-        </div>
         {config.showShipping && (
           <div className="shipping-info">
             Free demo shipping on orders over $50 · $5 flat rate otherwise
@@ -108,7 +118,7 @@ export function ShopView({
             </button>
           ))}
         </nav>
-      </section>
+      </div>
       <section id="collection" className="collection">
         <div className="section-heading">
           <div>

@@ -1,34 +1,17 @@
 import { useRef, useState, type KeyboardEvent } from "react";
 import type { Product } from "./config";
-import { selectProductImage, type ImageContext } from "./images";
 import { getVariantImages, type ProductVariant } from "./variants";
 import { ProductPhoto } from "./ProductPhoto";
 
 export function ProductGallery({
   product,
-  preferredContext,
   variant,
 }: {
   product: Product;
-  preferredContext: ImageContext;
   variant: ProductVariant;
 }) {
   const views = getVariantImages(variant);
-  const [selectedLabel, setSelectedLabel] = useState(() => {
-    if (preferredContext === "studio") {
-      return (
-        views.find((view) => view.label === "Still life") ??
-        views.find(
-          (view) =>
-            view.presentation.subject === "product" && view.presentation.background !== "plain",
-        ) ??
-        views.find((view) => view.presentation.subject === "product") ??
-        views[0]
-      ).label;
-    }
-    const preferred = selectProductImage(product.id, preferredContext);
-    return preferred.label;
-  });
+  const [selectedLabel, setSelectedLabel] = useState(() => (views[1] ?? views[0]).label);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const selectedIndex = Math.max(
     0,

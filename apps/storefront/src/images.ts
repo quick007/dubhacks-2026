@@ -1,5 +1,6 @@
 import type { Product } from "./config";
 import { ADDITIONAL_PRODUCTS } from "./catalog-expansion";
+import { NEW_PRODUCTS } from "./catalog-new-products";
 
 export type ImageContext = "studio" | "outdoors" | "city" | "campus" | "family" | "everyday";
 type Presentation = {
@@ -208,6 +209,22 @@ const originalImages = {
 };
 
 const stillLifePresentations: Record<(typeof ADDITIONAL_PRODUCTS)[number]["id"], Presentation> = {
+  umbrella: {
+    subject: "product",
+    background: "textured",
+    tone: "natural",
+    composition: "full-product",
+  },
+  cap: { subject: "product", background: "wood", tone: "natural", composition: "full-product" },
+  speaker: { subject: "product", background: "wood", tone: "warm", composition: "full-product" },
+  stand: { subject: "product", background: "wood", tone: "light", composition: "full-product" },
+  cubes: { subject: "product", background: "wood", tone: "warm", composition: "full-product" },
+  planter: {
+    subject: "product",
+    background: "textured",
+    tone: "light",
+    composition: "full-product",
+  },
   bottle: {
     subject: "product",
     background: "textured",
@@ -311,12 +328,7 @@ const additionalImages: [string, ProductImage[]][] = ADDITIONAL_PRODUCTS.map((pr
 const tabletopImages: Partial<Record<Product["id"], ProductImage>> = Object.fromEntries(
   [
     ["mug", "Trail mug", "tabletop", "oatmeal linen and pale oak in soft window light"],
-    [
-      "pack",
-      "Everyday daypack",
-      "tabletop-v3",
-      "a wooden entryway bench beside the front door",
-    ],
+    ["pack", "Everyday daypack", "tabletop-v3", "a wooden entryway bench beside the front door"],
     [
       "notebook",
       "Pocket field notes",
@@ -353,12 +365,32 @@ const tabletopImages: Partial<Record<Product["id"], ProductImage>> = Object.from
 );
 
 export const PRODUCT_IMAGES = Object.fromEntries(
-  [...Object.entries(originalImages), ...additionalImages].map(([id, images]) => [
-    id,
-    tabletopImages[id as Product["id"]]
-      ? [...images, tabletopImages[id as Product["id"]]!]
-      : images,
-  ]),
+  [...Object.entries(originalImages), ...additionalImages].map(([id, images]) => {
+    const sharedColors = NEW_PRODUCTS.some((product) => product.id === id);
+    const views = images.map((image, index): ProductImage => {
+      if (id === "notebook" && image.id === "notebook-outdoors") {
+        return {
+          ...image,
+          src: "/products/notebook-paper.jpg",
+          alt: "A person writing on the cream paper pages of the open notebook at a lakeside picnic table",
+          tile: { columns: 3, rows: 1, index: 0, sheetAspect: 3 },
+        };
+      }
+      return sharedColors
+        ? {
+            ...image,
+            src: `/products/${id}-color-gallery.jpg`,
+            tile: { columns: 3, rows: 3, index, sheetAspect: 1 },
+          }
+        : image;
+    });
+    return [
+      id,
+      tabletopImages[id as Product["id"]]
+        ? [...views, tabletopImages[id as Product["id"]]!]
+        : views,
+    ];
+  }),
 ) as Record<Product["id"], ProductImage[]>;
 
 export function selectProductImage(productId: Product["id"], context: ImageContext): ProductImage {

@@ -1,9 +1,16 @@
 import { PRODUCTS, type Product } from "./config";
 import { PRODUCT_IMAGES, type ProductImage } from "./images";
+import { NEW_PRODUCTS } from "./catalog-new-products";
 import galleryLayouts from "./color-gallery-layouts.json";
 
 type ColorOption = readonly [name: string, swatch: string];
 const COLOR_OPTIONS: Record<Product["id"], readonly ColorOption[]> = {
+  umbrella: NEW_PRODUCTS[0].colorOptions,
+  cap: NEW_PRODUCTS[1].colorOptions,
+  speaker: NEW_PRODUCTS[2].colorOptions,
+  stand: NEW_PRODUCTS[3].colorOptions,
+  cubes: NEW_PRODUCTS[4].colorOptions,
+  planter: NEW_PRODUCTS[5].colorOptions,
   mug: [
     ["Sage", "#819374"],
     ["Ivory", "#ded7c7"],
@@ -109,7 +116,9 @@ export const PRODUCT_VARIANTS = Object.fromEntries(
           : {
               image: {
                 id: `${id}-studio`,
-                src: `/products/${product.id}-colors.jpg`,
+                src: PRODUCT_IMAGES[product.id][0].src.endsWith("-color-gallery.jpg")
+                  ? PRODUCT_IMAGES[product.id][0].src
+                  : `/products/${product.id}-colors.jpg`,
                 label: colorName,
                 alt: `${product.name} — ${colorName.toLowerCase()} color, studio view`,
                 context: "studio",
@@ -139,20 +148,29 @@ export function getVariantImages(variant: ProductVariant): ProductImage[] {
   const product = PRODUCTS.find((item) => item.id === variant.productId)!;
   const layout = galleryLayouts[variant.id as keyof typeof galleryLayouts];
   return originals.map((image, index) => {
-    const tabletop = image.id === `${variant.productId}-tabletop`;
+    const tabletop =
+      image.id === `${variant.productId}-tabletop` || image.id === "notebook-outdoors";
+    const sharedColors = image.src.endsWith("-color-gallery.jpg");
+    const colorIndex = PRODUCT_VARIANTS[variant.productId].findIndex(
+      (item) => item.id === variant.id,
+    );
     return {
       ...image,
       id: `${variant.id}-${image.id}`,
-      src: tabletop ? image.src : `/products/${variant.id}-gallery.jpg`,
+      src: tabletop || sharedColors ? image.src : `/products/${variant.id}-gallery.jpg`,
       alt: `${product.name} in ${variant.colorName.toLowerCase()} — ${image.label.toLowerCase()}`,
       tags: [...image.tags, "color-variant", variant.colorName.toLowerCase()],
       position: "center",
-      tile: tabletop
-        ? {
-            ...image.tile!,
-            index: PRODUCT_VARIANTS[variant.productId].findIndex((item) => item.id === variant.id),
-          }
-        : { ...layout, index },
+      tile: sharedColors
+        ? { ...image.tile!, index: image.tile!.index + colorIndex * 3 }
+        : tabletop
+          ? {
+              ...image.tile!,
+              index: PRODUCT_VARIANTS[variant.productId].findIndex(
+                (item) => item.id === variant.id,
+              ),
+            }
+          : { ...layout, index },
     };
   });
 }
