@@ -26,7 +26,7 @@ export type ShoppingBatch = {
 };
 const ids = new Set<string>(PRODUCTS.map((product) => product.id));
 export function validExposure(product: ProductExposure): boolean {
-  return ids.has(product.productId) && Number.isInteger(product.position) && product.position >= 0 && product.position < 16
+  return ids.has(product.productId) && Number.isInteger(product.position) && product.position >= 0 && product.position < PRODUCTS.length
     && !!PRODUCT_VARIANTS[product.productId as keyof typeof PRODUCT_VARIANTS]?.some((variant) => variant.id === product.variantId);
 }
 export const SHOPPING_LIMITS = { queueBytes: 1024 * 1024, queueItems: 1000, batchBytes: 384 * 1024, replayBytes: 320 * 1024,

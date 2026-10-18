@@ -1,0 +1,41 @@
+{
+  "version": "expanded-store-catalog-verification.v1",
+  "checkedAt": "2026-10-18T15:46:26.595481+00:00",
+  "catalog": {
+    "file": "packages/contracts/data/expanded-store-catalog-v1.json",
+    "sha256": "2c3b4e95bff97eda5d8e4ef50e72739fa8083456f01b1e3041d966abee26389d",
+    "productCount": 35,
+    "colorVariantCount": 105
+  },
+  "original16": {
+    "source": "experiments/ranker/pretrained/store_catalog_v1/runtime_export.json",
+    "sourceSha256": "1f5bff7df9075beab1cda7e81aa52bfbc741b9b5a7bc4e0be629f568a80347ac",
+    "exactNamesIdsPricesSkuColorsAndGalleryPreserved": true
+  },
+  "activeRuntime": {
+    "command": "node --import tsx apps/api/scripts/expanded-store-runtime-export.mts",
+    "scriptSha256": "57e4637a58cf29c98db6ec0b1be7b4f9bc9fa2562b4be51dd7fe85011b22fbed",
+    "stdoutSha256": "28e29a28e2927782ad5d76da5ee93508920599105047253cd33fb3c87e1f377c",
+    "parsedProductsExactlyEqualShared35": true
+  },
+  "newFixtureAssetSha256": {
+    "apps/storefront/public/products/rain-anorak-color-gallery.png": "595e6050a9f00abf98eb4765c4abcf1ee7ff8b769cb0be70d4e355fe2b766f4d",
+    "apps/storefront/public/products/commuter-raincoat-color-gallery.png": "6d7bc50f793572dbcd90c9a7ed5e27137c0b8acd860e1cc8ea1eb753974089c5",
+    "apps/storefront/public/products/work-briefcase-color-gallery.png": "05ca58ff13965cd42102104953f68613b54356c363aec62de09ab314864e4658",
+    "apps/storefront/public/products/work-tote-color-gallery.png": "27f8826f788ff7bfcc4fc5d22fc3de757d1e08bbf7958bb5f20d91fb88871fb5",
+    "apps/storefront/public/products/commuter-pack-color-gallery.png": "ab6e0cea8064e119c89c99e7a7a02cc40f00c32e4f09fb513d4fd4e0feb20ff1"
+  },
+  "tests": {
+    "nodeCatalogTests": {
+      "passed": 6,
+      "command": "node --test apps/api/scripts/expanded-catalog.test.mjs"
+    },
+    "goRace": "PASS: node ../../scripts/go.mjs test -race ./... (apps/api cwd)",
+    "goVet": "PASS: node ../../scripts/go.mjs vet ./internal/democheckout ./internal/shoppingevents (apps/api cwd)",
+    "fiveNewFixtureCheckoutPOST202GET200": "PASS: actual handlers with local temporary archives, no running server or database",
+    "expandedTelemetryBounds": "PASS: catalog35 and position34 accepted; position35 rejected"
+  },
+  "liveServiceRestartPerformed": false,
+  "hostedUploadPerformed": false,
+  "newProductNativeTrainingClaim": false
+}

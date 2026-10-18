@@ -1,5 +1,6 @@
 import { VariantConfigSchema, type VariantConfig } from "@storefront/contracts";
 import { ADDITIONAL_PRODUCTS } from "./catalog-expansion";
+import { additionalPublicProducts } from "./expanded-catalog-adapter";
 export type { VariantConfig } from "@storefront/contracts";
 
 export const DEFAULT_CONFIG: VariantConfig = {
@@ -39,7 +40,7 @@ export function parseVariantConfig(search: string): VariantConfig {
   return parsed.success ? parsed.data : { ...DEFAULT_CONFIG };
 }
 
-export const PRODUCTS = [
+export const ORIGINAL_PRODUCTS = [
   {
     id: "mug",
     name: "Trail mug",
@@ -74,6 +75,7 @@ export const PRODUCTS = [
   },
   ...ADDITIONAL_PRODUCTS,
 ] as const;
+export const PRODUCTS = [...ORIGINAL_PRODUCTS, ...additionalPublicProducts(ORIGINAL_PRODUCTS.map(product => product.id))];
 export type Product = (typeof PRODUCTS)[number];
 
 export function orderedProducts(order: VariantConfig["recommendationOrder"]): Product[] {

@@ -1,5 +1,6 @@
 import type { Product } from "./config";
 import { ADDITIONAL_PRODUCTS } from "./catalog-expansion";
+import { EXPANDED_PUBLIC_CATALOG, explicitPublicImages } from "./expanded-catalog-adapter";
 
 export type ImageContext = "studio" | "outdoors" | "city" | "campus" | "family" | "everyday";
 type Presentation = {
@@ -353,7 +354,9 @@ const tabletopImages: Partial<Record<Product["id"], ProductImage>> = Object.from
 );
 
 export const PRODUCT_IMAGES = Object.fromEntries(
-  [...Object.entries(originalImages), ...additionalImages].map(([id, images]) => [
+  [...Object.entries(originalImages), ...additionalImages,
+    ...EXPANDED_PUBLIC_CATALOG.products.filter(product => !(product.productId in originalImages) && !ADDITIONAL_PRODUCTS.some(original => original.id === product.productId))
+      .map(product => [product.productId, explicitPublicImages(product.productId)] as [string, ProductImage[]])].map(([id, images]) => [
     id,
     tabletopImages[id as Product["id"]]
       ? [...images, tabletopImages[id as Product["id"]]!]

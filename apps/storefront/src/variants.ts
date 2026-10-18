@@ -1,6 +1,7 @@
 import { PRODUCTS, type Product } from "./config";
 import { PRODUCT_IMAGES, type ProductImage } from "./images";
 import galleryLayouts from "./color-gallery-layouts.json";
+import { explicitPublicImages, explicitPublicVariants } from "./expanded-catalog-adapter";
 
 type ColorOption = readonly [name: string, swatch: string];
 const COLOR_OPTIONS: Record<Product["id"], readonly ColorOption[]> = {
@@ -97,7 +98,7 @@ export type ProductVariant = {
 export const PRODUCT_VARIANTS = Object.fromEntries(
   PRODUCTS.map((product) => [
     product.id,
-    COLOR_OPTIONS[product.id].map(([colorName, swatch], index): ProductVariant => {
+    (COLOR_OPTIONS[product.id]?.map(([colorName, swatch], index): ProductVariant => {
       const id = `${product.id}-${colorName.toLowerCase().replace(/\s+/g, "-")}`;
       return {
         id,
@@ -124,7 +125,7 @@ export const PRODUCT_VARIANTS = Object.fromEntries(
               },
             }),
       };
-    }),
+    }) ?? explicitPublicVariants(product.id)),
   ]),
 ) as Record<Product["id"], ProductVariant[]>;
 
@@ -134,6 +135,7 @@ export function getProductVariant(productId: Product["id"], variantId?: string):
 }
 
 export function getVariantImages(variant: ProductVariant): ProductImage[] {
+  if (!COLOR_OPTIONS[variant.productId]) return explicitPublicImages(variant.productId, variant.id);
   const originals = PRODUCT_IMAGES[variant.productId];
   if (!variant.image) return originals;
   const product = PRODUCTS.find((item) => item.id === variant.productId)!;

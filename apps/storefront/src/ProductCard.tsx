@@ -24,7 +24,7 @@ export function ProductCard({
   const variant = getProductVariant(product.id, variantId);
   const freshCopy = localCopy?.variantId === variant.id ? localCopy : undefined;
   return (
-    <article className="product">
+    <article className="product" id={`product-${product.id}`}>
       <ProductGallery
         key={`${product.id}:${context}`}
         product={product}

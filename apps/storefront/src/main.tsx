@@ -7,13 +7,15 @@ import {
   orderedProducts,
   type Product,
 } from "./config";
-import { getCartLines, type CartItem } from "./cart";
+import { addCartItem, removeOneCartItem, removeCartLine, getCartLines, type CartItem } from "./cart";
 import { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { orderTotal, shippingQuote } from "./shipping";
 import { INITIAL_PERSONA_ID, SHOPPER_PERSONAS, type ShopperPersona } from "./personas";
 import { checkoutStillCurrent, runCurrentCheckout, switchShoppingPerson } from "./shopping-session";
 import { ShopView } from "./ShopView";
+import { SearchField } from "./SearchField";
+import { useSearchSuggestions } from "./use-search-suggestions";
 import { CartView } from "./CartView";
 import { ConfirmationView } from "./ConfirmationView";
 import { useRoute } from "./use-route";
@@ -41,6 +43,7 @@ function App() {
   const selectedVariants = selection.scope === selectionScope ? selection.values : {};
   const [added, setAdded] = useState("");
   const [searchInput, setSearchInput] = useState(route.query);
+  const { suggestions, refresh: refreshSuggestions } = useSearchSuggestions();
   const [checkoutPending, setCheckoutPending] = useState(false);
   const [checkoutError, setCheckoutError] = useState("");
   const [checkoutReceipt, setCheckoutReceipt] = useState<DemoCheckoutReceipt | null>(null);
@@ -60,19 +63,21 @@ function App() {
   const experience = localMode
     ? { ...defaultExperience, headline: config.headline, collection: "Collection", reason: null,
         matched: Boolean(localModel.rank),
-        products: localModel.rank
+        products: localModel.rank && localModel.copy && localModel.phase !== "error"
           ? localModel.rank.productIds.flatMap((id) => catalogProducts.filter((product) => product.id === id))
-          : catalogProducts }
+          : [] }
     : defaultExperience;
   const collection = COLLECTIONS.find((item) => item.id === route.collectionId) ?? COLLECTIONS[0];
   const visibleProducts =
     collection.id === "all"
       ? experience.products
       : experience.products.filter((product) => collection.productIds.includes(product.id));
+  const renderedProductIds = visibleProducts.filter(product => !localMode || !localModel.rank?.selectedProductIds.includes(product.id)
+    || localModel.copy?.sections.some(section => section.cards.some(card => card.productId === product.id))).map(product => product.id);
   useEffect(() => {
     traceContext({ mode: localMode ? "local-model" : "baseline", order: config.recommendationOrder, shipping: config.showShipping });
-    traceProducts(route.page === "shop" ? visibleProducts.map((product) => product.id) : []);
-  }, [localMode, config.recommendationOrder, config.showShipping, route.page, visibleProducts.map((product) => product.id).join(",")]);
+    traceProducts(route.page === "shop" ? renderedProductIds : []);
+  }, [localMode, config.recommendationOrder, config.showShipping, route.page, renderedProductIds.join(",")]);
   const cartLines = getCartLines(cart);
   const subtotal = cartLines.reduce((sum, line) => sum + line.subtotal, 0);
   const quote = shippingQuote(subtotal, config.showShipping);
@@ -155,6 +160,16 @@ function App() {
           fieldwork<span>®</span>
         </a>
         <div className="header-actions">
+          <form className="header-search" role="search" onSubmit={event => {
+            event.preventDefault();
+            traceEvent("search", { source: "submit" });
+            goToCollection({ query: searchInput.trim() }, { scrollTo: "collection" });
+          }}>
+            <label className="search-label" htmlFor="shop-search">Search the collection</label>
+            <SearchField value={searchInput} suggestions={suggestions} onFocus={refreshSuggestions}
+              onChange={value => { setSearchInput(value); if (!value.trim() && route.query) goToCollection({ query: "" }); }}
+              onSuggestion={value => { traceEvent("search", { source: "example" }); setSearchInput(value); goToCollection({ query: value }, { scrollTo: "collection" }); }} />
+          </form>
           {demoTraceEnabled && <Suspense fallback={null}><TraceControls /></Suspense>}
           <button
             aria-label="View cart"
@@ -222,6 +237,17 @@ function App() {
             total={total}
             checkoutPending={checkoutPending}
             checkoutError={checkoutError}
+            onQuantity={(variantId, change) => {
+              resetCheckout();
+              const line = cartLines.find(item => item.variant.id === variantId);
+              if (!line) return;
+              if (change === 1) traceEvent("cart-add", { productId: line.product.id, variantId, count: cart.length + 1 });
+              setCart(items => change === 1 ? addCartItem(items, { productId: line.product.id, variantId }) : removeOneCartItem(items, variantId));
+            }}
+            onRemove={(variantId) => {
+              resetCheckout();
+              setCart(items => removeCartLine(items, variantId));
+            }}
             onPlaceOrder={() => { void placeDemoOrder(); }}
             onContinue={() => goToCollection({})}
           />
@@ -254,6 +280,13 @@ function App() {
         resetCheckout();
         if (route.page !== "shop") goToCollection({});
       }} /></Suspense>}
+      {page === "shop" && added && (
+        <div className="add-toast" role="status">
+          <span>{added}</span>
+          <button type="button" onClick={() => navigate({ ...route, page: "cart" })}>Open cart</button>
+          <button type="button" aria-label="Dismiss cart notification" onClick={() => setAdded("")}>Dismiss</button>
+        </div>
+      )}
       <footer>
         <span className="wordmark">
           fieldwork<span>®</span>

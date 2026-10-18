@@ -1,8 +1,10 @@
 import { orderedProducts, type Product, type VariantConfig } from "./config";
 import type { ImageContext } from "./images";
 import { ADDITIONAL_PRODUCTS } from "./catalog-expansion";
+import { EXPANDED_PUBLIC_CATALOG } from "./expanded-catalog-adapter";
 
 const productTerms: Record<string, readonly string[]> = {
+  ...Object.fromEntries(EXPANDED_PUBLIC_CATALOG.products.map(product => [product.productId, product.searchTerms])),
   ...Object.fromEntries(ADDITIONAL_PRODUCTS.map((product) => [product.id, product.searchTerms])),
   mug: ["mug", "mugs", "cup", "cups", "coffee", "tea", "drink", "drinks"],
   pack: ["bag", "bags", "backpack", "backpacks", "daypack", "pack", "commute", "commuting"],

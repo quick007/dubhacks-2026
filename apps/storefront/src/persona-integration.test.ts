@@ -95,8 +95,8 @@ test("shopping surfaces keep model telemetry internal and normal cart naming", (
   const model={...beginLocalModelRequest(INITIAL_LOCAL_MODEL_STATE,"work bag"),phase:"complete" as const,rank:rank("r")};
   const shop=ShopView({config:DEFAULT_CONFIG,experience:personalizeStorefront("work bag",DEFAULT_CONFIG),collectionId:"all",query:"work bag",
     searchInput:"work bag",visibleProducts:[...PRODUCTS],selectedVariants:{},added:"",localModel:model,personName:"Alex",onSearchInput(){},onSearchSubmit(){},onExampleSearch(){},onClearSearch(){},onCollectionChange(){},onVariantChange(){},onAdd(){}});
-  const serialized=JSON.stringify(shop);assert.match(serialized,/Suggestions for/);assert.doesNotMatch(serialized,/Learned product order|acceptedFields|fresh learned fields/);
-  const cart=CartView({lines:[],subtotal:0,quote:null,total:0,onPlaceOrder(){},onContinue(){}});
+  const serialized=JSON.stringify(shop);assert.match(serialized,/Finding a few things for Alex/);assert.doesNotMatch(serialized,/Learned product order|acceptedFields|fresh learned fields/);
+  const cart=CartView({lines:[],subtotal:0,quote:null,total:0,onPlaceOrder(){},onContinue(){},onQuantity(){},onRemove(){}});
   assert.match(JSON.stringify(cart),/Your cart/);assert.doesNotMatch(JSON.stringify(cart),/Your demo cart/);
 });
 

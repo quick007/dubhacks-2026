@@ -1,6 +1,7 @@
 import { PRODUCTS } from "./config";
 import { PRODUCT_VARIANTS } from "./variants";
 import { PRODUCT_IMAGES } from "./images";
+import { HERO_BANNERS } from "./hero-banners";
 import type { TraceAction, TraceContext, TraceFields } from "./session-trace-bridge";
 
 export const TRACE_LIMITS = { durationMs: 5 * 60_000, retentionMs: 15 * 60_000, bytes: 4 * 1024 * 1024, replayEvents: 2000, shoppingEvents: 500 } as const;
@@ -25,6 +26,7 @@ const variants = new Map<string, Set<string>>(Object.entries(PRODUCT_VARIANTS).m
 const actions = new Set(["search", "selection", "cart-add", "cart-clear", "checkout-success"]);
 const mask = (text: string) => text.replace(/\S/g, "*");
 const replayAssets = new Set<string>([
+  ...Object.keys(HERO_BANNERS).map(id => `/products/hero-${id}-wide.jpg`),
   ...Object.values(PRODUCT_IMAGES).flat().map((image) => image.src),
   ...Object.values(PRODUCT_VARIANTS).flat().flatMap((variant) => variant.image ? [variant.image.src] : []),
 ]);

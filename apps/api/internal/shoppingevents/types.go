@@ -179,7 +179,7 @@ func validateData(action string, raw json.RawMessage) error {
 		valid = ok && oneOf(str(d["consent"]), "notice", "granted")
 	case "catalog-view":
 		ps, ok := d["products"].([]any)
-		valid = ok && len(ps) <= 16
+		valid = ok && len(ps) <= len(catalog)
 		positions, products := map[float64]bool{}, map[string]bool{}
 		for _, p := range ps {
 			bytes, _ := json.Marshal(p)
@@ -189,12 +189,12 @@ func validateData(action string, raw json.RawMessage) error {
 			}
 			position, _ := item["position"].(float64)
 			id := str(item["productId"])
-			valid = valid && integer(item["position"], 0, 15) && !positions[position] && !products[id] && product(id, str(item["variantId"]))
+			valid = valid && integer(item["position"], 0, float64(len(catalog)-1)) && !positions[position] && !products[id] && product(id, str(item["variantId"]))
 			positions[position] = true
 			products[id] = true
 		}
 	case "product-view":
-		valid = integer(d["position"], 0, 15) && d["visibility"] == "intersection-at-least-half" && d["visibleMs"] == float64(250)
+		valid = integer(d["position"], 0, float64(len(catalog)-1)) && d["visibility"] == "intersection-at-least-half" && d["visibleMs"] == float64(250)
 	case "search":
 		valid = oneOf(str(d["source"]), "submit", "example", "clear")
 	case "cart-add":

@@ -1,17 +1,13 @@
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Search01Icon } from "@hugeicons/core-free-icons";
+import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import type { Product, VariantConfig } from "./config";
 import type { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { ProductCard } from "./ProductCard";
-import { type LocalModelState } from "./local-model";
-
-const EXAMPLE_SEARCHES = [
-  "Rain jacket for campus",
-  "Work bag",
-  "Family park",
-  "Hiking gear",
-];
+import { HeroCarousel } from "./HeroCarousel";
+import { CategoryShortcuts } from "./CategoryShortcuts";
+import { ProductSkeleton } from "./ProductSkeleton";
+import type { LocalModelState } from "./local-model";
 
 export function ShopView({
   config,
@@ -21,12 +17,10 @@ export function ShopView({
   searchInput,
   visibleProducts,
   selectedVariants,
-  added,
   localModel,
   personName,
   onSearchInput,
   onSearchSubmit,
-  onExampleSearch,
   onClearSearch,
   onCollectionChange,
   onVariantChange,
@@ -40,97 +34,72 @@ export function ShopView({
   visibleProducts: Product[];
   selectedVariants: Partial<Record<Product["id"], string>>;
   added: string;
+  onExampleSearch: (query: string) => void;
   localModel?: LocalModelState;
   personName?: string;
   onSearchInput: (value: string) => void;
   onSearchSubmit: () => void;
-  onExampleSearch: (query: string) => void;
   onClearSearch: () => void;
   onCollectionChange: (collectionId: string) => void;
   onVariantChange: (productId: Product["id"], variantId: string) => void;
   onAdd: (product: Product, variantId: string, colorName: string) => void;
 }) {
   const collection = COLLECTIONS.find((item) => item.id === collectionId) ?? COLLECTIONS[0];
+  const failed = localModel?.phase === "error";
+  const loading = Boolean(localModel && !failed && !localModel.copy);
   const heading = collection.id === "all"
-    ? localModel?.copy?.sections[0]?.heading ?? experience.collection
+    ? (!failed && localModel?.copy?.sections[0]?.heading) || experience.collection
     : collection.label;
-  const localCopy = new Map(localModel?.copy?.sections.flatMap((section) => section.cards).map((card) => [card.productId, card]));
+  const localCopy = new Map(localModel?.copy?.sections.flatMap(section => section.cards).map(card => [card.productId, card]));
+
   return (
     <>
-      <section className="hero">
-        <h1>{experience.headline}</h1>
-        <form
-          className="shop-search"
-          role="search"
-          onSubmit={(event) => {
-            event.preventDefault();
-            onSearchSubmit();
-          }}
-        >
-          <label htmlFor="shop-search">What are you looking for?</label>
-          <div className="search-field">
-            <HugeiconsIcon icon={Search01Icon} size={22} aria-hidden="true" />
-            <input
-              id="shop-search"
-              type="search"
-              placeholder="Try a rain jacket for campus or a work bag"
-              value={searchInput}
-              maxLength={200}
-              onChange={(event) => onSearchInput(event.target.value)}
-            />
-            <button type="submit">Search</button>
-          </div>
-        </form>
-        <div className="example-searches" role="group" aria-label="Example searches">
-          <span className="example-label" aria-hidden="true">
-            Try
-          </span>
-          {EXAMPLE_SEARCHES.map((example) => (
-            <button type="button" key={example} onClick={() => onExampleSearch(example)}>
-              {example}
-            </button>
-          ))}
+      <section className="hero" hidden={Boolean(query)}>
+        <div className="hero-copy">
+          <h1 tabIndex={-1}>{experience.headline}</h1>
+          <a
+            className="hero-shop-link"
+            href="#collection"
+            onClick={(event) => {
+              event.preventDefault();
+              document
+                .getElementById("collection")
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+          >
+            Shop the collection
+            <HugeiconsIcon icon={ArrowRight01Icon} size={20} aria-hidden="true" />
+          </a>
         </div>
-        {config.showShipping && (
-          <div className="shipping-info">
-            Free shipping on orders over $50 · $5 flat rate otherwise
-          </div>
-        )}
-        <nav className="collection-options" aria-label="Shop by category">
-          {COLLECTIONS.map((item) => (
-            <button
-              type="button"
-              key={item.id}
-              aria-pressed={collectionId === item.id}
-              onClick={() => onCollectionChange(item.id)}
-            >
-              {item.label}
-            </button>
-          ))}
-        </nav>
+        <HeroCarousel key={personName ?? "baseline"} products={visibleProducts} pending={loading} unavailable={failed} />
       </section>
-      <section id="collection" className="collection">
+      <CategoryShortcuts collectionId={collectionId} onChange={onCollectionChange} />
+      {config.showShipping && (
+        <div className="shipping-info">
+          Free shipping on orders over $50 · $5 flat rate otherwise
+        </div>
+      )}
+      <section id="collection" className="collection" aria-busy={loading || localModel?.phase === "partial"}>
         <div className="section-heading">
           <div>
             <h2>{heading}</h2>
             <p className="search-status" role="status">
-              {localModel ? (localModel.phase === "error" ? "We couldn’t refresh your collection. Try another search."
-                : localModel.phase === "ranking" || localModel.phase === "copying" ? "Finding a few things for you…"
-                : query ? `Suggestions for “${query}”` : `A collection for ${personName ?? "you"}`) : query &&
-                (experience.matched
-                  ? `Suggestions for “${query}”${experience.reason ? ` — ordered for ${experience.reason}` : ""}`
-                  : `No close matches for “${query}”. Browse the collection below.`)}
+              {localModel ? (failed ? "We couldn’t refresh your collection. Try another search."
+                : loading ? `Finding a few things for ${personName ?? "you"}…`
+                : localModel.phase === "partial" ? "Finishing your collection…"
+                : visibleProducts.length === 0 ? "No items match this request. Try broadening your search."
+                : query ? `Suggestions for “${query}”` : `A collection for ${personName ?? "you"}`)
+                : query && (experience.matched ? `Picked for ${experience.reason ?? `“${query}”`}`
+                  : "No close matches. Explore the collection below.")}
             </p>
           </div>
-          {query && (
-            <button className="clear-search" onClick={onClearSearch}>
-              Clear search
-            </button>
-          )}
+          {query && <button className="clear-search" onClick={onClearSearch}>Clear search</button>}
         </div>
         <div className="products">
-          {visibleProducts.map((product) => (
-            <ProductCard
+          {loading ? Array.from({ length: 6 }, (_, index) => <ProductSkeleton key={index} />)
+            : !failed && visibleProducts.map((product) => (
+            localModel?.rank?.selectedProductIds.includes(product.id) && !localCopy.has(product.id)
+              ? <ProductSkeleton key={product.id} /> : <ProductCard
               key={product.id}
               product={product}
               context={experience.context}
@@ -141,9 +110,6 @@ export function ShopView({
             />
           ))}
         </div>
-        <p className="added-message" role="status">
-          {added}
-        </p>
       </section>
     </>
   );
