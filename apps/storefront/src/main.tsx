@@ -161,10 +161,6 @@ function App() {
             onSearchSubmit={() => {
               goToCollection({ query: searchInput.trim() }, { scrollTo: "hero" });
             }}
-            onExampleSearch={(query) => {
-              setSearchInput(query);
-              goToCollection({ query }, { scrollTo: "hero" });
-            }}
             onClearSearch={() => {
               setSearchInput("");
               goToCollection({ query: "" });

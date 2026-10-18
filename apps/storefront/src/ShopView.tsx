@@ -5,6 +5,7 @@ import type { Product, VariantConfig } from "./config";
 import type { personalizeStorefront } from "./personalization";
 import { COLLECTIONS } from "./collections";
 import { ProductCard } from "./ProductCard";
+import { HeroCarousel } from "./HeroCarousel";
 
 export function ShopView({
   config,
@@ -30,7 +31,6 @@ export function ShopView({
   selectedVariants: Partial<Record<Product["id"], string>>;
   onSearchInput: (value: string) => void;
   onSearchSubmit: () => void;
-  onExampleSearch: (query: string) => void;
   onClearSearch: () => void;
   onCollectionChange: (collectionId: string) => void;
   onVariantChange: (productId: Product["id"], variantId: string) => void;
@@ -66,15 +66,7 @@ export function ShopView({
             <HugeiconsIcon icon={ArrowRight01Icon} size={20} aria-hidden="true" />
           </a>
         </div>
-        <div className="hero-visual">
-          <img
-            src="/products/mug-everyday.jpg"
-            alt="A quiet morning with the Trail mug in a sunlit kitchen"
-            width={1254}
-            height={1254}
-            fetchPriority="high"
-          />
-        </div>
+        <HeroCarousel key={`${collectionId}:${query}`} products={visibleProducts} context={experience.context} />
       </section>
       <div className="shop-navigation">
         <form

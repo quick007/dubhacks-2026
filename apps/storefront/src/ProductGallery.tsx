@@ -2,16 +2,19 @@ import { useRef, useState, type KeyboardEvent } from "react";
 import type { Product } from "./config";
 import { getVariantImages, type ProductVariant } from "./variants";
 import { ProductPhoto } from "./ProductPhoto";
+import { selectShowcaseImage, type ImageContext } from "./images";
 
 export function ProductGallery({
   product,
   variant,
+  context,
 }: {
   product: Product;
   variant: ProductVariant;
+  context: ImageContext;
 }) {
   const views = getVariantImages(variant);
-  const [selectedLabel, setSelectedLabel] = useState(() => (views[1] ?? views[0]).label);
+  const [selectedLabel, setSelectedLabel] = useState(() => selectShowcaseImage(product.id, context, views).label);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const selectedIndex = Math.max(
     0,

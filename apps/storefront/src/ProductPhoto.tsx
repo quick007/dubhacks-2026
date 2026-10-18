@@ -4,23 +4,25 @@ export function ProductPhoto({
   image,
   id,
   alt = image.alt,
+  loading = "lazy",
 }: {
   image: ProductImage;
   id?: string;
   alt?: string;
+  loading?: "lazy" | "eager";
 }) {
   const tile = image.tile;
   const width = tile ? Math.max(tile.columns, tile.rows * tile.sheetAspect) * 100 : 100;
   const height = tile ? Math.max(tile.rows, tile.columns / tile.sheetAspect) * 100 : 100;
   return (
-    <span className="product-photo">
+    <span className="product-photo" data-tiled={Boolean(tile)}>
       <img
         id={id}
         src={image.src}
         alt={alt}
         width={724}
         height={724}
-        loading="lazy"
+        loading={loading}
         style={
           tile
             ? {

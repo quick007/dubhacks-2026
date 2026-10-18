@@ -407,3 +407,25 @@ export function selectProductImage(productId: Product["id"], context: ImageConte
     images[0]
   );
 }
+
+// Mix natural product arrangements with scenes in use across the storefront.
+const stillLifeLeads = new Set<string>([
+  "mug", "notebook", "bottle", "blanket", "headphones", "sneakers",
+  "duffel", "sunglasses", "stand", "cubes", "planter", "lunchbox",
+]);
+
+export function selectShowcaseImage(
+  productId: Product["id"],
+  context: ImageContext,
+  images = PRODUCT_IMAGES[productId],
+): ProductImage {
+  const naturalStillLife = images.find((image) =>
+    image.presentation.subject === "product" && image.presentation.background !== "plain" &&
+    image.presentation.composition !== "detail",
+  );
+  const lifestyle = images.filter((image) => image.presentation.subject === "in-use");
+  return (stillLifeLeads.has(productId) ? naturalStillLife : undefined) ??
+    lifestyle.find((image) => image.context === context) ??
+    lifestyle.find((image) => image.context === "everyday") ??
+    lifestyle[0] ?? naturalStillLife ?? images[0];
+}

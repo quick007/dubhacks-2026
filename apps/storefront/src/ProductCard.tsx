@@ -20,8 +20,8 @@ export function ProductCard({
 }) {
   const variant = getProductVariant(product.id, variantId);
   return (
-    <article className="product">
-      <ProductGallery key={`${product.id}:${context}`} product={product} variant={variant} />
+    <article className="product" id={`product-${product.id}`}>
+      <ProductGallery key={`${product.id}:${context}`} product={product} variant={variant} context={context} />
       <div className="product-heading">
         <h3>{product.name}</h3>
         <span>${product.price}</span>
