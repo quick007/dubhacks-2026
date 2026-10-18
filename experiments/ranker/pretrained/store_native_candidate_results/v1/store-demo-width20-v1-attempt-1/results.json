@@ -1,0 +1,158 @@
+{
+  "version": "store-demo-performance.v1",
+  "nativeExecution": true,
+  "status": "failed-profile-comparison",
+  "width": 20,
+  "preflightSha256": "3bea0038068d4bffccfbd420e154aee89f353b79cd6e47418e73484d23cf8b69",
+  "records": [
+    {
+      "caseId": "demo-water-six",
+      "mode": "baseline",
+      "warmupExcluded": true,
+      "requestId": "2e280ef5-189c-4a16-8d45-cfaa70b0dbab",
+      "resultPath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/store-demo-width20-v1-attempt-1/engine/requests/2e280ef5-189c-4a16-8d45-cfaa70b0dbab/receipt.json",
+      "status": "completed",
+      "cardCount": 6,
+      "rankMs": 515.0228340644389,
+      "firstThreeAttemptMs": 5130.650750012137,
+      "fullAttemptMs": 5303.151958971284,
+      "acceptedFields": 18,
+      "requiredFields": 20,
+      "preparation": {
+        "rootTokens": 328,
+        "rootTokenSha256": "954bf1a7701f4879b326c3d1b2954f9a2550bc89bfbacae770f3090fecdd7f2e",
+        "rootPrepareMs": 558.5715420311317,
+        "prefillStepSize": 256,
+        "freshEmptyCache": true,
+        "rankingPrefixInCopyContext": false,
+        "unusedLogitsOrHiddenForced": false
+      },
+      "decodeTiming": {
+        "decodeRounds": 21,
+        "decodeWallMs": 4148.776249960065,
+        "width": 20,
+        "sampledTokenCap": 416,
+        "actualSampledTokens": 173
+      },
+      "memory": {
+        "mlxActiveBytes": 5038303754,
+        "mlxPeakBytes": 7424709028,
+        "mlxCacheBytes": 0,
+        "processBudgetBytes": 7516192768
+      },
+      "signatureSha256": "1a33be9f7f2c0b1aa7d929503408b091f4ffebd4246554169fc1160096d007de",
+      "outerCallWallIncludingArchiveMs": 5305.452291970141
+    },
+    {
+      "caseId": "demo-water-six",
+      "mode": "baseline",
+      "warmupExcluded": false,
+      "requestId": "9047663b-36b7-4650-8221-47e5f60057d1",
+      "resultPath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/store-demo-width20-v1-attempt-1/engine/requests/9047663b-36b7-4650-8221-47e5f60057d1/receipt.json",
+      "status": "completed",
+      "cardCount": 6,
+      "rankMs": 171.397541067563,
+      "firstThreeAttemptMs": 4367.342374986038,
+      "fullAttemptMs": 4577.69687497057,
+      "acceptedFields": 18,
+      "requiredFields": 20,
+      "preparation": {
+        "rootTokens": 328,
+        "rootTokenSha256": "954bf1a7701f4879b326c3d1b2954f9a2550bc89bfbacae770f3090fecdd7f2e",
+        "rootPrepareMs": 500.36420789547265,
+        "prefillStepSize": 256,
+        "freshEmptyCache": true,
+        "rankingPrefixInCopyContext": false,
+        "unusedLogitsOrHiddenForced": false
+      },
+      "decodeTiming": {
+        "decodeRounds": 21,
+        "decodeWallMs": 3806.0321250231937,
+        "width": 20,
+        "sampledTokenCap": 416,
+        "actualSampledTokens": 173
+      },
+      "memory": {
+        "mlxActiveBytes": 5038303754,
+        "mlxPeakBytes": 7424709028,
+        "mlxCacheBytes": 0,
+        "processBudgetBytes": 7516192768
+      },
+      "signatureSha256": "1a33be9f7f2c0b1aa7d929503408b091f4ffebd4246554169fc1160096d007de",
+      "outerCallWallIncludingArchiveMs": 4583.833958022296
+    },
+    {
+      "caseId": "demo-water-six",
+      "mode": "profile-v2",
+      "warmupExcluded": false,
+      "requestId": "2450f5cb-88ce-461d-bb49-57b95ed21db2",
+      "resultPath": "/Users/lukas/Documents/Projects/dubhacks-2026/data/ranker/pretrained/store-demo-width20-v1-attempt-1/engine/requests/2450f5cb-88ce-461d-bb49-57b95ed21db2/receipt.json",
+      "status": "failed-attempt",
+      "error": {
+        "type": "MemoryError",
+        "message": "Wide decode active/peak exceeds caller-declared native budget"
+      },
+      "failedAtMs": 2974.4080409873277,
+      "outerCallWallIncludingArchiveMs": 2974.411666044034
+    }
+  ],
+  "parity": [],
+  "timerPolicy": "caller entry before rank through serializedfirst3/full6; archivewriteexcluded; controls/startupexcluded; profileadds explicit phase synchronization",
+  "cachePolicy": "one warm resident backbone; one excluded complete baseline warmup; fresh request caches and allocator clear before each arm; no response/prompt-result caching",
+  "generatedTextSubstituted": false,
+  "liveServingEdited": false,
+  "startup": {
+    "rankCheckpointSha256": "265c728a2e3349fa03e03ca37ca5d54814fe72407b95ed436d8f9734b602a99e",
+    "copyCheckpointSha256": "56c6c1f4199d8689f1920d871213a46d2d121fec4e5836ff70e33aaf98c7c7b8",
+    "sourceTensorsHashed": 927,
+    "residentLoadMs": 1459.892458980903,
+    "engineInitializationMs": 9888.798583066091,
+    "initializationScope": "engine constructor including source/checkpoint verification, model load, frozen hashes and catalog head; excludes process imports, worker lock wait and browser",
+    "memory": {
+      "mlxActiveBytes": 5038303752,
+      "mlxPeakBytes": 5101611528,
+      "mlxCacheBytes": 70295364,
+      "processBudgetBytes": 7516192768
+    },
+    "width": 20,
+    "nativeFallback": false
+  },
+  "error": {
+    "type": "MemoryError",
+    "message": "Wide decode active/peak exceeds caller-declared native budget"
+  },
+  "shutdownIntegrity": {
+    "frozen927HashesUnchanged": true,
+    "copyCheckpointUnchanged": true,
+    "memory": {
+      "mlxActiveBytes": 5038303754,
+      "mlxPeakBytes": 7571165592,
+      "mlxCacheBytes": 121575052,
+      "processBudgetBytes": 7516192768
+    }
+  },
+  "runtimeSourceHashesUnchanged": true,
+  "wholeRunWallMsIncludingSetupWarmup": 25712.004542001523,
+  "summary": {
+    "baseline": {
+      "fixedCases": 3,
+      "attempts": 1,
+      "completedAttempts": 1,
+      "failedAttempts": 0,
+      "unattempted": 2,
+      "rankMs": 171.397541067563,
+      "firstThreeAttemptMs": 4367.342374986038,
+      "fullAttemptMs": 4577.69687497057
+    },
+    "profile-v2": {
+      "fixedCases": 3,
+      "attempts": 1,
+      "completedAttempts": 0,
+      "failedAttempts": 1,
+      "unattempted": 2,
+      "rankMs": null,
+      "firstThreeAttemptMs": null,
+      "fullAttemptMs": null
+    }
+  }
+}

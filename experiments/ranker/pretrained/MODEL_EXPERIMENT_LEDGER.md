@@ -1,5 +1,31 @@
 # Model experiment ledger
 
+## 2026-10-18 resumed overnight checkpoint
+
+The user resumed the model work after the earlier pause. The explicit
+catalog-trained parallel decoder completed32 fresh public-query requests with
+six cards and20 valid fields each: median first-three193.428ms, full193.498ms,
+including fresh Qwen query encoding, learned ranking, guards, learned word-slot
+predictions, validation and JSON. Startup/browser/images are separate. All8
+constraint probes passed; offline relevance30/32top-one and31/32top-six.
+This is a curated known-catalog demo: all48 product/color bindings were trained.
+Independent audit reproduced528/528 supervised fields without runtime teacher
+lookup. Earlier heldout card fields0/126 and three failed research variants are
+preserved. Attempt1's timed32 all passed but its later guard audit failed;
+attempt2 fixes only the expected conflicting-color error handling and repeats
+all32 requests. No unseen-generalization or conversion claim.
+
+Fresh AR width20/root reuse completed a separate explicit8GiB paired experiment
+at4571.540ms versus6402.946ms ordinary width10, but both0/3 full useful pages.
+Repaired generated-earlier cache completed32 hits at219.627ms median, all below
+300ms, but0/32 full useful pages. Original failures and all927 unchanged tensor
+receipts remain. See [native candidate report](STORE_NATIVE_CANDIDATES_V1_RESULTS.md),
+[TRAIN-ALL audit](STORE_PARALLEL_TEXT_TRAIN_ALL_DEMO_V1_AUDIT.md), and
+[CPU research results](STORE_PARALLEL_TEXT_CPU_V2_RESULTS.md). Actual browser
+integration of the parallel head is now being checked; native193ms is not
+presented as full storefront readiness.
+
+
 Run names distinguish optimizer updates from numerical probes and inference.
 The 9B quantized backbone weights stay frozen throughout these experiments.
 Synthetic public-fact correctness is a proxy; none of these results establishes
