@@ -77,7 +77,7 @@ Sources: [expanded serving contract](../experiments/ranker/pretrained/STORE_EXPA
 
 ## Speed graph
 
-The README retains the actual exported presentation graph: **86 ms** for warm
+The README renders the presentation plot with reader-facing labels: **86 ms** for warm
 local six-card backend personalization, alongside approximately **6.2 s** and
 **4.3 s** medians for earlier hosted ranking tasks through the Codex client.
 Each series is measured within its own request set and timing boundary. The chart
@@ -103,13 +103,15 @@ Sources: [scenario definition and pinned evidence](../apps/web/src/fieldwork/ill
 The README uses compact figures with white backgrounds and captions outside the
 image. The latency figure renders the existing `LatencyChart` and `LatencyRow`
 components with the original raw samples, seeded bootstrap, linear axis and
-markers. Only its export typography, colors and surrounding frame change.
+markers. Its export typography, colors and surrounding frame change. Labels use "Our model",
+"Six-product response" and "Product ranking"; the caption identifies backend and
+client timing scopes. Numerical samples, medians and intervals are unchanged.
 
 | README figure | Source |
 | --- | --- |
 | [Storefront sequence](assets/shopper-sequence.png) | The existing public `browse.jpg`, `stuck.jpg` and `fit.jpg` captures, with panel letters |
 | [Latency plot](assets/latency-figure.png) | Existing chart components and checked-in local/hosted measurements |
-| [Architecture](assets/architecture-figure.svg) | The four stage labels from `ModelSlide.tsx`, redrawn as a compact vector diagram |
+| [Architecture](assets/architecture-figure.svg) | The four stages from `ModelSlide.tsx`, redrawn with reader-facing labels as a compact vector diagram |
 
 [Figure receipt](assets/figure-export.json) records source hashes, exact medians,
 95% median intervals, sample counts and output hashes. Reproduce the exports with:
