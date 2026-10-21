@@ -19,7 +19,7 @@ The current demo has 35 products; the frozen shopper cohort used 16.
 | Compare native conventional and hybrid execution | [Matched results](../experiments/ranker/pretrained/STORE_AR_COMPARISON_V1_RESULTS.md), [independent quality audit](../experiments/ranker/pretrained/STORE_AR_COMPARISON_V1_INDEPENDENT_AUDIT.md) |
 | Check copy and budget disclosure coverage | [Transparency audit](../experiments/ranker/pretrained/STORE_TRANSPARENCY_AUDIT_V1.md) |
 | Plan the later model performance window | [Overnight queue](../experiments/ranker/pretrained/STORE_OVERNIGHT_PERFORMANCE_QUEUE_V1.md); CPU preparation is not native execution |
-| Follow the longer-term product direction | [Vision](../VISION.md) |
+| Follow the longer-term product direction | [Vision](project/VISION.md) |
 | Find earlier results, proposals or design plans | [Historical index](archive/README.md) |
 
 ## Evidence conventions

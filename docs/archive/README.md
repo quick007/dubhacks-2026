@@ -1,8 +1,8 @@
 # Historical documentation index
 
-Historical documents remain in place. Model manifests and audits reference
-their exact paths and, in some cases, their bytes. This index organizes access
-without moving reports or changing completed results.
+Experiment reports retain their original paths and results. Model manifests and
+audits reference their exact paths and, in some cases, their bytes. The project
+vision and earlier root latency proposal are collected under `docs/`.
 
 ## Model experiments and data boundaries
 
@@ -17,7 +17,7 @@ without moving reports or changing completed results.
 | [Failed short-copy audit](../../experiments/ranker/pretrained/SHORT_COPY_FIT_V1_INDEPENDENT_AUDIT_V2.md) | Preserved failed adapter results and strict payload counts |
 | [Actual-store copy preparation](../../experiments/ranker/pretrained/STORE_COPY_V2_PREPARATION_AUDIT.md) | Source-conditioned copy data and CPU preparation |
 | [Copy qualitative review](../../experiments/ranker/pretrained/ACTUAL_STORE_COPY_V2_QUALITATIVE_AUDIT.md) | Contextual review separated from unchanged strict scores |
-| [Earlier latency proposal](../../COPY_LATENCY_MINIMUM_GATE.md) | Bounded proposal and older workload; not a current speedup claim |
+| [Earlier latency proposal](COPY_LATENCY_MINIMUM_GATE.md) | Bounded proposal and older workload; not a current speedup claim |
 
 The [resident service guide](../../experiments/ranker/pretrained/STORE_DEMO_SERVICE.md)
 and [root README](../../README.md) describe the integrated path. The experiment
@@ -26,7 +26,7 @@ component-specific audits alongside these entry points.
 
 ## Product and presentation plans
 
-- [Project vision](../../VISION.md): intended product and evaluation direction,
+- [Project vision](../project/VISION.md): intended product and evaluation direction,
   with implementation snapshots that may precede current code.
 - [Case-file demo design](../superpowers/specs/2026-10-17-case-file-demo-design.md)
   and [implementation plan](../superpowers/plans/2026-10-17-case-file-demo.md).
@@ -37,5 +37,5 @@ component-specific audits alongside these entry points.
 - [Tiger Cloud setup](../tiger-cloud.md): optional historical machine note,
   unrelated to the current SQLite requirement.
 
-No document, source report, checkpoint or instruction file was relocated to
-create this index.
+Source reports, numerical receipts, checkpoints and instruction files retain their
+original locations.

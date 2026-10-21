@@ -1,16 +1,14 @@
 # Personalization Labs
 
-**Low-latency storefront personalization with synthetic shopper evaluation.**
-
-Built at DubHacks 2026, Personalization Labs pairs AI shopper experiments with a
-local model that selects products, chooses colors and writes fresh catalog-grounded
-copy. Shoppers get a page shaped around their request; merchants get a way to test
-how that page performs.
+Personalization Labs is a DubHacks 2026 project that tests personalized storefronts.
+A local model selects products and colors and writes copy from catalog facts.
+AI shoppers browse the resulting pages, and the evaluation compares their shopping
+outcomes with those from the generic store.
 
 ![Three demo storefront views showing the initial collection, a relevant item below the first row, and personalized ordering](docs/assets/shopper-sequence.png)
 
-**Figure 1.** Demo storefront: (a) initial collection, (b) the blanket below the
-first row, and (c) personalized ordering brings it to the first position.
+Figure 1. The demo store before and after personalization: (a) the initial
+collection, (b) the blanket below the first row, and (c) the blanket ranked first.
 
 ## The results
 
@@ -22,42 +20,44 @@ first row, and (c) personalized ordering brings it to the first position.
 | **35 products · 105 color variants** | The current demo selects real catalog variants and produces 20 fresh factual fields for a six-card response. |
 | **29/32 correct first choices** | The earlier balanced ranker audit improved from **14/32**, with the target present in the top six for **32/32** requests. |
 
-The value result uses the frozen 16-product synthetic cohort; speed measurements
-use the expanded 35-product demo. Warm backend timing excludes startup, network,
+The value benchmark used the frozen 16-product store. The speed measurements used
+the expanded 35-product demo; warm backend timing excludes startup, network,
 browser and images. [Sources, methodology and full outcomes](docs/RESULTS.md).
 
 ## Request latency
 
 ![Request latency plot: warm local backend median 86 ms; hosted ranking client medians 6.2 s and 4.3 s](docs/assets/latency-figure.png)
 
-**Figure 2.** Per-request latency: 10 warm local six-card responses and 16 ranking
-requests per hosted model. Bars show medians and 95% bootstrap intervals; dashed
-markers show trivial CLI replies. Backend and client timings have different scopes.
+Figure 2. Request latency for 10 warm local six-card responses and 16 ranking
+requests per hosted model. Bars mark medians and 95% bootstrap intervals; dashed
+lines mark trivial CLI replies. The local clock measures backend work; the hosted
+clock measures ranking through the client.
 [Data and timing scope](docs/RESULTS.md#speed-graph).
 
 ## System overview
 
-1. **Test the store.** Screenshot-driven AI shoppers browse the generic and personalized shops, search, choose products and try the simulated checkout.
-2. **See the friction.** Compare suitable purchases, abstentions, shopper actions and merchandise value using saved session evidence.
-3. **Personalize the page.** A local Qwen backbone feeds learned product and color selection, then a parallel word head writes titles, badges and short copy from catalog facts.
-4. **Run it again.** Compare immutable experiment snapshots in the presentation dashboard.
+Fieldwork is the demo store. It has product galleries, color controls, a cart and
+simulated checkout. AI shoppers use screenshots to browse, search and choose
+products in both the generic and personalized versions.
 
-The demo shop is called **Fieldwork**. It supports product galleries, color choices,
-a cart and simulated checkout. Budgets and supported hard constraints gate product
-selection; generated copy stays tied to selected catalog facts.
+The evaluation records suitable purchases, abstentions, shopper actions and
+merchandise value. Saved session evidence lets you inspect individual outcomes;
+the dashboard compares immutable experiment snapshots across runs. Product
+selection enforces budgets and supported hard constraints. Copy uses facts from
+the selected catalog items.
 
 ## Model architecture
 
 ![Architecture diagram: frozen Qwen to learned selection to selected fact rows to parallel copy](docs/assets/architecture-figure.svg)
 
-**Figure 3.** A shared frozen backbone feeds learned selection and catalog-bound
-parallel copy. Node labels follow the original presentation architecture.
+Figure 3. The model selects products and colors, then predicts copy from their
+catalog facts.
 
-A frozen **Qwen3.5-9B** backbone supplies reusable input features. Small learned
-heads handle product selection, color choice and parallel copy prediction. Warm
-requests reuse exact input features while recomputing scores, selections and words.
-This gives the demo fresh six-card responses without generating every word through
-a long autoregressive sequence.
+Qwen3.5-9B stays frozen and supplies reusable input features. Small trained heads
+score products, choose colors and predict the words for titles, badges and short
+copy in parallel. Warm requests reuse exact input features, but compute new scores,
+selections and words on every request. Six-card responses therefore use fresh copy
+without generating each word in an autoregressive sequence.
 
 [Serving architecture](experiments/ranker/pretrained/STORE_EXPANDED_ENGINE_V1.md) ·
 [Current measurements](experiments/ranker/pretrained/expanded_store_results/v1/CURRENT_LIVE_SUMMARY.json) ·
@@ -80,14 +80,13 @@ pnpm dev
 | Fieldwork storefront | <http://shop.dubhacks.localhost:1356> |
 | Go API | <http://api.dubhacks.localhost:1356> |
 
-The results presentation uses the configured Tiger results connection. On the
-configured Apple silicon machine, `pnpm dev:personalized:demo` starts the expanded
-local-model demo at <http://127.0.0.1:4313>; it requires the existing local weights
-and checkpoints. [Full setup and local prerequisites](docs/DEVELOPMENT.md#run-the-default-demo).
+The results deck needs a configured Tiger results connection. On the configured
+Apple silicon machine, `pnpm dev:personalized:demo` starts the expanded local-model
+demo at <http://127.0.0.1:4313> using the existing local weights and checkpoints. [Full setup and local prerequisites](docs/DEVELOPMENT.md#run-the-default-demo).
 
-The presentation supports arrow-key navigation. Its title, observed results,
-speed chart and learning loop tell the project story; detailed evidence remains
-available through the final evidence slide and [results guide](docs/RESULTS.md).
+Use the arrow keys to move through the presentation. The deck covers shopper
+outcomes, latency and the learning loop. The final evidence slide and
+[results guide](docs/RESULTS.md) link to the underlying measurements.
 
 ## Explore the project
 
@@ -99,9 +98,8 @@ available through the final evidence slide and [results guide](docs/RESULTS.md).
 | AI shopper evaluation | [Runner and protocol](apps/runner/SHOPPER_COHORT.md) |
 | Local model | [Native experiments and serving](experiments/ranker/pretrained/) |
 | Setup, audits and historical measurements | [Development guide](docs/DEVELOPMENT.md) |
-| Product direction | [Vision](VISION.md) |
+| Product direction | [Vision](docs/project/VISION.md) |
 
-Personalization Labs is the project name; Fieldwork is its demonstration store.
 Repository: [quick007/personalization-labs](https://github.com/quick007/personalization-labs).
 
 ## License

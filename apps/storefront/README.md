@@ -42,7 +42,7 @@ Use `pnpm --filter @storefront/storefront test` to check intent ranking, baselin
 
 A future server adapter can select ordered product IDs and a known image ID per card, then return proposed text with provenance. Resolve IDs against the catalog; keep price and capabilities in the fixture facts. Generated wording should use approved product facts, while image captions describe what the image actually shows. Section ordering can be added independently of the image library.
 
-The experimental `experiments/ranker/pretrained/page-plan.v1.ts` contract is not consumed here. Its synthetic catalog uses different IDs. Connect it through an explicit catalog/image mapping and validate membership before rendering; do not assume its fixture IDs match this shop. Keep baseline and candidate selections recorded and replayable when integrating with the experiment loop described in `VISION.md`.
+The experimental `experiments/ranker/pretrained/page-plan.v1.ts` contract is not consumed here. Its synthetic catalog uses different IDs. Connect it through an explicit catalog/image mapping and validate membership before rendering; do not assume its fixture IDs match this shop. Keep baseline and candidate selections recorded and replayable when integrating with the experiment loop described in the [project vision](../../docs/project/VISION.md).
 
 The six new lifestyle assets intentionally vary setting, activity, clothing, adult age range and people represented. Those casting choices make a broader asset library; they are not rules for inferring a shopper's age, ethnicity, gender or family status. Selection currently uses only the submitted search words.
 

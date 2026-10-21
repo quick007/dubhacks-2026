@@ -10,7 +10,7 @@ Every claim on a personalized page comes from catalog facts. The model chooses a
 
 The goal is that shoppers find a suitable item faster and merchants sell more items that fit. A larger basket counts only when the purchase is relevant, meets the shopper's requirements and stays within their budget.
 
-Personalization Labs now includes the Fieldwork storefront, a local Qwen personalization service and a synthetic shopper evaluation dashboard. The [project overview](README.md) and [results guide](docs/RESULTS.md) describe the current implementation and measurements. The sections below retain the broader product direction and earlier architecture plans; human conversion and revenue remain future evaluation goals.
+Personalization Labs now includes the Fieldwork storefront, a local Qwen personalization service and a synthetic shopper evaluation dashboard. The [project overview](../../README.md) and [results guide](../RESULTS.md) describe the current implementation and measurements. The sections below retain the broader product direction and earlier architecture plans; human conversion and revenue remain future evaluation goals.
 
 ## Who it serves
 
@@ -38,7 +38,7 @@ The decision step uses [Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B) in a
 
 The copy step reuses the same loaded backbone's decoder to write titles, section headings and optional badges. A validator checks each generated field against catalog facts and the shopper's stated constraints. Rejected text falls back to the approved catalog title or is left out.
 
-The output follows the [page-plan v1 contract](experiments/ranker/pretrained/PAGE_PLAN.md). Each field records whether it was generated, rejected, left empty, filled from an approved fallback, or still pending.
+The output follows the [page-plan v1 contract](../../experiments/ranker/pretrained/PAGE_PLAN.md). Each field records whether it was generated, rejected, left empty, filled from an approved fallback, or still pending.
 
 When this reaches the storefront, the page renders the default immediately and requests the personalized plan asynchronously with its own deadline. If the plan is late, invalid or unavailable, the shopper keeps the default page.
 
@@ -46,8 +46,8 @@ When this reaches the storefront, the page renders the default immediately and r
 
 | Area                  | Current repository behavior                                                                                                                                                            | Next step                                                                                   |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Personalization model | [`experiments/ranker/pretrained/`](experiments/ranker/pretrained/README.md) trains decision heads on a frozen Qwen3.5-9B backbone and generates validated page plans on synthetic data | Serve it behind the API with a latency budget and fallback                                  |
-| Baseline ranker       | [`experiments/ranker/model/`](experiments/ranker/README.md) has a small engineered-feature network and a transparent heuristic with mixed synthetic results                            | Keep both as comparison baselines                                                           |
+| Personalization model | [`experiments/ranker/pretrained/`](../../experiments/ranker/pretrained/README.md) trains decision heads on a frozen Qwen3.5-9B backbone and generates validated page plans on synthetic data | Serve it behind the API with a latency budget and fallback                                  |
+| Baseline ranker       | [`experiments/ranker/model/`](../../experiments/ranker/README.md) has a small engineered-feature network and a transparent heuristic with mixed synthetic results                            | Keep both as comparison baselines                                                           |
 | Page-plan contract    | A v1 TypeScript interface, fixture and Python validator live under the model experiment                                                                                                | Move it into `packages/contracts/` once the storefront consumes it                          |
 | Latency               | Earlier single-product responses took about three seconds, well short of near-normal page load. Batching and cache experiments are in progress                                         | Measure structured-only and full-page latency separately against a fixed target             |
 | Storefront            | `apps/storefront/` is a fixture shop with config for headline, shipping visibility and recommendation order, plus a fake checkout                                                      | Render page plans per shopper, with the default page as fallback                            |

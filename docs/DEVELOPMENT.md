@@ -365,7 +365,7 @@ node --import tsx --test apps/runner/src/shopper-contract.test.ts apps/runner/sr
 focuses on the shopper contract and CLI. `pnpm test:smoke` starts its own named
 services and needs the Playwright browser; stop `pnpm dev` before running it.
 
-Start with the [documentation guide](../docs/README.md). The [project vision](../VISION.md)
+Start with the [documentation guide](../docs/README.md). The [project vision](project/VISION.md)
 describes the broader goal; some implementation-status sections predate the
 current integration. Historical experiment reports stay at their original
 paths, indexed in [docs/archive](../docs/archive/README.md).
