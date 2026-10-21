@@ -1,13 +1,16 @@
 # Personalization Labs
 
-**A storefront that learns what fits each shopper—and a lab that tests it.**
+**Low-latency storefront personalization with synthetic shopper evaluation.**
 
 Built at DubHacks 2026, Personalization Labs pairs AI shopper experiments with a
 local model that selects products, chooses colors and writes fresh catalog-grounded
 copy. Shoppers get a page shaped around their request; merchants get a way to test
 how that page performs.
 
-![Personalization Labs presentation: AI shoppers browse, reveal friction, and test personalized pages](docs/assets/personalization-labs.png)
+![Three demo storefront views showing the initial collection, a relevant item below the first row, and personalized ordering](docs/assets/shopper-sequence.png)
+
+**Figure 1.** Demo storefront: (a) initial collection, (b) the blanket below the
+first row, and (c) personalized ordering brings it to the first position.
 
 ## The results
 
@@ -23,15 +26,16 @@ The value result uses the frozen 16-product synthetic cohort; speed measurements
 use the expanded 35-product demo. Warm backend timing excludes startup, network,
 browser and images. [Sources, methodology and full outcomes](docs/RESULTS.md).
 
-## Personalization without the wait
+## Request latency
 
-![Speed graph from the presentation: 86 ms warm local backend, alongside earlier hosted ranking timings](docs/assets/speed-comparison.png)
+![Request latency plot: warm local backend median 86 ms; hosted ranking client medians 6.2 s and 4.3 s](docs/assets/latency-figure.png)
 
-The local series measures warm six-card personalization. The hosted series measure
-earlier ranking requests through the client; their workloads and timing boundaries
-differ. [Timing sources and scope](docs/RESULTS.md#speed-graph).
+**Figure 2.** Per-request latency: 10 warm local six-card responses and 16 ranking
+requests per hosted model. Bars show medians and 95% bootstrap intervals; dashed
+markers show trivial CLI replies. Backend and client timings have different scopes.
+[Data and timing scope](docs/RESULTS.md#speed-graph).
 
-## Watch the loop
+## System overview
 
 1. **Test the store.** Screenshot-driven AI shoppers browse the generic and personalized shops, search, choose products and try the simulated checkout.
 2. **See the friction.** Compare suitable purchases, abstentions, shopper actions and merchandise value using saved session evidence.
@@ -42,9 +46,12 @@ The demo shop is called **Fieldwork**. It supports product galleries, color choi
 a cart and simulated checkout. Budgets and supported hard constraints gate product
 selection; generated copy stays tied to selected catalog facts.
 
-## Built for fast personalization
+## Model architecture
 
-![Exported architecture slide: frozen Qwen features feed learned selection, source facts and parallel copy](docs/assets/model-architecture.png)
+![Architecture diagram: frozen Qwen to learned selection to selected fact rows to parallel copy](docs/assets/architecture-figure.svg)
+
+**Figure 3.** A shared frozen backbone feeds learned selection and catalog-bound
+parallel copy. Node labels follow the original presentation architecture.
 
 A frozen **Qwen3.5-9B** backbone supplies reusable input features. Small learned
 heads handle product selection, color choice and parallel copy prediction. Warm

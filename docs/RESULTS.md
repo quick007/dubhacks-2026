@@ -100,18 +100,28 @@ Sources: [scenario definition and pinned evidence](../apps/web/src/fieldwork/ill
 
 ## Visual provenance
 
-README images are unedited exports from the project's local presentation QA
-artifacts. They contain the demonstration shop and architecture diagrams.
+The README uses compact figures with white backgrounds and captions outside the
+image. The latency figure renders the existing `LatencyChart` and `LatencyRow`
+components with the original raw samples, seeded bootstrap, linear axis and
+markers. Only its export typography, colors and surrounding frame change.
 
-| Repository asset | Original local artifact |
+| README figure | Source |
 | --- | --- |
-| [Project story](assets/personalization-labs.png) | `data/presentation-personalization-labs-v1/1710x960-title.png` |
-| [Speed graph](assets/speed-comparison.png) | `data/presentation-canonical-final-qa/1280x960-6-speed.png` |
-| [Model architecture](assets/model-architecture.png) | `data/presentation-canonical-final-qa/1280x960-5-model.png` |
+| [Storefront sequence](assets/shopper-sequence.png) | The existing public `browse.jpg`, `stuck.jpg` and `fit.jpg` captures, with panel letters |
+| [Latency plot](assets/latency-figure.png) | Existing chart components and checked-in local/hosted measurements |
+| [Architecture](assets/architecture-figure.svg) | The four stage labels from `ModelSlide.tsx`, redrawn as a compact vector diagram |
 
-The architecture export comes from an earlier deck revision; the current deck
-omits that slide. It illustrates the shared-backbone/parallel-copy design.
-[Asset hashes](assets/provenance.json) identify the exact exported bytes.
+[Figure receipt](assets/figure-export.json) records source hashes, exact medians,
+95% median intervals, sample counts and output hashes. Reproduce the exports with:
+
+```sh
+pnpm --filter @storefront/web build
+TSX_TSCONFIG_PATH=apps/web/tsconfig.json node --import tsx scripts/export-readme-figures.mjs
+```
+
+Original full-slide exports remain at `personalization-labs.png`,
+`speed-comparison.png` and `model-architecture.png` in this asset directory.
+Their original source paths and hashes remain in [asset provenance](assets/provenance.json).
 
 ## Further evidence
 
