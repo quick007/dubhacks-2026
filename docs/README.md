@@ -1,13 +1,14 @@
 # Documentation guide
 
-The [root README](../README.md) is the current entry point for setup, capability
-boundaries and measured status. Older design plans and model experiments use
-catalogs and contracts that differ from the live 16-product store.
+The [root README](../README.md) introduces Personalization Labs and its headline
+results. The [results guide](RESULTS.md) provides metric sources and methodology;
+the [development guide](DEVELOPMENT.md) preserves full setup and experiment history.
+The current demo has 35 products; the frozen shopper cohort used 16.
 
 | Task | Reference |
 |---|---|
 | Store/query experiment evidence | [Results adapter](../apps/api/EXPERIMENT_RESULTS.md); local receipts and asynchronous hosted sync are distinct |
-| Run the dashboard/API/default shop | [Root setup](../README.md), [Go API ownership](../apps/api/README.md) |
+| Run the dashboard/API/default shop | [Full setup](DEVELOPMENT.md#run-the-default-demo), [Go API ownership](../apps/api/README.md) |
 | Run the resident Qwen opt-in | [Local service guide](../experiments/ranker/pretrained/STORE_DEMO_SERVICE.md) |
 | Inspect assets and generic search | [Storefront guide](../apps/storefront/README.md); its future-model notes predate the opt-in integration |
 | Understand the scripted browser protocol | [Runner README](../apps/runner/README.md) |

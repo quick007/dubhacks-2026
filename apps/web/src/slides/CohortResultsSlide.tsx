@@ -13,23 +13,26 @@ export function CohortResultsSlide({ result }: { result: PresentationResults }) 
   const after = result.data.metrics.arms["local-model"].revenue.revenuePerAssignedSessionCents;
   const scenario = illustrativeScenario(result.reportId, result.sha256, before, after);
   return (
-    <SlideFrame title={scenario ? "Illustrative scenario" : "Observed synthetic value per session"}
-      lead={scenario ? undefined : "Synthetic experiment"}>
+    <SlideFrame title={scenario ? `${scenario.observedPercent.toFixed(2)}% more value per session` : "Observed synthetic value per session"}
+      lead={`${money(before)} → ${money(after)} · synthetic merchandise per assigned session`}>
       {scenario ? (
-        <div className="grid items-center gap-x-5 gap-y-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:grid-rows-[auto_auto]">
-          <div className="grid gap-3 sm:col-start-1 sm:row-span-2 sm:row-start-1 sm:grid-rows-subgrid">
-            <p className="font-display text-6xl font-extrabold tracking-tight text-graphite">{scenario.observedPercent.toFixed(2)}%</p>
-            <p className="text-lg text-muted">Additional revenue per session (synthetic benchmark)</p>
-          </div>
-          <Minus className="size-7 text-graphite sm:col-start-2 sm:row-start-1 sm:self-center" aria-label="minus" />
-          <div className="grid gap-3 sm:col-start-3 sm:row-span-2 sm:row-start-1 sm:grid-rows-subgrid">
-            <p className="font-display text-6xl font-extrabold tracking-tight text-graphite">{scenario.assumedLossPercent.toFixed(2)}%</p>
-            <p className="text-lg text-muted">Estimated loss from model overhead</p>
-          </div>
-          <Equal className="size-7 text-graphite sm:col-start-4 sm:row-start-1 sm:self-center" aria-label="equals" />
-          <div className="grid gap-3 sm:col-start-5 sm:row-span-2 sm:row-start-1 sm:grid-rows-subgrid">
-            <p className="font-display text-6xl font-extrabold tracking-tight text-cobalt">{scenario.remainderPercentagePoints.toFixed(2)}<span className="ml-1 text-2xl">pp</span></p>
-            <p className="text-lg text-muted">Illustrative remainder</p>
+        <div>
+          <p className="mb-6 text-lg text-muted">Illustrative latency trade-off</p>
+          <div className="grid items-center gap-x-5 gap-y-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:grid-rows-[auto_auto]">
+            <div className="grid gap-3 sm:col-start-1 sm:row-span-2 sm:row-start-1 sm:grid-rows-subgrid">
+              <p className="font-display text-6xl font-extrabold tracking-tight text-graphite">{scenario.observedPercent.toFixed(2)}%</p>
+              <p className="text-lg text-muted">Observed value uplift (synthetic benchmark)</p>
+            </div>
+            <Minus className="size-7 text-graphite sm:col-start-2 sm:row-start-1 sm:self-center" aria-label="minus" />
+            <div className="grid gap-3 sm:col-start-3 sm:row-span-2 sm:row-start-1 sm:grid-rows-subgrid">
+              <p className="font-display text-6xl font-extrabold tracking-tight text-graphite">{scenario.assumedLossPercent.toFixed(2)}%</p>
+              <p className="text-lg text-muted">Estimated loss from model overhead</p>
+            </div>
+            <Equal className="size-7 text-graphite sm:col-start-4 sm:row-start-1 sm:self-center" aria-label="equals" />
+            <div className="grid gap-3 sm:col-start-5 sm:row-span-2 sm:row-start-1 sm:grid-rows-subgrid">
+              <p className="font-display text-6xl font-extrabold tracking-tight text-cobalt">{scenario.remainderPercentagePoints.toFixed(2)}<span className="ml-1 text-2xl">pp</span></p>
+              <p className="text-lg text-muted">Illustrative remainder</p>
+            </div>
           </div>
         </div>
       ) : (

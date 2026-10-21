@@ -1,4 +1,4 @@
-# Project vision
+# Personalization Labs: project vision
 
 ## One-sentence pitch
 
@@ -10,7 +10,7 @@ Every claim on a personalized page comes from catalog facts. The model chooses a
 
 The goal is that shoppers find a suitable item faster and merchants sell more items that fit. A larger basket counts only when the purchase is relevant, meets the shopper's requirements and stays within their budget.
 
-This document describes the intended product and how we evaluate it. The model runs today as a local experiment on synthetic data. It is not yet wired into the storefront, and nothing here shows that it raises human conversion or revenue. The final product name and model provider remain undecided.
+Personalization Labs now includes the Fieldwork storefront, a local Qwen personalization service and a synthetic shopper evaluation dashboard. The [project overview](README.md) and [results guide](docs/RESULTS.md) describe the current implementation and measurements. The sections below retain the broader product direction and earlier architecture plans; human conversion and revenue remain future evaluation goals.
 
 ## Who it serves
 
